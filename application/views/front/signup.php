@@ -133,38 +133,63 @@ input[type=number] {
     <main>
         <div class="container py-4" style="margin-top:100px">
 
-            <div class="row align-items-md-stretch" style="min-height:90%;">
+            <div class="row " style="min-height:90%;">
             <div class="col-md-7 ps-0" >
                     <div class="h-100 p-5 ">
                         <img  class="img-fluid" 
-                            src="../assets/images/Frame.png">
+                            src="../assets/images/signup.png">
                     </div>
                 </div>
                 <div class="col-md-5 pe-0">
                 <div class="card  border p-4">
 <article class="card-body">
-
-<a href="" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign Up</a>
+<a href="" class="float-right ">Have an Account?</a><br>
+<a href="" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign in</a>
 <p>Welcome to Cellnow</p>
-<h2 class="card-title mb-4 mt-1">Sign in</h2>
+<h2 class="card-title mb-3 ">Sign Up</h2>
 	 <form>
-    <div class="form-group mt-5">
-    	<label>Enter Your Mobile</label>
-        <input name="" class="form-control" placeholder="Mobile" type="email" style="border-radius:30px; border-color:#13C571">
+     <div class="form-group mt-5">
+    	<label>Enter Your Email</label>
+        <input name="" class="form-control" placeholder="Email" type="email" style="border-radius:30px; border-color:#13C571">
     </div> <!-- form-group// -->
+    <div class="row ">
+                    <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Enter Your Fullname</label>
+        <input name="" class="form-control" placeholder="Name" type="email" style="border-radius:30px; border-color:#13C571">
+                           <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+                        </div>
+                    </div>
+                   <div class="col-md-6">
+                        <div class="form-group">
+                        <label>Enter Your Mobile</label>
+        <input name="" class="form-control" placeholder="Mobile" type="email" style="border-radius:30px; border-color:#13C571">
+                           <div class="invalid-feedback">
+                Valid mobile is required.
+              </div>
+                                                            </div>
+                    </div>
+                </div>
+   
+
     <div class="form-group">
     	
     	<label>Enter Your password</label>
         <input class="form-control" placeholder="******" type="password" style="border-radius:30px; border-color:#13C571">
-     
-    <a class="float-right" style="color:#13C571;" href="#">Forgot Password</a>
-  
-</div> <!-- form-group// --> 
-   
+    </div> <!-- form-group// --> 
+    <div class="form-group">
+    	
+    	<label>Enter Your Confirm password</label>
+        <input class="form-control" placeholder="******" type="password" style="border-radius:30px; border-color:#13C571">
+    </div> <!-- form-group// --> 
     
-    <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;"   type="submit">Sign in</button>
+   
+   
+    <center><button class=" mb-2 btn btn-lg  text-white mt-3"  style="background-color:#13C571;border-radius:30px;width:40%;"   type="submit">Signup</button>
                     
-                    </center>                                                             
+               </center>                                                   
 </form>
 </article>
 </div> 

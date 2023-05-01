@@ -137,32 +137,24 @@ input[type=number] {
             <div class="col-md-7 ps-0" >
                     <div class="h-100 p-5 ">
                         <img  class="img-fluid" 
-                            src="../assets/images/Frame.png">
+                            src="../assets/images/Forgot.png">
                     </div>
                 </div>
                 <div class="col-md-5 pe-0">
                 <div class="card  border p-4">
 <article class="card-body">
 
-<a href="" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign Up</a>
+<a href="" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign in</a>
 <p>Welcome to Cellnow</p>
-<h2 class="card-title mb-4 mt-1">Sign in</h2>
+<h2 class="card-title mb-4 mt-1">Forgot Password</h2>
 	 <form>
     <div class="form-group mt-5">
     	<label>Enter Your Mobile</label>
         <input name="" class="form-control" placeholder="Mobile" type="email" style="border-radius:30px; border-color:#13C571">
     </div> <!-- form-group// -->
-    <div class="form-group">
-    	
-    	<label>Enter Your password</label>
-        <input class="form-control" placeholder="******" type="password" style="border-radius:30px; border-color:#13C571">
-     
-    <a class="float-right" style="color:#13C571;" href="#">Forgot Password</a>
-  
-</div> <!-- form-group// --> 
    
     
-    <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;"   type="submit">Sign in</button>
+    <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;"   type="submit">Forgot</button>
                     
                     </center>                                                             
 </form>

@@ -27,4 +27,12 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('front/login');
 	}
+	public function signup()
+	{
+		$this->load->view('front/signup');
+	}
+	public function forgotpassword()
+	{
+		$this->load->view('front/forgotpassword');
+	}
 }
