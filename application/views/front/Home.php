@@ -108,13 +108,13 @@
   <div id="banner" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
     <div class="carousel-item active">
-      <img class="d-block w-100" src="<?php echo base_url();?>images/banner.png" alt="First slide">
+      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url();?>images/banner.png" alt="Second slide">
+      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="Second slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url();?>images/banner.png" alt="Third slide">
+      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="Third slide">
     </div>
   </div>
   <a class="carousel-control-prev" href="#banner" role="button" data-slide="prev">
@@ -161,28 +161,28 @@
   <div class="row">
     <div class="col-md-2  col-sm-6">
   <button class="button">
-<img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/menu1.png" alt=""> &nbsp &nbsp All
+<img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt=""> &nbsp &nbsp All
 </button>
     </div>
     <div class="col-md-3 col-sm-6">
   <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>images/reusable1.png" alt="">Reusable parts and Product
+  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/reusable1.png" alt="">Reusable parts and Product
 </button>
     </div>
     <div class="col-md-3 col-sm-6">
   <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>images/home1.png" alt="">  &nbsp Tuitions/Classes
+  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/home1.png" alt="">  &nbsp Tuitions/Classes
 </button>
     </div>
 <div class="col-md-2  col-sm-6">
   <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>images/work1.png" alt="">   Part-time Jobs 
+  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/work1.png" alt="">   Part-time Jobs 
  
 </button>
     </div>
     <div class="col-md-2 col-sm-6">
   <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>images/employee1.png" alt=""> &nbsp  Internships 
+  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/employee1.png" alt=""> &nbsp  Internships 
  </button>
     </div>
 </div>
@@ -196,7 +196,7 @@
 <div class="row">
           <div class="col-lg-1 col-md-4  col-sm-6 ">
          <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/menu1.png" alt="">
+         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt="">
         
          </button>
          <p class="description">All</p>
@@ -204,7 +204,7 @@
 
           <div class="col-lg-1 col-md-4 col-sm-6 ">
          <button class="button1 button5">
-         <img class="rounded-pill me-1"width="20" height="20" src="<?php echo base_url();?>images/Vector (1).png" alt="">
+         <img class="rounded-pill me-1"width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (1).png" alt="">
          
          </button>
          <p class="description">Tours</p>
@@ -213,7 +213,7 @@
           
           <div class="col-lg-1 col-md-4  col-sm-6">
          <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/Vector (4).png" alt="">
+         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (4).png" alt="">
          
          </button>
          <p class="description">Pets</p>
@@ -222,7 +222,7 @@
           
           <div class="col-lg-1 col-md-4  col-sm-6 ">
          <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/Vector (4).png" alt="">
+         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (4).png" alt="">
  </button>
         
          <p class="description">Apparels</p>
@@ -231,7 +231,7 @@
           
           <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/Vector (3).png" alt="">
+         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (3).png" alt="">
        
          </button>
          <p class="description">Books & Magazines</p>
@@ -240,7 +240,7 @@
           
           <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/vector3.png" alt="">
+         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/vector3.png" alt="">
        
          </button>
          <p class="description">Dairy Products</p>
@@ -249,7 +249,7 @@
           
           <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
-      <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/vectorr.png" alt="">
+      <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/vectorr.png" alt="">
         
          </button>
          <p class="description">Decoratie Items</p>
@@ -258,7 +258,7 @@
           
           <div class="col-lg-1 col-md-4  col-sm-6 ">
          <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/Vector (5).png" alt="">
+         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (5).png" alt="">
        
          </button>
          <p class="description">Electronics</p>
@@ -267,7 +267,7 @@
            
           <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/Vector (6).png" alt="">
+         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (6).png" alt="">
        
          </button>
          <p class="description">Fruits & Vegetables</p>
@@ -278,7 +278,7 @@
            
           <div class="col-lg-2 col-md-4   col-sm-6 ">
          <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>images/Vector (7).png" alt="">
+         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (7).png" alt="">
       
          </button>
          <p class="description">Grocery Items</p>
@@ -294,7 +294,7 @@
                 <div class="carousel-item active">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
                            
                           </div>
                     </div>
@@ -302,12 +302,12 @@
                 <div class="carousel-item">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike2.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike3.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
@@ -316,21 +316,21 @@
                 <div class="carousel-item">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike2.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike3.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
@@ -411,7 +411,7 @@ $('.carousel .carousel-item').each(function(){
                 <div class="carousel-item active">
                     <div class="col-md-3">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/shop1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                             <h4 class="card-title">John Doe</h4>
                           </div>
                     </div>
@@ -419,17 +419,17 @@ $('.carousel .carousel-item').each(function(){
                 <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/shop1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/shop1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                         </div>
                     </div>
                     <div class="col-md-3">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/shop1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                         </div>
                     </div>
                     
@@ -439,28 +439,28 @@ $('.carousel .carousel-item').each(function(){
                 <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/shop1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/shop1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/shop1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="col-md-3">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/shop1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
@@ -545,7 +545,7 @@ $('.carousel .carousel-item').each(function(){
                 <div class="carousel-item active">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
                            
                           </div>
                     </div>
@@ -553,12 +553,12 @@ $('.carousel .carousel-item').each(function(){
                 <div class="carousel-item">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike2.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
                         </div>
                     </div>
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike3.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
                         </div>
                     </div>
                    
@@ -569,21 +569,21 @@ $('.carousel .carousel-item').each(function(){
                 <div class="carousel-item">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike1.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike2.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
                 <div class="carousel-item">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>images/bike3.png" alt="Second slide">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
                         </div>
                     </div>
                 </div>
@@ -631,7 +631,7 @@ $('.carousel .carousel-item').each(function(){
 <div class="container mt-5">
   <div class="row">
     <div class="col-12">
-    <img class="img-fluid" src="<?php echo base_url();?>images/carbanner2.png" alt="Second slide">
+    <img class="img-fluid" src="<?php echo base_url();?>assets/images/carbanner2.png" alt="Second slide">
     </div>
   </div>
 </div>
@@ -658,7 +658,7 @@ $('.carousel .carousel-item').each(function(){
 <div class="container mt-5">
   <div class="row">
     <div class="col-12">
-    <img class="img-fluid" src="<?php echo base_url();?>images/carbanner.png" alt="Second slide">
+    <img class="img-fluid" src="<?php echo base_url();?>assets/images/carbanner.png" alt="Second slide">
     </div>
   </div>
 </div>
@@ -682,7 +682,7 @@ $('.carousel .carousel-item').each(function(){
 <div class="container">
     <div class="row">
         <div class="col-3">
-        <img class="img-fluid" src="<?php echo base_url();?>images/mathewpal.png" alt="Second slide">
+        <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
 
         </div>
         <div class="col-5 mt-3">
