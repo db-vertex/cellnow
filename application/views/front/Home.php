@@ -276,7 +276,7 @@
 
 
            
-          <div class="col-lg-2 col-md-4   col-sm-6 ">
+          <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (7).png" alt="">
       
@@ -285,95 +285,6 @@
           </div>
          </div>
         </div>
-
-
-        <div class="container text-center my-3">
-    <div class="row mx-auto my-auto">
-        <div id="bike" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
-                           
-                          </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-
-                
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-               
-            </div>
-            <a class="carousel-control-prev w-auto" href="#bike" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#bike" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-   
-</div>
-
-
-<script>
-$('#bike').carousel({
-  interval: 10000
-})
-
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
-        
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
-</script>
-
 
 
 
@@ -404,17 +315,27 @@ $('.carousel .carousel-item').each(function(){
   </div>
 </div>
 
-<div class="container-fluid text-center my-3">
+<div class="container text-center my-3">
     <div class="row mx-auto my-auto">
         <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
             <div class="carousel-inner w-100" role="listbox">
                 <div class="carousel-item active">
                     <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
+                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
                             <h4 class="card-title">John Doe</h4>
-                          </div>
-                    </div>
+                         </div>
+                         <div class="col-md-3">
+                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
+                            <h4 class="card-title">John Doe</h4>
+                         </div>
+                         <div class="col-md-3">
+                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
+                            <h4 class="card-title">John Doe</h4>
+                         </div>
+                         <div class="col-md-3">
+                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
+                            <h4 class="card-title">John Doe</h4>
+                         </div>
                 </div>
                 <div class="carousel-item">
                     <div class="col-md-3">
@@ -538,7 +459,7 @@ $('.carousel .carousel-item').each(function(){
 
                 
       
-      <div class="container-fluid text-center my-3">
+      <div class="container text-center my-3">
     <div class="row mx-auto my-auto">
         <div id="bike1" class="carousel slide w-100" data-ride="carousel">
             <div class="carousel-inner w-100" role="listbox">
@@ -679,7 +600,7 @@ $('.carousel .carousel-item').each(function(){
 
 
 
-<div class="container">
+<!-- <div class="container">
     <div class="row">
         <div class="col-3">
         <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
@@ -691,10 +612,109 @@ $('.carousel .carousel-item').each(function(){
 
         </div>
     </div>
+</div> -->
+
+
+ 
+<div class="container text-center my-3">
+    <div class="row mx-auto my-auto">
+        <div id="image1" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner w-100" role="listbox">
+                <div class="carousel-item active">
+                    <div class="col-md-4">
+                      <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="col-md-4">
+                    <p style="color: #000000; font-weight:bolder">Matthew Paul</p>
+                  <p>Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
+
+                    </div>
+                    <div class="col-md-4">
+                       
+                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
+                        
+                    </div>
+                   
+                    
+                </div>
+
+                
+                <div class="carousel-item">
+                    <div class="col-md-4">
+                    
+                      <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
+                    </div>
+                    
+                </div>
+                <div class="carousel-item">
+                <p style="color: #000000; font-weight:bolder">Matthew Paul</p>
+                  <p>Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
+
+                </div>
+                <div class="carousel-item">
+                    <div class="col-md-4">
+                    <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
+                        
+                    </div>
+                </div>
+               
+            </div>
+            <a class="carousel-control-prev w-auto" href="#image1" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next w-auto" href="#image1" role="button" data-slide="next">
+                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        </div>
+    </div>
+   
 </div>
 
 
+<script>
+$('#bike1').carousel({
+  interval: 10000
+})
+
+$('.carousel .carousel-item').each(function(){
+    var minPerSlide = 3;
+    var next = $(this).next();
+    if (!next.length) {
+    next = $(this).siblings(':first');
+    }
+    next.children(':first-child').clone().appendTo($(this));
+    
+    for (var i=0;i<minPerSlide;i++) {
+        next=next.next();
+        if (!next.length) {
+        	next = $(this).siblings(':first');
+      	}
+        
+        next.children(':first-child').clone().appendTo($(this));
+      }
+});
+</script>
 
 
+
+  <!-- <div class="container">
+<div class="application-examples-item-iframe-container browser-frame">
+                    <div class="application-examples-item-iframe-wrapper">
+                        <iframe class="application-examples-item-iframe" data-src="https://elfsight.com/examples?widget_id=3b5f67c4-ee86-4dfd-93d6-effee6c27fa6" width="100%" allow="autoplay; fullscreen" src="https://elfsight.com/examples?widget_id=3b5f67c4-ee86-4dfd-93d6-effee6c27fa6" id="iFrameResizer1" scrolling="no" style="overflow: hidden; height: 544px;"></iframe>
+                    </div>
+                    
+                    <div class="application-examples-item-loader"></div>
+                </div>
+                </div> -->
+
+
+
+
+
+                
 </body>
 </html>
