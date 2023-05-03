@@ -1,184 +1,73 @@
-<!DOCTYPE html>
-<html lang="en">
-<script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
-<!------ Include the above in your HEAD tag ---------->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
-
-<head>
-   <style>
-    .bd-placeholder-img {
-        font-size: 1.125rem;
-        text-anchor: middle;
-        -webkit-user-select: none;
-        -moz-user-select: none;
-        user-select: none;
+<style>
+     html,
+    body {
+        overflow-x: hidden;
     }
 
-    @media (min-width: 768px) {
-        .bd-placeholder-img-lg {
-            font-size: 3.5rem;
+      .border {
+            border: 1px solid #13C571 !important;
+            border-radius: 30px;
         }
-    }
-.alert-dan {
-    color: #721c24;
-   background-color: lightpink;
-    /* border-color: #f5c6cb; */
-}
-    .b-example-divider {
-        height: 3rem;
-        background-color: rgba(0, 0, 0, .1);
-        border: solid rgba(0, 0, 0, .15);
-        border-width: 1px 0;
-        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
-    }
+        </style>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center">
+      <div class="col-md-9 col-lg-6 col-xl-5 p-3">
+      <img class="img-fluid" src="../assets/images/Frame.png">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-3 border">
+      <div class="row mt-5">
+                                <div class="col">
+                                    <p class="lead fw-normal mb-0 me-3">Welcome to <a href="" style="color:#13C571;">Celnow </a></p>
+                                    <h2 class="card-title mb-3 ">Sign Up</h2>
 
-    .b-example-vr {
-        flex-shrink: 0;
-        width: 1.5rem;
-        height: 100vh;
-    }
+                                </div>
 
-    .bi {
-        vertical-align: -.125em;
-        fill: currentColor;
-    }
+                                <div class="col ml-4">
+                                    <a href="" style="color:lightgrey;">Have an Account?</a><br>
+                                    <a href="" style="color:#13C571;" class="">Sign in</a>
+                                </div>
+                            </div>
+        <form>
+        
+        
 
-    .nav-scroller {
-        position: relative;
-        z-index: 2;
-        height: 2.75rem;
-        overflow-y: hidden;
-    }
-    
-     .inp-icon {
-        box-sizing: border-box;
-        width: 250px;
-        background-image: url('https://dbvertex.com/classified/assets/images/Group 483.png');
-        background-size: 20px;
-        background-repeat: no-repeat;
-        border-radius: 1px;
-        padding-left: 5px;
-    }
+          <!-- Email input -->
+          <div class="form-outline mb-4">
+          <label class="form-label">Enter Your Email</label>
+                                    <input name="" class="form-control form-control-lg" placeholder="Email" type="email"
+                                        style="border-radius:30px; border-color:#13C571">
+          </div>
 
-    .nav-scroller .nav {
-        display: flex;
-        flex-wrap: nowrap;
-        padding-bottom: 1rem;
-        margin-top: -1px;
-        overflow-x: auto;
-        text-align: center;
-        white-space: nowrap;
-        -webkit-overflow-scrolling: touch;
-    }
+          <!-- Password input -->
+          <div class="form-outline mb-3">
+          <label class="form-label">Enter Your Password</label>
+                                    <input name="" class="form-control form-control-lg" placeholder="Password" type="email"
+                                        style="border-radius:30px; border-color:#13C571">
+          </div>
 
-    *:focus {
-        outline: none;
-    }
-
-    input {
-        border-top-style: hidden;
-        border-right-style: hidden;
-        border-left-style: hidden;
-        border-bottom-style: groove;
-    }
-
-    #invalid_{
-      color: red;
-    }
-  
-input:focus, input.form-control:focus {
-    outline:none !important;
-    outline-width: 0 !important;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-  
-    }
-    input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
-
-.border{
-    border: 1px solid #13C571!important;
-    border-radius: 30px;
-}
-
-  </style>
-</head>
-<script>
-  function checkUserName() {
-        var userNames = document.getElementById("verify").value;
-        var SubBtn=document.getElementById("demo");
-        if(userNames.length  >= 4){
-          SubBtn.disabled=false;
-        }else{
-          SubBtn.disabled=true;
-        }
-    }
-    </script>
-<body>
-    <main>
-        <div class="container py-4" style="margin-top:100px">
-
-            <div class="row align-items-md-stretch" style="min-height:90%;">
-            <div class="col-md-7 ps-0" >
-                    <div class="h-100 p-5 ">
-                        <img  class="img-fluid" 
-                            src="../assets/images/Frame.png">
-                    </div>
-                </div>
-                <div class="col-md-5 pe-0">
-                <div class="card  border p-4">
-<article class="card-body">
-
-<a href="" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign Up</a>
-<p>Welcome to Cellnow</p>
-<h2 class="card-title mb-4 mt-1">Sign in</h2>
-	 <form>
-    <div class="form-group mt-5">
-    	<label>Enter Your Mobile</label>
-        <input name="" class="form-control" placeholder="Mobile" type="email" style="border-radius:30px; border-color:#13C571">
-    </div> <!-- form-group// -->
-    <div class="form-group">
-    	
-    	<label>Enter Your password</label>
-        <input class="form-control" placeholder="******" type="password" style="border-radius:30px; border-color:#13C571">
-     
-    <a class="float-right" style="color:#13C571;" href="#">Forgot Password</a>
-  
-</div> <!-- form-group// --> 
-   
-    
-    <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;"   type="submit">Sign in</button>
-                    
-                    </center>                                                             
-</form>
-</article>
-</div> 
-
-
-                </div>
+          <div class="d-flex justify-content-between align-items-center">
+            <!-- Checkbox -->
+            <div class="form-check mb-0">
               
+             
             </div>
+            <a href="#!" class="text-body">Forgot password?</a>
+          </div>
 
+          <div class="text-center text-lg-start mt-4 pt-2">
+          <center><button class=" mb-2 btn btn-lg  text-white mt-3"
+                                        style="background-color:#13C571;border-radius:30px;width:40%;"
+                                        type="submit">Signup</button>
 
-        </div>
-    </main>
-   
+                                </center>
+          </div>
 
-</body>
-
-</html>
+        </form>
+      </div>
+    </div>
+  </div>
+  
+</section>

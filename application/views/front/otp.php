@@ -140,7 +140,7 @@
             <div class="row " style="min-height:90%;">
                 <div class="col-md-6 col-sm-12 ps-0">
                     <div class="h-100 p-5 ">
-                        <img class="img-fluid" src="../assets/images/signup.png">
+                        <img class="img-fluid" src="../assets/images/otp.png">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 pe-0">
@@ -149,7 +149,7 @@
                             <div class="row">
                                 <div class="col">
                                     <p>Welcome to <a href="" style="color:#13C571;">Celnow </a></p>
-                                    <h2 class="card-title mb-3 ">Sign Up</h2>
+                                    <h2 class="card-title mb-3 ">Otp</h2>
 
                                 </div>
 
@@ -158,54 +158,19 @@
                                     <a href="" style="color:#13C571;" class="">Sign in</a>
                                 </div>
                             </div>
-                            <form action="signup" method="post">
-                                <div class="form-group ">
-                                    <label>Enter Your Email</label>
-                                    <input name="email" class="form-control" placeholder="Email" type="text"
+                            <form>
+                                <div class="form-group mt-2">
+                                    <label>Enter Your Otp</label>
+                                    <input name="" class="form-control" placeholder="Otp" type="email"
                                         style="border-radius:30px; border-color:#13C571">
-                                        <span style="color:red;"><?php echo form_error('email'); ?></span>
+                                       
                                 </div> <!-- form-group// -->
-                                <div class="row ">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label> Fullname</label>
-                                            <input name="name" class="form-control" placeholder="Name" type="text"
-                                                style="border-radius:30px; border-color:#13C571">
-                                                <span style="color:red;"> <?php echo form_error('name'); ?></span>
-                                            
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label> Mobile</label>
-                                            <input name="phone" class="form-control" placeholder="Mobile" type="number"
-                                                maxlength="10" style="border-radius:30px; border-color:#13C571">
-                                                <span style="color:red;"> <?php echo form_error('phone'); ?></span>
-                                        </div>
-                                    </div>
-                                </div>
+                                
+<center> <a href="#!" class="text-body">Resend otp</a></center>
 
-
-                                <div class="form-group">
-
-                                    <label> password</label>
-                                    <input name="password" class="form-control" placeholder="******" type="password"
-                                        style="border-radius:30px; border-color:#13C571">
-                                        <span style="color:red;"><?php  echo form_error('password'); ?></span>
-                                </div> <!-- form-group// -->
-                                <div class="form-group">
-
-                                    <label> Confirm password</label>
-                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password"
-                                        style="border-radius:30px; border-color:#13C571">
-                                        <span style="color:red;"> <?php echo form_error('confirmpassword'); ?></span>
-                                </div> <!-- form-group// -->
-
-
-
-                                <center><button class=" mb-2 btn btn-lg  text-white mt-2"
+                                <center><button class=" mb-3 btn btn-lg  text-white mt-3"
                                         style="background-color:#13C571;border-radius:30px;width:40%;"
-                                        type="submit" name="submit">Signup</button>
+                                        type="submit">Send</button>
 
                                 </center>
                             </form>
