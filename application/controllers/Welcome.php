@@ -18,6 +18,16 @@ class Welcome extends CI_Controller {
 	 * map to /index.php/welcome/<method_name>
 	 * @see https://codeigniter.com/userguide3/general/urls.html
 	 */
+
+	 public function __construct() { 
+        parent::__construct();
+		
+		//load user model
+         $this->load->helper('url');
+
+        
+    }
+
 	public function index()
 	{
 		$this->load->view('welcome_message');
@@ -34,5 +44,9 @@ class Welcome extends CI_Controller {
 	public function forgotpassword()
 	{
 		$this->load->view('front/forgotpassword');
+	}
+	public function fillter_product()
+	{
+		$this->load->view('front/fillter');
 	}
 }
