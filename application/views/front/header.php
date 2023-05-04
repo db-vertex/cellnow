@@ -71,8 +71,21 @@
         </li> -->
      </ul>
      <?php  if(!empty($user)){
+      $profile = get_seller_profile($user['user_id']);
    ?>
-           <a class="btnSweetalert" href="<?php echo base_url();?>welcome/logout" style="color:#10B981;font-weight:600;">Logout</a>
+    <div class="nav-item dropdown" style="padding-right:20px";>
+   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;">
+   <?php echo ucfirst($profile->name);?> 
+          </a>
+   <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">My profile</a></li>
+            <li><a class="dropdown-item" href="#">My Ads</a></li>
+            <?php if($profile->login_type == 'normal'){ ?>
+              <li> <a class="dropdown-item" href="<?php echo base_url();?>welcome/changepassword" class="">Change Password</a></li>
+                        <?php } ?>
+            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/logout">logout</a></li>
+          </ul>
+     </div>
          <?php  }
           else{ ?>
          

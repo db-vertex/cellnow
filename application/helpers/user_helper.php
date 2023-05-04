@@ -175,7 +175,7 @@ function get_seller_profile($user_id)
        $ci =& get_instance();
   //load databse library
        $ci->load->database();
-$query="SELECT * FROM seller_profile WHERE user_id=".$user_id;
+$query="SELECT * FROM users WHERE user_id=".$user_id;
 
   $category_data = $ci->db->query($query);        
   if($category_data-> num_rows()>0)
