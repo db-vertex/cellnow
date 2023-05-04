@@ -75,10 +75,9 @@ $query_builder = TRUE;
 
 $db['default'] = array(
 	'dsn'	=> '',
-	'hostname' => '127.0.0.1:3306
-	',
-	'username' => 'root',
-	'password' => '',
+	'hostname' => 'localhost',
+	'username' => 'admin_dbvertex',
+	'password' => '123456',
 	'database' => 'Celnow',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
