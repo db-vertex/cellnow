@@ -382,8 +382,81 @@ class Welcome extends CI_Controller {
 	}
 	public function fillter_product()
 	{
+		$this->load->view('front/header');
 		$this->load->view('front/fillter');
+		$this->load->view('front/footer');
 	}
 
-/// hello    
+
+	public function sellerprofile()
+	{
+		$this->load->view('front/header');
+		$this->load->view('front/sellerprofile');
+		$this->load->view('front/footer');
+	}
+
+	public function myprofile()
+	{
+		$session_id = $this->session->userdata('id');
+      
+       if($session_id)
+       {
+		//$myproduct = $this->product_model->myproduct($session_id);
+
+		 $user_detail = $this->user->loginuser($session_id);
+   
+    $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    $this->output->set_header('Pragma: no-cache');
+		$this->load->view('front/header',['user'=>$user_detail]);
+		$this->load->view('front/sellerprofile',['user'=>$user_detail]);
+		$this->load->view('front/footer');
+       
+       }else{
+        
+            return redirect('welcome');
+       }
+
+
+	}
+
+	public function updatesellerreg()
+  {
+//print_r($_POST);die();
+           $name=$this->input->post('name');
+	       $Address=$this->input->post('Address');
+	       $user_id=$this->input->post('user_id');
+	      
+         $email=$this->input->post('email');
+$phone=$this->input->post('phone');
+$aboutus=$this->input->post('aboutus');
+         $seller = check_seller_profile($user_id);
+
+
+	        $userData['name'] = $name;
+	         $userData['Address'] = $Address;
+            //$userData['user_id'] = $user_id;
+           
+      $userData['phone'] = $phone;
+      $userData['aboutus'] = $aboutus;
+       $userData['email'] = $email;
+        
+       $this->user->update($userData,$user_id);
+
+            
+
+      
+                $userData['modified'] = date("Y-m-d H:i:s");
+
+      
+         $this->session->set_flashdata('regester_success','Seller profile Updated successfully');
+           
+           return redirect('welcome/myprofile');
+  
+  }
+
+  
+
+  
 }
