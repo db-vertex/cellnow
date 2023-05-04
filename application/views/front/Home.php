@@ -5,15 +5,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
      
+
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    
+     <style>
 
-    <style>
 .button {
   background-color:white;
   border: #888B97;
@@ -29,10 +35,6 @@
   font-weight: bold;
   
 }
-
-/* .button:hover {
-  background-color:#888B97;
-} */
 
 
 
@@ -54,6 +56,8 @@
 .button1:hover {
   background-color:#888B97;
 }
+
+
 
 
 @media (max-width: 768px) {
@@ -92,42 +96,177 @@
 
 
 
+/* slider shops */
+.slide-container {
+  margin: 0 30px;
+  overflow: hidden;
+}
+.card {
+  background: #fff;
+  border-radius: 8px;
+}
+.card .image-box {
+  height: 200px;
+}
+.card .image-box img {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px 8px 0 0;
+}
+.card .profile-details {
+  display: flex;
+  align-items: center;
+  column-gap: 12px;
+  padding: 15px;
+}
+.card .profile-details img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+}
+.profile-details .name {
+  font-size: 15px;
+  font-weight: 500;
+}
+.profile-details .job {
+  font-size: 12px;
+  font-weight: 500;
+  color: #4d4d4d;
+}
+
+.swiper-navBtn {
+  color: #000;
+  height: 40px;
+  width: 40px;
+  background: #fff;
+  border-radius: 50%;
+}
+.swiper-navBtn::before,
+.swiper-navBtn::after {
+  font-size: 18px;
+}
+
+.swiper-pagination-bullet {
+  background-color: #000;
+}
+
+@media screen and (max-width: 768px) {
+  .swiper-navBtn {
+    display: none;
+  }
+}
 
 
-</style>
+/* search btn */
+.search_wrap{
+	width: 500px;
+	margin: 38px auto;
+}
+
+.search_wrap .search_box{
+	position: relative;
+	width: 500px;
+	height: 60px;
+}
+
+.search_wrap .search_box .input{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	padding: 10px 20px;
+	border-radius: 3px;
+	font-size: 18px;
+}
+
+.search_wrap .search_box .btn{
+	position: absolute;
+	top: 0;
+	right: 0;
+	width: 60px;
+	height: 80%;
+	background: #10B981;
+	z-index: 1;
+	cursor: pointer;
+}
+.search_wrap .search_box .btn.btn_common .fas{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+	font-size: 20px;
+}
+
+.search_wrap.search_wrap_6 .search_box .input{
+	border-radius: 50px;
+}
+
+.search_wrap.search_wrap_6 .search_box .btn{
+	width: 125px;
+	height: 50px;
+	top: 4px;
+	right: 5px;
+	border-radius: 3px;
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.search_wrap.search_wrap_6 .search_box .btn{
+	border-radius: 25px;
+}
+
+.search_wrap.search_wrap_6 .search_box .input{
+	padding-right: 145px;
+}
+
+/* search btn  close */
+
+</style> 
     
-
-
-
-
   </head>
   <body>
 
-    <!-- header sectioon slider -->
-   <div class="container">
-  <div id="banner" class="carousel slide" data-ride="carousel">
-  <div class="carousel-inner">
+
+
+<!-- header baner slider -->
+<div class="container">
+<div id="carouselExampleControls" class="carousel slide" data-ride="carousel"  id="banner">
+  <div class="carousel-inner" >
     <div class="carousel-item active">
       <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="Second slide">
+      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="First slide">
     </div>
     <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="Third slide">
+      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="First slide">
     </div>
   </div>
-  <a class="carousel-control-prev" href="#banner" role="button" data-slide="prev">
+  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="sr-only">Previous</span>
   </a>
-  <a class="carousel-control-next" href="#banner" role="button" data-slide="next">
+  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="sr-only">Next</span>
   </a>
 </div>
 </div>
-<!-- header -->
+
+<!-- banner -->
+
+
+
+
+
+
+
+
+
 
 
 
@@ -137,28 +276,51 @@
     </div>
    </div>
 
+
+
+   <!-- search bar -->
+
    <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <p style="font-size:30px" >Featured</p>
+      <div class="col-md-6 col-sm-6  mt-3">
+        <p style="font-size:30px;color:#1B1C57;"> Featured </p>
       </div>
-      <div class="col-md-4">
-      <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="rounded my-2 my-sm-0" type="submit">Search</button>
-    </form>
+      <div class="col-md-6 col-sm-6">
+      <div class="search_wrap search_wrap_6"  id="abc">
+			<div class="search_box">
+          <i class='fas fa-map-marker-alt'>
+				<input type="text" class="input" placeholder="Search for the Product you want!">
+				<div class="btn">
+					<p>Search</p>
+					</div>
+        </div>
+  </div>
+ </div>
+ </div>
 
-    
-      </div>
-</div>
-   </div>
 
-
+ 
 
   
+ <div class="row justify-content-end">
+    <div class="col-md-4">
+    <div class="input-group">
+  <input type="search" class="form-control rounded" placeholder="Search" aria-label="Search" aria-describedby="search-addon" />
+  <button type="button" class="btn btn-outline-primary">search</button>
+</div>
+    </div>
+    
+    
+    </div>
 
-<div class="container">
-  <div class="row">
+
+
+
+
+ 
+
+<div class="container ">
+  <div class="row text-center">
     <div class="col-md-2  col-sm-6">
   <button class="button">
 <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt=""> &nbsp &nbsp All
@@ -192,20 +354,21 @@
 
 
 
+
+
+
 <div class="container mt-3">
-<div class="row">
+<div class="row text-center">
           <div class="col-lg-1 col-md-4  col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt="">
-        
          </button>
          <p class="description">All</p>
-          </div>
+         </div>
 
           <div class="col-lg-1 col-md-4 col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1"width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (1).png" alt="">
-         
          </button>
          <p class="description">Tours</p>
           </div>
@@ -214,35 +377,31 @@
           <div class="col-lg-1 col-md-4  col-sm-6">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (4).png" alt="">
-         
          </button>
          <p class="description">Pets</p>
           </div>
 
           
-          <div class="col-lg-1 col-md-4  col-sm-6 ">
+          <div class="col-lg-2 col-md-4  col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (4).png" alt="">
- </button>
-        
-         <p class="description">Apparels</p>
+         </button>
+        <p class="description">Apparels</p>
           </div>
 
           
-          <div class="col-lg-1 col-md-4   col-sm-6 ">
+          <div class="col-lg-2 col-md-4   col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (3).png" alt="">
-       
-         </button>
+        </button>
          <p class="description">Books & Magazines</p>
           </div>
-
+            
           
           <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/vector3.png" alt="">
-       
-         </button>
+       </button>
          <p class="description">Dairy Products</p>
           </div>
 
@@ -250,7 +409,6 @@
           <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
       <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/vectorr.png" alt="">
-        
          </button>
          <p class="description">Decoratie Items</p>
           </div>
@@ -259,8 +417,7 @@
           <div class="col-lg-1 col-md-4  col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (5).png" alt="">
-       
-         </button>
+       </button>
          <p class="description">Electronics</p>
           </div>
 
@@ -268,15 +425,14 @@
           <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (6).png" alt="">
-       
-         </button>
+        </button>
          <p class="description">Fruits & Vegetables</p>
           </div>
 
 
 
            
-          <div class="col-lg-1 col-md-4   col-sm-6 ">
+        <div class="col-lg-1 col-md-4   col-sm-6 ">
          <button class="button1 button5">
          <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (7).png" alt="">
       
@@ -285,7 +441,7 @@
           </div>
          </div>
         </div>
-
+ 
 
 
 <div class="container mt-3">
@@ -315,82 +471,122 @@
   </div>
 </div>
 
+            
+      
 <div class="container text-center my-3">
     <div class="row mx-auto my-auto">
-        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
+        <div id="shop" class="carousel slide w-100" data-ride="carousel">
+            <div class="carousel-inner w-100" role="listbox" id="ab">
                 <div class="carousel-item active">
-                    <div class="col-md-3">
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                            <h4 class="card-title">John Doe</h4>
-                         </div>
-                         <div class="col-md-3">
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                            <h4 class="card-title">John Doe</h4>
-                         </div>
-                         <div class="col-md-3">
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                            <h4 class="card-title">John Doe</h4>
-                         </div>
-                         <div class="col-md-3">
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                            <h4 class="card-title">John Doe</h4>
-                         </div>
+                    <div class="col-md-4">
+                        <div class="card card-body">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
+                            <div class="profile-details">
+              <img src="<?php echo base_url();?>assets/images/profile/profile1.jpg" alt="" />
+              <div class="name-job">
+                <p style="color:#3C4563">$ 35.000.000</p>
+                <h3 class="name">Ranu Russell</h3>
+                <h4 class="job">India</h4>
+              </div>
+            </div>
                 </div>
+                          
+                </div>
+                </div>
+
+                
                 <div class="carousel-item">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
+                            <div class="profile-details">
+              <img src="<?php echo base_url();?>assets/images/profile/profile1.jpg" alt="" />
+              <div class="name-job">
+                <p style="color:#3C4563">$ 35.000.000</p>
+                <h3 class="name">Ranu Russell</h3>
+                <h4 class="job">India</h4>
+              </div>
+            </div>
+              </div>
+            </div>
+                    <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
+                            <div class="profile-details">
+              <img src="<?php echo base_url();?>assets/images/profile/profile1.jpg" alt="" />
+              <div class="name-job">
+                <p style="color:#3C4563">$ 35.000.000</p>
+                <h3 class="name">Ranu Russell</h3>
+                <h4 class="job">India</h4>
+              </div>
+            </div>
+                     
+                     
+                          </div>
                     </div>
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
+                   
                     
                 </div>
 
                 
                 <div class="carousel-item">
-                    <div class="col-md-3">
+                    <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
+                            <div class="profile-details">
+              <img src="<?php echo base_url();?>assets/images/profile/profile1.jpg" alt="" />
+              <div class="name-job">
+                <p style="color:#3C4563">$ 35.000.000</p>
+                <h3 class="name">Ranu Russell</h3>
+                <h4 class="job">India</h4>
+              </div>
             </div>
-            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
+               </div>
+           </div>
+     </div>
+                <div class="carousel-item">
+                    <div class="col-md-4">
+                        <div class="card card-body">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
+                            <div class="profile-details">
+              <img src="<?php echo base_url();?>assets/images/profile/profile1.jpg" alt="" />
+              <div class="name-job">
+                <p style="color:#3C4563">$ 35.000.000</p>
+                <h3 class="name">Ranu Russell</h3>
+                <h4 class="job">India</h4>
+              </div>
+            </div>
+                      
+                      
+                          </div>
+                    </div>
+                </div>
+
+
+                <div class="carousel-item">
+                    <div class="col-md-4">
+                        <div class="card card-body">
+                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
+                            <div class="profile-details">
+              <img src="<?php echo base_url();?>assets/images/profile/profile1.jpg" alt="" />
+              <div class="name-job">
+                <p style="color:#3C4563">$ 35.000.000</p>
+                <h3 class="name">Ranu Russell</h3>
+                <h4 class="job">India</h4>
+              </div>
+            </div>
+                     
+                     
+                          </div>
+                    </div>
+                </div>
+               
+            </div>
+            <a class="carousel-control-prev w-auto" href="#shop" role="button" data-slide="prev">
                 <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
                 <span class="sr-only">Previous</span>
             </a>
-            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
+            <a class="carousel-control-next w-auto" href="#shop" role="button" data-slide="next">
                 <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
                 <span class="sr-only">Next</span>
             </a>
@@ -401,7 +597,7 @@
 
 
 <script>
-$('#recipeCarousel').carousel({
+$('#bike1').carousel({
   interval: 10000
 })
 
@@ -428,6 +624,9 @@ $('.carousel .carousel-item').each(function(){
 
 
 
+
+
+
 <div class="container mt-3">
   <div class="row">
     <div class="col-lg-6 col-md-12 col-sm-12">
@@ -445,7 +644,7 @@ $('.carousel .carousel-item').each(function(){
 </div>
 
 
-
+<!-- donate start -->
 <div class="container  mt-3">
   <div class="row">
     <div class="col-12">
@@ -713,6 +912,18 @@ $('.carousel .carousel-item').each(function(){
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+                
 
 
                 
