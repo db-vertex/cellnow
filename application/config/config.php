@@ -36,7 +36,7 @@ $config['base_url'] = 'http://localhost:8000';
 |
 */
 $config['index_page'] = 'index.php';
-
+//dsAFSytfdaytfd
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
