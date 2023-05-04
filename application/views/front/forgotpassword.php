@@ -147,14 +147,15 @@ input[type=number] {
 <a href="" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign in</a>
 <p>Welcome to Cellnow</p>
 <h2 class="card-title mb-4 mt-1">Forgot Password</h2>
-	 <form>
+	 <form action="<?php echo base_url();?>welcome/forgotpassword" method="post">
     <div class="form-group mt-5">
     	<label>Enter Your Mobile</label>
-        <input name="" class="form-control" placeholder="Mobile" type="email" style="border-radius:30px; border-color:#13C571">
+        <input name="phone" class="form-control" placeholder="Mobile" type="number" style="border-radius:30px; border-color:#13C571">
+        <span style="color:red;"> <?php echo form_error('phone'); ?></span>
     </div> <!-- form-group// -->
    
     
-    <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;"   type="submit">Forgot</button>
+    <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;" name="submit"  type="submit">Forgot</button>
                     
                     </center>                                                             
 </form>

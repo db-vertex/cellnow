@@ -158,19 +158,49 @@
                                     <a href="" style="color:#13C571;" class="">Sign in</a>
                                 </div>
                             </div>
-                            <form>
+                            <form action="<?php echo base_url();?>welcome/otp" method="post">
+                            <?php  if($error=$this->session->flashdata('OTP_failed')){  ?>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-danger ">
+                                    <?= $error; 
+
+                               unset($_SESSION['OTP_failed']);
+              ?>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php } ?>
+
+
+
+                        <?php  if($otpsent =$this->session->flashdata('otp_sent')){  ?>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-success">
+                                    <?= $otpsent; 
+                             
+                             unset($_SESSION['otp_sent']);
+              ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php } ?>
                                 <div class="form-group mt-2">
                                     <label>Enter Your Otp</label>
-                                    <input name="" class="form-control" placeholder="Otp" type="email"
+                                    <input name="otp" class="form-control" placeholder="Otp" type="text"
                                         style="border-radius:30px; border-color:#13C571">
-                                       
+                                        <span style="color:red;"><?php echo form_error('otp'); ?></span>
                                 </div> <!-- form-group// -->
                                 
 <center> <a href="#!" class="text-body">Resend otp</a></center>
 
                                 <center><button class=" mb-3 btn btn-lg  text-white mt-3"
                                         style="background-color:#13C571;border-radius:30px;width:40%;"
-                                        type="submit">Send</button>
+                                      name="submit"  type="submit">Send</button>
 
                                 </center>
                             </form>

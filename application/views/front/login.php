@@ -1,10 +1,7 @@
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <style>
-     html,
-    body {
-        overflow-x: hidden;
-    }
+    
 
       .border {
             border: 1px solid #13C571 !important;
@@ -30,22 +27,53 @@
                                     <a href="" style="color:#13C571;" class="">Sign in</a>
                                 </div>
                             </div>
-        <form>
+        <form action="<?php echo base_url();?>welcome/login" method="post">
         
-        
+        <?php  if($error=$this->session->flashdata('Login_failed')){  ?>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-danger ">
+                                    <?= $error; 
+
+                               unset($_SESSION['Login_failed']);
+              ?>
+
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php } ?>
+
+
+
+                        <?php  if($otpsent =$this->session->flashdata('otp_sent')){  ?>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-success">
+                                    <?= $otpsent; 
+                             
+                             unset($_SESSION['otp_sent']);
+              ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php } ?>
 
           <!-- Email input -->
           <div class="form-outline mb-4">
           <label class="form-label">Enter Your Email</label>
-                                    <input name="" class="form-control form-control-lg" placeholder="Email" type="email"
+                                    <input name="phone" class="form-control form-control-lg" placeholder="Email" type="number"
                                         style="border-radius:30px; border-color:#13C571">
+                                        <span style="color:red;"> <?php echo form_error('phone'); ?></span>
           </div>
 
           <!-- Password input -->
           <div class="form-outline mb-3">
           <label class="form-label">Enter Your Password</label>
-                                    <input name="" class="form-control form-control-lg" placeholder="Password" type="email"
+                                    <input name="password" class="form-control form-control-lg" placeholder="Password" type="password"
                                         style="border-radius:30px; border-color:#13C571">
+                                        <span style="color:red;"><?php  echo form_error('password'); ?></span>
           </div>
 
           <div class="d-flex justify-content-between align-items-center">
@@ -54,13 +82,13 @@
               
              
             </div>
-            <a href="#!" class="text-body">Forgot password?</a>
+            <a href="<?php echo base_url();?>welcome/forgotpassword" class="text-body">Forgot password?</a>
           </div>
 
           <div class="text-center text-lg-start mt-4 pt-2">
           <center><button class=" mb-2 btn btn-lg  text-white mt-3"
                                         style="background-color:#13C571;border-radius:30px;width:40%;"
-                                        type="submit">Signup</button>
+                                       name="submit" type="submit">Signup</button>
 
                                 </center>
           </div>

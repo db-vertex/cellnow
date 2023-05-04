@@ -161,7 +161,7 @@
                             <form action="signup" method="post">
                                 <div class="form-group ">
                                     <label>Enter Your Email</label>
-                                    <input name="email" class="form-control" placeholder="Email" type="text"
+                                    <input name="email" class="form-control" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php echo form_error('email'); ?></span>
                                 </div> <!-- form-group// -->
@@ -169,7 +169,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label> Fullname</label>
-                                            <input name="name" class="form-control" placeholder="Name" type="text"
+                                            <input name="name" class="form-control" placeholder="Name" type="text" value="<?php echo set_value('name'); ?>"
                                                 style="border-radius:30px; border-color:#13C571">
                                                 <span style="color:red;"> <?php echo form_error('name'); ?></span>
                                             
@@ -178,8 +178,8 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label> Mobile</label>
-                                            <input name="phone" class="form-control" placeholder="Mobile" type="number"
-                                                maxlength="10" style="border-radius:30px; border-color:#13C571">
+                                            <input name="phone" class="form-control" placeholder="Mobile" type="number" value="<?php echo set_value('phone'); ?>"
+                                                style="border-radius:30px; border-color:#13C571">
                                                 <span style="color:red;"> <?php echo form_error('phone'); ?></span>
                                         </div>
                                     </div>
@@ -189,14 +189,14 @@
                                 <div class="form-group">
 
                                     <label> password</label>
-                                    <input name="password" class="form-control" placeholder="******" type="password"
+                                    <input name="password" class="form-control" placeholder="******" type="password" value="<?php echo set_value('password'); ?>"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('password'); ?></span>
                                 </div> <!-- form-group// -->
                                 <div class="form-group">
 
                                     <label> Confirm password</label>
-                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password"
+                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password" value="<?php echo set_value('confirmpassword'); ?>"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"> <?php echo form_error('confirmpassword'); ?></span>
                                 </div> <!-- form-group// -->

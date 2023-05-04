@@ -24,36 +24,153 @@ class Welcome extends CI_Controller {
 		
 		//load user model
          $this->load->helper('url');
+		 $this->load->helper('user_helper');
+
+		 $this->load->model('user');
 		 $this->load->library('form_validation');
+		 $this->load->library('session');
 
         
     }
 
 	public function index()
 	{
-		$this->load->view('front/header');
+		$session_id = $this->session->userdata('id');
+		
+		 $user_detail = $this->user->loginuser($session_id);
+		
+		 if(!empty($user_detail)){
+		$this->load->view('front/header',['user'=>$user_detail]);
+		$this->load->view('front/Home',['user'=>$user_detail]);
+		$this->load->view('front/footer');
+		 }
+		 else{
+			$this->load->view('front/header');
 		$this->load->view('front/Home');
 		$this->load->view('front/footer');
+		 }
 	}
 
 	public function login()
 	{
-       
-		$this->load->view('front/header');
-        $this->load->view('front/login');
-		$this->load->view('front/footer');
+		$this->form_validation->set_rules('phone',' phone','required|min_length[10]|max_length[10]');
+		$this->form_validation->set_rules('password',' password','required|min_length[6]');
+		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
+
+		if ($this->form_validation->run()){
+			$phone = $this->input->post("phone");
+			$password =md5($this->input->post("password"));
+			if(is_user_exists($phone)){
+				$data["email"] = $this->input->post("email");
+				$data["password"] = md5($this->input->post("password"));
+				  $udata = $this->db->get_where("users", ["phone"=>$phone])->row();
+				
+				  $otp = $udata->OTP;
+				  if($password == $udata->password){
+				
+					if($udata->otp_verify == 0){
+
+						$size = 4;
+						$alpha_key = '';
+						$keys = range('0', '9');
+						for ($i = 0; $i < 4; $i++) {
+						  $alpha_key .= $keys[array_rand($keys)];
+						}
+			
+			
+						$randCode = $alpha_key;
+						/*$j=1;
+						if($j == 1){*/
+			
+						$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+						$messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+			
+						$apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+			
+						$numbers = array($phone);
+						$sender = urlencode('UPAHAD');
+						$message = rawurlencode($messages);
+			
+						$numbers = implode(',', $numbers);
+			
+						// Prepare data for POST request
+						$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+			
+						// Send the POST request with cURL
+						$ch = curl_init('https://api.textlocal.in/send/');
+						curl_setopt($ch, CURLOPT_POST, true);
+						curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						$response = curl_exec($ch);
+						//print_r($response);
+			
+						curl_close($ch);
+
+						$userData['phone'] = $phone;
+						$userData['OTP'] = $randCode;
+			
+						$update = $this->user->update($userData, $udata->user_id);
+						return redirect('welcome/otp');
+		
+				  }
+				  $this->session->set_userdata('id',$udata->user_id);
+				return redirect('welcome');
+				}
+				else{
+					$this->session->set_flashdata('Login_failed', 'Password wrong');
+				$this->session->set_flashdata('msg_class', 'alert-danger');
+	
+				$this->load->view('front/header', ['success' => true]);
+				$this->load->view('front/login', ['success' => true]);
+				$this->load->view('front/footer');
+				}
+				
+			}
+			else{
+				$this->session->set_flashdata('Login_failed', 'This number is not register');
+				$this->session->set_flashdata('msg_class', 'alert-danger');
+	
+				$this->load->view('front/header', ['success' => true]);
+				$this->load->view('front/login', ['success' => true]);
+				$this->load->view('front/footer');
+			}
+		}
+		else{
+			$this->load->view('front/header');
+			$this->load->view('front/login');
+			$this->load->view('front/footer');
+		}
+		
         
 		
 	}
+
+	public function logout()
+  {
+      $u_rec_id = $this->session->userdata('id');
+      
+        $data=array(
+                'social_id_token'=>''
+                        );
+                    $this->db->where('user_id',$u_rec_id);
+                    $this->db->update('users',$data); 
+       
+        
+     $id = $this->session->unset_userdata('id');
+  
+    
+    $this->session->set_flashdata('logut_success','You are succesfully loged out');
+    return redirect('welcome');
+  }
 	public function signup()
 	{
 		
 		
             $this->form_validation->set_rules('email',' email','required|valid_email|is_unique[users.email]');
 			$this->form_validation->set_rules('name',' name','required');
-			$this->form_validation->set_rules('phone',' phone','required');
+			$this->form_validation->set_rules('phone',' phone','required|min_length[10]|max_length[10]|is_unique[users.phone]');
            $this->form_validation->set_rules('password',' password','required|min_length[6]');
-		   $this->form_validation->set_rules('confirmpassword',' confirmpassword','required|min_length[6]matches[password]');
+		   $this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
             $this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
             if ($this->form_validation->run('login') == FALSE)
             {
@@ -63,38 +180,210 @@ class Welcome extends CI_Controller {
             }
             else
             {
-                $user_table = 'tbl_admin';
-                $where = array('email'=>  $this->input->post('user_email'),'password'=>  md5($this->input->post('user_password')));
-                $admin_details = $this->Login_model->get_record_where($user_table,$where);
 
-               // print_r($admin_details); die;
-                if($admin_details == FALSE){
-                    $data['error'] = 'Invalid Email or Password';
-                    $this->load->view('admin/login_view',$data);
-                } else {
-                    $this->session->set_userdata(array('user_id'=>$admin_details[0]->id,'user_email'=>$admin_details[0]->email)); 
-                    redirect('admin');
-                }
+				$name= $this->input->post('name');
+				
+			   $email =  $this->input->post('email');
+			   $password = $this->input->post('password');
+			   $confirm_password = $this->input->post('confirm_password');
+			   $phone = $this->input->post('phone');
+
+			   $size = 4;
+            $alpha_key = '';
+            $keys = range('0', '9');
+            for ($i = 0; $i < 4; $i++) {
+              $alpha_key .= $keys[array_rand($keys)];
+            }
+            $randCode = $alpha_key;
+            $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+
+            $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+
+            $numbers = array($phone);
+            $sender = urlencode('UPAHAD');
+            $message = rawurlencode($messages);
+
+            $numbers = implode(',', $numbers);
+
+            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+            // Send the POST request with cURL
+            $ch = curl_init('https://api.textlocal.in/send/');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            //print_r($response);
+
+            curl_close($ch);
+
+			   $post_data = array('name'=> $name, 'email'=>$email,'password'=> md5($password),'phone'=>$phone, 'OTP'=>$randCode ,'login_type'=>'normal');
+			   $this->db->insert('users',$post_data);
+
+               return redirect('welcome/otp');
             }
        
 	}
 	public function forgotpassword()
 	{
-		$this->load->view('front/header');
-		$this->load->view('front/forgotpassword');
-		$this->load->view('front/footer');
+
+		$this->form_validation->set_rules('phone',' phone','required|min_length[10]|max_length[10]');
+		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+		if($this->form_validation->run())
+		{
+			$phone = $this->input->post('phone');
+			$udata = $this->db->get_where("users", ["phone"=>$phone])->row();
+			if(is_user_exists($phone)){
+			$size = 4;
+            $alpha_key = '';
+            $keys = range('0', '9');
+            for ($i = 0; $i < 4; $i++) {
+              $alpha_key .= $keys[array_rand($keys)];
+            }
+            $randCode = $alpha_key;
+            $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+
+            $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+
+            $numbers = array($phone);
+            $sender = urlencode('UPAHAD');
+            $message = rawurlencode($messages);
+
+            $numbers = implode(',', $numbers);
+
+            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+            // Send the POST request with cURL
+            $ch = curl_init('https://api.textlocal.in/send/');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            //print_r($response);
+
+            curl_close($ch);
+
+			$userData['phone'] = $phone;
+			$userData['OTP'] = $randCode;
+			
+			$update = $this->user->update($userData, $udata->user_id);
+			return redirect('welcome/forgotpasswordotp');
+		}else{
+			$this->session->set_flashdata('Login_failed', 'This number is not register');
+				$this->session->set_flashdata('msg_class', 'alert-danger');
+	
+				$this->load->view('front/header', ['success' => true]);
+				$this->load->view('front/forgotpassword', ['success' => true]);
+				$this->load->view('front/footer');
+		}
+
+			
+		}
+		else{
+			$this->load->view('front/header');
+			$this->load->view('front/forgotpassword');
+			$this->load->view('front/footer');
+		}
+		
+	}
+
+	public function forgotpasswordotp()
+	{
+		$this->form_validation->set_rules('otp','otp','required');
+		$this->form_validation->set_rules('password',' password','required|min_length[6]');
+		$this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
+		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
+		if($this->form_validation->run())
+	      {
+			$otp =  $this->input->post('otp');
+			$password = $this->input->post('password');
+			$confirm_password = $this->input->post('confirm_password');
+			$login_id=$this->user->validateotp($otp);
+
+			if($login_id)
+			{
+				
+				$this->db->where('phone',$login_id['phone']);
+				$data=array(
+			   'password'=> md5($password),
+			   );
+			   $this->db->update('users',$data);
+			   return redirect('welcome');
+			}
+			else
+			{
+			   $this->session->set_flashdata('OTP_failed','Invalid OTP');
+			   $this->session->set_flashdata('msg_class','alert-danger');
+			  
+			 $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			 $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			 $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			 $this->output->set_header('Pragma: no-cache');
+			  $this->load->view('front/header',['success'=>true]);
+			$this->load->view('front/changepassword');
+			  $this->load->view('front/footer');
+			}
+		  }
+		  else{
+			$this->load->view('front/header');
+			$this->load->view('front/changepassword');
+			$this->load->view('front/footer');
+		  }
+		
 	}
 
 	public function otp()
 	{
-		$this->load->view('front/header');
-		$this->load->view('front/changepassword');
-		$this->load->view('front/footer');
+
+		$this->form_validation->set_rules('otp','otp','required');
+	    
+	    $this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+	 
+	  
+	      if($this->form_validation->run())
+	      {
+	      
+	       $verify_otp=$this->input->post('otp');
+
+	       $login_id=$this->user->validateotp($verify_otp);
+	      
+
+	       if($login_id)
+	       {
+	           $log = $login_id["user_id"];
+			   $this->session->set_userdata('id',$log);
+				$this->db->update("users", ["otp_verify"=>1], ["phone"=>$login_id['phone']]);
+              return redirect('welcome');
+	       }
+	       else
+	       {
+	          $this->session->set_flashdata('OTP_failed','Invalid OTP');
+	          $this->session->set_flashdata('msg_class','alert-danger');
+	         
+            $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+            $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+            $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+            $this->output->set_header('Pragma: no-cache');
+	         $this->load->view('front/header',['success'=>true]);
+           $this->load->view('front/otp');
+			 $this->load->view('front/footer');
+	       }
+	      }
+	      else
+	      {
+			$this->load->view('front/header');
+			$this->load->view('front/otp');
+			$this->load->view('front/footer');
+	      
+        }
+		
 	}
 	public function fillter_product()
 	{
 		$this->load->view('front/fillter');
 	}
 
-
+// poonam
 }

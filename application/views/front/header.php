@@ -5,8 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous"></script>
-    <title>Bootstrap demo</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<title>CelNow</title>
     <style>
+       html,
+    body {
+        overflow-x: hidden;
+    }
       .nav ul li a:hover {
   color: #555;
 }
@@ -63,8 +70,16 @@
         <a class="nav-link" href="#" style="color:#10B981;font-weight:600;padding-left:22px">Login/Signup</a>
         </li> -->
      </ul>
-          <a class="nav-link" href="#" style="color:#10B981;font-weight:600;padding-right:40px">Login/Signup</a>
-    </div>
+     <?php  if(!empty($user)){
+   ?>
+           <a class="btnSweetalert" href="<?php echo base_url();?>welcome/logout" style="color:#10B981;font-weight:600;">Logout</a>
+         <?php  }
+          else{ ?>
+         
+          <a class="nav-link" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login</a>/ <a class="nav-link" href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;"> Signup</a>
+
+          <?php }?>
+            </div>
   </div>
 </nav>
 </div>  
@@ -76,3 +91,31 @@
 
   </body>
 </html>
+<script>
+"use strict"; / Start of use strict /
+(function () {
+function14();
+})();
+function function14() {
+$('.btnSweetalert').on("click", function () {
+swal({
+title: " Logout!",
+text: "Are you sure you want to logout?",
+type: "warning",
+showCancelButton: true,
+confirmButtonColor: "#DD6B55",
+confirmButtonText: "Yes",
+cancelButtonText: "No",
+closeOnConfirm: false,
+closeOnCancel: false},
+function (isConfirm) {
+if (isConfirm) {
+
+ window.location.href = "<?php echo base_url();?>welcome/logout";
+} else {
+swal("Cancelled", "Something went wrong. Please try again.)", "error");
+}
+});
+});
+}
+</script>
