@@ -36,7 +36,7 @@ $config['base_url'] = 'https://dbvertex.com/celnow';
 |
 */
 $config['index_page'] = 'index.php';
-//dsAFSytfdaytfd
+
 /*
 |--------------------------------------------------------------------------
 | URI PROTOCOL
