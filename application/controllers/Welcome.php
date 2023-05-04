@@ -24,6 +24,7 @@ class Welcome extends CI_Controller {
 		
 		//load user model
          $this->load->helper('url');
+		 $this->load->library('form_validation');
 
         
     }
@@ -31,7 +32,7 @@ class Welcome extends CI_Controller {
 	public function index()
 	{
 		$this->load->view('front/header');
-		$this->load->view('front/homepage');
+		$this->load->view('front/Home');
 		$this->load->view('front/footer');
 	}
 
@@ -81,6 +82,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('front/header');
 		$this->load->view('front/forgotpassword');
+		$this->load->view('front/footer');
 	}
 
 	public function otp()
@@ -93,4 +95,6 @@ class Welcome extends CI_Controller {
 	{
 		$this->load->view('front/fillter');
 	}
+
+
 }

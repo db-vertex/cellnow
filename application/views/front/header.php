@@ -19,7 +19,7 @@
     <nav class="navbar navbar-expand-lg bg-body-">
   <div class="container-fluid">
     <a class="navbar-brand" href="#" >
-    <img src="../assets/images/CelNow 5 1.png"  class="img-fluid" width="180px">
+    <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" width="180px">
     </a>
     
 
@@ -63,12 +63,12 @@
         <a class="nav-link" href="#" style="color:#10B981;font-weight:600;padding-left:22px">Login/Signup</a>
         </li> -->
      </ul>
-          <a class="nav-link" href="login" style="color:#10B981;font-weight:600;">Login </a>/ <a style="color:#10B981;font-weight:600;" href="welcome/signup"> Signup</a>
+          <a class="nav-link" href="#" style="color:#10B981;font-weight:600;padding-right:40px">Login/Signup</a>
     </div>
   </div>
 </nav>
 </div>  
-<!-- <img src="<?php echo base_url();?>images/celNow.png"  class="img-fluid"> -->
+<!-- <img src="<?php echo base_url();?>assets/images/celNow.png"  class="img-fluid"> -->
 
 
 
