@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
@@ -48,3 +49,5 @@ class Welcome extends CI_Controller {
 	
 	
 }
+=======
+>>>>>>> da186973aa5ca75b059849b65d3ed64016fa3048
