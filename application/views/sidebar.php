@@ -189,8 +189,8 @@
         </li>
 
         <li class="<?php echo ($this->uri->segment(2) == 'subcategory')?'active':''; ?>">
-          <a href="<?=  base_url('admin/subcategory'); ?>">
-            <i class="fa fa-group"></i> <span>Sub Category</span>
+          <a href="<?=  base_url('admin/shop'); ?>">
+            <i class="fa fa-group"></i> <span>Shop</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"></small>
             </span>
