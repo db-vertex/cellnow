@@ -25,7 +25,7 @@
     <div class="container" >
     <nav class="navbar navbar-expand-lg bg-body-">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#" >
+    <a class="navbar-brand" href="<?php echo base_url();?>" >
     <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" width="180px">
     </a>
     
@@ -61,10 +61,10 @@
           </ul>
         </li>
         <li class="nav-item" style="padding-right:20px";>
-          <a class="nav-link" href="<?php echo base_url();?>welcome/postproduct" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
+          <a class="nav-link" href="<?php echo base_url();?>welcome/shop" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
         </li>
         <li class="nav-item" style="padding-right:20px";>
-          <a class="nav-link" href="#" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#d1fae5;">Ad Post</a>
+          <a class="nav-link" href="<?php echo base_url();?>welcome/postproduct" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#d1fae5;">Ad Post</a>
         </li>
         <!-- <li class="nav-item">
         <a class="nav-link" href="#" style="color:#10B981;font-weight:600;padding-left:22px">Login/Signup</a>
