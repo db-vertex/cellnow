@@ -135,12 +135,12 @@
 
 <body>
     <main>
-        <div class="container py-4" style="margin-top:100px">
+        <div class="container " style="margin-top:20px">
 
             <div class="row " style="min-height:90%;">
                 <div class="col-md-6 col-sm-12 ps-0">
                     <div class="h-100 p-5 ">
-                        <img class="img-fluid" src="../assets/images/signup.png">
+                        <img class="img-fluid" src="<?php echo base_url()?>/assets/images/signup.png">
                     </div>
                 </div>
                 <div class="col-md-6 col-sm-12 pe-0">
@@ -148,17 +148,17 @@
                         <article class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <p>Welcome to <a href="" style="color:#13C571;">Celnow </a></p>
-                                    <h2 class="card-title mb-3 ">Sign Up</h2>
+                                    <p>Welcome to <a href="<?php echo base_url()?>" style="color:#13C571;">Celnow </a></p>
+                                    <h3 class="card-title mb-3 ">Sign Up</h3>
 
                                 </div>
 
                                 <div class="col ml-4">
                                     <a href="" style="color:lightgrey;">Have an Account?</a><br>
-                                    <a href="" style="color:#13C571;" class="">Sign in</a>
+                                    <a href="<?php echo base_url()?>welcome/login" style="color:#13C571;" class="">Sign in</a>
                                 </div>
                             </div>
-                            <form action="signup" method="post">
+                            <form action="<?php echo base_url()?>welcome/signup" method="post">
                                 <div class="form-group ">
                                     <label>Enter Your Email</label>
                                     <input name="email" class="form-control" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>"

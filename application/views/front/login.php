@@ -17,14 +17,14 @@
       <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1 p-3 border">
       <div class="row mt-5">
                                 <div class="col">
-                                    <p class="lead fw-normal mb-0 me-3">Welcome to <a href="" style="color:#13C571;">Celnow </a></p>
-                                    <h2 class="card-title mb-3 ">Sign Up</h2>
+                                    <p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
+                                    <h3 class="card-title mb-3 ">Log in</h3>
 
                                 </div>
 
                                 <div class="col ml-4">
                                     <a href="" style="color:lightgrey;">Have an Account?</a><br>
-                                    <a href="" style="color:#13C571;" class="">Sign in</a>
+                                    <a href="<?php echo base_url();?>welcome/signup" style="color:#13C571;" class="">Sign Up</a>
                                 </div>
                             </div>
         <form action="<?php echo base_url();?>welcome/login" method="post">

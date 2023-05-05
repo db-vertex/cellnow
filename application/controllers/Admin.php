@@ -25,7 +25,7 @@ class Admin extends CI_Controller {
         // this is your constructor
         parent::__construct();
         $this->load->helper('form');
-       
+        $this->load->helper('user_helper');
         $this->load->helper('url');
         $this->load->helper('form');
         // Load form validation library
@@ -469,6 +469,24 @@ public function Category()
     $admin_detail = $this->admin_model->get_admin_data($session_id);
     $category=$this->admin_model->all_shopcategory();   // for foreach loop
     $this->load->view('category_list',['admin_detail'=>$admin_detail,'category'=>$category]);
+   
+    }
+    else
+    {
+      return redirect('admin');
+    }
+
+}
+
+public function banner()
+{
+  $session_id = $this->session->userdata('admin_id');
+    if($session_id)
+    {
+         
+    $admin_detail = $this->admin_model->get_admin_data($session_id);
+    $category=$this->admin_model->all_banner();   // for foreach loop
+    $this->load->view('banner_list',['admin_detail'=>$admin_detail,'banner'=>$category]);
    
     }
     else
@@ -1520,12 +1538,12 @@ public function user()
              
       $admin_detail = $this->admin_model->get_admin_data($session_id);
 
-      $seller = get_all_seller(); 
+   
       $buyer = get_all_buyer(); 
       //$featuredposts = $this->Product_model->getfeaturedpro();
 
       // for foreach loop
-      $this->load->view('user_list',['admin_detail'=>$admin_detail,'buyer'=>$buyer,'seller'=>$seller]);
+      $this->load->view('user_list',['admin_detail'=>$admin_detail,'buyer'=>$buyer]);
        
         }
         else

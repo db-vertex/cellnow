@@ -334,6 +334,52 @@ class Welcome extends CI_Controller {
 		
 	}
 
+
+	public function changepassword()
+	{
+		$this->form_validation->set_rules('otp','otp','required');
+		$this->form_validation->set_rules('password',' password','required|min_length[6]');
+		$this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
+		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
+		if($this->form_validation->run())
+	      {
+			$otp =  $this->input->post('otp');
+			$password = $this->input->post('password');
+			$confirm_password = $this->input->post('confirm_password');
+			$login_id=$this->user->validateotp($otp);
+
+			if($login_id)
+			{
+				
+				$this->db->where('phone',$login_id['phone']);
+				$data=array(
+			   'password'=> md5($password),
+			   );
+			   $this->db->update('users',$data);
+			   return redirect('welcome');
+			}
+			else
+			{
+			   $this->session->set_flashdata('OTP_failed','Invalid OTP');
+			   $this->session->set_flashdata('msg_class','alert-danger');
+			  
+			 $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			 $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			 $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			 $this->output->set_header('Pragma: no-cache');
+			  $this->load->view('front/header',['success'=>true]);
+			$this->load->view('front/change_password');
+			  $this->load->view('front/footer');
+			}
+		  }
+		  else{
+			$this->load->view('front/header');
+			$this->load->view('front/change_password');
+			$this->load->view('front/footer');
+		  }
+		
+	}
+
 	public function otp()
 	{
 

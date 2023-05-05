@@ -53,18 +53,10 @@
       
         </li>
 
-        <li class="<?php echo ($this->uri->segment(2) == 'agent')?'active':''; ?>">
-          <a href="<?=  base_url('admin/agent'); ?>">
-            <i class="fa fa-group"></i> <span>Agent</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"></small>
-            </span>
-          </a>
-      
-        </li>
+       
 
         
-        <li class="<?php echo ($this->uri->segment(2) == 'videos')?'active':''; ?>">
+        <!-- <li class="<?php echo ($this->uri->segment(2) == 'videos')?'active':''; ?>">
 
           <a href="<?=  base_url('admin/videos'); ?>">
 
@@ -78,7 +70,7 @@
 
           </a>
 
-        </li>
+        </li> -->
 
 
         <li class="<?php echo ($this->uri->segment(2) == 'banner')?'active':''; ?>">
@@ -96,25 +88,6 @@
           </a>
 
         </li>
-
-
-
-        <li class="<?php echo ($this->uri->segment(2) == 'customad')?'active':''; ?>">
-
-          <a href="<?=  base_url('admin/customad'); ?>">
-
-            <i class="fa fa-group"></i> <span>Coustom Ad</span>
-
-            <span class="pull-right-container">
-
-              <small class="label pull-right bg-green"></small>
-
-            </span>
-
-          </a>
-
-        </li>
-
 
 
 
@@ -137,36 +110,8 @@
         </li>
 
 
-        <li class="<?php echo ($this->uri->segment(2) == 'notification')?'active':''; ?>">
+       
 
-          <a href="<?=  base_url('admin/notification'); ?>">
-
-            <i class="fa fa-group"></i> <span>Send Notifications</span>
-
-            <span class="pull-right-container">
-
-              <small class="label pull-right bg-green"></small>
-
-            </span>
-
-          </a>
-
-        </li>
-<li class="<?php echo ($this->uri->segment(2) == 'chats')?'active':''; ?>">
-
-          <a href="<?=  base_url('admin/chats'); ?>">
-
-            <i class="fa fa-desktop"></i> <span>Chats Monitoring System</span>
-
-            <span class="pull-right-container">
-
-              <small class="label pull-right bg-green"></small>
-
-            </span>
-
-          </a>
-
-        </li>
 
 
         <!--<li class="<?php echo ($this->uri->segment(2) == 'Contact_us')?'active':''; ?>">-->
@@ -181,7 +126,7 @@
 
         <li class="<?php echo ($this->uri->segment(2) == 'Category')?'active':''; ?>">
           <a href="<?=  base_url('admin/Category'); ?>">
-            <i class="fa fa-group"></i> <span>Category</span>
+            <i class="fa fa-group"></i> <span>Shop Category</span>
             <span class="pull-right-container">
               <small class="label pull-right bg-green"></small>
             </span>
