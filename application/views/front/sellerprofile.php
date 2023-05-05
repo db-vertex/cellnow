@@ -20,7 +20,9 @@ html,body
     }
      
 
-
+    img.rounded-corners {
+  border-radius: 50%;
+}
 
     #a{
   margin-right: 10px;
@@ -98,8 +100,9 @@ html,body
 
                     ?>
     <div class="col-sm-5">
-    
-     <img src="<?php echo base_url();?>assets/images/Ellipse 11 (2).png"  class="img-fluid rounded mx-auto d-block">
+    <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
+
+     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" height=150 width=130>
      <div style="text-align:center"><h3><b ><?php echo $profile->name; ?></b></h3>
      <?php echo $profile->Address; ?>
      
@@ -112,7 +115,7 @@ html,body
    
     </div>
     <!-- <div class="vr" style="color:#78d7b8"></div> -->
-    <div class="col-sm-7 "> 
+    <div class="col-sm-7 " style=" border-left:solid; border-color: #78d7b8"> 
       
       <h2 class="pl-5"><b>About us</b></h2>
       <p class="pl-5"><?php echo $profile->aboutus; ?></p>
@@ -399,7 +402,34 @@ html,body
   
 </div>
 
-
+<div class="modal fade" id="createModal" aria-hidden="true">
+				<div class="modal-dialog" role="document">
+				    <div class="modal-content">
+						<div class="modal-header">
+							<h5 class="modal-title" id="exampleModalLongTitle">Update Profile Picture</h5>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+						  	<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
+						<form  id="cover_img" enctype="multipart/form-data" action="<?php echo base_url();?>welcome/uploadprofileimg" method="POST">
+						    <input type="hidden" name="user_id" value="<?php echo $user['user_id'] ?>">
+				      	<div class="modal-body">
+				        	<div class="form-group">
+				        	    
+							    <label>Image </label>
+							    <input type="file" class="form-control" id="cover_image" name="profile_img" accept="image/*">
+							    <span id="cover_err" style="color:red;"></span>
+							</div>
+				      	</div>
+				      	<div class="modal-footer">
+				        	<button type="button" class="btn-change btn btn-secondary pull-left" data-dismiss="modal">Cancel</button>
+				        	<button type="button" style="background-color:#13C571; color:#fff;
+                            border-radius:0.20rem;" class="btn-change btn btn-rounded"   onclick="return checkcoverimage();">Upload</button>
+				      	</div>
+				      		</form>
+				    </div>
+				</div>
+			</div>
 <script>
 
   (() => {
@@ -427,4 +457,25 @@ html,body
     }, false)
   })
 })()
+
+
+function checkcoverimage() {
+
+var image =$('#cover_image').val();
+
+if (image == "" ) {
+
+    $("#cover_err").text("Please upload image");
+   
+
+
+
+} else {
+
+    $("#cover_img").submit();
+
+   
+}
+
+}
 </script>

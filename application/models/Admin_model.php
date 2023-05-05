@@ -135,6 +135,26 @@ public function all_category()
       return $result;
   }
 
+  public function all_shopcategory()
+  {
+        $this->db->select("*");
+      $this->db->from("shop_category");
+      $this->db->order_by('id',"DESC");
+      $query = $this->db->get();
+      $result=$query->result();
+      return $result;
+  }
+
+  public function all_shop()
+  {
+        $this->db->select("*");
+      $this->db->from("shop");
+      $this->db->order_by('id',"DESC");
+      $query = $this->db->get();
+      $result=$query->result();
+      return $result;
+  }
+
   public function all_subcategory()
   {
         $this->db->select("*");
@@ -427,10 +447,10 @@ public function get_terms_condition_data()
   }
 
 
-public function update_user_status($id,$arr)
+public function update_shop_status($id,$arr)
    {
      if($this->db->where('id',$id)
-              ->update('product',$arr)){
+              ->update('shop',$arr)){
         return true;
        } 
        else{

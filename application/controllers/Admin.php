@@ -468,7 +468,7 @@ public function Category()
     {
          
     $admin_detail = $this->admin_model->get_admin_data($session_id);
-    $category=$this->admin_model->all_category();   // for foreach loop
+    $category=$this->admin_model->all_shopcategory();   // for foreach loop
     $this->load->view('category_list',['admin_detail'=>$admin_detail,'category'=>$category]);
    
     }
@@ -479,15 +479,15 @@ public function Category()
 
 }
 
-public function subcategory()
+public function shop()
 {
   $session_id = $this->session->userdata('admin_id');
     if($session_id)
     {
          
     $admin_detail = $this->admin_model->get_admin_data($session_id);
-    $subcategory=$this->admin_model->all_subcategory();   // for foreach loop
-    $this->load->view('subcategory_list',['admin_detail'=>$admin_detail,'subcategory'=>$subcategory]);
+    $shop=$this->admin_model->all_shop();   // for foreach loop
+    $this->load->view('shop_list',['admin_detail'=>$admin_detail,'shop'=>$shop]);
    
     }
     else
@@ -496,6 +496,31 @@ public function subcategory()
     }
 
 }
+
+
+function adminapproved(){
+ 
+  $session_id = $this->session->userdata('admin_id');
+  if ($session_id) {
+ 
+$id= $this->input->post('productId');
+
+$status=$this->input->post('status');
+
+$arr=array('admin_approval'=>$status);
+$this->admin_model->update_shop_status($id,$arr);
+
+//$delete = $this->admin_model->delete_record('review_product', $id);
+
+
+ 
+  
+
+
+}
+
+
+}  
 
 
 
