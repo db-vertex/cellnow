@@ -249,9 +249,31 @@ background: #10B981;
     margin-top: 8%;
   }
 }
+@media (max-width: 500px) {
+  .inputform_colume{
+    margin-top: 25%;
+  }
+}
+
+@media (min-width: 200px) {
+  .images_small_box_row {
+  margin-top: 150%;
+  }
+}
 @media (min-width: 300px) {
   .images_small_box_row {
-  margin-top: 70%;
+  margin-top: 120%;
+  }
+}
+@media (min-width: 400px) {
+  .images_small_box_row {
+  margin-top: 89%;
+  }
+}
+
+@media (min-width: 500px) {
+  .images_small_box_row {
+  margin-top: 73%;
   }
 }
 @media (min-width: 767px) {
@@ -426,11 +448,11 @@ background: #10B981;
          
           <div class="my-4"> </div>
 
-          <div class="col-sm-6">
+          <div class="col-sm-6 col-6 ">
           <button class="w-100 btn product_submit_button " type="submit">Submit</button>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 col-6">
             <button class="w-100 btn  product_reset_button " type="submit">Reset</button>
             </div>
             </div>
