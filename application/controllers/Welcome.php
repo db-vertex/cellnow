@@ -29,7 +29,7 @@ class Welcome extends CI_Controller {
 
 	public function index()
 	{
-		$this->load->view('front/Home');
+		$this->load->view('front/home1');
 	}
 
 	public function login()
