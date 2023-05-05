@@ -42,6 +42,36 @@ function get_all_category()
   return $category_data->result(); 
 }
 
+function get_all_shopcategory()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM shop_category order by shop_category";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_id_by_shop($id)
+{
+   $ci =& get_instance();
+       
+  //load databse library
+  $ci->load->database();
+
+$query="SELECT * FROM shop WHERE id=".$id;
+
+$category_data = $ci->db->query($query);        
+
+return $category_data->row();	
+}
+
+
 function get_all_district()
 {
   //get main CodeIgniter object
