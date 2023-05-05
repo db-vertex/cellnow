@@ -22,6 +22,7 @@ class Admin extends CI_Controller {
 
   function __construct()
     {
+      //test
         // this is your constructor
         parent::__construct();
         $this->load->helper('form');
