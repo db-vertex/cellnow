@@ -123,12 +123,11 @@
   justify-content: center;
 }
 .images_col {
-  width: 400px;
-  height: 300px;
+  width: 450px;
+  height: 350px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
- 
   background: #D1FAE5;
   opacity: 0.75;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -142,13 +141,13 @@
         background: #FFFFFF;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         text-align: -webkit-center;
+        border-radius:50%;
     }
     .pluse {
         
         width: 42px;
         height: 100px;
         left: 956.88px;
-      
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: 400;
@@ -157,7 +156,125 @@
         color: #888888;
         opacity: 0.5;
     }
-    
+ .images_small_box{
+    text-align: -webkit-center;
+  width: 78.17px;
+  height: 96px;
+  background: #DDFBEC;
+  box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+}
+
+/* Set the position and spacing for the row element */
+.images_small_box_row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 96px;
+  
+}
+.images_small_box__plus{
+  
+  width: 11px;
+  height: 36px;
+  left: 844px;
+  margin-top: 50%;
+  font-family: 'Open Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-size: 29.3103px;
+  line-height: 40px;
+  color: #888888;
+  opacity: 0.5;
+}
+.post_input_fild{
+ background: #FFFFFF;
+border: 1px solid #10B981;
+border-radius: 20px; 
+box-sizing: border-box; 
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 400;
+font-size: 15px;
+line-height: 20px;
+
+color: #000000;
+
+opacity: 0.5;
+}
+.post_input_lable{
+ font-family: 'Open Sans';
+font-size: 18px;
+font-weight: 700;
+line-height: 25px;
+letter-spacing: 0em;
+text-align: left;
+color:#000000;
+}
+.product_submit_button{
+background: #10B981;
+border-radius: 30px;
+font-family: 'Open Sans';
+font-size: 23px;
+font-weight: 700;
+line-height: 32px;
+letter-spacing: 0em;
+text-align: center;
+color:#F5F5F5;
+}
+.product_submit_button:hover {
+  background: #F5F5F5;
+  color:#10B981;
+border:1px solid #10B981;
+}
+.product_reset_button{
+background: #F5F5F5;
+border-radius: 30px;
+font-family: 'Open Sans';
+font-size: 23px;
+font-weight: 700;
+line-height: 32px;
+letter-spacing: 0em;
+text-align: center;
+color:#10B981;
+border:1px solid #10B981;
+}
+.product_reset_button:hover {
+background: #10B981;
+  color:#F5F5F5;
+
+}
+ @media (max-width: 992px) {
+  .inputform_colume{
+    margin-top: 8%;
+  }
+}
+@media (min-width: 300px) {
+  .images_small_box_row {
+  margin-top: 70%;
+  }
+}
+@media (min-width: 767px) {
+  .images_small_box_row {
+  margin-top: 53%;
+  }
+}
+@media (min-width: 992px) {
+  .images_small_box_row {
+  margin-top: 100%;
+  }
+}
+@media (min-width: 1200px) {
+  .images_small_box_row {
+  margin-top: 80%;
+  }
+}
+@media (min-width: 1400px) {
+  .images_small_box_row {
+  margin-top: 70%;
+  }
+}
+
     </style>
 
     
@@ -184,168 +301,142 @@
      
    
     <div class="row g-5 justify-content-center">
-  
-      <div class="col-md-5 col-lg-6 order-md-first">
-        <h4 class="mb-3">Billing address</h4>
-        <form class="needs-validation" novalidate>
-          <div class="row g-3">
-
-          <div class="col-12">
-              <label for="firstName" class="form-label">Title</label>
-              <input type="text" class="form-control" id="Title" placeholder="" required> 
-              <div class="invalid-feedback">
-                Please enter a Title.
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <label for="firstName" class="form-label">First name</label>
-              <input type="text" class="form-control" id="firstName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Valid first name is required.
-              </div>
-            </div>
-
-            <div class="col-sm-6">
-              <label for="lastName" class="form-label">Last name</label>
-              <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
-              <div class="invalid-feedback">
-                Valid last name is required.
-              </div>
-            </div>
-
-
-      
-
-            <div class="col-12">
-              <label for="address" class="form-label">Address</label>
-              <input type="text" class="form-control" id="address" placeholder="1234 Main St" required>
-              <div class="invalid-feedback">
-                Please enter your shipping address.
-              </div>
-            </div>
-
-            <div class="col-12">
-              <label for="address2" class="form-label">Address 2 <span class="text-body-secondary">(Optional)</span></label>
-              <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
-            </div>
-
-            <div class="col-md-5">
-              <label for="country" class="form-label">Country</label>
-              <select class="form-select" id="country" required>
-                <option value="">Choose...</option>
-                <option>United States</option>
-              </select>
-              <div class="invalid-feedback">
-                Please select a valid country.
-              </div>
-            </div>
-
-            <div class="col-md-4">
-              <label for="state" class="form-label">State</label>
-              <select class="form-select" id="state" required>
-                <option value="">Choose...</option>
-                <option>California</option>
-              </select>
-              <div class="invalid-feedback">
-                Please provide a valid state.
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="zip" class="form-label">Zip</label>
-              <input type="text" class="form-control" id="zip" placeholder="" required>
-              <div class="invalid-feedback">
-                Zip code required.
-              </div>
-            </div>
-          </div>
-
-          <hr class="my-4">
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="same-address">
-            <label class="form-check-label" for="same-address">Shipping address is the same as my billing address</label>
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" class="form-check-input" id="save-info">
-            <label class="form-check-label" for="save-info">Save this information for next time</label>
-          </div>
-
-          <hr class="my-4">
-
-          <h4 class="mb-3">Payment</h4>
-
-          <div class="my-3">
-            <div class="form-check">
-              <input id="credit" name="paymentMethod" type="radio" class="form-check-input" checked required>
-              <label class="form-check-label" for="credit">Credit card</label>
-            </div>
-            <div class="form-check">
-              <input id="debit" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="debit">Debit card</label>
-            </div>
-            <div class="form-check">
-              <input id="paypal" name="paymentMethod" type="radio" class="form-check-input" required>
-              <label class="form-check-label" for="paypal">PayPal</label>
-            </div>
-          </div>
-
-          <div class="row gy-3">
-            <div class="col-md-6">
-              <label for="cc-name" class="form-label">Name on card</label>
-              <input type="text" class="form-control" id="cc-name" placeholder="" required>
-              <small class="text-body-secondary">Full name as displayed on card</small>
-              <div class="invalid-feedback">
-                Name on card is required
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <label for="cc-number" class="form-label">Credit card number</label>
-              <input type="text" class="form-control" id="cc-number" placeholder="" required>
-              <div class="invalid-feedback">
-                Credit card number is required
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-expiration" class="form-label">Expiration</label>
-              <input type="text" class="form-control" id="cc-expiration" placeholder="" required>
-              <div class="invalid-feedback">
-                Expiration date required
-              </div>
-            </div>
-
-            <div class="col-md-3">
-              <label for="cc-cvv" class="form-label">CVV</label>
-              <input type="text" class="form-control" id="cc-cvv" placeholder="" required>
-              <div class="invalid-feedback">
-                Security code required
-              </div>
-            </div>
-          </div>
-
-          <hr class="my-4">
-
-          <button class="w-100 btn btn-primary btn-lg" type="submit">Continue to checkout</button>
-        </form>
-      </div>
-      <div class="col-md-7 offset-lg-1 col-lg-4 ">
+      <div class=" offset-lg-1 col-lg-5 ">
        <div class=" images_container mt-3">
          <div class=" images_row">
             <div class=" images_col">
             <div class="box a">
             <div class="my-box">
             <div class="pluse">+</div>
- 
             </div>
             </div>
             </div>
         </div>
         </div>
+     
+      <div class="row images_small_box_row ms-1 ">
+        <div class="col-3 images_small_box m-2">
+        <div class="images_small_box__plus">+</div>
+        </div>
+        <div class="col-3 images_small_box m-2">
+        <div class="images_small_box__plus">+</div>
+        </div>
+        <div class="col-3 images_small_box m-2">
+        <div class="images_small_box__plus">+</div>
+        </div>
+        <div class="col-3 images_small_box m-2">
+        <div class="images_small_box__plus">+</div>
+        </div>
+        </div>
+        </div>
+      <div class=" col-lg-5 order-lg-first inputform_colume">
+        <form class="needs-validation" novalidate>
+          <div class="row g-3">
+
+          <div class="col-12">
+              <label for="firstName" class="form-label post_input_lable">Title</label>
+              <input type="text" class="form-control post_input_fild" id="Title" placeholder="Please Enter Title" required> 
+              <div class="invalid-feedback">
+              Please Enter Title.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="state" class="form-label post_input_lable">Category</label>
+              <select class="form-select post_input_fild" id="state" required>
+                <option value="">Select Category</option>
+                <option>California</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Category.
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <label for="state" class="form-label post_input_lable">Sub Category</label>
+              <select class="form-select post_input_fild" id="state" required>
+                <option value="">Select Sub Category</option>
+                <option>California</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Sub Category.
+              </div>
+            </div>
+           
+            <div class="col-sm-12">
+              <label for="state" class="form-label post_input_lable">Product Brand</label>
+              <select class="form-select post_input_fild" id="state" required>
+                <option value="">Select Product Brand</option>
+                <option>California</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Brand.
+              </div>
+            </div>
+
+
+            <div class="col-12">
+              <label for="address" class="form-label post_input_lable">Stock Quantity</label>
+              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Stock Quantity" required>
+              <div class="invalid-feedback">
+                Please Enter Stock Quantity.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label post_input_lable">Select Product Condition</label>
+              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Product Condition" required>
+              <div class="invalid-feedback">
+                Please Enter Product Condition.
+              </div>
+            </div>
+
+
+            <div class="col-sm-6">
+              <label for="address" class="form-label post_input_lable">Town</label>
+              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Town" required>
+              <div class="invalid-feedback">
+                Please Enter Town.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="address" class="form-label post_input_lable">Postal code</label>
+              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Postal code" required>
+              <div class="invalid-feedback">
+                Please Enter Postal code.
+              </div>
+            </div>
+
+            <div class="col-12">
+              <label for="address" class="form-label post_input_lable">Address</label>
+              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Address" required>
+              <div class="invalid-feedback">
+                Please Enter Product Address.
+              </div>
+            </div>
+
+
+            <div class="col-12">
+              <label for="address" class="form-label post_input_lable">Description</label>
+              <textarea type="text" class="form-control post_input_fild" id="address" rows="10" cols="50" required>Enter Description</textarea>
+              <div class="invalid-feedback">
+                Please Enter Product Description.
+              </div>
+            </div>
+         
+          <div class="my-4"> </div>
+
+          <div class="col-sm-6">
+          <button class="w-100 btn product_submit_button " type="submit">Submit</button>
+            </div>
+
+            <div class="col-sm-6">
+            <button class="w-100 btn  product_reset_button " type="submit">Reset</button>
+            </div>
+            </div>
+        </form>
       </div>
+     
   
     </div>
   </main>
