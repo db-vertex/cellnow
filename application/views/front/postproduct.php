@@ -123,8 +123,8 @@
   justify-content: center;
 }
 .images_col {
-  width: 450px;
-  height: 350px;
+  width: 400px;
+  height: 300px;
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -188,9 +188,10 @@
   opacity: 0.5;
 }
 .post_input_fild{
+  text-align-last:left;
  background: #FFFFFF;
 border: 1px solid #10B981;
-border-radius: 20px; 
+border-radius: 18px; 
 box-sizing: border-box; 
 font-family: 'Open Sans';
 font-style: normal;
@@ -242,8 +243,15 @@ border:1px solid #10B981;
 .product_reset_button:hover {
 background: #10B981;
   color:#F5F5F5;
-
 }
+select {
+  text-align: center;
+  text-align-last: center;
+}
+option {
+  text-align: left;
+}
+
  @media (max-width: 992px) {
   .inputform_colume{
     margin-top: 8%;
@@ -323,10 +331,10 @@ background: #10B981;
      
    
     <div class="row g-5 justify-content-center">
-      <div class=" offset-lg-1 col-lg-5 ">
-       <div class=" images_container mt-3">
+      <div class=" offset-lg-1 col-lg-5">
+       <div class=" images_container  mt-3 me-2">
          <div class=" images_row">
-            <div class=" images_col">
+            <div class=" images_col mx-2">
             <div class="box a">
             <div class="my-box">
             <div class="pluse">+</div>
@@ -365,19 +373,22 @@ background: #10B981;
 
             <div class="col-sm-6">
               <label for="state" class="form-label post_input_lable">Category</label>
-              <select class="form-select post_input_fild" id="state" required>
+              <select class="form-select post_input_fild" id="category" name="category" required>
                 <option value="">Select Category</option>
-                <option>California</option>
+                <option value="1">Reusable parts and Products</option>
+                <option value="2">Tuitions / Classes</option>
+                <option value="3">Part-time Jobs</option>
+                <option value="4">Internships</option>
               </select>
               <div class="invalid-feedback">
                 Please provide a valid Category.
               </div>
             </div>
             <div class="col-sm-6">
-              <label for="state" class="form-label post_input_lable">Sub Category</label>
-              <select class="form-select post_input_fild" id="state" required>
+              <label for="subcategory" class="form-label post_input_lable">Sub Category</label>
+              <select class="form-select post_input_fild" id="subcategory"  value="" name="subcategory"  required>
                 <option value="">Select Sub Category</option>
-                <option>California</option>
+
               </select>
               <div class="invalid-feedback">
                 Please provide a valid Sub Category.
@@ -440,7 +451,7 @@ background: #10B981;
 
             <div class="col-12">
               <label for="address" class="form-label post_input_lable">Description</label>
-              <textarea type="text" class="form-control post_input_fild" id="address" rows="10" cols="50" required>Enter Description</textarea>
+              <textarea type="text" class="form-control post_input_fild" id="address" rows="10" cols="50" placeholder="Enter Description" required></textarea>
               <div class="invalid-feedback">
                 Please Enter Product Description.
               </div>
@@ -465,7 +476,31 @@ background: #10B981;
 
 </div>
 
+<script type="text/javascript">
 
+    $(document).ready(function() {
+        $('select[name="category"]').on('change', function() {
+            var stateID = $(this).val();
+            if(stateID) {
+                $.ajax({
+                    url: '<?php echo base_url();?>welcome/subcategorydropdown/'+stateID,
+                    type: "POST",
+                    dataType: "json",
+                    success:function(data) {
+                        $('select[name="subcategory"]').empty();
+                         $('select[name="subcategory"]').append('<option  value="">Choose</option>');
+                        $.each(data, function(key, value) {
+                            $('select[name="subcategory"]').append('<option  value="'+ value.sub_id +'">'+ value.sub_category +'</option>');
+                          
+                        });
+                    }
+                });
+            }else{
+                $('select[name="subcategory"]').empty();
+            }
+        });
+    });
+</script>
 
 
       <script>

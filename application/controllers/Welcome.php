@@ -506,6 +506,13 @@ $aboutus=$this->input->post('aboutus');
 	  $this->load->view('front/postproduct');
 	  $this->load->view('front/footer');
   }
+  public function subcategorydropdown($id){
+	$result = $this->db->where("category",$id)->get("subcategory")->result();
+   //$data = $this->admin_model->get_record_where('subcategory',$id);
+   
+	   echo json_encode($result);
+ }
+
 
 
   
