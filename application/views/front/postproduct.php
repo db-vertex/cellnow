@@ -469,7 +469,7 @@ background: #10B981;
 
 
       <script>
-        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        // hello #6528e0 Example starter JavaScript for disabling form submissions if there are invalid fields
 (() => {
   'use strict'
 
