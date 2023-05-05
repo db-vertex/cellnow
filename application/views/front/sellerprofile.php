@@ -22,21 +22,47 @@ html,body
 
 
 
-#b{
- 
-  border: 1px solid #78d7b8;
-  border-radius: 25px;
-  font-size: 12px;
+    #a{
+  margin-right: 10px;
+  border-color: #78d7b8;
+  border-radius: 60px;
+  font-family:open sans;
+  font-weight:550;
+  font-size:22px;
+  padding: 4px 32px;
+  
 }
-#b:visited {
+
+
+#a:visited {
   color: #78d7b8;
   
-  border-color: #78d7b8;
+  
+}
+#a:hover {
+  color: white;
+  background-color: #78d7b8;
+  
+  
+}
+
+
+#b{
+ 
+ border: 1px solid #78d7b8;
+ border-radius: 25px;
+ font-size: 12px;
+ 
+}
+#b:visited {
+ color: #78d7b8;
+ 
+ border-color: #78d7b8;
 }
 
 #b:hover {
-  color: white;
-  background-color: #78d7b8;
+ color: white;
+ background-color: #78d7b8;
 }
 
     </style>
@@ -44,31 +70,35 @@ html,body
 
 
   <body>
-   
-   
-
+  
 
 <div class="container">
   
-    <div class="shadow p-3 mb-5 bg-body rounded-5" style="margin:25px"><br>
- <!-- <div class="row">
- <div class="col-md-4">
- <a class="nav-link" href="#" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
+    <div class="shadow p-4 mb-5 bg-body rounded-5" style="margin:25px"><br>
+    <div class="row text-center" >
+   
+    <div class="col-sm-5 mb-1">
+    <a href="<?php echo base_url();?>welcome/buyerprofile" class="btn" role="button" aria-disabled="true" id="a">Buyer</a>
+    </div>
+    <div class="col-sm-7 mb-1">
+    <div class="row">
+    <div class="col-sm-6  mb-1">
+    <a href="<?php echo base_url();?>welcome/myprofile"  style="background-color: #78d7b8; color:#fff" class="btn" role="button" aria-disabled="true" id="a">Seller</a>
+   
+    </div>
+    <div class="col-sm-6 mb-1" >
+    <a href="<?php echo base_url();?>welcome/shop" class="btn" role="button" aria-disabled="true" id="a">Shop</a>
+    </div>
 </div>
-<div class="col-md-4">
- <a class="nav-link" href="#" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
 </div>
-<div class="col-md-4">
- <a class="nav-link" href="#" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
-</div>
-</div> -->
+  </div><br>
   <div class="row ">
   <?php
                 $profile = get_seller_profile($user['user_id']);
 
                     ?>
-    <div class="col-sm-6">
-   
+    <div class="col-sm-5">
+    
      <img src="<?php echo base_url();?>assets/images/Ellipse 11 (2).png"  class="img-fluid rounded mx-auto d-block">
      <div style="text-align:center"><h3><b ><?php echo $profile->name; ?></b></h3>
      <?php echo $profile->Address; ?>
@@ -82,9 +112,10 @@ html,body
    
     </div>
     <!-- <div class="vr" style="color:#78d7b8"></div> -->
-    <div class="col-sm-6"> 
-      <h3><b>About us</b></h3>
-      <p><?php echo $profile->aboutus; ?></p>
+    <div class="col-sm-7 "> 
+      
+      <h2 class="pl-5"><b>About us</b></h2>
+      <p class="pl-5"><?php echo $profile->aboutus; ?></p>
 
       <div class="row text-center">
       <div>
@@ -265,8 +296,8 @@ html,body
 </div>
 
 
-<div class="container-fluid" style="padding:0px">
-<img src="<?php echo base_url();?>assets/images/salebanner.png" class="img-fluid" width="100%" alt="">';
+<div class="container-fluid mt-5">
+<img src="<?php echo base_url();?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
 </div>
 
 

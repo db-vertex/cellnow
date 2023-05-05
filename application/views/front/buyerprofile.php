@@ -63,66 +63,71 @@ html,body
   </head>
   <body>
    
-  <?php
-	
-    include "header.php";
-?> 
+
     
-    <div class="container">
-    <div class="shadow p-3 mb-5 bg-body rounded-5" style="margin:25px">
+   
+<div class="container">
+  
+  <div class="shadow p-4 mb-5 bg-body rounded-5" style="margin:25px"><br>
   <div class="row text-center" >
-    <div class="col-sm-4  mb-1">
-    <a href="#" class="btn" role="button" aria-disabled="true" id="a">Buyer</a>
-   
-    </div>
-    <div class="col-sm-4  mb-1">
-    <a href="#" class="btn" role="button" aria-disabled="true" id="a">Seller</a>
-   
-    </div>
-    <div class="col-sm-4 mb-1" >
-    <a href="#" class="btn" role="button" aria-disabled="true" id="a">Shop</a>
-    </div>
-  </div><br>
-  <div class="row ">
-    <div class="col-sm-6">
-   
-     <img src="<?php echo base_url();?>images/photo.png"  class="rounded mx-auto d-block">
-     <div style="text-align:center"><h3><b >Abhishek</b></h3>
-    Indore India
-    </div>
-    <div class="row text-center">
-      <div class="col">xyz@gmail.com</div>
-      <div class="col">2323215456</div>
-    </div><br>
-    
-    <div class="row text-center">
-      <div>
-    <a href="#" class="btn "id="b" style="align-self:center">Edit</a>
-    </div>
-    </div>
-    </div>
-    <!-- <div class="vr" style="color:#78d7b8"></div> -->
-    <div class="col-sm-6">
-      <h3><b>About us</b></h3>
-      <p>Web designers generally have nothing to do with creating. <br><br>
-      website that you are designing. <br><br>
-      designers generally have nothing to do with creating.</p>
-    </div> 
+ 
+  <div class="col-sm-5 mb-1">
+  <a href="<?php echo base_url();?>welcome/buyerprofile" style="background-color: #78d7b8; color:#fff" class="btn" role="button" aria-disabled="true" id="a">Buyer</a>
   </div>
+  <div class="col-sm-7 mb-1">
+  <div class="row">
+  <div class="col-sm-6  mb-1">
+  <a href="<?php echo base_url();?>welcome/myprofile" class="btn" role="button" aria-disabled="true" id="a">Seller</a>
+ 
+  </div>
+  <div class="col-sm-6 mb-1" >
+  <a href="#" class="btn" role="button" aria-disabled="true" id="a">Shop</a>
+  </div>
+</div>
+</div>
+</div><br>
+<div class="row ">
+<?php
+              $profile = get_seller_profile($user['user_id']);
+
+                  ?>
+  <div class="col-sm-5">
+  
+   <img src="<?php echo base_url();?>assets/images/Ellipse 11 (2).png"  class="img-fluid rounded mx-auto d-block">
+   <div style="text-align:center"><h3><b ><?php echo $profile->name; ?></b></h3>
+   <?php echo $profile->Address; ?>
+   
+  </div>
+  <div class="row text-center ">
+    <p><?php echo $profile->email; ?></p>
+    <p><?php echo $profile->phone; ?></p>
+  </div><br>
+  
+ 
+  </div>
+  <!-- <div class="vr" style="color:#78d7b8"></div> -->
+  <div class="col-sm-7 "> 
+    
+    <h2 class="pl-5"><b>About us</b></h2>
+    <p class="pl-5"><?php echo $profile->aboutus; ?></p>
+
+    <div class="row text-center">
+    <div>
+  <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="b" style="align-self:center; background-color:#13C571">Edit</a>
+  </div>
+  </div>
+  </div> 
+</div><br>
 </div>
 </div>  
 
 
-
 <div class="container-fluid" style="padding:0px">
-<img src="<?php echo base_url();?>/images/salebanner.png" class="img-fluid" width="100%" alt="">';
+<img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
 </div>
 
 
     
-<?php
-	
-  include "footer.php";
-?> 
+
   </body>
 </html>
