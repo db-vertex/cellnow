@@ -456,7 +456,13 @@ $aboutus=$this->input->post('aboutus');
   
   }
 
-  
+  public function postproduct()
+  {
+	  $this->load->view('front/header');
+	  $this->load->view('front/postproduct');
+	  $this->load->view('front/footer');
+  }
+
 
   
 }
