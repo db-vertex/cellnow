@@ -77,11 +77,7 @@ html,body
   <div class="col-sm-7 mb-1">
   <div class="row">
   <div class="col-sm-6  mb-1">
-<<<<<<< HEAD
-  <a href="<?php echo base_url();?>welcome/myprofile"  style="background-color: #78d7b8; color:#fff" class="btn" role="button" aria-disabled="true" id="a">Seller</a>
-=======
   <a href="<?php echo base_url();?>welcome/myprofile"   class="btn" role="button" aria-disabled="true" id="a">Seller</a>
->>>>>>> origin/poonam
  
   </div>
   <div class="col-sm-6 mb-1" >
@@ -95,11 +91,7 @@ html,body
               $profile = get_seller_profile($user['user_id']);
 
                   ?>
-<<<<<<< HEAD
-  <div class="col-sm-5">
-=======
   <div class="col-sm-6">
->>>>>>> origin/poonam
   <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
    <img src="<?php echo base_url();?>assets/images/Ellipse 11 (2).png"  class="img-fluid rounded mx-auto d-block">
@@ -115,11 +107,7 @@ html,body
  
   </div>
   <!-- <div class="vr" style="color:#78d7b8"></div> -->
-<<<<<<< HEAD
-  <div class="col-sm-7 " style=" border-left:solid; border-color: #78d7b8"> 
-=======
   <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8"> 
->>>>>>> origin/poonam
     
     <h2 class="pl-5"><b>About us</b></h2>
     <p class="pl-5"><?php echo $profile->aboutus; ?></p>
