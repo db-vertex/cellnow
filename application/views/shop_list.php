@@ -52,6 +52,7 @@ $msg_class=$this->session->flashdata('msg_class')
                   <th>GST</th>
                   <th>Description</th>
                   <th>Approved</th>
+                 
                   <th>Action</th>
                 </tr>
               </thead>
@@ -68,8 +69,14 @@ $msg_class=$this->session->flashdata('msg_class')
                 <td><?php echo  $value->Address;?></td>
                 <td><?php echo  $value->GST;?></td>
                 <td><?php echo  $value->description;?></td>
-                <td>  <input type="button" name="admin_approval" value="<?=($value->admin_approval==0)?"Verified":"Rejected"?>" class="btn btn-info outofstock" onclick="return outofstock(this);" data-admin_approval = "<?php echo $value->admin_approval ;?>" data-id = "<?php echo $value->id ;?>"></td>
-               
+                <td>  <select  id="pay_type" data-id="<?php echo $value->id?>"   class="btn btn-info prioritydrop">
+           
+           <option value="0" <?=(($value->admin_approval==0)?"selected":"")?>>Unverified</option>
+           <option  value="1" <?=(($value->admin_approval==1)?"selected":"")?>>Verified</option>
+           <option value="2"<?=(($value->admin_approval==2)?"selected":"")?>>Rejected</option>
+          
+       </select></td>
+              
                 <td>  <a href="<?php echo base_url("admin/editcategory/{$value->id}")?>" class=""  title="Edit">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </a>
@@ -128,44 +135,26 @@ $msg_class=$this->session->flashdata('msg_class')
      
     });
 
-    $(document).on("click", ".outofstock", function(){
-  var id=$(this).data("id");
-  var admin_approval=$(this).data("admin_approval");
-  var ele=$(this);
-            if(admin_approval==0){
-                
-               
-                 var admin_approval = 1;
-            
-            }else{
-           
-                var admin_approval = 0;
-            
-            }
-                 $.ajax({
-                   type: "POST",
-                   url: '<?php echo base_url("Admin/adminapproved")?>',
-                   cache:false,
-                  data: {'id':id,'admin_approval':admin_approval},
-                   error: function() {
-                      alert('Something is wrong');
-                   },
-             success: function(data) {
-                   if(admin_approval==1){
-                       ele.val("Verified");
-                      swal("Verified Successfully!","", "success");
-                     
-                    }else{
-                        ele.val("Rejected");
-                       swal("Rejected Successfully!","", "success");
-                      
-                    }
-                  
-                  ele.data("stock", stock);
-                  
-             } 
-          });
-});
+    $(document).on('change', ".prioritydrop", function(){
+   
+   let thisval = $(this).val();
+  
+   let id = $(this).data("id");
+  
+ 
+    $.ajax({
+        url: '<?php echo base_url("admin/adminapproved/")?>',
+            type: 'POST',
+            data: {"admin_approval":thisval, "id":id},
+            error: function() {
+               alert('Something is wrong');
+            },
+            success: function(data) {
+              location.reload();
+                 
+            } 
+         });
+})
 
 
     

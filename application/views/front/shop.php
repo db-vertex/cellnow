@@ -73,7 +73,7 @@
 
 <body>
 
-
+<?php $shop = get_id_by_shop($user['user_id']);?>
   <div class="container">
 
     <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
@@ -118,14 +118,19 @@
             <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
             <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
             </p>
-
+            <?php  if(!empty($shop)){?>
+            <p><?php if(!empty($shop->shop_images)){?>
+              <img  src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
+            <?php }else{?><img  src="<?php echo base_url()?>assets/images/shop1.png">
+              <?php } }?></p>
           </div><br>
 
 
         </div>
         <!-- <div class="vr" style="color:#78d7b8"></div> -->
         <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
-        <?php $shop = get_id_by_shop($user['user_id']);
+        <?php 
+       
            if(empty($shop)){?>
           <div class="row text-center mt-5">
            
@@ -141,16 +146,32 @@
               <div class="col" >
              <div class="row">
              <div class="col">
-                <h4 class="ml-3"><?php echo $shop->name;?> </h4> </div><div class="col" style="color:#10b981"><p><?php if($shop->admin_approval==0){?>Pending<?php }else{?>Verified<?php }?></p>
+                <h4 class="ml-3"><?php echo $shop->name;?> </h4> </div><div class="col"><?php if($shop->admin_approval==2){?><div>
+    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#FF7474; color:#540C07" >Rejected by admin </a>
+    </div><?php }else if($shop->admin_approval==1){?> <div>
+    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#d1fae5; color:#13C571" >Verified by admin </a>
+    </div><?php }?>
             </div> </div>
             <p class="ml-3"><?php echo $shop->email;?></p>
                 <p class="ml-3"><?php echo $shop->description;?></p>
-                <p class="ml-3">GST Number -<?php echo $shop->GST;?></p>
                 <p class="ml-3"><?php echo $shop->Address;?></p>
+                <p class="ml-3 mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
+               
+                <p class="ml-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
+                <p class="ml-3"><b>Type of service: </b><?php echo $shop->service_type;?></p>
               </div>
-              
-                <?php } ?>
+              <?php if($shop->admin_approval!=1){?>
+              <div class="row text-center">
+      <div>
+    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#13C571; color:#fff" >Edit </a>
+    </div>
+    </div>
+                <?php } } ?>
+
+                
           </div>
+
+          
         </div>
       </div><br>
     </div>
@@ -158,7 +179,7 @@
 
 
   <div class="container">
-    <h5><b>Seller Ads</b></h5>
+    <h3 class="ml-5"><b>Verified Ads</b></h3>
   </div>
 
   <div class="container">
@@ -218,108 +239,8 @@
       </div>
 
 
-      <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
 
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn " id="b">Edit</a>
-            <a href="#" class="btn " id="b">Delete</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
-
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn" id="b">Edit</a>
-            <a href="#" class="btn" id="b">Delete</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
-
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn " id="b">Edit</a>
-            <a href="#" class="btn " id="b">Delete</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
-
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn " id="b">Edit</a>
-            <a href="#" class="btn " id="b">Delete</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
-
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn " id="b">Edit</a>
-            <a href="#" class="btn " id="b">Delete</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
-
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn " id="b">Edit</a>
-            <a href="#" class="btn " id="b">Delete</a>
-          </div>
-        </div>
-      </div>
+     
 
     </div>
   </div>
@@ -419,7 +340,25 @@
               </div>
             </div> <!-- form-group// -->
 
+            <div class="form-group">
+              <label>Shop Time</label>
+              <input name="open_close_time" class="form-control" placeholder="Time" type="text"
+                value="<?php echo set_value('open_close_time'); ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid time is required.
+              </div>
 
+            </div>
+
+            <div class="form-group">
+              <label>Service Type</label>
+              <input name="service_type" class="form-control" placeholder="Service Type" type="text"
+                value="<?php echo set_value('service_type'); ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid Service Type is required.
+              </div>
+
+            </div>
 
             <div class="form-group">
               <label> GST Number</label>
@@ -440,6 +379,8 @@
 
             </div>
 
+           
+
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>
 
@@ -454,6 +395,152 @@
 
 </div>
 
+
+
+<div id="editshopdetail" class="modal fade" role="dialog">
+
+  <div class="modal modal-signin position-static d-block  py-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <button data-dismiss="modal" type="button" class="close" aria-label="Close"
+          style="margin-left: 90%; margin-top:10px;">&times;</button>
+         <?php  $shop = get_id_by_shop($user['user_id']); ?>
+
+        <div class="modal-body px-5 pt-0">
+          <h3 class=" mb-0 my-3 fs-5" style="text-align: center;color:#13C571">Edit Shop Detail</h3>
+
+          <?php if ($error = $this->session->flashdata('Login_fail')) { ?>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="alert alert-danger ">
+                  <?= $error;
+
+                  unset($_SESSION['Login_fail']);
+                  ?>
+
+                </div>
+              </div>
+            </div>
+
+          <?php } ?>
+          <form class="needs-validation" novalidate action="<?php echo base_url(); ?>welcome/editshop" method="post" enctype="multipart/form-data">
+            <input type="hidden" name="user_id" value="<?php echo $user['user_id'] ?>">
+            <input type="hidden" name="id" value="<?php echo $shop->id; ?>">
+            <div class="form-group ">
+              <label>Shop Name</label>
+              <input name="name" class="form-control" placeholder="Shop Name" type="text"
+                value="<?php echo $shop->name; ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid name is required.
+              </div>
+            </div>
+            <div class="form-group ">
+              <label>Enter Your Email</label>
+              <input name="email" class="form-control" placeholder="Email" type="email"
+                value="<?php echo $shop->email; ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid email is required.
+              </div>
+            </div> <!-- form-group// -->
+
+
+            <div class="form-group">
+              <label> Mobile</label>
+              <input name="mobile" class="form-control" placeholder="Mobile" type="number"
+                value="<?php echo $shop->mobile; ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid Mobile is required.
+              </div>
+            </div>
+            <div class="form-group">
+              <label> Address</label>
+              <input name="Address" class="form-control" placeholder="Address" type="text"
+                value="<?php echo $shop->Address; ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Address is required.
+              </div>
+            </div>
+
+
+            <!-- form-group// -->
+            <div class="form-group">
+
+              <label> Category</label>
+              <select name="shop_category" style="border-radius:30px; border-color:#13C571" class="form-select" required
+                id="category" required>
+                <option value="">Choose</option>
+                <?php
+                $category = get_all_shopcategory();
+                foreach ($category as $key => $cat) {
+                  ?>
+                  <option id="" value="<?php echo $cat->id; ?>"><?php echo $cat->shop_category; ?></option>
+                <?php } ?>
+              </select>
+              <div class="invalid-feedback">
+                 Category is required.
+              </div>
+            </div> <!-- form-group// -->
+
+            <div class="form-group">
+              <label>Shop Time</label>
+              <input name="open_close_time" class="form-control" placeholder="Time" type="text"
+                value="<?php echo $shop->open_close_time; ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid time is required.
+              </div>
+
+            </div>
+
+            <div class="form-group">
+              <label>Service Type</label>
+              <input name="service_type" class="form-control" placeholder="Service Type" type="text"
+                value="<?php echo $shop->service_type; ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid Service Type is required.
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+              <label> GST Number</label>
+              <input name="GST" class="form-control" placeholder="GST Number" type="text"
+                value="<?php echo $shop->GST; ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid GST is required.
+              </div>
+
+            </div>
+            <div class="form-group">
+              <label> Description</label>
+              <input name="description" class="form-control" placeholder="Description" type="text"
+                value="<?php echo $shop->description; ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid message is required.
+              </div>
+
+            </div>
+
+            <div class="form-group">
+				        	    
+							    <label>Image </label>
+							    <input type="file" class="form-control" id="cover_image" name="shop_images" style="border-radius:30px; border-color:#13C571" accept="image/*">
+							    <span id="cover_err" style="color:red;"></span>
+							</div>
+
+            <center><button class=" mb-2 btn btn-lg  text-white mt-2"
+                style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>
+
+            </center>
+          </form>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
 
 
 <div class="modal fade" id="createModal" aria-hidden="true">

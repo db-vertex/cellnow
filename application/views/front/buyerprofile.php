@@ -114,7 +114,7 @@ html,body
 
     <div class="row text-center">
     <div>
-  <a href="" data-toggle="modal"  data-target="#editprofile" class="btn "id="b" style="align-self:center; background-color:#13C571">Edit</a>
+  <a href="" data-toggle="modal"  data-target="#editprofile" class="btn "id="b" style="align-self:center; background-color:#13C571; color:#fff">Edit Profile</a>
   </div>
   </div>
   </div> 
