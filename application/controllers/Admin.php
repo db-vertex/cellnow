@@ -26,7 +26,7 @@ class Admin extends CI_Controller {
         // this is your constructor
         parent::__construct();
         $this->load->helper('form');
-       
+        $this->load->helper('user_helper');
         $this->load->helper('url');
         $this->load->helper('form');
         // Load form validation library
@@ -479,6 +479,27 @@ public function Category()
 
 }
 
+
+public function banner()
+{
+  $session_id = $this->session->userdata('admin_id');
+    if($session_id)
+    {
+         
+    $admin_detail = $this->admin_model->get_admin_data($session_id);
+    $shop=$this->admin_model->all_shop();   // for foreach loop
+    $this->load->view('shop_list',['admin_detail'=>$admin_detail,'shop'=>$shop]);
+    $category=$this->admin_model->all_banner();   // for foreach loop
+    $this->load->view('banner_list',['admin_detail'=>$admin_detail,'banner'=>$category]);
+   
+    }
+    else
+    {
+      return redirect('admin');
+    }
+
+}
+
 public function shop()
 {
   $session_id = $this->session->userdata('admin_id');
@@ -496,6 +517,31 @@ public function shop()
     }
 
 }
+
+
+function adminapproved(){
+ 
+  $session_id = $this->session->userdata('admin_id');
+  if ($session_id) {
+ 
+$id= $this->input->post('productId');
+
+$status=$this->input->post('status');
+
+$arr=array('admin_approval'=>$status);
+$this->admin_model->update_shop_status($id,$arr);
+
+//$delete = $this->admin_model->delete_record('review_product', $id);
+
+
+ 
+  
+
+
+}
+
+
+}  
 
 
 function adminapproved(){
@@ -1521,12 +1567,12 @@ public function user()
              
       $admin_detail = $this->admin_model->get_admin_data($session_id);
 
-      $seller = get_all_seller(); 
+   
       $buyer = get_all_buyer(); 
       //$featuredposts = $this->Product_model->getfeaturedpro();
 
       // for foreach loop
-      $this->load->view('user_list',['admin_detail'=>$admin_detail,'buyer'=>$buyer,'seller'=>$seller]);
+      $this->load->view('user_list',['admin_detail'=>$admin_detail,'buyer'=>$buyer]);
        
         }
         else

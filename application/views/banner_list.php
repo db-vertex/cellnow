@@ -9,7 +9,7 @@
     <!-- Content Header (Page header) -->
  <section class="content-header">
       <h1>
-        Shop Category
+        Banner
       </h1>
      <!--  <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -21,7 +21,7 @@
 
 <section class="content">
 <div class="row">
-<a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Category</a>
+<a href="<?=  base_url('Admin/add_banner'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Banner</a>
 
 <?php  if($msg=$this->session->flashdata('msg')): 
 
@@ -45,37 +45,51 @@ $msg_class=$this->session->flashdata('msg_class')
               <thead>
                 <tr>
                   <th>S no.</th>
-                  <th>Shop Category</th>
-                  <th>Icon</th>
+                  <!-- <th>Title</th>
+ -->                  <th>Banner</th>
+                  <!-- <th>Video Link</th> -->
                   <th>Action</th>
                 </tr>
               </thead>
         <tbody>
 
-          <?php foreach ($category as $value) {?>
+          <?php 
+          
+         // print_r($agent);
+
+          foreach ($banner as $value) { 
+
+          ?>
 
                 <tr id="<?php echo $value->id; ?>">
 
                 <td><?php echo  $value->id;?></td>
-                <td><?php echo  $value->shop_category;?></td>
+                <!-- <td><?php echo  $value->title;?></td> -->
                 
-                 <td style="text-align: center;">
+                <td style="text-align: center;">
+
+                  <!-- <?php echo  $value->agent_mobile;?> -->
                         
-                        <?php if(!empty($value->icon)){ ?>
-                        <img src="<?php echo base_url().'/uploads/category/'.$value->icon?>" style="height: 50px;width: 53px;">
+                        <?php if(!empty($value->banner_image)){ ?>
+                        <img src="<?php echo base_url().'/uploads/banner/'.$value->banner_image?>" style="height: 50px;width: 53px;">
 
-                        <?php } ?>
+                        <?php } ?> 
 
-                      </td>
+                </td>
+                  <!--     <td>
+
+                        <?php echo  $value->videolink;?>
+
+                      </td> -->
                 
 
-                <td>  <a href="<?php echo base_url("admin/editcategory/{$value->id}")?>" class=""  title="Edit">
+                <td> <!--  <a href="<?php echo base_url("admin/editbanner/{$value->id}")?>" class=""  title="Edit">
                     <span class="glyphicon glyphicon-pencil"></span>
-                </a>
+                </a> -->
  
   
-<!-- <a href="javascript:void(0)" class="delete" title="Delete" style="margin-left: 10px;"><span class="glyphicon glyphicon-trash"></span>-->
-<!--</a>-->
+ <a href="javascript:void(0)" class="delete" title="Delete" style="margin-left: 10px;"><span class="glyphicon glyphicon-trash"></span>
+</a>
 
  </td>
                 </tr> 
@@ -107,7 +121,7 @@ $msg_class=$this->session->flashdata('msg_class')
       function(isConfirm) {
         if (isConfirm) {
           $.ajax({
-         url: '<?php echo base_url("admin/deletecategory/")?>'+id,
+         url: '<?php echo base_url("admin/deletebanner/")?>'+id,
              type: 'DELETE',
              error: function() {
                 alert('Something is wrong');

@@ -135,9 +135,9 @@ input[type=number] {
 
             <div class="row align-items-md-stretch" style="min-height:90%;">
             <div class="col-md-7 ps-0" >
-                    <div class="h-100 p-5 ">
+                    <div class="h-100 p-3 ">
                         <img  class="img-fluid" 
-                            src="../assets/images/Forgot.png">
+                            src="<?php echo base_url()?>/assets/images/forgot.png">
                     </div>
                 </div>
                 <div class="col-md-5 pe-0">
