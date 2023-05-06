@@ -707,7 +707,7 @@ border-radius: 100px;
 
 
             <div class="col-sm-6 hiddens" id="reusable_parts_Publisher_type_div">
-              <label for="state" class="form-label post_input_lable">Publisher Type</label>
+              <label for="reusable_parts_Publisher_type" class="form-label post_input_lable">Publisher Type</label>
               <select class="form-select post_input_fild" id="reusable_parts_Publisher_type" name="reusable_parts_Publisher_type">
                 <option value="">Select Publisher Type</option>
                 <option value="Academic Books">Academic Books</option>
@@ -720,27 +720,118 @@ border-radius: 100px;
               </div>
             </div>
 
+            <div class="col-sm-6 hiddens" id="Tuitions_loction_div">
+              <label for="Tuitions_loction" class="form-label post_input_lable">Tuitions loction</label>
+              <select class="form-select post_input_fild" id="Tuitions_loction" name="Tuitions_loction">
+                <option value="">Select Tuitions loction</option>
+                <option value="Clients home">Clients home</option>
+                <option value="Tuition Center">Tuition Center</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Tuitions loction.
+              </div>
+            </div>
+
+            <div class="col-sm-6 hiddens" id="Tuitions_Education_Type_div">
+              <label for="Tuitions_Education_Type" class="form-label post_input_lable">Education Type</label>
+              <select class="form-select post_input_fild" id="Tuitions_Education_Type" name="Tuitions_Education_Type">
+                <option value="">Select Education Type</option>
+                <option value="Academic based">Academic based</option>
+                <option value="Dance Classes">Dance Classes</option>
+                <option value="Self-defence Classes">Self-defence Classes</option>
+                <option value="Sports">Sports</option>
+                <option value="Swimming Classes">Swimming Classes </option>
+                <option value="Typing">Typing</option>
+                <option value="Computer Classes">Computer Classes</option>
+                <option value="Special abled Teachers">Special abled Teachers</option>
+                <option value="Computer Classes">Others</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Tuitions loction.
+              </div>
+            </div>
+
+            <div class="col-sm-6 hiddens" id="school_eduction_div">
+              <label for="school_eduction" class="form-label post_input_lable">Eduction category</label>
+              <select class="form-select post_input_fild" id="school_eduction" name="school_eduction">
+                <option value="">Select Eduction category</option>
+                <option value="Playschool (Below 1st class)">Playschool (Below 1st class)</option>
+                <option value="Junior (1 to 6th class)">Junior (1 to 6th class)</option>
+                <option value="Senior (7th to 10th Classes)">Senior (7th to 10th Classes)</option>
+                <option value="Higher Secondary (11th and 12th classes)">Higher Secondary (11th and 12th classes)</option>
+                <option value="Competitive exams">Competitive exams</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Eduction category.
+              </div>
+            </div>
 
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 hiddens" id="Tuitions_gender_div">
+              <label for="Tuitions_gender" class="form-label post_input_lable">Gander</label>
+              <select class="form-select post_input_fild" id="Tuitions_gender" name="Tuitions_gender">
+                <option value="">Select Gander</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+                <option value="Both">Both</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Tuitions loction.
+              </div>
+            </div>
+
+            <div class="col-sm-6 hiddens" id="Tuitions_Years_Experience_div"> 
+            <label for="Tuitions_Years_Experience" class="form-label post_input_lable">Years of Experience</label>
+              <input type="number" class="form-control post_input_fild" id="Tuitions_Years_Experience" name="Tuitions_Years_Experience" placeholder="Please Enter Years of Experience" > 
+              <div class="invalid-feedback">
+              Please select Years of Experience.
+              </div>
+            </div>
+
+            <div class="col-sm-6 hiddens" id="Tuitions_Available_Timings_div">
+            <label for="Tuitions_Available_Timings" class="form-label post_input_lable">Available Timings</label>
+              <input data-provide="datepicker" class="form-control post_input_fild" id="Tuitions_Available_Timings" name="Tuitions_Available_Timings" placeholder="Please select Available_Timings" > 
+              <div class="invalid-feedback">
+              Please select Available Timings.
+              </div>
+            </div>
+
+            
+            <div class="col-sm-6 hiddens" id="Tuitions_person_Fees_div"> 
+            <label for="Tuitions_person_Fees" class="form-label post_input_lable">Par Person Fees</label>
+              <input type="number" class="form-control post_input_fild" id="Tuitions_person_Fees" name="Tuitions_person_Fees" placeholder="Please Enter Fees" > 
+              <div class="invalid-feedback">
+              Please Enter person Fees.
+              </div>
+            </div>
+
+            <div class="col-sm-6 hiddens" id="Tuitions_Teachers_Qualifications_div"> 
+            <label for="Tuitions_Teachers_Qualifications" class="form-label post_input_lable">Teachers Qualifications</label>
+              <input type="text" class="form-control post_input_fild" id="Tuitions_Teachers_Qualifications" name="Tuitions_Teachers_Qualifications" placeholder="Please Enter Teachers Qualifications" > 
+              <div class="invalid-feedback">
+              Please Enter Teachers Qualifications.
+              </div>
+            </div>
+
+            <div class="col-sm-6 hiddens" id="Price_div">
             <label for="Price" class="form-label post_input_lable">Price</label>
-              <input type="text" class="form-control post_input_fild" id="Price" name="Price" placeholder="Please Enter Price" required> 
+              <input type="text" class="form-control post_input_fild" id="Price" name="Price" placeholder="Please Enter Price" > 
               <div class="invalid-feedback">
               Please Enter Price.
               </div>
             </div>
 
-            <div class="col-sm-6">
+            <div class="col-sm-6 hiddens" id="use_years_div">
             <label for="Price" class="form-label post_input_lable">In use years</label>
-              <input type="text"   class="form-control post_input_fild" name="use_years" placeholder="Please choose years" id="datepicker" required/>
+              <input type="text"   class="form-control post_input_fild" name="use_years" placeholder="Please choose years" id="use_years" />
               <div class="invalid-feedback"> 
               Please choose  years.
               </div>
             </div>
 
-            <div class="col-sm-6">
-              <label for="state" class="form-label post_input_lable">Have Bill</label>
-              <select class="form-select post_input_fild" id="state" name="Have_Bill" required>
+            <div class="col-sm-6 hiddens" id="Have_Bill_div">
+              <label for="Have_Bill" class="form-label post_input_lable">Have Bill</label>
+              <select class="form-select post_input_fild" id="Have_Bill" name="Have_Bill" >
                 <option value="">Select Have Bill</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -750,9 +841,9 @@ border-radius: 100px;
               </div>
             </div>
 
-            <div class="col-sm-6">
-              <label for="state" class="form-label post_input_lable">Warrenty</label>
-              <select class="form-select post_input_fild" id="state" name="Warrenty" required>
+            <div class="col-sm-6 hiddens" id="Warrenty_div">
+              <label for="Warrenty" class="form-label post_input_lable">Warrenty</label>
+              <select class="form-select post_input_fild" id="Warrenty" name="Warrenty">
                 <option value="">Select Warrenty</option>
                 <option value="Yes">Yes</option>
                 <option value="No">No</option>
@@ -847,11 +938,12 @@ border-radius: 100px;
       console.log(filename);
     });
 
-      $("#datepicker").datepicker({
+      $("#use_years").datepicker({
         format: "yyyy",
         viewMode: "years", 
         minViewMode: "years"
     });
+
 </script>
 <script type="text/javascript">
 
@@ -878,15 +970,86 @@ border-radius: 100px;
         });
     });
 </script>
-<script  type="text/javascript">
- $(document).ready(function() { 
 
-   
-  $('select[name="subcategory"]').on('change', function() {
-            $('#reusable_parts_Select_Type').prop('required',false); 
+<script>
+ $('#Tuitions_Education_Type').change(function() {
+  if ($(this).val() ==  "Academic based") {
+       document.getElementById("school_eduction_div").style.display = "block";
+       school_eduction.required = true;
+      
+  } 
+  else{
+      document.getElementById("school_eduction_div").style.display = "none";
+  }
+});
+ </script>
+<script  type="text/javascript">
+ $(document).ready(function() {  
+
+  $('select[name="category"]').on('change', function() {
+            $('#reusable_parts_Select_Type').prop('required',false);         
             $('#Product_Brand').prop('required',false); 
             $('#reusable_parts_Publisher').prop('required',false); 
+            $('#Tuitions_loction').prop('required',false); 
+            $('#Tuitions_gender').prop('required',false); 
+            $('#reusable_parts_product_Type').prop('required',false); 
+            $('#reusable_parts_Laptops_product_Type').prop('required',false);  
+            $('#reusable_parts_computer_product_Type').prop('required',false);
+            $('#reusable_parts_Home_Appliances_product_Type').prop('required',false);  
+            $('#reusable_parts_Electronics_product_Type').prop('required',false); 
+             $('#reusable_parts_Kitchen_Appliances_product_Type').prop('required',false); 
+             $('#reusable_parts_Automobiles_product_Type').prop('required',false); 
+             $('#reusable_parts_Furniture_product_Type').prop('required',false); 
+             $('#reusable_parts_Sports_product_Type').prop('required',false); 
+             $('#reusable_parts_Musical_product_Type').prop('required',false);
+             $('#Tuitions_Education_Type').prop('required',false);
+             $('#Price').prop('required',false);
+             $('#use_years').prop('required',false);
+             $('#Have_Bill').prop('required',false);
+             $('#Warrenty').prop('required',false);
+             $('#school_eduction').prop('required',false);
 
+
+
+             document.getElementById("school_eduction_div").style.display = "none";
+            $('#category').on('change.Price,use_years,Have_Bill,Warrenty', function() {
+            $("#Price_div,#use_years_div,#Have_Bill_div,#Warrenty_div").toggle($(this).val() == 1);
+           
+             if($(this).val() == 1){
+              Price.required = true; 
+              use_years.required = true;  
+              Have_Bill.required = true;  
+              Warrenty.required = true;  
+            }
+            }).trigger('change.Price,use_years,Have_Bill,Warrenty'); 
+            
+            
+  });
+
+  $('select[name="subcategory"]').on('change', function() {
+            $('#reusable_parts_Select_Type').prop('required',false);         
+            $('#Product_Brand').prop('required',false); 
+            $('#reusable_parts_Publisher').prop('required',false); 
+            $('#Tuitions_loction').prop('required',false); 
+            $('#Tuitions_gender').prop('required',false); 
+            $('#reusable_parts_product_Type').prop('required',false); 
+            $('#reusable_parts_Laptops_product_Type').prop('required',false);  
+            $('#reusable_parts_computer_product_Type').prop('required',false);
+            $('#reusable_parts_Home_Appliances_product_Type').prop('required',false);  
+            $('#reusable_parts_Electronics_product_Type').prop('required',false); 
+             $('#reusable_parts_Kitchen_Appliances_product_Type').prop('required',false); 
+             $('#reusable_parts_Automobiles_product_Type').prop('required',false); 
+             $('#reusable_parts_Furniture_product_Type').prop('required',false); 
+             $('#reusable_parts_Sports_product_Type').prop('required',false); 
+             $('#reusable_parts_Musical_product_Type').prop('required',false); 
+             $('#Tuitions_Education_Type').prop('required',false);
+             $('#Tuitions_Available_Timings').prop('required',false); 
+             $('#Tuitions_Years_Experience').prop('required',false);
+             $('#Tuitions_person_Fees').prop('required',false);
+             $('#Tuitions_Teachers_Qualifications').prop('required',false);
+
+
+             document.getElementById("school_eduction_div").style.display = "none";
             $('#subcategory').on('change.reusable_parts_Select_Type,Product_Brand', function() {
             $("#reusable_parts_Select_Type_div,#reusable_parts_Product_Brand_div").toggle( $(this).val() == 1||$(this).val() == 2|| $(this).val() == 3||$(this).val() == 4 ||
                $(this).val() == 5||$(this).val() == 6|| $(this).val() == 7||$(this).val() == 8|| $(this).val() == 9||$(this).val() == 10 ||$(this).val() == 16);
@@ -903,12 +1066,30 @@ border-radius: 100px;
              if($(this).val() == 11){
                 reusable_parts_Publisher.required = true;  
             }
-            }).trigger('change.reusable_parts_Publisher,reusable_parts_Publisher_type');           
+            }).trigger('change.reusable_parts_Publisher');  
+
+            $('#subcategory').on('change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications', function() {
+            $("#Tuitions_loction_div,#Tuitions_gender_div,#Tuitions_Education_Type_div,#Tuitions_Available_Timings_div,#Tuitions_Years_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_Qualifications_div").toggle($(this).val() == 12);
+             if($(this).val() == 12){
+              Tuitions_loction.required = true; 
+              Tuitions_gender.required = true;  
+              Tuitions_Education_Type.required = true; 
+              Tuitions_Available_Timings.required = true;  
+              Tuitions_Years_Experience.required = true;  
+              Tuitions_person_Fees.required = true;  
+              Tuitions_Teachers_Qualifications.required = true;          
+            }
+            }).trigger('change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications'); 
+            
+            
   });
 
   $('select[name="reusable_parts_Select_Type"]').on('change', function() {
-            $('#reusable_parts_Select_Type').prop('required',false); 
+    $('#reusable_parts_Select_Type').prop('required',false);         
+            $('#Product_Brand').prop('required',false); 
             $('#reusable_parts_Publisher').prop('required',false); 
+            $('#Tuitions_loction').prop('required',false); 
+            $('#Tuitions_gender').prop('required',false); 
             $('#reusable_parts_product_Type').prop('required',false); 
             $('#reusable_parts_Laptops_product_Type').prop('required',false);  
             $('#reusable_parts_computer_product_Type').prop('required',false);
@@ -919,7 +1100,6 @@ border-radius: 100px;
              $('#reusable_parts_Furniture_product_Type').prop('required',false); 
              $('#reusable_parts_Sports_product_Type').prop('required',false);
              $('#reusable_parts_Musical_product_Type').prop('required',false);
-            
             
             $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_product_Type', function() {
              
