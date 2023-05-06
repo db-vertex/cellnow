@@ -10,6 +10,8 @@
     <title>Checkout example · Bootstrap v5.3</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+<link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
 
     <style>
       .bd-placeholder-img {
@@ -304,6 +306,20 @@ option {
   margin-top: 70%;
   }
 }
+.form-check-input{
+
+font-family: 'Open Sans';
+font-style: normal;
+font-weight: 700;
+font-size: 18px;
+line-height: 25px;
+border: 3px solid #10B981;
+border-radius: 100px;
+}
+.form-check-input:checked {
+  background: #FFFF00;
+  border: 3px solid #10B981;
+}
 
     </style>
 
@@ -337,7 +353,10 @@ option {
             <div class=" images_col mx-2">
             <div class="box a">
             <div class="my-box">
-            <div class="pluse">+</div>
+            <label class="pluse" for="cover_images" class="btn">
+              +
+            </label>
+            <input type="file" class="form-control-file" id="cover_images" style="visibility:hidden;"  >
             </div>
             </div>
             </div>
@@ -346,22 +365,41 @@ option {
      
       <div class="row images_small_box_row ms-1 ">
         <div class="col-3 images_small_box m-2">
-        <div class="images_small_box__plus">+</div>
+        <label class="images_small_box__plus" for="images_2" class="btn">+</label>
+        <input type="file" class="form-control-file" id="images_2" style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
-        <div class="images_small_box__plus">+</div>
+        <label class="images_small_box__plus" for="images_3" class="btn">+</label>
+        <input type="file" class="form-control-file" id="images_3" style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
-        <div class="images_small_box__plus">+</div>
+        <label class="images_small_box__plus" for="images_4" class="btn">+</label>
+        <input type="file" class="form-control-file" id="images_4" style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
-        <div class="images_small_box__plus">+</div>
+        <label class="images_small_box__plus" for="images_5" class="btn">+</label>
+        <input type="file" class="form-control-file" id="images_5" style="visibility:hidden;"  >
         </div>
         </div>
         </div>
       <div class=" col-lg-5 order-lg-first inputform_colume">
         <form class="needs-validation" novalidate>
           <div class="row g-3">
+
+          <div class="col-12">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+            <label class="form-check-label" for="inlineRadio1">Normal</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Bost Ads(Rs. 125)</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <label class="form-check-label" for="inlineRadio3">Donate</label>
+          </div>
+            </div>
 
           <div class="col-12">
               <label for="firstName" class="form-label post_input_lable">Title</label>
@@ -399,27 +437,67 @@ option {
               <label for="state" class="form-label post_input_lable">Product Brand</label>
               <select class="form-select post_input_fild" id="state" required>
                 <option value="">Select Product Brand</option>
-                <option>California</option>
+                <option value="">Product</option>
+                <option value="">parts (Can be multiple parts) </option>
               </select>
               <div class="invalid-feedback">
                 Please provide a valid Product Brand.
               </div>
             </div>
 
-
-            <div class="col-12">
-              <label for="address" class="form-label post_input_lable">Stock Quantity</label>
-              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Stock Quantity" required>
+            <div class="col-sm-6">
+              <label for="state" class="form-label post_input_lable">Type</label>
+              <select class="form-select post_input_fild" id="state" required>
+                <option value="">Select Type</option>
+                <option value="MotherBoard">MotherBoard</option>
+                <option value="Battery">Battery</option>
+                <option value="Pen">Pen</option>
+                <option value="Camera Module">Camera Module</option>
+                <option value="Charger Module">Charger Module</option>
+                <option value="Others">Others</option>
+              </select>
               <div class="invalid-feedback">
-                Please Enter Stock Quantity.
+                Please provide a valid Product Type.
               </div>
             </div>
 
-            <div class="col-12">
-              <label for="address" class="form-label post_input_lable">Select Product Condition</label>
-              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Product Condition" required>
+            <div class="col-sm-6">
+            <label for="Price" class="form-label post_input_lable">Price</label>
+              <input type="text" class="form-control post_input_fild" id="Price" placeholder="Please Enter Price" required> 
               <div class="invalid-feedback">
-                Please Enter Product Condition.
+              Please Enter Price.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+            <label for="Price" class="form-label post_input_lable">In use years</label>
+              <input type="text"   class="form-control post_input_fild" placeholder="Please choose years" id="datepicker" required/>
+              <div class="invalid-feedback"> 
+              Please choose  years.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="state" class="form-label post_input_lable">Have Bill</label>
+              <select class="form-select post_input_fild" id="state" required>
+                <option value="">Select Have Bill</option>
+                <option value="">Yes</option>
+                <option value="">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Have Bill.
+              </div>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="state" class="form-label post_input_lable">Warrenty</label>
+              <select class="form-select post_input_fild" id="state" required>
+                <option value="">Select Warrenty</option>
+                <option value="">Yes</option>
+                <option value="">No</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Warrenty.
               </div>
             </div>
 
@@ -456,7 +534,17 @@ option {
                 Please Enter Product Description.
               </div>
             </div>
-         
+            <div class="col-12">
+            <div class="form-check">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label class="form-check-label" for="flexCheckChecked">
+            Terms and Conditions 
+            </label>
+          </div>
+          </div>
+          <input  type="text" class="form-control "  name="user_id" id="user_id" placeholder="Description" value="<?php echo $user['user_id']; ?>"  rows="8" hidden/>
+       <input type="text" class="form-control" name="latitude" id="latitude" hidden/>
+         <input type="text" class="form-control" name="longitude" id="longitude" hidden/>
           <div class="my-4"> </div>
 
           <div class="col-sm-6 col-6 ">
@@ -475,7 +563,34 @@ option {
   </main>
 
 </div>
+<script>
+  $("#cover_images").change(function() {
+  filename = this.cover_images[0].name;
+  console.log(filename);
+});
+$("#images_2").change(function() {
+  filename = this.images_2[0].name;
+  console.log(filename);
+});
+$("#images_3").change(function() {
+  filename = this.images_3[0].name;
+  console.log(filename);
+});
+$("#images_4").change(function() {
+  filename = this.images_4[0].name;
+  console.log(filename);
+});
+$("#images_5").change(function() {
+  filename = this.images_5[0].name;
+  console.log(filename);
+});
 
+  $("#datepicker").datepicker({
+    format: "yyyy",
+    viewMode: "years", 
+    minViewMode: "years"
+});
+</script>
 <script type="text/javascript">
 
     $(document).ready(function() {
