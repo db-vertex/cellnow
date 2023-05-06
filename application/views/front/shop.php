@@ -4,6 +4,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+<<<<<<< HEAD
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
@@ -12,6 +13,13 @@
   <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
+=======
+
+ 
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+>>>>>>> origin/poonam
   <!-- link for map -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
@@ -105,7 +113,7 @@
         $profile = get_seller_profile($user['user_id']);
 
         ?>
-        <div class="col-sm-5">
+        <div class="col-sm-6">
         <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
           <img src="<?php echo base_url(); ?>assets/images/Ellipse 11 (2).png" class="img-fluid rounded mx-auto d-block">
@@ -118,8 +126,8 @@
           </div>
           <div class="row text-center ">
             <p>
-              <?php echo $profile->email; ?>
-              <?php echo $profile->phone; ?>
+            <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
+            <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
             </p>
 
           </div><br>
@@ -127,7 +135,7 @@
 
         </div>
         <!-- <div class="vr" style="color:#78d7b8"></div> -->
-        <div class="col-sm-7 " style=" border-left:solid; border-color: #78d7b8">
+        <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
         <?php $shop = get_id_by_shop($user['user_id']);
            if(empty($shop)){?>
           <div class="row text-center mt-5">

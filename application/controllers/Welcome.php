@@ -27,6 +27,7 @@ class Welcome extends CI_Controller {
 		 $this->load->helper('user_helper');
 
 		 $this->load->model('user');
+		 $this->load->model('product_model');
 		 $this->load->library('form_validation');
 		 $this->load->library('session');
 
@@ -334,6 +335,51 @@ class Welcome extends CI_Controller {
 		
 	}
 
+	public function changepassword()
+	{
+		$this->form_validation->set_rules('otp','otp','required');
+		$this->form_validation->set_rules('password',' password','required|min_length[6]');
+		$this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
+		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
+		if($this->form_validation->run())
+	      {
+			$otp =  $this->input->post('otp');
+			$password = $this->input->post('password');
+			$confirm_password = $this->input->post('confirm_password');
+			$login_id=$this->user->validateotp($otp);
+
+			if($login_id)
+			{
+				
+				$this->db->where('phone',$login_id['phone']);
+				$data=array(
+			   'password'=> md5($password),
+			   );
+			   $this->db->update('users',$data);
+			   return redirect('welcome');
+			}
+			else
+			{
+			   $this->session->set_flashdata('OTP_failed','Invalid OTP');
+			   $this->session->set_flashdata('msg_class','alert-danger');
+			  
+			 $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			 $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			 $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			 $this->output->set_header('Pragma: no-cache');
+			  $this->load->view('front/header',['success'=>true]);
+			$this->load->view('front/change_password');
+			  $this->load->view('front/footer');
+			}
+		  }
+		  else{
+			$this->load->view('front/header');
+			$this->load->view('front/change_password');
+			$this->load->view('front/footer');
+		  }
+		
+	}
+
 	public function otp()
 	{
 
@@ -397,19 +443,19 @@ class Welcome extends CI_Controller {
 
 		 $user_detail = $this->user->loginuser($session_id);
    
-    $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
-    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-    $this->output->set_header('Pragma: no-cache');
-		$this->load->view('front/header',['user'=>$user_detail]);
-		$this->load->view('front/shop',['user'=>$user_detail]);
-		$this->load->view('front/footer');
-       
-       }else{
-        $this->load->view('front/header');
-		    $this->load->view('front/login');
-			$this->load->view('front/footer');
-       }
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+				$this->load->view('front/header',['user'=>$user_detail]);
+				$this->load->view('front/shop',['user'=>$user_detail]);
+				$this->load->view('front/footer');
+			
+			}else{
+				$this->load->view('front/header');
+					$this->load->view('front/login');
+					$this->load->view('front/footer');
+			}
 
 
 	}
@@ -442,14 +488,14 @@ class Welcome extends CI_Controller {
 
 		 $user_detail = $this->user->loginuser($session_id);
    
-    $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
-    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-    $this->output->set_header('Pragma: no-cache');
-		$this->load->view('front/header',['user'=>$user_detail]);
-		$this->load->view('front/buyerprofile',['user'=>$user_detail]);
-		$this->load->view('front/footer');
-       
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+				$this->load->view('front/header',['user'=>$user_detail]);
+				$this->load->view('front/buyerprofile',['user'=>$user_detail]);
+				$this->load->view('front/footer');
+			
        }else{
         
             return redirect('welcome');
@@ -468,15 +514,15 @@ class Welcome extends CI_Controller {
 
 		 $user_detail = $this->user->loginuser($session_id);
    
-    $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
-    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-    $this->output->set_header('Pragma: no-cache');
-		$this->load->view('front/header',['user'=>$user_detail]);
-		$this->load->view('front/sellerprofile',['user'=>$user_detail]);
-		$this->load->view('front/footer');
-       
-       }else{
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+				$this->load->view('front/header',['user'=>$user_detail]);
+				$this->load->view('front/sellerprofile',['user'=>$user_detail]);
+				$this->load->view('front/footer');
+			
+			}else{
         
             return redirect('welcome');
        }
@@ -484,70 +530,77 @@ class Welcome extends CI_Controller {
 
 	}
 
-	public function updatesellerreg()
-  {
-//print_r($_POST);die();
-           $name=$this->input->post('name');
-	       $Address=$this->input->post('Address');
-	       $user_id=$this->input->post('user_id');
-	      
-         $email=$this->input->post('email');
-$phone=$this->input->post('phone');
-$aboutus=$this->input->post('aboutus');
-         $seller = check_seller_profile($user_id);
-
-
-	        $userData['name'] = $name;
-	         $userData['Address'] = $Address;
-            //$userData['user_id'] = $user_id;
-           
-      $userData['phone'] = $phone;
-      $userData['aboutus'] = $aboutus;
-       $userData['email'] = $email;
-        
-       $this->user->update($userData,$user_id);
-
-            
-
-      
-                $userData['modified'] = date("Y-m-d H:i:s");
-
-      
-         $this->session->set_flashdata('regester_success','Seller profile Updated successfully');
-           
-           return redirect('welcome/myprofile');
-  
-  }
-
-  public function postproduct()
-  {
-	$session_id = $this->session->userdata('id');
-      
-	if($session_id)
+		public function updatesellerreg()
 	{
-	 //$myproduct = $this->product_model->myproduct($session_id);
 
-	  $user_detail = $this->user->loginuser($session_id);
+			$name=$this->input->post('name');
+			$Address=$this->input->post('Address');
+			$user_id=$this->input->post('user_id');
+			
+			$email=$this->input->post('email');
+			$phone=$this->input->post('phone');
+			$aboutus=$this->input->post('aboutus');
+					$seller = check_seller_profile($user_id);
 
-		$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-		$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
-		$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-		$this->output->set_header('Pragma: no-cache');
-	 $this->load->view('front/header',['user'=>$user_detail]);
-	 $this->load->view('front/postproduct',['user'=>$user_detail]);
-	 $this->load->view('front/footer');
+
+				$userData['name'] = $name;
+				$userData['Address'] = $Address;
+				//$userData['user_id'] = $user_id;
+			
+		$userData['phone'] = $phone;
+		$userData['aboutus'] = $aboutus;
+		$userData['email'] = $email;
+			
+		$this->user->update($userData,$user_id);
+
+				
+
+		
+					$userData['modified'] = date("Y-m-d H:i:s");
+
+		
+			$this->session->set_flashdata('regester_success','Seller profile Updated successfully');
+			
+			return redirect('welcome/myprofile');
 	
-	}else{
-	 
-		 return redirect('welcome');
 	}
 
-  }
+	public function postproduct()
+	{
+		$session_id = $this->session->userdata('id');
+		if($session_id)
+		{
+		//$myproduct = $this->product_model->myproduct($session_id);
 
-  public function uploadprofileimg()
+		$user_detail = $this->user->loginuser($session_id);
+
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+		$this->load->view('front/header',['user'=>$user_detail]);
+		$this->load->view('front/postproduct',['user'=>$user_detail]);
+		$this->load->view('front/footer');
+		
+		}else{
+		
+			return redirect('welcome');
+		}
+
+	}
+
   
-  {  
-      $user_id=$this->input->post('user_id');
+     public function subcategorydropdown($id)
+	 {
+			$result = $this->db->where("category",$id)->get("subcategory")->result();
+		//$data = $this->admin_model->get_record_where('subcategory',$id);
+		
+			echo json_encode($result);
+     }
+
+   public function uploadprofileimg(){  
+      
+	$user_id=$this->input->post('user_id');
 
        if (!empty($_FILES['profile_img']['name'])) {
                     $config['upload_path'] = './uploads/profile/';
@@ -567,20 +620,45 @@ $aboutus=$this->input->post('aboutus');
                      return redirect('welcome/myprofile');
                     }
                   }
-  }
+    }
 
   
 
-
-
-  public function subcategorydropdown($id){
-	$result = $this->db->where("category",$id)->get("subcategory")->result();
-   //$data = $this->admin_model->get_record_where('subcategory',$id);
+    public function saveproduct()
+    {
    
-	   echo json_encode($result);
- }
+      $category = $this->input->post('category');
+      
+       if($category == 1){ 
+       $postData = array();
+        $postData['title'] = $this->input->post('Title');
+        $postData['user_id'] = $this->input->post('user_id');
+        $postData['category_id'] = $this->input->post('category');
+        $postData['subcategory_id'] = $this->input->post('subcategory');
+        $postData['brand'] = $this->input->post('Product_Brand');
+		$postData['type'] = $this->input->post('reusable_computer_type');
+		$postData['type'] = $this->input->post('reusable_mobile_type');
+	
+		$postData['book_publisher'] = $this->input->post('reusable_parts_Publisher');
+		$postData['book_publisher_type'] = $this->input->post('reusable_parts_Publisher_type');
+		$postData['use_year'] = $this->input->post('use_years');
+		$postData['bill'] = $this->input->post('Have_Bill');
+		$postData['address'] = $this->input->post('Address');
+		$postData['Description'] = $this->input->post('Description');
+		$postData['Warrenty'] = $this->input->post('Warrenty');
+		$postData['price'] = $this->input->post('Price');
+		$postData['postal_code'] = $this->input->post('Postal_code'); 
+		$postData['town'] = $this->input->post('Town');
+		$postData['lat'] = $this->input->post('latitude');
+		$postData['long'] = $this->input->post('longitude');
+		$postData['pay_type'] = $this->input->post('Sponsor');
+		$sponser = $this->input->post('Sponsor');
 
+		$insert = $this->product_model->reusable_parts($postData);
 
+	   print_r($postData);die();
+	   }
+	}
 
   
 }

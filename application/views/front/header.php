@@ -8,7 +8,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<title>CelNow</title>
+<link rel="icon" sizes="196x196" href="https://dbvertex.com/celnow/assets/images/CelNow 5 1.png" 
+        type="image/png">
+        <title>CelNow</title>
     <style>
        html,
     body {
@@ -39,27 +41,29 @@
           <a class="nav-link active"  aria-current="page" href="#" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">Donate</a>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
             Categories
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/fillter_product">Reusable parts and product</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
+            <li><a class="dropdown-item" href="#">Tuitions</a></li>
+            <li><a class="dropdown-item" href="#">Freelancer / Part time</a></li>
+            <li><a class="dropdown-item" href="#">Intership</a></li>
+            
           </ul>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
+          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
             Service Center 
           </a>
           <ul class="dropdown-menu" >
-            <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><a class="dropdown-item" href="#">Something else here</a></li>
-
-        
+          <?php
+                $category = get_all_shopcategory();
+                foreach ($category as $key => $cat) {
+                  ?>
+            <li><a class="dropdown-item" href="#"><?php echo $cat->shop_category; ?></a></li>
+           
+            <?php }?>
           </ul>
         </li>
         <li class="nav-item" style="padding-right:20px";>
@@ -82,8 +86,9 @@
    <?php echo ucfirst($profile->name);?> 
           </a>
    <ul class="dropdown-menu">
+    
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/myprofile">My profile</a></li>
-            <li><a class="dropdown-item" href="#">My Ads</a></li>
+          
             <li><a class="dropdown-item" href="#">My Chat</a></li>
             <?php if($profile->login_type == 'normal'){ ?>
               <li> <a class="dropdown-item" href="<?php echo base_url();?>welcome/changepassword" class="">Change Password</a></li>
