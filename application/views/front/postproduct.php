@@ -320,7 +320,9 @@ border-radius: 100px;
   background: #FFFF00;
   border: 3px solid #10B981;
 }
-
+.hiddens{
+      display:none;
+  }
     </style>
 
     
@@ -345,8 +347,9 @@ border-radius: 100px;
   </div>
   </div>
      
-   
+  <form class="needs-validation" action="<?php echo base_url();?>welcome/saveproduct" method="post" novalidate>
     <div class="row g-5 justify-content-center">
+   
       <div class=" offset-lg-1 col-lg-5">
        <div class=" images_container  mt-3 me-2">
          <div class=" images_row">
@@ -364,6 +367,7 @@ border-radius: 100px;
         </div>
      
       <div class="row images_small_box_row ms-1 ">
+     
         <div class="col-3 images_small_box m-2">
         <label class="images_small_box__plus" for="images_2" class="btn">+</label>
         <input type="file" class="form-control-file" id="images_2" style="visibility:hidden;"  >
@@ -383,27 +387,27 @@ border-radius: 100px;
         </div>
         </div>
       <div class=" col-lg-5 order-lg-first inputform_colume">
-        <form class="needs-validation" novalidate>
+    
           <div class="row g-3">
 
           <div class="col-12">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio1" value="option1" checked>
+            <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1" value="0" checked>
             <label class="form-check-label" for="inlineRadio1">Normal</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2" value="1">
             <label class="form-check-label" for="inlineRadio2">Bost Ads(Rs. 125)</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="inlineRadioOptions" id="inlineRadio3" value="option3">
+            <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio3" value="2">
             <label class="form-check-label" for="inlineRadio3">Donate</label>
           </div>
             </div>
 
           <div class="col-12">
               <label for="firstName" class="form-label post_input_lable">Title</label>
-              <input type="text" class="form-control post_input_fild" id="Title" placeholder="Please Enter Title" required> 
+              <input type="text" class="form-control post_input_fild" id="Title" name="Title" placeholder="Please Enter Title" required> 
               <div class="invalid-feedback">
               Please Enter Title.
               </div>
@@ -433,24 +437,47 @@ border-radius: 100px;
               </div>
             </div>
            
-            <div class="col-sm-12">
-              <label for="state" class="form-label post_input_lable">Product Brand</label>
-              <select class="form-select post_input_fild" id="state" required>
-                <option value="">Select Product Brand</option>
-                <option value="">Product</option>
-                <option value="">parts (Can be multiple parts) </option>
+            <div class="col-sm-12 hiddens" id="reusable_parts_Product_Brand_div">
+              <label for="Product_Brand" class="form-label post_input_lable">Product Brand</label>
+              <input type="text" class="form-control post_input_fild" id="Product_Brand" name="Product_Brand"  placeholder="Please Enter Product Brand" > 
               </select>
               <div class="invalid-feedback">
                 Please provide a valid Product Brand.
               </div>
             </div>
 
-            <div class="col-sm-6">
-              <label for="state" class="form-label post_input_lable">Type</label>
-              <select class="form-select post_input_fild" id="state" required>
+            <div class="col-sm-6 hiddens" id="reusable_parts_Publisher_div">
+              <label for="state" class="form-label post_input_lable">Publisher</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Publisher" name="reusable_parts_Publisher">
+                <option value="">Select Publisher</option>
+                <option value="Single Book">Single Book</option>
+                <option value="Bundle of">Bundle of</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Publisher.
+              </div>
+            </div>
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Select_Type_div">
+              <label for="state" class="form-label post_input_lable">Select Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Select_Type" name="reusable_parts_Select_Type">
                 <option value="">Select Type</option>
+                <option value="Product/Desktop">Product/Desktop</option>
+                <option value="parts">parts</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Select Type.
+              </div>
+            </div>
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_product_Type_div">
+              <label for="state" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_product_Type" name="reusable_parts_product_Type">
+                <option value="">Select Type</option>
+                <option value="Display">Display</option>
                 <option value="MotherBoard">MotherBoard</option>
-                <option value="Battery">Battery</option>
                 <option value="Pen">Pen</option>
                 <option value="Camera Module">Camera Module</option>
                 <option value="Charger Module">Charger Module</option>
@@ -461,9 +488,243 @@ border-radius: 100px;
               </div>
             </div>
 
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Laptops_product_Type_div">
+              <label for="reusable_parts_Laptops_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Laptops_product_Type" name="reusable_parts_Laptops_product_Type">
+                <option value="">Select Type</option>
+                <option value="Display">Display</option>
+                <option value="MotherBoard">MotherBoard</option>
+                <option value="Pen">Pen</option>
+                <option value="Camera Module">Camera Module</option>
+                <option value="Charger Module">Charger Module</option>
+                <option value="Others">Others</option>
+                <option value="Ram">Ram</option>
+                <option value="SSD, HHD">SSD, HHD</option>
+                <option value="Keyboard">Keyboard</option>
+                <option value="Speaker">Speaker</option>
+                <option value="Internal DVD Writer">Internal DVD Writer</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div>
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_computer_product_Type_div">
+              <label for="reusable_parts_computer_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_computer_product_Type" name="reusable_parts_computer_product_Type">
+                <option value="">Select Type</option>
+                <option value="Monitors">Monitors</option>
+                <option value="Routers">Routers</option>
+                <option value="Motherboard">Motherboard</option>
+                <option value="External hard disks">External hard disks</option>
+                <option value="Data Cards">Data Cards</option>
+                <option value="RAM">RAM</option>
+                <option value="USB drives">USB drives</option>
+                <option value="Graphics Card">Graphics Card</option>
+                <option value="Keyboards">Keyboards</option>
+                <option value="Mouses">Mouses</option>
+                <option value="Adapters/Power cables">Adapters/Power cables</option>
+                <option value="Access Points">Access Points</option>
+                <option value="Batteries">Batteries</option>
+                <option value="Network Cards">Network Cards</option> 
+                <option value="Ethernet cables">Ethernet cables</option>
+                <option value="Others">Others</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div>
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Electronics_product_Type_div">
+              <label for="reusable_parts_Electronics_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Electronics_product_Type" name="reusable_parts_Electronics_product_Type">
+                <option value="">Select Type</option>
+                <option value="Printers">Printers</option>
+                <option value="Camera">Camera</option>
+                <option value="iPod">iPod</option>
+                <option value="MP3 players">MP3 players</option>
+                <option value="DVD players">DVD players</option>
+                <option value="TV, Monitors">TV, Monitors</option>
+                <option value="Inverters, UPS & Generators">Inverters, UPS & Generators</option>
+                <option value="Fax, EPABX">Fax, EPABX</option>
+                <option value="Security Equipment">Security Equipment</option>
+                <option value="Smart watches">Smart watches</option>
+                <option value="Smart Bands">Smart Bands</option>
+                <option value="Others">Others</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div>
+
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Home_Appliances_product_Type_div">
+              <label for="reusable_parts_Home_Appliances_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Home_Appliances_product_Type" name="reusable_parts_Home_Appliances_product_Type">
+                <option value="">Select Type</option>
+                <option value="Refrigerators / Fridge">Refrigerators / Fridge</option>
+                <option value="Washing Machines">Washing Machines</option>
+                <option value="Air Conditioners / AC">Air Conditioners / AC</option>
+                <option value="Air Coolers">Air Coolers</option>
+                <option value="Water Heaters / Geysers">Water Heaters / Geysers</option>
+                <option value="Sewing Machines">Sewing Machines</option>
+                <option value="Vacuum Cleaners">Vacuum Cleaners</option>
+                <option value="Ceiling Fans">Ceiling Fans</option>
+                <option value="Table Fans">Table Fans</option>
+                <option value="Iron">Iron</option>
+                <option value="Air Purifiers">Air Purifiers</option>
+                <option value="Room Heaters">Room Heaters</option>
+                <option value="Others">Others</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div>  
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Kitchen_Appliances_product_Type_div">
+              <label for="reusable_parts_Kitchen_Appliances_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Kitchen_Appliances_product_Type" name="reusable_parts_Kitchen_Appliances_product_Type">
+                <option value="">Select Type</option>
+                <option value="Water Purifiers">Water Purifiers</option>
+                <option value="Microwave Ovens">Microwave Ovens</option>
+                <option value="Mixer/Grinder/Juicer">Mixer/Grinder/Juicer</option>
+                <option value="Induction Cook Tops">Induction Cook Tops</option>
+                <option value="Gas Stove">Gas Stove</option>
+                <option value="Oven Toaster Griller">Oven Toaster Griller</option>
+                <option value="Electric Cookers">Electric Cookers</option>
+                <option value="Food Processors">Food Processors</option>
+                <option value="Coffee Makers">Coffee Makers</option>
+                <option value="Air Fryer">Air Fryer</option>
+                <option value="Sandwich Makers">Sandwich Makers</option>
+                <option value="Roti Maker">Roti Maker</option>
+                <option value="Pop Up Toasters">Pop Up Toasters</option>
+                <option value="Electric Kettles">Electric Kettles</option>
+                <option value="Electric Tandoor">Electric Tandoor</option>
+                <option value="Hand Blenders">Hand Blenders</option>
+                <option value="Others">Others</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div>
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Automobiles_product_Type_div">
+              <label for="reusable_parts_Automobiles_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Automobiles_product_Type" name="reusable_parts_Automobiles_product_Type">
+                <option value="">Select Type</option>
+                <option value="Motorcycles">Motorcycles</option>
+                  <option value="Scooters">Scooters</option>
+                  <option value="Bicycles">Bicycles</option>
+                  <option value="Cars">Cars</option>
+                  <option value="Other Automobile">Other Automobile</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div>
+
+
+             <div class="col-sm-6 hiddens" id="reusable_parts_Furniture_product_Type_div">
+              <label for="reusable_parts_Furniture_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Furniture_product_Type" name="reusable_parts_Furniture_product_Type">
+              <option value="">Select Type</option>
+              <option value="Sofa & Dining">Sofa & Dining</option>
+              <option value="Beds & Wardrobes">Beds & Wardrobes</option>
+              <option value="Home Decor & Garden">Home Decor & Garden</option>
+              <option value="Kids Furniture">Kids Furniture</option>
+              <option value="Recliner">Recliner</option>
+              <option value="TV stands">TV stands</option>
+              <option value="Dressing Tables">Dressing Tables</option>
+              <option value="Mattresses">Mattresses</option>
+              <option value="Bookshelves">Bookshelves</option>
+              <option value="Shoe Racks">Shoe Racks</option>
+              <option value="Other Office Furniture’s">Other Office Furniture’s</option>
+              <option value="Bean Bags">Bean Bags</option>
+              <option value="Other Household Items">Other Household Items</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div> 
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Musical_product_Type_div">
+              <label for="reusable_parts_Musical_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Musical_product_Type" name="reusable_parts_Musical_product_Type">
+              <option value="">Select Type</option>
+              <option value="Piano/Keyboard">Piano/Keyboard</option>
+              <option value="Guitar">Guitar</option>
+              <option value="Violin">Violin</option>
+              <option value="Drums">Drums</option>
+              <option value="Saxophone">Saxophone</option>
+              <option value="Flute">Flute</option>
+              <option value="Clarinet">Clarinet</option>
+              <option value="Cello">Cello</option>
+              <option value="Trumpet">Trumpet</option>
+              <option value="Indian Musical Instrument’s">Indian Musical Instrument’s</option>
+              <option value="Others">Others</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div>
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Sports_product_Type_div">
+              <label for="reusable_parts_Sports_product_Type" class="form-label post_input_lable">Product Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Sports_product_Type" name="reusable_parts_Sports_product_Type">
+              <option value="">Select Type</option>
+              <option value="Treadmills">Treadmills</option>
+              <option value="Bicycle & Accessories">Bicycle & Accessories</option>
+              <option value="Dumbbells">Dumbbells</option>
+              <option value="Barbells">Barbells</option>
+              <option value="Other Fitness Equipment’s">Other Fitness Equipment’s</option>
+              <option value="Cricket">Cricket</option>
+              <option value="Badminton">Badminton</option>
+              <option value="Basketball">Basketball</option>
+              <option value="Camping and Hiking">Camping and Hiking</option>
+              <option value="Swimming">Swimming</option>
+              <option value="Table tennis">Table tennis</option>
+              <option value="Tennis">Tennis</option>
+              <option value="Skating">Skating</option>
+              <option value="Football">Football</option>
+              <option value="Pool & Snooker">Pool & Snooker</option>
+              <option value="Carrom">Carrom</option>
+              <option value="Chess">Chess</option>
+              <option value="Other Sports Equipment’s">Other Sports Equipment’s</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Product Type.
+              </div>
+            </div>
+
+
+
+
+            <div class="col-sm-6 hiddens" id="reusable_parts_Publisher_type_div">
+              <label for="state" class="form-label post_input_lable">Publisher Type</label>
+              <select class="form-select post_input_fild" id="reusable_parts_Publisher_type" name="reusable_parts_Publisher_type">
+                <option value="">Select Publisher Type</option>
+                <option value="Academic Books">Academic Books</option>
+                <option value="Magazines">Magazines</option>
+                <option value="Fictional">Fictional</option>
+                <option value="Non-Fictional">Non-Fictional</option>
+              </select>
+              <div class="invalid-feedback">
+                Please provide a valid Publisher Type.
+              </div>
+            </div>
+
+
+
             <div class="col-sm-6">
             <label for="Price" class="form-label post_input_lable">Price</label>
-              <input type="text" class="form-control post_input_fild" id="Price" placeholder="Please Enter Price" required> 
+              <input type="text" class="form-control post_input_fild" id="Price" name="Price" placeholder="Please Enter Price" required> 
               <div class="invalid-feedback">
               Please Enter Price.
               </div>
@@ -471,7 +732,7 @@ border-radius: 100px;
 
             <div class="col-sm-6">
             <label for="Price" class="form-label post_input_lable">In use years</label>
-              <input type="text"   class="form-control post_input_fild" placeholder="Please choose years" id="datepicker" required/>
+              <input type="text"   class="form-control post_input_fild" name="use_years" placeholder="Please choose years" id="datepicker" required/>
               <div class="invalid-feedback"> 
               Please choose  years.
               </div>
@@ -479,10 +740,10 @@ border-radius: 100px;
 
             <div class="col-sm-6">
               <label for="state" class="form-label post_input_lable">Have Bill</label>
-              <select class="form-select post_input_fild" id="state" required>
+              <select class="form-select post_input_fild" id="state" name="Have_Bill" required>
                 <option value="">Select Have Bill</option>
-                <option value="">Yes</option>
-                <option value="">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
               <div class="invalid-feedback">
                 Please provide a valid Have Bill.
@@ -491,10 +752,10 @@ border-radius: 100px;
 
             <div class="col-sm-6">
               <label for="state" class="form-label post_input_lable">Warrenty</label>
-              <select class="form-select post_input_fild" id="state" required>
+              <select class="form-select post_input_fild" id="state" name="Warrenty" required>
                 <option value="">Select Warrenty</option>
-                <option value="">Yes</option>
-                <option value="">No</option>
+                <option value="Yes">Yes</option>
+                <option value="No">No</option>
               </select>
               <div class="invalid-feedback">
                 Please provide a valid Warrenty.
@@ -504,7 +765,7 @@ border-radius: 100px;
 
             <div class="col-sm-6">
               <label for="address" class="form-label post_input_lable">Town</label>
-              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Town" required>
+              <input type="text" class="form-control post_input_fild" id="address" name="Town"  placeholder="Enter Town" required>
               <div class="invalid-feedback">
                 Please Enter Town.
               </div>
@@ -512,7 +773,7 @@ border-radius: 100px;
 
             <div class="col-sm-6">
               <label for="address" class="form-label post_input_lable">Postal code</label>
-              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Postal code" required>
+              <input type="text" class="form-control post_input_fild" id="address" name="Postal_code" placeholder="Enter Postal code" required>
               <div class="invalid-feedback">
                 Please Enter Postal code.
               </div>
@@ -520,7 +781,7 @@ border-radius: 100px;
 
             <div class="col-12">
               <label for="address" class="form-label post_input_lable">Address</label>
-              <input type="text" class="form-control post_input_fild" id="address" placeholder="Enter Address" required>
+              <input type="text" class="form-control post_input_fild" id="address" name="Address" placeholder="Enter Address" required>
               <div class="invalid-feedback">
                 Please Enter Product Address.
               </div>
@@ -529,7 +790,7 @@ border-radius: 100px;
 
             <div class="col-12">
               <label for="address" class="form-label post_input_lable">Description</label>
-              <textarea type="text" class="form-control post_input_fild" id="address" rows="10" cols="50" placeholder="Enter Description" required></textarea>
+              <textarea type="text" class="form-control post_input_fild" id="address" name="Description"   rows="10" cols="50" placeholder="Enter Description" required></textarea>
               <div class="invalid-feedback">
                 Please Enter Product Description.
               </div>
@@ -542,7 +803,7 @@ border-radius: 100px;
             </label>
           </div>
           </div>
-          <input  type="text" class="form-control "  name="user_id" id="user_id" placeholder="Description" value="<?php echo $user['user_id']; ?>"  rows="8" hidden/>
+          <input  type="text" class="form-control "  name="user_id" id="user_id" placeholder="" value="<?php echo $user['user_id']; ?>"  rows="8" hidden/>
        <input type="text" class="form-control" name="latitude" id="latitude" hidden/>
          <input type="text" class="form-control" name="longitude" id="longitude" hidden/>
           <div class="my-4"> </div>
@@ -552,44 +813,45 @@ border-radius: 100px;
             </div>
 
             <div class="col-sm-6 col-6">
-            <button class="w-100 btn  product_reset_button " type="submit">Reset</button>
+            <button class="w-100 btn  product_reset_button " type="">Reset</button>
             </div>
             </div>
-        </form>
+       
       </div>
      
   
     </div>
+    </form>
   </main>
 
 </div>
 <script>
-  $("#cover_images").change(function() {
-  filename = this.cover_images[0].name;
-  console.log(filename);
-});
-$("#images_2").change(function() {
-  filename = this.images_2[0].name;
-  console.log(filename);
-});
-$("#images_3").change(function() {
-  filename = this.images_3[0].name;
-  console.log(filename);
-});
-$("#images_4").change(function() {
-  filename = this.images_4[0].name;
-  console.log(filename);
-});
-$("#images_5").change(function() {
-  filename = this.images_5[0].name;
-  console.log(filename);
-});
+      $("#cover_images").change(function() {
+      filename = this.cover_images[0].name;
+      console.log(filename);
+    });
+    $("#images_2").change(function() {
+      filename = this.images_2[0].name;
+      console.log(filename);
+    });
+    $("#images_3").change(function() {
+      filename = this.images_3[0].name;
+      console.log(filename);
+    });
+    $("#images_4").change(function() {
+      filename = this.images_4[0].name;
+      console.log(filename);
+    });
+    $("#images_5").change(function() {
+      filename = this.images_5[0].name;
+      console.log(filename);
+    });
 
-  $("#datepicker").datepicker({
-    format: "yyyy",
-    viewMode: "years", 
-    minViewMode: "years"
-});
+      $("#datepicker").datepicker({
+        format: "yyyy",
+        viewMode: "years", 
+        minViewMode: "years"
+    });
 </script>
 <script type="text/javascript">
 
@@ -616,28 +878,154 @@ $("#images_5").change(function() {
         });
     });
 </script>
+<script  type="text/javascript">
+ $(document).ready(function() { 
+
+   
+  $('select[name="subcategory"]').on('change', function() {
+            $('#reusable_parts_Select_Type').prop('required',false); 
+            $('#Product_Brand').prop('required',false); 
+            $('#reusable_parts_Publisher').prop('required',false); 
+
+            $('#subcategory').on('change.reusable_parts_Select_Type,Product_Brand', function() {
+            $("#reusable_parts_Select_Type_div,#reusable_parts_Product_Brand_div").toggle( $(this).val() == 1||$(this).val() == 2|| $(this).val() == 3||$(this).val() == 4 ||
+               $(this).val() == 5||$(this).val() == 6|| $(this).val() == 7||$(this).val() == 8|| $(this).val() == 9||$(this).val() == 10 ||$(this).val() == 16);
+             if($(this).val() == 1||$(this).val() == 2|| $(this).val() == 3||$(this).val() == 4 ||
+               $(this).val() == 5||$(this).val() == 6|| $(this).val() == 7||$(this).val() == 8|| $(this).val() == 9||$(this).val() == 10 ||$(this).val() == 16){
+                reusable_parts_Select_Type.required = true;  
+              Product_Brand.required = true;  
+            }
+            }).trigger('change.reusable_parts_Select_Type,Product_Brand');  
+
+            
+            $('#subcategory').on('change.reusable_parts_Publisher,reusable_parts_Publisher_type', function() {
+            $("#reusable_parts_Publisher_div,#reusable_parts_Publisher_type_div").toggle($(this).val() == 11);
+             if($(this).val() == 11){
+                reusable_parts_Publisher.required = true;  
+            }
+            }).trigger('change.reusable_parts_Publisher,reusable_parts_Publisher_type');           
+  });
+
+  $('select[name="reusable_parts_Select_Type"]').on('change', function() {
+            $('#reusable_parts_Select_Type').prop('required',false); 
+            $('#reusable_parts_Publisher').prop('required',false); 
+            $('#reusable_parts_product_Type').prop('required',false); 
+            $('#reusable_parts_Laptops_product_Type').prop('required',false);  
+            $('#reusable_parts_computer_product_Type').prop('required',false);
+            $('#reusable_parts_Home_Appliances_product_Type').prop('required',false);  
+            $('#reusable_parts_Electronics_product_Type').prop('required',false); 
+             $('#reusable_parts_Kitchen_Appliances_product_Type').prop('required',false); 
+             $('#reusable_parts_Automobiles_product_Type').prop('required',false); 
+             $('#reusable_parts_Furniture_product_Type').prop('required',false); 
+             $('#reusable_parts_Sports_product_Type').prop('required',false);
+             $('#reusable_parts_Musical_product_Type').prop('required',false);
+            
+            
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_product_Type', function() {
+             
+            $("#reusable_parts_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() == "parts" && ($("#subcategory").val() == 1 || $("#subcategory").val() == 2));
+             if($("#reusable_parts_Select_Type").val() == "parts" && ($("#subcategory").val() == 1 || $("#subcategory").val() == 2)){
+                reusable_parts_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_product_Type');   
+
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_Laptops_product_Type', function() {
+            $("#reusable_parts_Laptops_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() == "parts" && $("#subcategory").val() == 3);
+             if($("#reusable_parts_Select_Type").val() == "parts" && $("#subcategory").val() == 3){
+              reusable_parts_Laptops_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_Laptops_product_Type');  
+
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_computer_product_Type', function() {
+            $("#reusable_parts_computer_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() == "parts" && $("#subcategory").val() == 4);
+             if($("#reusable_parts_Select_Type").val() == "parts" && $("#subcategory").val() == 4){
+              reusable_parts_computer_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_computer_product_Type');  
 
 
-      <script>
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_Electronics_product_Type', function() {
+            $("#reusable_parts_Electronics_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 5);
+             if($("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 5){
+              reusable_parts_Electronics_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_Electronics_product_Type');  
+
+
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_Home_Appliances_product_Type', function() {
+            $("#reusable_parts_Home_Appliances_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 16);
+             if($("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 16){
+              reusable_parts_Home_Appliances_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_Home_Appliances_product_Type'); 
+
+
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_Kitchen_Appliances_product_Type', function() {
+            $("#reusable_parts_Kitchen_Appliances_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 6);
+             if($("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 6){
+              reusable_parts_Kitchen_Appliances_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_Kitchen_Appliances_product_Type'); 
+
+
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_Automobiles_product_Type', function() {
+            $("#reusable_parts_Automobiles_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 7);
+             if($("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 7){
+              reusable_parts_Automobiles_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_Automobiles_product_Type');  
+
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_Furniture_product_Type', function() {
+            $("#reusable_parts_Furniture_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 8);
+             if($("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 8){
+              reusable_parts_Furniture_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_Furniture_product_Type'); 
+
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_Sports_product_Type', function() {
+            $("#reusable_parts_Sports_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 9);
+             if($("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 9){
+              reusable_parts_Sports_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_Sports_product_Type'); 
+
+            $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_Musical_product_Type', function() {
+            $("#reusable_parts_Musical_product_Type_div").toggle( $("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 10);
+             if($("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() == 10){
+              reusable_parts_Musical_product_Type.required = true;  
+            }
+            }).trigger('change.reusable_parts_Musical_product_Type'); 
+    
+  });
+
+
+
+  
+    
+ }); 
+    
+</script>
+
+  <script>
         // hello #6528e0 Example starter JavaScript for disabling form submissions if there are invalid fields
-(() => {
-  'use strict'
+    (() => {
+      'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
+      // Fetch all the forms we want to apply custom Bootstrap validation styles to
+      const forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      }
+      // Loop over them and prevent submission
+      Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+          if (!form.checkValidity()) {
+            event.preventDefault()
+            event.stopPropagation()
+          }
 
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
+          form.classList.add('was-validated')
+        }, false)
+      })
+    })()
 
       </script>
   </body>
