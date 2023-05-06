@@ -518,8 +518,8 @@ public function shop()
 function adminapproved(){
  
   $id=$this->input->post("id");
-    $stock=$this->input->post("admin_approval");
-    $this->db->update("shop", ["admin_approval"=>$stock], "id=$id");
+    $admin_approval=$this->input->post("admin_approval");
+    $this->db->update("shop", ["admin_approval"=>$admin_approval], "id=$id");
     echo "success";
 //$this->admin_model->update_shop_status($id,$arr);
 

@@ -122,7 +122,7 @@ html,body
 
       <div class="row text-center">
       <div>
-    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="b" style="align-self:center; background-color:#13C571">Edit</a>
+    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="b" style="align-self:center; background-color:#13C571; color:#fff" >Edit Profile</a>
     </div>
     </div>
     </div> 
@@ -131,12 +131,10 @@ html,body
 </div>  
 
 
-<div class="container">
-<h5><b>Seller Ads</b></h5>
-</div>
+
 
 <div class="container" >
-
+<h3 class="ml-5 mb-3"><b>Seller Ads</b></h3>
 <div class="row">
 
     <div class="col-lg-4 col-sm-6  mb-2">
