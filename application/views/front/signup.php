@@ -154,7 +154,7 @@
                                 </div>
 
                                 <div class="col ml-4">
-                                    <a href="" style="color:lightgrey;">Have an Account?</a><br>
+                                    <a style="color:lightgrey;">Have an Account?</a><br>
                                     <a href="<?php echo base_url()?>welcome/login" style="color:#13C571;" class="">Sign in</a>
                                 </div>
                             </div>

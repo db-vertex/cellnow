@@ -1,5 +1,7 @@
 <?php include('header.php');?>
   <?php include('sidebar.php');?>
+  <script src="//js.nicedit.com/nicEdit-latest.js" type="text/javascript"></script>
+<script type="text/javascript">bkLib.onDomLoaded(nicEditors.allTextAreas);</script>
 <!--   <link href="https://gitcdn.github.io/bootstrap-toggle/2.2.2/css/bootstrap-toggle.min.css" rel="stylesheet">
 <script src="https://gitcdn.github.io/bootstrap-toggle/2.2.2/js/bootstrap-toggle.min.js"></script> -->
 <script src="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.js"></script>
@@ -9,7 +11,7 @@
     <!-- Content Header (Page header) -->
  <section class="content-header">
       <h1>
-        Shop
+        Contact Us
       </h1>
      <!--  <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -21,7 +23,7 @@
 
 <section class="content">
 <div class="row">
-<!-- <a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Shop</a> -->
+<!-- <a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Category</a> -->
 
 <?php  if($msg=$this->session->flashdata('msg')): 
 
@@ -42,43 +44,39 @@ $msg_class=$this->session->flashdata('msg_class')
 <div class="box">
 <div class="box-body">
 <table id="example3" class="table table-bordered table-striped">
-              <thead>
+                <thead>
                 <tr>
                   <th>S no.</th>
-                  <th>Shop Name</th>
-                  <th>Email</th>
-                  <th>Mobile</th>
-                  <th>Address</th>
-                  <th>GST</th>
+                  <th>Title</th>
                   <th>Description</th>
-                  <th>Approved</th>
+                  <th>Created</th>
                   <th>Action</th>
+                  
                 </tr>
-              </thead>
+                </thead>
         <tbody>
 
-          <?php foreach ($shop as $value) {?>
+          <?php foreach ($contactus as $value) {
+/*
+           print_r($contactus);
+*/
+
+            ?>
 
                 <tr id="<?php echo $value->id; ?>">
 
                 <td><?php echo  $value->id;?></td>
-                <td><?php echo  $value->name;?></td>
-                <td><?php echo  $value->email;?></td>
-                <td><?php echo  $value->mobile;?></td>
-                <td><?php echo  $value->Address;?></td>
-                <td><?php echo  $value->GST;?></td>
+                <td><?php echo  $value->title;?></td>
                 <td><?php echo  $value->description;?></td>
-                <td>  <input type="button" name="admin_approval" value="<?=($value->admin_approval==0)?"Verified":"Rejected"?>" class="btn btn-info outofstock" onclick="return outofstock(this);" data-admin_approval = "<?php echo $value->admin_approval ;?>" data-id = "<?php echo $value->id ;?>"></td>
-               
-                <td>  <a href="<?php echo base_url("admin/editcategory/{$value->id}")?>" class=""  title="Edit">
-                    <span class="glyphicon glyphicon-pencil"></span>
-                </a>
+                <td>  <?php echo  date("d-m-Y",strtotime($value->created));?> </td>
+                
+                <td> 
  
-  
-<!-- <a href="javascript:void(0)" class="delete" title="Delete" style="margin-left: 10px;"><span class="glyphicon glyphicon-trash"></span>-->
-<!--</a>-->
+                   <a href="javascript:void(0)" class="delete" title="Delete" style="margin-left: 10px;"><span class="glyphicon glyphicon-trash"></span>
+                  </a>
 
- </td>
+                </td>
+
                 </tr> 
                 <?php } ?>
             </tbody>
@@ -108,7 +106,7 @@ $msg_class=$this->session->flashdata('msg_class')
       function(isConfirm) {
         if (isConfirm) {
           $.ajax({
-         url: '<?php echo base_url("admin/deletecategory/")?>'+id,
+         url: '<?php echo base_url("admin/deletecontactus/")?>'+id,
              type: 'DELETE',
              error: function() {
                 alert('Something is wrong');
@@ -127,47 +125,6 @@ $msg_class=$this->session->flashdata('msg_class')
       });
      
     });
-
-    $(document).on("click", ".outofstock", function(){
-  var id=$(this).data("id");
-  var admin_approval=$(this).data("admin_approval");
-  var ele=$(this);
-            if(admin_approval==0){
-                
-               
-                 var admin_approval = 1;
-            
-            }else{
-           
-                var admin_approval = 0;
-            
-            }
-                 $.ajax({
-                   type: "POST",
-                   url: '<?php echo base_url("Admin/adminapproved")?>',
-                   cache:false,
-                  data: {'id':id,'admin_approval':admin_approval},
-                   error: function() {
-                      alert('Something is wrong');
-                   },
-             success: function(data) {
-                   if(admin_approval==1){
-                       ele.val("Verified");
-                      swal("Verified Successfully!","", "success");
-                     
-                    }else{
-                        ele.val("Rejected");
-                       swal("Rejected Successfully!","", "success");
-                      
-                    }
-                  
-                  ele.data("stock", stock);
-                  
-             } 
-          });
-});
-
-
     
 </script>
 <script>

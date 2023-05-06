@@ -622,6 +622,117 @@ class Welcome extends CI_Controller {
                   }
     }
 
+
+  public function termscondition()
+  {
+
+  $session_id = $this->session->userdata('id');
+       
+       if($session_id)
+       {
+            $user_detail = $this->user->loginuser($session_id);
+		 $termscondition = $this->user->gettermscondition();
+
+    $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    $this->output->set_header('Pragma: no-cache');
+             
+    $this->load->view('front/header',['user'=>$user_detail]);
+    $this->load->view('front/termscondition',['termscondition'=>$termscondition]);
+    $this->load->view('front/footer');
+
+       
+       }else{
+            $termscondition = $this->user->gettermscondition();
+             $this->load->view('front/header');
+    $this->load->view('front/termscondition',['termscondition'=>$termscondition]);
+    $this->load->view('front/footer');
+       }
+
+   
+   
+  }
+
+  public function savecontact(){
+
+	 
+
+	$userData['name'] = $this->input->post('name');
+	$userData['user_id'] = $this->input->post('user_id');
+	   $userData['description'] = $this->input->post('description');
+	   $userData['email'] = $this->input->post('email');
+	   $userData['mobile'] = $this->input->post('mobile');
+   
+	   $insert = $this->user->contactusinsert($userData);
+   
+   
+	   $this->session->set_flashdata('msg','Request Sent Successfully');
+	   $this->session->set_flashdata('msg_class','alert-success');
+   
+   
+	  
+	  return redirect('welcome');
+   
+	 
+	 }
+
+
+  public function aboutus()
+  {
+
+   $session_id = $this->session->userdata('id');
+       
+       if($session_id)
+       {
+            $user_detail = $this->user->loginuser($session_id);
+
+             $aboutus = $this->user->getAboutus();
+            
+       $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    $this->output->set_header('Pragma: no-cache');         
+    $this->load->view('front/header',['user'=>$user_detail]);
+    $this->load->view('front/aboutus',['aboutus'=>$aboutus]);
+    $this->load->view('front/footer');
+       }
+       else{
+            $aboutus = $this->user->getAboutus();
+            $this->load->view('front/header');
+    $this->load->view('front/aboutus',['aboutus'=>$aboutus]);
+    $this->load->view('front/footer');
+       }
+
+   
+  }
+  public function privacypolicy()
+  {
+
+  
+$session_id = $this->session->userdata('id');
+       
+       if($session_id)
+       {
+            $user_detail = $this->user->loginuser($session_id);
+    $privacy = $this->user->getprivacypolicy();
+             
+    //   $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    // $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    // $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    // $this->output->set_header('Pragma: no-cache');         
+    $this->load->view('front/header',['user'=>$user_detail]);
+    $this->load->view('front/privacypolicy',['privacy'=>$privacy]);
+    $this->load->view('front/footer');
+}else{
+    $privacy = $this->user->getprivacypolicy();
+     $this->load->view('front/header');
+    $this->load->view('front/privacypolicy',['privacy'=>$privacy]);
+    $this->load->view('front/footer');
+}
+   
+  }
+
   
 
     public function saveproduct()

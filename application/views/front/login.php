@@ -23,7 +23,7 @@
                                 </div>
 
                                 <div class="col ml-4">
-                                    <a href="" style="color:lightgrey;">Have an Account?</a><br>
+                                    <a style="color:lightgrey;">No Account?</a><br>
                                     <a href="<?php echo base_url();?>welcome/signup" style="color:#13C571;" class="">Sign Up</a>
                                 </div>
                             </div>
@@ -62,8 +62,8 @@
 
           <!-- Email input -->
           <div class="form-outline mb-4">
-          <label class="form-label">Enter Your Email</label>
-                                    <input name="phone" class="form-control form-control-lg" placeholder="Email" type="number"
+          <label class="form-label">Enter Your Mobile</label>
+                                    <input name="phone" class="form-control form-control-lg" placeholder="Mobile" type="number" 
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"> <?php echo form_error('phone'); ?></span>
           </div>
@@ -71,7 +71,7 @@
           <!-- Password input -->
           <div class="form-outline mb-3">
           <label class="form-label">Enter Your Password</label>
-                                    <input name="password" class="form-control form-control-lg" placeholder="Password" type="password"
+                                    <input name="password" class="form-control form-control-lg" placeholder="Password" type="password" 
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('password'); ?></span>
           </div>
@@ -88,7 +88,7 @@
           <div class="text-center text-lg-start mt-4 pt-2">
           <center><button class=" mb-2 btn btn-lg  text-white mt-3"
                                         style="background-color:#13C571;border-radius:30px;width:40%;"
-                                       name="submit" type="submit">Signup</button>
+                                       name="submit" type="submit">Login</button>
 
                                 </center>
           </div>

@@ -150,8 +150,11 @@
             <div class="row mt-5 ">
             <?php }else{ ?>
               <div class="col" >
-                <h2 class="ml-3"><?php echo $shop->name;?></h2>
-                <p class="ml-3"><?php echo $shop->email;?></p>
+             <div class="row">
+             <div class="col">
+                <h4 class="ml-3"><?php echo $shop->name;?> </h4> </div><div class="col" style="color:#10b981"><p><?php if($shop->admin_approval==0){?>Pending<?php }else{?>Verified<?php }?></p>
+            </div> </div>
+            <p class="ml-3"><?php echo $shop->email;?></p>
                 <p class="ml-3"><?php echo $shop->description;?></p>
                 <p class="ml-3">GST Number -<?php echo $shop->GST;?></p>
                 <p class="ml-3"><?php echo $shop->Address;?></p>
@@ -370,41 +373,41 @@
             </div>
 
           <?php } ?>
-          <form action="<?php echo base_url(); ?>welcome/addshop" method="post">
+          <form class="needs-validation" novalidate action="<?php echo base_url(); ?>welcome/addshop" method="post">
             <input type="hidden" name="user_id" value="<?php echo $user['user_id'] ?>">
             <div class="form-group ">
               <label>Shop Name</label>
               <input name="name" class="form-control" placeholder="Shop Name" type="text"
-                value="<?php echo set_value('email'); ?>" style="border-radius:30px; border-color:#13C571">
-              <span style="color:red;">
-                <?php echo form_error('email'); ?>
-              </span>
+                value="<?php echo set_value('email'); ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid name is required.
+              </div>
             </div>
             <div class="form-group ">
               <label>Enter Your Email</label>
-              <input name="email" class="form-control" placeholder="Email" type="text"
-                value="<?php echo set_value('email'); ?>" style="border-radius:30px; border-color:#13C571">
-              <span style="color:red;">
-                <?php echo form_error('email'); ?>
-              </span>
+              <input name="email" class="form-control" placeholder="Email" type="email"
+                value="<?php echo set_value('email'); ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid email is required.
+              </div>
             </div> <!-- form-group// -->
 
 
             <div class="form-group">
               <label> Mobile</label>
               <input name="mobile" class="form-control" placeholder="Mobile" type="number"
-                value="<?php echo set_value('mobile'); ?>" style="border-radius:30px; border-color:#13C571">
-              <span style="color:red;">
-                <?php echo form_error('phone'); ?>
-              </span>
+                value="<?php echo set_value('mobile'); ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid Mobile is required.
+              </div>
             </div>
             <div class="form-group">
               <label> Address</label>
               <input name="Address" class="form-control" placeholder="Address" type="text"
-                value="<?php echo set_value('Address'); ?>" style="border-radius:30px; border-color:#13C571">
-              <span style="color:red;">
-                <?php echo form_error('phone'); ?>
-              </span>
+                value="<?php echo set_value('Address'); ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Address is required.
+              </div>
             </div>
 
 
@@ -412,7 +415,7 @@
             <div class="form-group">
 
               <label> Category</label>
-              <select name="shop_category" style="border-radius:30px; border-color:#13C571" class="form-select"
+              <select name="shop_category" style="border-radius:30px; border-color:#13C571" class="form-select" required
                 id="category" required>
                 <option value="">Choose</option>
                 <?php
@@ -422,9 +425,9 @@
                   <option id="" value="<?php echo $cat->id; ?>"><?php echo $cat->shop_category; ?></option>
                 <?php } ?>
               </select>
-              <span style="color:red;">
-                <?php echo form_error('confirmpassword'); ?>
-              </span>
+              <div class="invalid-feedback">
+                 Category is required.
+              </div>
             </div> <!-- form-group// -->
 
 
@@ -432,19 +435,19 @@
             <div class="form-group">
               <label> GST Number</label>
               <input name="GST" class="form-control" placeholder="GST Number" type="text"
-                value="<?php echo set_value('name'); ?>" style="border-radius:30px; border-color:#13C571">
-              <span style="color:red;">
-                <?php echo form_error('name'); ?>
-              </span>
+                value="<?php echo set_value('name'); ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid GST is required.
+              </div>
 
             </div>
             <div class="form-group">
               <label> Description</label>
               <input name="description" class="form-control" placeholder="Description" type="text"
-                value="<?php echo set_value('description'); ?>" style="border-radius:30px; border-color:#13C571">
-              <span style="color:red;">
-                <?php echo form_error('name'); ?>
-              </span>
+                value="<?php echo set_value('description'); ?>" style="border-radius:30px; border-color:#13C571" required>
+                <div class="invalid-feedback">
+                Valid message is required.
+              </div>
 
             </div>
 
@@ -517,7 +520,7 @@ if (image == "" ) {
 
 
 
-  (() => {
+(() => {
     'use strict'
 
     // Fetch all the forms we want to apply custom Bootstrap validation styles to
@@ -526,14 +529,7 @@ if (image == "" ) {
     // Loop over them and prevent submission
     Array.from(forms).forEach(form => {
       form.addEventListener('submit', event => {
-        var mabile = document.getElementById('mobile').value.length
         if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-          document.getElementById("mobile_error").innerHTML = "";
-        }
-        else if (mabile < 10) {
-          document.getElementById("mobile_error").innerHTML = "Please enter 10 digits";
           event.preventDefault()
           event.stopPropagation()
         }
@@ -542,4 +538,5 @@ if (image == "" ) {
       }, false)
     })
   })()
+
 </script>

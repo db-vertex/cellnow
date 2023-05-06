@@ -131,7 +131,7 @@ input[type=number] {
     </script>
 <body>
     <main>
-        <div class="container py-4" style="margin-top:100px">
+        <div class="container py-4" style="margin-top:10px">
 
             <div class="row align-items-md-stretch" style="min-height:90%;">
             <div class="col-md-7 ps-0" >
@@ -144,8 +144,8 @@ input[type=number] {
                 <div class="card  border p-4">
 <article class="card-body">
 
-<a href="" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign in</a>
-<p>Welcome to Cellnow</p>
+<a href="<?php echo base_url();?>welcome/login" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign in</a>
+<p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
 <h2 class="card-title mb-4 mt-1">Forgot Password</h2>
 	 <form action="<?php echo base_url();?>welcome/forgotpassword" method="post">
     <div class="form-group mt-5">

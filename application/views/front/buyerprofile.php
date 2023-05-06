@@ -102,7 +102,7 @@ html,body
 >>>>>>> origin/poonam
   <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
-   <img src="<?php echo base_url();?>assets/images/Ellipse 11 (2).png"  class="img-fluid rounded mx-auto d-block">
+   <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded mx-auto d-block">
    <div style="text-align:center"><h3><b ><?php echo $profile->name; ?></b></h3>
    <?php echo $profile->Address; ?>
    
