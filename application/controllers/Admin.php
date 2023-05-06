@@ -39,7 +39,7 @@ class Admin extends CI_Controller {
         $this->load->helper('file');
         /* $this->load->helper('pdf2text');*/
         
-        // Load database
+                // Load database
         $this->load->model('admin_model');
         $this->load->model('Common_model');
        
