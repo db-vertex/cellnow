@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
-   
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
 <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
@@ -335,7 +335,7 @@ html,body
 
                                     <?php } ?>
                                     
-        <form  enctype="multipart/form-data" action="<?php echo base_url();?>welcome/updatesellerreg" method="POST" class="needs-validation" novalidate style="text-align: center;">
+        <form class="needs-validation" novalidate enctype="multipart/form-data" action="<?php echo base_url();?>welcome/updatesellerreg" method="POST" class="needs-validation" novalidate style="text-align: center;">
              <?php
                             
                             $profile = get_seller_profile($user['user_id']);
@@ -370,7 +370,7 @@ html,body
           </div>
           <div class=" input-container mt-3 px-3 ">
          
-            <input name="phone" type="number" class="form-control  pl-5 text-dark mobile"  value="<?php echo $profile->phone; ?>"  placeholder="phone"  style="border-radius:30px; border-color:#13C571">
+            <input name="phone" type="number" class="form-control  pl-5 text-dark mobile"  value="<?php echo $profile->phone; ?>"  placeholder="phone"  style="border-radius:30px; border-color:#13C571" required>
              
             <p id="mobile_error"></p>
             <div class="invalid-feedback">
@@ -432,34 +432,48 @@ html,body
 			</div>
 <script>
 
-  (() => {
-  'use strict'
+(() => {
+    'use strict'
 
-  // Fetch all the forms we want to apply custom Bootstrap validation styles to
-  const forms = document.querySelectorAll('.needs-validation')
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
 
-  // Loop over them and prevent submission
-  Array.from(forms).forEach(form => {
-    form.addEventListener('submit', event => {
-         var mabile =  document.getElementById('mobile').value.length 
-      if (!form.checkValidity()) {
-        event.preventDefault()
-        event.stopPropagation()
-      document.getElementById("mobile_error").innerHTML = "";  
-      }
-    else if(mabile < 10){
-     document.getElementById("mobile_error").innerHTML = "Please enter 10 digits";  
-       event.preventDefault()
-        event.stopPropagation()
-    }
-    
-      form.classList.add('was-validated')
-    }, false)
-  })
-})()
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
 
 
 function checkcoverimage() {
+
+var image =$('#cover_image').val();
+
+if (image == "" ) {
+
+    $("#cover_err").text("Please upload image");
+   
+
+
+
+} else {
+
+    $("#cover_img").submit();
+
+   
+}
+
+}
+
+
+function checkprofile() {
 
 var image =$('#cover_image').val();
 

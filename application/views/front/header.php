@@ -25,8 +25,8 @@
     <!-- <h1 >Hello, world!</h1> -->
 
     <div class="container" >
-    <nav class="navbar navbar-expand-lg bg-body-">
-  <div class="container-fluid">
+    <nav class="navbar navbar-expand-lg bg-body-" >
+  <div class="container-fluid" >
     <a class="navbar-brand" href="<?php echo base_url();?>" >
     <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" width="180px">
     </a>

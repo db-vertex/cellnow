@@ -517,24 +517,15 @@ public function shop()
 
 function adminapproved(){
  
-  $session_id = $this->session->userdata('admin_id');
-  if ($session_id) {
- 
-$id= $this->input->post('productId');
-
-$status=$this->input->post('status');
-
-$arr=array('admin_approval'=>$status);
-$this->admin_model->update_shop_status($id,$arr);
+  $id=$this->input->post("id");
+    $stock=$this->input->post("admin_approval");
+    $this->db->update("shop", ["admin_approval"=>$stock], "id=$id");
+    echo "success";
+//$this->admin_model->update_shop_status($id,$arr);
 
 //$delete = $this->admin_model->delete_record('review_product', $id);
 
 
- 
-  
-
-
-}
 
 
 }  
