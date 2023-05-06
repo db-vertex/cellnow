@@ -155,7 +155,7 @@ input[type=number] {
     </div> <!-- form-group// -->
    
     
-            <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;" name="submit"  type="submit">Forgot</button>
+                  <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;" name="submit"  type="submit">Forgot</button>
                     
                     </center>                                                             
 </form>
