@@ -66,7 +66,7 @@
           <a class="nav-link" href="<?php echo base_url();?>welcome/shop" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
         </li>
         <li class="nav-item" style="padding-right:20px";>
-          <a class="nav-link" href="<?php echo base_url();?>welcome/postproduct " style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#d1fae5;">Ad Post</a>
+          <a class="nav-link" href="<?php echo base_url();?>welcome/postproduct" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#d1fae5;">Ad Post</a>
         </li>
         
         <!-- <li class="nav-item" hello>
