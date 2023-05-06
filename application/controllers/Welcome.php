@@ -565,7 +565,6 @@ $aboutus=$this->input->post('aboutus');
   
   }
 
-<<<<<<< HEAD
   public function postproduct()
   {
 	$session_id = $this->session->userdata('id');
@@ -602,8 +601,6 @@ $aboutus=$this->input->post('aboutus');
  }
 
 
-=======
->>>>>>> origin/poonam
   public function uploadprofileimg()
   
   {  

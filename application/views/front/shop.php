@@ -113,11 +113,7 @@
         $profile = get_seller_profile($user['user_id']);
 
         ?>
-<<<<<<< HEAD
-        <div class="col-sm-5">
-=======
         <div class="col-sm-6">
->>>>>>> origin/poonam
         <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
           <img src="<?php echo base_url(); ?>assets/images/Ellipse 11 (2).png" class="img-fluid rounded mx-auto d-block">
@@ -130,13 +126,8 @@
           </div>
           <div class="row text-center ">
             <p>
-<<<<<<< HEAD
-              <?php echo $profile->email; ?>
-              <?php echo $profile->phone; ?>
-=======
             <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
             <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
->>>>>>> origin/poonam
             </p>
 
           </div><br>
@@ -144,11 +135,7 @@
 
         </div>
         <!-- <div class="vr" style="color:#78d7b8"></div> -->
-<<<<<<< HEAD
-        <div class="col-sm-7 " style=" border-left:solid; border-color: #78d7b8">
-=======
         <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
->>>>>>> origin/poonam
         <?php $shop = get_id_by_shop($user['user_id']);
            if(empty($shop)){?>
           <div class="row text-center mt-5">
