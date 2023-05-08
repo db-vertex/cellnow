@@ -12,7 +12,8 @@
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
 <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css" rel="stylesheet"/>
-
+<!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
 
     <style>
       .bd-placeholder-img {
@@ -165,6 +166,8 @@
   height: 96px;
   background: #DDFBEC;
   box-shadow: 0px 3px 3px 1px rgba(0, 0, 0, 0.25);
+  padding-right:0px;
+  padding-left:0px;
 }
 
 /* Set the position and spacing for the row element */
@@ -177,11 +180,10 @@
   
 }
 .images_small_box__plus{
-  
   width: 11px;
   height: 36px;
   left: 844px;
-  margin-top: 50%;
+  margin-top: 35%;
   font-family: 'Open Sans';
   font-style: normal;
   font-weight: 400;
@@ -189,6 +191,7 @@
   line-height: 40px;
   color: #888888;
   opacity: 0.5;
+
 }
 .post_input_fild{
   text-align-last:left;
@@ -326,7 +329,34 @@ border-radius: 100px;
 .hiddens{
       display:none;
   }
-    </style>
+  #ImgPreview{
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display:none;
+  }
+  #ImgPreview2,#ImgPreview3,#ImgPreview4, #ImgPreview5{
+    width: -webkit-fill-available;
+    height: -webkit-fill-available;
+    display:none;
+  }
+  .btn-rmv1{
+    font-size: 34px;
+    float: right;
+    position: absolute;
+    margin-left: 85%;
+    color:#10B981;
+    display:none;
+  }  
+  .btn-rmv2, .btn-rmv3, .btn-rmv4, .btn-rmv5{
+    font-size: 16px;
+    float: right;
+    position: absolute;
+    color:#10B981;
+    display:none;
+    margin-left: 55px;
+  }  
+    
+  </style>
 
     
     <!-- Custom styles for this template -->
@@ -354,17 +384,19 @@ border-radius: 100px;
     <div class="row g-5 justify-content-center">
    
       <div class=" offset-lg-1 col-lg-5">
-       <div class=" images_container  mt-3 me-2">
-         <div class=" images_row">
-            <div class=" images_col mx-2">
-            <div class="box a">
-            <div class="my-box">
-            <label class="pluse" for="cover_images" class="btn">
-              +
-            </label>
-            <input type="file" class="form-control-file" id="cover_images" style="visibility:hidden;"  >
-            </div>
-            </div>
+        <div class=" images_container  mt-3 me-2">
+          <div class=" images_row">
+             <div class=" images_col mx-2">
+              <i class="bi bi-x-circle-fill btn-rmv1 me-3 " id="removeImage1"></i>
+              <img id="ImgPreview" src="" class="preview1" />
+              <div class="box a">
+              <div class="my-box" id="cover_images_box">
+              <label class="pluse form-label" for="cover_images" class="btn">
+                +
+              </label>
+              <input type="file" class="form-control-file form-control" id="cover_images" required>
+              </div>
+             </div>
             </div>
         </div>
         </div>
@@ -372,19 +404,27 @@ border-radius: 100px;
       <div class="row images_small_box_row ms-1 ">
      
         <div class="col-3 images_small_box m-2">
-        <label class="images_small_box__plus" for="images_2" class="btn">+</label>
+        <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2"></i>
+        <img id="ImgPreview2" src="" class="preview2" />
+        <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2" class="btn">+</label>
         <input type="file" class="form-control-file" id="images_2" style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
-        <label class="images_small_box__plus" for="images_3" class="btn">+</label>
+        <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3"></i>
+        <img id="ImgPreview3" src="" class="preview3" />
+        <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3" class="btn">+</label>
         <input type="file" class="form-control-file" id="images_3" style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
-        <label class="images_small_box__plus" for="images_4" class="btn">+</label>
+        <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4"></i>
+        <img id="ImgPreview4" src="" class="preview4" />
+        <label class="images_small_box__plus"  id="images_small_box__plus_4" for="images_4" class="btn">+</label>
         <input type="file" class="form-control-file" id="images_4" style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
-        <label class="images_small_box__plus" for="images_5" class="btn">+</label>
+        <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5"></i>
+        <img id="ImgPreview5" src="" class="preview5" />
+        <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5" class="btn">+</label>
         <input type="file" class="form-control-file" id="images_5" style="visibility:hidden;"  >
         </div>
         </div>
@@ -1141,8 +1181,127 @@ border-radius: 100px;
     </div>
     </form>
   </main>
-
 </div>
+
+<script>
+  function readURL(input, imgControlName) {
+  if (input.files && input.files[0]) {
+    var reader = new FileReader();
+    reader.onload = function(e) {
+      $(imgControlName).attr('src', e.target.result);
+    }
+    reader.readAsDataURL(input.files[0]);
+  }
+}
+
+$("#cover_images").change(function() {
+  // add your logic to decide which image control you'll use
+  var imgControlName = "#ImgPreview";
+  readURL(this, imgControlName);
+  document.getElementById("ImgPreview").style.display = "block"; 
+  document.getElementById("cover_images_box").style.display = "none";
+  document.getElementById("removeImage1").style.display = "block";
+  $('.preview1').addClass('it');
+  $('.btn-rmv1').addClass('rmv');
+});
+$("#images_2").change(function() {
+  // add your logic to decide which image control you'll use
+  var imgControlName = "#ImgPreview2";
+  readURL(this, imgControlName);
+   document.getElementById("ImgPreview2").style.display = "block"; 
+   document.getElementById("images_small_box__plus_2").style.display = "none";
+   document.getElementById("removeImage2").style.display = "block";
+  $('.preview2').addClass('it');
+  $('.btn-rmv2').addClass('rmv');
+});
+$("#images_3").change(function() {
+  // add your logic to decide which image control you'll use
+  var imgControlName = "#ImgPreview3";
+  readURL(this, imgControlName);
+    document.getElementById("ImgPreview3").style.display = "block"; 
+   document.getElementById("images_small_box__plus_3").style.display = "none";
+   document.getElementById("removeImage3").style.display = "block";
+  $('.preview3').addClass('it');
+  $('.btn-rmv3').addClass('rmv');
+});
+$("#images_4").change(function() {
+  // add your logic to decide which image control you'll use
+  var imgControlName = "#ImgPreview4";
+  readURL(this, imgControlName);
+  document.getElementById("ImgPreview4").style.display = "block"; 
+   document.getElementById("images_small_box__plus_4").style.display = "none";
+   document.getElementById("removeImage4").style.display = "block";
+  $('.preview4').addClass('it');
+  $('.btn-rmv4').addClass('rmv');
+});
+$("#images_5").change(function() {
+  // add your logic to decide which image control you'll use
+  var imgControlName = "#ImgPreview5";
+  readURL(this, imgControlName);
+  document.getElementById("ImgPreview5").style.display = "block"; 
+   document.getElementById("images_small_box__plus_5").style.display = "none";
+   document.getElementById("removeImage5").style.display = "block";
+  $('.preview5').addClass('it');
+  $('.btn-rmv5').addClass('rmv');
+});
+
+$("#removeImage1").click(function(e) {
+  e.preventDefault();
+  document.getElementById("ImgPreview").style.display = "none"; 
+  document.getElementById("cover_images_box").style.display = "block";
+  document.getElementById("removeImage1").style.display = "none";
+  $("#cover_images").val('');
+  $("#ImgPreview").attr("src", "");
+  $('.preview1').removeClass('it');
+  $('.btn-rmv1').removeClass('rmv');
+});
+$("#removeImage2").click(function(e) {
+  e.preventDefault();
+  document.getElementById("ImgPreview2").style.display = "none"; 
+   document.getElementById("images_small_box__plus_2").style.display = "block";
+   document.getElementById("removeImage2").style.display = "none";
+  $("#images_2").val("");
+  $("#ImgPreview2").attr("src", "");
+  $('.preview2').removeClass('it');
+  $('.btn-rmv2').removeClass('rmv');
+});
+$("#removeImage3").click(function(e) {
+  e.preventDefault();
+  document.getElementById("ImgPreview3").style.display = "none"; 
+   document.getElementById("images_small_box__plus_3").style.display = "block";
+   document.getElementById("removeImage3").style.display = "none";
+  $("#images_3").val("");
+  $("#ImgPreview3").attr("src", "");
+  $('.preview3').removeClass('it');
+  $('.btn-rmv3').removeClass('rmv');
+});
+$("#removeImage4").click(function(e) {
+  e.preventDefault();
+  document.getElementById("ImgPreview4").style.display = "none"; 
+   document.getElementById("images_small_box__plus_4").style.display = "block";
+   document.getElementById("removeImage4").style.display = "none";
+  $("#images_4").val("");
+  $("#ImgPreview4").attr("src", "");
+  $('.preview4').removeClass('it');
+  $('.btn-rmv4').removeClass('rmv');
+});
+$("#removeImage5").click(function(e) {
+  e.preventDefault();
+  document.getElementById("ImgPreview5").style.display = "none"; 
+   document.getElementById("images_small_box__plus_5").style.display = "block";
+   document.getElementById("removeImage5").style.display = "none";
+  $("#images_5").val("");
+  $("#ImgPreview5").attr("src", "");
+  $('.preview5').removeClass('it');
+  $('.btn-rmv5').removeClass('rmv');
+});
+
+  
+</script>
+
+
+
+
 <script>
       $("#cover_images").change(function() {
       filename = this.cover_images[0].name;
