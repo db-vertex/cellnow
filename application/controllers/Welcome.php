@@ -878,7 +878,9 @@ class Welcome extends CI_Controller {
 	
 				 }
 			  
-			 
+				 $this->session->set_flashdata('saveproduct','Product Post Succesfully.');
+				 $this->session->set_flashdata('msg_class','alert-success');
+				  return redirect('welcome/postproduct');
 			 
 			
 		 }

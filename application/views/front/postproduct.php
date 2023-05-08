@@ -379,6 +379,35 @@ border-radius: 100px;
     </div>
   </div>
   </div>
+
+  <?php  if($error=$this->session->flashdata('saveproduct')){  ?>
+                        <div class="row text-center" style="justify-content: center; ">
+                            <div class="col-lg-6">
+                                <div class="alert alert-success ">
+                                    <?= $error; 
+
+                               unset($_SESSION['saveproduct']);
+                               ?>
+                               <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"  style="float:right;"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php } ?>
+                          <?php  if($error=$this->session->flashdata('saveproductfiled')){  ?>
+                        <div class="row  text-center" style="justify-content: center;">
+                            <div class="col-lg-6">
+                                <div class="alert alert-danger ">
+                                    <?= $error; 
+
+                               unset($_SESSION['saveproductfiled']);
+                                 ?>
+                                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close" style="float:right;"></button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php } ?>
      
   <form class="needs-validation" action="<?php echo base_url();?>welcome/saveproduct" method="post" enctype="multipart/form-data" novalidate>
     <div class="row g-5 justify-content-center">
