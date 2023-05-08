@@ -191,6 +191,16 @@ class User extends CI_Model {
       
     }
 
+    function validatepass($password){
+
+        $this->db->select('*');
+        $this->db->from('users');
+        $this->db->where(array('password' => $password ));
+        $query = $this->db->get();
+        return $query->row_array();
+      
+    }
+
 
 
     function checkonlydeviceexist($uniq_id){

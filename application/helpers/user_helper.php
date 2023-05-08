@@ -17,6 +17,24 @@ function get_category($categoryid)
   return $category_data->row();	
 }
 
+function get_all_products()
+{ 
+    //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+    $query= 'SELECT id, user_id,title,category_id,subcategory_id,For_sale_by,Brand,Make,Model,kilometers,Location,Address,Description,Condition_product,Price,Show_My_number,thumbnails,images_1,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 0 UNION
+                SELECT id, user_id,title,category_id,subcategory_id,NULL,NULL,NULL,NULL,Type,Location,Address,Description,Condition_product,Price,Show_My_number,thumbnails,images_1,images_2,images_3,images_4,images_5 ,pay_type  FROM category_tuitions  WHERE pay_type = 0 UNION
+              
+                SELECT id, user_id,title,category_id,subcategory_id,Availability,NULL,NULL,NULL,NULL,Location,Address,Description,Condition_product,Price,Show_My_number,thumbnails,images_1,images_2,images_3,images_4,images_5 ,pay_type FROM category_Services WHERE pay_type = 0 ';
+        $category_data = $ci->db->query($query);  
+    
+  return $category_data->result(); 
+   
+}
+
 function is_user_exists($phone){
   $CI =& get_instance();
   $result = $CI->db->get_where("users", ["phone"=>$phone])->row();
@@ -24,8 +42,15 @@ function is_user_exists($phone){
 }
 
 function get_category_name($id){
+  
     $category=$this->db->get_where("category", "id=$id")->row()->category;
     return $category;
+}
+
+function get_user_name($id){
+  $CI =& get_instance();
+  $category = $CI->db->get_where("users", "user_id=$id")->row()->name;
+  return $category;
 }
 function get_all_category()
 {
@@ -51,6 +76,36 @@ function get_all_shopcategory()
        $ci->load->database();
 
   $query="SELECT * FROM shop_category order by shop_category";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_all_reusableproduct()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_all_store()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM shop order by name";
 
   $category_data = $ci->db->query($query);        
 

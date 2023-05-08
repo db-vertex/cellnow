@@ -21,7 +21,7 @@
 
 <section class="content">
 <div class="row">
-<!-- <a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Category</a> -->
+<a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Category</a>
 
 <?php  if($msg=$this->session->flashdata('msg')): 
 
@@ -45,7 +45,7 @@ $msg_class=$this->session->flashdata('msg_class')
               <thead>
                 <tr>
                   <th>S no.</th>
-                  <th> Category</th>
+                  <th>Shop Category</th>
                   <th>Icon</th>
                   <th>Action</th>
                 </tr>
@@ -57,7 +57,7 @@ $msg_class=$this->session->flashdata('msg_class')
                 <tr id="<?php echo $value->id; ?>">
 
                 <td><?php echo  $value->id;?></td>
-                <td><?php echo  $value->category;?></td>
+                <td><?php echo  $value->shop_category;?></td>
                 
                  <td style="text-align: center;">
                         
