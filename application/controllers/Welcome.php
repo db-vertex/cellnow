@@ -634,9 +634,37 @@ class Welcome extends CI_Controller {
         $postData['category_id'] = $this->input->post('category');
         $postData['subcategory_id'] = $this->input->post('subcategory');
         $postData['brand'] = $this->input->post('Product_Brand');
-		$postData['type'] = $this->input->post('reusable_computer_type');
-		$postData['type'] = $this->input->post('reusable_mobile_type');
-	
+		$postData['Select_Type'] = $this->input->post('reusable_parts_Select_Type');
+		if($postData['subcategory_id'] == 1 || $postData['subcategory_id'] == 2){
+		$postData['type'] = $this->input->post('reusable_parts_product_Type');
+		}
+		else if($postData['subcategory_id'] == 3){
+		$postData['type'] = $this->input->post('reusable_parts_Laptops_product_Type');
+		}
+	    else if($postData['subcategory_id'] == 4){
+		$postData['type'] = $this->input->post('reusable_parts_computer_product_Type');
+		}
+		else if($postData['subcategory_id'] == 5){
+		$postData['type'] = $this->input->post('reusable_parts_Electronics_product_Type');
+		}
+		else if($postData['subcategory_id'] == 16){
+		$postData['type'] = $this->input->post('reusable_parts_Home_Appliances_product_Type');
+		}
+		else if($postData['subcategory_id'] == 6){
+		$postData['type'] = $this->input->post('reusable_parts_Kitchen_Appliances_product_Type');
+		}
+		else if($postData['subcategory_id'] == 7){
+		$postData['type'] = $this->input->post('reusable_parts_Automobiles_product_Type');
+		}
+		else if($postData['subcategory_id'] == 8){
+		$postData['type'] = $this->input->post('reusable_parts_Furniture_product_Type');
+		}
+		else if($postData['subcategory_id'] == 9){
+		$postData['type'] = $this->input->post('reusable_parts_Sports_product_Type');
+		}
+		else if($postData['subcategory_id'] == 10){
+		$postData['type'] = $this->input->post('reusable_parts_Musical_product_Type');
+		}
 		$postData['book_publisher'] = $this->input->post('reusable_parts_Publisher');
 		$postData['book_publisher_type'] = $this->input->post('reusable_parts_Publisher_type');
 		$postData['use_year'] = $this->input->post('use_years');
@@ -652,11 +680,121 @@ class Welcome extends CI_Controller {
 		$postData['pay_type'] = $this->input->post('Sponsor');
 		$sponser = $this->input->post('Sponsor');
 
-		$insert = $this->product_model->reusable_parts($postData);
+		$insert = $this->product_model->category_reusable_parts($postData);
 
 	   print_r($postData);die();
 	   }
-	}
+	
 
+
+	else if($category == 2){ 
+		$postData = array();
+		 $postData['title'] = $this->input->post('Title');
+		 $postData['user_id'] = $this->input->post('user_id');
+		 $postData['category_id'] = $this->input->post('category');
+		 $postData['subcategory_id'] = $this->input->post('subcategory');
+		 $postData['Tuitions_loction'] = $this->input->post('Tuitions_loction');
+		 $postData['Education_Type'] = $this->input->post('Tuitions_Education_Type');
+		 $postData['high_school'] = $this->input->post('school_eduction');
+		 $postData['gender'] = $this->input->post('Tuitions_gender');
+         $postData['Available_Timings'] = $this->input->post('Tuitions_Available_Timings');
+		 $postData['price'] = $this->input->post('Tuitions_person_Fees');
+		 if($postData['subcategory_id'] == 12){
+			$postData['Years_Experience'] = $this->input->post('Tuitions_Years_Experience');
+			$postData['Teachers_Qualifications'] = $this->input->post('Tuitions_Teachers_Qualifications');
+			$postData['Positives_Outcomes'] = $this->input->post('Tuitions_Positives_Outcomes');
+			$postData['Joining_criteria'] = $this->input->post('Tuitions_Joining_criteria');
+		 }
+		 else if($postData['subcategory_id'] == 13){
+			$postData['Years_Experience'] = $this->input->post('Tuitions_Teachers_Experience');
+			$postData['Teachers_Qualifications'] = $this->input->post('Tuitions_Teachers_type');
+			$postData['Positives_Outcomes'] = $this->input->post('Tuitions_Requirements_Teachers');
+		 }
+		 
+		 $postData['postal_code'] = $this->input->post('Postal_code'); 
+		 $postData['town'] = $this->input->post('Town');
+		 $postData['lat'] = $this->input->post('latitude');
+		 $postData['long'] = $this->input->post('longitude');
+		 $postData['Description'] = $this->input->post('Description');
+		 $postData['address'] = $this->input->post('Address');
+		 $postData['pay_type'] = $this->input->post('Sponsor');
+		 $sponser = $this->input->post('Sponsor');
+		
+ 
+		 $insert = $this->product_model->category_tuitions($postData);
+ 
+		print_r($postData);die();
+		}
+
+
+		else if($category == 3){ 
+			$postData = array();
+			 $postData['title'] = $this->input->post('Title');
+			 $postData['user_id'] = $this->input->post('user_id');
+			 $postData['category_id'] = $this->input->post('category');
+			 $postData['subcategory_id'] = $this->input->post('subcategory');
+			 $postData['Job_Location'] = $this->input->post('Job_Location');
+			 $postData['job_Office_Address	'] = $this->input->post('job_Office_Address');
+			 $postData['Job_type'] = $this->input->post('Job_type');
+			 if($postData['subcategory_id'] == 14){
+				$postData['job_Experience'] = $this->input->post('job_Experience'); 
+				$postData['price'] = $this->input->post('job_Experience');
+				
+			 }
+			 else if($postData['subcategory_id'] == 15){
+				$postData['job_Experience'] = $this->input->post('Job_Pitching_Experience');
+				$postData['price'] = $this->input->post('job_amount');
+			 }
+			 
+			 $postData['postal_code'] = $this->input->post('Postal_code'); 
+			 $postData['town'] = $this->input->post('Town');
+			 $postData['lat'] = $this->input->post('latitude');
+			 $postData['long'] = $this->input->post('longitude');
+			 $postData['Description'] = $this->input->post('Description');
+			 $postData['address'] = $this->input->post('Address');
+			 $postData['pay_type'] = $this->input->post('Sponsor');
+			 $sponser = $this->input->post('Sponsor');
+			
+	 
+			 $insert = $this->product_model->category_job($postData);
+	 
+			print_r($postData);die();
+			}
+
+
+			else if($category == 4){ 
+				$postData = array();
+				 $postData['title'] = $this->input->post('Title');
+				 $postData['user_id'] = $this->input->post('user_id');
+				 $postData['category_id'] = $this->input->post('category');
+				 $postData['subcategory_id'] = $this->input->post('subcategory');
+				 $postData['Job_Location'] = $this->input->post('Job_Location');
+				 $postData['job_Office_Address	'] = $this->input->post('job_Office_Address');
+				 $postData['Job_type'] = $this->input->post('intership_Job_type');
+				 if($postData['subcategory_id'] == 17){
+					$postData['intership_qustions'] = $this->input->post('intership_qustions'); 	
+				 }
+				 else if($postData['subcategory_id'] == 18){
+					$postData['intership_qustions'] = $this->input->post('intership_Skills_Qualifications');
+					$postData['intership_Post_Vacant'] = $this->input->post('intership_Post_Vacant');
+				 }
+				 $postData['intership_Need_Stipend'] = $this->input->post('intership_Need_Stipend');
+				 $postData['Available_Timings'] = $this->input->post('Tuitions_Available_Timings');
+				 $postData['postal_code'] = $this->input->post('Postal_code'); 
+				 $postData['town'] = $this->input->post('Town');
+				 $postData['lat'] = $this->input->post('latitude');
+				 $postData['long'] = $this->input->post('longitude');
+				 $postData['Description'] = $this->input->post('Description');
+				 $postData['address'] = $this->input->post('Address');
+				 $postData['pay_type'] = $this->input->post('Sponsor');
+				 $sponser = $this->input->post('Sponsor');
+				 $insert = $this->product_model->category_internships($postData);
+		 
+				print_r($postData);die();
+				}
+		 
+	 
+ 
+	}
   
 }
