@@ -196,7 +196,7 @@
                                         <span style="color:red;"><?php echo form_error('otp'); ?></span>
                                 </div> <!-- form-group// -->
                                 
-                                 <center> <a href="#!" class="text-body">Resend otp</a></center>
+<center> <a href="" class="text-body">Resend otp</a></center>
 
                                 <center><button class=" mb-3 btn btn-lg  text-white mt-3"
                                         style="background-color:#13C571;border-radius:30px;width:40%;"

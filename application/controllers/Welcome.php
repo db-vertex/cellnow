@@ -222,11 +222,79 @@ class Welcome extends CI_Controller {
 			   $post_data = array('name'=> $name, 'email'=>$email,'password'=> md5($password),'phone'=>$phone, 'OTP'=>$randCode ,'login_type'=>'normal');
 			   $this->db->insert('users',$post_data);
 
-               return redirect('welcome/otp');
+
+			   $this->load->view('front/header', ['success' => true]);
+			   $this->load->view('front/otp',['phone'=>$phone]);
+			   $this->load->view('front/footer');
+              // return redirect('welcome/otp',['phone'=>$phone]);
             }
        
 	}
 	public function forgotpassword()
+	{
+
+		$this->form_validation->set_rules('phone',' phone','required|min_length[10]|max_length[10]');
+		$this->form_validation->set_error_delimiters('<div class="text-danger">', '</div>');
+		if($this->form_validation->run())
+		{
+			$phone = $this->input->post('phone');
+			$udata = $this->db->get_where("users", ["phone"=>$phone])->row();
+			if(is_user_exists($phone)){
+			$size = 4;
+            $alpha_key = '';
+            $keys = range('0', '9');
+            for ($i = 0; $i < 4; $i++) {
+              $alpha_key .= $keys[array_rand($keys)];
+            }
+            $randCode = $alpha_key;
+            $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+
+            $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+
+            $numbers = array($phone);
+            $sender = urlencode('UPAHAD');
+            $message = rawurlencode($messages);
+
+            $numbers = implode(',', $numbers);
+
+            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+            // Send the POST request with cURL
+            $ch = curl_init('https://api.textlocal.in/send/');
+            curl_setopt($ch, CURLOPT_POST, true);
+            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            $response = curl_exec($ch);
+            //print_r($response);
+
+            curl_close($ch);
+
+			$userData['phone'] = $phone;
+			$userData['OTP'] = $randCode;
+			
+			$update = $this->user->update($userData, $udata->user_id);
+			return redirect('welcome/forgotpasswordotp');
+		}else{
+			$this->session->set_flashdata('Login_failed', 'This number is not register');
+				$this->session->set_flashdata('msg_class', 'alert-danger');
+	
+				$this->load->view('front/header', ['success' => true]);
+				$this->load->view('front/forgotpassword', ['success' => true]);
+				$this->load->view('front/footer');
+		}
+
+			
+		}
+		else{
+			$this->load->view('front/header');
+			$this->load->view('front/forgotpassword');
+			$this->load->view('front/footer');
+		}
+		
+	}
+
+	public function resendotp()
 	{
 
 		$this->form_validation->set_rules('phone',' phone','required|min_length[10]|max_length[10]');
@@ -337,16 +405,16 @@ class Welcome extends CI_Controller {
 
 	public function changepassword()
 	{
-		$this->form_validation->set_rules('otp','otp','required');
+		$this->form_validation->set_rules('oldpassword','otp','required');
 		$this->form_validation->set_rules('password',' password','required|min_length[6]');
 		$this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
 		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
 		if($this->form_validation->run())
 	      {
-			$otp =  $this->input->post('otp');
+			$oldpass = md5( $this->input->post('oldpassword'));
 			$password = $this->input->post('password');
 			$confirm_password = $this->input->post('confirm_password');
-			$login_id=$this->user->validateotp($otp);
+			$login_id=$this->user->validatepass($oldpass);
 
 			if($login_id)
 			{
@@ -765,16 +833,21 @@ $session_id = $this->session->userdata('id');
     $this->load->view('front/header',['user'=>$user_detail]);
     $this->load->view('front/privacypolicy',['privacy'=>$privacy]);
     $this->load->view('front/footer');
-}else{
+     }else{
     $privacy = $this->user->getprivacypolicy();
      $this->load->view('front/header');
     $this->load->view('front/privacypolicy',['privacy'=>$privacy]);
     $this->load->view('front/footer');
-}
+     }
    
   }
 
-  
+  public function productdetail()
+  {
+	$this->load->view('front/header');
+    $this->load->view('front/verifyproductdetails');
+    $this->load->view('front/footer');
+  }
 
     public function saveproduct()
     {
@@ -1037,6 +1110,43 @@ $session_id = $this->session->userdata('id');
 				  return redirect('welcome/postproduct');
 			 
 			
-		 }
+	 }
+					public function store(){
+						$session_id = $this->session->userdata('id');
+						
+						if($session_id)
+						{
+							//$myproduct = $this->product_model->myproduct($session_id);
+
+							$user_detail = $this->user->loginuser($session_id);
+						$this->load->view('front/header',['user'=>$user_detail]);
+						$this->load->view('front/store',['user'=>$user_detail]);
+						$this->load->view('front/footer');
+						}else{
+							$this->load->view('front/header');
+						$this->load->view('front/store');
+						$this->load->view('front/footer');
+						}
+					}
+
+					public function shopdetail(){
+
+						$session_id = $this->session->userdata('id');
+						
+						if($session_id)
+						{
+							//$myproduct = $this->product_model->myproduct($session_id);
+
+							$user_detail = $this->user->loginuser($session_id);
+						$this->load->view('front/header',['user'=>$user_detail]);
+						$this->load->view('front/shopdetail',['user'=>$user_detail]);
+						$this->load->view('front/footer');
+					}
+					else{
+						$this->load->view('front/header');
+						$this->load->view('front/shopdetail');
+						$this->load->view('front/footer');
+					}
+					}
   
 }

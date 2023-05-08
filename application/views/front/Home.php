@@ -107,15 +107,20 @@
    <div class="container">
   <div id="banner" class="carousel slide" data-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="First slide">
+  <?php
+      $all_banner = get_all_banner();
+      $j = 1;
+      foreach ($all_banner as $key => $banner) {
+        ?>  
+    <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
+      <img class="d-block w-100" src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide">
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="Third slide">
-    </div>
+    <?php
+
+        $j++;
+
+      }
+      ?>
   </div>
   <a class="carousel-control-prev" href="#banner" role="button" data-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
@@ -131,58 +136,66 @@
 
 
 
-<div class="container">
+ <div class="container">
     <div class="row">
     <p style="color: #F59E0B;"> -------Our Recomandation</p>
     </div>
    </div>
 
+
+   <!-- feratured part add -->
    <div class="container">
     <div class="row">
-      <div class="col-md-8">
-        <p style="font-size:30px" >Featured</p>
-      </div>
-      <div class="col-md-4">
-      <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      <button class="rounded my-2 my-sm-0" type="submit">Search</button>
-    </form>
-
-    
-      </div>
+        <div class="col-md-6">
+        <p style="font-size:30px;color:#1B1C57;"> Featured </p>
 </div>
+
+<div class="col-md-6">
+<div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
+            <div class="input-group">
+              <div class="input-group-prepend">
+                <button  id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="material-icons" style="font-size:20px;color:red">place</i>
+</i></button>
+              </div>
+              <input type="search" placeholder="Search for the Product you want!"  aria-describedby="button-addon2" class="form-control border-0 bg-light"><button  style="border-radius:30px; color:white; background-color:#10B981;width:100px;height:40px;" class="button" >search <i class='fas fa-angle-right' style='font-size:10px;color:#10B981'></i></button> </p>
+             
+            </div>
+          </div>
+      </div>
+    </div>
    </div>
 
+   <!-- feratured part close -->
 
 
-  
 
-<div class="container">
-  <div class="row">
-    <div class="col-md-2  col-sm-6">
+   
+   <div class="container ">
+  <div class="row text-center">
+    <div class="col-lg-2  col-md-3 col-sm-6">
   <button class="button">
-<img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt=""> &nbsp &nbsp All
+<img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt=""> &nbsp &nbsp <a href="https://www.w3schools.com" class="w3-btn w3-black">All</a> 
 </button>
     </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-lg-3 col-md-5 col-sm-6">
   <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/reusable1.png" alt="">Reusable parts and Product
+  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/reusable1.png" alt="">  &nbsp <a href="https://www.w3schools.com" style="color:#888B97">Reusable parts and Product</a> 
 </button>
     </div>
-    <div class="col-md-3 col-sm-6">
+    <div class="col-lg-3 col-md-4 col-sm-4">
   <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/home1.png" alt="">  &nbsp Tuitions/Classes
+  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/home1.png" alt="">  &nbsp <a href="https://www.w3schools.com" style="color:#888B97">Tuitions/Classes </a>
 </button>
     </div>
-<div class="col-md-2  col-sm-6">
+<div class="col-lg-2  col-md-5 col-sm-4">
   <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/work1.png" alt="">   Part-time Jobs 
+  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/work1.png" alt="">     <a href="https://www.w3schools.com"style="color:#888B97">Part-time Jobs</a>
  
 </button>
     </div>
-    <div class="col-md-2 col-sm-6">
+    <div class="col-lg-2 col-md-4 col-sm-4">
   <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/employee1.png" alt=""> &nbsp  Internships 
+  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/employee1.png" alt=""> &nbsp   <a href="https://www.w3schools.com" style="color:#888B97">Internships </a>
  </button>
     </div>
 </div>
@@ -286,7 +299,7 @@
          </div>
         </div>
 
-
+       
 
 <div class="container mt-3">
   <div class="row">
@@ -463,51 +476,20 @@ $('.carousel .carousel-item').each(function(){
     <div class="row mx-auto my-auto">
         <div id="bike1" class="carousel slide w-100" data-ride="carousel">
             <div class="carousel-inner w-100" role="listbox">
+            <?php
+                  
+                  $product = get_all_reusableproduct(); 
+                  foreach($product as $value){ ?>
                 <div class="carousel-item active">
                     <div class="col-md-4">
                         <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
-                           
+                           <a href="<?php echo base_url();?>welcome/productdetail"> <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide"></a>
+                           <p><?php echo $value->title;?></p>
                           </div>
                     </div>
                 </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
-                        </div>
-                    </div>
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
-                        </div>
-                    </div>
-                   
-                    
-                </div>
-
                 
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike2.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike3.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
+<?php }?>
                
             </div>
             <a class="carousel-control-prev w-auto" href="#bike1" role="button" data-slide="prev">

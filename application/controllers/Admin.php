@@ -461,7 +461,7 @@ public function Contact_us()
 
 
 
-public function Category()
+public function shopCategory()
 {
   $session_id = $this->session->userdata('admin_id');
     if($session_id)
@@ -469,6 +469,24 @@ public function Category()
          
     $admin_detail = $this->admin_model->get_admin_data($session_id);
     $category=$this->admin_model->all_shopcategory();   // for foreach loop
+    $this->load->view('shopcategory_list',['admin_detail'=>$admin_detail,'category'=>$category]);
+   
+    }
+    else
+    {
+      return redirect('admin');
+    }
+
+}
+
+public function Category()
+{
+  $session_id = $this->session->userdata('admin_id');
+    if($session_id)
+    {
+         
+    $admin_detail = $this->admin_model->get_admin_data($session_id);
+    $category=$this->admin_model->all_category();   // for foreach loop
     $this->load->view('category_list',['admin_detail'=>$admin_detail,'category'=>$category]);
    
     }
@@ -1534,13 +1552,8 @@ public function products()
              
       $admin_detail = $this->admin_model->get_admin_data($session_id);
 
-      $posts = $this->Product_model->getactivepro(); 
-      $deactiveposts = $this->Product_model->getdeactivepro(); 
-      $featuredposts = $this->Product_model->getfeaturedpro();
-      $admindeactiveposts = $this->Product_model->getadmindeactivepro();
-
-      // for foreach loop
-      $this->load->view('post_list',['admin_detail'=>$admin_detail,'posts'=>$posts,'deactiveposts'=>$deactiveposts,'featuredposts'=>$featuredposts,'admindeactiveposts'=>$admindeactiveposts]);
+   
+      $this->load->view('post_list',['admin_detail'=>$admin_detail]);
        
         }
         else
