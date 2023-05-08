@@ -681,13 +681,13 @@ class Welcome extends CI_Controller {
 		$sponser = $this->input->post('Sponsor');
 
 		$insert = $this->product_model->category_reusable_parts($postData);
-
-	   print_r($postData);die();
+		$id = $this->db->insert_id();
+	   $table= "category_reusable_parts";
 	   }
 	
 
 
-	else if($category == 2){ 
+     	else if($category == 2){ 
 		$postData = array();
 		 $postData['title'] = $this->input->post('Title');
 		 $postData['user_id'] = $this->input->post('user_id');
@@ -722,8 +722,8 @@ class Welcome extends CI_Controller {
 		
  
 		 $insert = $this->product_model->category_tuitions($postData);
- 
-		print_r($postData);die();
+		 $id = $this->db->insert_id();
+		 $table=  "category_tuitions";
 		}
 
 
@@ -757,13 +757,13 @@ class Welcome extends CI_Controller {
 			
 	 
 			 $insert = $this->product_model->category_job($postData);
-	 
-			print_r($postData);die();
+			 $id = $this->db->insert_id();
+			 $table=  "category_job";
 			}
 
 
-			else if($category == 4){ 
-				$postData = array();
+		   else if($category == 4){ 
+			    	$postData = array();
 				 $postData['title'] = $this->input->post('Title');
 				 $postData['user_id'] = $this->input->post('user_id');
 				 $postData['category_id'] = $this->input->post('category');
@@ -789,12 +789,98 @@ class Welcome extends CI_Controller {
 				 $postData['pay_type'] = $this->input->post('Sponsor');
 				 $sponser = $this->input->post('Sponsor');
 				 $insert = $this->product_model->category_internships($postData);
-		 
-				print_r($postData);die();
+				 $id = $this->db->insert_id();
+				 $table=  "category_internships";
 				}
-		 
-	 
- 
-	}
+
+				$id = $this->db->insert_id();
+				print_r($_FILES['profile_img']);  
+					$this->load->library('upload');
+					  $dataInfo = array();
+				    if (!empty($_FILES['profile_img']['name'])) {
+							
+					  $filesCount = count($_FILES['profile_img']['name']);
+					  for($i = 0; $i < $filesCount; $i++){
+						  $_FILES['file']['name']     = $_FILES['profile_img']['name'][$i];
+						  $_FILES['file']['type']     = $_FILES['profile_img']['type'][$i];
+						  $_FILES['file']['tmp_name'] = $_FILES['profile_img']['tmp_name'][$i];
+						  $_FILES['file']['error']     = $_FILES['profile_img']['error'][$i];
+						  $_FILES['file']['size']     = $_FILES['profile_img']['size'][$i];
+						  
+						  
+						  $config['upload_path'] = './uploads/product';
+						  $config['allowed_types'] = '*';
+						  
+						  // Load and initialize upload library
+						  $this->load->library('upload', $config);
+						  $this->upload->initialize($config);
+						  /*$id = $this->post('product_id');*/
+						  // Upload file to server
+						  if($this->upload->do_upload('file')){
+							  // Uploaded file data
+							  $fileData = $this->upload->data();
+							  $uploadData[$i]['file_name'] = $fileData['file_name'];
+							  $uploadData[$i]['created'] = date("Y-m-d H:i:s");
+								 $pimage=$uploadData[$i]['file_name'];   
+							 
+							 
+							 if($i==0){
+							  $img=$pimage;
+							  $source="./uploads/product/$img";
+							  $destImagePath="./uploads/product/$img";
+							  $destImagdePath= $destImagePath;
+							  $thumbWidth=300;   
+							   $this->db->update($table, ["cover_img"=>$destImagdePath], "id=$id");
+							 
+							 }
+							 
+							 else if($i==1){
+							  $img=$pimage;
+							  $source="./uploads/product/$img";
+							  $destImagePath="./uploads/product/$img";
+							  $destImagdePath= $destImagePath;
+							  $thumbWidth=300;    
+						
+							$this->db->update($table, ["images_2"=>$destImagdePath], "id=$id");
+
+							 }
+							   else if($i==2){
+							 $img=$pimage;
+							  $source="./uploads/product/$img";
+							  $destImagePath="./uploads/product/$img";
+							  $destImagdePath= $destImagePath;
+							  $thumbWidth=300; 
+						
+							   $this->db->update($table, ["images_3"=>$destImagdePath], "id=$id");
+						
+							 }
+							else if($i==3){
+							   $img=$pimage;
+							  $source="./uploads/product/$img";
+							  $destImagePath="./uploads/product/$img";
+							  $destImagdePath= $destImagePath;
+							  $thumbWidth=300; 
+							
+							 $this->db->update($table, ["images_4"=>$destImagdePath], "id=$id");
+						
+							 }
+							   else if($i==4){
+							   $img=$pimage;
+							  $source="./uploads/product/$img";
+							  $destImagePath="./uploads/product/$img";
+							  $destImagdePath= $destImagePath;
+							  $thumbWidth=300;
+							  $this->db->update($table, ["images_5"=>$destImagdePath], "id=$id");
+							 }
+							 
+						  }
+					  }
+	
+				 }
+			  
+			 
+			 
+			
+		 }
   
 }

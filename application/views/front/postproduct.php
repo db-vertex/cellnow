@@ -133,7 +133,7 @@
   left: 50%;
   transform: translateX(-50%);
   background: #D1FAE5;
-  opacity: 0.75;
+  
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 13px;
   text-align: -webkit-center;
@@ -344,14 +344,14 @@ border-radius: 100px;
     float: right;
     position: absolute;
     margin-left: 85%;
-    color:#10B981;
+    color:white;
     display:none;
   }  
   .btn-rmv2, .btn-rmv3, .btn-rmv4, .btn-rmv5{
     font-size: 16px;
     float: right;
     position: absolute;
-    color:#10B981;
+    color:white;
     display:none;
     margin-left: 55px;
   }  
@@ -380,7 +380,7 @@ border-radius: 100px;
   </div>
   </div>
      
-  <form class="needs-validation" action="<?php echo base_url();?>welcome/saveproduct" method="post" novalidate>
+  <form class="needs-validation" action="<?php echo base_url();?>welcome/saveproduct" method="post" enctype="multipart/form-data" novalidate>
     <div class="row g-5 justify-content-center">
    
       <div class=" offset-lg-1 col-lg-5">
@@ -391,10 +391,10 @@ border-radius: 100px;
               <img id="ImgPreview" src="" class="preview1" />
               <div class="box a">
               <div class="my-box" id="cover_images_box">
-              <label class="pluse form-label" for="cover_images" class="btn">
+              <label class="pluse" for="cover_images" class="btn">
                 +
               </label>
-              <input type="file" class="form-control-file form-control" id="cover_images" required>
+              <input type="file" class="form-control-file" id="cover_images" name="profile_img[]" style="visibility:hidden;" accept="image/*" required>
               </div>
              </div>
             </div>
@@ -407,25 +407,25 @@ border-radius: 100px;
         <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2"></i>
         <img id="ImgPreview2" src="" class="preview2" />
         <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2" class="btn">+</label>
-        <input type="file" class="form-control-file" id="images_2" style="visibility:hidden;"  >
+        <input type="file" class="form-control-file" id="images_2" name="profile_img[]" accept="image/*" style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
         <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3"></i>
         <img id="ImgPreview3" src="" class="preview3" />
         <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3" class="btn">+</label>
-        <input type="file" class="form-control-file" id="images_3" style="visibility:hidden;"  >
+        <input type="file" class="form-control-file" id="images_3" name="profile_img[]" accept="image/*"  style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
         <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4"></i>
         <img id="ImgPreview4" src="" class="preview4" />
         <label class="images_small_box__plus"  id="images_small_box__plus_4" for="images_4" class="btn">+</label>
-        <input type="file" class="form-control-file" id="images_4" style="visibility:hidden;"  >
+        <input type="file" class="form-control-file" id="images_4" name="profile_img[]" accept="image/*" style="visibility:hidden;"  >
         </div>
         <div class="col-3 images_small_box m-2">
         <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5"></i>
         <img id="ImgPreview5" src="" class="preview5" />
         <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5" class="btn">+</label>
-        <input type="file" class="form-control-file" id="images_5" style="visibility:hidden;"  >
+        <input type="file" class="form-control-file" id="images_5" name="profile_img[]" accept="image/*" style="visibility:hidden;"  >
         </div>
         </div>
         </div>
