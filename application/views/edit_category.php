@@ -7,7 +7,7 @@
     <!-- Content Header (Page header) -->
     <section class="content-header">
       <h1>
-        Category
+        Edit Category
       </h1>
       <!-- <ol class="breadcrumb">
         <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
@@ -44,14 +44,14 @@
 
  <div class="row align-items-center justify-content-center">
 
-  <!-- <div class="col-lg-6 col-xs-6">
+  <div class="col-lg-6 col-xs-6">
   <div class="form-group">
-    <img src="<?php echo base_url().'/uploads/category/'.$test->icon?>" style="height: 50px;width: 53px;float: right;">
+    <img src="<?php echo base_url().'/uploads/shopcategory/'.$test->icon?>" style="height: 50px;width: 53px;float: right;">
     <label for="Title">Upload Icon :</label>
     <input type="file" class="form-control" id="icon" name="icon"  >
     <p id="head"  style="color:#ff0000" ></p>
   </div>
-  </div> -->
+  </div>
   </div>
 
 <button type="submit" id="submit" class="btn btn-primary">Update</button>

@@ -62,7 +62,7 @@ $msg_class=$this->session->flashdata('msg_class')
                  <td style="text-align: center;">
                         
                         <?php if(!empty($value->icon)){ ?>
-                        <img src="<?php echo base_url().'/uploads/category/'.$value->icon?>" style="height: 50px;width: 53px;">
+                        <img src="<?php echo base_url().'/uploads/shopcategory/'.$value->icon?>" style="height: 50px;width: 53px;">
 
                         <?php } ?>
 

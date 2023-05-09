@@ -1,111 +1,87 @@
 <!doctype html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-     
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+   
     <style>
-.button {
-  background-color:white;
-  border: #888B97;
-  color: #888B97;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 2px 2px;
-  cursor: pointer;
-  border-radius: 15px;
-  font-size: 10px;
-  font-weight: bold;
-  
+
+html,body
+{
+  max-width: 100%;
+  overflow-x: hidden;
 }
 
-/* .button:hover {
-  background-color:#888B97;
+
+/* search btn line 11 to 66 */
+.search_wrap{
+	width: 100%;
+	
+}
+
+.search_wrap .search_box{
+	position: relative;
+	
+	height: 60px;
+}
+
+.search_wrap .search_box .btn{
+	position: absolute;
+	
+	height: 80%;
+	background: #10B981;
+	
+}
+.search_wrap .search_box .btn.btn_common .fas{
+	
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	color: #fff;
+ 
+}
+.search_wrap.search_wrap_6 .search_box .btn{
+	width: 25%;
+	height: 50%;
+	top: 7%;
+	right: 1%;
+	
+	color: #fff;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+/* input::placeholder {
+  font-size: 18px;
+}
+@media screen and (max-width: 992px) {
+  input::placeholder  {
+     font-size: 12px;
+  }
+}
+  @media screen and (max-width: 776px) {
+  input::placeholder  {
+     font-size: 10px;
+  }
+}
+@media screen and (max-width: 560px) {
+  input::placeholder  {
+     font-size: 13px;
+  }
 } */
 
 
 
-.button1 {
-  background-color:white ;
-  border: 1px solid;
-  color: black;
-  padding: 10px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 10px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 70%;
-  border-color: black;
-}
-.button5 {border-radius: circle;}
-.button1:hover {
-  background-color:#888B97;
-}
-
-
-@media (max-width: 768px) {
-    .carousel-inner .carousel-item > div {
-        display: none;
-    }
-    .carousel-inner .carousel-item > div:first-child {
-        display: block;
-    }
-}
-
-.carousel-inner .carousel-item.active,
-.carousel-inner .carousel-item-next,
-.carousel-inner .carousel-item-prev {
-    display: flex;
-}
-
-/* display 3 */
-@media (min-width: 768px) {
-    
-    .carousel-inner .carousel-item-right.active,
-    .carousel-inner .carousel-item-next {
-      transform: translateX(33.333%);
-    }
-    
-    .carousel-inner .carousel-item-left.active, 
-    .carousel-inner .carousel-item-prev {
-      transform: translateX(-33.333%);
-    }
-}
-
-.carousel-inner .carousel-item-right,
-.carousel-inner .carousel-item-left{ 
-  transform: translateX(0);
-}
-
-
-
-
-
-</style>
-    
-
-
-
-
+/* .btn{
+    width: 100%;
+} */
+    </style>
   </head>
   <body>
-
-    <!-- header sectioon slider -->
-   <div class="container">
-  <div id="banner" class="carousel slide" data-ride="carousel">
+    
+<div class="container">
+<div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
   <?php
       $all_banner = get_all_banner();
@@ -121,454 +97,426 @@
 
       }
       ?>
+   
   </div>
-  <a class="carousel-control-prev" href="#banner" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#banner" role="button" data-slide="next">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlss" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-</div>
-<!-- header -->
+</div><br>
 
-
-
- <div class="container">
+<div class="container">
     <div class="row">
     <p style="color: #F59E0B;"> -------Our Recomandation</p>
     </div>
-   </div>
+   </div><br>
 
 
-   <!-- feratured part add -->
-   <div class="container">
+    <!-- search bar -->
+<div class="container">
     <div class="row">
-        <div class="col-md-6">
+      <div class="col-md-6 col-sm-6 ">
         <p style="font-size:30px;color:#1B1C57;"> Featured </p>
-</div>
-
-<div class="col-md-6">
-<div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <button  id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="material-icons" style="font-size:20px;color:red">place</i>
-</i></button>
-              </div>
-              <input type="search" placeholder="Search for the Product you want!"  aria-describedby="button-addon2" class="form-control border-0 bg-light"><button  style="border-radius:30px; color:white; background-color:#10B981;width:100px;height:40px;" class="button" >search <i class='fas fa-angle-right' style='font-size:10px;color:#10B981'></i></button> </p>
-             
-            </div>
-          </div>
       </div>
-    </div>
-   </div>
-
-   <!-- feratured part close -->
-
-
-
-   
-   <div class="container ">
-  <div class="row text-center">
-    <div class="col-lg-2  col-md-3 col-sm-6">
-  <button class="button">
-<img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt=""> &nbsp &nbsp <a href="https://www.w3schools.com" class="w3-btn w3-black">All</a> 
-</button>
-    </div>
-    <div class="col-lg-3 col-md-5 col-sm-6">
-  <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/reusable1.png" alt="">  &nbsp <a href="https://www.w3schools.com" style="color:#888B97">Reusable parts and Product</a> 
-</button>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-4">
-  <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/home1.png" alt="">  &nbsp <a href="https://www.w3schools.com" style="color:#888B97">Tuitions/Classes </a>
-</button>
-    </div>
-<div class="col-lg-2  col-md-5 col-sm-4">
-  <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/work1.png" alt="">     <a href="https://www.w3schools.com"style="color:#888B97">Part-time Jobs</a>
- 
-</button>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4">
-  <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/employee1.png" alt=""> &nbsp   <a href="https://www.w3schools.com" style="color:#888B97">Internships </a>
- </button>
-    </div>
+      <div class="col-md-6 col-sm-6">
+      <div class="search_wrap search_wrap_6 m-0">
+			<div class="search_box">
+         
+		       <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn  rounded-5" >search ></button>
+        </div>
+  </div>
 </div>
 </div>
+ </div><br>
+
+ <!-- new -->
+<div class="container">
+  <div class="row ">
+  <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2">
+  <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/menu1.png" alt=""> &nbsp &nbsp All</a>
+  </div>
 
 
+  <div class="col-lg-3 col-md-5 col-sm-6 col-12 mb-2">
+    <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/reusable1.png" alt="">Reusable parts and Product</a>
+  </div>
+  <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
+  <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/home1.png" alt="">  &nbsp Tuitions/Classes</a>
+  </div>
+  <div class="col-lg-2 col-md-4 col-sm-6  mb-2">
+  <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/work1.png" alt="">   Part-time Jobs </a>
+  </div>
+  <div class="col-lg-2 col-md-4 col-sm-6  mb-2">
+  <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/employee1.png" alt=""> &nbsp  Internships </a>
+  </div>
+  </div>
+</div><br>
 
+<div class="container">
+<div class="va-carrousel-section">
+    <div class="va-whitewrap">
+       
 
-
-<div class="container mt-3">
-<div class="row">
-          <div class="col-lg-1 col-md-4  col-sm-6 ">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt="">
+        <div id="va_container_Popular" style="text-align: -webkit-center;">
         
-         </button>
-         <p class="description">All</p>
-          </div>
+            <div class="va-carrousel-flexbox_Popular  pt-4">
+            <?php
+                $category = get_all_subcategory();
+                foreach ($category as $key => $cat) {
+                  ?>
+                 
+                  <div class="va-card va-card_category"> <a class="link-plain border-0"  href="" style="max-width: 45%;"> 
+                  <p style="text-align:center;" class="my-auto pouler_Categories">
+                  <img class=""  src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
+                   <center style="color:black; font-size:12px; font-weight:700"><?php echo ucfirst($cat->sub_category); ?></center>
+                  </p>
+                    </a> 
+                    </div>
+                   
+                    <?php } ; ?>  
+            </div>
 
-          <div class="col-lg-1 col-md-4 col-sm-6 ">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1"width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (1).png" alt="">
-         
-         </button>
-         <p class="description">Tours</p>
-          </div>
-
-          
-          <div class="col-lg-1 col-md-4  col-sm-6">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (4).png" alt="">
-         
-         </button>
-         <p class="description">Pets</p>
-          </div>
-
-          
-          <div class="col-lg-1 col-md-4  col-sm-6 ">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (4).png" alt="">
- </button>
-        
-         <p class="description">Apparels</p>
-          </div>
-
-          
-          <div class="col-lg-1 col-md-4   col-sm-6 ">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (3).png" alt="">
        
-         </button>
-         <p class="description">Books & Magazines</p>
-          </div>
-
-          
-          <div class="col-lg-1 col-md-4   col-sm-6 ">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/vector3.png" alt="">
-       
-         </button>
-         <p class="description">Dairy Products</p>
-          </div>
-
-          
-          <div class="col-lg-1 col-md-4   col-sm-6 ">
-         <button class="button1 button5">
-      <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/vectorr.png" alt="">
-        
-         </button>
-         <p class="description">Decoratie Items</p>
-          </div>
-
-          
-          <div class="col-lg-1 col-md-4  col-sm-6 ">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (5).png" alt="">
-       
-         </button>
-         <p class="description">Electronics</p>
-          </div>
-
-           
-          <div class="col-lg-1 col-md-4   col-sm-6 ">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (6).png" alt="">
-       
-         </button>
-         <p class="description">Fruits & Vegetables</p>
-          </div>
-
-
-
-           
-          <div class="col-lg-1 col-md-4   col-sm-6 ">
-         <button class="button1 button5">
-         <img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (7).png" alt="">
-      
-         </button>
-         <p class="description">Grocery Items</p>
-          </div>
-         </div>
         </div>
 
-       
 
-<div class="container mt-3">
-  <div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12">
-    <div class="divideo">
-    <iframe width="350" height="315" src="https://www.youtube.com/embed/JrnQ-915czY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  </div>
+    </div>
+
+</div>
+</div>
+<!-- new  -->
+<div class="container">
+<div id="carouselExampleControles" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+  
+    <div class="carousel-item active">
+      <div class="row">
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/bike1.png" class="d-block w-100" alt="...">
+      </div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/bike2.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/bike1.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/bike2.png" class="d-block w-100" alt="..."></div>
+
+      </div>
+        
+      
+      </div>
+
+      <div class="carousel-item ">
+      <div class="row">
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/bike1.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/bike2.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/bike1.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/bike2.png" class="d-block w-100" alt="..."></div>
+
+      </div>
+         </div>
+    </div>
+
+  <!-- </div> -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControles" data-bs-slide="prev" >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControles" data-bs-slide="next" >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div><br>
+
+
+
+
+<!-- new  -->
+<div class="container">
+  <div class="row align-items-center">
+    <div class="col-md-6 p-5" >
+    <div class="ratio ratio-16x9">
+  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+</div>
  </div>
 
- <div class="col-lg-6  col-md-12 col-sm-12  mt-5">
-    <h1>Customer flow</h1>
+ <div class="col-md-6 p-5">
+    <h1>Customer flow</h1><br>
 
     <p style="color: #565656;">Our Business Plan is a written document describing a company's core business activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high quality Product with modern idea accordingly their budgets and according thir reuirements.</p>
  </div>
   </div>
+</div><br>
+
+<!-- new  -->
+<div class="container">
+    <div class="row">
+    <p style="color: #F59E0B;">Search  Near  By Store</p>
+    </div>
 </div>
 
 
 
-<!-- store -->
+
+
+
+<!-- new  -->
 <div class="container  mt-3">
   <div class="row">
-    <div class="col-12">
-      <p style="color: #F59E0B;">Search  Near  By Store</p>
-      <p style="color: #1B1C57; font-size:30px;">Shops</p>
+    <div class="col-sm-6">
+     <p style="color: #1B1C57; font-size:30px;">Stores</p>
+    </div>
+    <div class="col-sm-6 text-end">
+    <div class="search_wrap search_wrap_6 m-0">
+			<div class="search_box">
+         
+		       <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon" />
+          <button type="button" class="btn  rounded-5" >search ></button>
+        </div>
+  </div>
     </div>
   </div>
-</div>
-
-<div class="container text-center my-3">
-    <div class="row mx-auto my-auto">
-        <div id="recipeCarousel" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-3">
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                            <h4 class="card-title">John Doe</h4>
-                         </div>
-                         <div class="col-md-3">
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                            <h4 class="card-title">John Doe</h4>
-                         </div>
-                         <div class="col-md-3">
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                            <h4 class="card-title">John Doe</h4>
-                         </div>
-                         <div class="col-md-3">
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                            <h4 class="card-title">John Doe</h4>
-                         </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                    
-                </div>
-
-                
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-3">
-                        <div class="card card-body">
-                            <img class="img-fluid" src="<?php echo base_url();?>assets/images/shop1.png" alt="Second slide">
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <a class="carousel-control-prev w-auto" href="#recipeCarousel" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#recipeCarousel" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-   
-</div>
+</div><br>
 
 
-<script>
-$('#recipeCarousel').carousel({
-  interval: 10000
-})
 
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
+
+
+<!-- new  -->
+
+<div class="container">
+<div id="carouselExampleControlls" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+  
+    <div class="carousel-item active">
+      <div class="row">
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/shopimg.png" class="d-block w-100" alt="...">
     
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
+    </div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/shopimg.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/shopimg.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/shopimg.png" class="d-block w-100" alt="..."></div>
+      </div>
         
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
-</script>
+      
+      </div>
+
+      <div class="carousel-item ">
+      <div class="row">
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/shopimg.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/shopimg.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/shopimg.png" class="d-block w-100" alt="..."></div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/shopimg.png" class="d-block w-100" alt="..."></div>
+      </div>
+         </div>
+    </div>
+
+  <!-- </div> -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlls" data-bs-slide="prev" >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlls" data-bs-slide="next" >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div><br><br>
 
 
-
-
-
-<div class="container mt-3">
+<!-- <div class="container mt-5">
   <div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12">
-    <div class="divideo">
-    <iframe width="350" height="315" src="https://www.youtube.com/embed/JrnQ-915czY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  </div>
+    <div class="col-12">
+    <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner2.png" width="100%" alt="Second slide">
+    </div>
+  </div>
+</div><br> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- new  -->
+<div class="container">
+  <div class="row align-items-center">
+    <div class=" col-md-6 p-5">
+    <div class="ratio ratio-16x9">
+  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+</div>
  </div>
 
- <div class="col-lg-6  col-md-12 col-sm-12  mt-5">
-    <h1>How the store works?
-</h1>
+ <div class="col-md-6 p-5 ">
+    <h1>How the store works?</h1><br>
 
     <p style="color: #565656;">Our Business Plan is a written document describing a company's core business activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high quality Product with modern idea accordingly their budgets and according thir reuirements..</p>
  </div>
   </div>
-</div>
+</div><br>
 
-
-
-<div class="container  mt-3">
+<!-- new  -->
+<div class="container">
   <div class="row">
     <div class="col-12">
       <p style="color: #1B1C57; font-size:30px;">Donate</p>
     </div>
   </div>
-</div>
+</div><br>
 
 
-
-
-                
-      
-      <div class="container text-center my-3">
-    <div class="row mx-auto my-auto">
-        <div id="bike1" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-            <?php
+<!-- new  -->
+<div class="container">
+<div id="carouselExampleControlssss" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+  
+    <div class="carousel-item active">
+      <div class="row">
+      <?php
                   
-                  $product = get_all_reusableproduct(); 
-                  foreach($product as $value){ ?>
-                <div class="carousel-item active">
-                    <div class="col-md-4">
-                        <div class="card card-body">
-                           <a href="<?php echo base_url();?>welcome/productdetail"> <img class="img-fluid" src="<?php echo base_url();?>assets/images/bike1.png" alt="Second slide"></a>
-                           <p><?php echo $value->title;?></p>
-                          </div>
-                    </div>
-                </div>
-                
-<?php }?>
-               
-            </div>
-            <a class="carousel-control-prev w-auto" href="#bike1" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#bike1" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-   
-</div>
-
-
-<script>
-$('#bike1').carousel({
-  interval: 10000
-})
-
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
+              
+                  $product = get_all_reusableproduct();   
+            
+            
+             
+              $i = 1;
+              $j = 1;
+            foreach($product as $pro){
+             $session_login_id  = $user['user_id'] ?? null;
+              $product_user_id = $pro->user_id;
+              if($session_login_id !== $product_user_id){
+                  if($i > 0){
+            
+            ?>  
+        <div class="col"> <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>" class="d-block w-100" alt="...">
+        <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>
+                        <div class="va-title ms-3">  <?php
+                           $title = $pro->title;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
+                           </div></div>
+      
+        <?php $i++;} } else if($j == 1) {?>
+                   
+                   <?php   }  $j++; };  ?>  
+      </div>
         
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
-</script>
+      
+      </div>
+
+      <div class="carousel-item ">
+      <div class="row">
+      <?php
+                  
+              
+                  $product = get_all_reusableproduct();   
+            
+            
+             
+              $i = 1;
+              $j = 1;
+            foreach($product as $pro){
+             $session_login_id  = $user['user_id'] ?? null;
+              $product_user_id = $pro->user_id;
+              if($session_login_id !== $product_user_id){
+                  if($i > 0){
+            
+            ?>  
+        <div class="col"> <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>" class="d-block w-100" alt="...">
+        <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>
+                        <div class="va-title ms-3">  <?php
+                           $title = $pro->title;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
+                           </div>
+                           </div>
+      
+        <?php $i++;} } else if($j == 1) {?>
+                   
+                   <?php   }  $j++; };  ?>  
+      </div>
+        
+         </div>
+    </div>
+
+  <!-- </div> -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlssss" data-bs-slide="prev" >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlssss" data-bs-slide="next" >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div><br>
 
 
 <div class="container mt-5">
   <div class="row">
     <div class="col-12">
-    <img class="img-fluid" src="<?php echo base_url();?>assets/images/carbanner2.png" alt="Second slide">
+    <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner2.png" width="100%" alt="Second slide">
     </div>
   </div>
-</div>
-
+</div><br>
 
 <div class="container mt-5">
-  <div class="row">
-    <div class="col-lg-6 col-md-12 col-sm-12">
-    <div class="divideo">
-    <iframe width="350" height="315" src="https://www.youtube.com/embed/JrnQ-915czY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>  </div>
+  <div class="row align-items-center">
+    <div class="col-md-6 p-5">
+    <div class="ratio ratio-16x9">
+  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+</div>
  </div>
 
- <div class="col-lg-6  col-md-12 col-sm-12  mt-5">
+ <div class="col-md-6 p-5">
     <h1>About us
 </h1>
 
     <p style="color: #565656;">Our Business Plan is a written document describing a company's core business activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high quality Product with modern idea accordingly their budgets and according thir reuirements.</p>
  </div>
   </div>
-</div>
-
-
+</div><br>
 
 <div class="container mt-5">
   <div class="row">
     <div class="col-12">
-    <img class="img-fluid" src="<?php echo base_url();?>assets/images/carbanner.png" alt="Second slide">
+    <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner.png" width="100%" alt="Second slide">
     </div>
   </div>
-</div>
-
-
-
-
+</div><br>
 
 <div class="container mt-3">
   <div class="row">
@@ -577,126 +525,82 @@ $('.carousel .carousel-item').each(function(){
        <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">Several selected clients, who already believe in our service.</p>
     </div>
   </div>
-</div>
+</div><br>
 
+<!-- new  -->
 
-
-
-<!-- <div class="container">
-    <div class="row">
-        <div class="col-3">
-        <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
-
+<div class="container">
+<div id="carouselExampleControlsl" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+  
+    <div class="carousel-item active">
+      <div class="row">
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
+        <div class="col align-self-center"> 
+          <h5><b >Matthew Paul</b></h5>
+                  <p style="color: #000000;font-size:1.3vw">Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
         </div>
-        <div class="col-5 mt-3">
-        <p style="color: #000000; font-weight:bolder">Matthew Paul</p>
-        <p>Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
-
-        </div>
-    </div>
-</div> -->
-
-
- 
-<div class="container text-center my-3">
-    <div class="row mx-auto my-auto">
-        <div id="image1" class="carousel slide w-100" data-ride="carousel">
-            <div class="carousel-inner w-100" role="listbox">
-                <div class="carousel-item active">
-                    <div class="col-md-4">
-                      <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
-                    </div>
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                    <p style="color: #000000; font-weight:bolder">Matthew Paul</p>
-                  <p>Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
-
-                    </div>
-                    <div class="col-md-4">
-                       
-                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
-                        
-                    </div>
-                   
-                    
-                </div>
-
-                
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                    
-                      <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
-                    </div>
-                    
-                </div>
-                <div class="carousel-item">
-                <p style="color: #000000; font-weight:bolder">Matthew Paul</p>
-                  <p>Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
-
-                </div>
-                <div class="carousel-item">
-                    <div class="col-md-4">
-                    <img class="img-fluid" src="<?php echo base_url();?>assets/images/mathewpal.png" alt="Second slide">
-                        
-                    </div>
-                </div>
-               
-            </div>
-            <a class="carousel-control-prev w-auto" href="#image1" role="button" data-slide="prev">
-                <span class="carousel-control-prev-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="carousel-control-next w-auto" href="#image1" role="button" data-slide="next">
-                <span class="carousel-control-next-icon bg-dark border border-dark rounded-circle" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-    </div>
-   
-</div>
-
-
-<script>
-$('#bike1').carousel({
-  interval: 10000
-})
-
-$('.carousel .carousel-item').each(function(){
-    var minPerSlide = 3;
-    var next = $(this).next();
-    if (!next.length) {
-    next = $(this).siblings(':first');
-    }
-    next.children(':first-child').clone().appendTo($(this));
-    
-    for (var i=0;i<minPerSlide;i++) {
-        next=next.next();
-        if (!next.length) {
-        	next = $(this).siblings(':first');
-      	}
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
+      </div>
         
-        next.children(':first-child').clone().appendTo($(this));
-      }
-});
-</script>
+      
+      </div>
+
+      <div class="carousel-item ">
+      <div class="row">
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
+        <div class="col align-self-center"> 
+          <h5><b >Matthew Paul</b></h5>
+                  <p style="color: #000000;font-size:1.3vw">Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
+        </div>
+        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
+      </div>
+         </div>
+    </div>
+
+  <!-- </div> -->
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsl" data-bs-slide="prev" >
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsl" data-bs-slide="next" >
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
+</div>
+</div>
+</div><br>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="row">
+                <div class="col"> <img src="<?php echo base_url();?>assets/images/img/chairimg.png" class="img-fluid" alt="..."></div>
+                <div class="col"><img src="<?php echo base_url();?>assets/images/img/mtimg.png" class="img-fluid" alt="..."></div>
+            </div>
+            <div class="row">
+                <div class="col"><img src="<?php echo base_url();?>assets/images/img/gi.png" class="img-fluid" alt="..."></div>
+                <div class="col"><img src="<?php echo base_url();?>assets/images/img/house.png" class="img-fluid" alt="..."></div>
+            </div>
+        </div>
+        <div class="col-sm-4">
+            <h2><b style="color:#1b1c57">Subscribe For More Info
+            And Update For Celnow</b></h2>
+        </div>
+        <div class="col-sm-4">
+        <div class="row">
+                <div class="col"> <img src="<?php echo base_url();?>assets/images/img/h2.png" class="img-fluid" alt="..."></div>
+                <div class="col"><img src="<?php echo base_url();?>assets/images/img/gimg.png" class="img-fluid" alt="..."></div>
+            </div>
+            <div class="row">
+                <div class="col"><img src="<?php echo base_url();?>assets/images/img/bimg.png" class="img-fluid" alt="..."></div>
+                <div class="col"><img src="<?php echo base_url();?>assets/images/img/c2.png" class="img-fluid" alt="..."></div>
+            </div>
+        </div>
+    </div>
+</div>
 
 
 
-  <!-- <div class="container">
-<div class="application-examples-item-iframe-container browser-frame">
-                    <div class="application-examples-item-iframe-wrapper">
-                        <iframe class="application-examples-item-iframe" data-src="https://elfsight.com/examples?widget_id=3b5f67c4-ee86-4dfd-93d6-effee6c27fa6" width="100%" allow="autoplay; fullscreen" src="https://elfsight.com/examples?widget_id=3b5f67c4-ee86-4dfd-93d6-effee6c27fa6" id="iFrameResizer1" scrolling="no" style="overflow: hidden; height: 544px;"></iframe>
-                    </div>
-                    
-                    <div class="application-examples-item-loader"></div>
-                </div>
-                </div> -->
-
-
-
-
-
-                
-</body>
+  </body>
 </html>

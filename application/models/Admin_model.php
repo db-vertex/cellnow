@@ -344,6 +344,17 @@ public function update_category($testid,$arr)
        } 
    }
 
+   public function update_shopcategory($testid,$arr)
+   {
+     if($this->db->where('id',$testid)
+              ->update('shop_category',$arr)){
+        return true;
+       } 
+       else{
+        return false;
+       } 
+   }
+
 public function update_subcategory($testid,$arr)
    {
      if($this->db->where('sub_id',$testid)

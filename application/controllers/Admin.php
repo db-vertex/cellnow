@@ -553,29 +553,6 @@ function adminapproved(){
 }  
 
 
-function adminapproved(){
- 
-  $session_id = $this->session->userdata('admin_id');
-  if ($session_id) {
- 
-$id= $this->input->post('productId');
-
-$status=$this->input->post('status');
-
-$arr=array('admin_approval'=>$status);
-$this->admin_model->update_shop_status($id,$arr);
-
-//$delete = $this->admin_model->delete_record('review_product', $id);
-
-
- 
-  
-
-
-}
-
-
-}  
 
 
 
@@ -1148,7 +1125,7 @@ $id = $this->uri->segment(3);
 if($session_id)
        {
       $res=$this->admin_model->find_category($id);
-      
+    
       
       $admin_detail = $this->admin_model->get_admin_data($session_id);
      /* echo "<pre>";
@@ -1286,7 +1263,7 @@ public function updatecategory()
      $testid= $this->input->post('did');
 
            if (!empty($_FILES['icon']['name'])) {
-                $config['upload_path'] = './uploads/category/';
+                $config['upload_path'] = './uploads/shopcategory/';
                 // $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
                 $config['allowed_types'] = 'gif|jpg|jpeg|png';
                 $this->load->library('upload', $config);
@@ -1301,17 +1278,17 @@ public function updatecategory()
                     $icon = $image_data['file_name'];
                 }
             }
-     $cat=$this->input->post('Category');
+     $cat=$this->input->post('shop_category');
 
 
      if(!empty($icon)){
-           $arr=array('category'=>$cat,'icon'=>$icon);
+           $arr=array('shop_category'=>$cat,'icon'=>$icon);
 
      }else{
-      $arr=array('category'=>$cat);
+      $arr=array('shop_category'=>$cat);
      }
      
-      $res=$this->admin_model->update_category($testid,$arr);
+      $res=$this->admin_model->update_shopcategory($testid,$arr);
   
       if($res==1)
           {
@@ -1324,7 +1301,7 @@ public function updatecategory()
             $this->session->set_flashdata('msg_class','alert-danger');
           }
 
-          return redirect('admin/Category');
+          return redirect('admin/shopCategory');
    } 
 
 public function updatesubcategory()

@@ -20,40 +20,7 @@
   </style>
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <!--<script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
-  
-  <!--<script>-->
-  <!--$( function() {-->
-    // $( "#sortable" ).sortable();
-  <!--  $( "#sortable" ).disableSelection();-->
-  <!--  $('#sortable').sortable({-->
-        
-  <!--      stop: function(e, ui) {-->
-  <!--          var productSquence = $.map($(this).find('tr'), function(el) {-->
-  <!--              let product_id = el.id;-->
-  <!--              let priority = $(el).index();-->
-                
-  <!--              return '' + product_id + ',' + priority;-->
-  <!--          });-->
-  <!--          console.log(productSquence);-->
-  <!--          $.ajax({-->
-  <!--                type: "POST",-->
-  <!--                url: '<?php echo base_url("Admin/updateproductsquence")?>',-->
-  <!--                cache:false,-->
-  <!--                data: {'arrdata':productSquence},-->
-  <!--                error: function() {-->
-  <!--                    alert('Something is wrong');-->
-  <!--                },-->
-  <!--           success: function(data) {-->
 
-  <!--               console.log(data);-->
-                  
-  <!--           } -->
-  <!--        });-->
-  <!--      }-->
-  <!--  });-->
-  <!--} );-->
-  <!--</script>-->
   
 <style type="text/css">
 
@@ -223,8 +190,8 @@ unset($_SESSION['msg']);?>
 
 <ul class="nav nav-tabs">
     <li class="active"><a data-toggle="tab" href="#home">Active Products</a></li>
-    <li><a data-toggle="tab" href="#menu1">Urgent Products</a></li>
-    <li><a data-toggle="tab" href="#menu2">Sponsored Product</a></li>
+    <li><a data-toggle="tab" href="#menu1">Boost Products</a></li>
+    <li><a data-toggle="tab" href="#menu2">Donate Product</a></li>
     
   </ul>
 
@@ -280,7 +247,7 @@ unset($_SESSION['msg']);?>
 
                 <?php ?>
                  
-                <img src="<?php echo base_url().$value->thumbnails."";?>" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
+                <img src="<?php echo base_url().$value->cover_img."";?>" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
 
                <?php  ?>
 
@@ -298,8 +265,8 @@ unset($_SESSION['msg']);?>
                  <td><select  id="pay_type" data-product_id="<?php echo $value->id?>"  data-category_id="<?php echo $value->category_id?>" class="prioritydrop">
            
             <option value="0" <?=(($value->pay_type==0)?"selected":"")?>>Normal</option>
-            <option  value="1" <?=(($value->pay_type==1)?"selected":"")?>>Sponsor</option>
-            <option value="2"<?=(($value->pay_type==2)?"selected":"")?>>Urgent</option>
+            <option  value="1" <?=(($value->pay_type==1)?"selected":"")?>>Bost</option>
+            <option value="2"<?=(($value->pay_type==2)?"selected":"")?>>Donate</option>
            
         </select></td>
               
@@ -348,7 +315,8 @@ unset($_SESSION['msg']);?>
         <tbody id="sortable">
                 
           <?php 
-          $urgent = get_all_Urgent_product();
+          $urgent = get_all_boost_product();
+          print_r($urgent);
 $i=1;
 foreach($urgent as $valueu){
            // print_r($posts);

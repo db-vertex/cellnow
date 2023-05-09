@@ -114,6 +114,19 @@ class Welcome extends CI_Controller {
 						return redirect('welcome/otp');
 		
 				  }
+				  $length = 50;
+				  $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+				  $count = mb_strlen($chars);
+			  
+				  for ($i = 0, $result = ''; $i < $length; $i++) {
+					  $index = rand(0, $count - 1);
+					  $result .= mb_substr($chars, $index, 1);
+				  }
+				  $data=array(
+				  'social_id_token'=>$result
+				  );
+			  $this->db->where('phone',$udata->phone);
+			  $this->db->update('users',$data); 
 				  $this->session->set_userdata('id',$udata->user_id);
 				return redirect('welcome');
 				}
@@ -158,7 +171,7 @@ class Welcome extends CI_Controller {
        
         
      $id = $this->session->unset_userdata('id');
-  
+	 session_destroy();
     
     $this->session->set_flashdata('logut_success','You are succesfully loged out');
     return redirect('welcome');
@@ -188,6 +201,14 @@ class Welcome extends CI_Controller {
 			   $password = $this->input->post('password');
 			   $confirm_password = $this->input->post('confirm_password');
 			   $phone = $this->input->post('phone');
+			   $length = 50;
+			   $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+			   $count = mb_strlen($chars);
+		   
+			   for ($i = 0, $result = ''; $i < $length; $i++) {
+				   $index = rand(0, $count - 1);
+				   $result .= mb_substr($chars, $index, 1);
+			   }
 
 			   $size = 4;
             $alpha_key = '';
@@ -219,7 +240,7 @@ class Welcome extends CI_Controller {
 
             curl_close($ch);
 
-			   $post_data = array('name'=> $name, 'email'=>$email,'password'=> md5($password),'phone'=>$phone, 'OTP'=>$randCode ,'login_type'=>'normal');
+			   $post_data = array('name'=> $name, 'email'=>$email,'password'=> md5($password),'phone'=>$phone, 'OTP'=>$randCode ,'login_type'=>'normal','social_id_token'=>$result);
 			   $this->db->insert('users',$post_data);
 
 

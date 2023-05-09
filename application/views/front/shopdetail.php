@@ -5,8 +5,8 @@
   <div class="row ">
     <?php
      $id = $this->uri->segment(3);
-     $shop = get_id_by_shop($id);
-    $profile = get_seller_profile($id);
+     $shop = get_id_by_shopdetail($id);
+    $profile = get_seller_profile($user['user_id']);
 
     ?>
     <div class="col-sm-6">

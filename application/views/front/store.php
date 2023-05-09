@@ -68,8 +68,8 @@
                  
                   <div class="va-card va-card_category"> <a class="link-plain border-0"  href="" style="max-width: 45%;"> 
                   <p style="text-align:center;" class="my-auto pouler_Categories">
-                  <img class="" width="20" height="20" src="<?php echo base_url();?>assets/images/Vector (7).png" alt="">
-                   <center style="color:black; font-size:13px; font-weight:700"><?php echo ucfirst($cat->shop_category); ?></center>
+                  <img class=""  src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
+                   <center style="color:black; font-size:12px; font-weight:700"><?php echo ucfirst($cat->shop_category); ?></center>
                   </p>
                     </a> 
                     </div>

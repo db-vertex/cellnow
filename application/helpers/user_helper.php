@@ -82,6 +82,21 @@ function get_all_shopcategory()
   return $category_data->result(); 
 }
 
+function get_all_subcategory()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM subcategory order by sub_category";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
 function get_all_reusableproduct()
 {
   //get main CodeIgniter object
@@ -113,6 +128,20 @@ function get_all_store()
 }
 
 function get_id_by_shop($id)
+{
+   $ci =& get_instance();
+       
+  //load databse library
+  $ci->load->database();
+
+$query="SELECT * FROM shop WHERE user_id=".$id;
+
+$category_data = $ci->db->query($query);        
+
+return $category_data->row();	
+}
+
+function get_id_by_shopdetail($id)
 {
    $ci =& get_instance();
        
@@ -628,19 +657,23 @@ function get_all_buyer()
 }
 
 
-function get_all_user_agent_code($agent_code)
-{
-  //get main CodeIgniter object
+function get_all_boost_product()
+{ 
+    //get main CodeIgniter object
        $ci =& get_instance();
        
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM users WHERE agentcode= '".$agent_code."'";
+      $query=' SELECT *
+FROM category_reusable_parts
+ INNER JOIN category_job inner join category_tuitions';
 
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
+   
+        $category_data = $ci->db->query($query);  
+    
+  return $category_data->result(); 
+   
 }
 
 function get_today_register_user_agent_code($agent_code)
