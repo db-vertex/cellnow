@@ -426,6 +426,14 @@ class Welcome extends CI_Controller {
 
 	public function changepassword()
 	{
+
+		$session_id = $this->session->userdata('id');
+     
+       if($session_id)
+       {
+		//$myproduct = $this->product_model->myproduct($session_id);
+
+		 $user_detail = $this->user->loginuser($session_id);
 		$this->form_validation->set_rules('oldpassword','otp','required');
 		$this->form_validation->set_rules('password',' password','required|min_length[6]');
 		$this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
@@ -445,27 +453,43 @@ class Welcome extends CI_Controller {
 			   'password'=> md5($password),
 			   );
 			   $this->db->update('users',$data);
-			   return redirect('welcome');
+			  
+			   $this->session->set_flashdata('password_success','Password change successfully');
+			   $this->session->set_flashdata('msg_class','alert-success');
+			  
+			 $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			 $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			 $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			 $this->output->set_header('Pragma: no-cache');
+			  $this->load->view('front/header',['success'=>true,'user' => $user_detail]);
+			$this->load->view('front/change_password');
+			  $this->load->view('front/footer');
 			}
 			else
 			{
-			   $this->session->set_flashdata('OTP_failed','Invalid OTP');
+			   $this->session->set_flashdata('password_error','Invalid Password');
 			   $this->session->set_flashdata('msg_class','alert-danger');
 			  
 			 $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
 			 $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
 			 $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
 			 $this->output->set_header('Pragma: no-cache');
-			  $this->load->view('front/header',['success'=>true]);
+			  $this->load->view('front/header',['success'=>true,'user' => $user_detail]);
 			$this->load->view('front/change_password');
 			  $this->load->view('front/footer');
 			}
 		  }
 		  else{
-			$this->load->view('front/header');
+			$this->load->view('front/header',['success'=>true,'user' => $user_detail]);
 			$this->load->view('front/change_password');
 			$this->load->view('front/footer');
 		  }
+		}
+		else{
+		  $this->load->view('front/header');
+		  $this->load->view('front/change_password');
+		  $this->load->view('front/footer');
+		}
 		
 	}
 
@@ -614,7 +638,7 @@ class Welcome extends CI_Controller {
 						  $image_data = $this->upload->data();
 						  $filename = $image_data['file_name'];
 
-					$post_data = array('name'=> $name, 'email'=>$email,'user_id'=> $user_id,'mobile'=>$mobile, 'shop_category_id'=>$shop_category, 'Address'=>$Address ,'GST'=>$GST,'description'=> $description, 'shop_images'=> $filename,'service_type'=>$service_type,'open_close_time' => $open_close_time);
+					$post_data = array('name'=> $name, 'email'=>$email,'user_id'=> $user_id,'mobile'=>$mobile, 'shop_category_id'=>$shop_category, 'Address'=>$Address ,'GST'=>$GST,'description'=> $description, 'shop_images'=> $filename,'service_type'=>$service_type,'open_close_time' => $open_close_time,'admin_approval'=>0);
 
   
 					   $this->db->update("shop", $post_data, "id=$id");

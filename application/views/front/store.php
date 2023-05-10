@@ -97,7 +97,7 @@ foreach($shop as $value){
 ?>
     <div class="col-lg-4 col-sm-6 mt-3 mb-2">
     <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
-    <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img class="card-img-top" alt="Card image cap" src="<?php echo base_url();?>uploads/shop/<?php echo $value->shop_images;?>"  ></a>
+    <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img style="max-height: 261px;" class="card-img-top" alt="Card image cap" src="<?php echo base_url();?>uploads/shop/<?php echo $value->shop_images;?>"  ></a>
       <div class="card-block" style="padding:8px">
       <h4 class="card-title"><?php echo $value->name;?></h4>
     <p class="card-text"><?php echo $value->description;?></p><br>
@@ -110,88 +110,11 @@ foreach($shop as $value){
 </div>
 <?php } ?>
 
-<div class="col-lg-4 col-sm-6 mt-3 mb-2">
-    <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/shop1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <h5 class="card-title">Suzuki</h5>
-    <small class="card-text">Space for a small product description.</small><br>
-   
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-   
-    </div>
-    </div>
-</div>
 
 
-<div class="col-lg-4 col-sm-6  mt-3 mb-2">
-    <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/shop1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <h5 class="card-title">Suzuki</h5>
-    <small class="card-text">Space for a small product description.</small><br>
-    
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-   
-    </div>
-    </div>
-</div>
 
 
-    <div class="col-lg-4 col-sm-6 mt-3 mb-2">
-    <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/shop1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <h5 class="card-title">Suzuki</h5>
-    <small class="card-text">Space for a small product description.</small><br>
-    
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-   
-    </div>
-    </div>
-</div>
 
-<div class="col-lg-4 col-sm-6  mt-3 mb-2">
-    <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/shop1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <h5 class="card-title">Suzuki</h5>
-    <small class="card-text">Space for a small product description.</small><br>
-   
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-    
-    </div>
-    </div>
-</div>
-
-
-<div class="col-lg-4 col-sm-6 mt-3 mb-2">
-    <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/shop1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <h5 class="card-title">Suzuki</h5>
-    <small class="card-text">Space for a small product description.</small><br>
-    
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-  
-    </div>
-    </div>
-</div>
 
 
 

@@ -123,11 +123,7 @@ width: 131.9px; border-color:#10B981;">
       <h2 class="pl-5"><b>About us</b></h2>
       <h6 class="pl-5"><?php echo $profile->aboutus; ?></h6>
 
-      <div class="row text-center">
-      <div>
-    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="a" style="align-self:center; background-color:#10B981; color:#fff;" >Edit </a>
-    </div>
-    </div>
+    
     </div> 
   </div><br>
 </div>

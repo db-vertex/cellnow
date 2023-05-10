@@ -212,7 +212,7 @@
 
                                 <center><button class=" mb-2 btn btn-lg  text-white mt-3"
                                         style="background-color:#13C571;border-radius:30px;width:40%;"
-                                       name="submit" type="submit">Send</button>
+                                       name="submit" type="submit">Forgot</button>
 
                                 </center>
                             </form>

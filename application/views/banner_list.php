@@ -31,7 +31,7 @@ $msg_class=$this->session->flashdata('msg_class')
 <div class="row">
 <div class="col-lg-6">
 <div class="alert <?= $msg_class ?>">
-<?= $msg; ?>
+<?= $msg; unset($_SESSION['msg']);?>
 </div>
 </div>
 </div>
@@ -58,12 +58,12 @@ $msg_class=$this->session->flashdata('msg_class')
          // print_r($agent);
 
           foreach ($banner as $value) { 
-
+$i=1;
           ?>
 
                 <tr id="<?php echo $value->id; ?>">
 
-                <td><?php echo  $value->id;?></td>
+                <td><?php echo  $i;?></td>
                 <!-- <td><?php echo  $value->title;?></td> -->
                 
                 <td style="text-align: center;">
@@ -93,7 +93,7 @@ $msg_class=$this->session->flashdata('msg_class')
 
  </td>
                 </tr> 
-                <?php } ?>
+                <?php $i++;} ?>
             </tbody>
                 
             </table>

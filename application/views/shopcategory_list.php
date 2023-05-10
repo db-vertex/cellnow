@@ -21,7 +21,7 @@
 
 <section class="content">
 <div class="row">
-<a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Category</a>
+<!-- <a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Category</a> -->
 
 <?php  if($msg=$this->session->flashdata('msg')): 
 
@@ -31,7 +31,7 @@ $msg_class=$this->session->flashdata('msg_class')
 <div class="row">
 <div class="col-lg-6">
 <div class="alert <?= $msg_class ?>">
-<?= $msg; ?>
+<?= $msg; unset($_SESSION['msg']);?>
 </div>
 </div>
 </div>
@@ -69,7 +69,7 @@ $msg_class=$this->session->flashdata('msg_class')
                       </td>
                 
 
-                <td>  <a href="<?php echo base_url("admin/editcategory/{$value->id}")?>" class=""  title="Edit">
+                <td>  <a href="<?php echo base_url("admin/editshopcategory/{$value->id}")?>" class=""  title="Edit">
                     <span class="glyphicon glyphicon-pencil"></span>
                 </a>
  

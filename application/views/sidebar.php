@@ -93,7 +93,7 @@
 
 
 
-         <li class="<?php echo ($this->uri->segment(2) == 'reportedposts')?'active':''; ?>">
+         <!-- <li class="<?php echo ($this->uri->segment(2) == 'reportedposts')?'active':''; ?>">
 
           <a href="<?=  base_url('admin/reportedposts'); ?>">
 
@@ -107,7 +107,7 @@
 
           </a>
 
-        </li>
+        </li> -->
 
 
        

@@ -66,13 +66,8 @@
             <p class="ml-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
             <p class="ml-3"><b>Type of service: </b><?php echo $shop->service_type;?></p>
           </div>
-          <?php if($shop->admin_approval!=1){?>
-          <div class="row text-center">
-  <div>
-<a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#13C571; color:#fff" >Edit </a>
-</div>
-</div>
-            <?php } } ?>
+          
+            <?php  } ?>
 
             
       </div>

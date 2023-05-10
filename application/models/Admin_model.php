@@ -297,6 +297,14 @@ public function find_category($testid)
   {
   $q=$this->db->select('*')
               ->where('id',$testid)
+              ->get('category');
+              return $q->row();
+  }
+
+  public function find_shopcategory($testid)
+  {
+  $q=$this->db->select('*')
+              ->where('id',$testid)
               ->get('shop_category');
               return $q->row();
   }

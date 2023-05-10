@@ -31,7 +31,7 @@ $msg_class=$this->session->flashdata('msg_class')
 <div class="row">
 <div class="col-lg-6">
 <div class="alert <?= $msg_class ?>">
-<?= $msg; ?>
+<?= $msg; unset($_SESSION['msg']);?>
 </div>
 </div>
 </div>

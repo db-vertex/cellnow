@@ -187,6 +187,7 @@ input[type=number] {
     	<label>Enter Your Password</label>
         <input name="password" class="form-control" placeholder="Password" type="password" style="border-radius:30px; border-color:#13C571">
         <span style="color:red;"> <?php echo form_error('password'); ?></span>
+        <a class="float-right" href="<?php echo base_url();?>welcome/forgotpassword">Forget Password</a>
     </div> <!-- form-group// -->
    
     

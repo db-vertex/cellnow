@@ -100,9 +100,11 @@ class Admin extends CI_Controller {
   {
 
        $session_id = $this->session->userdata('admin_id');
+      
         if($session_id)
        {
              $admin_detail = $this->admin_model->get_admin_data($session_id);
+           
              $this->load->view('dashboard',['admin_detail'=>$admin_detail]);
     
        }else{
@@ -505,8 +507,7 @@ public function banner()
     {
          
     $admin_detail = $this->admin_model->get_admin_data($session_id);
-    $shop=$this->admin_model->all_shop();   // for foreach loop
-    $this->load->view('shop_list',['admin_detail'=>$admin_detail,'shop'=>$shop]);
+ 
     $category=$this->admin_model->all_banner();   // for foreach loop
     $this->load->view('banner_list',['admin_detail'=>$admin_detail,'banner'=>$category]);
    
@@ -1138,6 +1139,27 @@ if($session_id)
        }
 } 
 
+public function editshopcategory()
+{
+$session_id = $this->session->userdata('admin_id');
+
+$id = $this->uri->segment(3);
+if($session_id)
+       {
+      $res=$this->admin_model->find_shopcategory($id);
+    
+      
+      $admin_detail = $this->admin_model->get_admin_data($session_id);
+     /* echo "<pre>";
+      print_r($admin_detail);exit;*/
+      $this->load->view('edit_shopcategory',['admin_detail'=>$admin_detail,'test'=>$res]);
+    
+       }
+       else{
+        return redirect('admin');
+       }
+} 
+
 public function editsubcategory()
 {
 $session_id = $this->session->userdata('admin_id');
@@ -1263,6 +1285,53 @@ public function updatecategory()
      $testid= $this->input->post('did');
 
            if (!empty($_FILES['icon']['name'])) {
+                $config['upload_path'] = './uploads/category/';
+                // $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
+                $config['allowed_types'] = 'gif|jpg|jpeg|png';
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('icon')) {
+                    //---- upload failed than show error-----
+                    //$this->session->set_flashdata('error', $this->upload->display_errors());
+                     $this->response(['status' => FALSE,
+        'message' =>$this->upload->display_errors()], REST_Controller::HTTP_BAD_REQUEST);
+                } else {
+                    //---- Successfully upload than add member-----
+                    $image_data = $this->upload->data();
+                    $icon = $image_data['file_name'];
+                }
+            }
+     $cat=$this->input->post('category');
+
+
+     if(!empty($icon)){
+           $arr=array('category'=>$cat,'icon'=>$icon);
+
+     }else{
+      $arr=array('category'=>$cat);
+     }
+     
+      $res=$this->admin_model->update_category($testid,$arr);
+  
+      if($res==1)
+          {
+            $this->session->set_flashdata('msg','Update successfully!!');
+            $this->session->set_flashdata('msg_class','alert-success');
+          }
+          else
+          {
+            $this->session->set_flashdata('msg','Update Not Successfully!!');
+            $this->session->set_flashdata('msg_class','alert-danger');
+          }
+
+          return redirect('admin/Category');
+   } 
+
+   public function updateshopcategory()
+{
+ 
+     $testid= $this->input->post('did');
+
+           if (!empty($_FILES['icon']['name'])) {
                 $config['upload_path'] = './uploads/shopcategory/';
                 // $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
                 $config['allowed_types'] = 'gif|jpg|jpeg|png';
@@ -1303,6 +1372,7 @@ public function updatecategory()
 
           return redirect('admin/shopCategory');
    } 
+
 
 public function updatesubcategory()
 {

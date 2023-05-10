@@ -35,7 +35,7 @@
   <div class="form-group">
   <label for="testimonial">Shop Category:</label>
 
-  <input id='categoryid' type="text" class="form-control" name='shop_category' value="<?php echo $test->shop_category; ?>" >
+  <input id='categoryid' type="text" class="form-control" name='category' value="<?php echo $test->category; ?>" >
   <p id="head"  style="color:#ff0000"></p>
    </div>
  </div>

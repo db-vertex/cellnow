@@ -148,7 +148,7 @@
                         <article class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <p>Welcome to <a href="" style="color:#13C571;">Celnow </a></p>
+                                    <p>Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
                                     <h2 class="card-title mb-3 ">Change Password</h2>
 
                                 </div>
@@ -156,13 +156,13 @@
                             
                             </div>
                             <form action="<?php echo base_url();?>welcome/changepassword" method="post">
-                            <?php  if($error=$this->session->flashdata('OTP_failed')){  ?>
+                            <?php  if($error=$this->session->flashdata('password_error')){  ?>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="alert alert-danger ">
                                     <?= $error; 
 
-                               unset($_SESSION['OTP_failed']);
+                               unset($_SESSION['password_error']);
               ?>
 
                                 </div>
@@ -173,13 +173,13 @@
 
 
 
-                        <?php  if($otpsent =$this->session->flashdata('otp_sent')){  ?>
+                        <?php  if($otpsent =$this->session->flashdata('password_success')){  ?>
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="alert alert-success">
                                     <?= $otpsent; 
                              
-                             unset($_SESSION['otp_sent']);
+                             unset($_SESSION['password_success']);
               ?>
                                 </div>
                             </div>

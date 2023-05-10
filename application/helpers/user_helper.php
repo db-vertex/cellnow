@@ -327,35 +327,6 @@ $query="SELECT * FROM seller_profile WHERE profile_id=".$profile_id;
   return $category_data->row(); 
 }
 
-function get_product_data($product_id)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product WHERE id=".$product_id;
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->row(); 
-}
-
-function get_product_image($product_id)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product_image WHERE product_id=".$product_id;
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->result(); 
-}
 
 function get_subcategory_byid($category_id)
 {
@@ -403,243 +374,18 @@ function get_product_video($product_id)
 }
 
 
-function get_product_by_category($category_id)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
 
-  $query="SELECT * FROM product INNER JOIN users ON users.user_id = product.user_id WHERE category_id=".$category_id." AND product.active_status=0 and product.status = 0 And product.product_available_status = 0 AND users.status = 0 order by stock asc, featured desc,  product.created LIMIT 9";
 
-  $category_data = $ci->db->query($query);        
 
-  return $category_data->result(); 
-}
 
-function get_myall_deactive_product($user_id)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
 
-  $query="SELECT * FROM product WHERE user_id=".$user_id." AND  status != 0";
 
-  $category_data = $ci->db->query($query);        
 
-  return $category_data->result_array(); 
-}
 
-function get_myall_active_product($user_id)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
 
-  $query="SELECT * FROM product WHERE user_id=".$user_id." AND  status = 0 And active_status = 0";
 
-  $category_data = $ci->db->query($query);        
 
-  return $category_data->num_rows(); 
-}
 
-function get_all_product()
-{
-$ci =& get_instance();
-$ci->load->database();
-
-  $query="SELECT * FROM product INNER JOIN users ON users.user_id = product.user_id WHERE product.status = 0 And product.active_status = 0 And product.product_available_status = 0 And product.featured = 0 AND  users.status = 0 order by featured desc, stock asc, product.created desc LIMIT 0, 20";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->result(); 
-}
-
-function get_all_featured_product()
-{
-$ci =& get_instance();
-$ci->load->database();
-
-  $query="SELECT * FROM product INNER JOIN users ON users.user_id = product.user_id WHERE product.status = 0 And product.active_status = 0 And product.product_available_status = 0 And product.featured = 1 AND  users.status = 0 order by product.priority asc, product.created  desc LIMIT 0, 20";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->result(); 
-}
-
-function get_total_no_featured_product(){
-    $ci =& get_instance();
-    $ci->load->database();
-    $query=$ci->db->query("select count(*) as total from (SELECT count(*) as total FROM product inner join product_image on product.id=product_image.product_id inner join seller_profile on product.profile_id=seller_profile.profile_id and product.user_id=seller_profile.user_id where status=0 and active_status=0 and product_available_status=0 and stock=0 and featured=1 GROUP by product_id ORDER BY product.priority asc, product.created desc) as djd");
-    return $query->row()->total;
-}
-
-function get_product_of_sellerproducts($seller_id=0){
-    $ci =& get_instance();
-$ci->load->database();
-
-  $query="SELECT * FROM product INNER JOIN users ON users.user_id = product.user_id WHERE product.status = 0 And product.active_status = 0 And product.product_available_status = 0 AND users.status = 0 AND product.user_id=$seller_id order by featured desc, stock asc, product.created desc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->result(); 
-}
-function get_all_product_count()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product inner join seller_profile on product.profile_id=seller_profile.profile_id and product.user_id=seller_profile.user_id where product_available_status=0 and featured=0 and status=0 ORDER BY product.created desc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-function get_all_featured_product_count()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product inner join product_image on product.id=product_image.product_id inner join seller_profile on product.profile_id=seller_profile.profile_id and product.user_id=seller_profile.user_id where status=0 and active_status=0 and product_available_status=0 and stock=0 and featured=1 GROUP by product_id ORDER BY product.priority asc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-function all_featured_product_count(){
-    
-     $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product inner join seller_profile on product.profile_id=seller_profile.profile_id and product.user_id=seller_profile.user_id where product_available_status=0 and featured=1 and status=0 ORDER BY product.created desc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-function get_all_product_active_count()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product inner join product_image on product.id=product_image.product_id inner join seller_profile on product.profile_id=seller_profile.profile_id and product.user_id=seller_profile.user_id where status=0 and active_status=0 and product.featured=0 GROUP by product_id ORDER BY product.created desc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-function get_all_product_deactive_count()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product inner join product_image on product.id=product_image.product_id inner join seller_profile on product.profile_id=seller_profile.profile_id and product.user_id=seller_profile.user_id where status=1 and active_status=0 GROUP by product_id ORDER BY product.created desc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-function get_all_product_admin_deactive_count()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product inner join product_image on product.id=product_image.product_id inner join seller_profile on product.profile_id=seller_profile.profile_id and product.user_id=seller_profile.user_id where  active_status=1 GROUP by product_id ORDER BY product.created desc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-
-
-function get_all_product_featured_count()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM product inner join product_image on product.id=product_image.product_id inner join seller_profile on product.profile_id=seller_profile.profile_id and product.user_id=seller_profile.user_id where status=0 and active_status=0 and product_available_status=0 and stock=0 and featured=1 GROUP by product_id ORDER BY product.created desc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-
-function get_all_agent_count()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM agent";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-function get_all_seller_count()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM seller_profile";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->num_rows(); 
-}
-
-function get_all_seller()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT seller_profile.*, users.agentcode as agentcodes, users.phone as myphone FROM seller_profile inner join users on users.user_id=seller_profile.user_id order by created desc";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->result(); 
-}
 
 function get_all_buyer()
 {
@@ -676,35 +422,8 @@ FROM category_reusable_parts
    
 }
 
-function get_today_register_user_agent_code($agent_code)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-$today = date('Y-m-d h:i:s');
-  $query="SELECT * FROM users WHERE agentcode= '".$agent_code."' AND created >= '".$today."'";
 
-  $category_data = $ci->db->query($query);        
 
-  return $category_data->num_rows(); 
-}
-
-function get_points()
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-
-  $query="SELECT * FROM agent_point";
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->row(); 
-}
 
 
 function get_all_buyer_count()
@@ -722,50 +441,11 @@ function get_all_buyer_count()
   return $category_data->num_rows(); 
 }
 
-function get_all_product_by_category_count($category_id)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
 
-  $query="SELECT * FROM product INNER JOIN users ON users.user_id = product.user_id WHERE category_id=".$category_id." AND  product.status = 0 AND product.active_status = 0 AND product.product_available_status = 0 And users.status = 0 ";
 
-  $category_data = $ci->db->query($query);        
 
-  return $category_data->num_rows(); 
-}
 
-function get_more_product($row,$rowperpage)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-  $total = $rowperpage*4;
-  $query='SELECT * FROM product inner join users on users.user_id=product.user_id WHERE product.status = 0 And active_status = 0 And product_available_status = 0 And featured = 0 order by featured desc, stock asc, product.created desc  limit '.$row.', '.$total;
 
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->result(); 
-}
-
-function get_more_featured_product($row,$rowperpage)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
-  $total = $rowperpage*4;
-  $query='SELECT * FROM product INNER JOIN users ON users.user_id = product.user_id WHERE product.status = 0 And product.active_status = 0 And product.product_available_status = 0 And product.featured = 1 AND  users.status = 0 order by product.priority asc, product.created  desc LIMIT '.$row.', '.$total;
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->result(); 
-}
 
 function get_more_product_cat($row,$rowperpage,$category_id)
 {
