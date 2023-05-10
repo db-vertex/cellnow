@@ -655,7 +655,7 @@ class Welcome extends CI_Controller {
       
        if($session_id)
        {
-		        //$myproduct = $this->product_model->myproduct($session_id);
+		              //$myproduct = $this->product_model->myproduct($session_id);
 
 		 $user_detail = $this->user->loginuser($session_id);
    
