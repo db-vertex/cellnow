@@ -904,12 +904,62 @@ $session_id = $this->session->userdata('id');
    
   }
 
-  public function productdetail()
-  {
-	$this->load->view('front/header');
-    $this->load->view('front/verifyproductdetails');
-    $this->load->view('front/footer');
-  }
+ 
+	public function productdetail()
+	{
+ 
+		  $id = $this->uri->segment(4);
+		  $cateory =  $this->uri->segment(3);
+	
+		  if($cateory ==1 ){
+           $Categories_all_product = get_all_category_reusable_parts($id);
+           
+         }
+         else if($cateory == 2){
+             $Categories_all_product = get_all_category_Electronic($id);  
+             
+         }
+         else if($cateory == 3 ){
+             $Categories_all_product = get_all_category_Furniture($id); 
+             
+         }
+         else if($cateory == 4){
+          $Categories_all_product = get_all_category_Fashion($id);
+         
+         }
+      
+        
+		 //$product = $this->product_model->getproductall($id);
+	
+		
+		$session_id = $this->session->userdata('id');
+		
+      if($session_id)
+       {
+       	//echo $this->db->last_query();
+	 $user_detail = $this->user->loginuser($session_id);
+    $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    $this->output->set_header('Pragma: no-cache');
+		$this->load->view('front/header',['user'=>$user_detail]);
+		$this->load->view('front/verifyproductdetails',['user'=>$user_detail,'categories_data'=>$Categories_all_product]);
+		$this->load->view('front/footer');
+
+		}else{
+         
+    $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    $this->output->set_header('Pragma: no-cache');
+		$this->load->view('front/header');
+		$this->load->view('front/verifyproductdetails',['categories_data'=>$Categories_all_product]);
+		$this->load->view('front/footer');
+       }
+	}
+	
+	
+  
 
     public function saveproduct()
     {

@@ -171,6 +171,21 @@ function get_all_district()
   return $category_data->result(); 
 }
 
+function get_all_category_reusable_parts($id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts WHERE id=".$id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
 function get_user_nickname($user_id)
 {
 	//get main CodeIgniter object

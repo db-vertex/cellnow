@@ -75,7 +75,10 @@
 </div><br>
 </div>
 
-
+<?php
+           
+           $product_detail = $categories_data;
+            ?>
 <div class="container ">
   <div class="row ">
     <div class="col-lg-6 col-sm-6 ">
@@ -91,8 +94,8 @@
     <div class="row mt-3" style="border:1px solid #69d3b0;margin:3px">
       
       
-      <div class="col-3 responsive-font-example pl-1"><small style="font-size:15px"><i class="fa fa-calendar" aria-hidden="true" style="color:#69d3b0"></i> 110 Days ago</small></div>
-      <div class="col-3 responsive-font-example pl-1"><small style="font-size:15px"><i class="fa fa-eye" aria-hidden="true" style="color:#69d3b0"></i> 50726 views</small></div>
+      <div class="col-3 responsive-font-example p-0"><small style="font-size:15px"><i class="fa fa-calendar" aria-hidden="true" style="color:#69d3b0"></i> 110 Days ago</small></div>
+      <div class="col-3 responsive-font-example p-0"><small style="font-size:15px"><i class="fa fa-eye" aria-hidden="true" style="color:#69d3b0"></i> 507 views</small></div>
       <div class="col responsive-font-example p-0"><small>200</small></div>
       <div class="col responsive-font-example p-0"><small style="font-size:15px"><i class="fa fa-share-alt" aria-hidden="true" style="color:#69d3b0 "></i> Share</small></div>
       <div class="col responsive-font-example p-0"><small style="font-size:15px"><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#69d3b0"></i> Report</small></div>
@@ -111,18 +114,18 @@
      <div class="card" style="padding:30px;border-color:#69d3b0">
         <div class="row">
           <div class="col">
-           <b style="font-size:22px">Suzuki</b>
+           <b style="font-size:22px"><?php echo $product_detail->title; ?></b>
           </div><br><br>
           <div class="col">
-           <b style="font-size:22px">$2500</b>
+           <b style="font-size:22px; color:#047857;">$<?php echo $product_detail->price; ?></b>
           </div>
         </div>
 
         <div class="row"><div class="col"><b>General Details</b></div></div>
         <hr class="class-1" />
        
-      <div class="row"><div class="col" style="word-spacing:20px">Condition:  Brand</div></div>
-      <div class="row"><div class="col" style="word-spacing:63px"> City:  Berinag</div></div>
+      <div class="row"><div class="col" style="word-spacing:20px">Condition:  <?php echo $product_detail->brand; ?></div></div>
+      <div class="row"><div class="col" style="word-spacing:63px"> City:  <?php echo $product_detail->address; ?></div></div>
       <div class="row"><div class="col" style="word-spacing:46px">Model:  2013</div></div>
       <div class="row"><div class="col" style="word-spacing:53px">Color:  Red</div></div>
       <div class="row"><div class="col" style="word-spacing:62px">Size:  Red</div></div>

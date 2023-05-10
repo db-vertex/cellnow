@@ -402,7 +402,7 @@ html,body
                   if($i > 0){
             
             ?>  
-        <div class="col"> <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>" class="d-block w-100" alt="...">
+        <div class="col"> <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $pro->category_id;?>/<?php echo $pro->id;?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>" class="d-block w-100" alt="..."></a>
         <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>
                         <div class="va-title ms-3">  <?php
                            $title = $pro->title;
@@ -445,7 +445,7 @@ html,body
                   if($i > 0){
             
             ?>  
-        <div class="col"> <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>" class="d-block w-100" alt="...">
+        <div class="col">  <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $pro->category_id;?>/<?php echo $pro->id;?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>" class="d-block w-100" alt="..."></a>
         <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>
                         <div class="va-title ms-3">  <?php
                            $title = $pro->title;
