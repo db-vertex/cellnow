@@ -551,6 +551,7 @@ class Welcome extends CI_Controller {
 
 	public function addshop()
 	{
+		
 		$name=$this->input->post('name');
 		$email = $this->input->post('email');
 		$user_id = $this->input->post('user_id');
@@ -562,10 +563,26 @@ class Welcome extends CI_Controller {
         $GST = $this->input->post('GST');
 		$description = $this->input->post('description');
 
-		$post_data = array('name'=> $name, 'email'=>$email,'user_id'=> $user_id,'mobile'=>$mobile, 'shop_category_id'=>$shop_category, 'Address'=>$Address ,'GST'=>$GST,'description'=> $description,'service_type'=>$service_type,'open_close_time' => $open_close_time);
+		if (!empty($_FILES['shop_images']['name'])) {
+			$config['upload_path'] = './uploads/shop/';
+			// $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
+			$config['allowed_types'] = '*';
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('shop_images')) {
+			   
+			}else{
+
+				//---- Successfully upload than add member-----
+				$image_data = $this->upload->data();
+				$filename = $image_data['file_name'];
+
+		$post_data = array('name'=> $name, 'email'=>$email,'user_id'=> $user_id,'mobile'=>$mobile, 'shop_category_id'=>$shop_category, 'Address'=>$Address ,'GST'=>$GST,'description'=> $description , 'shop_images'=> $filename,'service_type'=>$service_type,'open_close_time' => $open_close_time);
+	
 		$this->db->insert('shop',$post_data);
 
 		return redirect('welcome/shop');
+			}
+		}
 	}
 
 

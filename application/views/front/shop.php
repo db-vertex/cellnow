@@ -21,7 +21,9 @@
     }
 
 
-
+    img.rounded-corners {
+  border-radius: 50%;
+}
 
     #a {
       margin-right: 10px;
@@ -105,12 +107,13 @@
         <div class="col-sm-6">
         <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
-          <img src="<?php echo base_url(); ?>assets/images/Ellipse 11 (2).png" class="img-fluid rounded mx-auto d-block">
+          <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>" class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
+width: 131.9px;">
           <div style="text-align:center">
             <h3><b>
-                <?php echo $profile->name; ?>
+                <?php echo ucfirst($profile->name); ?>
               </b></h3>
-            <?php echo $profile->Address; ?>
+            <?php echo ucfirst($profile->Address); ?>
 
           </div>
           <div class="row text-center ">
@@ -146,11 +149,15 @@
               <div class="col" >
              <div class="row">
              <div class="col">
-                <h4 class="ml-3"><?php echo ucfirst($shop->name);?> </h4> </div><div class="col"><?php if($shop->admin_approval==2){?><div>
-    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#FF7474; color:#540C07" >Rejected by admin </a>
+                <h4 class="ml-3"><?php echo ucfirst($shop->name);?> </h4> </div><div class="col"><?php if($shop->admin_approval==2){?>
+                  <div>
+    <a class="btn "id="b" style="align-self:center; background-color:#FF7474; color:#540C07" >Rejected by admin </a>
     </div><?php }else if($shop->admin_approval==1){?> <div>
-    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#d1fae5; color:#13C571" >Verified by admin </a>
-    </div><?php }?>
+    <a  class="btn "id="b" style="align-self:center; background-color:#d1fae5; color:#13C571" >Verified by admin </a>
+    </div><?php }else if($shop->admin_approval==0){?>
+      <div>
+    <a class="btn "id="b" style="align-self:center; background-color:#FF7474; color:#540C07" >Pending </a>
+    </div><?php } ?>
             </div> </div>
             <p class="ml-3"><?php echo $shop->email;?></p>
                 <p class="ml-3"><?php echo $shop->description;?></p>
@@ -160,12 +167,13 @@
                 <p class="ml-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
                 <p class="ml-3"><b>Type of service: </b><?php echo $shop->service_type;?></p>
               </div>
-              <?php if($shop->admin_approval!=1){?>
+              <?php if($shop->admin_approval!=1 && $shop->admin_approval!=0){?>
               <div class="row text-center">
       <div>
-    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#13C571; color:#fff" >Edit </a>
+    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="a" style="align-self:center; background-color:#13C571; color:#fff" >Edit </a>
     </div>
     </div>
+   
     <div id="editshopdetail" class="modal fade" role="dialog">
 
   <div class="modal modal-signin position-static d-block  py-5" tabindex="-1" role="dialog" id="modalSignin">
@@ -230,7 +238,7 @@
               </div>
             </div>
 
-
+           
             <!-- form-group// -->
             <div class="form-group">
 
@@ -242,7 +250,7 @@
                 $category = get_all_shopcategory();
                 foreach ($category as $key => $cat) {
                   ?>
-                  <option id="" value="<?php echo $cat->id; ?>"><?php echo $cat->shop_category; ?></option>
+                  <option id="" value="<?php echo $cat->id; ?>" <?php if($cat->id == $shop->shop_category_id ){echo "Selected" ;}?>><?php echo $cat->shop_category; ?></option>
                 <?php } ?>
               </select>
               <div class="invalid-feedback">
@@ -261,9 +269,22 @@
             </div>
 
             <div class="form-group">
-              <label>Service Type</label>
-              <input name="service_type" class="form-control" placeholder="Service Type" type="text"
-                value="<?php echo $shop->service_type; ?>" style="border-radius:30px; border-color:#13C571" required>
+              <label>Type of service </label>
+              <div class="col-12">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio1" value="Remote" checked>
+            <label class="form-check-label" for="inlineRadio1">Remote</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio2" value="In Shop">
+            <label class="form-check-label" for="inlineRadio2">In Shop</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio3" value="T&C">
+            <label class="form-check-label" for="inlineRadio3">T&C</label>
+          </div>
+            </div>
+             
                 <div class="invalid-feedback">
                 Valid Service Type is required.
               </div>
@@ -293,8 +314,11 @@
             <div class="form-group">
 				        	    
 							    <label>Image </label>
-							    <input type="file" class="form-control" id="cover_image" name="shop_images" style="border-radius:30px; border-color:#13C571" accept="image/*">
+							    <input type="file" class="form-control" id="cover_image" name="shop_images" style="border-radius:30px; border-color:#13C571" accept="image/*" required>
 							    <span id="cover_err" style="color:red;"></span>
+                  <div class="invalid-feedback">
+                Image is required.
+              </div>
 							</div>
 
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
@@ -427,7 +451,7 @@
             </div>
 
           <?php } ?>
-          <form class="needs-validation" novalidate action="<?php echo base_url(); ?>welcome/addshop" method="post">
+          <form class="needs-validation" novalidate action="<?php echo base_url(); ?>welcome/addshop" method="post" enctype="multipart/form-data">
             <input type="hidden" name="user_id" value="<?php echo $user['user_id'] ?>">
             <div class="form-group ">
               <label>Shop Name</label>
@@ -496,8 +520,20 @@
 
             <div class="form-group">
               <label>Service Type</label>
-              <input name="service_type" class="form-control" placeholder="Service Type" type="text"
-                value="<?php echo set_value('service_type'); ?>" style="border-radius:30px; border-color:#13C571" required>
+              <div class="col-12">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio1" value="Remote" checked>
+            <label class="form-check-label" for="inlineRadio1">Remote</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio2" value="In Shop">
+            <label class="form-check-label" for="inlineRadio2">In Shop</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio3" value="T&C">
+            <label class="form-check-label" for="inlineRadio3">T&C</label>
+          </div>
+            </div>
                 <div class="invalid-feedback">
                 Valid Service Type is required.
               </div>
@@ -523,7 +559,12 @@
 
             </div>
 
-           
+            <div class="form-group">
+				        	    
+                      <label>Image </label>
+                      <input type="file" class="form-control" id="cover_image" name="shop_images" style="border-radius:30px; border-color:#13C571" accept="image/*">
+                      <span id="cover_err" style="color:red;"></span>
+                  </div>
 
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>

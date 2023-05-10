@@ -102,14 +102,17 @@ html,body
     <div class="col-sm-6">
     <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
-     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" height=150 width=130>
-     <div style="text-align:center"><h3><b ><?php echo $profile->name; ?></b></h3>
-     <?php echo $profile->Address; ?>
+     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
+width: 131.9px; border-color:#10B981;">
+     <div style="text-align:center"><h3><b ><?php echo ucfirst($profile->name); ?></b></h3>
+     <?php echo ucfirst($profile->Address); ?>
      
     </div>
     <div class="row text-center ">
-      <p><img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?></p>
-      <p><img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?></p>
+    <p>
+            <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
+            <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
+            </p>
     </div><br>
     
    
@@ -118,11 +121,11 @@ html,body
     <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8"> 
       
       <h2 class="pl-5"><b>About us</b></h2>
-      <p class="pl-5"><?php echo $profile->aboutus; ?></p>
+      <h6 class="pl-5"><?php echo $profile->aboutus; ?></h6>
 
       <div class="row text-center">
       <div>
-    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="b" style="align-self:center; background-color:#13C571; color:#fff" >Edit Profile</a>
+    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="a" style="align-self:center; background-color:#10B981; color:#fff;" >Edit </a>
     </div>
     </div>
     </div> 
@@ -379,10 +382,10 @@ html,body
          
             <input name="Address" type="text" class="form-control  pl-5  text-dark Name" id="lastName"  value="<?php echo $profile->Address; ?>" placeholder="Address" style="border-radius:30px; border-color:#13C571" required>
               <div class="invalid-feedback">
-                Valid last name is required.
+                Valid address is required.
               </div>
           </div>
-          <div class=" input-container mt-3 ">
+          <div class=" input-container my-3 px-3">
         
               <textarea  name="aboutus"  class="form-control" id="aboutus" placeholder="About Us" maxlength="100" rows="4" style="border-radius:20px; border-color:#13C571" required><?php echo $profile->aboutus; ?></textarea>
              <div class="invalid-feedback">
