@@ -1,4 +1,7 @@
-on: push
+on: 
+  push:
+   branches:
+    - main
 name: 🚀 Deploy website on push
 jobs:
   web-deploy:
@@ -14,3 +17,4 @@ jobs:
         server: dbvertex.com
         username: ${{ secrets.FTP_PASSWORD }}
         password: ${{ secrets.FTP_USERNAME }}
+        server-dir: /production.cipher.co.tz/
