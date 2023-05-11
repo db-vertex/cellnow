@@ -122,7 +122,7 @@ $msg_class=$this->session->flashdata('msg_class')
                   <th>Timeing</th>
                   <th>Service Type</th>
                  
-                  <th>Description</th>
+              
 
                     <th>Registered on</th>
                   <th>Shop Image</th>
@@ -149,7 +149,7 @@ $i++;
                 <td><?php echo  $valued->open_close_time;?></td>
 
                 <td><?php echo  $valued->service_type;?></td>
-                <td><?php echo  $valued->description;?></td>
+               
 
                <td><?=date("d M, Y", strtotime($valued->created_at))?></td>
                <td><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?>"></td>
