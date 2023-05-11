@@ -84,35 +84,37 @@ class Welcome extends CI_Controller {
 						/*$j=1;
 						if($j == 1){*/
 			
-						$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-						$messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+						// $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+						// $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
 			
-						$apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+						// $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
 			
-						$numbers = array($phone);
-						$sender = urlencode('UPAHAD');
-						$message = rawurlencode($messages);
+						// $numbers = array($phone);
+						// $sender = urlencode('UPAHAD');
+						// $message = rawurlencode($messages);
 			
-						$numbers = implode(',', $numbers);
+						// $numbers = implode(',', $numbers);
 			
-						// Prepare data for POST request
-						$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+						// // Prepare data for POST request
+						// $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 			
-						// Send the POST request with cURL
-						$ch = curl_init('https://api.textlocal.in/send/');
-						curl_setopt($ch, CURLOPT_POST, true);
-						curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-						$response = curl_exec($ch);
-						//print_r($response);
+						// // Send the POST request with cURL
+						// $ch = curl_init('https://api.textlocal.in/send/');
+						// curl_setopt($ch, CURLOPT_POST, true);
+						// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+						// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						// $response = curl_exec($ch);
+						// //print_r($response);
 			
-						curl_close($ch);
+						// curl_close($ch);
 
 						$userData['phone'] = $phone;
 						$userData['OTP'] = $randCode;
 			
 						$update = $this->user->update($userData, $udata->user_id);
-						return redirect('welcome/otp');
+						$this->load->view('front/header', ['success' => true]);
+						$this->load->view('front/otp',['phone'=>$phone,'otp'=>$randCode]);
+						$this->load->view('front/footer');
 		
 				  }
 				  $length = 50;
