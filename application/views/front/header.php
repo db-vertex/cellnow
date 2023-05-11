@@ -686,7 +686,7 @@ padding-top:10px;
           </a>
    <ul class="dropdown-menu">
     
-            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/myprofile">My profile</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My profile</a></li>
           
             <li><a class="dropdown-item" href="#">My Chat</a></li>
             <?php if($profile->login_type == 'normal'){ ?>
