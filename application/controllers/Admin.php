@@ -1620,10 +1620,11 @@ public function user()
 
    
       $buyer = get_all_buyer(); 
+      $shop=$this->admin_model->all_shop(); 
       //$featuredposts = $this->Product_model->getfeaturedpro();
 
       // for foreach loop
-      $this->load->view('user_list',['admin_detail'=>$admin_detail,'buyer'=>$buyer]);
+      $this->load->view('user_list',['admin_detail'=>$admin_detail,'buyer'=>$buyer,'shop'=>$shop]);
        
         }
         else

@@ -64,8 +64,8 @@ $msg_class=$this->session->flashdata('msg_class')
 <div class="box-body">
 
 <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Buyer</a></li>
-    <li><a data-toggle="tab" href="#menu1">Seller</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Buyer/Seller</a></li>
+    <li><a data-toggle="tab" href="#menu1">Shop</a></li>
    </ul>
 
     <div class="tab-content">
@@ -115,45 +115,44 @@ $msg_class=$this->session->flashdata('msg_class')
                 <tr>
                   <th>S no.</th>
                   <th>Phone</th>
-                  <th>Username</th>
-                  <th>Agentcode</th>
-                  <th>Building</th>
-                  <th>Location</th>
-                  <th>Landmark</th>
-                  <th>State</th>
-                  <th>City</th>
-                  <th>Pincode</th>
+                  <th>Shopname</th>
+                  <th>Address</th>
+                  <th>Email</th>
+                  <th>GST</th>
+                  <th>Timeing</th>
+                  <th>Service Type</th>
+                 
+                  <th>Description</th>
 
                     <th>Registered on</th>
-                  <!--<th>Action</th>-->
+                  <th>Shop Image</th>
                   
                 </tr>
                 </thead>
         <tbody>
 
-          <?php $i=0; foreach ($seller as $valued) {
+        <?php $i=0; foreach ($shop as $valued) {
 
 $i++;
-            //print_r($deactiveposts);
 
-            ?>
+?>
 
 
-                <tr id="<?php echo $valued->profile_id; ?>">
+                <tr id="<?php echo $valued->id; ?>">
 
                 <td><?php echo  $i;?></td>
-                <td><?php echo  $valued->myphone;?></td>
-                <td><?php echo  $valued->username;?></td>
-                <td><input class="agentcode agentcode<?php echo $valued->user_id; ?>" data-userid="<?php echo $valued->user_id; ?>" value="<?php echo  $valued->agentcodes;?>"></td>
-                <td><?php echo  $valued->building;?></td>
-                <td><?php echo  $valued->location;?></td>
-                <td><?php echo  $valued->landmark;?></td>
-                <td><?php echo  $valued->state;?></td>
+                <td><?php echo  $valued->mobile;?></td>
+                <td><?php echo  $valued->name;?></td>
+                <td><?php echo  $valued->Address;?></td>
+                <td><?php echo  $valued->email;?></td>
+                <td><?php echo  $valued->GST;?></td>
+                <td><?php echo  $valued->open_close_time;?></td>
 
-                <td><?php echo  $valued->city;?></td>
-                <td><?php echo  $valued->pincode;?></td>
+                <td><?php echo  $valued->service_type;?></td>
+                <td><?php echo  $valued->description;?></td>
 
-               <td><?=date("d M, Y", strtotime($valued->created))?></td>
+               <td><?=date("d M, Y", strtotime($valued->created_at))?></td>
+               <td><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?>"></td>
                 <!-- <td>  <?php echo  date("d-m-Y",strtotime($valued->created));?> </td> -->
 
             <!--     <td> <label class="switch">

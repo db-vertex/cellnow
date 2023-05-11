@@ -54,6 +54,27 @@
           </div>
         </div>
 
+
+        <div class="col-lg-2 col-xs-6">
+          <!-- small box -->
+          <div class="small-box bg-green">
+            <div class="inner">
+            	<?php 
+
+            	$buyer = get_all_shop_count();
+            	
+            	?>
+              <h3><?php echo $buyer; ?></h3>
+
+              <p>Shops</p>
+            </div>
+            <div class="icon">
+              <i class="fa fa-user"></i>
+            </div>
+            <a href="<?php echo base_url(); ?>admin/user" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+          </div>
+        </div>
+
      
 
        

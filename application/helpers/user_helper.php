@@ -458,7 +458,20 @@ function get_all_buyer_count()
 
 
 
+function get_all_shop_count()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
 
+  $query="SELECT * FROM shop";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->num_rows(); 
+}
 
 
 

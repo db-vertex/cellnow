@@ -108,7 +108,12 @@ a {
     text-decoration: none;
 }
 
+#hover:hover {
+      color: white;
+      background-color: #d1fae5;
 
+
+    }
   .container_ { 
      
       background-color: #fafafa; 
@@ -640,22 +645,22 @@ padding-top:10px;
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav m-auto mb-2 mb-lg-0" >
         <li class="nav-item" style="padding-right:20px ";>
-          <a class="nav-link active"  aria-current="page" href="#" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">Donate</a>
+          <a class="nav-link active"  aria-current="page" href="#" id="hover" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">Donate</a>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
+          <a class="nav-link dropdown-toggle" href="" id="hover" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
             Categories
           </a>
           <ul class="dropdown-menu">
             <?php $category = get_all_category(); 
              foreach ($category as $key => $cat) {?>
-            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/fillter_product"><?php echo $cat->category; ?></a></li>
+            <li><a class="dropdown-item" id="hover" href="<?php echo base_url();?>welcome/fillter_product"><?php echo $cat->category; ?></a></li>
           
             <?php }?>
           </ul>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
+          <a class="nav-link dropdown-toggle" id="hover" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
             Service Center 
           </a>
           <ul class="dropdown-menu" >
@@ -683,10 +688,10 @@ padding-top:10px;
       $profile = get_seller_profile($user['user_id']);
    ?>
     <div class="nav-item dropdown" style="padding-right:90px";>
-    <li class="nav-item" style="padding-right:90px";></div>
+    <li class="nav-item" style="padding-right:70px";></div>
             <img class="img-fluid rounded-corners mx-auto d-block" style="height: 40.9px;
 width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"> </li>
-    <li class="nav-item" style="padding-right:20px";>
+    <li class="nav-item">
    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;">
    <?php echo ucfirst($profile->name);?> 
           </a>
@@ -704,8 +709,8 @@ width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_
           
          <?php  }
           else{ ?>
-         <li class="nav-item" style="padding-right:90px";></div>
-          <a class="nav-link" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login</a>/ <a class="nav-link" href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;"> Signup</a>
+         <li class="nav-item" style="padding-right:70px";></div>
+          <a class="nav-link" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login &nbsp</a>/ <a class="nav-link" href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;">&nbsp Signup</a>
           </li>
           <?php }?>
          

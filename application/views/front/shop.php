@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
- 
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
   <!-- link for map -->
@@ -165,6 +165,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             <p class="ml-3"><?php echo $shop->email;?></p>
                 <p class="ml-3"><?php echo $shop->description;?></p>
                 <p class="ml-3"><?php echo $shop->Address;?></p>
+                <p class="ml-3"><?php echo $shop->mobile;?></p>
                 <p class="ml-3 mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
                
                 <p class="ml-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
@@ -233,8 +234,8 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               </div>
             </div>
             <div class="form-group">
-              <label> Address</label>
-              <input name="Address" class="form-control" placeholder="Address" type="text"
+              <label>Google Address</label>
+              <input name="Address" class="form-control" placeholder="Address" id="Address" type="text"
                 value="<?php echo $shop->Address; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Address is required.
@@ -263,7 +264,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
               <label>Shop Time</label>
-              <input name="open_close_time" class="form-control" placeholder="Time" type="text"
+              <input name="open_close_time" class="form-control" placeholder="Time" type="time"
                 value="<?php echo $shop->open_close_time; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid time is required.
@@ -319,7 +320,17 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                 Image is required.
               </div>
 							</div>
-
+             
+            <div class="form-group">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <label>
+            Terms and Conditions 
+            </label>
+         
+          </div>
+          <input type="text" class="form-control" name="latitude" id="latitude" hidden/>
+         <input type="text" class="form-control" name="longitude" id="longitude" hidden/>
+       
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>
 
@@ -353,7 +364,10 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
     <div class="row">
 
-      <div class="col-lg-4 col-sm-6  mb-2">
+     
+    <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
+
+      <!-- <div class="col-lg-4 col-sm-6  mb-2">
         <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
           <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
           <div class="card-block" style="padding:8px">
@@ -368,42 +382,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             <a href="#" class="btn " id="b">Delete</a>
           </div>
         </div>
-      </div>
-
-      <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
-
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn " id="b">Edit</a>
-            <a href="#" class="btn " id="b">Delete</a>
-          </div>
-        </div>
-      </div>
-
-
-      <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
-
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn " id="b">Edit</a>
-            <a href="#" class="btn " id="b">Delete</a>
-          </div>
-        </div>
-      </div>
+      </div> -->
 
 
 
@@ -479,8 +458,8 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               </div>
             </div>
             <div class="form-group">
-              <label> Address</label>
-              <input name="Address" class="form-control" placeholder="Address" type="text"
+              <label>Google Address</label>
+              <input name="Address" class="form-control" placeholder="Address" id="location" type="text"
                 value="<?php echo set_value('Address'); ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Address is required.
@@ -509,7 +488,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
               <label>Shop Time</label>
-              <input name="open_close_time" class="form-control" placeholder="Time" type="text"
+              <input name="open_close_time" class="form-control" placeholder="Time" type="time"
                 value="<?php echo set_value('open_close_time'); ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid time is required.
@@ -660,4 +639,26 @@ if (image == "" ) {
   })
 })()
 
-</script>
+</script> <script>
+        $(document).ready(function() {
+            $("#latitudeArea").addClass("d-none");
+            $("#longtitudeArea").addClass("d-none");
+        }); 
+        
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        function initialize() {
+            var input = document.getElementById('Address');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+            
+            autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                
+                $('#latitude').val(place.geometry['Address'].lat());
+                $('#longitude').val(place.geometry['Address'].lng());
+                
+                $("#latitudeArea").removeClass("d-none");
+                $("#longtitudeArea").removeClass("d-none");
+            });
+        } 
+    </script>

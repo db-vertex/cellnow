@@ -124,7 +124,7 @@
         <!--</li>-->
     
 
-        <li class="<?php echo ($this->uri->segment(2) == 'Category')?'active':''; ?>">
+        <!-- <li class="<?php echo ($this->uri->segment(2) == 'Category')?'active':''; ?>">
           <a href="<?=  base_url('admin/shopCategory'); ?>">
             <i class="fa fa-group"></i> <span>Shop Category</span>
             <span class="pull-right-container">
@@ -140,16 +140,9 @@
               <small class="label pull-right bg-green"></small>
             </span>
           </a>
-        </li>
+        </li> -->
 
-        <li class="<?php echo ($this->uri->segment(2) == 'subcategory')?'active':''; ?>">
-          <a href="<?=  base_url('admin/shop'); ?>">
-            <i class="fa fa-group"></i> <span>Shop</span>
-            <span class="pull-right-container">
-              <small class="label pull-right bg-green"></small>
-            </span>
-          </a>
-        </li>
+        
 
         <li class="<?php echo ($this->uri->segment(2) == 'about_us')?'active':''; ?>">
           <a href="<?=  base_url('admin/about_us'); ?>">
