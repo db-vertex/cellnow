@@ -191,7 +191,7 @@ html,body
                   <div class="va-card va-card_category"> <a class=" border-0"  href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;"> 
                   <p style="text-align:center;" class="my-auto pouler_Categories">
                   <img class="btn-change"  src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
-                   <center style="color:black; font-size:12px; font-weight:700"><?php echo ucfirst($cat->sub_category); ?></center>
+                   <center style="color:black; font-size:12px; font-weight:500"><?php echo ucfirst($cat->sub_category); ?></center>
                   </p>
                     </a> 
                     </div>

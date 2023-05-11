@@ -429,7 +429,7 @@ padding-top:10px;
           cursor: pointer;
           user-select: none;
           outline: none;
-          width: 100px;
+          width: 130px;
       }
      .va-cards{
           cursor: pointer;
