@@ -6,6 +6,9 @@
    
     <style>
 
+
+
+
 html,body
 {
   max-width: 100%;
@@ -13,7 +16,10 @@ html,body
 }
 
 
-/* search btn line 11 to 66 */
+
+
+
+/* search btn line 11 to 89 */
 .search_wrap{
 	width: 100%;
 	
@@ -22,7 +28,7 @@ html,body
 .search_wrap .search_box{
 	position: relative;
 	
-	height: 60px;
+	height: 64px;
 }
 
 .search_wrap .search_box .btn{
@@ -30,52 +36,61 @@ html,body
 	
 	height: 80%;
 	background: #10B981;
+  color: white;
 	
 }
 .search_wrap .search_box .btn.btn_common .fas{
 	
-	top: 50%;
+	/* top: 50%;
 	left: 50%;
-	transform: translate(-50%,-50%);
-	color: #fff;
+	transform: translate(-50%,-50%); */
+	/* color: #fff; */
  
 }
 .search_wrap.search_wrap_6 .search_box .btn{
-	width: 25%;
-	height: 50%;
-	top: 7%;
-	right: 1%;
+	max-width: 100%;
+	height: 60%;
+	top: 8%;
+	right: 1.3%;
+    padding: 6px 0px;
+    
 	
-	color: #fff;
+	/* color: #fff; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
 }
 
-/* input::placeholder {
-  font-size: 18px;
+ input::placeholder {
+  font-size: 16px;
+  font-weight: bold;
 }
 @media screen and (max-width: 992px) {
   input::placeholder  {
      font-size: 12px;
+     font-weight: bold;
   }
 }
   @media screen and (max-width: 776px) {
   input::placeholder  {
      font-size: 10px;
+     font-weight: bold;
   }
 }
 @media screen and (max-width: 560px) {
   input::placeholder  {
-     font-size: 13px;
+     font-size: 12px;
+    font-weight: bold;
   }
-} */
+} 
 
 
 
-/* .btn{
-    width: 100%;
-} */
+
+
+
+
+
     </style>
   </head>
   <body>
@@ -118,17 +133,17 @@ html,body
 
 
     <!-- search bar -->
-<div class="container">
+    <div class="container">
     <div class="row">
-      <div class="col-md-6 col-sm-6 ">
+      <div class="col-lg-7 col-md-5 col-sm-4 ">
         <p style="font-size:30px;color:#1B1C57;"> Featured </p>
       </div>
-      <div class="col-md-6 col-sm-6">
+      <div class="col-lg-5 col-md-7 col-sm-8">
       <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
          
-		       <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon" />
-          <button type="button" class="btn  rounded-5" >search ></button>
+		       <input type="search" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+          <button type="button" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
         </div>
   </div>
 </div>
@@ -267,20 +282,21 @@ html,body
 <!-- new  -->
 <div class="container  mt-3">
   <div class="row">
-    <div class="col-sm-6">
+    <div class="col-lg-7 col-md-5 col-sm-4">
      <p style="color: #1B1C57; font-size:30px;">Stores</p>
     </div>
-    <div class="col-sm-6 text-end">
+    <div class="col-lg-5 col-md-7 col-sm-8 text-end">
     <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
          
-		       <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon" />
-          <button type="button" class="btn  rounded-5" >search ></button>
+		       <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+          <button type="button" class="btn btn-success  rounded-5" style="padding:6px 10px" >search ></button>
         </div>
   </div>
     </div>
   </div>
 </div><br>
+
 
 
 
