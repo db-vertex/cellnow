@@ -97,10 +97,10 @@ html,body
 
                     ?>
     <div class="col-sm-6">
-    <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 20px;border-radius: 100%;"></a>
+    <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
-     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 171.9px;
-width: 171.9px; border-color:#10B981;">
+     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 151.9px;
+width: 151.9px; border-color:#10B981;">
      <div style="text-align:center"><h3><b ><?php echo ucfirst($profile->name); ?></b></h3>
      <?php echo ucfirst($profile->Address); ?>
      

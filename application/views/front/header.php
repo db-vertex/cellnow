@@ -678,16 +678,19 @@ padding-top:10px;
         <!-- <li class="nav-item" hello>
         <a class="nav-link" href="#" style="color:#10B981;font-weight:600;padding-left:22px">Login/Signup</a>
         </li> -->
-     </ul>
+     
      <?php  if(!empty($user)){
       $profile = get_seller_profile($user['user_id']);
    ?>
-    <div class="nav-item dropdown" style="padding-right:20px";>
-   
+    <div class="nav-item dropdown" style="padding-right:90px";>
+    <li class="nav-item" style="padding-right:90px";></div>
+            <img class="img-fluid rounded-corners mx-auto d-block" style="height: 40.9px;
+width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"> </li>
+    <li class="nav-item" style="padding-right:20px";>
    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;">
    <?php echo ucfirst($profile->name);?> 
           </a>
-   <ul class="dropdown-menu">
+   <ul class="dropdown-menu" style="margin-left:80%;margin-top: -30px;">
     
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My profile</a></li>
           
@@ -697,13 +700,16 @@ padding-top:10px;
                         <?php } ?>
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/logout">logout</a></li>
           </ul>
-     </div>
+            </li>
+          
          <?php  }
           else{ ?>
-         
+         <li class="nav-item" style="padding-right:90px";></div>
           <a class="nav-link" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login</a>/ <a class="nav-link" href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;"> Signup</a>
-
+          </li>
           <?php }?>
+         
+          </ul>
             </div>
   </div>
 </nav>
