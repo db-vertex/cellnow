@@ -429,7 +429,7 @@ padding-top:10px;
           cursor: pointer;
           user-select: none;
           outline: none;
-          width: 130px;
+          width: 100px;
       }
      .va-cards{
           cursor: pointer;
@@ -478,6 +478,11 @@ padding-top:10px;
           justify-content: space-between;
           color: black;
       }
+
+      .btn-change:hover{
+    -webkit-transform: scale(1.1);
+    
+}
   
       .va-points {
           font-size: 12px;
@@ -635,7 +640,7 @@ padding-top:10px;
     <nav class="navbar navbar-expand-lg bg-body-" >
   <div class="container-fluid" >
     <a class="navbar-brand" href="<?php echo base_url();?>" >
-    <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" width="180px">
+    <img class="btn-change" src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" width="180px">
     </a>
     
 

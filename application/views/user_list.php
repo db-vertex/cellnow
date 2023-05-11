@@ -126,6 +126,7 @@ $msg_class=$this->session->flashdata('msg_class')
 
                     <th>Registered on</th>
                   <th>Shop Image</th>
+                  <th>Approval</th>
                   
                 </tr>
                 </thead>
@@ -153,7 +154,14 @@ $i++;
 
                <td><?=date("d M, Y", strtotime($valued->created_at))?></td>
                <td><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?>"></td>
-                <!-- <td>  <?php echo  date("d-m-Y",strtotime($valued->created));?> </td> -->
+               <td>  <select  id="pay_type" data-id="<?php echo $valued->id?>"   class="btn btn-info prioritydrop">
+           
+           <option value="0" <?=(($valued->admin_approval==0)?"selected":"")?>>Unverified</option>
+           <option  value="1" <?=(($valued->admin_approval==1)?"selected":"")?>>Verified</option>
+           <option value="2"<?=(($valued->admin_approval==2)?"selected":"")?>>Rejected</option>
+          
+       </select></td>
+       <!-- <td>  <?php echo  date("d-m-Y",strtotime($valued->created));?> </td> -->
 
             <!--     <td> <label class="switch">
 
@@ -195,33 +203,26 @@ $i++;
   </div>
 </section>
 <script>
-    $(document).ready(function(){
-$(document).on('change', '.agentcode', function(){            
-var agentcode=$(this).val();
-var user_id = $(this).data("userid");
-var fkf=agentcode;
-if(agentcode=="")
-agentcode="x";
-console.log(agentcode)
-console.log(user_id)
-                 $.ajax({
-                  type: "POST",
-                  url: '<?php echo base_url("Admin/updateagentcode")?>/'+user_id+"/"+agentcode,
-                  cache:false,
-                  data: {},
-                  error: function() {
-                      alert('Something is wrong');
-                  },
-             success: function(data) {
-                 $('.agentcode'+user_id).val(fkf);
-                      swal("Agent Code Updated Successfully","", "success");
+   $(document).on('change', ".prioritydrop", function(){
+   
+   let thisval = $(this).val();
+  
+   let id = $(this).data("id");
+  
+ 
+    $.ajax({
+        url: '<?php echo base_url("admin/adminapproved/")?>',
+            type: 'POST',
+            data: {"admin_approval":thisval, "id":id},
+            error: function() {
+               alert('Something is wrong');
+            },
+            success: function(data) {
+              location.reload();
                  
-             } 
-          });
-
-
-        });
-    });
+            } 
+         });
+})
 </script>
   <script>
 function test(productid){

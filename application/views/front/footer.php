@@ -44,7 +44,7 @@
     <div class="container">
   <div class="row ">
     <div class="col-sm-6 ">
-    <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png" class="img-fluid mb-3" alt=""  width="150px"><br>
+    <img class="btn-change" src="<?php echo base_url();?>assets/images/CelNow 5 1.png" class="img-fluid mb-3" alt=""  width="150px"><br>
 <p style="color:#888b97">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Laboriosam rerum ipsa id recusandae quasi officia nihil! </p>
 <a href="https://www.facebook.com/" class="fa fa-facebook"></a> 
 <a href="https://twitter.com/i/flow/login" class="fa fa-twitter" ></a>

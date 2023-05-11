@@ -218,35 +218,35 @@ class Welcome extends CI_Controller {
               $alpha_key .= $keys[array_rand($keys)];
             }
             $randCode = $alpha_key;
-            $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+            // $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+            // $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
 
-            $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+            // $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
 
-            $numbers = array($phone);
-            $sender = urlencode('UPAHAD');
-            $message = rawurlencode($messages);
+            // $numbers = array($phone);
+            // $sender = urlencode('UPAHAD');
+            // $message = rawurlencode($messages);
 
-            $numbers = implode(',', $numbers);
+            // $numbers = implode(',', $numbers);
 
-            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+            // $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-            // Send the POST request with cURL
-            $ch = curl_init('https://api.textlocal.in/send/');
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($ch);
-            //print_r($response);
+            // // Send the POST request with cURL
+            // $ch = curl_init('https://api.textlocal.in/send/');
+            // curl_setopt($ch, CURLOPT_POST, true);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // $response = curl_exec($ch);
+            // //print_r($response);
 
-            curl_close($ch);
+            // curl_close($ch);
 
 			   $post_data = array('name'=> $name, 'email'=>$email,'password'=> md5($password),'phone'=>$phone, 'OTP'=>$randCode ,'login_type'=>'normal','social_id_token'=>$result);
 			   $this->db->insert('users',$post_data);
 
 
 			   $this->load->view('front/header', ['success' => true]);
-			   $this->load->view('front/otp',['phone'=>$phone]);
+			   $this->load->view('front/otp',['phone'=>$phone,'otp'=>$randCode]);
 			   $this->load->view('front/footer');
               // return redirect('welcome/otp',['phone'=>$phone]);
             }

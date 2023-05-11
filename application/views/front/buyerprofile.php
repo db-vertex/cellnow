@@ -120,7 +120,7 @@ width: 151.9px;">
 
     <div class="row text-center p-5">
     <div>
-    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="a" style="align-self:center; background-color:#10B981; color:#fff;" >Edit </a>
+    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn btn-change" id="a" style="align-self:center; background-color:#10B981; color:#fff;" >Edit </a>
   </div>
   </div>
   </div> 

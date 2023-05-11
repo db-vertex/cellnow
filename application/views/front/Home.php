@@ -154,24 +154,26 @@ html,body
 <div class="container">
   <div class="row ">
   <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2">
-  <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/menu1.png" alt=""> &nbsp &nbsp All</a>
+  <a class="btn shadow  bg-white rounded-pill btn-change" href="#" role="button"><img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/menu1.png" alt=""> &nbsp &nbsp All</a>
   </div>
 
 
   <div class="col-lg-3 col-md-5 col-sm-6 col-12 mb-2">
-    <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/reusable1.png" alt="">Reusable parts and Product</a>
+    <a class="btn shadow  bg-white rounded-pill btn-change" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/reusable1.png" alt="">Reusable parts and Product</a>
   </div>
-  <div class="col-lg-3 col-md-4 col-sm-6 mb-2">
-  <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/home1.png" alt="">  &nbsp Tuitions/Classes</a>
+  <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+  <a class="btn shadow  bg-white rounded-pill btn-change" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/home1.png" alt="">  &nbsp Tuitions/Classes</a>
   </div>
-  <div class="col-lg-2 col-md-4 col-sm-6  mb-2">
+  <div class="col-lg-2 col-md-4 col-sm-6  mb-2 btn-change">
   <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/work1.png" alt="">   Part-time Jobs </a>
   </div>
-  <div class="col-lg-2 col-md-4 col-sm-6  mb-2">
+  <div class="col-lg-2 col-md-4 col-sm-6  mb-2 btn-change">
   <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/employee1.png" alt=""> &nbsp  Internships </a>
   </div>
   </div>
 </div><br>
+
+
 
 <div class="container">
 <div class="va-carrousel-section">
@@ -186,9 +188,9 @@ html,body
                 foreach ($category as $key => $cat) {
                   ?>
                  
-                  <div class="va-card va-card_category"> <a class="link-plain border-0"  href="" style="max-width: 45%;"> 
+                  <div class="va-card va-card_category"> <a class=" border-0"  href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;"> 
                   <p style="text-align:center;" class="my-auto pouler_Categories">
-                  <img class=""  src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
+                  <img class="btn-change"  src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
                    <center style="color:black; font-size:12px; font-weight:700"><?php echo ucfirst($cat->sub_category); ?></center>
                   </p>
                     </a> 
