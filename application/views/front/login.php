@@ -2,9 +2,7 @@
 <html lang="en">
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 <!------ Include the above in your HEAD tag ---------->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
@@ -137,7 +135,7 @@ input[type=number] {
             <div class="col-md-7 ps-0" >
                     <div class="h-100 p-3 ">
                         <img  class="img-fluid" 
-                            src="<?php echo base_url()?>/assets/images/Frame.png">
+                            src="<?php echo base_url()?>/assets/images/login.png">
                     </div>
                 </div>
                 <div class="col-md-5 pe-0">
@@ -145,7 +143,7 @@ input[type=number] {
 <article class="card-body">
 
 <a href="<?php echo base_url();?>welcome/signup" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign up</a>
-<p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
+<p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;"><b>Celnow</b> </a></p>
 <h2 class="card-title mb-4 mt-1">Login</h2>
 	 <form action="<?php echo base_url();?>welcome/login" method="post">
      <?php  if($error=$this->session->flashdata('Login_failed')){  ?>
@@ -187,9 +185,9 @@ input[type=number] {
     	<label>Enter Your Password</label>
         <input name="password" class="form-control" placeholder="Password" type="password" style="border-radius:30px; border-color:#13C571">
         <span style="color:red;"> <?php echo form_error('password'); ?></span>
-        <a class="float-right" href="<?php echo base_url();?>welcome/forgotpassword">Forget Password</a>
     </div> <!-- form-group// -->
-   
+    <center> <a style="color:#13C571" href="<?php echo base_url();?>welcome/forgotpassword">Forget Password</a></center>
+
     
     <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;" name="submit"  type="submit">Login</button>
                     

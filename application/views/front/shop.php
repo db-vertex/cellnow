@@ -6,7 +6,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
  
-  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
   <!-- link for map -->
@@ -20,7 +19,10 @@
       overflow-x: hidden;
     }
 
-
+    .form-check-input:checked {
+    background-color: #13C571;
+    border-color: #13C571;
+}
     img.rounded-corners {
   border-radius: 50%;
 }
@@ -123,7 +125,8 @@ width: 131.9px;">
             </p>
             <?php  if(!empty($shop)){?>
             <p><?php if(!empty($shop->shop_images)){?>
-              <img  src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
+              <img  style="height: 161.9px;
+width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
             <?php }else{?><img  src="<?php echo base_url()?>assets/images/shop1.png">
               <?php } }?></p>
           </div><br>
@@ -168,7 +171,7 @@ width: 131.9px;">
                 <p class="ml-3"><b>Type of service: </b><?php echo $shop->service_type;?></p>
               </div>
               <?php if($shop->admin_approval!=1 && $shop->admin_approval!=0){?>
-              <div class="row text-center">
+              <div class="row text-center p-5">
       <div>
     <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="a" style="align-self:center; background-color:#13C571; color:#fff" >Edit </a>
     </div>
@@ -206,7 +209,7 @@ width: 131.9px;">
             <div class="form-group ">
               <label>Shop Name</label>
               <input name="name" class="form-control" placeholder="Shop Name" type="text"
-                value="<?php echo $shop->name; ?>" style="border-radius:30px; border-color:#13C571" required>
+                value="<?php echo $shop->name; ?>" style="border-radius:30px; border-color:#13C571" maxlength="40" required>
                 <div class="invalid-feedback">
                 Valid name is required.
               </div>
@@ -223,9 +226,9 @@ width: 131.9px;">
 
             <div class="form-group">
               <label> Mobile</label>
-              <input name="mobile" class="form-control" placeholder="Mobile" type="number"
-                value="<?php echo $shop->mobile; ?>" style="border-radius:30px; border-color:#13C571" required>
-                <div class="invalid-feedback">
+              <input name="mobile" class="form-control" placeholder="Mobile" type="number" id="mobile" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                value="<?php echo $shop->mobile; ?>" style="border-radius:30px; border-color:#13C571" maxlength="10" minlength="10" required>
+                <p id="mobile_error"></p> <div class="invalid-feedback">
                 Valid Mobile is required.
               </div>
             </div>
@@ -279,10 +282,7 @@ width: 131.9px;">
             <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio2" value="In Shop">
             <label class="form-check-label" for="inlineRadio2">In Shop</label>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio3" value="T&C">
-            <label class="form-check-label" for="inlineRadio3">T&C</label>
-          </div>
+         
             </div>
              
                 <div class="invalid-feedback">
@@ -303,9 +303,8 @@ width: 131.9px;">
             </div>
             <div class="form-group">
               <label> Description</label>
-              <input name="description" class="form-control" placeholder="Description" type="text"
-                value="<?php echo $shop->description; ?>" style="border-radius:30px; border-color:#13C571" required>
-                <div class="invalid-feedback">
+              <textarea  name="description"  class="form-control" id="aboutus" placeholder="Description" maxlength="100" rows="4" style="border-radius:20px; border-color:#13C571" required><?php echo $shop->description; ?></textarea>
+             <div class="invalid-feedback">
                 Valid message is required.
               </div>
 
@@ -473,7 +472,7 @@ width: 131.9px;">
 
             <div class="form-group">
               <label> Mobile</label>
-              <input name="mobile" class="form-control" placeholder="Mobile" type="number"
+              <input name="mobile" class="form-control" placeholder="Mobile" type="number" id="mobile"
                 value="<?php echo set_value('mobile'); ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid Mobile is required.
@@ -529,10 +528,7 @@ width: 131.9px;">
             <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio2" value="In Shop">
             <label class="form-check-label" for="inlineRadio2">In Shop</label>
           </div>
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio3" value="T&C">
-            <label class="form-check-label" for="inlineRadio3">T&C</label>
-          </div>
+         
             </div>
                 <div class="invalid-feedback">
                 Valid Service Type is required.
@@ -551,11 +547,11 @@ width: 131.9px;">
             </div>
             <div class="form-group">
               <label> Description</label>
-              <input name="description" class="form-control" placeholder="Description" type="text"
-                value="<?php echo set_value('description'); ?>" style="border-radius:30px; border-color:#13C571" required>
-                <div class="invalid-feedback">
+              <textarea  name="description"  class="form-control" id="aboutus" placeholder="Description" maxlength="100" rows="4" style="border-radius:20px; border-color:#13C571" required></textarea>
+             <div class="invalid-feedback">
                 Valid message is required.
               </div>
+            
 
             </div>
 
@@ -639,22 +635,29 @@ if (image == "" ) {
 
 
 (() => {
-    'use strict'
+  'use strict'
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
+  // Fetch all the forms we want to apply custom Bootstrap validation styles to
+  const forms = document.querySelectorAll('.needs-validation')
 
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
+  // Loop over them and prevent submission
+  Array.from(forms).forEach(form => {
+    form.addEventListener('submit', event => {
+         var mabile =  document.getElementById('mobile').value.length 
+      if (!form.checkValidity()) {
+        event.preventDefault()
+        event.stopPropagation()
+      document.getElementById("mobile_error").innerHTML = "";  
+      }
+    else if(mabile < 10){
+     document.getElementById("mobile_error").innerHTML = "Please enter 10 digits";  
+       event.preventDefault()
+        event.stopPropagation()
+    }
+    
+      form.classList.add('was-validated')
+    }, false)
+  })
+})()
 
 </script>

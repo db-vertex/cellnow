@@ -4,7 +4,6 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- link for card -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -119,7 +118,7 @@ width: 131.9px;">
     <h2 class="pl-5"><b>About us</b></h2>
     <h6 class="pl-5"><?php echo ucfirst($profile->aboutus); ?></h6>
 
-    <div class="row text-center">
+    <div class="row text-center p-5">
     <div>
     <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="a" style="align-self:center; background-color:#10B981; color:#fff;" >Edit </a>
   </div>
@@ -200,7 +199,7 @@ width: 131.9px;">
           </div>
           <div class=" input-container mt-3 px-3 ">
          
-            <input name="phone" type="number" class="form-control  pl-5 text-dark mobile"  value="<?php echo $profile->phone; ?>"  placeholder="phone"  style="border-radius:30px; border-color:#13C571" required>
+            <input name="phone" type="number" class="form-control  pl-5 text-dark mobile"  value="<?php echo $profile->phone; ?>"  placeholder="phone"  readonly style="border-radius:30px; border-color:#13C571" required>
              
             <p id="mobile_error"></p>
             <div class="invalid-feedback">
@@ -262,7 +261,28 @@ width: 131.9px;">
 			</div>
 
       <script>
-        function checkcoverimage() {
+
+(() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+
+
+function checkcoverimage() {
 
 var image =$('#cover_image').val();
 
@@ -280,4 +300,26 @@ if (image == "" ) {
    
 }
 
-}</script>
+}
+
+
+function checkprofile() {
+
+var image =$('#cover_image').val();
+
+if (image == "" ) {
+
+    $("#cover_err").text("Please upload image");
+   
+
+
+
+} else {
+
+    $("#cover_img").submit();
+
+   
+}
+
+}
+</script>

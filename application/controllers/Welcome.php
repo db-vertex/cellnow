@@ -733,7 +733,7 @@ class Welcome extends CI_Controller {
 		
 			$this->session->set_flashdata('regester_success','Seller profile Updated successfully');
 			
-			return redirect('welcome/myprofile');
+			return redirect('welcome/buyerprofile');
 	
 	}
 

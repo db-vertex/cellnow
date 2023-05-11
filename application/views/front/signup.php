@@ -2,9 +2,7 @@
 <html lang="en">
 <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.2.1.min.js"></script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
 <!--<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>-->
 <!------ Include the above in your HEAD tag ---------->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
@@ -146,18 +144,9 @@
                 <div class="col-md-6 col-sm-12 pe-0">
                     <div class="card  border p-4">
                         <article class="card-body">
-                            <div class="row">
-                                <div class="col">
-                                    <p>Welcome to <a href="<?php echo base_url()?>" style="color:#13C571;">Celnow </a></p>
-                                    <h3 class="card-title mb-3 ">Sign Up</h3>
-
-                                </div>
-
-                                <div class="col ml-4">
-                                    <a style="color:lightgrey;">Have an Account?</a><br>
-                                    <a href="<?php echo base_url()?>welcome/login" style="color:#13C571;" class="">Sign in</a>
-                                </div>
-                            </div>
+                        <h6  class="float-right card-title mb-4 mt-1">Have an account ? <br><a  style="color:#13C571;" href="<?php echo base_url();?>welcome/login"> Sign in</a></h6>
+<p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;"><b>Celnow </b></a></p>
+<h2 class="card-title mb-4 mt-1">Sign up</h2>
                             <form action="<?php echo base_url()?>welcome/signup" method="post">
                                 <div class="form-group ">
                                     <label>Enter Your Email</label>
@@ -188,14 +177,14 @@
 
                                 <div class="form-group">
 
-                                    <label> password</label>
+                                    <label> Password</label>
                                     <input name="password" class="form-control" placeholder="******" type="password" value="<?php echo set_value('password'); ?>"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('password'); ?></span>
                                 </div> <!-- form-group// -->
                                 <div class="form-group">
 
-                                    <label> Confirm password</label>
+                                    <label> Confirm Password</label>
                                     <input name="confirmpassword" class="form-control" placeholder="******" type="password" value="<?php echo set_value('confirmpassword'); ?>"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"> <?php echo form_error('confirmpassword'); ?></span>
