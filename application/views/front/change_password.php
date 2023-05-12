@@ -186,8 +186,10 @@
                         <?php } ?>
                                 <div class="form-group mt-2">
                                     <label>Enter Old Password</label>
-                                    <input name="oldpassword" class="form-control" placeholder="Oldpassword" type="text"
+                                    <input name="oldpassword" class="form-control" placeholder="Old password" type="password"
                                         style="border-radius:30px; border-color:#13C571">
+                                        <span style="color:red;"><?php  echo form_error('oldpassword'); ?></span>
+
                                 </div> <!-- form-group// -->
                                
 

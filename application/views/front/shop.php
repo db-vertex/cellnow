@@ -107,7 +107,6 @@
 
         ?>
         <div class="col-sm-6">
-        <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
           <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>" class="img-fluid rounded-corners mx-auto d-block" style="height: 151.9px;
 width: 151.9px;">
@@ -125,8 +124,8 @@ width: 151.9px;">
             </p>
             <?php  if(!empty($shop)){?>
             <p><?php if(!empty($shop->shop_images)){?>
-              <img  style="height: 161.9px;
-width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
+              <img  style="height: 171.9px;
+width: 171.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
             <?php }else{?><img  src="<?php echo base_url()?>assets/images/shop1.png">
               <?php } }?></p>
           </div><br>
@@ -152,7 +151,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               <div class="col" >
              <div class="row">
              <div class="col">
-                <h4 class="ml-3"><?php echo ucfirst($shop->name);?> </h4> </div><div class="col"><?php if($shop->admin_approval==2){?>
+                <h5 class="ml-3"><?php echo ucfirst($shop->name);?> </h5> </div><div class="col"><?php if($shop->admin_approval==2){?>
                   <div>
     <a class="btn "id="b" style="align-self:center; background-color:#FF7474; color:#540C07" >Rejected by admin </a>
     </div><?php }else if($shop->admin_approval==1){?> <div>
@@ -163,7 +162,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
     </div><?php } ?>
             </div> </div>
             <p class="ml-3"><?php echo $shop->email;?></p>
-                <p class="ml-3"><?php echo $shop->description;?></p>
+                <div class="ml-3 word"><?php echo $shop->description;?></div>
                 <p class="ml-3"><?php echo $shop->Address;?></p>
                 <p class="ml-3"><?php echo $shop->mobile;?></p>
                 <p class="ml-3 mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
@@ -210,14 +209,14 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             <div class="form-group ">
               <label>Shop Name</label>
               <input name="name" class="form-control" placeholder="Shop Name" type="text"
-                value="<?php echo $shop->name; ?>" style="border-radius:30px; border-color:#13C571" maxlength="40" required>
+                value="<?php echo $shop->name; ?>" style="border-radius:30px; border-color:#13C571" maxlength="25" required>
                 <div class="invalid-feedback">
                 Valid name is required.
               </div>
             </div>
             <div class="form-group ">
               <label>Enter Your Email</label>
-              <input name="email" class="form-control" placeholder="Email" type="email"
+              <input name="email" class="form-control" placeholder="Email" type="email" maxlength="30"
                 value="<?php echo $shop->email; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid email is required.
@@ -235,7 +234,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
             <div class="form-group">
               <label>Google Address</label>
-              <input name="Address" class="form-control" placeholder="Address" id="Address" type="text"
+              <input name="Address" class="form-control" placeholder="Address" id="Address" type="text" maxlength="20"
                 value="<?php echo $shop->Address; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Address is required.
@@ -264,7 +263,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
               <label>Shop Time</label>
-              <input name="open_close_time" class="form-control" placeholder="Time" type="time"
+              <input name="open_close_time" class="form-control" placeholder="00:00 AM To 00:00 PM" type="text"
                 value="<?php echo $shop->open_close_time; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid time is required.
@@ -295,7 +294,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
               <label> GST Number</label>
-              <input name="GST" class="form-control" placeholder="GST Number" type="text"
+              <input name="GST" class="form-control" placeholder="GST Number" type="text" maxlength="20"
                 value="<?php echo $shop->GST; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid GST is required.
@@ -304,7 +303,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
             <div class="form-group">
               <label> Description</label>
-              <textarea  name="description"  class="form-control" id="aboutus" placeholder="Description" maxlength="100" rows="4" style="border-radius:20px; border-color:#13C571" required><?php echo $shop->description; ?></textarea>
+              <textarea  name="description"  class="form-control" id="aboutus" placeholder="Description" maxlength="200" rows="4" style="border-radius:20px; border-color:#13C571" required><?php echo $shop->description; ?></textarea>
              <div class="invalid-feedback">
                 Valid message is required.
               </div>
@@ -433,7 +432,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             <input type="hidden" name="user_id" value="<?php echo $user['user_id'] ?>">
             <div class="form-group ">
               <label>Shop Name</label>
-              <input name="name" class="form-control" placeholder="Shop Name" type="text"
+              <input name="name" class="form-control" placeholder="Shop Name" type="text"  maxlength="30"
                 value="<?php echo set_value('email'); ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid name is required.
@@ -459,7 +458,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
             <div class="form-group">
               <label>Google Address</label>
-              <input name="Address" class="form-control" placeholder="Address" id="location" type="text"
+              <input name="Address" class="form-control" placeholder="Address" id="location" type="text"  maxlength="30"
                 value="<?php echo set_value('Address'); ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Address is required.
@@ -488,7 +487,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
               <label>Shop Time</label>
-              <input name="open_close_time" class="form-control" placeholder="Time" type="time"
+              <input name="open_close_time" class="form-control" placeholder="00:00 AM To 00:00 PM" type="text"
                 value="<?php echo set_value('open_close_time'); ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid time is required.
@@ -517,7 +516,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
               <label> GST Number</label>
-              <input name="GST" class="form-control" placeholder="GST Number" type="text"
+              <input name="GST" class="form-control" placeholder="GST Number" type="text"  maxlength="20"
                 value="<?php echo set_value('name'); ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid GST is required.
@@ -526,7 +525,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
             <div class="form-group">
               <label> Description</label>
-              <textarea  name="description"  class="form-control" id="aboutus" placeholder="Description" maxlength="100" rows="4" style="border-radius:20px; border-color:#13C571" required></textarea>
+              <textarea  name="description"  class="form-control" id="aboutus" placeholder="Description" maxlength="200" rows="4" style="border-radius:20px; border-color:#13C571" required></textarea>
              <div class="invalid-feedback">
                 Valid message is required.
               </div>
@@ -560,34 +559,7 @@ width: 161.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
 
-<div class="modal fade" id="createModal" aria-hidden="true">
-				<div class="modal-dialog" role="document">
-				    <div class="modal-content">
-						<div class="modal-header">
-							<h5 class="modal-title" id="exampleModalLongTitle">Update Profile Picture</h5>
-							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-						  	<span aria-hidden="true">&times;</span>
-							</button>
-						</div>
-						<form  id="cover_img" enctype="multipart/form-data" action="<?php echo base_url();?>welcome/uploadprofileimg" method="POST">
-						    <input type="hidden" name="user_id" value="<?php echo $user['user_id'] ?>">
-				      	<div class="modal-body">
-				        	<div class="form-group">
-				        	    
-							    <label>Image </label>
-							    <input type="file" class="form-control" id="cover_image" name="profile_img" accept="image/*">
-							    <span id="cover_err" style="color:red;"></span>
-							</div>
-				      	</div>
-				      	<div class="modal-footer">
-				        	<button type="button" class="btn-change btn btn-secondary pull-left" data-dismiss="modal">Cancel</button>
-				        	<button type="button" style="background-color:#13C571; color:#fff;
-                            border-radius:0.20rem;" class="btn-change btn btn-rounded"   onclick="return checkcoverimage();">Upload</button>
-				      	</div>
-				      		</form>
-				    </div>
-				</div>
-			</div>
+
 
 <script>
 

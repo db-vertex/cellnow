@@ -631,6 +631,10 @@ padding-top:10px;
  #left_urgent_button{
      display:none;
  }
+
+ div.word {
+  word-wrap: break-word;
+}
 </style>
   </head>
   <body>

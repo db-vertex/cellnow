@@ -142,7 +142,7 @@ input[type=number] {
                 <div class="card  border p-4">
 <article class="card-body">
 
-<a href="<?php echo base_url();?>welcome/login" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign in</a>
+<h6  class="float-right card-title mb-4 mt-1">Have an account ? <br><a  style="color:#13C571;" href="<?php echo base_url();?>welcome/login"> Sign in</a></h6>
 <p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
 <h2 class="card-title mb-4 mt-1">Forgot Password</h2>
 	 <form action="<?php echo base_url();?>welcome/forgotpassword" method="post">

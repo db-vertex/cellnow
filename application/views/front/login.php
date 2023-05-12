@@ -142,7 +142,7 @@ input[type=number] {
                 <div class="card  border p-4">
 <article class="card-body">
 
-<a href="<?php echo base_url();?>welcome/signup" style="color:#13C571;" class="float-right card-title mb-4 mt-1">Sign up</a>
+<h6  class="float-right card-title mb-4 mt-1">No account ? <br><a  style="color:#13C571;" href="<?php echo base_url();?>welcome/signup"> Sign up</a></h6>
 <p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;"><b>Celnow</b> </a></p>
 <h2 class="card-title mb-4 mt-1">Login</h2>
 	 <form action="<?php echo base_url();?>welcome/login" method="post">
@@ -186,7 +186,7 @@ input[type=number] {
         <input name="password" class="form-control" placeholder="Password" type="password" style="border-radius:30px; border-color:#13C571">
         <span style="color:red;"> <?php echo form_error('password'); ?></span>
     </div> <!-- form-group// -->
-    <center> <a style="color:#13C571" href="<?php echo base_url();?>welcome/forgotpassword">Forget Password</a></center>
+    <center> <a style="color:#13C571" href="<?php echo base_url();?>welcome/forgotpassword">Forget Password?</a></center>
 
     
     <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;" name="submit"  type="submit">Login</button>

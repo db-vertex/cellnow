@@ -187,7 +187,7 @@ class Welcome extends CI_Controller {
 			$this->form_validation->set_rules('name',' name','required');
 			$this->form_validation->set_rules('phone',' phone','required|min_length[10]|max_length[10]|is_unique[users.phone]');
            $this->form_validation->set_rules('password',' password','required|min_length[6]');
-		   $this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
+		   $this->form_validation->set_rules('confirmpassword',' confirm password','required|matches[password]');
             $this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
             if ($this->form_validation->run('login') == FALSE)
             {
@@ -386,7 +386,7 @@ class Welcome extends CI_Controller {
 	{
 		$this->form_validation->set_rules('otp','otp','required');
 		$this->form_validation->set_rules('password',' password','required|min_length[6]');
-		$this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
+		$this->form_validation->set_rules('confirmpassword',' confirm password','required|matches[password]');
 		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
 		if($this->form_validation->run())
 	      {
@@ -437,9 +437,9 @@ class Welcome extends CI_Controller {
 		//$myproduct = $this->product_model->myproduct($session_id);
 
 		 $user_detail = $this->user->loginuser($session_id);
-		$this->form_validation->set_rules('oldpassword','otp','required');
+		$this->form_validation->set_rules('oldpassword','old password','required');
 		$this->form_validation->set_rules('password',' password','required|min_length[6]');
-		$this->form_validation->set_rules('confirmpassword',' confirmpassword','required|matches[password]');
+		$this->form_validation->set_rules('confirmpassword',' confirm password','required|matches[password]');
 		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
 		if($this->form_validation->run())
 	      {
@@ -791,7 +791,7 @@ class Welcome extends CI_Controller {
 
                      $this->db->update("users", ["profile_img"=>$filename], "user_id=$user_id");
                      
-                     return redirect('welcome/myprofile');
+                     return redirect('welcome/buyerprofile');
                     }
                   }
     }

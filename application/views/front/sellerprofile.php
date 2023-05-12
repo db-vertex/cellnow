@@ -97,7 +97,6 @@ html,body
 
                     ?>
     <div class="col-sm-6">
-    <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
      <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 151.9px;
 width: 151.9px; border-color:#10B981;">
@@ -118,7 +117,7 @@ width: 151.9px; border-color:#10B981;">
     <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8"> 
       
       <h2 class="pl-5"><b>About us</b></h2>
-      <h6 class="pl-5"><?php echo $profile->aboutus; ?></h6>
+      <div class="pl-5 pr-5 word"><?php echo $profile->aboutus; ?></div>
 
     
     </div> 
@@ -249,7 +248,7 @@ width: 151.9px; border-color:#10B981;">
               </div>
           </div>
           <div class=" input-container my-3 px-3">
-        
+       
               <textarea  name="aboutus"  class="form-control" id="aboutus" placeholder="About Us" maxlength="100" rows="4" style="border-radius:20px; border-color:#13C571" required><?php echo $profile->aboutus; ?></textarea>
              <div class="invalid-feedback">
                 Valid message is required.
