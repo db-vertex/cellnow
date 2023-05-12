@@ -94,7 +94,6 @@ html,body
     </style>
   </head>
   <body>
-    
 <div class="container">
 <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
@@ -123,7 +122,8 @@ html,body
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-</div><br>
+</div>
+    </div><br>
 
 <div class="container">
     <div class="row">

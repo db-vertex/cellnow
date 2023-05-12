@@ -23,11 +23,12 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-   <!--  <a href="../../index2.html"><b>Admin</b>LTE</a> -->
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-    <p class="login-box-msg">Sign In</p>
+
+    <p class="login-box-msg"><b>Sign In</b></p>
+    <center><img class="btn-change " src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" ></center>
 
 <?php  if($error=$this->session->flashdata('Login_failed')){  ?>
 <div class="row">
