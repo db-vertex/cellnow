@@ -189,7 +189,7 @@
                         </div>
 
                         <?php } ?>
-                        <p><?php echo $otp;?></p>
+                        <p><?php if(isset($otp)){ echo $otp;}?></p>
                                 <div class="form-group mt-2">
                                     <label>Enter Your Otp</label>
                                     <input name="otp" class="form-control" placeholder="Otp" type="text" maxlength="4"

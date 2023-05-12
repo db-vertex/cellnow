@@ -70,3 +70,319 @@
 </div>
 </body>
 </html>
+
+<script>
+        var isAnimating = false;
+
+        function scrollLeftAnimate(elem, unit) {
+
+            if (!elem || isAnimating) {
+                //if element not found / if animating, do not execute slide
+                return;
+            }
+
+            var time = 300; // animation duration in MS, the smaller the faster.
+            var from = elem.scrollLeft; // to continue the frame posistion
+            var aframe =
+                10; //fraction of frame frequency , set 1 for smoothest  ~ set 10++ for lower FPS (reduce CPU usage)
+            isAnimating = true; //if animating prevent double trigger animation
+
+            var start = new Date().getTime(),
+                timer = setInterval(function () {
+                    var step = Math.min(1, (new Date().getTime() - start) / time);
+                    elem.scrollLeft = ((step * unit) + from);
+                    if (step === 1) {
+                        clearInterval(timer);
+                        isAnimating = false;
+                    }
+                }, aframe);
+        }
+
+           function initDealCarrousel(dealCarrouselID) {
+            var target = document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox");
+            var cardOutterWidth;
+            var maxCarrouselScroll;
+            
+           
+
+            function updateUpaCarrouselInfo() {
+                cardOutterWidth = document.querySelector("#" + dealCarrouselID + " .va-card").offsetWidth; //you can define how far the scroll
+                maxCarrouselScroll = (document.querySelectorAll("#" + dealCarrouselID + " .va-card").length *
+                        cardOutterWidth) - document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox")
+                    .clientWidth;
+            }
+             updateUpaCarrouselInfo();
+        
+            if(maxCarrouselScroll < 0 ){
+                  document.getElementById("right_sponser_button").style.display = "none";
+            }
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-left").addEventListener("click",
+                function () {
+                    updateUpaCarrouselInfo(); //in case window resized, will get new info
+                    if (target.scrollLeft > 0) {
+                         
+                        scrollLeftAnimate(target, -cardOutterWidth * 2);
+                         document.getElementById("right_sponser_button").style.display = "block";
+                    }
+                    else{
+                      
+                        document.getElementById("left_sponser_button").style.display = "none"; 
+                    }
+                }
+            );
+
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-right").addEventListener("click",
+                function () {
+                    updateUpaCarrouselInfo(); //in case window resized, will get new info 
+                    if (target.scrollLeft < maxCarrouselScroll) {
+                         
+                        scrollLeftAnimate(target, cardOutterWidth * 2);
+                        document.getElementById("left_sponser_button").style.display = "block"; 
+                    }
+                    else{
+                       
+                     document.getElementById("right_sponser_button").style.display = "none";
+                    }
+                }
+            );
+        } 
+          
+              initDealCarrousel('va_container');
+        
+</script>
+<script>
+         var isAnimating = false;
+
+        function scrollLeftAnimate(elem, unit) {
+
+            if (!elem || isAnimating) {
+                //if element not found / if animating, do not execute slide
+                return;
+            }
+
+            var time = 300; // animation duration in MS, the smaller the faster.
+            var from = elem.scrollLeft; // to continue the frame posistion
+            var aframe =
+                10; //fraction of frame frequency , set 1 for smoothest  ~ set 10++ for lower FPS (reduce CPU usage)
+            isAnimating = true; //if animating prevent double trigger animation
+
+            var start = new Date().getTime(),
+                timer = setInterval(function () {
+                    var step = Math.min(1, (new Date().getTime() - start) / time);
+                    elem.scrollLeft = ((step * unit) + from);
+                    if (step === 1) {
+                        clearInterval(timer);
+                        isAnimating = false;
+                    }
+                }, aframe);
+        }
+        
+          function initDealCarrousel_urgent(dealCarrouselID) {
+            var target = document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_urgent");
+            var cardOutterWidth;
+            var maxCarrouselScroll;
+
+            function updateUpaCarrouselInfo() {
+                cardOutterWidth = document.querySelector("#" + dealCarrouselID + " .va-card").offsetWidth; //you can define how far the scroll
+                maxCarrouselScroll = (document.querySelectorAll("#" + dealCarrouselID + " .va-card").length *
+                        cardOutterWidth) - document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_urgent")
+                    .clientWidth;
+                     
+            }
+            updateUpaCarrouselInfo();
+        
+            if(maxCarrouselScroll < 0 ){
+                  document.getElementById("right_urgent_button").style.display = "none";
+            }
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-left_urgent").addEventListener("click",
+                function () {
+                    updateUpaCarrouselInfo(); //in case window resized, will get new info
+                    if (target.scrollLeft > 0) {
+                      
+                        scrollLeftAnimate(target, -cardOutterWidth * 2);
+                          document.getElementById("right_urgent_button").style.display = "block";
+                    }
+                    else{
+                          document.getElementById("left_urgent_button").style.display = "none";
+                    }
+                }
+            );
+       
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-right_urgent").addEventListener("click",
+                function () {
+                    updateUpaCarrouselInfo(); //in case window resized, will get new info 
+                    if (target.scrollLeft < maxCarrouselScroll) {
+                       
+                        scrollLeftAnimate(target, cardOutterWidth * 2);
+                         document.getElementById("left_urgent_button").style.display = "block"; 
+                    }
+                    else{
+                         document.getElementById("right_urgent_button").style.display = "none"; 
+                    }
+                }
+            );
+        }
+      
+          initDealCarrousel_urgent('va_container_urgent');
+</script>
+<script>
+     var isAnimating = false;
+
+      function scrollLeftAnimate(elem, unit) {
+
+            if (!elem || isAnimating) {
+                //if element not found / if animating, do not execute slide
+                return;
+            }
+
+            var time = 300; // animation duration in MS, the smaller the faster.
+            var from = elem.scrollLeft; // to continue the frame posistion
+            var aframe =
+                10; //fraction of frame frequency , set 1 for smoothest  ~ set 10++ for lower FPS (reduce CPU usage)
+            isAnimating = true; //if animating prevent double trigger animation
+
+            var start = new Date().getTime(),
+                timer = setInterval(function () {
+                    var step = Math.min(1, (new Date().getTime() - start) / time);
+                    elem.scrollLeft = ((step * unit) + from);
+                    if (step === 1) {
+                        clearInterval(timer);
+                        isAnimating = false;
+                    }
+                }, aframe);
+        }
+           
+           
+    function initDealCarrousel_most_view(dealCarrouselID) {
+            var target = document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_most");
+            var cardOutterWidth;
+            var maxCarrouselScroll;
+
+            function updateUpaCarrouselInfo() {
+                cardOutterWidth = document.querySelector("#" + dealCarrouselID + " .va-card").offsetWidth; //you can define how far the scroll
+                maxCarrouselScroll = (document.querySelectorAll("#" + dealCarrouselID + " .va-card").length *
+                        cardOutterWidth) - document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_most")
+                    .clientWidth;
+            }
+           updateUpaCarrouselInfo();
+        
+            if(maxCarrouselScroll < 0 ){
+                  document.getElementById("right_view_button").style.display = "none";
+            }
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-left_most_view").addEventListener("click",
+                function () {
+                    updateUpaCarrouselInfo(); //in case window resized, will get new info
+                    if (target.scrollLeft > 0) {
+                        scrollLeftAnimate(target, -cardOutterWidth * 2);
+                         document.getElementById("right_view_button").style.display = "block";
+                    }
+                    else{
+                        document.getElementById("left_view_button").style.display = "none"; 
+                    }
+                }
+            );
+
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-right_most_view").addEventListener("click",
+                function () {
+                    updateUpaCarrouselInfo(); //in case window resized, will get new info 
+                    if (target.scrollLeft < maxCarrouselScroll) {
+                        scrollLeftAnimate(target, cardOutterWidth * 2);
+                        document.getElementById("left_view_button").style.display = "block"; 
+                    }
+                    else{
+                     document.getElementById("right_view_button").style.display = "none";
+                    }
+                }
+            );
+        }
+      
+    initDealCarrousel_most_view('va_container_most_view');
+</script>
+<script>
+         var isAnimating = false;
+
+        function scrollLeftAnimate(elem, unit) {
+
+            if (!elem || isAnimating) {
+                //if element not found / if animating, do not execute slide
+                return;
+            }
+
+            var time = 300; // animation duration in MS, the smaller the faster.
+            var from = elem.scrollLeft; // to continue the frame posistion
+            var aframe =
+                10; //fraction of frame frequency , set 1 for smoothest  ~ set 10++ for lower FPS (reduce CPU usage)
+            isAnimating = true; //if animating prevent double trigger animation
+
+            var start = new Date().getTime(),
+                timer = setInterval(function () {
+                    var step = Math.min(1, (new Date().getTime() - start) / time);
+                    elem.scrollLeft = ((step * unit) + from);
+                    if (step === 1) {
+                        clearInterval(timer);
+                        isAnimating = false;
+                    }
+                }, aframe);
+        }
+           
+
+           
+          function initDealCarrousel_Popular(dealCarrouselID) {
+            var target = document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_Popular");
+            var cardOutterWidth;
+            var maxCarrouselScroll;
+
+            function updateUpaCarrouselInfo() {
+                cardOutterWidth = document.querySelector("#" + dealCarrouselID + " .va-card").offsetWidth; //you can define how far the scroll
+                maxCarrouselScroll = (document.querySelectorAll("#" + dealCarrouselID + " .va-card").length *
+                        cardOutterWidth) - document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_Popular")
+                    .clientWidth;
+            }
+            if(maxCarrouselScroll < 0 ){
+            document.getElementById("right_view_button").style.display = "none";
+            }
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-left_Popular").addEventListener("click",
+                function () {
+                    updateUpaCarrouselInfo(); //in case window resized, will get new info
+                    if (target.scrollLeft > 0) {
+                        scrollLeftAnimate(target, -cardOutterWidth * 2);
+                    }
+                }
+            );
+
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-right_Popular").addEventListener("click",
+                function () {
+                    updateUpaCarrouselInfo(); //in case window resized, will get new info 
+                    if (target.scrollLeft < maxCarrouselScroll) {
+                        scrollLeftAnimate(target, cardOutterWidth * 2);
+                        
+                    }
+                }
+            );
+        }
+      
+           initDealCarrousel_Popular('va_container_Popular');
+        
+</script>
+
+<script>
+  $(".cut-list").cutList({
+  moreBtnTitle: '<img class="mt-1 text-muted  img-fluid bd-placeholder-img img-circle" width="25" height="25"src="<?php echo base_url();?>assets/images/more.png"> <span class="my-auto">More Category</span></div>',
+  showMoreOnHover: true,
+  risezeDelay: 100
+});
+</script>
+<script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-36251023-1']);
+  _gaq.push(['_setDomainName', 'jqueryscript.net']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+</script>

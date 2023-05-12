@@ -214,7 +214,7 @@ padding-top:10px;
         border-radius: 0.575rem;
         background-color: #fff;
         overflow: hidden;
-        border: 1px solid #C5DC49;
+      
         border-radius: 8px;
         text-align: left;
         min-height: 246px;
@@ -244,7 +244,7 @@ padding-top:10px;
       }
       #va_container {
           position: relative;
-          max-width: 1140px;
+         
           margin: auto;
       }
         #va_container_urgent {
@@ -255,7 +255,7 @@ padding-top:10px;
       
         #va_container_most_view{
           position: relative;
-          max-width: 1140px;
+          /* max-width: 1140px; */
           margin: auto;
       }
          #va_container_Popular{
@@ -265,11 +265,11 @@ padding-top:10px;
       }
   
       .va-thumbnail {
-          border-radius: 5px;
+          border-radius: 20px;
           border: 0px;
           width: 100%;
-          max-height:150px;
-          min-height: 145px;
+          max-height:300px;
+          min-height: 280px;
       }
         .va-thumbnail_category {
           border-radius: 5px;
@@ -278,10 +278,10 @@ padding-top:10px;
           max-height:150px;
          
       }
-       .va-thumbnail:hover{
+       /* .va-thumbnail:hover{
       -webkit-transform: scale(1.1);
 	transform: scale(1.1);
-       }
+       } */
     
   
       .va-carrousel-flexbox {
@@ -329,7 +329,7 @@ padding-top:10px;
   
       .va-carrousel-flexbox_most .va-card {
           flex: 0 0 auto;
-          padding-left: 15px;
+          padding-left: 25px;
       }
   
       .va-carrousel-flexbox_most .va-card:last-child {
@@ -364,7 +364,7 @@ padding-top:10px;
   
       .va-carrousel-flexbox_urgent .va-card {
           flex: 0 0 auto;
-          padding-left: 15px;
+          padding-left: 25px;
       }
   
       .va-carrousel-flexbox_urgent .va-card:last-child {
@@ -400,7 +400,7 @@ padding-top:10px;
   
       .va-carrousel-flexbox_Popular .va-card {
           flex: 0 0 auto;
-          padding-left: 15px;
+          padding-left: 20px;
       }
   
       .va-carrousel-flexbox_Popular .va-card:last-child {
@@ -435,7 +435,7 @@ padding-top:10px;
           cursor: pointer;
           user-select: none;
           outline: none;
-          width: 170px;
+          width: 315px;
       }
       .va-card:hover {
           user-select: none;
@@ -632,7 +632,7 @@ padding-top:10px;
      display:none;
  }
 
- img.rounded-corners {
+  img.rounded-corners {
   border-radius: 50%;
 }
 

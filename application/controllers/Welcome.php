@@ -71,7 +71,7 @@ class Welcome extends CI_Controller {
 				  if($password == $udata->password){
 				
 					if($udata->otp_verify == 0){
-echo "hii";
+
 						$size = 4;
 						$alpha_key = '';
 						$keys = range('0', '9');
@@ -534,7 +534,7 @@ echo "hii";
             $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
             $this->output->set_header('Pragma: no-cache');
 	         $this->load->view('front/header',['success'=>true]);
-           $this->load->view('front/otp',['otp'=>$login_id->OTP]);
+           $this->load->view('front/otp');
 			 $this->load->view('front/footer');
 	       }
 	      }
