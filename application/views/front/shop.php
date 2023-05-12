@@ -111,9 +111,9 @@
           <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>" class="img-fluid rounded-corners mx-auto d-block" style="height: 151.9px;
 width: 151.9px;">
           <div style="text-align:center">
-            <h3><b>
+            <h5><b>
                 <?php echo ucfirst($profile->name); ?>
-              </b></h3>
+              </b></h5>
             <?php echo ucfirst($profile->Address); ?>
 
           </div>
@@ -123,9 +123,9 @@ width: 151.9px;">
             <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
             </p>
             <?php  if(!empty($shop)){?>
-            <p><?php if(!empty($shop->shop_images)){?>
-              <img  style="height: 171.9px;
-width: 171.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
+            <p class="pt-5"><?php if(!empty($shop->shop_images)){?>
+              <img class="rounded-4 " style="height: 161.9px;
+width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
             <?php }else{?><img  src="<?php echo base_url()?>assets/images/shop1.png">
               <?php } }?></p>
           </div><br>
@@ -151,7 +151,7 @@ width: 171.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               <div class="col" >
              <div class="row">
              <div class="col">
-                <h5 class="ml-3"><?php echo ucfirst($shop->name);?> </h5> </div><div class="col"><?php if($shop->admin_approval==2){?>
+                <h5 class="ml-3"><b><?php echo ucfirst($shop->name);?> </b></h5> </div><div class="col"><?php if($shop->admin_approval==2){?>
                   <div>
     <a class="btn "id="b" style="align-self:center; background-color:#FF7474; color:#540C07" >Rejected by admin </a>
     </div><?php }else if($shop->admin_approval==1){?> <div>
@@ -173,7 +173,7 @@ width: 171.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               <?php if($shop->admin_approval!=1 && $shop->admin_approval!=0){?>
               <div class="row text-center p-5">
       <div>
-    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="a" style="align-self:center; background-color:#13C571; color:#fff" >Edit </a>
+    <a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn btn-change" id="a" style="align-self:center; background-color:#13C571; color:#fff" >Edit </a>
     </div>
     </div>
    

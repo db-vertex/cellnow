@@ -184,9 +184,10 @@
                         </div>
 
                         <?php } ?>
+                        <p><?php echo $otp; ?></p>
                                 <div class="form-group mt-2">
                                     <label>Enter Otp</label>
-                                    <input name="otp" class="form-control" placeholder="otp" type="text"
+                                    <input name="otp" class="form-control" placeholder="otp" type="text" maxlength="4"
                                         style="border-radius:30px; border-color:#13C571">
                                 </div> <!-- form-group// -->
                                
@@ -194,14 +195,14 @@
                                 <div class="form-group">
 
                                     <label>New password</label>
-                                    <input name="password" class="form-control" placeholder="******" type="password"
+                                    <input name="password" class="form-control" placeholder="******" type="password" maxlength="20"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('password'); ?></span>
                                 </div> <!-- form-group// -->
                                 <div class="form-group">
 
                                     <label> Confirm password</label>
-                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password"
+                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password" maxlength="20"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('confirmpassword'); ?></span>
                                 </div> <!-- form-group// -->

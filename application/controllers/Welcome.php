@@ -271,34 +271,36 @@ class Welcome extends CI_Controller {
               $alpha_key .= $keys[array_rand($keys)];
             }
             $randCode = $alpha_key;
-            $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-            $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+            // $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+            // $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
 
-            $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+            // $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
 
-            $numbers = array($phone);
-            $sender = urlencode('UPAHAD');
-            $message = rawurlencode($messages);
+            // $numbers = array($phone);
+            // $sender = urlencode('UPAHAD');
+            // $message = rawurlencode($messages);
 
-            $numbers = implode(',', $numbers);
+            // $numbers = implode(',', $numbers);
 
-            $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+            // $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-            // Send the POST request with cURL
-            $ch = curl_init('https://api.textlocal.in/send/');
-            curl_setopt($ch, CURLOPT_POST, true);
-            curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-            curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-            $response = curl_exec($ch);
-            //print_r($response);
+            // // Send the POST request with cURL
+            // $ch = curl_init('https://api.textlocal.in/send/');
+            // curl_setopt($ch, CURLOPT_POST, true);
+            // curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+            // curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+            // $response = curl_exec($ch);
+            // //print_r($response);
 
-            curl_close($ch);
+            // curl_close($ch);
 
 			$userData['phone'] = $phone;
 			$userData['OTP'] = $randCode;
 			
 			$update = $this->user->update($userData, $udata->user_id);
-			return redirect('welcome/forgotpasswordotp');
+			$this->load->view('front/header', ['success' => true]);
+				$this->load->view('front/forgotpasswordotp', ['success' => true,'otp'=>$randCode]);
+				$this->load->view('front/footer');
 		}else{
 			$this->session->set_flashdata('Login_failed', 'This number is not register');
 				$this->session->set_flashdata('msg_class', 'alert-danger');
@@ -529,7 +531,7 @@ class Welcome extends CI_Controller {
             $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
             $this->output->set_header('Pragma: no-cache');
 	         $this->load->view('front/header',['success'=>true]);
-           $this->load->view('front/otp');
+           $this->load->view('front/otp',['otp'=>$login_id->OTP]);
 			 $this->load->view('front/footer');
 	       }
 	      }

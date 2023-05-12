@@ -150,7 +150,7 @@
                             <form action="<?php echo base_url()?>welcome/signup" method="post">
                                 <div class="form-group ">
                                     <label>Enter Your Email</label>
-                                    <input name="email" class="form-control" placeholder="Email" type="text" value="<?php echo set_value('email'); ?>"
+                                    <input name="email" class="form-control" placeholder="Email" type="text" maxlength="40" value="<?php echo set_value('email'); ?>"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php echo form_error('email'); ?></span>
                                 </div> <!-- form-group// -->
@@ -158,7 +158,7 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label> Fullname</label>
-                                            <input name="name" class="form-control" placeholder="Name" type="text" value="<?php echo set_value('name'); ?>"
+                                            <input name="name" class="form-control" placeholder="Name" type="text" maxlength="30" value="<?php echo set_value('name'); ?>"
                                                 style="border-radius:30px; border-color:#13C571">
                                                 <span style="color:red;"> <?php echo form_error('name'); ?></span>
                                             
@@ -178,14 +178,14 @@
                                 <div class="form-group">
 
                                     <label> Password</label>
-                                    <input name="password" class="form-control" placeholder="******" type="password" value="<?php echo set_value('password'); ?>"
+                                    <input name="password" class="form-control" placeholder="******" type="password" maxlength="20" value="<?php echo set_value('password'); ?>"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('password'); ?></span>
                                 </div> <!-- form-group// -->
                                 <div class="form-group">
 
                                     <label> Confirm Password</label>
-                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password" value="<?php echo set_value('confirmpassword'); ?>"
+                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password" maxlength="20" value="<?php echo set_value('confirmpassword'); ?>"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"> <?php echo form_error('confirmpassword'); ?></span>
                                 </div> <!-- form-group// -->

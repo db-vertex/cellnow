@@ -192,7 +192,7 @@
                         <p><?php echo $otp;?></p>
                                 <div class="form-group mt-2">
                                     <label>Enter Your Otp</label>
-                                    <input name="otp" class="form-control" placeholder="Otp" type="text"
+                                    <input name="otp" class="form-control" placeholder="Otp" type="text" maxlength="4"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php echo form_error('otp'); ?></span>
                                 </div> <!-- form-group// -->

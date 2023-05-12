@@ -100,7 +100,7 @@ html,body
 
      <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 151.9px;
 width: 151.9px; border-color:#10B981;">
-     <div style="text-align:center"><h3><b ><?php echo ucfirst($profile->name); ?></b></h3>
+     <div style="text-align:center"><h5><b ><?php echo ucfirst($profile->name); ?></b></h5>
      <?php echo ucfirst($profile->Address); ?>
      
     </div>

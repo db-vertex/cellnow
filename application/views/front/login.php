@@ -178,12 +178,12 @@ input[type=number] {
                         <?php } ?>
     <div class="form-group mt-5">
     	<label>Enter Your Mobile</label>
-        <input name="phone" class="form-control" placeholder="Mobile" type="number" style="border-radius:30px; border-color:#13C571">
+        <input name="phone" class="form-control" placeholder="Mobile" type="number" maxlength="10" style="border-radius:30px; border-color:#13C571">
         <span style="color:red;"> <?php echo form_error('phone'); ?></span>
     </div>
     <div class="form-group">
     	<label>Enter Your Password</label>
-        <input name="password" class="form-control" placeholder="Password" type="password" style="border-radius:30px; border-color:#13C571">
+        <input name="password" class="form-control" placeholder="Password" type="password" maxlength="20" style="border-radius:30px; border-color:#13C571">
         <span style="color:red;"> <?php echo form_error('password'); ?></span>
     </div> <!-- form-group// -->
     <center> <a style="color:#13C571" href="<?php echo base_url();?>welcome/forgotpassword">Forget Password?</a></center>

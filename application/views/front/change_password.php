@@ -146,7 +146,7 @@
                         <article class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <p>Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
+                                    <p>Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;"><b>Celnow </b></a></p>
                                     <h2 class="card-title mb-3 ">Change Password</h2>
 
                                 </div>
@@ -186,7 +186,7 @@
                         <?php } ?>
                                 <div class="form-group mt-2">
                                     <label>Enter Old Password</label>
-                                    <input name="oldpassword" class="form-control" placeholder="Old password" type="password"
+                                    <input name="oldpassword" class="form-control" placeholder="Old password" type="password" maxlength="20"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('oldpassword'); ?></span>
 
@@ -196,14 +196,14 @@
                                 <div class="form-group">
 
                                     <label>New Password</label>
-                                    <input name="password" class="form-control" placeholder="******" type="password"
+                                    <input name="password" class="form-control" placeholder="******" type="password" maxlength="20"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('password'); ?></span>
                                 </div> <!-- form-group// -->
                                 <div class="form-group">
 
                                     <label> Confirm Password</label>
-                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password"
+                                    <input name="confirmpassword" class="form-control" placeholder="******" type="password" maxlength="20"
                                         style="border-radius:30px; border-color:#13C571">
                                         <span style="color:red;"><?php  echo form_error('confirmpassword'); ?></span>
                                 </div> <!-- form-group// -->

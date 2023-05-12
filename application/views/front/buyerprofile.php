@@ -181,7 +181,7 @@ width: 151.9px;">
                         <input type="hidden" name="profile_id" value="<?php echo $profile->user_id; ?>">
              <div class=" input-container my-3 px-3">
             
-            <input name="name" type="text" class="form-control pl-5  text-dark Name" id="firstName"  value="<?php echo $profile->name; ?>" placeholder="Name" maxlength="20" style="border-radius:30px; border-color:#13C571" required>
+            <input name="name" type="text" class="form-control pl-5  text-dark Name" id="firstName"  value="<?php echo $profile->name; ?>" placeholder="Name" maxlength="40" style="border-radius:30px; border-color:#13C571" required>
               <div class="invalid-feedback">
                 Valid name is required.
               </div>
