@@ -94,6 +94,7 @@ html,body
     </style>
   </head>
   <body>
+  <div class="container-fluid" style="background-image: linear-gradient(to bottom right, #6ad3b0 ,white ,#f5f5f5, #f5f5f5);"> 
 <div class="container">
 <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
