@@ -71,7 +71,7 @@ class Welcome extends CI_Controller {
 				  if($password == $udata->password){
 				
 					if($udata->otp_verify == 0){
-
+echo "hii";
 						$size = 4;
 						$alpha_key = '';
 						$keys = range('0', '9');
@@ -117,6 +117,8 @@ class Welcome extends CI_Controller {
 						$this->load->view('front/footer');
 		
 				  }
+				  else{
+				
 				  $length = 50;
 				  $chars = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
 				  $count = mb_strlen($chars);
@@ -133,6 +135,7 @@ class Welcome extends CI_Controller {
 				  $this->session->set_userdata('id',$udata->user_id);
 				return redirect('welcome');
 				}
+			}
 				else{
 					$this->session->set_flashdata('Login_failed', 'Password wrong');
 				$this->session->set_flashdata('msg_class', 'alert-danger');
@@ -299,7 +302,7 @@ class Welcome extends CI_Controller {
 			
 			$update = $this->user->update($userData, $udata->user_id);
 			$this->load->view('front/header', ['success' => true]);
-				$this->load->view('front/forgotpasswordotp', ['success' => true,'otp'=>$randCode]);
+				$this->load->view('front/changepassword', ['success' => true,'otp'=>$randCode]);
 				$this->load->view('front/footer');
 		}else{
 			$this->session->set_flashdata('Login_failed', 'This number is not register');

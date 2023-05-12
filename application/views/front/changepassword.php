@@ -138,7 +138,7 @@
             <div class="row " style="min-height:90%;">
                 <div class="col-md-7 col-sm-12 ps-0">
                     <div class="h-100 p-5 ">
-                        <img class="img-fluid" src="../assets/images/otp.png">
+                        <img class="img-fluid" src="<?php echo base_url();?>assets/images/otp.png">
                     </div>
                 </div>
                 <div class="col-md-5 col-sm-12 pe-0">

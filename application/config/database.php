@@ -84,7 +84,7 @@ $db['default'] = array(
 	'username' => 'admin_dbvertex',
 	'password' => '123456',
 	'database' => 'Celnow',
-	 'dbdriver' => 'mysqli',
+	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
 	'pconnect' => FALSE,
 	'db_debug' => (ENVIRONMENT !== 'production'),
