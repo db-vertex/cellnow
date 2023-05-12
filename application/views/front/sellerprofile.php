@@ -98,8 +98,8 @@ html,body
                     ?>
     <div class="col-sm-6">
 
-     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 151.9px;
-width: 151.9px; border-color:#10B981;">
+     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
+width: 131.9px; border-color:#10B981;">
      <div style="text-align:center"><h5><b ><?php echo ucfirst($profile->name); ?></b></h5>
      <?php echo ucfirst($profile->Address); ?>
      
@@ -117,7 +117,7 @@ width: 151.9px; border-color:#10B981;">
     <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8"> 
       
       <h2 class="pl-5"><b>About us</b></h2>
-      <div class="pl-5 pr-5 word"><?php echo $profile->aboutus; ?></div>
+      <p class="pl-5 pr-5 word"><?php echo $profile->aboutus; ?></p>
 
     
     </div> 

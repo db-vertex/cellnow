@@ -108,8 +108,8 @@
         ?>
         <div class="col-sm-6">
 
-          <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>" class="img-fluid rounded-corners mx-auto d-block" style="height: 151.9px;
-width: 151.9px;">
+          <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>" class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
+width: 131.9px;">
           <div style="text-align:center">
             <h5><b>
                 <?php echo ucfirst($profile->name); ?>
@@ -123,7 +123,7 @@ width: 151.9px;">
             <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
             </p>
             <?php  if(!empty($shop)){?>
-            <p class="pt-5"><?php if(!empty($shop->shop_images)){?>
+            <p class="pt-3"><?php if(!empty($shop->shop_images)){?>
               <img class="rounded-4 " style="height: 161.9px;
 width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
             <?php }else{?><img  src="<?php echo base_url()?>assets/images/shop1.png">
@@ -161,13 +161,13 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
     <a class="btn "id="b" style="align-self:center; background-color:#FF7474; color:#540C07" >Pending </a>
     </div><?php } ?>
             </div> </div>
-            <p class="ml-3"><?php echo $shop->email;?></p>
-                <div class="ml-3 word"><?php echo $shop->description;?></div>
+           
+                <p class="mt-3 ml-3 word"><?php echo $shop->description;?></p>
                 <p class="ml-3"><?php echo $shop->Address;?></p>
                 <p class="ml-3"><?php echo $shop->mobile;?></p>
                 <p class="ml-3 mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
                
-                <p class="ml-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
+                <p class="mt-3 ml-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
                 <p class="ml-3"><b>Type of service: </b><?php echo $shop->service_type;?></p>
               </div>
               <?php if($shop->admin_approval!=1 && $shop->admin_approval!=0){?>

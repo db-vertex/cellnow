@@ -632,7 +632,11 @@ padding-top:10px;
      display:none;
  }
 
- div.word {
+ img.rounded-corners {
+  border-radius: 50%;
+}
+
+ p.word {
   word-wrap: break-word;
 }
 </style>
@@ -701,7 +705,7 @@ padding-top:10px;
             <img class="img-fluid rounded-corners mx-auto d-block" style="height: 40.9px;
 width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"> </li>
     <li class="nav-item">
-   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;">
+   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size:13px;color:#10B981;font-weight:600;">
    <?php echo ucfirst($profile->name);?> 
           </a>
    <ul class="dropdown-menu" style="margin-left:80%;margin-top: -30px;">

@@ -40,7 +40,7 @@ input[type=number] {
 <div class="row align-items-center justify-content-center">
    <div class="col-lg-6 col-xs-6">
       <div class="form-group">
-        <label for="Title">Banner Image :</label>
+        <label for="Title">Banner Image : size(490 X 230 px )</label>
         <!-- <img src=""> -->
         <input type="file" name="banner_image" id="banner_image">
         <!-- <input type="text" class="form-control" id="agent_name" name="agent_name"  placeholder="Agent Name" maxlength="15"> -->

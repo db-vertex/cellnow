@@ -99,8 +99,8 @@ img.rounded-corners {
   <div class="col-sm-6">
   <a href="" data-toggle="modal" data-target="#createModal"><img class="btn-change" src="<?php echo base_url(); ?>/assets/images/Group 451.png"   style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
-   <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 151.9px;
-width: 151.9px;">
+   <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
+width: 131.9px;">
    <div style="text-align:center"><h5><b ><?php echo ucfirst($profile->name); ?></b></h5>
    <?php echo ucfirst($profile->Address); ?>
    
@@ -118,7 +118,7 @@ width: 151.9px;">
   <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8"> 
     
     <h2 class="pl-5"><b>About us</b></h2>
-    <div class="pl-5 pr-5 word"><?php echo ucfirst($profile->aboutus); ?></div>
+    <p class="pl-5 pr-5 word"><?php echo ucfirst($profile->aboutus); ?></p>
 
     <div class="row text-center p-5">
     <div>
@@ -181,7 +181,7 @@ width: 151.9px;">
                         <input type="hidden" name="profile_id" value="<?php echo $profile->user_id; ?>">
              <div class=" input-container my-3 px-3">
             
-            <input name="name" type="text" class="form-control pl-5  text-dark Name" id="firstName"  value="<?php echo $profile->name; ?>" placeholder="Name" maxlength="40" style="border-radius:30px; border-color:#13C571" required>
+            <input name="name" type="text" class="form-control pl-5  text-dark Name" id="firstName"  value="<?php echo $profile->name; ?>" placeholder="Name" maxlength="30" style="border-radius:30px; border-color:#13C571" required>
               <div class="invalid-feedback">
                 Valid name is required.
               </div>

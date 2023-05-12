@@ -104,7 +104,7 @@ html,body
       foreach ($all_banner as $key => $banner) {
         ?>  
     <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-      <img class="d-block w-100" src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide">
+      <img  class="d-block w-100" src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide">
     </div>
     <?php
 
