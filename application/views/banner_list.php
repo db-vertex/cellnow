@@ -68,7 +68,7 @@ $i=1;
                 
                 <td style="text-align: center;">
 
-                  <!-- <?php echo  $value->agent_mobile;?> -->
+                
                         
                         <?php if(!empty($value->banner_image)){ ?>
                         <img src="<?php echo base_url().'/uploads/banner/'.$value->banner_image?>" style="height: 50px;width: 53px;">

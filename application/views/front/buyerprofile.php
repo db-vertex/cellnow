@@ -225,7 +225,7 @@ width: 151.9px;">
           <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Edit</button>
 
-            </center>          <hr class="my-2">
+            </center>        
          
         </form>
       </div>

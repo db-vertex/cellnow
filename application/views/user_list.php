@@ -114,14 +114,15 @@ $msg_class=$this->session->flashdata('msg_class')
                 <thead>
                 <tr>
                   <th>S no.</th>
-                  <th>Phone</th>
                   <th>Shopname</th>
+                  <th>Phone</th>
+                  
                   <th>Address</th>
                   <th>Email</th>
                   <th>GST</th>
                   <th>Timeing</th>
                   <th>Service Type</th>
-                 
+                  <th>Description</th>
               
 
                     <th>Registered on</th>
@@ -142,15 +143,28 @@ $i++;
                 <tr id="<?php echo $valued->id; ?>">
 
                 <td><?php echo  $i;?></td>
-                <td><?php echo  $valued->mobile;?></td>
+               
                 <td><?php echo  $valued->name;?></td>
+                <td><?php echo  $valued->mobile;?></td>
                 <td><?php echo  $valued->Address;?></td>
                 <td><?php echo  $valued->email;?></td>
                 <td><?php echo  $valued->GST;?></td>
                 <td><?php echo  $valued->open_close_time;?></td>
 
                 <td><?php echo  $valued->service_type;?></td>
-               
+               <td><?php
+                           $title = $valued->description;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></td>
 
                <td><?=date("d M, Y", strtotime($valued->created_at))?></td>
                <td><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?>"></td>

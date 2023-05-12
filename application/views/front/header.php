@@ -654,10 +654,10 @@ padding-top:10px;
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav m-auto mb-2 mb-lg-0" >
         <li class="nav-item" style="padding-right:20px ";>
-          <a class="nav-link active"  aria-current="page" href="#" id="hover" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">Donate</a>
+          <a class="nav-link active"  aria-current="page" href="#" id="hover" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid; font-size: 13px;">Donate</a>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" href="" id="hover" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
+          <a class="nav-link dropdown-toggle" href="" id="hover" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 13px;color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
             Categories
           </a>
           <ul class="dropdown-menu">
@@ -669,7 +669,7 @@ padding-top:10px;
           </ul>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" id="hover" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
+          <a class="nav-link dropdown-toggle" id="hover" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 13px; color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
             Service Center 
           </a>
           <ul class="dropdown-menu" >
@@ -683,10 +683,10 @@ padding-top:10px;
           </ul>
         </li>
         <li class="nav-item" style="padding-right:20px";>
-          <a class="nav-link" href="<?php echo base_url();?>welcome/shop" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
+          <a class="nav-link" href="<?php echo base_url();?>welcome/shop" style="font-size: 13px;color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
         </li>
         <li class="nav-item" style="padding-right:20px";>
-          <a class="nav-link" href="<?php echo base_url();?>welcome/postproduct" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#d1fae5;">Ad Post</a>
+          <a class="nav-link" href="<?php echo base_url();?>welcome/postproduct" style="font-size: 13px;color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#d1fae5;">Ad Post</a>
         </li>
         
         <!-- <li class="nav-item" hello>

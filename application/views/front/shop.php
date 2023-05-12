@@ -312,7 +312,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
 				        	    
-							    <label>Image </label>
+							    <label>Image size(180 x 190) px</label>
 							    <input type="file" class="form-control" id="cover_image" name="shop_images" style="border-radius:30px; border-color:#13C571" accept="image/*" required>
 							    <span id="cover_err" style="color:red;"></span>
                   <div class="invalid-feedback">
@@ -321,11 +321,12 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 							</div>
              
             <div class="form-group">
+            <div class="form-check form-check-inline">
             <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
             <label>
             Terms and Conditions 
             </label>
-         
+                </div>
           </div>
           <input type="text" class="form-control" name="latitude" id="latitude" hidden/>
          <input type="text" class="form-control" name="longitude" id="longitude" hidden/>
@@ -535,7 +536,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
 				        	    
-                      <label>Image </label>
+                      <label>Image size(180 x 190) px</label>
                       <input type="file" class="form-control" id="cover_image" name="shop_images" style="border-radius:30px; border-color:#13C571" accept="image/*">
                       <span id="cover_err" style="color:red;"></span>
                   </div>
