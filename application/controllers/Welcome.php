@@ -783,7 +783,9 @@ public function setshoplist(){
 	 $data["shop_id"]=$this->input->post("shop_id");
 
     $this->user->saveshoplist($data);
-    echo "success";
+	$cat_id =  $this->input->post('category_id');
+	$pro_id =  $this->input->post('product_id');
+	return redirect('welcome/productdetail/'.$cat_id.'/'.$pro_id);
 }
 
 public function fav_list(){
