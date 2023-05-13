@@ -247,7 +247,7 @@ html,body
                    <?php
                   
             
-                  $product = get_all_reusableproduct();   
+                  $product = get_all_boost();   
                
             
               if(!empty($product)){
@@ -263,6 +263,11 @@ html,body
             
                   <div class="va-card va-cards"> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
                   <p style="min-height:151px; text-align:center;" class="my-auto">
+                  <img class="" 
+                            src="<?php echo base_url(); ?>assets/images/boost.png" style="margin-left:18px;
+    position: absolute;
+    margin-top: 19%;
+    height: 25px;">
                                           <?php if($pro->cover_img !== NULL) { ?> 
                                           <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>">
                             <?php } else { ?>
@@ -313,7 +318,7 @@ html,body
             </button>
             <?php }
               else {?>
-            <center><img  src="<?php echo base_url();?>assets/images/no_product.png"></center>
+            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
         </div>
@@ -404,8 +409,9 @@ html,body
                   if($i > 0){
                ?>  
             
-                  <div class="va-card va-cards"> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->id; ?>" style=""> 
+                  <div class="va-card va-cards"> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>" style=""> 
                   <p style="min-height:151px; text-align:center;" class="my-auto">
+                 
                       <img class="va-thumbnail" 
                             src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>">
                             
@@ -455,7 +461,7 @@ html,body
             </button>
            <?php }
                else {?>
-            <center><img  src="<?php echo base_url();?>assets/images/no_product.png"></center>
+            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
         </div>
          </div>
@@ -516,7 +522,7 @@ html,body
                    <?php
                   
             
-                  $product = get_all_reusableproduct();   
+                  $product = get_all_donate();   
                
             
               if(!empty($product)){
@@ -581,7 +587,7 @@ html,body
             </button>
             <?php }
               else {?>
-            <center><img  src="<?php echo base_url();?>assets/images/no_product.png"></center>
+            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
         </div>

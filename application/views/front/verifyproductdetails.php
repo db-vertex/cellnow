@@ -1,285 +1,897 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-<!-- link for map -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <title>Verify product details</title>
-    <style>
-      #a{
-  
-  border-color: #78d7b8;
-  border-radius: 20px;
-  align-items: center;
-  background-color: white;
 
-  
-}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
-
-#a:visited {
-  color: #78d7b8;
- 
-  
-  
-}
-#a:hover {
-  color: white;
-  background-color: #78d7b8;
-  
-  
-}
-
-
-      /* for hr line  */
-      hr.class-1 {
-        border-top: 2px solid #69d3b0;
-        width: 120px;
-        margin :3px 0px;
+  <!-- link for map -->
+  <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
+  <title>Verify product details</title>
+  <style>
+    html,
+    body {
+      max-width: 100%;
+      overflow-x: hidden;
     }
 
 
-        #b{
- 
- border: 1px solid #78d7b8;
- border-radius: 25px;
- font-size: 12px;
+    #a {
+
+      border-color: #78d7b8;
+      border-radius: 20px;
+      align-items: center;
+      background-color: white;
+
+
+    }
+
+
+    #a:visited {
+      color: black;
+
+
+
+    }
+
+    #a:hover {
+      color: white;
+      background-color: #78d7b8;
+
+
+    }
+
+
+    /* for hr line  */
+    hr.class-1 {
+      border-top: 2px solid #69d3b0;
+      width: 120px;
+      margin: 3px 0px;
+    }
+
+
+    #b {
+
+      border: 1px solid #78d7b8;
+      border-radius: 25px;
+      font-size: 12px;
+      padding: 8px;
+    }
+
+    #b:visited {
+      color: #78d7b8;
+
+      border-color: #78d7b8;
+    }
+
+    #b:hover {
+      color: white;
+      background-color: #78d7b8;
+    }
+
+
+    /* rounded card  */
+
+    /* input::placeholder {
+  font-size: 16px;
+  font-weight: bold;
 }
-#b:visited {
- color: #78d7b8;
- 
- border-color: #78d7b8;
+@media screen and (max-width: 992px) {
+  input::placeholder  {
+     font-size: 12px;
+     font-weight: bold;
+  }
 }
-
-#b:hover {
- color: white;
- background-color: #78d7b8;
+  @media screen and (max-width: 776px) {
+  input::placeholder  {
+     font-size: 10px;
+     font-weight: bold;
+  }
 }
-    </style>
-  </head>
-  <body>
-    <!-- <h1>Hello, world!</h1> -->
-    <?php
-  
-    ?>
+@media screen and (max-width: 560px) {
+  input::placeholder  {
+     font-size: 12px;
+    font-weight: bold;
+  }
+}  */
 
-<div class="container-fluid" style="padding:0px">
-<img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
-</div><br>
 
-<div class="container">
-<div class="row p-2"style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5">
-<div class="col"><small>Homepage/Bike/Hayabusa Suzuki</small></div>
-</div><br>
-</div>
 
-<?php
-           
-           $product_detail = $categories_data;
-            ?>
-<div class="container ">
-  <div class="row ">
-    <div class="col-lg-6 col-sm-6 ">
-    <img src="<?php echo base_url();?>assets/images/bike1.png" class="img-fluid"  alt=" image" > 
-    <div class="row mt-3">
-    <div class="col"><img src="<?php echo base_url();?>assets/images/bike1.png" class="img-fluid" alt=" image" ></div>
-    <div class="col"><img src="<?php echo base_url();?>assets/images/bike1.png" class="img-fluid"  alt=" image" ></div>
-    <div class="col"><img src="<?php echo base_url();?>assets/images/bike1.png" class="img-fluid"  alt=" image" ></div>
-    <div class="col"><img src="<?php echo base_url();?>assets/images/bike1.png" class="img-fluid"  alt=" image" ></div>
-    
+
+    /* verify shop bottom rounded card  */
+
+    @media screen and (max-width: 992px) {
+
+      #c {
+
+        height: 140px;
+
+      }
+
+      @media screen and (max-width: 768px) {
+
+        #c {
+
+          height: 160px;
+
+        }
+
+      }
+
+      @media screen and (max-width: 490px) {
+
+        #c {
+
+          height: 150px;
+
+        }
+
+      }
+
+      @media screen and (max-width: 400px) {
+
+        #c {
+
+          height: 160px;
+
+        }
+
+      }
+    }
+
+    @media screen and (max-width: 315px) {
+
+      #c {
+
+        height: 200px;
+
+      }
+
+    }
+
+
+
+
+
+    /*for rounded card text  */
+
+    @media screen and (max-width: 992px) {
+
+      #d {
+
+        font-size: 12px;
+
+      }
+
+      @media screen and (max-width: 768px) {
+        #d {
+
+          font-size: 18px;
+
+        }
+
+        @media screen and (max-width: 576px) {
+          #d {
+
+            font-size: 13px;
+
+          }
+        }
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <div class="container-fluid" style="padding:0px">
+    <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
+  </div><br>
+
+
+  <div class="container">
+    <div class="row">
+      <div class="col p-2"
+        style="border-radius:18px;background-image: linear-gradient(to right, #77d4b5 ,#77d4b5 ,#d5fdfc, #f5f5f5);">
+        <small style="padding-left:20px">Homepage/Bike/Hayabusa Suzuki</small></div>
     </div>
+  </div><br>
 
-    <div class="row mt-3" style="border:1px solid #69d3b0;margin:3px">
-      
-      
-      <div class="col-3 responsive-font-example p-0"><small style="font-size:15px"><i class="fa fa-calendar" aria-hidden="true" style="color:#69d3b0"></i> 110 Days ago</small></div>
-      <div class="col-3 responsive-font-example p-0"><small style="font-size:15px"><i class="fa fa-eye" aria-hidden="true" style="color:#69d3b0"></i> 507 views</small></div>
-      <div class="col responsive-font-example p-0"><small>200</small></div>
-      <div class="col responsive-font-example p-0"><small style="font-size:15px"><i class="fa fa-share-alt" aria-hidden="true" style="color:#69d3b0 "></i> Share</small></div>
-      <div class="col responsive-font-example p-0"><small style="font-size:15px"><i class="fa fa-exclamation-triangle" aria-hidden="true" style="color:#69d3b0"></i> Report</small></div>
 
-      
-      
-    </div>
+  <!-- again  -->
+  <?php
 
-    <div class="row mt-3">
-    <img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-responsive center-block d-block mx-auto" width="100%" alt="" style="padding:px">
-    </div><br>
-    </div>
-    
-    
-    <div class="col-lg-6 col-sm-6 ">
-     <div class="card" style="padding:30px;border-color:#69d3b0">
-        <div class="row">
-          <div class="col">
-           <b style="font-size:22px"><?php echo $product_detail->title; ?></b>
-          </div><br><br>
-          <div class="col">
-           <b style="font-size:22px; color:#047857;">$<?php echo $product_detail->price; ?></b>
+  $product_detail = $categories_data;
+
+
+
+  $wishlist = 0;
+  if (!empty($user) && isset($user)) {
+    $wishlit = get_wishlist($product_detail->id, $product_detail->category_id, $user["user_id"]);
+
+    if (empty($wishlit)) {
+
+      $wishlist = 0;
+
+
+    } else {
+
+      $wishlist = 1;
+
+    }
+  } else {
+    $wishlist = 0;
+  }
+  ?>
+  <div class="container ">
+    <div class="row row justify-content-around">
+      <div class="col-lg-5 col-md-5 ">
+
+
+
+        <div>
+
+
+          <div class="images">
+
+            <div class="text-center">
+              <?php if ($product_detail->cover_img !== NULL) { ?>
+                <img style="min-height:400px; max-height:400px; width: auto; max-width: 500px;" id="main-image"
+                  src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" width="250" />
+              <?php } else { ?>
+                <img style="min-height:500px; max-height:500px; width: auto; max-width: 500px;" id="main-image"
+                  src="<?php echo base_url(); ?>assets/images/Group 486.png" />
+
+              <?php } ?>
+            </div>
+          </div>
+
+          <ul class="preview-thumbnail nav nav-tabs pt-3" style="text-align: -webkit-center;">
+            <li class="active" style="text-align: -webkit-center">
+              <?php if ($product_detail->cover_img !== NULL) { ?>
+                <img style="width:auto; max-width: fit-content; max-width: 100px;" width=80 height=70
+                  onclick="change_image(this)" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" />
+              <?php } else {
+                echo "";
+              } ?>
+            </li>
+
+
+            <li style="text-align: -webkit-center;">
+              <?php if ($product_detail->images_2 !== NULL) { ?>
+                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px;" width=80 height=70
+                  onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" />
+              <?php } else {
+                echo "";
+              } ?>
+
+            </li>
+            <li style="text-align: -webkit-center;">
+              <?php if ($product_detail->images_2 !== NULL) { ?>
+                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px;" width=80 height=70
+                  onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" />
+              <?php } else {
+                echo "";
+              } ?>
+            </li>
+
+            <li style="text-align: -webkit-center;">
+              <?php if ($product_detail->images_3 !== NULL) { ?>
+                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px;" width=80 height=70
+                  onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" />
+              <?php } else {
+                echo "";
+              } ?>
+            </li>
+            <li style="text-align: -webkit-center;">
+              <?php if ($product_detail->images_4 !== NULL) { ?>
+                <img style="width:auto; max-width: fit-content; text-align:center;" width=80 height=70
+                  onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" />
+              <?php } else {
+                echo "";
+              } ?>
+            </li>
+            <li style="text-align: -webkit-center;">
+              <?php if ($product_detail->images_5 !== NULL) { ?>
+                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px;" width=80 height=70
+                  onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" />
+              <?php } else {
+                echo "";
+              } ?>
+            </li>
+          </ul>
+          <div class="row mt-3" style="border:1px solid #69d3b0;margin:3px">
+            <ul class="preview-thumbnail nav mt-3 ml-3">
+              <li><a><i class="fa fa-calendar" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
+                  <?php function time_elapsed_string($datetime, $full = false)
+                  {
+                    $now = new DateTime;
+                    $ago = new DateTime($datetime);
+                    $diff = $now->diff($ago);
+
+                    $diff->w = floor($diff->d / 7);
+                    $diff->d -= $diff->w * 7;
+
+                    $string = array(
+                      'y' => 'year',
+                      'm' => 'month',
+                      'w' => 'week',
+                      'd' => 'day',
+                      'h' => 'hour',
+                      'i' => 'minute',
+                      's' => 'second',
+                    );
+                    foreach ($string as $k => &$v) {
+                      if ($diff->$k) {
+                        $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+                      } else {
+                        unset($string[$k]);
+                      }
+                    }
+
+                    if (!$full)
+                      $string = array_slice($string, 0, 1);
+                    return $string ? implode(', ', $string) . ' ago' : 'just now';
+                  }
+                  echo time_elapsed_string($product_detail->created_at); ?>
+                </a></li>
+
+
+
+              <li><a><i class="fa fa-eye" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i> View</a></li>
+
+              <li> <a class="btn-change" style="color:black;" id="GFG" href="javascript:void(0);" id="share_desk"
+                  onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"><i
+                    class="fa fa-share-alt" aria-hidden="true" style="font-size:18px; color:#69d3b0 "></i> Share </a>
+              </li>
+              <li><a class="btn-change" style="color:black; " id="GFG" href="" <?php if (empty($user) || !isset($user)) { ?> data-toggle="modal" data-target="#login" <?php } else { ?> data-toggle="modal"
+                    data-target="#report_product" <?php } ?>><i class="fa fa-exclamation-triangle" aria-hidden="true"
+                    style="font-size:18px; color:#69d3b0"></i> Report </a></li>
+
+            </ul>
           </div>
         </div>
 
-        <div class="row"><div class="col"><b>General Details</b></div></div>
-        <hr class="class-1" />
-       
-      <div class="row"><div class="col" style="word-spacing:20px">Condition:  <?php echo $product_detail->brand; ?></div></div>
-      <div class="row"><div class="col" style="word-spacing:63px"> City:  <?php echo $product_detail->address; ?></div></div>
-      <div class="row"><div class="col" style="word-spacing:46px">Model:  2013</div></div>
-      <div class="row"><div class="col" style="word-spacing:53px">Color:  Red</div></div>
-      <div class="row"><div class="col" style="word-spacing:62px">Size:  Red</div></div>
-      <br>
-
-      <div style="font-size:12px"> <i class="fa fa-map-marker"></i> 303 usha ganj Indore 452001 M.P. India </div><br>
-      <div class="row text-center"style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5"><div class="col"> Verified By Shop: Shop Name</div></div><br>
+        <div class="row mt-3">
+          <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png"
+            class="img-responsive center-block d-block mx-auto" width="100%" alt="" style="padding:px">
+        </div><br>
+      </div>
 
 
-      <div class="card" style="border-radius:4em;background-color:#d1fae5">
-  <div class="card-body">
-    <div class="row text-center">
-   <div class="col-lg-4 "><img src="<?php echo base_url();?>assets/images/Ellipse 1092.png"  class="img-fluid"  alt="" style="padding:px"></div>
-   <div class="col-lg-4 "><b >Bhupendra Sharma</b><br>
-       <span style="font-size:12px"> Profile Crated 60 Days ago </span><br>
-       <span style="font-size:15px"> Total 20 Ads</span><br>
-       <span style="font-size:15px"> Active 10 Adss </span></div>
-   <div class="col-lg-4"><a href="#" class="btn" role="button" aria-disabled="true" id="a">chat</a><br>
-        <a href="#" style="color:black">View Seller profile ></a></div>
+      <div class="col-lg-6 col-md-7 ">
+        <div class="card" style="padding:
+     
+     0px;border-color:#69d3b0">
+          <div class="container" style="padding:3rem;padding-bottom:10px">
+
+            <div class="row">
+              <div class="col "> <b style="font-size:18px">
+                  <?php echo $product_detail->title; ?>
+                </b></div>
+              <div class="col ">
+                <i style="color:#F15927;" <?php if (empty($user) || !isset($user)) { ?>
+                    onclick="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
+                    data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                  class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product_detail->id; ?>"
+                  data-pid="<?php echo $product_detail->id; ?>" data-cid="<?php echo $product_detail->category_id; ?>"
+                  data-wishlist="<?php echo $wishlist; ?>"></i>
+              </div>
+              <div class="col "><b style="font-size:27px;color:#10b981">$
+                  <?php echo $product_detail->price; ?>
+                </b></div>
+            </div>
+
+            <div class="row">
+              <div class="col"><b>General Details</b></div>
+            </div>
+            <hr class="class-1" />
+
+
+
+            <div class="row">
+              <div class="col" style="word-spacing:20px">Condition: Brand</div>
+            </div>
+            <div class="row">
+              <div class="col" style="word-spacing:63px"> City:
+                <?php echo $product_detail->town; ?>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="word-spacing:46px">Model:
+                <?php echo $product_detail->type; ?>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col" style="word-spacing:62px">Size: Red</div>
+            </div>
+            <br>
+
+            <div style="font-size:12px;"> <i class="fa fa-map-marker"></i>
+              <?php echo $product_detail->address; ?>
+            </div><br>
+            <?php   $shoplist = 0;
+  if (!empty($user) && isset($user)) {
+    $shop =check_shoplist($user['user_id']);
+    if(empty($shop)){ echo"";}else{
+    $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
+
+    if (empty($wishlit)) {
+
+     ?> <div class="row text-center"
+      style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+  
+<div class="col">
+<form class=""  action="<?php echo base_url();?>welcome/setshoplist" method="POST">
+        <input type="hidden" name="product_id" id="product_id" value="<?php echo $product_detail->id; ?>">
+         <input type="hidden" name="category_id" id="category_id" value="<?php echo $product_detail->category_id; ?>">
+       <input type="hidden" name="user_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
+      if($session_id){echo $_SESSION['id'];} ?>">
+       <input type="hidden" name="seller_id" id="receiver_id" value="<?php echo $product_detail->user_id; ?>">
+       <input type="hidden" name="shop_id" id="receiver_id" value="<?php echo $shop->id; ?>">
+
+
+      <button class="btn btn-sellersignup btn-change"  type="submit" name="submit" > verify</button>
+    </form>
+</div>
+
+    </div>
+
+
+  <?php  } else {?>
+
+<div class="row text-center"
+style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+
+<div class="col">verifed by Shop <?php echo $shop->name;?>
+</div>
+
+    </div>
+   <?php }}
+  } else {  ?>
+    <div class="row text-center"
+    style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+    
+    <div class="col">verifed by Shop
+    </div>
+    
         </div>
-  </div>
-</div> 
-
-      <h5><b style="font-size: 15px;">Description</b></h5>
-      <hr class="class-1" />
-      <b style="font-size: 13px;">Origins</b>
-      <p style="font-size: 13px;">Lorem Ipsum is simply dummy text of the <br>
-      printing and typesetting industry. <br>
-    Lorem Ipsum has been the industry's <br>
-    standard dummy text ever since the 1500s </p>
-
-
+  <?php } ?>
+            <!-- <div class="row text-center"
+              style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+          
+    <div class="col"><?php echo ($wishlist == 0) ? 'verfied ' : 'verify '; ?></div>
    
-     </div>
+            </div><br> -->
+          </div>
+
+
+          <?php $userdetail = get_users_details($product_detail->user_id); ?>
+          <div class="col" style="padding-left:25px">
+            <!-- <div class="card" style="border-radius:5em;background-color:#d1fae5"> -->
+            <div class="card"
+              style="border-radius: 7rem 0px 0px 7rem;background-image: linear-gradient(to right, #d1fae5,#d1fae5 ,#d1fae5, #f5f5f5);margin-right:0px;padding-right:0px"
+              id="c">
+              <div class="card-body">
+                <div class="row text-center">
+                  <div class="col-4 order-first " style="margin:auto"><img
+                      src="<?php echo base_url() . "uploads/profile/" . $userdetail->profile_img . ""; ?>" class="img-fluid"
+                      alt="" id="e" style="margin:auto"></div>
+                  <div class="col-5" style="font-size:15px"><b id="d">
+                      <?php echo $userdetail->name; ?>
+                    </b><br>
+                    <span style="font-size:10px" id="d"> Profile Crated
+                      <?php function time_string($datetime, $full = false)
+                      {
+                        $now = new DateTime;
+                        $ago = new DateTime($datetime);
+                        $diff = $now->diff($ago);
+
+                        $diff->w = floor($diff->d / 7);
+                        $diff->d -= $diff->w * 7;
+
+                        $string = array(
+                          'y' => 'year',
+                          'm' => 'month',
+                          'w' => 'week',
+                          'd' => 'day',
+                          'h' => 'hour',
+                          'i' => 'minute',
+                          's' => 'second',
+                        );
+                        foreach ($string as $k => &$v) {
+                          if ($diff->$k) {
+                            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+                          } else {
+                            unset($string[$k]);
+                          }
+                        }
+
+                        if (!$full)
+                          $string = array_slice($string, 0, 1);
+                        return $string ? implode(', ', $string) . ' ago' : 'just now';
+                      }
+                      echo time_string($userdetail->created); ?>
+                    </span><br>
+                    <span id="d"> Total 20 Ads</span><br>
+                    <span id="d"> Active 10 Ads </span>
+                  </div>
+                  <div class=" col-3 order-last"><a href="#" class="btn" role="button" aria-disabled="true" id="a"
+                      style="font-size:15px;border-color:#46760a"><b>chat</b></a><br>
+                    <a href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"
+                      style="color:black;font-size:12px"><b id="">View Seller profile ></b></a>
+                  </div>
+
+
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="container" style="padding:3rem">
+            <h5><b style="font-size: 15px;">Description</b></h5>
+            <hr class="class-1" />
+            <b style="font-size: 13px;">Origins</b>
+            <p style="font-size: 13px;">
+              <?php echo $product_detail->Description; ?>
+            </p>
+          </div>
+
+
+        </div>
+      </div>
+
     </div>
   </div>
-  
-</div>
 
 
 
 
 
+  <br>
 
-
-
-<!-- <div class="card">
-  <div class="card-body">
-    This is some text within a card body.
+  <div class="container mt-5">
+    <p style="color:#f59e0b">Our Recommendation</p>
+    <h4><b style="padding-left:0px">Related Ads</b></h4>
   </div>
-</div> -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-4 col-md-6  mb-2 ">
+        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
+          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
+          <div class="card-block" style="padding:8px">
+            <div class="card-title">
+              <div class="row">
+                <div class="col-6"><b style="font-size:18px">Suzuki</b></div>
+                <div class="col-2"><b style='font-size:18px'><i class="fa fa-heart-o" style="color:#ff6737"></i></b>
+                </div>
+                <div class="col-4" style="color:#10b981">
+                  <h5><b>$2500</b></h5>
+                </div>
+              </div>
+            </div>
+            <small class="card-text">Space for a small product description.</small><br>
+
+            <div class="row">
+              <div class=col-5>Fresheness </div>
+              <div class=col-7>New(Extra fresh)</div>
+            </div>
+
+            <div class="row">
+              <div class=col-5>Model</div>
+              <div class=col-5>2015</div>
+            </div>
+
+            <div class="row">
+              <div class=col-5>Color</div>
+              <div class=col-5>Red</div>
+            </div>
+
+            <div class="row text-center">
+              <div class="col-1"><i class="fa fa-map-marker"></i></div>
+              <div class="col-5">
+                <p>West India</p>
+              </div>
+              <div class="col-6"> <a href="#" class="btn" style="padding:px" id="b">Ads Details ></a></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6  mb-2 ">
+        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
+          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
+          <div class="card-block" style="padding:8px">
+            <div class="card-title">
+              <div class="row">
+                <div class="col-6"><b style="font-size:18px">Suzuki</b></div>
+                <div class="col-2"><b style='font-size:18px'><i class="fa fa-heart-o" style="color:#ff6737"></i></b>
+                </div>
+                <div class="col-4" style="color:#10b981">
+                  <h5><b>$2500</b></h5>
+                </div>
+              </div>
+            </div>
+
+            <small class="card-text">Space for a small product description.</small><br>
+
+            <div class="row">
+              <div class=col-5>Fresheness </div>
+              <div class=col-7>New(Extra fresh)</div>
+            </div>
+
+            <div class="row">
+              <div class=col-5>Model</div>
+              <div class=col-5>2015</div>
+            </div>
+
+            <div class="row">
+              <div class=col-5>Color</div>
+              <div class=col-5>Red</div>
+            </div>
+
+            <div class="row text-center">
+              <div class="col-1"><i class="fa fa-map-marker"></i></div>
+              <div class="col-5">
+                <p>West India</p>
+              </div>
+              <div class="col-6"> <a href="#" class="btn" style="padding:px" id="b">Ads Details ></a></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-4 col-md-6  mb-2 ">
+        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
+          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
+          <div class="card-block" style="padding:8px">
+            <div class="card-title">
+              <div class="row">
+                <div class="col-6"><b style="font-size:18px">Suzuki</b></div>
+                <div class="col-2"><b style='font-size:18px'><i class="fa fa-heart-o" style="color:#ff6737"></i></b>
+                </div>
+                <div class="col-4" style="color:#10b981">
+                  <h5><b>$2500</b></h5>
+                </div>
+              </div>
+            </div>
+
+            <small class="card-text">Space for a small product description.</small><br>
+
+            <div class="row">
+              <div class=col-5>Fresheness </div>
+              <div class=col-7>New(Extra fresh)</div>
+            </div>
+
+            <div class="row">
+              <div class=col-5>Model</div>
+              <div class=col-5>2015</div>
+            </div>
+
+            <div class="row">
+              <div class=col-5>Color</div>
+              <div class=col-5>Red</div>
+            </div>
+
+            <div class="row text-center">
+              <div class="col-1"><i class="fa fa-map-marker"></i></div>
+              <div class="col-5">
+                <p>West India</p>
+              </div>
+              <div class="col-6"> <a href="#" class="btn" style="padding:px" id="b">Ads Details ></a></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
 
 
 
 
 
 
+</body>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- <div class="container mt-5">
-<p style="color:red">Our Recommendation</p>
-<h4><b style="padding-left:0px">Related Ads</b></h4>
-</div>
-
-<div class="container" >
-<div class="row">
-<div class="col-lg-4 col-sm-6  mb-2">
-    <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <h5 class="card-title">Suzuki</h5>
-    <small class="card-text">Space for a small product description.</small><br>
-    
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-    <a href="#" class="btn "id="b">Ads Details ></a>
-  
-    </div>
-    </div>
-</div>
-
-<div class="col-lg-4 col-sm-6  mb-2">
-    <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <h5 class="card-title">Suzuki</h5>
-    <small class="card-text">Space for a small product description.</small><br>
-    
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-    <a href="#" class="btn "id="b">Ads Details ></a>
-   
-    </div>
-    </div>
-</div>
-
-<div class="col-lg-4 col-sm-6  mb-2">
-    <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <h5 class="card-title">Suzuki</h5>
-    <small class="card-text">Space for a small product description.</small><br>
-    
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-    <a href="#" class="btn "id="b">Ads Details ></a>
-    
-    </div>
-    </div>
-</div>
-</div>
-</div> 
-
-
-<?php
-    // include "footer.php";
-    ?>
-  </body>
 </html>
+
+<div id="report_product" class="modal fade" role="dialog">
+
+  <div class="modal modal-signin position-static d-block  py-5" tabindex="-1" role="dialog" id="modalSignin">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content rounded-4 shadow">
+        <button data-dismiss="modal" type="button" class="close" aria-label="Close"
+          style="margin-left: 90%; margin-top:10px;">&times;</button>
+
+
+        <div class="modal-body px-5 pt-0">
+          <h5 class=" mb-0 my-3 fs-5" style="text-align: center;">Report on Ads</h5>
+
+          <?php if ($error = $this->session->flashdata('Login_fail')) { ?>
+            <div class="row">
+              <div class="col-lg-12">
+                <div class="alert alert-danger ">
+                  <?= $error;
+
+                  unset($_SESSION['Login_fail']);
+                  ?>
+
+                </div>
+              </div>
+            </div>
+
+          <?php } ?>
+
+          <form class="needs-validation" novalidate enctype="multipart/form-data"
+            action="<?php echo base_url(); ?>welcome/reportproduct" method="POST" class="needs-validation" novalidate>
+
+            <input type="hidden" name="reported_by" value="<?php echo $user['user_id'] ?>">
+            <input type="hidden" name="category_id" value="<?php echo $product_detail->category_id; ?>">
+            <input type="hidden" name="product_id" value="<?php echo $product_detail->id; ?>">
+            <div class=" input-container my-3 px-3">
+              <label>Name</label>
+              <input name="name" type="text" class="form-control pl-5  text-dark Name" id="firstName" value=""
+                placeholder="Name" maxlength="30" style="border-radius:30px; border-color:#13C571" required>
+              <div class="invalid-feedback">
+                Valid name is required.
+              </div>
+            </div>
+
+            <div class=" input-container my-3 px-3">
+              <label>Email</label>
+              <input name="email" type="email" class="form-control pl-5  text-dark inp-icon" placeholder="Enter Email"
+                style="border-radius:30px; border-color:#13C571" required>
+
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+            <div class=" input-container mt-3 px-3 ">
+              <label>Mobile</label>
+              <input name="mobile" type="number" class="form-control  pl-5 text-dark mobile" type="number" id="mobile"
+                oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                maxlength="10" minlength="10" value="" placeholder="phone"
+                style="border-radius:30px; border-color:#13C571" required>
+
+              <p id="mobile_error"></p>
+              <div class="invalid-feedback">
+                Valid mobile is required.
+              </div>
+            </div>
+
+            <div class=" input-container my-3 px-3 ">
+              <label>Report Reason (Only 150 character are allowed)</label>
+
+              <textarea name="report" class="form-control" id="aboutus" placeholder="Report" maxlength="150" rows="4"
+                style="border-radius:20px; border-color:#13C571" required></textarea>
+              <div class="invalid-feedback">
+                Valid report is required.
+              </div>
+            </div>
+            <center><button class=" mb-2 btn btn-lg  text-white mt-2"
+                style="background-color:#13C571;border-radius:30px;width:40%;" type="submit"
+                name="submit">Report</button>
+
+            </center>
+
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<script>
+
+  (() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+      form.addEventListener('submit', event => {
+        var mabile = document.getElementById('mobile').value.length
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+          document.getElementById("mobile_error").innerHTML = "";
+        }
+        else if (mabile < 10) {
+          document.getElementById("mobile_error").innerHTML = "Please enter 10 digits";
+          event.preventDefault()
+          event.stopPropagation()
+        }
+
+        form.classList.add('was-validated')
+      }, false)
+    })
+  })()
+
+
+  $(document).on('click', '.dddssaaf', function (e) {
+    e.stopPropagation();
+    var obj = $(this);
+    var pid = $(this).data("pid");
+    var cid = $(this).data("cid");
+    var uid = $(this).data("uid");
+    var status = $(this).data("wishlist");
+
+    if (!uid == 0)
+      //   alert(status);
+      $.ajax({
+        type: "POST",
+        url: '<?php echo base_url("Welcome/setwishlist"); ?>',
+        cache: false,
+        data: { 'product_id': pid, 'user_id': uid, 'category_id': cid },
+        error: function () {
+          alert('Something is wrong');
+        },
+        success: function (data) {
+          $(".dddssaaf" + pid).toggleClass("fa-heart-o fa-heart");
+          if (status == 0) {
+            $(this).data("wishlist", 1);
+            swal("Product Added in Wishlist Successfully!", "", "success");
+          }
+          else {
+            $(this).data("wishlist", 0);
+            swal("Product removed from Wishlist Successfully!", "", "success");
+          }
+        }
+      });
+
+
+  });
+
+
+  $(document).on('click', '.ssaaf', function (e) {
+    e.stopPropagation();
+    var obj = $(this);
+    var pid = $(this).data("pid");
+    var cid = $(this).data("cid");
+    var uid = $(this).data("uid");
+    var shopid = $(this).data("shopid");
+    var sellerid = $(this).data("sellerid");
+    var status = $(this).data("wishlist");
+
+    if (!uid == 0)
+      //   alert(status);
+      $.ajax({
+        type: "POST",
+        url: '<?php echo base_url("Welcome/setshoplist"); ?>',
+        cache: false,
+        data: { 'product_id': pid, 'user_id': uid, 'category_id': cid,'shop_id': shopid,'seller_id': sellerid },
+        error: function () {
+          alert('Something is wrong');
+        },
+        success: function (data) {
+          $(".ssaaf" + pid).toggleClass("fa-heart-o fa-heart");
+          if (status == 0) {
+            $(this).data("wishlist", 1);
+            swal("Product verify Successfully!", "", "success");
+          }
+          else {
+            $(this).data("wishlist", 0);
+            swal("Product removed from Wishlist Successfully!", "", "success");
+          }
+        }
+      });
+
+
+  });
+
+
+
+  function change_image(image) {
+
+    var container = document.getElementById("main-image");
+
+    container.src = image.src;
+  }
+</script>

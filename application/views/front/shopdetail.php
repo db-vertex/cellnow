@@ -9,30 +9,32 @@
     $profile = get_seller_profile($user['user_id']);
 
     ?>
-    <div class="col-sm-6">
+     <div class="col-sm-6">
 
-      <img src="<?php echo base_url(); ?>assets/images/Ellipse 11 (2).png" class="img-fluid rounded mx-auto d-block">
-      <div style="text-align:center">
-        <h3><b>
-            <?php echo $profile->name; ?>
-          </b></h3>
-        <?php echo $profile->Address; ?>
+<img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>" class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
+width: 131.9px;">
+<div style="text-align:center">
+  <h5><b>
+      <?php echo ucfirst($profile->name); ?>
+    </b></h5>
+  <?php echo ucfirst($profile->Address); ?>
 
-      </div>
-      <div class="row text-center ">
-        <p>
-        <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
-        <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
-        </p>
-        <?php  if(!empty($shop)){?>
-        <p><?php if(!empty($shop->shop_images)){?>
-          <img  src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
-        <?php }else{?><img  src="<?php echo base_url()?>assets/images/shop1.png">
-          <?php } }?></p>
-      </div><br>
+</div>
+<div class="row text-center ">
+  <p>
+  <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
+  <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
+  </p>
+  <?php  if(!empty($shop)){?>
+  <p class="pt-3"><?php if(!empty($shop->shop_images)){?>
+    <img class="rounded-4 " style="height: 161.9px;
+width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
+  <?php }else{?><img  src="<?php echo base_url()?>assets/images/shop1.png">
+    <?php } }?></p>
+</div><br>
 
 
-    </div>
+</div>
     <!-- <div class="vr" style="color:#78d7b8"></div> -->
     <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
     <?php 
@@ -59,7 +61,7 @@
 </div><?php }?>
         </div> </div>
         <p class="ml-3"><?php echo $shop->email;?></p>
-            <p class="ml-3"><?php echo $shop->description;?></p>
+            <p class="ml-3  word"><?php echo $shop->description;?></p>
             <p class="ml-3"><?php echo $shop->Address;?></p>
             <p class="ml-3 mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
            

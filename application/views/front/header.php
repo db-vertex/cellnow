@@ -713,6 +713,7 @@ width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My profile</a></li>
           
             <li><a class="dropdown-item" href="#">My Chat</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/fav_list">My Favorites</a></li>
             <?php if($profile->login_type == 'normal'){ ?>
               <li> <a class="dropdown-item" href="<?php echo base_url();?>welcome/changepassword" class="">Change Password</a></li>
                         <?php } ?>

@@ -17,6 +17,37 @@ function get_category($categoryid)
   return $category_data->row();	
 }
 
+
+function get_all_favroite($user_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM wishlist WHERE user_id=".$user_id;;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_all_category_reusable_parts($id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts WHERE id=".$id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
 function get_all_products()
 { 
     //get main CodeIgniter object
@@ -97,7 +128,7 @@ function get_all_subcategory()
   return $category_data->result(); 
 }
 
-function get_all_reusableproduct()
+function get_all_boost()
 {
   //get main CodeIgniter object
        $ci =& get_instance();
@@ -105,7 +136,22 @@ function get_all_reusableproduct()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM category_reusable_parts";
+  $query="SELECT * FROM category_reusable_parts WHERE pay_type=1";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_all_donate()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts WHERE pay_type=2";
 
   $category_data = $ci->db->query($query);        
 
@@ -171,20 +217,7 @@ function get_all_district()
   return $category_data->result(); 
 }
 
-function get_all_category_reusable_parts($id)
-{
-  //get main CodeIgniter object
-       $ci =& get_instance();
-       
-       //load databse library
-       $ci->load->database();
 
-  $query="SELECT * FROM category_reusable_parts WHERE id=".$id;
-
-  $category_data = $ci->db->query($query);        
-
-  return $category_data->row(); 
-}
 
 function get_user_nickname($user_id)
 {
@@ -587,6 +620,38 @@ function get_wishlist($product_id,$user_id)
 
   return $category_data->row(); 
 }
+
+
+function get_shoplist($product_id,$category_id,$shop_id,$seller_id,$user_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM verify_product WHERE product_id=".$product_id." And category_id=".$category_id." And shop_id=".$shop_id." And seller_user_id=".$seller_id." And shop_owner_user_id=".$user_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
+function check_shoplist($user_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM shop WHERE  user_id=".$user_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
 function get_notification($user_id)
 {
   //get main CodeIgniter object

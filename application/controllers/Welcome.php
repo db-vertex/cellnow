@@ -703,11 +703,104 @@ class Welcome extends CI_Controller {
 			
 			}else{
         
-            return redirect('welcome');
+				$this->load->view('front/header');
+				$this->load->view('front/sellerprofile');
+				$this->load->view('front/footer');
        }
 
 
 	}
+
+	public function viewsellerprofile()
+	{
+		$session_id = $this->session->userdata('id');
+      
+       if($session_id)
+       {
+		//$myproduct = $this->product_model->myproduct($session_id);
+
+		 $user_detail = $this->user->loginuser($session_id);
+   
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+				$this->load->view('front/header',['user'=>$user_detail]);
+				$this->load->view('front/viewsellerprofile',['user'=>$user_detail]);
+				$this->load->view('front/footer');
+			
+			}else{
+        
+				$this->load->view('front/header');
+				$this->load->view('front/login');
+				$this->load->view('front/footer');
+       }
+
+
+	}
+
+	public function reportproduct(){
+
+		$reportData = array();
+		$reportData['product_id'] = $this->input->post('product_id');
+		$reportData['category_id'] = $this->input->post('category_id');
+		$reportData['reported_by'] = $this->input->post('reported_by');
+		$reportData['report'] = $this->input->post('report');
+		 $reportData['name'] = $this->input->post('name');
+		  $reportData['mobile'] = $this->input->post('mobile');
+		  $reportData['email'] = $this->input->post('email');
+
+		$insert = $this->user->report($reportData);
+			  //$userData['modified'] = date("Y-m-d H:i:s");
+
+		 //$insert = $this->user->removeintrest($userData);
+
+		$this->session->set_flashdata('msg','Report sent to admin successfully');
+		$this->session->set_flashdata('msg_class','alert-success');
+		 $cat_id =  $this->input->post('category_id');
+		$pro_id =  $this->input->post('product_id');
+		 
+		return redirect('welcome/productdetail/'.$cat_id.'/'.$pro_id);
+	
+}   
+
+public function setwishlist(){
+   
+    $data["product_id"]=$this->input->post("product_id");
+    $data["category_id"]=$this->input->post("category_id");
+     $data["user_id"]=$this->input->post("user_id");
+
+    $this->user->savewishlist($data);
+    echo "success";
+}
+
+public function setshoplist(){
+  
+    $data["product_id"]=$this->input->post("product_id");
+    $data["category_id"]=$this->input->post("category_id");
+     $data["shop_owner_user_id"]=$this->input->post("user_id");
+	 $data["seller_user_id"]=$this->input->post("seller_id");
+	 $data["shop_id"]=$this->input->post("shop_id");
+
+    $this->user->saveshoplist($data);
+    echo "success";
+}
+
+public function fav_list(){
+	$session_id = $this->session->userdata('id');
+
+	  $user_detail = $this->user->loginuser($session_id);
+	   if(!empty($user_detail)){
+			$this->load->view('front/header',['user'=>$user_detail]);
+ $this->load->view('front/myfavorites',['user'=>$user_detail]);
+ $this->load->view('front/footer');
+	   }
+	   else{
+	  $this->load->view('front/header');
+ $this->load->view('front/myfavorites');
+ $this->load->view('front/footer');
+	   }
+}
 
 		public function updatesellerreg()
 	{
