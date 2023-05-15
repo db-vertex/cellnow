@@ -778,14 +778,17 @@ public function setshoplist(){
   
     $data["product_id"]=$this->input->post("product_id");
     $data["category_id"]=$this->input->post("category_id");
+	$data["sub_id"]=$this->input->post("subcategory_id");
      $data["shop_owner_user_id"]=$this->input->post("user_id");
 	 $data["seller_user_id"]=$this->input->post("seller_id");
 	 $data["shop_id"]=$this->input->post("shop_id");
 
     $this->user->saveshoplist($data);
 	$cat_id =  $this->input->post('category_id');
+	$subcat_id =  $this->input->post('subcategory_id');
 	$pro_id =  $this->input->post('product_id');
-	return redirect('welcome/productdetail/'.$cat_id.'/'.$pro_id);
+	
+	return redirect('welcome/productdetail/'.$cat_id.'/'.$pro_id.'/'.$subcat_id);
 }
 
 public function fav_list(){
@@ -1013,9 +1016,12 @@ $session_id = $this->session->userdata('id');
  
 		  $id = $this->uri->segment(4);
 		  $cateory =  $this->uri->segment(3);
+		  $subcategory_id =  $this->uri->segment(5);
 	
 		  if($cateory ==1 ){
            $Categories_all_product = get_all_category_reusable_parts($id);
+		   $Category_product = $this->db->query("SELECT * FROM category_reusable_parts  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC")->result();
+
            
          }
          else if($cateory == 2){
@@ -1046,7 +1052,7 @@ $session_id = $this->session->userdata('id');
     $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
     $this->output->set_header('Pragma: no-cache');
 		$this->load->view('front/header',['user'=>$user_detail]);
-		$this->load->view('front/verifyproductdetails',['user'=>$user_detail,'categories_data'=>$Categories_all_product]);
+		$this->load->view('front/verifyproductdetails',['user'=>$user_detail,'categories_data'=>$Categories_all_product,'category_data'=>$Category_product]);
 		$this->load->view('front/footer');
 
 		}else{
@@ -1056,10 +1062,226 @@ $session_id = $this->session->userdata('id');
     $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
     $this->output->set_header('Pragma: no-cache');
 		$this->load->view('front/header');
-		$this->load->view('front/verifyproductdetails',['categories_data'=>$Categories_all_product]);
+		$this->load->view('front/verifyproductdetails',['categories_data'=>$Categories_all_product,'category_data'=>$Category_product]);
 		$this->load->view('front/footer');
        }
 	}
+
+
+	public function fetch(){
+	     
+		$category_id = $_POST["category_id"];
+		 $subcategory_id = $_POST["subcategory_id"];
+	   
+   if(isset($_POST["limit"], $_POST["start"]))
+	 {
+		  if($category_id==1){
+   $related = $this->db->query("SELECT * FROM get_all_category_reusable_parts  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."")->result();
+   }
+   else if($category_id==2){
+   $related = $this->db->query("SELECT * FROM get_all_category_Electronic  WHERE subcategory_id = $subcategory_id ORDER BY id DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."")->result();
+   }
+	 else if($category_id==3){
+   $related = $this->db->query("SELECT * FROM category_Furniture WHERE subcategory_id = $subcategory_id  ORDER BY id DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."")->result();
+   }
+	 else if($category_id==4){
+   $related = $this->db->query("SELECT * FROM category_Fashion WHERE subcategory_id = $subcategory_id ORDER BY id DESC LIMIT ".$_POST["start"].", ".$_POST["limit"]."")->result();
+   }
+ 
+   $pro="";
+   foreach($related as $product){
+		  print_r($product);
+	 $wishlist=0;
+	   if(!empty($_SESSION['id']) && isset($_SESSION['id'])){
+		  
+     $wishlit = get_wishlist($product->id,$product->category_id, $_SESSION['id']);
+
+		  if(empty($wishlit)){
+
+			  $wishlist = 0;
+
+		  
+		  }else{
+
+			  $wishlist = 1;
+
+		  }
+ }
+ else{
+	 $wishlist = 0;
+	 } 
+ 
+  $session_id = $this->session->userdata("id");
+   if ($session_id) {
+	if($_SESSION["id"] !== $product->user_id){
+		
+   $pro .= '<div class="row justify-content-center">
+	<div class="col-md-12  col-xl-10">
+	  <div class="card shadow-0 border rounded-3">
+		<div class="card-body">
+		  <div class="row">
+						 <i style="color:#F15927; text-align: right;" '.(empty($_SESSION['id']) || !isset($_SESSION['id']) ? 'data-toggle="modal" data-target=""' : 'data-uid="'.$_SESSION['id'].'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf" data-pid="'.$product->id.'" data-cid="'.$product->category_id.'" data-wishlist="'.$wishlist.'" ></i>
+
+			<div class="col-md-12 col-lg-5 col-xl-5 mb-4 mb-lg-0">
+			  <div class="bg-image hover-zoom ripple rounded ripple-surface">';
+
+			  $pro .='  <a href="'.base_url("welcome/verifyproductdetails/".$product->category_id.'/'.$product->id.'/'.$product->subcategory_id).'"><img class="btn-change " height=250 width=250 src="'.base_url($product->thumbnails).'"></a>
+				<a href="#!">
+				  <div class="hover-overlay">
+					<div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+				  </div>
+				</a>
+			  </div>
+			</div>
+			<div class="col-md-6 col-lg-4 col-xl-4 mt-3 ">';
+			
+				$description = $product->Description;  
+			 $pro .='  <h5>'.ucfirst($product->title).'</h5>
+		   <p class="text-muted">';
+				   if(strlen($description) <= 65)
+				   {
+				   $pro .= ucfirst($description);
+				   }
+				   else
+				   {
+				   $y = substr($description, 0, 70) .'...';
+				   $pro .= ucfirst($y);
+				   }
+				   $pro .= '
+				</p>
+				';
+			$pro .='   <div class="row">
+				 <div class="col-sm-4" style=" ">
+		  <p class="text-muted">Condition</p>
+			  
+			 ';
+			 $pro .='  <img src="'.base_url("assets/images/location.png").'"> 
+				  </div>
+				  <div class="col-sm-8" >';
+					$pro .=' <p class="text-muted"> '.$product->Condition_product.'</p> ';
+				   
+				$location = $product->Location;
+				$pro.='  <p class="text-muted">';
+				   if(strlen($location) <= 50)
+				   {
+				   $pro .= ucfirst($location);
+				   }
+				   else
+				   {
+				   $y = substr($location, 0, 50) .'...';
+				   $pro .= ucfirst($y);
+				   }
+				   $pro .= '
+				</p>
+				
+					  <p class="text-muted d-none" >'.$product->subcategory_id.'</p>
+				  </div>
+							  </div>
+		   
+			 
+			</div>
+			<div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none mt-4">
+			  <div class="d-flex flex-row align-items-center mb-1">';
+			   $pro .=' <h3 style="color:#46760A;" class="mb-1 me-1">$'.(isset($product->Price) ? $product->Price : (isset($product->Salary) ? $product->Salary : '')).'</h3>
+				
+			  </div>
+			  
+			  <div class="d-flex flex-column mt-4">';
+		   $pro .= ($product->pay_type == 0) ? '' : (($product->pay_type == 1) ? '<img style="position: absolute;  width:112px;" src="'.base_url("assets/images/sponser.png").'">' : '<img style=" position: absolute; width:112px;" src="'.base_url("assets/images/urgent.png").'">');
+
+ $pro .='   <a href="'.base_url("welcome/verifyproductdetails/".$product->category_id.'/'.$product->id.'/'.$product->subcategory_id).'"><img style="margin-top: 40%;" height=50 width=140 src="'.base_url("assets/images/details.png").'"></a>
+				
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	 </div>';
+	 
+	}}
+	else{
+		 $pro .= '<div class="row justify-content-center">
+	<div class="col-md-12  col-xl-10">
+	  <div class="card shadow-0 border rounded-3">
+		<div class="card-body">
+		  <div class="row">
+						 <i style="color:#F15927; text-align: right;" '.(empty($_SESSION['id']) || !isset($_SESSION['id']) ? 'data-toggle="modal" data-target=""' : 'data-uid="'.$_SESSION['id'].'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf" data-pid="'.$product->id.'" data-cid="'.$product->category_id.'" data-wishlist="'.$wishlist.'" ></i>
+
+			<div class="col-md-12 col-lg-5 col-xl-5 mb-4 mb-lg-0">
+			  <div class="bg-image hover-zoom ripple rounded ripple-surface">';
+
+			  $pro .='  <a href="'.base_url("welcome/productdetail/".$product->category_id.'/'.$product->id.'/'.$product->subcategory_id).'"><img class="btn-change " height=250 width=250 src="'.base_url($product->thumbnails).'"></a>
+				<a href="#!">
+				  <div class="hover-overlay">
+					<div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
+				  </div>
+				</a>
+			  </div>
+			</div>
+			<div class="col-md-6 col-lg-4 col-xl-4 mt-3 ">';
+			
+				$description = $product->Description;  
+			 $pro .='  <h5>'.ucfirst($product->title).'</h5>
+		   <p class="text-muted">';
+				   if(strlen($description) <= 75)
+				   {
+				   $pro .= ucfirst($description);
+				   }
+				   else
+				   {
+				   $y = substr($description, 0, 80) .'...';
+				   $pro .= ucfirst($y);
+				   }
+				   $pro .= '
+				</p>
+				';
+			$pro .='   <div class="row">
+				 <div class="col-sm-4" style=" ">
+		  <p class="text-muted">Fresness</p>
+			  
+			 ';
+			 $pro .='  <img src="'.base_url("assets/images/location.png").'"> 
+				  </div>
+				  <div class="col-sm-8" >';
+					$pro .=' <p class="text-muted"> '.$product->Condition_product.'</p> ';
+				   
+				  $pro .='   <p class="text-muted">'.$product->Location.'</p>
+					  <p class="text-muted d-none" >'.$product->subcategory_id.'</p>
+				  </div>
+							  </div>
+		   
+			 
+			</div>
+			<div class="col-md-6 col-lg-3 col-xl-3 border-sm-start-none mt-4">
+			  <div class="d-flex flex-row align-items-center mb-1">';
+			   $pro .=' <h3 style="color:#46760A;" class="mb-1 me-1">$'.(isset($product->Price) ? $product->Price : (isset($product->Salary) ? $product->Salary : '')).'</h3>
+				
+			  </div>
+			  
+			  <div class="d-flex flex-column mt-4">';
+		   $pro .= ($product->pay_type == 0) ? '' : (($product->pay_type == 1) ? '<img style="position: absolute;  width:112px;" src="'.base_url("assets/images/sponser.png").'">' : '<img style=" position: absolute; width:112px;" src="'.base_url("assets/images/urgent.png").'">');
+
+ $pro .='   <a href="'.base_url("welcome/productdetail/".$product->category_id.'/'.$product->id.'/'.$product->subcategory_id).'"><img style="margin-top: 40%;" height=50 width=140 src="'.base_url("assets/images/details.png").'"></a>
+				
+			  </div>
+			</div>
+		  </div>
+		</div>
+	  </div>
+	</div>
+	 </div>';
+	}
+
+
+
+}
+
+echo $pro;
+
+}
+}
+
 	
 	
   

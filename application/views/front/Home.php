@@ -154,7 +154,7 @@ html,body
 <div class="container">
   <div class="row ">
   <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2">
-  <a class="btn shadow  bg-white rounded-pill btn-change" href="#" role="button"><img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/menu1.png" alt=""> &nbsp &nbsp All</a>
+  <a style="background:#d1fae5;" class="btn shadow rounded-pill btn-change" href="#" role="button"><img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/menu1.png" alt=""> &nbsp &nbsp All</a>
   </div>
 
 
@@ -264,10 +264,16 @@ html,body
                   <div class="va-card va-cards"> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
                   <p style="min-height:151px; text-align:center;" class="my-auto">
                   <img class="" 
-                            src="<?php echo base_url(); ?>assets/images/boost.png" style="margin-left:18px;
-    position: absolute;
-    margin-top: 19%;
-    height: 25px;">
+                            src="<?php echo base_url(); ?>assets/images/boost.png" style="
+    position: absolute;margin-top: 19%; height: 25px;">
+    <?php if($pro->verified_product==1){?>
+      <img class="" 
+                            src="<?php echo base_url(); ?>assets/images/verified.png" style="margin-left:68px;
+    position: absolute;margin-top: 19%; height: 25px;">
+
+   <?php }?>
+ 
+
                                           <?php if($pro->cover_img !== NULL) { ?> 
                                           <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>">
                             <?php } else { ?>
@@ -495,7 +501,7 @@ html,body
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <p style="color: #1B1C57; font-size:30px;">Donate</p>
+      <p id="donate" style="color: #1B1C57; font-size:30px;">Donate</p>
     </div>
   </div>
 </div><br>

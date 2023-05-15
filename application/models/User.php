@@ -472,6 +472,10 @@ $SQL="SELECT Distinct * FROM `chat_list` Where (sender_id = $sender_id AND recei
  
         if(!get_shoplist($data['product_id'],$data['category_id'],$data['shop_id'],$data['seller_user_id'], $data['shop_owner_user_id']))
         $insert = $this->db->insert('verify_product', $data);
+        $datas['verified_product'] = '1';
+       if($data['category_id']==1){
+        $this->db->update('category_reusable_parts', $datas, "id = ".$data['product_id']);
+       }
         else{
         $delete = $this->db->query("delete from wishlist where user_id=".$data['user_id']." and product_id=".$data['product_id']);
         }

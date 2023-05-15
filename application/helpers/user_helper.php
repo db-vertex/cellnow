@@ -73,9 +73,15 @@ function is_user_exists($phone){
 }
 
 function get_category_name($id){
-  
+  $CI =& get_instance();
     $category=$this->db->get_where("category", "id=$id")->row()->category;
     return $category;
+}
+
+function get_shop_name($id){
+  $CI =& get_instance();
+  $category=$CI->db->get_where("shop", "id=$id")->row()->name;
+  return $category;
 }
 
 function get_user_name($id){
@@ -646,6 +652,22 @@ function check_shoplist($user_id)
        $ci->load->database();
 
   $query="SELECT * FROM shop WHERE  user_id=".$user_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
+
+function check_shoplist_by_productid($product_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM verify_product WHERE  product_id=".$product_id;
 
   $category_data = $ci->db->query($query);        
 

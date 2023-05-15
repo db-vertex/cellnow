@@ -6,7 +6,7 @@
     <?php
      $id = $this->uri->segment(3);
      $shop = get_id_by_shopdetail($id);
-    $profile = get_seller_profile($user['user_id']);
+    $profile = get_seller_profile($shop->user_id);
 
     ?>
      <div class="col-sm-6">

@@ -416,7 +416,16 @@
             <?php   $shoplist = 0;
   if (!empty($user) && isset($user)) {
     $shop =check_shoplist($user['user_id']);
-    if(empty($shop)){ echo"";}else{
+    if(empty($shop)){  $shop_list =check_shoplist_by_productid($product_detail->id);
+      if(empty($shop_list)){ echo"";}else{
+      $shop_name= get_shop_name($shop_list->shop_id);?><div class="row text-center"
+      style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+      
+      <div class="col">verifed by Shop <?php echo $shop_name;?>
+      </div>
+      
+          </div>
+           <?php } }else{
     $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
 
     if (empty($wishlit)) {
@@ -432,6 +441,7 @@
       if($session_id){echo $_SESSION['id'];} ?>">
        <input type="hidden" name="seller_id" id="receiver_id" value="<?php echo $product_detail->user_id; ?>">
        <input type="hidden" name="shop_id" id="receiver_id" value="<?php echo $shop->id; ?>">
+       <input type="hidden" name="subcategory_id" id="receiver_id" value="<?php echo $product_detail->subcategory_id; ?>">
 
 
       <button class="btn btn-sellersignup btn-change"  type="submit" name="submit" > verify</button>
@@ -441,25 +451,32 @@
     </div>
 
 
-  <?php  } else {?>
+  <?php  } else {
+    $shop_list =check_shoplist_by_productid($product_detail->id);
+    if(empty($shop_list)) {echo"";}else{
+    $shop_name= get_shop_name($shop_list->shop_id);
+    ?>
 
 <div class="row text-center"
 style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
 
-<div class="col">verifed by Shop <?php echo $shop->name;?>
+<div class="col">verifed by Shop <?php echo $shop_name;?>
 </div>
 
     </div>
-   <?php }}
-  } else {  ?>
+   <?php } } }
+  } else { $shop_list =check_shoplist_by_productid($product_detail->id);
+    if(empty($shop_list)) {echo"";}else{
+   $shop_name= get_shop_name($shop_list->shop_id);
+  ?>
     <div class="row text-center"
     style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
     
-    <div class="col">verifed by Shop
+    <div class="col">verifed by Shop <?php echo $shop_name;?>
     </div>
     
         </div>
-  <?php } ?>
+  <?php }} ?>
             <!-- <div class="row text-center"
               style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
           
@@ -560,21 +577,29 @@ style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;marg
 
   <div class="container">
     <div class="row">
+    
+    <?php
+   
+foreach($category_data as $relatedproduct){
+
+?>
+
       <div class="col-lg-4 col-md-6  mb-2 ">
         <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
+          <img src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>" class="card-img-top" alt="Card image cap">
           <div class="card-block" style="padding:8px">
             <div class="card-title">
               <div class="row">
-                <div class="col-6"><b style="font-size:18px">Suzuki</b></div>
+                <div class="col-6"><b style="font-size:18px"><?php echo $relatedproduct->title;?></b></div>
                 <div class="col-2"><b style='font-size:18px'><i class="fa fa-heart-o" style="color:#ff6737"></i></b>
                 </div>
                 <div class="col-4" style="color:#10b981">
-                  <h5><b>$2500</b></h5>
+                  <h5><b>$<?php echo $relatedproduct->price;?></b></h5>
                 </div>
               </div>
             </div>
-            <small class="card-text">Space for a small product description.</small><br>
+
+            <small class="card-text"><?php echo $relatedproduct->Description;?></small><br>
 
             <div class="row">
               <div class=col-5>Fresheness </div>
@@ -586,112 +611,23 @@ style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;marg
               <div class=col-5>2015</div>
             </div>
 
-            <div class="row">
-              <div class=col-5>Color</div>
-              <div class=col-5>Red</div>
-            </div>
+            
 
             <div class="row text-center">
               <div class="col-1"><i class="fa fa-map-marker"></i></div>
               <div class="col-5">
-                <p>West India</p>
+                <p><?php echo $relatedproduct->address;?></p>
               </div>
-              <div class="col-6"> <a href="#" class="btn" style="padding:px" id="b">Ads Details ></a></div>
+              <div class="col-6"> <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>" class="btn" style="padding:px" id="b">Ads Details ></a></div>
             </div>
 
           </div>
         </div>
       </div>
+      <?php } ?>
 
-      <div class="col-lg-4 col-md-6  mb-2 ">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <div class="card-title">
-              <div class="row">
-                <div class="col-6"><b style="font-size:18px">Suzuki</b></div>
-                <div class="col-2"><b style='font-size:18px'><i class="fa fa-heart-o" style="color:#ff6737"></i></b>
-                </div>
-                <div class="col-4" style="color:#10b981">
-                  <h5><b>$2500</b></h5>
-                </div>
-              </div>
-            </div>
-
-            <small class="card-text">Space for a small product description.</small><br>
-
-            <div class="row">
-              <div class=col-5>Fresheness </div>
-              <div class=col-7>New(Extra fresh)</div>
-            </div>
-
-            <div class="row">
-              <div class=col-5>Model</div>
-              <div class=col-5>2015</div>
-            </div>
-
-            <div class="row">
-              <div class=col-5>Color</div>
-              <div class=col-5>Red</div>
-            </div>
-
-            <div class="row text-center">
-              <div class="col-1"><i class="fa fa-map-marker"></i></div>
-              <div class="col-5">
-                <p>West India</p>
-              </div>
-              <div class="col-6"> <a href="#" class="btn" style="padding:px" id="b">Ads Details ></a></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-4 col-md-6  mb-2 ">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <div class="card-title">
-              <div class="row">
-                <div class="col-6"><b style="font-size:18px">Suzuki</b></div>
-                <div class="col-2"><b style='font-size:18px'><i class="fa fa-heart-o" style="color:#ff6737"></i></b>
-                </div>
-                <div class="col-4" style="color:#10b981">
-                  <h5><b>$2500</b></h5>
-                </div>
-              </div>
-            </div>
-
-            <small class="card-text">Space for a small product description.</small><br>
-
-            <div class="row">
-              <div class=col-5>Fresheness </div>
-              <div class=col-7>New(Extra fresh)</div>
-            </div>
-
-            <div class="row">
-              <div class=col-5>Model</div>
-              <div class=col-5>2015</div>
-            </div>
-
-            <div class="row">
-              <div class=col-5>Color</div>
-              <div class=col-5>Red</div>
-            </div>
-
-            <div class="row text-center">
-              <div class="col-1"><i class="fa fa-map-marker"></i></div>
-              <div class="col-5">
-                <p>West India</p>
-              </div>
-              <div class="col-6"> <a href="#" class="btn" style="padding:px" id="b">Ads Details ></a></div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-
-
+                    </div>
+                    </div>
 
 
 
@@ -894,4 +830,60 @@ style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;marg
 
     container.src = image.src;
   }
+</script>
+
+<script>
+
+$(document).ready(function(){
+
+
+ var limit = 2;
+ var start = 0;
+ var action = 'inactive';
+ var str = window.location.href;
+ str = str.split("/");
+  cat = str[str.length - 3];
+   sub = str[str.length -1];
+
+ function load_country_data(limit, start)
+ {
+  $.ajax({
+   url:"<?php echo base_url();?>welcome/fetch/",
+   method:"POST",
+   data:{limit:limit, start:start,category_id:cat,subcategory_id:sub},
+   cache:false,
+   success:function(data)
+   {
+    $('#load_data').append(data);
+    if(data == '')
+    {
+     $('#load_data_message').html("<button type='button' class='btn btn-info'>No Data Found</button>");
+     action = 'active';
+    }
+    else
+    {
+     $('#load_data_message').html("<button type='button' class='btn btn-warning'>Please Wait....</button>");
+     action = "inactive";
+    }
+   }
+  });
+ }
+
+ if(action == 'inactive')
+ {
+  action = 'active';
+  load_country_data(limit, start);
+ }
+ $(window).scroll(function(){
+  if($(window).scrollTop() + $(window).height() > $("#load_data").height() && action == 'inactive')
+  {
+   action = 'active';
+   start = start + limit;
+   setTimeout(function(){
+    load_country_data(limit, start);
+   }, 1000);
+  }
+ });
+
+});
 </script>
