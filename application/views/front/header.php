@@ -673,7 +673,7 @@ padding-top:10px;
           <a class="nav-link active"  aria-current="page" href="#donate" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">Donate</a>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style=" color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">
             Categories
           </a>
           <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">

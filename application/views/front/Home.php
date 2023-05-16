@@ -70,12 +70,19 @@ html,body
      font-size: 12px;
      font-weight: bold;
   }
+  img.fix{
+    position: absolute;
+    margin-top: 19%;
+    height: 25px;
+  }
 }
   @media screen and (max-width: 776px) {
   input::placeholder  {
      font-size: 10px;
      font-weight: bold;
   }
+
+
 }
 @media screen and (max-width: 560px) {
   input::placeholder  {
@@ -165,7 +172,7 @@ html,body
 
                 ?>
                  <li class="" id="" onMouseOut="hide_sidebar()">
-                      <a class="btn shadow  bg-white rounded-pill" href="<?php echo base_url();?>welcome/fillter_product/4" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
+                      <a <?php if($cat->id==5){?>style="background:#d1fae5" <?php } ?> class="btn shadow  rounded-pill" href="<?php echo base_url();?>welcome/home1/<?php echo $cat->id;?>" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
 
                 </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
           
@@ -268,15 +275,7 @@ html,body
             
                   <div class="va-card va-cards"> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
                   <p style="min-height:151px; text-align:center;" class="my-auto">
-                  <img class="" 
-                            src="<?php echo base_url(); ?>assets/images/boost.png" style="
-    position: absolute;margin-top: 19%; height: 25px; ">
-    <?php if($pro->verified_product==1){?>
-      <img class="" 
-                            src="<?php echo base_url(); ?>assets/images/verified.png" style="margin-left:68px;
-    position: absolute;margin-top: 19%; height: 25px;">
-
-   <?php }?>
+                 
  
 
                                           <?php if($pro->cover_img !== NULL) { ?> 
@@ -285,7 +284,14 @@ html,body
 						          <img class="rounded-5 va-thumbnail" src="<?php echo base_url();?>assets/images/Group 486.png" />
 
 						       <?php }?>
-                            
+                   <img class="" 
+                            src="<?php echo base_url(); ?>assets/images/boost.png" style="
+   margin-top:-30%; margin-left:-20%">
+    <?php if($pro->verified_product==1){?>
+      <img class=""  src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   margin-top: -30%; ">
+
+   <?php }?>       
                   </p>
 
                             <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>

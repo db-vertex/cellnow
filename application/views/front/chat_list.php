@@ -471,7 +471,7 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- <script src="http://91.234.35.26/iwiki-admin/v1.0.0/admin/js/jquery.nicescroll.min.js"></script> -->
 
-<div class="container">
+<div class="container mt-4">
 <div class="row">
 <div class="col p-2" style="border-radius:18px;background-image: linear-gradient(to right, #77d4b5 ,#77d4b5 ,#d5fdfc, #f5f5f5);"><small style="padding-left:20px"><a href="<?php echo base_url(); ?>">Homepage</a> / Chat</small></div>
 </div>

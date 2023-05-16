@@ -65,7 +65,7 @@ border-radius: 60px;
   
 
 
-  <div class="container-fluid mt-5">
+  <div class="container-fluid ">
 <img src="<?php echo base_url();?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
 </div>
 
