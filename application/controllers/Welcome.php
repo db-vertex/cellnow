@@ -29,6 +29,7 @@ class Welcome extends CI_Controller {
 
 		 $this->load->model('user');
 		 $this->load->model('product_model');
+		 	 $this->load->model('chat_model');
 		 $this->load->library('form_validation');
 		 $this->load->library('session');
 
@@ -549,10 +550,72 @@ class Welcome extends CI_Controller {
 	}
 	public function fillter_product()
 	{
-		$this->load->view('front/header');
+	    
+	    	$session_id = $this->session->userdata('id');
+      
+       if($session_id)
+       {
+		//$myproduct = $this->product_model->myproduct($session_id);
+
+		 $user_detail = $this->user->loginuser($session_id);
+		 
+		 	$this->load->view('front/header',['user'=>$user_detail]);
+		$this->load->view('front/fillter',['user'=>$user_detail]);
+		$this->load->view('front/footer');
+		 
+       }else{
+				$this->load->view('front/header');
 		$this->load->view('front/fillter');
 		$this->load->view('front/footer');
+			}
+	
 	}
+	
+	public function fetch_data()
+	{
+		sleep(2);
+		$minimum_price = $this->input->post('minimum_price');
+		$maximum_price = $this->input->post('maximum_price');
+		$brand = $this->input->post('brand');
+		$sub_category = $this->input->post('sub_category');
+		$type = $this->input->post('type');
+		$Model = $this->input->post('Model');
+	    $category = $this->session->userdata('filter_id');
+		
+		$config = array();
+		$config["base_url"] = "";
+		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand,$sub_category, $category,$type,$Model);
+		$config["per_page"] = 5;
+		$config['uri_segment'] = 3;
+		$config["use_page_numbers"] = TRUE;
+		$config["full_tag_open"] = '<ul class="pagination">';
+		$config["full_tag_close"] = '</ul>';
+		$config["first_tag_open"] = '<li>';
+		$config["first_tag_close"] = '</li>';
+		$config["last_tag_open"] = '<li>';
+		$config["last_tag_close"] = '</li>';
+		$config['next_link'] = '&gt;';
+		$config["next_tag_open"] = '<li>';
+		$config["next_tag_close"] = '</li>';
+		$config["prev_link"] = "&lt;";
+		$config["prev_tag_open"] = "<li>";
+		$config["prev_tag_close"] = "</li>";
+		$config["cur_tag_open"] = "<li class='active'><a  href='#'>";
+		$config["cur_tag_close"] = "</a></li>";
+		$config["num_tag_open"] = "<li class=hello>";
+		$config["num_tag_close"] = "</li>";
+		$config["num_links"] = 4;
+		$this->pagination->initialize($config);
+		$page = $this->uri->segment('3');
+		$start = ($page - 1) * $config["per_page"];
+		
+		$output = array(
+			'pagination_link'		=>	$this->pagination->create_links(),
+			'product_list'			=>	$this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category,$category,$type,$Model)
+		);
+		echo json_encode($output);
+	}
+      
 
 	public function shop()
 	{
@@ -1585,5 +1648,529 @@ echo $pro;
 						$this->load->view('front/footer');
 					}
 					}
+					
+					
+						public function chat($data = " ")
+	{
+
+		//$id = $this->uri->segment(3);
+		$session_id = $this->session->userdata('id');
+      if($session_id)
+       {
+         
+         $message = "";
+       	     //$product = $this->product_model->getproduct($id);
+       	     //echo $this->db->last_query();
+		 $user_detail = $this->user->loginuser($session_id);
+
+		 if(!empty($this->input->post('sender_id')) && !empty($this->input->post('product_id'))&& !empty($this->input->post('category_id')) && $this->input->post('receiver_id')) {
+		 		
+		 			 $sender_id = $this->input->post('sender_id');
+		             $receiver_id = $this->input->post('receiver_id');
+		             $product_id = $this->input->post('product_id');
+		             $category_id = $this->input->post('category_id');
+		             $message = $this->input->post('message'); 
+		           
+		            
+
+		 }else{
+		     
+		          $sender_id = $session_id;
+		        $receiver_id = $session_id;
+                 $product_id = 0;
+                 $category_id=0;
+		     
+                  
+		 }
+    
+
+		 $chat_list = $this->chat_model->chatlist($session_id);
+
+     if(!empty($this->input->post('sender_id')) && $this->input->post('receiver_id')){
+          $chat_exist = $this->user->checkchatlist($sender_id,$receiver_id, $product_id,$category_id);
+
+      
+
+		  if(empty($chat_exist)){
+
+            $chat_list = array('sender_id' => $sender_id,'receiver_id' => $receiver_id, 'product_id'=>$product_id, 'category_id'=>$category_id, 'updated'=>date("Y-m-d H:i:s"));
+		  	   $this->db->insert('chat_list', $chat_list);
+		  	//echo "here";
+
+
+		  }/*else{
+
+		  	$chat_list = array('message'=>$message);
+
+		  	$this->chat_model->update($chat_list,$chat_exist['id']);
+		  	//echo "here1";
+		  	//echo $this->db->last_query();
+
+		  }*/
+
+      }
+		// echo $this->db->last_query();exit;
+          if(!empty($message)){
+          	$chat = array('sender_id' => $sender_id,'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id'=>$category_id,'message'=>$message);
+          
+		       $this->chat_model->insert($chat);
+          }
+		 // echo $this->db->last_query();
+                             
+		  $chat_list = $this->chat_model->chatlist($session_id);
+		
+      //echo $this->db->last_query();
+
+
+         if(!empty($this->input->post('sender_id')) && $this->input->post('receiver_id')){
+
+          $chat = $this->user->getuserallchat($sender_id, $receiver_id, $product_id,$category_id);
+  
+        }else{
+          
+          $chat= null;
+        }
+  
+
+         	//$chat = $this->user->getuserallchat($sender_id,$reciever_id);
+         
+		
+
+		$this->load->view('front/header',['user'=>$user_detail,'receiver_id'=>$receiver_id,'sender_id'=>$sender_id,'chat_list'=>$chat_list,'chat'=>$chat]);
+		$this->load->view('front/chat_list',['user'=>$user_detail,'sender_id'=>$sender_id,'receiver_id'=>$receiver_id,'product_id'=>$product_id,'category_id'=>$category_id,'chat_list'=>$chat_list,'chat'=>$chat]);
+		$this->load->view('front/footer');
+
+		}else{
+        
+            return redirect('welcome/newhome');
+       }
+	}
+
+	public function chatdata($data = " ")
+	{
+
+	
+		$session_id = $this->session->userdata('id');
+      if($session_id)
+      {
+
+		  $sender_id = $this->input->post('sender_id');
+		  $receiver_id = $this->input->post('receiver_id');
+          $product_id = $this->input->post('product_id');
+          $category_id = $this->input->post('category_id');
+		 // echo $this->db->last_query();
+
+		  if($chat_list = $this->chat_model->chatlist($session_id)){
+            
+          $chat = $this->user->getuserallchat($sender_id,$receiver_id, $product_id,$category_id);
+
+          //echo $this->db->last_query();
+ 
+
+            $pro = "";
+          
+            
+					        
+  
+                            if(!empty($chat)){
+
+                                          foreach ($chat as $key => $chatmessages) {
+                                              
+                                           
+                                            
+                                             if($category_id==1) {
+                                              $profile = get_mobile_data($chatmessages["product_id"]);
+                                          }
+                                          
+                                           else if($category_id==2) {
+                                              $profile = get_electronic_data($chatmessages["product_id"]);
+                                          }
+                                           else if($category_id==3) {
+                                              $profile = get_furniture_data($chatmessages["product_id"]);
+                                          }
+                                           else if($category_id==4) {
+                                              $profile = get_fashion_data($chatmessages["product_id"]);
+                                          }
+                                      
+                                          else if($category_id==5) {
+                                              $profile = get_bike_data($chatmessages["product_id"]);
+                                          }
+                                           else if($category_id==6) {
+                                              $profile = get_car_data($chatmessages["product_id"]);
+                                          }
+                                          
+                                          else if($category_id==7) {
+                                              $profile = get_book_data($chatmessages["product_id"]);
+                                          }
+                                          
+                                         if($chatmessages['sender_id'] != $_SESSION['id']){
+                                            
+                                              $profile_pic1=get_userdetail($chatmessages['sender_id'])->profile_img;
+
+                                              $data = array('read_status'=>1);
+
+                                          $updated =  $this->chat_model->updateunreadmessage($data,$chatmessages['sender_id'],$_SESSION['id']);
+                                           
+                                             //$pro .= $updated;
+                                      
+
+
+                                        $pro .= '<li class="left">
+                                            
+                                            <span class="avatar available tooltips" data-toggle="tooltip " data-placement="right" data-original-title="Yanique Robinson">';
+                                          
+                                                $pro .= ' <img src="https://dbvertex.com/classified/uploads/profile/'.$profile_pic1.'" alt="avatar" class="img-circle">';
+
+
+
+                                          $pro .= ' </span>
+                                            <div class="body">   
+                                                <div class="message well well-sm">
+                                                    '.$chatmessages['message'].'
+                                                </div>
+                                                <div class="timestamp-sender">'.$chatmessages["created"].'</div>
+                                            </div>
+                                        </li>';  
+
+
+                                        
+
+                                          }
+                                           
+                                          else{
+
+
+                                            
+                                    $profile_pic2=get_userdetail($chatmessages['sender_id'])->profile_img;
+
+                                       
+
+                                      $pro .= '<li class="right">
+                                          
+                                            <span class="avatar tooltips" data-toggle="tooltip " data-placement="left" data-original-title="Kevin Mckoy">';
+                                                  
+
+                                                $pro .= '<img src="https://dbvertex.com/classified/uploads/profile/'.$profile_pic2.'" alt="avatar" class="img-circle">';
+
+
+                                             
+                                                /*<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar" class="img-circle">*/
+                                          $pro .=  '</span>
+                                            <div class="body chatbodys">   
+                                                <div class="message well well-sm">
+                                                    '. $chatmessages['message'].'
+                                               
+                                                </div>
+                                               
+                                              <div class="timestamp">'.$chatmessages["created"].'</div><div style="'.(($chatmessages["read_status"]==1)?"color:#32CD32;":"").'"  class="checkmark-sent-delivered">✓</div>'.(($chatmessages["delivered_status"]==1)?'<div style="'.(($chatmessages["read_status"]==1)?"color:#32CD32;":"").'" class="checkmark-read heckmark-read">✓</div>
+                                            ':'').'</div>
+                                        </li> ' ;  
+                                        
+
+                                      
+                                     
+                                             
+                                          }
+                                            
+                                        
+
+                                            }
+                                            // <div class="timestamp">13:54</div>
+                                          }else{
+
+                                             $pro .= '<li id="default-page" style="text-align: center;padding-top:30%;">
+                                           
+                                            <img src="'.base_url('assets/images/CelNow 5 1.png').'" style="opacity:0.2;">
+                                            <h2 style="color: black; opacity:0.2;">Welcome to celnow</h2>
+
+
+                                          </li>';
+                                          
+                                          
+
+                                          } 
+                                          
+                                          
+                                
+                                    
+                               
+                                            echo $pro;
+          
+          }
+                                     
+                             
+  
+                          
+                                            
+                                          
+                                  
+		}else{
+        
+            return redirect('welcome/newhome');
+      }
+	}
+
+   public function getallchat(){
+
+  $session_id = $this->session->userdata('id');
+      if($session_id)
+       {
+
+      $sender_id = $this->input->post('sender_id');
+      $receiver_id = $this->input->post('receiver_id');
+
+       $chat =  get_all_chat($sender_id,$receiver_id);
+
+                                        //echo $this->db->last_query();
+
+                                        $allchat = count($chat);
+
+                                        echo $allchat;
+
+    }
+
+}
+
+
+  public function savechat()
+	{
+
+		//$id = $this->uri->segment(3);
+		$session_id = $this->session->userdata('id');
+      if($session_id)
+       {
+
+       	    // $product = $this->product_model->getproduct($id);
+       	     //echo $this->db->last_query();
+		 $user_detail = $this->user->loginuser($session_id);
+		 $sender_id = $this->input->post('sender_id');
+		 $receiver_id = $this->input->post('receiver_id');
+		 $product_id =  $this->input->post('product_id');
+		 $category_id =  $this->input->post('category_id');
+
+         $message = $this->input->post('message'); 
+        print_r($message);
+        $token=$this->db->query("SELECT device_id as device FROM users where user_id=$receiver_id")->row()->device;
+            $messadge="Someone Message You";
+            $notifi = $this->user->push_notification_android($token,$messadge, "Chat");
+
+		 $chat_exist = $this->user->checkchatlist($sender_id,$receiver_id, $product_id,$category_id);
+ 
+     //echo $this->db->last_query();
+
+   
+
+		  if(!empty($chat_exist)){
+
+		  	 $chat_list = array('message'=>$message);
+
+          
+        $this->chat_model->update($chat_list,$sender_id,$receiver_id);
+
+
+		  }else{
+
+
+        $chat_list = array('sender_id' => $sender_id,'receiver_id' => $receiver_id,'product_id' => $product_id,'category_id' => $category_id,'message'=>$message);
+
+        $this->db->insert('chat_list', $chat_list);
+        //echo "here";
+
+		  
+		 
+
+		  }
+		// echo $this->db->last_query();exit;
+
+		  $chat = array('sender_id' => $sender_id,'receiver_id' => $receiver_id,'product_id' => $product_id,'category_id' => $category_id,'message'=>$message);
+
+		  $this->chat_model->insert($chat);
+		  
+
+		  $chat_list = $this->chat_model->chatlist($session_id);
+	
+          $chat = $this->user->getuserallchat($sender_id,$receiver_id);
+          
+
+          $pro = "";
+
+                                           foreach ($chat as $key => $chatmessages) {
+                                             
+                                            
+                                           if($chatmessages['sender_id'] != $_SESSION['id']){
+
+                                              /*$data = array('read_status'=>1);
+
+                                          $updated =  $this->chat_model->updateunreadmessage($data,$chatmessages['sender_id'],$_SESSION['id']);*/
+                                           
+                                             //$pro .= $updated;
+
+                                        $pro .= '<li class="left">
+                                            
+                                            <span class="avatar available tooltips" data-toggle="tooltip " data-placement="right" data-original-title="Yanique Robinson">
+                                                <img src="https://dbvertex.com/celnow/uploads/profile/Asset_1@2x-8.png" alt="avatar" class="img-circle ">
+                                            </span>
+                                            <div class="body">   
+                                                <div class="message well well-sm">
+                                                    '.$chatmessages['message'].'
+                                                </div>
+                                            </div>
+                                        </li>';  
+
+
+                                           
+
+                                           }else{
+                                            
+                                         
+
+                                       $pro .= '<li class="right">
+                                          
+                                            <span class="avatar tooltips" data-toggle="tooltip " data-placement="left" data-original-title="Kevin Mckoy">
+                                                <img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar" class="img-circle rounded-5">
+                                            </span>
+                                            <div class="body">   
+                                                <div class="message well well-sm">
+                                                    '.$chatmessages['message'].'
+
+                                                </div>
+                                               
+                                                
+                                            </div>
+                                        </li>';  
+
+
+                                           
+                                           }
+                                            
+
+
+ 
+
+                                            }
+  
+                     echo $pro;
+
+          /*return redirect('welcome/chat');*/
+
+		/*$this->load->view('front/header',['user'=>$user_detail,'sender_id'=>$sender_id,'receiver_id'=>$receiver_id,'chat_list'=>$chat_list,'chat'=>$chat]);
+		$this->load->view('front/chat_list',['user'=>$user_detail,'sender_id'=>$sender_id,'receiver_id'=>$receiver_id,'chat_list'=>$chat_list,'chat'=>$chat]);
+		$this->load->view('front/footer');*/
+
+		}else{
+        
+            return redirect('welcome');
+       }
+	}
+
+  public function loadchat()
+	{
+
+		$id = $this->uri->segment(3);
+		$session_id = $this->session->userdata('id');
+      if($session_id)
+       {
+
+       	    // $product = $this->product_model->getproduct($id);
+       	     //echo $this->db->last_query();
+		 $user_detail = $this->user->loginuser($session_id);
+		 $sender_id = $this->input->post('sender_id');
+		 $receiver_id = $this->input->post('receiver_id');
+		 $product_id = $this->input->post('product_id');
+         $load_cound = $this->input->post('load_cound'); 
+
+
+		
+
+         
+            if($category_id==1) {
+                                              $profile = get_mobile_data($product_id);
+                                          }
+                                          
+                                           else if($category_id==2) {
+                                              $profile = get_electronic_data($product_id);
+                                          }
+                                           else if($category_id==3) {
+                                              $profile = get_furniture_data($product_id);
+                                          }
+                                           else if($category_id==4) {
+                                              $profile = get_fashion_data($product_id);
+                                          }
+                                      
+                                        
+        
+          $chat = $this->user->loadchat($sender_id,$receiver_id,$load_cound, $product_id,$category_id);
+          
+          $pro = "";
+
+                                           foreach ($chat as $key => $chatmessages) {
+                                             
+                                             //print_r($chatmessages);
+                                           if($chatmessages['sender_id'] != $_SESSION['id']){
+                                       
+
+                                         $data = array('read_status'=>1);
+
+                                          $updated =  $this->chat_model->updateunreadmessage($data,$chatmessages['sender_id'],$_SESSION['id']);
+
+
+                                          //echo $this->db->last_query();
+                                           
+                                             //$pro .= $updated;
+                                            
+                                
+                                        $pro .= '<li class="left">
+                                            
+                                            <span class="avatar available tooltips" data-toggle="tooltip" data-placement="right" data-original-title="Yanique Robinson">
+                                                <img width=30 height=30 src="'.($profile->thumbnails).'" alt="avatar" class="img-circle rounded-5">
+                                            </span>
+                                            <div class="body">   
+                                                <div class="message well well-sm">
+                                                    '.$chatmessages['message'].'
+                                                </div>
+                                            </div>
+                                        </li>';  
+
+
+                                           
+
+                                           }else{
+                                            
+
+
+                                       $pro .= '<li class="right">
+                                          
+                                            <span class="avatar tooltips" data-toggle="tooltip " data-placement="left" data-original-title="Kevin Mckoy">
+                                                <img width=30 height=30 src="'.($profile->thumbnails).'" alt="avatar" class="img-circle rounded-5">
+                                            </span>
+                                            <div class="body">   
+                                                <div class="message well well-sm">
+                                                    '.$chatmessages['message'].'
+
+                                                </div>
+                                                <div class="clearfix"></div>
+                                                
+                                            </div>
+                                        </li>';  
+
+
+                                           
+                                           }
+                                            
+
+
+                                            }
+  
+           echo $pro;
+
+   
+
+		}else{
+        
+            return redirect('welcome');
+       }
+	}
+
+
   
 }

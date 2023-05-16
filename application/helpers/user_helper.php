@@ -18,6 +18,22 @@ function get_category($categoryid)
 }
 
 
+function get_mobile_data($product_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts WHERE id=".$product_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
+
 function get_all_favroite($user_id)
 {
   //get main CodeIgniter object
@@ -42,6 +58,21 @@ function get_all_category_reusable_parts($id)
        $ci->load->database();
 
   $query="SELECT * FROM category_reusable_parts WHERE id=".$id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
+function get_seller_product($id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts WHERE user_id=".$id;
 
   $category_data = $ci->db->query($query);        
 
@@ -134,6 +165,21 @@ function get_all_subcategory()
   return $category_data->result(); 
 }
 
+function get_all_reusable()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
 function get_all_boost()
 {
   //get main CodeIgniter object
@@ -205,6 +251,20 @@ $query="SELECT * FROM shop WHERE id=".$id;
 $category_data = $ci->db->query($query);        
 
 return $category_data->row();	
+}
+
+
+function get_productid_by_shop($shop_id)
+{
+	//get main CodeIgniter object
+       $ci =& get_instance();
+  //load databse library
+       $ci->load->database();
+  $query="SELECT category_id, product_id FROM verify_product WHERE shop_id=".$shop_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result();	
 }
 
 
@@ -301,7 +361,7 @@ function get_user_phone($user_id)
        $ci =& get_instance();
   //load databse library
        $ci->load->database();
-       $query="SELECT username,phone,user_id FROM users WHERE user_id=".$user_id;
+       $query="SELECT name,phone,user_id FROM users WHERE user_id=".$user_id;
 
   $category_data = $ci->db->query($query);        
 
@@ -612,7 +672,7 @@ function get_interest($product_id,$user_id)
 
   return $category_data->row(); 
 }
-function get_wishlist($product_id,$user_id)
+function get_wishlist($product_id,$category_id,$user_id)
 {
   //get main CodeIgniter object
        $ci =& get_instance();
@@ -620,7 +680,7 @@ function get_wishlist($product_id,$user_id)
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM wishlist WHERE product_id=".$product_id." And user_id=".$user_id;
+  $query="SELECT * FROM wishlist WHERE product_id=".$product_id." And category_id=".$category_id." And user_id=".$user_id;
 
   $category_data = $ci->db->query($query);        
 

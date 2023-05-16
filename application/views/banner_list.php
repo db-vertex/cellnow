@@ -46,8 +46,10 @@ $msg_class=$this->session->flashdata('msg_class')
                 <tr>
                   <th>S no.</th>
                   <!-- <th>Title</th>
- -->                  <th>Banner</th>
-                  <!-- <th>Video Link</th> -->
+                
+ -->                   <th>Url</th> 
+ <th>Banner</th>
+                   
                   <th>Action</th>
                 </tr>
               </thead>
@@ -56,15 +58,21 @@ $msg_class=$this->session->flashdata('msg_class')
           <?php 
           
          // print_r($agent);
-
+$i=0;
           foreach ($banner as $value) { 
-$i=1;
+              $i++;
+
           ?>
 
                 <tr id="<?php echo $value->id; ?>">
 
                 <td><?php echo  $i;?></td>
                 <!-- <td><?php echo  $value->title;?></td> -->
+               <td>
+
+                        <?php echo  $value->url;?>
+
+                      </td> 
                 
                 <td style="text-align: center;">
 
@@ -76,11 +84,7 @@ $i=1;
                         <?php } ?> 
 
                 </td>
-                  <!--     <td>
-
-                        <?php echo  $value->videolink;?>
-
-                      </td> -->
+               
                 
 
                 <td> <!--  <a href="<?php echo base_url("admin/editbanner/{$value->id}")?>" class=""  title="Edit">
@@ -93,7 +97,7 @@ $i=1;
 
  </td>
                 </tr> 
-                <?php $i++;} ?>
+                <?php } ?>
             </tbody>
                 
             </table>

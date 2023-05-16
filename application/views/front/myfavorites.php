@@ -151,7 +151,7 @@ border-radius: 60px;
     <div class="row text-center">
         <div class="col-1"><i class="fa fa-map-marker"></i></div>
         <div class="col-5"><p><?php echo $product->address; ?></p></div>
-        <div class="col-6" >     <a href="<?php echo base_url();?>welcome/productdetail/<?php echo $product->category_id;?>/<?php echo $product->id;?>" class="btn btn-change" id="a" style="font-size:15px; background-color:#10B981; color:#fff;" >Ads Details </a>
+        <div class="col-6" >     <a href="<?php echo base_url();?>welcome/productdetail/<?php echo $product->category_id;?>/<?php echo $product->id;?>/<?php echo $product->subcategory_id;?>" class="btn btn-change" id="a" style="font-size:15px; background-color:#10B981; color:#fff;" >Ads Details </a>
 </div>
       </div>
   
@@ -174,4 +174,38 @@ border-radius: 60px;
 </body>
 </html>
 
+<script>
+     $(document).on('click', '.dddssaaf', function (e) {
+    e.stopPropagation();
+    var obj = $(this);
+    var pid = $(this).data("pid");
+    var cid = $(this).data("cid");
+    var uid = $(this).data("uid");
+    var status = $(this).data("wishlist");
 
+    if (!uid == 0)
+      //   alert(status);
+      $.ajax({
+        type: "POST",
+        url: '<?php echo base_url("Welcome/setwishlist"); ?>',
+        cache: false,
+        data: { 'product_id': pid, 'user_id': uid, 'category_id': cid },
+        error: function () {
+          alert('Something is wrong');
+        },
+        success: function (data) {
+          $(".dddssaaf" + pid).toggleClass("fa-heart-o fa-heart");
+          if (status == 0) {
+            $(this).data("wishlist", 1);
+            swal("Product Added in Wishlist Successfully!", "", "success");
+          }
+          else {
+            $(this).data("wishlist", 0);
+            swal("Product removed from Wishlist Successfully!", "", "success");
+          }
+        }
+      });
+
+
+  });
+</script>

@@ -1,118 +1,78 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Bootstrap Example</title>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.4/dist/jquery.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-
-  <!-- icon add link -->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-
-
-   <!-- map icon add link -->
-  <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
- 
-  
-  
-  <style>
-  /* Make the image fully responsive */
-  .carousel-inner img {
-    width: 100%;
-    height: 100%;
-  }
+    <style>
 
 
 
 
-  /* search icon bar css */
-  .form-control:focus {
-  box-shadow: none;
+
+
+
+
+
+/* search btn line 11 to 89 */
+.search_wrap{
+	width: 100%;
+	
 }
 
-.form-control-underlined {
-  border-width: 0;
-  border-bottom-width: 1px;
-  border-radius: 0;
-  padding-left: 0;
+.search_wrap .search_box{
+	position: relative;
+	
+	height: 64px;
 }
- .btn{
+
+.search_wrap .search_box .btn{
 	position: absolute;
-	top: 0;
-	right: 0;
-	width: 60px;
-	height: 100%;
-	/* background: #10B981; */
-	z-index: 1;
-	cursor: pointer;
-    border-radius:20px;
-    coloor:white;
+	
+	height: 80%;
+	background: #10B981;
+  color: white;
+	
+}
+.search_wrap .search_box .btn.btn_common .fas{
+	
+	/* top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%); */
+	/* color: #fff; */
+ 
+}
+.search_wrap.search_wrap_6 .search_box .btn{
+	max-width: 100%;
+	height: 60%;
+	top: 8%;
+	right: 1.3%;
+    padding: 6px 0px;
+    
+	
+	/* color: #fff; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
 }
 
-
-/*  categery css */
-.button {
-  background-color:white;
-  border: 1px solid black;
-  color: #888B97;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 2px 2px;
-  cursor: pointer;
-  border-radius: 15px;
-  font-size: 10px;
+ input::placeholder {
+  font-size: 16px;
   font-weight: bold;
-  teat-align:center;
-
 }
-
-/*  */
-.button5
-{
-    border-radius:30px;
-    height:20px;
-    font-size:10px;
-    margin-left:30px;
-    /* color:#6A983C; */
-    background:#F4F8EC;
-
+@media screen and (max-width: 992px) {
+  input::placeholder  {
+     font-size: 12px;
+     font-weight: bold;
+  }
 }
-
-
-/* bike card css */
-.card 
-{
-    border-radius:30px;
-
+  @media screen and (max-width: 776px) {
+  input::placeholder  {
+     font-size: 10px;
+     font-weight: bold;
+  }
 }
-
-
-/* sub catery css */
-#rcorners2 {
-  border-radius: 100px;
-  border: 2px solid #000000;
-  padding: 10px; 
-  width: 50px;
-  height: 50px;  
-  margin-left:30px;
-  /* grid-template-columns: repeat(10,1fr); */
-}
-.description
-{
-  padding: 10px; 
-  width: 50px;
-  height: 50px;  
-  margin-left:30px;
-  font-size:10px;
-  display:flex;
-}
+@media screen and (max-width: 560px) {
+  input::placeholder  {
+     font-size: 12px;
+    font-weight: bold;
+  }
+} 
 
 
 
@@ -121,190 +81,140 @@
 
 
 
+    </style>
+    <?php  $id = $this->uri->segment(4); 
+    ?>
 
-  </style>
-</head>
-<body>
-
-
-
-  <!-- banner -->
-  <div class="container">
-<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+ <div class="container">
+<div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-    <div class="carousel-item active">
-      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="First slide">
+  <?php
+      $all_banner = get_all_banner();
+      $j = 1;
+      foreach ($all_banner as $key => $banner) {
+        ?>  
+    <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
+      <a href="<?php echo $banner->url; ?>" target="_blank"><img  class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
     </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="Second slide">
-    </div>
-    <div class="carousel-item">
-      <img class="d-block w-100" src="<?php echo base_url();?>assets/images/banner.png" alt="Third slide">
-    </div>
+    <?php
+
+        $j++;
+
+      }
+      ?>
+   
   </div>
-  <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    <span class="sr-only">Previous</span>
-  </a>
-  <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlss" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    <span class="sr-only">Next</span>
-  </a>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-</div>
+</div><br>
 
-  <!-- banner -->
-
-
-
-  <div class="container">
+<div class="container">
     <div class="row">
     <p style="color: #F59E0B;"> -------Our Recomandation</p>
     </div>
-   </div>
+   </div><br>
 
 
-   <!-- feratured part add -->
-   <div class="container">
+    <!-- search bar -->
+    <div class="container">
     <div class="row">
-        <div class="col-md-6">
+      <div class="col-lg-7 col-md-5 col-sm-4 ">
         <p style="font-size:30px;color:#1B1C57;"> Featured </p>
-</div>
-
-<div class="col-md-6">
-<div class="p-1 bg-light rounded rounded-pill shadow-sm mb-4">
-            <div class="input-group">
-              <div class="input-group-prepend">
-                <button  id="button-addon2" type="submit" class="btn btn-link text-warning"><i class="material-icons" style="font-size:20px;color:red">place</i>
-</i></button>
-              </div>
-              <input type="search" placeholder="Search for the Product you want!"  aria-describedby="button-addon2" class="form-control border-0 bg-light"><button  style="border-radius:30px; color:white; background-color:#10B981;width:100px;height:40px;" class="button" >search <i class='fas fa-angle-right' style='font-size:10px;color:#10B981'></i></button> </p>
-             
-            </div>
-          </div>
       </div>
-    </div>
-   </div>
+      <div class="col-lg-5 col-md-7 col-sm-8">
+      <div class="search_wrap search_wrap_6 m-0">
+			<div class="search_box">
+         
+		       <input type="search" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+          <button type="button" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
+        </div>
+  </div>
+</div>
+</div>
+ </div><br>
 
-   <!-- feratured part close -->
+ <!-- new -->
+<div class="container">
+  <div class="row ">
+  <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2">
+  <a style="background:#d1fae5;" class="btn shadow rounded-pill btn-change" href="#" role="button"><img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/menu1.png" alt=""> &nbsp &nbsp All</a>
+  </div>
+
+
+  <div class="col-lg-3 col-md-5 col-sm-6 col-12 mb-2">
+    <a class="btn shadow   rounded-pill btn-change" <?php if($id==1){?> style="background:#d1fae5;" <?php }?> href="<?php echo base_url();?>welcome/fillter_product/1" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>assets/images/img/reusable1.png" alt="">Reusable parts and Product</a>
+  </div>
+  <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
+  <a class="btn shadow  bg-white rounded-pill btn-change" href="<?php echo base_url();?>welcome/fillter_product/2" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>assets/images/img/home1.png" alt="">  &nbsp Tuitions/Classes</a>
+  </div>
+  <div class="col-lg-2 col-md-4 col-sm-6  mb-2 btn-change">
+  <a class="btn shadow  bg-white rounded-pill" href="<?php echo base_url();?>welcome/fillter_product/3" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>assets/images/img/work1.png" alt="">   Part-time Jobs </a>
+  </div>
+  <div class="col-lg-2 col-md-4 col-sm-6  mb-2 btn-change">
+  <a class="btn shadow  bg-white rounded-pill" href="<?php echo base_url();?>welcome/fillter_product/4" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>assets/images/img/employee1.png" alt=""> &nbsp  Internships </a>
+  </div>
+  </div>
+</div><br>
 
 
 
-   
-   <div class="container ">
-  <div class="row text-center">
-    <div class="col-lg-2  col-md-3 col-sm-6">
-  <button class="button">
-<img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/menu1.png" alt=""> &nbsp &nbsp <a href="https://www.w3schools.com" class="w3-btn w3-black">All</a> 
-</button>
-    </div>
-    <div class="col-lg-3 col-md-5 col-sm-6">
-  <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/reusable1.png" alt="">  &nbsp <a href="https://www.w3schools.com" style="color:#888B97">Reusable parts and Product</a> 
-</button>
-    </div>
-    <div class="col-lg-3 col-md-4 col-sm-4">
-  <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/home1.png" alt="">  &nbsp <a href="https://www.w3schools.com" style="color:#888B97">Tuitions/Classes </a>
-</button>
-    </div>
-<div class="col-lg-2  col-md-5 col-sm-4">
-  <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/work1.png" alt="">     <a href="https://www.w3schools.com"style="color:#888B97">Part-time Jobs</a>
- 
-</button>
-    </div>
-    <div class="col-lg-2 col-md-4 col-sm-4">
-  <button class="button">
-  <img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/employee1.png" alt=""> &nbsp   <a href="https://www.w3schools.com" style="color:#888B97">Internships </a>
- </button>
+
+<div class="container">
+<div class="va-carrousel-section">
+    <div class="va-whitewrap">
+       
+
+        <div id="va_container">
+            <button class="deals-scroll-left deals-paddle" id="left_sponser_button">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                    class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512">
+                    <path fill="currentColor"
+                        d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                    </path>
+                </svg>
+            </button>
+
+            <div class="va-carrousel-flexbox">
+            <?php
+                $category = get_all_subcategory();
+                foreach ($category as $key => $cat) {
+                  ?>
+                 
+                  <div class="va-card va-card_category"> <a class=" border-0"  href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;"> 
+                  <p style="text-align:center;" class="my-auto pouler_Categories">
+                  <img class="btn-change"  src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
+                   <center style="color:black; font-size:12px; font-weight:500"><?php echo ucfirst($cat->sub_category); ?></center>
+                  </p>
+                    </a> 
+                    </div>
+                   
+                    <?php } ; ?>  
+                    
+              
+            <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                    class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512">
+                    <path fill="currentColor"
+                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                    </path>
+                </svg>
+            </button>
+         
+            </div>
+        </div>
+
     </div>
 </div>
 </div>
-
-
-
-<!-- sub catery -->
-
-<div class="container mt-5">
-  <div class="row">
-  <div class="col-lg-1 col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/menu1.png" alt="">
-    <p class="description">All</p>
-  </p>
- 
-  </div>
-  <div class="col-lg-1 col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/Vector (1).png" alt="">
-    <p class="description">Tours</p>
-  </p>
-  </div>
-
-  <div class="col-lg-1 col-md-3 col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/Vector (4).png" alt="">
-    <p class="description">Pets</p>
-  </p>
-  </div>
-
-
-  <div class="col-lg-1 col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/Vector4.png" alt="">
-    <p class="description">Apparels</p>
-  </p>
-  </div>
-
-
-  <div class="col-lg-1  col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/Vector (3).png" alt="">
-    <p class="description">Books & Magazines</p>
-  </p>
-  </div>
-
-  <div class="col-lg-1  col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/vector3.png" alt="">
-    <p class="description">Dairy Products</p>
-  </p>
-  </div>
-
-  <div class="col-lg-1  col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/vectorr.png" alt="">
-    <p class="description">Decoratie Items</p>
-  </p>
-  </div>
-  <div class="col-lg-1  col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/Vector (5).png" alt="">
-    <p class="description">Electronics</p>
-  </p>
-  </div>
-
-  <div class="col-lg-1  col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/Vector (6).png" alt="">
-    <p class="description">Fruits & Vegetables</p>
-  </p>
-  </div>
-
-  
-  <div class="col-lg-1  col-md-3  col-sm-6">
-  <p id="rcorners2">
-    <img src="<?php echo base_url();?>assets/images/vector10.png" alt="">
-    <p class="description">Grocery Items</p>
-  </p>
-  </div>
-  </div>
-</div>
-
-
-
-
 
 
 
@@ -628,5 +538,3 @@
 
 
  
-</body>
-</html>

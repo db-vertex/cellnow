@@ -7,6 +7,7 @@
 
   <script src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
 
   <!-- link for map -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -275,11 +276,11 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               <label>Type of service </label>
               <div class="col-12">
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio1" value="Remote" checked>
+            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio1" value="Remote" checked >
             <label class="form-check-label" for="inlineRadio1">Remote</label>
           </div>
           <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio2" value="In Shop">
+            <input class="form-check-input" type="checkbox" name="service_type" id="inlineRadio2" value="In Shop" >
             <label class="form-check-label" for="inlineRadio2">In Shop</label>
           </div>
          
@@ -293,7 +294,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
             <div class="form-group">
-              <label> GST Number</label>
+              <label> GST/PAN Number</label>
               <input name="GST" class="form-control" placeholder="GST Number" type="text" maxlength="20"
                 value="<?php echo $shop->GST; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
@@ -312,7 +313,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
 				        	    
-							    <label>Image size(180 x 190) px</label>
+							    <label>Shop document photo Upload size(180 x 190) px</label>
 							    <input type="file" class="form-control" id="cover_image" name="shop_images" style="border-radius:30px; border-color:#13C571" accept="image/*" required>
 							    <span id="cover_err" style="color:red;"></span>
                   <div class="invalid-feedback">
@@ -322,10 +323,14 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
              
             <div class="form-group">
             <div class="form-check form-check-inline">
-            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
+             
             <label>
             Terms and Conditions 
             </label>
+             <div class="invalid-feedback">
+                Terms & condition is required.
+              </div>
                 </div>
           </div>
           <input type="text" class="form-control" name="latitude" id="latitude" hidden/>
@@ -451,8 +456,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
               <label> Mobile</label>
-              <input name="mobile" class="form-control" placeholder="Mobile" type="number" id="mobile"
-                value="<?php echo set_value('mobile'); ?>" style="border-radius:30px; border-color:#13C571" required>
+              <input name="mobile" class="form-control" placeholder="Mobile" type="number" id="mobile" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
+                value="<?php echo set_value('mobile'); ?>" maxlength="10" minlength="10" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Valid Mobile is required.
               </div>
@@ -516,7 +521,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
 
             <div class="form-group">
-              <label> GST Number</label>
+              <label> GST/PAN Number</label>
               <input name="GST" class="form-control" placeholder="GST Number" type="text"  maxlength="20"
                 value="<?php echo set_value('name'); ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
@@ -536,10 +541,22 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="form-group">
 				        	    
-                      <label>Image size(180 x 190) px</label>
+                      <label>Shop document photo Upload size(180 x 190) px</label>
                       <input type="file" class="form-control" id="cover_image" name="shop_images" style="border-radius:30px; border-color:#13C571" accept="image/*">
                       <span id="cover_err" style="color:red;"></span>
                   </div>
+                  
+                   <div class="form-group">
+            <div class="form-check form-check-inline">
+            <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
+            <label>
+            Terms and Conditions 
+            </label>
+              <div class="invalid-feedback">
+                Terms & condition is required.
+              </div>
+                </div>
+          </div>
 
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>

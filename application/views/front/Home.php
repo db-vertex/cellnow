@@ -104,7 +104,7 @@ html,body
       foreach ($all_banner as $key => $banner) {
         ?>  
     <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-      <img  class="d-block w-100" src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide">
+      <a href="<?php echo $banner->url; ?>" target="_blank"><img  class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
     </div>
     <?php
 
@@ -151,27 +151,32 @@ html,body
  </div><br>
 
  <!-- new -->
-<div class="container">
-  <div class="row ">
-  <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2">
-  <a style="background:#d1fae5;" class="btn shadow rounded-pill btn-change" href="#" role="button"><img class="rounded-pill me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/menu1.png" alt=""> &nbsp &nbsp All</a>
-  </div>
 
 
-  <div class="col-lg-3 col-md-5 col-sm-6 col-12 mb-2">
-    <a class="btn shadow  bg-white rounded-pill btn-change" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/reusable1.png" alt="">Reusable parts and Product</a>
-  </div>
-  <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-  <a class="btn shadow  bg-white rounded-pill btn-change" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/home1.png" alt="">  &nbsp Tuitions/Classes</a>
-  </div>
-  <div class="col-lg-2 col-md-4 col-sm-6  mb-2 btn-change">
-  <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/work1.png" alt="">   Part-time Jobs </a>
-  </div>
-  <div class="col-lg-2 col-md-4 col-sm-6  mb-2 btn-change">
-  <a class="btn shadow  bg-white rounded-pill" href="#" role="button"><img class="rounded-circle me-1" width="20" height="20" src="<?php echo base_url();?>assets/images/img/employee1.png" alt=""> &nbsp  Internships </a>
-  </div>
-  </div>
-</div><br>
+
+<div class="container"  >
+   <ul class="pt-0 pb-0 mb-0 cut-list">
+       <?php
+
+              $category = get_all_category();
+
+              foreach ($category as $key => $cat) {
+
+
+                ?>
+                 <li class="" id="" onMouseOut="hide_sidebar()">
+                      <a class="btn shadow  bg-white rounded-pill" href="<?php echo base_url();?>welcome/fillter_product/4" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
+
+                </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
+          
+            <?php
+                      
+                      }
+
+                ?> 
+</ul>
+    
+</div>
 
 
 
@@ -265,7 +270,7 @@ html,body
                   <p style="min-height:151px; text-align:center;" class="my-auto">
                   <img class="" 
                             src="<?php echo base_url(); ?>assets/images/boost.png" style="
-    position: absolute;margin-top: 19%; height: 25px;">
+    position: absolute;margin-top: 19%; height: 25px; ">
     <?php if($pro->verified_product==1){?>
       <img class="" 
                             src="<?php echo base_url(); ?>assets/images/verified.png" style="margin-left:68px;
@@ -337,7 +342,7 @@ html,body
 <!-- new  -->
 <div class="container">
   <div class="row align-items-center">
-    <div class="col-md-6 p-5" >
+    <div class="col-md-6 p-4" >
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
@@ -483,7 +488,7 @@ html,body
 <!-- new  -->
 <div class="container">
   <div class="row align-items-center">
-    <div class=" col-md-6 p-5">
+    <div class=" col-md-6 p-4">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
@@ -603,7 +608,7 @@ html,body
 </div>
 
 
-<div class="container mt-5">
+<div class="container mt-4">
   <div class="row">
     <div class="col-12">
     <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner2.png" width="100%" alt="Second slide">
@@ -611,7 +616,7 @@ html,body
   </div>
 </div><br>
 
-<div class="container mt-5">
+<div class="container mt-4">
   <div class="row align-items-center">
     <div class="col-md-6 p-5">
     <div class="ratio ratio-16x9">
@@ -619,7 +624,7 @@ html,body
 </div>
  </div>
 
- <div class="col-md-6 p-5">
+ <div class="col-md-6 p-4">
     <h1>About us
 </h1>
 
@@ -628,7 +633,7 @@ html,body
   </div>
 </div><br>
 
-<div class="container mt-5">
+<div class="container mt-4">
   <div class="row">
     <div class="col-12">
     <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner.png" width="100%" alt="Second slide">

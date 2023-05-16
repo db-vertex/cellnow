@@ -22,6 +22,16 @@
       .nav ul li a:hover {
   color: #555;
 }
+
+.fa {
+    /* padding: 20px; */
+    font-size: 30px;
+    width: 50px;
+    text-align: center;
+    text-decoration: none;
+    margin: 0px 2px;
+    color: #888b97;
+}
     </style>
     <style>
    @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');
@@ -30,9 +40,9 @@
 .carousel-item > div {
   float: left;
 }
-.carousel-by-item [class*="cloneditem-"] {
+/* .carousel-by-item [class*="cloneditem-"] {
   display: none;
-}
+} */
 @media (min-width: 576px) {
     .nav-scroller {
     position: relative;
@@ -41,6 +51,8 @@
   
 }
     }
+    
+    
 
   .card2{
     --bs-card-spacer-y: 1rem;
@@ -126,9 +138,7 @@ a {
     
       padding-bottom: 2px;
   }
-  .cut-list >li:hover {
-  border-bottom :4px  solid rgba(197,220,73,255);
-}
+  
  .cut-list__elem  {
     margin-inline: auto;
     min-width: fit-content;
@@ -249,7 +259,7 @@ padding-top:10px;
       }
         #va_container_urgent {
           position: relative;
-          max-width: 1140px;
+        
           margin: auto;
       }
       
@@ -643,13 +653,15 @@ padding-top:10px;
   </head>
   <body>
     <!-- <h1 >Hello, world!</h1> -->
-
-    <div class="container" >
-    <nav class="navbar navbar-expand-lg bg-body-" >
-  <div class="container-fluid" >
-    <a class="navbar-brand" href="<?php echo base_url();?>" >
-    <img class="btn-change" src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" width="180px">
-    </a>
+    
+      <div class="container-fluid" style="background-image: linear-gradient(to right, #6ad3b0 ,white ,#f5f5f5, #f5f5f5);">
+    <div class="container">
+    <nav class="navbar navbar-expand-lg bg-body-">
+ 
+    
+    
+  <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" style="width:180px;padding-bottom:12px">
+  </a>
     
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -657,83 +669,87 @@ padding-top:10px;
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
       <ul class="navbar-nav m-auto mb-2 mb-lg-0" >
-        <li class="nav-item" style="padding-right:20px ";>
-          <a class="nav-link active"  aria-current="page" href="#donate" id="hover" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid; font-size: 13px;">Donate</a>
+        <li class="nav-item" style="padding-right:20px "; >
+          <a class="nav-link active"  aria-current="page" href="#donate" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">Donate</a>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" href="" id="hover" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 13px;color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">
             Categories
           </a>
-          <ul class="dropdown-menu">
-            <?php $category = get_all_category(); 
+          <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
+           <?php $category = get_all_category(); 
              foreach ($category as $key => $cat) {?>
-            <li><a class="dropdown-item" id="hover" href="<?php echo base_url();?>welcome/fillter_product"><?php echo $cat->category; ?></a></li>
+            <li><a class="dropdown-item" id="hover" href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id?>"><?php echo $cat->category; ?></a></li>
           
             <?php }?>
+          
           </ul>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" id="hover" href="" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size: 13px; color:#10B981;font-weight:600;border-radius:32px;border:1px solid">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">
             Service Center 
           </a>
-          <ul class="dropdown-menu" >
-          <?php
+          <ul class="dropdown-menu" style="margin-bottom:10px">
+            <?php
                 $shopcategory = get_all_shopcategory();
                 foreach ($shopcategory as $key => $cat) {
                   ?>
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/store"><?php echo $cat->shop_category; ?></a></li>
            
             <?php }?>
+           
           </ul>
         </li>
+
+
         <li class="nav-item" style="padding-right:20px";>
-          <a class="nav-link" href="<?php echo base_url();?>welcome/shop" style="font-size: 13px;color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white">Shop -></a>
+          <a class="nav-link" href="<?php echo base_url();?>welcome/shop" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#10b981;color:white;padding:5px 12px;margin-bottom:10px;" id="ab">Shop -></a>
         </li>
         <li class="nav-item" style="padding-right:20px";>
-          <a class="nav-link" href="<?php echo base_url();?>welcome/postproduct" style="font-size: 13px;color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#d1fae5;">Ad Post</a>
+          <a class="nav-link" href="<?php echo base_url();?>welcome/postproduct" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;background-color:#d1fae5;padding:5px 12px;margin-bottom:10px;" id="ab">Ad Post</a>
         </li>
         
-        <!-- <li class="nav-item" hello>
-        <a class="nav-link" href="#" style="color:#10B981;font-weight:600;padding-left:22px">Login/Signup</a>
-        </li> -->
-     
-     <?php  if(!empty($user)){
+     </ul>
+           <?php  if(!empty($user)){
       $profile = get_seller_profile($user['user_id']);
    ?>
-    <div class="nav-item dropdown" style="padding-right:90px";>
-    <li class="nav-item" style="padding-right:70px";></div>
-            <img class="img-fluid rounded-corners mx-auto d-block" style="height: 40.9px;
-width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"> </li>
-    <li class="nav-item">
-   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size:13px;color:#10B981;font-weight:600;">
-   <?php echo ucfirst($profile->name);?> 
+   
+    
+            <img class="img-fluid rounded-corners  d-block" style="height: 40.9px;
+width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
+   
+   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size:15px;color:#10B981;font-weight:600;">
+    &nbsp <?php echo ucfirst($profile->name);?> 
           </a>
-   <ul class="dropdown-menu" style="margin-left:80%;margin-top: -30px;">
+   <ul class="dropdown-menu" style="margin-left:90%;margin-top: -30px;">
     
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My profile</a></li>
           
-            <li><a class="dropdown-item" href="#">My Chat</a></li>
+            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/chat">My Chat</a></li>
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/fav_list">My Favorites</a></li>
             <?php if($profile->login_type == 'normal'){ ?>
               <li> <a class="dropdown-item" href="<?php echo base_url();?>welcome/changepassword" class="">Change Password</a></li>
                         <?php } ?>
             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/logout">logout</a></li>
           </ul>
-            </li>
+           
           
          <?php  }
           else{ ?>
-         <li class="nav-item" style="padding-right:70px";></div>
+        
           <a class="nav-link" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login &nbsp</a>/ <a class="nav-link" href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;">&nbsp Signup</a>
-          </li>
+          
           <?php }?>
-         
-          </ul>
-            </div>
+    </div>
+    </nav>
+    </div>
   </div>
-</nav>
+<!-- </nav> -->
 </div>  
-<!-- <img src="<?php echo base_url();?>assets/images/celNow.png"  class="img-fluid"> -->
+
+
+
+
 
 
 

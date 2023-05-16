@@ -453,7 +453,7 @@ $SQL="SELECT Distinct * FROM `chat_list` Where (sender_id = $sender_id AND recei
             $data['created'] = date("Y-m-d H:i:s");
         }
  
-        if(!get_wishlist($data['product_id'], $data['user_id']))
+        if(!get_wishlist($data['product_id'], $data['category_id'],$data['user_id']))
         $insert = $this->db->insert('wishlist', $data);
         else{
         $delete = $this->db->query("delete from wishlist where user_id=".$data['user_id']." and product_id=".$data['product_id']);

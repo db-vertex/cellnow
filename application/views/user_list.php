@@ -167,7 +167,7 @@ $i++;
                            ?></td>
 
                <td><?=date("d M, Y", strtotime($valued->created_at))?></td>
-               <td><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?>"></td>
+               <td><a href="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?> " target="_blank"><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?>"></a></td>
                <td>  <select  id="pay_type" data-id="<?php echo $valued->id?>"   class="btn btn-info prioritydrop">
            
            <option value="0" <?=(($valued->admin_approval==0)?"selected":"")?>>Unverified</option>

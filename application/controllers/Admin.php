@@ -809,10 +809,10 @@ public function save_banner()
 
 	//echo "here";
  
-/* $title=$this->input->post('title');
- $videolink=$this->input->post('videolink');*/
+ $url=$this->input->post('url');
 
- //print_r($_FILES);
+
+
 
        if (!empty($_FILES['banner_image']['name'])) {
                 $config['upload_path'] = './uploads/banner/';
@@ -830,7 +830,7 @@ public function save_banner()
                 }
             }
 
-              $arr=array('banner_image'=> $icon,'created'=>date('Y-m-d H:i:s'));
+              $arr=array('banner_image'=> $icon,'url'=> $url,'created'=>date('Y-m-d H:i:s'));
           if($this->admin_model->add_banner($arr))
           {
             $this->session->set_flashdata('msg','Banner Added Successful!');

@@ -79,3 +79,99 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
   </div><br>
 </div>
 </div>
+
+<div class="container">
+    <h3 class="ml-5 mb-3"><b>Verified by shop </b></h3>
+    <div class="row">
+        
+        <?php $product = get_productid_by_shop($id); 
+         if(!empty($product)){
+        
+          foreach($product as $value){
+        $product_id=$value->product_id;
+        $category_id=$value->category_id;
+         if($category_id ==1 ){
+           $Categories_all_product = get_all_category_reusable_parts($product_id);
+
+           
+         }
+         else if($category_id == 2){
+             $Categories_all_product = get_all_category_Electronic($product_id);  
+             
+         }
+         else if($category_id == 3 ){
+             $Categories_all_product = get_all_category_Furniture($product_id); 
+             
+         }
+         else if($category_id == 4){
+          $Categories_all_product = get_all_category_Fashion($product_id);
+         
+         }
+         
+        
+         
+           $wishlist=0;
+      if(!empty($user) && isset($user)){
+  $wishlit = get_wishlist($Categories_all_product->id, $Categories_all_product->category_id,$user["user_id"]);
+
+			if(empty($wishlit)){
+
+				$wishlist = 0;
+
+			
+			}else{
+
+				$wishlist = 1;
+
+			}
+   }
+   else{
+       $wishlist = 0;
+       }  
+     ?>
+
+<div class="col-lg-4 col-md-6  mb-2 ">
+    <div class="card" style="max-width: 25rem; border-radius: 28px;margin:auto;">
+    <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
+      <div class="card-block" style="padding:5px">
+      <div class="card-title">
+      <div class="row">
+        <div class="col-6"><b style="font-size:18px"><?php echo $Categories_all_product->title; ?> </b></div>
+        <div class="col-2">      <i style="margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"  data-uid="<?php echo $user["user_id"]; ?>"  class="<?php echo ($wishlist==0)?'fa fa-heart-o':'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>" data-pid="<?php echo $Categories_all_product->id; ?>" data-cid="<?php echo $Categories_all_product->category_id; ?>" data-wishlist="<?php echo $wishlist; ?>" ></i>
+</div>
+        <div class="col-4" style="color:#10b981"><h5><b>$<?php echo $Categories_all_product->price; ?></b></h5></div>
+      </div>
+      </div>
+    <small class="card-text"><?php echo $Categories_all_product->Description; ?></small><br>
+    
+    <div class="row pt-3">
+      <div class=col-6>Fresheness </div>
+      <div class=col-6>New(Extra fresh)</div>
+    </div>
+
+    <div class="row">
+      <div class=col-6>Model</div>
+      <div class=col-6><?php echo $Categories_all_product->type; ?></div>
+    </div>
+
+   
+
+    <div class="row text-center">
+        <div class="col-1"><i class="fa fa-map-marker"></i></div>
+        <div class="col-5"><p><?php echo $Categories_all_product->address; ?></p></div>
+        <div class="col-6" >     <a href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id;?>/<?php echo $Categories_all_product->id;?>/<?php echo $Categories_all_product->subcategory_id;?>" class="btn btn-change" id="a" style="font-size:15px; background-color:#10B981; color:#fff;" >Ads Details </a>
+</div>
+      </div>
+  
+    </div>
+    </div>
+</div>
+
+
+<?php }}else{?>
+         <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
+   <?php }?>
+
+
+</div>
+</div>

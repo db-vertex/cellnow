@@ -52,15 +52,15 @@ input[type=number] {
 
 
 
-<!-- <div class="row align-items-center justify-content-center">
+ <div class="row align-items-center justify-content-center">
  <div class="col-lg-6 col-xs-6">
   <div class="form-group">
-    <label for="Title">Mobile :</label>
-    <input type="number" class="form-control" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);" id="agent_mobile" name="agent_mobile"  placeholder="Agent Mobile" maxlength="10">
+    <label for="Title">Url :</label>
+    <input type="text" class="form-control"  name="url"  placeholder="url" maxlength="50">
     <p id="head2"  style="color:#ff0000" ></p>
   </div>
   </div>
-</div> -->
+</div> 
 
 
 

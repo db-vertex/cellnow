@@ -223,7 +223,7 @@ unset($_SESSION['msg']);?>
         <tbody>
   
           <?php
-      $allproduct =get_all_reusableproduct();
+      $allproduct =get_all_reusable();
       $i=1;
           foreach ($allproduct as $value) {
 
@@ -236,7 +236,7 @@ unset($_SESSION['msg']);?>
                 <tr id="<?php echo $value->id; ?>">
 
                 <td><?php echo $i;?></td>
-                <td><a href="<?php echo base_url()."welcome/productdetail/".$value->category_id.'/'.$value->id."";?>"><?php echo  $value->title;?></a></td>
+                <td><a href="<?php echo base_url()."welcome/productdetail/".$value->category_id.'/'.$value->id.'/'.$value->subcategory_id."";?>"><?php echo  $value->title;?></a></td>
                 <td> <?php 
 
                 // $image = get_product_image($value->product_id); 

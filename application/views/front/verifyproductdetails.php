@@ -239,7 +239,7 @@
 
             <div class="text-center">
               <?php if ($product_detail->cover_img !== NULL) { ?>
-                <img style="min-height:400px; max-height:400px; width: auto; max-width: 500px;" id="main-image"
+                <img style="min-height:400px; max-height:400px; width: auto; max-width: 500px; border-radius:10px;" id="main-image"
                   src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" width="250" />
               <?php } else { ?>
                 <img style="min-height:500px; max-height:500px; width: auto; max-width: 500px;" id="main-image"
@@ -249,7 +249,7 @@
             </div>
           </div>
 
-          <ul class="preview-thumbnail nav nav-tabs pt-3" style="text-align: -webkit-center;">
+          <ul class="preview-thumbnail nav  pt-3" style="text-align: -webkit-center;">
             <li class="active" style="text-align: -webkit-center">
               <?php if ($product_detail->cover_img !== NULL) { ?>
                 <img style="width:auto; max-width: fit-content; max-width: 100px;" width=80 height=70
@@ -262,25 +262,18 @@
 
             <li style="text-align: -webkit-center;">
               <?php if ($product_detail->images_2 !== NULL) { ?>
-                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px;" width=80 height=70
+                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px; margin-left:30px" width=80 height=70
                   onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" />
               <?php } else {
                 echo "";
               } ?>
 
             </li>
-            <li style="text-align: -webkit-center;">
-              <?php if ($product_detail->images_2 !== NULL) { ?>
-                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px;" width=80 height=70
-                  onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" />
-              <?php } else {
-                echo "";
-              } ?>
-            </li>
+          
 
             <li style="text-align: -webkit-center;">
               <?php if ($product_detail->images_3 !== NULL) { ?>
-                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px;" width=80 height=70
+                <img style="width:auto; max-width: fit-content; text-align:center; max-width: 100px; margin-left:30px" width=80 height=70
                   onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" />
               <?php } else {
                 echo "";
@@ -288,7 +281,7 @@
             </li>
             <li style="text-align: -webkit-center;">
               <?php if ($product_detail->images_4 !== NULL) { ?>
-                <img style="width:auto; max-width: fit-content; text-align:center;" width=80 height=70
+                <img style="width:auto; max-width: fit-content; text-align:center; margin-left:30px" width=80 height=70
                   onclick="change_image(this)" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" />
               <?php } else {
                 echo "";
@@ -304,7 +297,7 @@
             </li>
           </ul>
           <div class="row mt-3" style="border:1px solid #69d3b0;margin:3px">
-            <ul class="preview-thumbnail nav mt-3 ml-3">
+            <ul class="preview-thumbnail nav ">
               <li><a><i class="fa fa-calendar" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
                   <?php function time_elapsed_string($datetime, $full = false)
                   {
@@ -366,22 +359,21 @@
         <div class="card" style="padding:
      
      0px;border-color:#69d3b0">
-          <div class="container" style="padding:3rem;padding-bottom:10px">
+          <div class="container" style="padding:2rem;padding-bottom:30px">
 
             <div class="row">
-              <div class="col "> <b style="font-size:18px">
-                  <?php echo $product_detail->title; ?>
+              <div class="col "> <b style="font-size:20px">
+                  <?php echo ucfirst($product_detail->title); ?>
                 </b></div>
               <div class="col ">
-                <i style="color:#F15927;" <?php if (empty($user) || !isset($user)) { ?>
+                <i style="color:#F15927; margin-top:-20px;" <?php if (empty($user) || !isset($user)) { ?>
                     onclick="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
                     data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
                   class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product_detail->id; ?>"
                   data-pid="<?php echo $product_detail->id; ?>" data-cid="<?php echo $product_detail->category_id; ?>"
                   data-wishlist="<?php echo $wishlist; ?>"></i>
               </div>
-              <div class="col "><b style="font-size:27px;color:#10b981">$
-                  <?php echo $product_detail->price; ?>
+              <div class="col "><b style="font-size:27px;color:#10b981">$<?php echo $product_detail->price; ?>
                 </b></div>
             </div>
 
@@ -418,10 +410,11 @@
     $shop =check_shoplist($user['user_id']);
     if(empty($shop)){  $shop_list =check_shoplist_by_productid($product_detail->id);
       if(empty($shop_list)){ echo"";}else{
-      $shop_name= get_shop_name($shop_list->shop_id);?><div class="row text-center"
-      style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+      $shop_name= get_shop_name($shop_list->shop_id);?>
+      <div class="row text-center p-2"
+      style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:30px;margin-left:30px">
       
-      <div class="col">verifed by Shop <?php echo $shop_name;?>
+      <div class="col">verifed by Shop: <?php echo $shop_name;?>
       </div>
       
           </div>
@@ -430,8 +423,8 @@
 
     if (empty($wishlit)) {
 
-     ?> <div class="row text-center"
-      style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+     ?> <div class="row text-center p-1"
+      style="border:1px solid #69d3b0;border-radius:25px;background-color:#d1fae5;margin-right:90px;margin-left:90px">
   
 <div class="col">
 <form class=""  action="<?php echo base_url();?>welcome/setshoplist" method="POST">
@@ -444,7 +437,7 @@
        <input type="hidden" name="subcategory_id" id="receiver_id" value="<?php echo $product_detail->subcategory_id; ?>">
 
 
-      <button class="btn btn-sellersignup btn-change"  type="submit" name="submit" > verify</button>
+      <button class="btn btn-sellersignup btn-change"  type="submit" name="submit" > verified</button>
     </form>
 </div>
 
@@ -457,10 +450,10 @@
     $shop_name= get_shop_name($shop_list->shop_id);
     ?>
 
-<div class="row text-center"
-style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+<div class="row text-center p-2"
+style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:20px;margin-left:20px">
 
-<div class="col">verifed by Shop <?php echo $shop_name;?>
+<div class="col">verifed by Shop: <?php echo $shop_name;?>
 </div>
 
     </div>
@@ -469,10 +462,10 @@ style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;marg
     if(empty($shop_list)) {echo"";}else{
    $shop_name= get_shop_name($shop_list->shop_id);
   ?>
-    <div class="row text-center"
-    style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;margin-right:12px;margin-left:px">
+    <div class="row text-center p-2"
+    style="border:1px solid #69d3b0;border-radius:25px;background-color:#d1fae5;margin-right:12px;margin-left:px">
     
-    <div class="col">verifed by Shop <?php echo $shop_name;?>
+    <div class="col">verifed by Shop: <?php echo $shop_name;?>
     </div>
     
         </div>
@@ -495,12 +488,13 @@ style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;marg
               <div class="card-body">
                 <div class="row text-center">
                   <div class="col-4 order-first " style="margin:auto"><img
-                      src="<?php echo base_url() . "uploads/profile/" . $userdetail->profile_img . ""; ?>" class="img-fluid"
+                      src="<?php echo base_url() . "uploads/profile/" . $userdetail->profile_img . ""; ?>" class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
+width: 131.9px;"
                       alt="" id="e" style="margin:auto"></div>
-                  <div class="col-5" style="font-size:15px"><b id="d">
-                      <?php echo $userdetail->name; ?>
+                  <div class="col-5" style="text-align:left; font-size:20px"><b id="d">
+                      <?php echo ucfirst($userdetail->name); ?>
                     </b><br>
-                    <span style="font-size:10px" id="d"> Profile Crated
+                    <span style="font-size:15px" id="d"> Profile Crated
                       <?php function time_string($datetime, $full = false)
                       {
                         $now = new DateTime;
@@ -536,10 +530,19 @@ style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;marg
                     <span id="d"> Total 20 Ads</span><br>
                     <span id="d"> Active 10 Ads </span>
                   </div>
-                  <div class=" col-3 order-last"><a href="#" class="btn" role="button" aria-disabled="true" id="a"
-                      style="font-size:15px;border-color:#46760a"><b>chat</b></a><br>
+                  <div class=" col-3 order-last">
+                      <form class="" id="chat_frm" action="<?php echo base_url();?>welcome/chat/<?php echo $product_detail->category_id; ?>" method="POST">
+        <input type="hidden" name="product_id" id="product_id" value="<?php echo $product_detail->id; ?>">
+         <input type="hidden" name="category_id" id="category_id" value="<?php echo $product_detail->category_id; ?>">
+       <input type="hidden" name="sender_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
+      if($session_id){echo $_SESSION['id'];} ?>">
+       <input type="hidden" name="receiver_id" id="receiver_id" value="<?php echo $product_detail->user_id; ?>">
+     
+                      <input class="btn"  style="font-size:15px;border-color:#46760a" value="Chat" <?php if(empty($user) || !isset($user)){ ?> data-toggle="modal"
+                    data-target="#login" <?php }else{ ?>type="submit"    <?php }  ?>>
+                      </form><br>
                     <a href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"
-                      style="color:black;font-size:12px"><b id="">View Seller profile ></b></a>
+                      style="color:black;font-size:15px"><b id="">View Seller profile ></b></a>
                   </div>
 
 
@@ -549,10 +552,10 @@ style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;marg
           </div>
 
           <div class="container" style="padding:3rem">
-            <h5><b style="font-size: 15px;">Description</b></h5>
+            <h5><b style="font-size: 20px;">Description</b></h5>
             <hr class="class-1" />
-            <b style="font-size: 13px;">Origins</b>
-            <p style="font-size: 13px;">
+            <b style="font-size: 15px;">Origins</b>
+            <p style="font-size: 18px;">
               <?php echo $product_detail->Description; ?>
             </p>
           </div>
@@ -571,8 +574,8 @@ style="border:1px solid #69d3b0;border-radius:15px;background-color:#d1fae5;marg
   <br>
 
   <div class="container mt-5">
-    <p style="color:#f59e0b">Our Recommendation</p>
-    <h4><b style="padding-left:0px">Related Ads</b></h4>
+    <p style="color:#f59e0b; padding-left:20px">Our Recommendation</p>
+    <h4><b style="padding-left:20px">Related Ads</b></h4>
   </div>
 
   <div class="container">
@@ -646,7 +649,7 @@ foreach($category_data as $relatedproduct){
 
 
         <div class="modal-body px-5 pt-0">
-          <h5 class=" mb-0 my-3 fs-5" style="text-align: center;">Report on Ads</h5>
+          <h5 class=" mb-0 my-3 fs-5" style="color:#13C571;text-align: center;">Report on Ads</h5>
 
           <?php if ($error = $this->session->flashdata('Login_fail')) { ?>
             <div class="row">
@@ -671,7 +674,7 @@ foreach($category_data as $relatedproduct){
             <input type="hidden" name="product_id" value="<?php echo $product_detail->id; ?>">
             <div class=" input-container my-3 px-3">
               <label>Name</label>
-              <input name="name" type="text" class="form-control pl-5  text-dark Name" id="firstName" value=""
+              <input name="name" type="text" class="form-control   text-dark Name" id="firstName" value=""
                 placeholder="Name" maxlength="30" style="border-radius:30px; border-color:#13C571" required>
               <div class="invalid-feedback">
                 Valid name is required.
@@ -680,7 +683,7 @@ foreach($category_data as $relatedproduct){
 
             <div class=" input-container my-3 px-3">
               <label>Email</label>
-              <input name="email" type="email" class="form-control pl-5  text-dark inp-icon" placeholder="Enter Email"
+              <input name="email" type="email" class="form-control   text-dark inp-icon" placeholder="Enter Email"
                 style="border-radius:30px; border-color:#13C571" required>
 
               <div class="invalid-feedback">
@@ -689,7 +692,7 @@ foreach($category_data as $relatedproduct){
             </div>
             <div class=" input-container mt-3 px-3 ">
               <label>Mobile</label>
-              <input name="mobile" type="number" class="form-control  pl-5 text-dark mobile" type="number" id="mobile"
+              <input name="mobile" type="number" class="form-control  text-dark mobile" type="number" id="mobile"
                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                 maxlength="10" minlength="10" value="" placeholder="phone"
                 style="border-radius:30px; border-color:#13C571" required>
