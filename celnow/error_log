@@ -1,0 +1,1 @@
+[15-May-2023 11:53:09 UTC] PHP Fatal error:  Cannot redeclare get_id_by_shop() (previously declared in /home/r9rbb9ckuety/public_html/celnow/application/helpers/user_helper.php:212) in /home/r9rbb9ckuety/public_html/celnow/application/helpers/user_helper.php on line 241

@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
    
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <!-- link for card -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -17,8 +18,6 @@ html,body
       max-width: 100%;
         overflow-x: hidden;  
     }
-
- 
      
 #a{
   margin-right: 10px;
@@ -101,7 +100,7 @@ img.rounded-corners {
 
    <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
 width: 131.9px;">
-   <div style="text-align:center"><h5><b ><?php echo ucfirst($profile->name); ?></b></h5>
+   <div style="text-align:center"><h3><b ><?php echo ucfirst($profile->name); ?></b></h3>
    <?php echo ucfirst($profile->Address); ?>
    
   </div>
@@ -118,11 +117,11 @@ width: 131.9px;">
   <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8"> 
     
     <h2 class="pl-5"><b>About us</b></h2>
-    <p class="pl-5 pr-5 word"><?php echo ucfirst($profile->aboutus); ?></p>
+    <h6 class="pl-5"><?php echo ucfirst($profile->aboutus); ?></h6>
 
-    <div class="row text-center p-5">
+    <div class="row text-center">
     <div>
-    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn btn-change" id="a" style="align-self:center; background-color:#10B981; color:#fff;" >Edit </a>
+    <a href="#" data-toggle="modal"  data-target="#editprofile" class="btn "id="a" style="align-self:center; background-color:#10B981; color:#fff;" >Edit </a>
   </div>
   </div>
   </div> 
@@ -181,7 +180,7 @@ width: 131.9px;">
                         <input type="hidden" name="profile_id" value="<?php echo $profile->user_id; ?>">
              <div class=" input-container my-3 px-3">
             
-            <input name="name" type="text" class="form-control pl-5  text-dark Name" id="firstName"  value="<?php echo $profile->name; ?>" placeholder="Name" maxlength="30" style="border-radius:30px; border-color:#13C571" required>
+            <input name="name" type="text" class="form-control pl-5  text-dark Name" id="firstName"  value="<?php echo $profile->name; ?>" placeholder="Name" style="border-radius:30px; border-color:#13C571" required>
               <div class="invalid-feedback">
                 Valid name is required.
               </div>
@@ -194,14 +193,14 @@ width: 131.9px;">
 
 
             <?php  }else{?>
-            <input name="email" type="email" class="form-control pl-5  text-dark inp-icon" id="email" value="<?php echo $profile->email; ?>" maxlength="25" placeholder="Enter Email" style="border-radius:30px; border-color:#13C571" required>
+            <input name="email" type="email" class="form-control pl-5  text-dark inp-icon" id="email" value="<?php echo $profile->email; ?>" placeholder="Enter Email" style="border-radius:30px; border-color:#13C571" required>
               <div class="invalid-feedback">
                 Please enter a valid email address.
               </div><?php }?> 
           </div>
           <div class=" input-container mt-3 px-3 ">
          
-            <input name="phone" type="number" class="form-control  pl-5 text-dark mobile"  value="<?php echo $profile->phone; ?>"  placeholder="phone"  readonly style="border-radius:30px; border-color:#13C571" required>
+            <input name="phone" type="number" class="form-control  pl-5 text-dark mobile"  value="<?php echo $profile->phone; ?>"  placeholder="phone"  style="border-radius:30px; border-color:#13C571" required>
              
             <p id="mobile_error"></p>
             <div class="invalid-feedback">
@@ -210,22 +209,20 @@ width: 131.9px;">
           </div>
           <div class=" input-container my-3 px-3">
          
-            <input name="Address" type="text" class="form-control  pl-5  text-dark Name" id="lastName" maxlength="30"  value="<?php echo $profile->Address; ?>" placeholder="Address" style="border-radius:30px; border-color:#13C571" required>
+            <input name="Address" type="text" class="form-control  pl-5  text-dark Name" id="lastName"  value="<?php echo $profile->Address; ?>" placeholder="Address" style="border-radius:30px; border-color:#13C571" required>
               <div class="invalid-feedback">
                 Valid address is required.
               </div>
           </div>
           <div class=" input-container my-3 px-3 ">
-          <p>Only 150 character are allowed</p>
-              <textarea  name="aboutus"  class="form-control" id="aboutus" placeholder="About Us" maxlength="150" rows="4" style="border-radius:20px; border-color:#13C571" required><?php echo $profile->aboutus; ?></textarea>
+        
+              <textarea  name="aboutus"  class="form-control" id="aboutus" placeholder="About Us" maxlength="100" rows="4" style="border-radius:20px; border-color:#13C571" required><?php echo $profile->aboutus; ?></textarea>
              <div class="invalid-feedback">
                 Valid message is required.
               </div>
           </div>
-          <center><button class=" mb-2 btn btn-lg  text-white mt-2"
-                style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Edit</button>
-
-            </center>        
+          <button class="btn-change  w-50 mb-2 btn btn-lg  text-white mt-3"  style="background-color:#13C571"   type="submit">Submit</button>
+          <hr class="my-2">
          
         </form>
       </div>
@@ -249,7 +246,7 @@ width: 131.9px;">
 				      	<div class="modal-body">
 				        	<div class="form-group">
 				        	    
-							    <label>Image size(151 x 151) px</label>
+							    <label>Image </label>
 							    <input type="file" class="form-control" id="cover_image" name="profile_img" accept="image/*">
 							    <span id="cover_err" style="color:red;"></span>
 							</div>
@@ -265,28 +262,7 @@ width: 131.9px;">
 			</div>
 
       <script>
-
-(() => {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-      form.addEventListener('submit', event => {
-        if (!form.checkValidity()) {
-          event.preventDefault()
-          event.stopPropagation()
-        }
-
-        form.classList.add('was-validated')
-      }, false)
-    })
-  })()
-
-
-function checkcoverimage() {
+        function checkcoverimage() {
 
 var image =$('#cover_image').val();
 
@@ -304,26 +280,4 @@ if (image == "" ) {
    
 }
 
-}
-
-
-function checkprofile() {
-
-var image =$('#cover_image').val();
-
-if (image == "" ) {
-
-    $("#cover_err").text("Please upload image");
-   
-
-
-
-} else {
-
-    $("#cover_img").submit();
-
-   
-}
-
-}
-</script>
+}</script>
