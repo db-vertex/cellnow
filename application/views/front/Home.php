@@ -147,7 +147,7 @@ html,body
       <div class="col-lg-7 col-md-5 col-sm-4 ">
         <p style="font-size:30px;color:#1B1C57;"> Featured </p>
       </div>
-      <div class="col-lg-5 col-md-7 col-sm-8">
+      <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
       <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
          
@@ -278,9 +278,7 @@ html,body
                   <div class="va-card va-cards"> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
                   <p style="min-height:151px; text-align:center;" class="my-auto">
                  
- 
-
-                                          <?php if($pro->cover_img !== NULL) { ?> 
+                  <?php if($pro->cover_img !== NULL) { ?> 
                                           <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>">
                             <?php } else { ?>
 						          <img class="rounded-5 va-thumbnail" src="<?php echo base_url();?>assets/images/Group 486.png" />
@@ -382,7 +380,7 @@ html,body
     <div class="col-lg-7 col-md-5 col-sm-4">
      <p style="color: #1B1C57; font-size:30px;">Stores</p>
     </div>
-    <div class="col-lg-5 col-md-7 col-sm-8 text-end">
+    <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
     <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
          
@@ -652,7 +650,7 @@ html,body
 <div class="container ">
   <div class="row p-4">
     <div class="col">
-      <p style="color:#000000; text-align:center; font-weight:bolder; font-size:30px;">What our happy client say</p>
+      <p style="color:#000000; text-align:center; font-weight:bolder; font-size:28px;">What our happy client say</p>
        <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">Several selected clients, who already believe in our service.</p>
     </div>
   </div>
