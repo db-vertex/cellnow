@@ -102,8 +102,9 @@ html,body
   </head>
   <body>
     
+  <div class="container-fluid" style="background-image: linear-gradient(to right , #6ad3b0 ,white ,white,white);">
 <div class="container">
-<div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
   <?php
       $all_banner = get_all_banner();
@@ -130,18 +131,19 @@ html,body
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-</div><br>
+</div>
+    </div><br>
 
 <div class="container">
-    <div class="row">
-    <p style="color: #F59E0B;"> -------Our Recomandation</p>
+    <div class="row pl-4">
+    <p style="color: #F59E0B;"> -----Our Recomandation</p>
     </div>
    </div><br>
 
 
     <!-- search bar -->
     <div class="container">
-    <div class="row">
+    <div class="row pl-4">
       <div class="col-lg-7 col-md-5 col-sm-4 ">
         <p style="font-size:30px;color:#1B1C57;"> Featured </p>
       </div>
@@ -350,7 +352,7 @@ html,body
   <div class="row align-items-center">
     <div class="col-md-6 p-4" >
     <div class="ratio ratio-16x9">
-  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+  <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 
@@ -364,7 +366,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-    <div class="row">
+    <div class="row pl-4">
     <p style="color: #F59E0B;">Search  Near  By Store</p>
     </div>
 </div>
@@ -376,7 +378,7 @@ html,body
 
 <!-- new  -->
 <div class="container  mt-3">
-  <div class="row">
+  <div class="row pl-4">
     <div class="col-lg-7 col-md-5 col-sm-4">
      <p style="color: #1B1C57; font-size:30px;">Stores</p>
     </div>
@@ -496,7 +498,7 @@ html,body
   <div class="row align-items-center">
     <div class=" col-md-6 p-4">
     <div class="ratio ratio-16x9">
-  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+  <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 
@@ -510,7 +512,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row">
+  <div class="row pl-4">
     <div class="col-12">
       <p id="donate" style="color: #1B1C57; font-size:30px;">Donate</p>
     </div>
@@ -624,9 +626,9 @@ html,body
 
 <div class="container mt-4">
   <div class="row align-items-center">
-    <div class="col-md-6 p-5">
+    <div class="col-md-6 p-4">
     <div class="ratio ratio-16x9">
-  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+  <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 

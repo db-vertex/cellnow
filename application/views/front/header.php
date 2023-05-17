@@ -653,8 +653,8 @@ padding-top:10px;
   </head>
   <body>
     <!-- <h1 >Hello, world!</h1> -->
-    
-      <div class="container-fluid" style="background-image: linear-gradient(to right, #6ad3b0 ,white ,#f5f5f5, #f5f5f5);">
+    <div class="container-fluid" style="background-image: linear-gradient(to right, #6ad3b0 ,white ,white, white);">
+
     <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-">
  
@@ -745,7 +745,7 @@ width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_
     </div>
   </div>
 <!-- </nav> -->
-</div>  
+  
 
 
 
