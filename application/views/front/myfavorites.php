@@ -129,7 +129,7 @@
 
           <div class="col-lg-4 col-md-6  mb-2 ">
             <div class="card" style="max-width: 25rem; border-radius: 28px;margin:auto;">
-              <img src="<?php echo base_url(); ?>uploads/product/<?php echo $product->cover_img;?>" class="card-img-top" alt="Card image cap">
+              <img src="<?php echo base_url(); ?><?php echo $product->cover_img;?>" class="card-img-top" alt="Card image cap">
               <div class="card-block" style="padding:5px">
                 <div class="card-title">
                   <div class="row pl-3">

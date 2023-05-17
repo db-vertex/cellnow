@@ -510,7 +510,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row pl-4">
+  <div class="row pl-5">
     <div class="col-12">
       <p id="donate" style="color: #1B1C57; font-size:30px;">Donate</p>
     </div>
@@ -623,7 +623,7 @@ html,body
 </div><br>
 
 <div class="container">
-  <div class="row align-items-center p-4">
+  <div class="row align-items-center p-5">
     <div class="col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
