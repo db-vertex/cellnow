@@ -270,7 +270,7 @@ padding-top:10px;
       }
          #va_container_Popular{
           position: relative;
-          max-width: 1140px;
+          /* max-width: 1140px; */
           margin: auto;
       }
   
@@ -399,7 +399,7 @@ padding-top:10px;
       
       
       
-      .va-carrousel-flexbox_Popular {
+      .va-carrousel-flexbox_popular {
           
           display: flex;
           flex-wrap: nowrap;
@@ -408,28 +408,28 @@ padding-top:10px;
           justify-content:;
       }
   
-      .va-carrousel-flexbox_Popular .va-card {
+      .va-carrousel-flexbox_popular .va-card {
           flex: 0 0 auto;
           padding-left: 20px;
       }
   
-      .va-carrousel-flexbox_Popular .va-card:last-child {
+      .va-carrousel-flexbox_popular .va-card:last-child {
           margin-right: 15px;
       }
   
-      .va-carrousel-flexbox_Popular .va-card:last-child::after {
+      .va-carrousel-flexbox_popular .va-card:last-child::after {
           content: ' ';
           display: inline-block;
       }
       
          .va-carrousel,
-      .va-carrousel-flexbox_Popular {
+      .va-carrousel-flexbox_popular {
           width: 100%;
           -webkit-overflow-scrolling: touch;
       }
   
       .va-carrousel::-webkit-scrollbar,
-      .va-carrousel-flexbox_Popular::-webkit-scrollbar {
+      .va-carrousel-flexbox_popular::-webkit-scrollbar {
           display: none;
       }
       
@@ -573,13 +573,13 @@ padding-top:10px;
       }
       
         
-   .deals-scroll-left_Popular {
+   .deals-scroll-left_popular {
           top: 0;
           left: 5px;
           bottom: 0;
       }
   
-      .deals-scroll-right_Popular {
+      .deals-scroll-right_popular {
           top: 0;
           bottom: 0;
           right: 5px;
@@ -737,8 +737,10 @@ width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_
          <?php  }
           else{ ?>
         
-          <a class="nav-link" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login &nbsp</a>/ <a class="nav-link" href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;">&nbsp Signup</a>
-          
+          <p class="nav-link">
+            <a  href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login &nbsp</a>/
+             <a  href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;">&nbsp Signup</a>
+          </p>
           <?php }?>
     </div>
     </nav>

@@ -525,7 +525,7 @@ html,body
        
 
         <div id="va_container_Popular">
-            <button class="deals-scroll-left_most_view deals-paddle" id="left_view_button">
+            <button class="deals-scroll-left_popular deals-paddle" id="left_view_button">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                     class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512">
@@ -535,7 +535,7 @@ html,body
                 </svg>
             </button>
 
-            <div class="va-carrousel-flexbox_most">
+            <div class="va-carrousel-flexbox_popular">
                    <?php
                   
             
@@ -593,7 +593,7 @@ html,body
                   <?php   }  $j++; };  ?>  
             
               
-            <button class="deals-scroll-right_most_view deals-paddle" id="right_view_button">
+            <button class="deals-scroll-right_popular deals-paddle" id="right_view_button">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                     class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512">
