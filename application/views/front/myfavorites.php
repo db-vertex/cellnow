@@ -148,9 +148,11 @@
                     </div>
                   </div>
                 </div>
-                <small class="card-text pl-3">
+                <div class="row pl-3">
+                <small class="card-text ">
                   <?php echo ucfirst($product->Description); ?>
                 </small><br>
+        </div>
 
                 <div class="row pl-3">
                   <div class=col-6>Fresheness </div>
