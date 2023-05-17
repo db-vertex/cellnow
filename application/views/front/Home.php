@@ -347,7 +347,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center p-4">
+  <div class="row align-items-center p-5">
     <div class="col-md-6 " >
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -493,7 +493,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center p-4">
+  <div class="row align-items-center p-5">
     <div class=" col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
