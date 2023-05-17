@@ -349,14 +349,14 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center">
-    <div class="col-md-6 p-4" >
+  <div class="row align-items-center p-4">
+    <div class="col-md-6 " >
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 
- <div class="col-md-6 p-5">
+ <div class="col-md-6 ">
     <h1>Customer flow</h1><br>
 
     <p style="color: #565656;">Our Business Plan is a written document describing a company's core business activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high quality Product with modern idea accordingly their budgets and according thir reuirements.</p>
@@ -495,14 +495,14 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center">
-    <div class=" col-md-6 p-4">
+  <div class="row align-items-center p-4">
+    <div class=" col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 
- <div class="col-md-6 p-5 ">
+ <div class="col-md-6  ">
     <h1>How the store works?</h1><br>
 
     <p style="color: #565656;">Our Business Plan is a written document describing a company's core business activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high quality Product with modern idea accordingly their budgets and according thir reuirements..</p>
@@ -616,23 +616,23 @@ html,body
 </div>
 
 
-<div class="container mt-4">
-  <div class="row">
+<div class="container">
+  <div class="row p-4">
     <div class="col-12">
     <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner2.png" width="100%" alt="Second slide">
     </div>
   </div>
 </div><br>
 
-<div class="container mt-4">
-  <div class="row align-items-center">
-    <div class="col-md-6 p-4">
+<div class="container">
+  <div class="row align-items-center p-4">
+    <div class="col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 
- <div class="col-md-6 p-4">
+ <div class="col-md-6">
     <h1>About us
 </h1>
 
@@ -641,16 +641,16 @@ html,body
   </div>
 </div><br>
 
-<div class="container mt-4">
-  <div class="row">
+<div class="container ">
+  <div class="row p-4">
     <div class="col-12">
     <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner.png" width="100%" alt="Second slide">
     </div>
   </div>
 </div><br>
 
-<div class="container mt-3">
-  <div class="row">
+<div class="container ">
+  <div class="row p-4">
     <div class="col">
       <p style="color:#000000; text-align:center; font-weight:bolder; font-size:30px;">What our happy client say</p>
        <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">Several selected clients, who already believe in our service.</p>
@@ -665,7 +665,7 @@ html,body
   <div class="carousel-inner">
   
     <div class="carousel-item active">
-      <div class="row">
+      <div class="row pl-4">
         <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
         <div class="col align-self-center"> 
           <h5><b >Matthew Paul</b></h5>
@@ -678,7 +678,7 @@ html,body
       </div>
 
       <div class="carousel-item ">
-      <div class="row">
+      <div class="row p-4">
         <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
         <div class="col align-self-center"> 
           <h5><b >Matthew Paul</b></h5>
@@ -703,7 +703,7 @@ html,body
 </div><br>
 
 <div class="container">
-    <div class="row">
+    <div class="row p-4">
         <div class="col-sm-4">
             <div class="row">
                 <div class="col"> <img src="<?php echo base_url();?>assets/images/img/chairimg.png" class="img-fluid" alt="..."></div>

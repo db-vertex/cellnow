@@ -133,7 +133,7 @@ a {
   }
   .cut-list { list-style: none;  color: black; line-height: 10px; }
   .cut-list > li {
-      margin-left:25px;
+      /* margin-left:25px; */
       margin-right:25px; 
     
       padding-bottom: 2px;
