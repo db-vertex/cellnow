@@ -902,63 +902,10 @@ flex-grow: 0;
    foreach($category_data as $relatedproduct){
    ?>
 
-                    <!-- <div class="col align-self-center  mt-4" >
-                        <div class="">
-                            <img class="related_ads_card_img  img-fluid"
-                                src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
-                                alt="related_ads_card_img">
-                        </div>
-                        <div class="related_ads_card">
-                            <div class="row pt-4 ms-0">
-                                <div class="col-5">
-                                    <p class="related_ads_card_title"> Product title</p>
-                                </div>
-                                <div class="col-3">
-                                    <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                            style="color:#ff6737;padding: 0px;"></i></b>
-                                </div>
-                                <div class="col-4">
-                                    <p class="details_price">$<span><?php echo $relatedproduct->price; ?></span></p>
-                                </div>
-                            </div>
-                            <div class="row ms-0">
-                                <div class="col-12">
-                                    <small class="card-text"
-                                        style="color: #575757;"><?php echo $relatedproduct->Description;?></small><br>
-                                </div>
-                            </div>
-                            <div class="row mt-2 ms-0">
-                                <div class="col-3">
-                                    <p style="color: #575757;">Fresheness</p>
-                                </div>
-                                <div class="col-5">
-                                    <p style="color: #575757;">New(Extra fresh)</p>
-                                </div>
-                            </div>
-                            <div class="row mt-1  ms-0">
-                                <div class="col-3">
-                                    <p style="color: #575757;">Model</p>
-                                </div>
-                                <div class="col-5">
-                                    <p style="color: #575757;">2015</p>
-                                </div>
-                            </div>
-                            <div class="row mt-1 ms-0">
-                                <div class="col-3">
-                                <i class="bi bi-geo-alt-fill" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
-                                </div>
-                                <div class="col-5">
-                                    <p tyle="color: #575757;"><?php echo $relatedproduct->address;?></p>
-                                </div>
-                                <div class="col-3 pe-2">
-                                <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>"> <p class="related_ads_details_button "><spam class="related_ads_details_button_text">Product Detail</spam></p></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div> -->
+                 
         
         <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4">
-          <div class="card shadow-sm" style="border: none;">
+          <div class="card" style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
           <img class="related_ads_card_img  img-fluid"
                                 src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
                                 alt="related_ads_card_img">
