@@ -290,7 +290,38 @@
         }
     }
 
-    @media (max-width: 768px) {
+    @media (max-width: 499px) {
+        .btn_Verified_shop_name {
+            width: 250px;
+            height: 54px;
+            left: 988px;
+            top: 941px;
+            background: #D1FAE5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 32px;
+        }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 1rem!important;
+    }
+    }
+
+    @media  (min-width: 500px) and (max-width: 768px) {
         .btn_Verified_shop_name {
             width: 400px;
             height: 54px;
@@ -300,8 +331,28 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        text-transform: capitalize;
+        color: #047857;
     }
 
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 1rem!important;
+    }
+
+    }
+  
     @media (min-width: 768px) and (max-width: 991.98px) {
         .btn_Verified_shop_name {
             width: 269px;
@@ -312,6 +363,26 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 2rem!important;
+    }
+
     }
 
     @media (min-width: 991.98px) and (max-width: 1199.98px) {
@@ -324,6 +395,26 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 3rem!important;
+    }
+
     }
 
     @media (min-width: 1199.98px) {
@@ -336,6 +427,27 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 3rem!important;
+    }
+
+
     }
 
 
@@ -613,24 +725,6 @@
         border-radius: 32px;
 
     }
-
-   
-
-    .btn_Verified_text {
-        font-family: 'Lexend';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 17px;
-        text-transform: capitalize;
-        color: #047857;
-    }
-
-    .btn_Verified_img {
-        width: 30px;
-        height: 30px;
-        left: 33px;
-        top: 10px;
-    }
     </style>
 </head>
 
@@ -895,7 +989,7 @@
                         </div>
                     </div>
 
-                    <div class="row  margin_top_css ms-5 ">
+                    <div class="row  margin_top_css margin_left_css">
 
                         <?php   $shoplist = 0;
   if (!empty($user) && isset($user)) {
