@@ -369,29 +369,95 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
     <div class="row">
 
+    <?php $product = get_productid_by_shop($shop->id);
+    foreach($product as $value){
+
+    
+    $category =$value->category_id; 
+    $product =$value->product_id;
+
+    if($category==1){
+      $Categories_all_product = get_all_category_reusable_parts($product);
      
-    <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
+    }
 
-      <!-- <div class="col-lg-4 col-sm-6  mb-2">
-        <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-          <img src="<?php echo base_url(); ?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-          <div class="card-block" style="padding:8px">
-            <h5 class="card-title">Suzuki</h5>
-            <small class="card-text">Space for a small product description.</small><br>
+    $wishlist = 0;
+    if (!empty($user) && isset($user)) {
+      $wishlit = get_wishlist($Categories_all_product->id, $Categories_all_product->category_id, $user["user_id"]);
 
-            Fresheness <span style="padding-left:30px">New(Extra fresh)</span><br>
-            Model <span style="padding-left:60px"> 2015</span><br>
-            Color <span style="padding-left:66px"> Red</span><br>
-            <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-            <a href="#" class="btn " id="b">Edit</a>
-            <a href="#" class="btn " id="b">Delete</a>
-          </div>
+      if (empty($wishlit)) {
+
+        $wishlist = 0;
+
+
+      } else {
+
+        $wishlist = 1;
+
+      }
+    } else {
+      $wishlist = 0;
+    }
+    ?>
+  
+    <!-- <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center> -->
+
+   
+
+    <div class="col-lg-4 col-md-6  mb-2">
+            <div class="card" style="max-width: 25rem; border-radius: 28px;margin:auto;">
+              <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>" class="card-img-top" alt="Card image cap">
+              <div class="card-block" style="padding:5px">
+                <div class="card-title">
+                  <div class="row pl-3">
+                    <div class="col-6"><b style="font-size:18px">
+                        <?php echo ucfirst($Categories_all_product->title); ?>
+                      </b></div>
+                    <div class="col-2"> <i style="margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
+                        data-uid="<?php echo $user["user_id"]; ?>"
+                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
+                        data-pid="<?php echo $Categories_all_product->id; ?>" data-cid="<?php echo $Categories_all_product->category_id; ?>"
+                        data-wishlist="<?php echo $wishlist; ?>"></i>
+                    </div>
+                    <div class="col-4" style="color:#10b981">
+                      <h5><b>$<?php echo $Categories_all_product->price; ?>
+                        </b></h5>
+                    </div>
+                  </div>
+                </div>
+                <div class="row pl-3">
+                <small class="card-text ">
+                  <?php echo ucfirst($Categories_all_product->Description); ?>
+                </small><br>
         </div>
-      </div> -->
+
+                <div class="row pl-3">
+                  <div class=col-4>Fresheness </div>
+                  <div class=col-8>New(Extra fresh)</div>
+                </div>
+
+                <div class="row pl-3">
+                  <div class=col-4>Model</div>
+                  <div class=col-8><?php echo $Categories_all_product->type; ?></div>
+                </div>
 
 
 
-     
+                <div class="row text-center p-3">
+                  <div class="col-1"><img src="<?php echo base_url();?>assets/images/location .png" ></i></div>
+                  <div class="col-7">
+                    <p>
+                      <?php echo $Categories_all_product->address; ?>
+                    </p>
+                  </div>
+                 
+                </div>
+
+              </div>
+            </div>
+          </div> 
+
+     <?php } ?>
 
     </div>
   </div>
