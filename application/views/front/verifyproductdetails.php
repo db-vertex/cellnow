@@ -759,7 +759,7 @@
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
-                            <span class="me-2 handline">Homepage</span>/<span class="ms-2 handline">Bike</span>
+                            <span class="me-2 handline"><a class="text-dark link-underline-opacity-0" href="<?php echo base_url();?>" >Homepage</a></span>/<span class="ms-2 handline">Bike</span>
                         </div>
                     </div>
                 </div>
@@ -893,7 +893,7 @@
                                             <a class="btn-change" style="color:black;" id="GFG"
                                                 href="javascript:void(0);" id="share_desk"
                                                 onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');">
-                                                <i class="fa fa-share-alt" aria-hidden="true"
+                                                <i class="fa fareport_productdata-target="#login"-share-alt" aria-hidden="true"
                                                     style="font-size:18px; color:#69d3b0"> </i> </a>
 
                                         </div>
@@ -991,93 +991,93 @@
 
                     <div class="row  margin_top_css margin_left_css">
 
-                        <?php   $shoplist = 0;
-  if (!empty($user) && isset($user)) {
-    $shop =check_shoplist($user['user_id']);
-    if(empty($shop)){  $shop_list =check_shoplist_by_productid($product_detail->id);
-      if(empty($shop_list)){ echo"";}else{
-      $shop_name= get_shop_name($shop_list->shop_id);?>
-                        <div class="" style="">
-                            <div class="col-12" style="text-align:center;">
-                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p>
-                            </div>
+                                        <?php   $shoplist = 0;
+                if (!empty($user) && isset($user)) {
+                    $shop =check_shoplist($user['user_id']);
+                    if(empty($shop)){  $shop_list =check_shoplist_by_productid($product_detail->id);
+                    if(empty($shop_list)){ echo"";}else{
+                    $shop_name= get_shop_name($shop_list->shop_id);?>
+                                        <div class="" style="">
+                                            <div class="col-12" style="text-align:center;">
+                                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                                            class="btn_Verified_img"
+                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                                        <?php echo $shop_name;?></span></p>
+                                            </div>
 
 
-                        </div>
-                        <?php } }else{
-    $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
-    if (empty($wishlit)) {
+                                        </div>
+                                        <?php } }else{
+                    $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
+                    if (empty($wishlit)) {
 
-     ?> <div class="" style="">
+                    ?> <div class="" style="">
 
-                            <div class="">
-                                <form class="" action="<?php echo base_url();?>welcome/setshoplist" method="POST">
-                                    <input type="hidden" name="product_id" id="product_id"
-                                        value="<?php echo $product_detail->id; ?>">
-                                    <input type="hidden" name="category_id" id="category_id"
-                                        value="<?php echo $product_detail->category_id; ?>">
-                                    <input type="hidden" name="user_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
-                                            if($session_id){echo $_SESSION['id'];} ?>">
-                                    <input type="hidden" name="seller_id" id="receiver_id"
-                                        value="<?php echo $product_detail->user_id; ?>">
-                                    <input type="hidden" name="shop_id" id="receiver_id"
-                                        value="<?php echo $shop->id; ?>">
-                                    <input type="hidden" name="subcategory_id" id="receiver_id"
-                                        value="<?php echo $product_detail->subcategory_id; ?>">
-
-
-                                    <div class="col-12" style="text-align:center;">
-                                        <button class=" btn btn_Verified"><span class="pe-2"><img
-                                                    class="btn_Verified_img"
-                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                    alt="check 1.png"></span><span
-                                                class="btn_Verified_text"type="submit" name="submit" >Verified</span></button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
+                                            <div class="">
+                                                <form class="" action="<?php echo base_url();?>welcome/setshoplist" method="POST">
+                                                    <input type="hidden" name="product_id" id="product_id"
+                                                        value="<?php echo $product_detail->id; ?>">
+                                                    <input type="hidden" name="category_id" id="category_id"
+                                                        value="<?php echo $product_detail->category_id; ?>">
+                                                    <input type="hidden" name="user_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
+                                                            if($session_id){echo $_SESSION['id'];} ?>">
+                                                    <input type="hidden" name="seller_id" id="receiver_id"
+                                                        value="<?php echo $product_detail->user_id; ?>">
+                                                    <input type="hidden" name="shop_id" id="receiver_id"
+                                                        value="<?php echo $shop->id; ?>">
+                                                    <input type="hidden" name="subcategory_id" id="receiver_id"
+                                                        value="<?php echo $product_detail->subcategory_id; ?>">
 
 
-                        <?php  } else {
-    $shop_list =check_shoplist_by_productid($product_detail->id);
-    if(empty($shop_list)) {echo"";}else{
-    $shop_name= get_shop_name($shop_list->shop_id);
-    ?>
+                                                    <div class="col-12" style="text-align:center;">
+                                                        <button class=" btn btn_Verified"><span class="pe-2"><img
+                                                                    class="btn_Verified_img"
+                                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                                    alt="check 1.png"></span><span
+                                                                class="btn_Verified_text"type="submit" name="submit" >Verified</span></button>
+                                                    </div>
+                                                </form>
+                                            </div>
 
-                        <div class="" style="">
+                                        </div>
 
-                        <div class="col-12" style="text-align:center;">
-                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p>
-                            </div>
 
-                        </div>
-                        <?php } } }
-  } 
-  else { $shop_list =check_shoplist_by_productid($product_detail->id);
-    if(empty($shop_list)) {echo"";}else{
-   $shop_name= get_shop_name($shop_list->shop_id);
-  ?>
-                        <div class="" style="">
+                                        <?php  } else {
+                    $shop_list =check_shoplist_by_productid($product_detail->id);
+                    if(empty($shop_list)) {echo"";}else{
+                    $shop_name= get_shop_name($shop_list->shop_id);
+                    ?>
 
-                        <div class="col-12" style="text-align:center;">
-                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p>
-                            </div>
+                                        <div class="" style="">
 
-                        </div>
-                        <?php }} ?>
+                                        <div class="col-12" style="text-align:center;">
+                                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                                            class="btn_Verified_img"
+                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                                        <?php echo $shop_name;?></span></p>
+                                            </div>
+
+                                        </div>
+                                        <?php } } }
+                } 
+                else { $shop_list =check_shoplist_by_productid($product_detail->id);
+                    if(empty($shop_list)) {echo"";}else{
+                $shop_name= get_shop_name($shop_list->shop_id);
+                ?>
+                                        <div class="" style="">
+
+                                        <div class="col-12" style="text-align:center;">
+                                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                                            class="btn_Verified_img"
+                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                                        <?php echo $shop_name;?></span></p>
+                                            </div>
+
+                                        </div>
+                                        <?php }} ?>
 
                     </div>
 

@@ -102,10 +102,22 @@ input::placeholder {
     order: 0;
     flex-grow: 0;
 }
+
+@media (min-width: 991px) {
+    .home_background {
+        background: linear-gradient(154.02deg, #77D4B5 -12.01%, rgba(213, 253, 252, 0) 21.7%);
+    }
+}
+
+@media (max-width: 992px) {
+    .home_background {
+        background: linear-gradient(154.02deg, #77D4B5 -21.01%, rgba(213, 253, 252, 0) 21.7%);
+    }
+}
 </style>
 <?php  $id = $this->uri->segment(4); 
     ?>
-
+<div class="container-fluid home_background">
 <div class="container">
     <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -140,7 +152,7 @@ input::placeholder {
         </button>
     </div>
 </div><br>
-
+    </div>
 <div class="container">
     <div class="row">
         <p style="color: #F59E0B;"> -------Our Recomandation</p>
