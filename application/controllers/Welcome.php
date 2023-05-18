@@ -54,6 +54,24 @@ class Welcome extends CI_Controller {
 		 }
 	}
 
+	public function home1()
+	{
+		$session_id = $this->session->userdata('id');
+		
+		 $user_detail = $this->user->loginuser($session_id);
+		
+		 if(!empty($user_detail)){
+		$this->load->view('front/header',['user'=>$user_detail]);
+		$this->load->view('front/Home',['user'=>$user_detail]);
+		$this->load->view('front/footer');
+		 }
+		 else{
+			$this->load->view('front/header');
+		$this->load->view('front/home1');
+		$this->load->view('front/footer');
+		 }
+	}
+
 	public function login()
 	{
 		$this->form_validation->set_rules('phone',' phone','required|min_length[10]|max_length[10]');

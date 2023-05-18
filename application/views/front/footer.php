@@ -40,9 +40,9 @@
   </head>
   <body>
    
-  <div class="container mb-5 mt-5">
+  <div class="container  ">
     <div class="container">
-  <div class="row ">
+  <div class="row p-4">
     <div class="col-sm-6 ">
     <img class="btn-change" src="<?php echo base_url();?>assets/images/CelNow 5 1.png" class="img-fluid mb-3" alt=""  width="150px"><br>
 <p style="color:#888b97">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Laboriosam rerum ipsa id recusandae quasi officia nihil! </p>
@@ -299,9 +299,9 @@
     initDealCarrousel_most_view('va_container_most_view');
 </script>
 <script>
-         var isAnimating = false;
+     var isAnimating = false;
 
-        function scrollLeftAnimate(elem, unit) {
+      function scrollLeftAnimate(elem, unit) {
 
             if (!elem || isAnimating) {
                 //if element not found / if animating, do not execute slide
@@ -325,44 +325,51 @@
                 }, aframe);
         }
            
-
            
-          function initDealCarrousel_Popular(dealCarrouselID) {
-            var target = document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_Popular");
+    function initDealCarrousel_popular(dealCarrouselID) {
+            var target = document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_popular");
             var cardOutterWidth;
             var maxCarrouselScroll;
 
             function updateUpaCarrouselInfo() {
                 cardOutterWidth = document.querySelector("#" + dealCarrouselID + " .va-card").offsetWidth; //you can define how far the scroll
                 maxCarrouselScroll = (document.querySelectorAll("#" + dealCarrouselID + " .va-card").length *
-                        cardOutterWidth) - document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_Popular")
+                        cardOutterWidth) - document.querySelector("#" + dealCarrouselID + " .va-carrousel-flexbox_popular")
                     .clientWidth;
             }
+           updateUpaCarrouselInfo();
+        
             if(maxCarrouselScroll < 0 ){
-            document.getElementById("right_view_button").style.display = "none";
+                  document.getElementById("right_view_button").style.display = "none";
             }
-            document.querySelector("#" + dealCarrouselID + " .deals-scroll-left_Popular").addEventListener("click",
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-left_popular").addEventListener("click",
                 function () {
                     updateUpaCarrouselInfo(); //in case window resized, will get new info
                     if (target.scrollLeft > 0) {
                         scrollLeftAnimate(target, -cardOutterWidth * 2);
+                         document.getElementById("right_view_button").style.display = "block";
+                    }
+                    else{
+                        document.getElementById("left_view_button").style.display = "none"; 
                     }
                 }
             );
 
-            document.querySelector("#" + dealCarrouselID + " .deals-scroll-right_Popular").addEventListener("click",
+            document.querySelector("#" + dealCarrouselID + " .deals-scroll-right_popular").addEventListener("click",
                 function () {
                     updateUpaCarrouselInfo(); //in case window resized, will get new info 
                     if (target.scrollLeft < maxCarrouselScroll) {
                         scrollLeftAnimate(target, cardOutterWidth * 2);
-                        
+                        document.getElementById("left_view_button").style.display = "block"; 
+                    }
+                    else{
+                     document.getElementById("right_view_button").style.display = "none";
                     }
                 }
             );
         }
       
-           initDealCarrousel_Popular('va_container_Popular');
-        
+    initDealCarrousel_popular('va_container_Popular');
 </script>
 
 <script>

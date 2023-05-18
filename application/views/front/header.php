@@ -133,7 +133,7 @@ a {
   }
   .cut-list { list-style: none;  color: black; line-height: 10px; }
   .cut-list > li {
-      margin-left:25px;
+      /* margin-left:25px; */
       margin-right:25px; 
     
       padding-bottom: 2px;
@@ -270,7 +270,7 @@ padding-top:10px;
       }
          #va_container_Popular{
           position: relative;
-          max-width: 1140px;
+          /* max-width: 1140px; */
           margin: auto;
       }
   
@@ -399,7 +399,7 @@ padding-top:10px;
       
       
       
-      .va-carrousel-flexbox_Popular {
+      .va-carrousel-flexbox_popular {
           
           display: flex;
           flex-wrap: nowrap;
@@ -408,28 +408,28 @@ padding-top:10px;
           justify-content:;
       }
   
-      .va-carrousel-flexbox_Popular .va-card {
+      .va-carrousel-flexbox_popular .va-card {
           flex: 0 0 auto;
           padding-left: 20px;
       }
   
-      .va-carrousel-flexbox_Popular .va-card:last-child {
+      .va-carrousel-flexbox_popular .va-card:last-child {
           margin-right: 15px;
       }
   
-      .va-carrousel-flexbox_Popular .va-card:last-child::after {
+      .va-carrousel-flexbox_popular .va-card:last-child::after {
           content: ' ';
           display: inline-block;
       }
       
          .va-carrousel,
-      .va-carrousel-flexbox_Popular {
+      .va-carrousel-flexbox_popular {
           width: 100%;
           -webkit-overflow-scrolling: touch;
       }
   
       .va-carrousel::-webkit-scrollbar,
-      .va-carrousel-flexbox_Popular::-webkit-scrollbar {
+      .va-carrousel-flexbox_popular::-webkit-scrollbar {
           display: none;
       }
       
@@ -573,13 +573,13 @@ padding-top:10px;
       }
       
         
-   .deals-scroll-left_Popular {
+   .deals-scroll-left_popular {
           top: 0;
           left: 5px;
           bottom: 0;
       }
   
-      .deals-scroll-right_Popular {
+      .deals-scroll-right_popular {
           top: 0;
           bottom: 0;
           right: 5px;
@@ -653,8 +653,8 @@ padding-top:10px;
   </head>
   <body>
     <!-- <h1 >Hello, world!</h1> -->
-    
-      <div class="container-fluid" style="background-image: linear-gradient(to right, #6ad3b0 ,white ,#f5f5f5, #f5f5f5);">
+    <div class="container-fluid" style="background-image: linear-gradient(to right, #6ad3b0 ,white ,white, white);">
+
     <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-">
  
@@ -673,7 +673,7 @@ padding-top:10px;
           <a class="nav-link active"  aria-current="page" href="#donate" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">Donate</a>
         </li>
         <li class="nav-item dropdown" style="padding-right:20px";>
-          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style=" color:#10B981;font-weight:600;border-radius:32px;border:1px solid;padding:5px 12px;margin-bottom:10px;" id="ab">
             Categories
           </a>
           <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
@@ -737,15 +737,17 @@ width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_
          <?php  }
           else{ ?>
         
-          <a class="nav-link" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login &nbsp</a>/ <a class="nav-link" href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;">&nbsp Signup</a>
-          
+          <p class="nav-link">
+            <a  href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:600;">Login &nbsp</a>/
+             <a  href="<?php echo base_url();?>welcome/signup" style="color:#10B981;font-weight:600;">&nbsp Signup</a>
+          </p>
           <?php }?>
     </div>
     </nav>
     </div>
   </div>
 <!-- </nav> -->
-</div>  
+  
 
 
 

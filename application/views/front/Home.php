@@ -70,12 +70,19 @@ html,body
      font-size: 12px;
      font-weight: bold;
   }
+  img.fix{
+    position: absolute;
+    margin-top: 19%;
+    height: 25px;
+  }
 }
   @media screen and (max-width: 776px) {
   input::placeholder  {
      font-size: 10px;
      font-weight: bold;
   }
+
+
 }
 @media screen and (max-width: 560px) {
   input::placeholder  {
@@ -95,8 +102,9 @@ html,body
   </head>
   <body>
     
+  <div class="container-fluid" style="background-image: linear-gradient(to right , #6ad3b0 ,white ,white,white);">
 <div class="container">
-<div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
   <?php
       $all_banner = get_all_banner();
@@ -123,22 +131,23 @@ html,body
     <span class="visually-hidden">Next</span>
   </button>
 </div>
-</div><br>
+</div>
+    </div><br>
 
 <div class="container">
-    <div class="row">
-    <p style="color: #F59E0B;"> -------Our Recomandation</p>
+    <div class="row pl-4">
+    <p style="color: #F59E0B;"> -----Our Recomandation</p>
     </div>
    </div><br>
 
 
     <!-- search bar -->
     <div class="container">
-    <div class="row">
+    <div class="row pl-4">
       <div class="col-lg-7 col-md-5 col-sm-4 ">
         <p style="font-size:30px;color:#1B1C57;"> Featured </p>
       </div>
-      <div class="col-lg-5 col-md-7 col-sm-8">
+      <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
       <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
          
@@ -165,7 +174,7 @@ html,body
 
                 ?>
                  <li class="" id="" onMouseOut="hide_sidebar()">
-                      <a class="btn shadow  bg-white rounded-pill" href="<?php echo base_url();?>welcome/fillter_product/4" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
+                      <a <?php if($cat->id==5){?>style="background:#d1fae5" <?php } ?> class="btn shadow  rounded-pill" href="<?php echo base_url();?>welcome/home1/<?php echo $cat->id;?>" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
 
                 </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
           
@@ -268,24 +277,21 @@ html,body
             
                   <div class="va-card va-cards"> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
                   <p style="min-height:151px; text-align:center;" class="my-auto">
-                  <img class="" 
-                            src="<?php echo base_url(); ?>assets/images/boost.png" style="
-    position: absolute;margin-top: 19%; height: 25px; ">
-    <?php if($pro->verified_product==1){?>
-      <img class="" 
-                            src="<?php echo base_url(); ?>assets/images/verified.png" style="margin-left:68px;
-    position: absolute;margin-top: 19%; height: 25px;">
-
-   <?php }?>
- 
-
-                                          <?php if($pro->cover_img !== NULL) { ?> 
+                 
+                  <?php if($pro->cover_img !== NULL) { ?> 
                                           <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>">
                             <?php } else { ?>
 						          <img class="rounded-5 va-thumbnail" src="<?php echo base_url();?>assets/images/Group 486.png" />
 
 						       <?php }?>
-                            
+                   <img class="" 
+                            src="<?php echo base_url(); ?>assets/images/boost.png" style="
+   margin-top:-30%; margin-left:-20%">
+    <?php if($pro->verified_product==1){?>
+      <img class=""  src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   margin-top: -30%; ">
+
+   <?php }?>       
                   </p>
 
                             <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>
@@ -341,14 +347,14 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center">
-    <div class="col-md-6 p-4" >
+  <div class="row align-items-center p-5">
+    <div class="col-md-6 " >
     <div class="ratio ratio-16x9">
-  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+  <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 
- <div class="col-md-6 p-5">
+ <div class="col-md-6 ">
     <h1>Customer flow</h1><br>
 
     <p style="color: #565656;">Our Business Plan is a written document describing a company's core business activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high quality Product with modern idea accordingly their budgets and according thir reuirements.</p>
@@ -358,7 +364,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-    <div class="row">
+    <div class="row pl-4">
     <p style="color: #F59E0B;">Search  Near  By Store</p>
     </div>
 </div>
@@ -370,11 +376,11 @@ html,body
 
 <!-- new  -->
 <div class="container  mt-3">
-  <div class="row">
+  <div class="row pl-4">
     <div class="col-lg-7 col-md-5 col-sm-4">
      <p style="color: #1B1C57; font-size:30px;">Stores</p>
     </div>
-    <div class="col-lg-5 col-md-7 col-sm-8 text-end">
+    <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
     <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
          
@@ -487,14 +493,14 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center">
-    <div class=" col-md-6 p-4">
+  <div class="row align-items-center p-5">
+    <div class=" col-md-6 ">
     <div class="ratio ratio-16x9">
-  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+  <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 
- <div class="col-md-6 p-5 ">
+ <div class="col-md-6  ">
     <h1>How the store works?</h1><br>
 
     <p style="color: #565656;">Our Business Plan is a written document describing a company's core business activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high quality Product with modern idea accordingly their budgets and according thir reuirements..</p>
@@ -504,7 +510,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row">
+  <div class="row pl-5">
     <div class="col-12">
       <p id="donate" style="color: #1B1C57; font-size:30px;">Donate</p>
     </div>
@@ -519,7 +525,7 @@ html,body
        
 
         <div id="va_container_Popular">
-            <button class="deals-scroll-left_most_view deals-paddle" id="left_view_button">
+            <button class="deals-scroll-left_popular deals-paddle" id="left_view_button">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                     class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512">
@@ -529,7 +535,7 @@ html,body
                 </svg>
             </button>
 
-            <div class="va-carrousel-flexbox_most">
+            <div class="va-carrousel-flexbox_popular">
                    <?php
                   
             
@@ -587,7 +593,7 @@ html,body
                   <?php   }  $j++; };  ?>  
             
               
-            <button class="deals-scroll-right_most_view deals-paddle" id="right_view_button">
+            <button class="deals-scroll-right_popular deals-paddle" id="right_view_button">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                     class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512">
@@ -608,23 +614,23 @@ html,body
 </div>
 
 
-<div class="container mt-4">
-  <div class="row">
+<div class="container">
+  <div class="row p-4">
     <div class="col-12">
     <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner2.png" width="100%" alt="Second slide">
     </div>
   </div>
 </div><br>
 
-<div class="container mt-4">
-  <div class="row align-items-center">
-    <div class="col-md-6 p-5">
+<div class="container">
+  <div class="row align-items-center p-5">
+    <div class="col-md-6 ">
     <div class="ratio ratio-16x9">
-  <iframe style="border-radius: 40px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+  <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
 </div>
  </div>
 
- <div class="col-md-6 p-4">
+ <div class="col-md-6">
     <h1>About us
 </h1>
 
@@ -633,18 +639,18 @@ html,body
   </div>
 </div><br>
 
-<div class="container mt-4">
-  <div class="row">
+<div class="container ">
+  <div class="row p-4">
     <div class="col-12">
     <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner.png" width="100%" alt="Second slide">
     </div>
   </div>
 </div><br>
 
-<div class="container mt-3">
-  <div class="row">
+<div class="container ">
+  <div class="row p-4">
     <div class="col">
-      <p style="color:#000000; text-align:center; font-weight:bolder; font-size:30px;">What our happy client say</p>
+      <p style="color:#000000; text-align:center; font-weight:bolder; font-size:28px;">What our happy client say</p>
        <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">Several selected clients, who already believe in our service.</p>
     </div>
   </div>
@@ -657,7 +663,7 @@ html,body
   <div class="carousel-inner">
   
     <div class="carousel-item active">
-      <div class="row">
+      <div class="row pl-4">
         <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
         <div class="col align-self-center"> 
           <h5><b >Matthew Paul</b></h5>
@@ -670,7 +676,7 @@ html,body
       </div>
 
       <div class="carousel-item ">
-      <div class="row">
+      <div class="row p-4">
         <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
         <div class="col align-self-center"> 
           <h5><b >Matthew Paul</b></h5>
@@ -695,7 +701,7 @@ html,body
 </div><br>
 
 <div class="container">
-    <div class="row">
+    <div class="row p-4">
         <div class="col-sm-4">
             <div class="row">
                 <div class="col"> <img src="<?php echo base_url();?>assets/images/img/chairimg.png" class="img-fluid" alt="..."></div>
