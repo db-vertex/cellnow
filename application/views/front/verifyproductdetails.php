@@ -891,7 +891,7 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a class="btn-change" style="color:black;" id="GFG"
-                                                href="javascript:void(0);" id="share_desk"
+                                            <?php if (empty($user) || !isset($user)) { ?> href="<?php echo base_url();?>welcome/login" <?php }else{ ""; }?> id="share_desk"
                                                 onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');">
                                                 <i class="fa fareport_productdata-target="#login"-share-alt" aria-hidden="true"
                                                     style="font-size:18px; color:#69d3b0"> </i> </a>
@@ -905,9 +905,8 @@
                                 <div class="col-3 px-0">
                                     <div class="row">
                                         <div class="col-4">
-                                            <a class="btn-change" style="color:black; " id="GFG" href=""
-                                                <?php if (empty($user) || !isset($user)) { ?> data-toggle="modal"
-                                                data-target="#login" <?php } else { ?> data-toggle="modal"
+                                            <a class="btn-change" style="color:black; " id="GFG" 
+                                                <?php if (empty($user) || !isset($user)) { ?> href="<?php echo base_url();?>welcome/login" <?php } else { ?> data-toggle="modal"
                                                 data-target="#report_product" <?php } ?>><i
                                                     class="fa fa-exclamation-triangle" aria-hidden="true"
                                                     style="font-size:18px; color:#69d3b0"></i></a>
@@ -937,7 +936,7 @@
                             <i lass="bi bi-suit-heart" aria-hidden="true"
                                 style="font-size:25px; color:#69d3b0; padding: 0px;"
                                 <?php if (empty($user) || !isset($user)) { ?>
-                                onclick="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
+                                     href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
                                 data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
                                 class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product_detail->id; ?>"
                                 data-pid="<?php echo $product_detail->id; ?>"
@@ -1152,7 +1151,7 @@
                                                 <input class="chat_button" style="font-size:15px;border-color:#46760a"
                                                     value="Chat" <?php if(empty($user) || !isset($user)){ ?>
                                                     data-toggle="modal" data-target="#login"
-                                                    <?php }else{ ?>type="submit" <?php }  ?>>
+                                                    <?php }else{ ?>type="submit" <?php }  ?> readonly>
                                             </form>
                                             <a
                                                 href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><b
