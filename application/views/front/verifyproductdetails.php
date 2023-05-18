@@ -411,7 +411,7 @@
         }
 
         .detalis_option {
-            max-width: 346.7px;
+          
             left: 112px;
             top: 1373.5px;
             background: #FFFFFF;
@@ -432,6 +432,7 @@
             margin-top: 1rem !important;
         }
     }
+    
 
     .chat_button {
         display: flex;
@@ -472,9 +473,8 @@
     }
 
     .related_ads_card {
-
-        width: 376.7px;
-        height: 219px;
+        min-height: 235px;
+        max-height: 235px;
         left: 105px;
         top: 2174px;
         border-radius: 37px 37px 0px 0px;
@@ -483,9 +483,9 @@
         border-radius: 0px 0px 37px 37px;
     }
 
-    .related_ads_card_img {
-        width: 376.7px;
-        height: 294.1px;
+    .related_ads_card_img{
+        min-height: 282.1px;
+        max-height: 282.1px;
         left: 105px;
         top: 1889px;
         border-radius: 37px 37px 0px 0px;
@@ -496,7 +496,7 @@
         font-style: normal;
         font-weight: 900;
         font-size: 20px;
-        line-height: 30px;
+        line-height: 10px;
         /* identical to box height */
         color: #000000;
         /* Inside auto layout */
@@ -537,20 +537,12 @@ font-style: normal;
 font-weight: 700;
 font-size: 12.7857px;
 line-height: 18px;
-/* identical to box height */
-
-
-/* C1/J */
-
 color: #FFFFFF;
-
-
-/* Inside auto layout */
-
 flex: none;
 order: 0;
 flex-grow: 0;
     }
+
     </style>
 </head>
 
@@ -905,14 +897,14 @@ flex-grow: 0;
             <div class="row mt-5 justify-content-center">
                 <p class="Related_Ads">Related Ads</p>
 
-                <div class="row mt-3">
+                <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?php
    foreach($category_data as $relatedproduct){
    ?>
 
-                    <div class="col col-sm-2 col-md-2 col-lg-2  col-xl-4  col-xXl-4 align-self-center  mt-4" >
-                        <div class="related_ads_card_img">
-                            <img class="related_ads_card_img"
+                    <!-- <div class="col align-self-center  mt-4" >
+                        <div class="">
+                            <img class="related_ads_card_img  img-fluid"
                                 src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
                                 alt="related_ads_card_img">
                         </div>
@@ -963,7 +955,63 @@ flex-grow: 0;
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
+        
+        <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4">
+          <div class="card shadow-sm" style="border: none;">
+          <img class="related_ads_card_img  img-fluid"
+                                src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
+                                alt="related_ads_card_img">
+            <div class="card-body related_ads_card">
+            <div class="row">
+                                <div class="col-5">
+                                    <p class="related_ads_card_title"> Product title</p>
+                                </div>
+                                <div class="col-3">
+                                    <b style='font-size:18px;'><i class="fa fa-heart-o "
+                                            style="color:#ff6737;padding: 0px;"></i></b>
+                                </div>
+                                <div class="col-4">
+                                    <p class="details_price">$<span><?php echo $relatedproduct->price; ?></span></p>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-12">
+                                    <small class="card-text"
+                                        style="color: #575757;"><?php echo $relatedproduct->Description;?></small><br>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-3">
+                                    <p style="color: #575757;">Fresheness</p>
+                                </div>
+                                <div class="col-5">
+                                    <p style="color: #575757;">New(Extra fresh)</p>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-3">
+                                    <p style="color: #575757;">Model</p>
+                                </div>
+                                <div class="col-5">
+                                    <p style="color: #575757;">2015</p>
+                                </div>
+                            </div>
+                            <div class="row mt-1">
+                                <div class="col-3">
+                                <i class="bi bi-geo-alt-fill" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
+                                </div>
+                                <div class="col-5">
+                                    <p tyle="color: #575757;"><?php echo $relatedproduct->address;?></p>
+                                </div>
+                                <div class="col-3 pe-2">
+                                <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>"> <p class="related_ads_details_button "><spam class="related_ads_details_button_text">Product Detail</spam></p></a>
+                                </div>
+                            </div>
+            </div>
+          </div>
+          </div>
+
                     <?php } ?>
 
                 </div>
