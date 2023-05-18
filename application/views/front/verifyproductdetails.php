@@ -290,6 +290,167 @@
         }
     }
 
+    @media (max-width: 499px) {
+        .btn_Verified_shop_name {
+            width: 250px;
+            height: 54px;
+            left: 988px;
+            top: 941px;
+            background: #D1FAE5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 32px;
+        }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 1rem!important;
+    }
+    }
+
+    @media  (min-width: 500px) and (max-width: 768px) {
+        .btn_Verified_shop_name {
+            width: 400px;
+            height: 54px;
+            left: 988px;
+            top: 941px;
+            background: #D1FAE5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 32px;
+        }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 1rem!important;
+    }
+
+    }
+  
+    @media (min-width: 768px) and (max-width: 991.98px) {
+        .btn_Verified_shop_name {
+            width: 269px;
+            height: 54px;
+            left: 988px;
+            top: 941px;
+            background: #D1FAE5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 32px;
+        }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 13px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 2rem!important;
+    }
+
+    }
+
+    @media (min-width: 991.98px) and (max-width: 1199.98px) {
+        .btn_Verified_shop_name {
+            width: 335px;
+            height: 54px;
+            left: 988px;
+            top: 941px;
+            background: #D1FAE5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 32px;
+        }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 15px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 3rem!important;
+    }
+
+    }
+
+    @media (min-width: 1199.98px) {
+        .btn_Verified_shop_name {
+            width: 400px;
+            height: 54px;
+            left: 988px;
+            top: 941px;
+            background: #D1FAE5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 32px;
+        }
+        
+    .btn_Verified_text {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 500;
+        font-size: 17px;
+        text-transform: capitalize;
+        color: #047857;
+    }
+
+    .btn_Verified_img {
+        width: 30px;
+        height: 30px;
+        left: 33px;
+        top: 10px;
+    }
+    .margin_left_css{
+        margin-left: 3rem!important;
+    }
+
+
+    }
+
+
     @media(max-width: 991px) {
         .details_title {
             font-family: 'Poppins';
@@ -411,7 +572,7 @@
         }
 
         .detalis_option {
-          
+
             left: 112px;
             top: 1373.5px;
             background: #FFFFFF;
@@ -431,8 +592,9 @@
         .margin_top_css {
             margin-top: 1rem !important;
         }
+       
     }
-    
+
 
     .chat_button {
         display: flex;
@@ -483,7 +645,7 @@
         border-radius: 0px 0px 37px 37px;
     }
 
-    .related_ads_card_img{
+    .related_ads_card_img {
         min-height: 282.1px;
         max-height: 282.1px;
         left: 105px;
@@ -504,45 +666,65 @@
         order: 0;
         flex-grow: 0;
     }
-    .related_ads_details_button{
+
+    .related_ads_details_button {
         box-sizing: border-box;
 
-/* Auto layout */
+        /* Auto layout */
 
-display: flex;
-flex-direction: row;
-align-items: center;
-padding: 9.42857px 12.5714px;
-gap: 4.71px;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 9.42857px 12.5714px;
+        gap: 4.71px;
 
-width: 104.43px;
-height: 36.86px;
+        width: 104.43px;
+        height: 36.86px;
 
-background: #10B981;
-/* C2/B */
+        background: #10B981;
+        /* C2/B */
 
-border: 1.57143px solid #46760A;
-border-radius: 25.42857px;
+        border: 1.57143px solid #46760A;
+        border-radius: 25.42857px;
 
-/* Inside auto layout */
+        /* Inside auto layout */
 
-flex: none;
-order: 0;
-align-self: center;
-flex-grow: 0;
-    }
-    .related_ads_details_button_text{
-    font-family: 'Poppins';
-font-style: normal;
-font-weight: 700;
-font-size: 12.7857px;
-line-height: 18px;
-color: #FFFFFF;
-flex: none;
-order: 0;
-flex-grow: 0;
+        flex: none;
+        order: 0;
+        align-self: center;
+        flex-grow: 0;
     }
 
+    .related_ads_details_button_text {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12.7857px;
+        line-height: 18px;
+        color: #FFFFFF;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .btn_Verified {
+        width: 192px;
+        height: 54px;
+        left: 988px;
+        top: 941px;
+        background: #D1FAE5;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 32px;
+    }
+
+    .btn_Verified:hover {
+        width: 192px;
+        height: 54px;
+        background: #D1FAE5;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 32px;
+
+    }
     </style>
 </head>
 
@@ -797,12 +979,107 @@ flex-grow: 0;
                             <p class="details_text"><?php echo $product_detail->type; ?></p>
                         </div>
                     </div>
+
+
                     <div class="row  margin_top_css ms-5">
                         <div class="col-12">
                             <i class="bi bi-geo-alt-fill" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
                             <span class="ms-2 details_text"> <?php echo $product_detail->address; ?></span>
                         </div>
                     </div>
+
+                    <div class="row  margin_top_css margin_left_css">
+
+                        <?php   $shoplist = 0;
+  if (!empty($user) && isset($user)) {
+    $shop =check_shoplist($user['user_id']);
+    if(empty($shop)){  $shop_list =check_shoplist_by_productid($product_detail->id);
+      if(empty($shop_list)){ echo"";}else{
+      $shop_name= get_shop_name($shop_list->shop_id);?>
+                        <div class="" style="">
+                            <div class="col-12" style="text-align:center;">
+                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                            class="btn_Verified_img"
+                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                        <?php echo $shop_name;?></span></p>
+                            </div>
+
+
+                        </div>
+                        <?php } }else{
+    $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
+    if (empty($wishlit)) {
+
+     ?> <div class="" style="">
+
+                            <div class="">
+                                <form class="" action="<?php echo base_url();?>welcome/setshoplist" method="POST">
+                                    <input type="hidden" name="product_id" id="product_id"
+                                        value="<?php echo $product_detail->id; ?>">
+                                    <input type="hidden" name="category_id" id="category_id"
+                                        value="<?php echo $product_detail->category_id; ?>">
+                                    <input type="hidden" name="user_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
+                                            if($session_id){echo $_SESSION['id'];} ?>">
+                                    <input type="hidden" name="seller_id" id="receiver_id"
+                                        value="<?php echo $product_detail->user_id; ?>">
+                                    <input type="hidden" name="shop_id" id="receiver_id"
+                                        value="<?php echo $shop->id; ?>">
+                                    <input type="hidden" name="subcategory_id" id="receiver_id"
+                                        value="<?php echo $product_detail->subcategory_id; ?>">
+
+
+                                    <div class="col-12" style="text-align:center;">
+                                        <button class=" btn btn_Verified"><span class="pe-2"><img
+                                                    class="btn_Verified_img"
+                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                    alt="check 1.png"></span><span
+                                                class="btn_Verified_text"type="submit" name="submit" >Verified</span></button>
+                                    </div>
+                                </form>
+                            </div>
+
+                        </div>
+
+
+                        <?php  } else {
+    $shop_list =check_shoplist_by_productid($product_detail->id);
+    if(empty($shop_list)) {echo"";}else{
+    $shop_name= get_shop_name($shop_list->shop_id);
+    ?>
+
+                        <div class="" style="">
+
+                        <div class="col-12" style="text-align:center;">
+                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                            class="btn_Verified_img"
+                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                        <?php echo $shop_name;?></span></p>
+                            </div>
+
+                        </div>
+                        <?php } } }
+  } 
+  else { $shop_list =check_shoplist_by_productid($product_detail->id);
+    if(empty($shop_list)) {echo"";}else{
+   $shop_name= get_shop_name($shop_list->shop_id);
+  ?>
+                        <div class="" style="">
+
+                        <div class="col-12" style="text-align:center;">
+                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                            class="btn_Verified_img"
+                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                        <?php echo $shop_name;?></span></p>
+                            </div>
+
+                        </div>
+                        <?php }} ?>
+
+                    </div>
+
 
                     <?php $userdetail = get_users_details($product_detail->user_id); ?>
                     <div class="row">
@@ -901,62 +1178,69 @@ flex-grow: 0;
    foreach($category_data as $relatedproduct){
    ?>
 
-                 
-        
-        <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4">
-          <div class="card" style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
-          <img class="related_ads_card_img  img-fluid"
+
+
+                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                        <div class="card"
+                            style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
+                            <img class="related_ads_card_img  img-fluid"
                                 src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
                                 alt="related_ads_card_img">
-            <div class="card-body related_ads_card">
-            <div class="row">
-                                <div class="col-5">
-                                    <p class="related_ads_card_title"> Product title</p>
+                            <div class="card-body related_ads_card">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <p class="related_ads_card_title"> Product title</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <b style='font-size:18px;'><i class="fa fa-heart-o "
+                                                style="color:#ff6737;padding: 0px;"></i></b>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="details_price">$<span><?php echo $relatedproduct->price; ?></span></p>
+                                    </div>
                                 </div>
-                                <div class="col-3">
-                                    <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                            style="color:#ff6737;padding: 0px;"></i></b>
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <small class="card-text"
+                                            style="color: #575757;"><?php echo $relatedproduct->Description;?></small><br>
+                                    </div>
                                 </div>
-                                <div class="col-4">
-                                    <p class="details_price">$<span><?php echo $relatedproduct->price; ?></span></p>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Fresheness</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;">New(Extra fresh)</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Model</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;">2015</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <i class="bi bi-geo-alt-fill" aria-hidden="true"
+                                            style="font-size:18px; color:#69d3b0"></i>
+                                    </div>
+                                    <div class="col-5">
+                                        <p tyle="color: #575757;"><?php echo $relatedproduct->address;?></p>
+                                    </div>
+                                    <div class="col-3 pe-2">
+                                        <a
+                                            href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
+                                            <p class="related_ads_details_button ">
+                                                <spam class="related_ads_details_button_text">Product Detail</spam>
+                                            </p>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="row mt-1">
-                                <div class="col-12">
-                                    <small class="card-text"
-                                        style="color: #575757;"><?php echo $relatedproduct->Description;?></small><br>
-                                </div>
-                            </div>
-                            <div class="row mt-1">
-                                <div class="col-3">
-                                    <p style="color: #575757;">Fresheness</p>
-                                </div>
-                                <div class="col-5">
-                                    <p style="color: #575757;">New(Extra fresh)</p>
-                                </div>
-                            </div>
-                            <div class="row mt-1">
-                                <div class="col-3">
-                                    <p style="color: #575757;">Model</p>
-                                </div>
-                                <div class="col-5">
-                                    <p style="color: #575757;">2015</p>
-                                </div>
-                            </div>
-                            <div class="row mt-1">
-                                <div class="col-3">
-                                <i class="bi bi-geo-alt-fill" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
-                                </div>
-                                <div class="col-5">
-                                    <p tyle="color: #575757;"><?php echo $relatedproduct->address;?></p>
-                                </div>
-                                <div class="col-3 pe-2">
-                                <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>"> <p class="related_ads_details_button "><spam class="related_ads_details_button_text">Product Detail</spam></p></a>
-                                </div>
-                            </div>
-            </div>
-          </div>
-          </div>
+                        </div>
+                    </div>
 
                     <?php } ?>
 
