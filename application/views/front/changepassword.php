@@ -141,7 +141,7 @@
                         <img class="img-fluid" src="<?php echo base_url();?>assets/images/otp.png">
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-12 pe-0">
+                <div class="col-md-5 col-sm-12 ps-4 pe-4">
                     <div class="card  border p-4">
                         <article class="card-body">
                             <div class="row">

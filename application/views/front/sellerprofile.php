@@ -138,31 +138,33 @@ width: 131.9px; border-color:#10B981;">
 
 
 
-<?php $sellerproduct =get_seller_product($user['user_id']); 
- if(!empty($sellerproduct)){?>
+<?php $sellerproduct = get_seller_product($user['user_id']); 
+
+ if(!empty($sellerproduct)){
+  foreach($sellerproduct as $value){?>
 
 
  <div class="col-lg-4 col-sm-6  mb-2">
     <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
+    <img src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top" alt="Card image cap">
       <div class="card-block" style="padding:20px">
       <div class="row">
-        <div class="col-7"><b style="font-size:18px"><?php echo $sellerproduct->title; ?> </b></div>
+        <div class="col-7"><b style="font-size:18px"><?php echo $value->title; ?> </b></div>
        
-        <div class="col-5" style="color:#10b981"><h5><b>$<?php echo $sellerproduct->price; ?></b></h5></div>
+        <div class="col-5" style="color:#10b981"><h5><b>$<?php echo $value->price; ?></b></h5></div>
       </div>
-    <small class="card-text"><?php echo $sellerproduct->Description; ?>.</small><br>
+    <small class="card-text"><?php echo $value->Description; ?>.</small><br>
     
     Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
     Model            <span style="padding-left:60px"> 2015</span><br>
    
-    <img src="<?php echo base_url();?>assets/images/location .png" ><span style="padding-left:70px">West India</span><br>
+    <img src="<?php echo base_url();?>assets/images/location .png" ><span style="padding-left:70px"><?php echo $value->address;?></span><br>
     <div class="pt-3 pl-5"><a style="background-color:#10b981; color:#fff" href="#" class="btn " id="b">Edit</a> &nbsp &nbsp
     <a href="#" class="btn" id="b">Delete</a></div>
     </div>
     </div>
 </div> 
-<?php }else{?>
+<?php }}else{?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
 <?php }?>
 

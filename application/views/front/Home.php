@@ -15,7 +15,10 @@ html,body
   overflow-x: hidden;
 }
 
-
+.selected {
+  background: #d1fae5;
+  color: black;
+}
 
 
 
@@ -165,6 +168,7 @@ html,body
 
 <div class="container"  >
    <ul class="pt-0 pb-0 mb-0 cut-list">
+    <li>
        <?php
 
               $category = get_all_category();
@@ -173,8 +177,8 @@ html,body
 
 
                 ?>
-                 <li class="" id="" onMouseOut="hide_sidebar()">
-                      <a <?php if($cat->id==5){?>style="background:#d1fae5" <?php } ?> class="btn shadow  rounded-pill" href="<?php echo base_url();?>welcome/home1/<?php echo $cat->id;?>" role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
+                 <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
+                      <p  class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
 
                 </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
           
@@ -206,7 +210,7 @@ html,body
                 </svg>
             </button>
 
-            <div class="va-carrousel-flexbox">
+            <div class="va-carrousel-flexbox" id="message-list">
             <?php
                 $category = get_all_subcategory();
                 foreach ($category as $key => $cat) {
@@ -221,7 +225,7 @@ html,body
                     </div>
                    
                     <?php } ; ?>  
-                    
+                   
               
             <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
@@ -347,7 +351,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center p-5">
+  <div class="row align-items-center pl-5 pr-5 pt-3">
     <div class="col-md-6 " >
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -364,7 +368,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-    <div class="row pl-4">
+    <div class="row pl-5">
     <p style="color: #F59E0B;">Search  Near  By Store</p>
     </div>
 </div>
@@ -376,7 +380,7 @@ html,body
 
 <!-- new  -->
 <div class="container  mt-3">
-  <div class="row pl-4">
+  <div class="row pl-5">
     <div class="col-lg-7 col-md-5 col-sm-4">
      <p style="color: #1B1C57; font-size:30px;">Stores</p>
     </div>
@@ -493,7 +497,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center p-5">
+  <div class="row align-items-center pl-5 pr-5 pt-3">
     <div class=" col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -623,7 +627,7 @@ html,body
 </div><br>
 
 <div class="container">
-  <div class="row align-items-center p-5">
+  <div class="row align-items-center pl-5 pr-5 pt-3">
     <div class="col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -733,3 +737,39 @@ html,body
 
   </body>
 </html>
+
+<script>
+  function getsubcategory(category_id){
+
+ 
+//var res = "";
+ $("p").removeClass("selected");
+ $(".new"+category_id).addClass("selected");
+
+    // var allch =  $("#").val();
+
+  jQuery.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
+  data: { category_id:category_id},
+  success: function(res) 
+  {
+
+    
+   
+
+
+ 
+    
+
+    $("#message-list").html(res);
+       
+  
+
+    // $('#load_cound').val("10");
+    
+  }
+  });
+
+}
+  </script>

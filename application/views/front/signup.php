@@ -141,7 +141,7 @@
                         <img class="img-fluid" src="<?php echo base_url()?>/assets/images/signup.png">
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 pe-0">
+                <div class="col-md-6 col-sm-12 ps-4 pe-4">
                     <div class="card  border p-4">
                         <article class="card-body">
                         <h6  class="float-right card-title mb-4 mt-1">Have an account ? <br><a  style="color:#13C571;" href="<?php echo base_url();?>welcome/login"> Sign in</a></h6>
