@@ -138,7 +138,7 @@ input[type=number] {
                             src="<?php echo base_url()?>/assets/images/forgot.png">
                     </div>
                 </div>
-                <div class="col-md-5 pe-0">
+                <div class="col-md-5 ps-4 pe-4">
                 <div class="card  border p-4">
 <article class="card-body">
 

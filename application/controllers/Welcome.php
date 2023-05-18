@@ -54,6 +54,42 @@ class Welcome extends CI_Controller {
 		 }
 	}
 
+
+	public function getsubcategory($data = " ")
+	{
+
+	
+		$session_id = $this->session->userdata('id');
+      if($session_id)
+      {
+
+		 
+          $category_id = $this->input->post('category_id');
+		 // echo $this->db->last_query();
+		 $sub="";
+		$subcategory= get_subcategory_byid($category_id);
+foreach($subcategory as $value){
+	//print_r($subcategory);die();
+                             
+	$sub .=	'
+	<div class="va-card va-card_category"> <a class=" border-0"  href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;"> 
+		<p style="text-align:center;" class="my-auto pouler_Categories">
+		<img class="btn-change"  src="https://dbvertex.com/celnow/uploads/shopcategory/'.$value->icon.'" alt="">
+		 <center style="color:black; font-size:12px; font-weight:500">'.$value->sub_category.'</center>
+		</p>
+		  </a> 
+		  </div>';
+		 
+                          
+}                                
+                                        
+echo $sub;                             
+		}else{
+        
+            return redirect('welcome');
+      }
+	}
+
 	public function home1()
 	{
 		$session_id = $this->session->userdata('id');
@@ -68,6 +104,24 @@ class Welcome extends CI_Controller {
 		 else{
 			$this->load->view('front/header');
 		$this->load->view('front/home1');
+		$this->load->view('front/footer');
+		 }
+	}
+
+	public function home2()
+	{
+		$session_id = $this->session->userdata('id');
+		
+		 $user_detail = $this->user->loginuser($session_id);
+		
+		 if(!empty($user_detail)){
+		$this->load->view('front/header',['user'=>$user_detail]);
+		$this->load->view('front/home2',['user'=>$user_detail]);
+		$this->load->view('front/footer');
+		 }
+		 else{
+			$this->load->view('front/header');
+		$this->load->view('front/home2');
 		$this->load->view('front/footer');
 		 }
 	}

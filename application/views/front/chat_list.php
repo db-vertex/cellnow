@@ -890,7 +890,7 @@ function getchat(receiver_id,sender_id, product_id,category_id){
 
       var allch =  $("#allchat").val();
 
-               jQuery.ajax({
+    jQuery.ajax({
     type: "POST",
     url: "<?php echo base_url('/welcome/chatdata'); ?>",
     data: {sender_id: sender_id,receiver_id:receiver_id, product_id:product_id, category_id:category_id},
@@ -899,8 +899,8 @@ function getchat(receiver_id,sender_id, product_id,category_id){
 
        $('#sender_id').val(sender_id);
        $('#receiver_id').val(receiver_id);
-         $('#product_id').val(product_id);
-         $('#category_id').val(category_id);
+       $('#product_id').val(product_id);
+       $('#category_id').val(category_id);
      
 
 
@@ -909,7 +909,7 @@ function getchat(receiver_id,sender_id, product_id,category_id){
 
       $("#message-list").html(res);
          
- $("#block-list").html(res);
+      $("#block-list").html(res);
          // location.reload();
          //$("#load-list").prepend("");
 

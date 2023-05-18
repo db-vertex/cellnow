@@ -141,7 +141,7 @@
                         <img class="img-fluid" src="<?php echo base_url();?>assets/images/change.png">
                     </div>
                 </div>
-                <div class="col-md-5 col-sm-12 pe-0">
+                <div class="col-md-5 col-sm-12 ps-4 pe-4">
                     <div class="card  border p-4">
                         <article class="card-body">
                             <div class="row">
@@ -184,7 +184,7 @@
                         </div>
 
                         <?php } ?>
-                                <div class="form-group mt-2">
+                                <div class="form-group mt-2 ">
                                     <label>Enter Old Password</label>
                                     <input name="oldpassword" class="form-control" placeholder="Old password" type="password" maxlength="20"
                                         style="border-radius:30px; border-color:#13C571">

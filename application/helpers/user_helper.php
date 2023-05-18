@@ -76,7 +76,7 @@ function get_seller_product($id)
 
   $category_data = $ci->db->query($query);        
 
-  return $category_data->row(); 
+  return $category_data->result(); 
 }
 
 function get_all_products()

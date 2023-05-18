@@ -193,9 +193,7 @@ padding-top:10px;
 	display: none;
 	text-align: left;
 }
-.cut-list__more-content:hover{
-  
-}
+
 
 .cut-list__more.is-top{
 	top: auto;
