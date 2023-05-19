@@ -644,11 +644,38 @@ padding-top:10px;
  p.word {
   word-wrap: break-word;
 }
+@media (min-width: 991px) {
+    .body_background{
+        background: linear-gradient(130.02deg, #77D4B5 -15.01%, rgba(213, 253, 252, 0) 39.7%);
+    }   
+ }
+
+@media (max-width: 992px) {
+    .body_background{
+        background: linear-gradient(130.02deg, #77D4B5 -15.01%, rgba(213, 253, 252, 0) 39.7%);
+    }  
+}
+.collapse.show {
+    display: block;
+}
+.dropdown-menu{
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    color: #10B981;
+}
+.dropdown-item{
+    color: #10B981;
+    font-size:bold;
+    font-size:16px;
+}
+
 </style>
+
   </head>
+ 
+  
   <body>
     <!-- <h1 >Hello, world!</h1> -->
-    <div class="container-fluid" style="background-image: linear-gradient(to right, #6ad3b0 ,white ,white, white);">
+    <div class="container-fluid body_background" id="body_background">
 
     <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-">
@@ -656,7 +683,12 @@ padding-top:10px;
   <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" style="width:180px;padding-bottom:12px">
   </a>
     
+<<<<<<< HEAD
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+=======
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  id="myelement" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+>>>>>>> 19afa6528b969e2bda8b0570f6ccd98e78f7c66d
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
@@ -671,7 +703,7 @@ padding-top:10px;
           <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
            <?php $category = get_all_category(); 
              foreach ($category as $key => $cat) {?>
-            <li><a class="dropdown-item" id="hover" href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id?>"><?php echo $cat->category; ?></a></li>
+            <li><a class="dropdown-items" sid="hover" href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id?>"><?php echo $cat->category; ?></a></li>
           
             <?php }?>
           

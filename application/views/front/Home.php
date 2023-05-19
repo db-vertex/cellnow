@@ -94,18 +94,28 @@ html,body
   }
 } 
 
-
-
-
-
-
-
+@media (min-width: 991px) {
+  .home_background{
+    background: linear-gradient(154.02deg, #77D4B5 -12.01%, rgba(213, 253, 252, 0) 21.7%);
+     }  
+  }
+ 
+ @media (max-width: 992px) {
+     .home_background{
+      background: linear-gradient(154.02deg, #77D4B5 -21.01%, rgba(213, 253, 252, 0) 21.7%);
+     }  
+ }
 
     </style>
+  
   </head>
   <body>
     
+<<<<<<< HEAD
   <div class="container-fluid" >
+=======
+  <div class="container-fluid home_background" >
+>>>>>>> 19afa6528b969e2bda8b0570f6ccd98e78f7c66d
 <div class="container">
   <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
