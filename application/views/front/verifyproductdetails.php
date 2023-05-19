@@ -64,8 +64,8 @@
     }
 
     .details_img_cover {
-        width: 100%;
-        min-height: 467px;
+     
+        max-height: 467px;
         left: 114px;
         top: 588px;
         background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
@@ -74,7 +74,7 @@
         min-width: 55%;
     }
 
-    ..cover_img_div{
+.cover_img_div{
         text-align: center;
     }
 

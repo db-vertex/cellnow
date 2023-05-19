@@ -1,4 +1,88 @@
 <style>
+
+.Related_Ads {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 32px;
+        line-height: 40px;
+        text-transform: capitalize;
+        color: #1B1C57;
+    }
+
+    .related_ads_card {
+        min-height: 235px;
+        max-height: 235px;
+        left: 105px;
+        top: 2174px;
+        border-radius: 37px 37px 0px 0px;
+        background-color: #FFFFFF;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 0px 0px 37px 37px;
+    }
+
+    .related_ads_card_img {
+        min-height: 282.1px;
+        max-height: 282.1px;
+        left: 105px;
+        top: 1889px;
+        border-radius: 37px 37px 0px 0px;
+    }
+
+    .related_ads_card_title {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 900;
+        font-size: 20px;
+        line-height: 10px;
+        /* identical to box height */
+        color: #000000;
+        /* Inside auto layout */
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+    .related_ads_details_button {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 9.42857px 12.5714px;
+        gap: 4.71px;
+
+        width: 104.43px;
+        height: 36.86px;
+
+        background: #10B981;
+        /* C2/B */
+
+        border: 1.57143px solid #46760A;
+        border-radius: 25.42857px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        align-self: center;
+        flex-grow: 0;
+    }
+
+    .related_ads_details_button_text {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12.7857px;
+        line-height: 18px;
+        color: #FFFFFF;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
 /* search btn line 11 to 89 */
 .search_wrap {
     width: 100%;
@@ -117,13 +201,14 @@ input::placeholder {
 </style>
 
 
-<?php  $id = $this->uri->segment(4); 
-    ?>
+
 <div class="container-fluid home_background">
 <div class="container">
     <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-            <?php
+        <?php  $id = $this->uri->segment(3); 
+    ?>
+      <?php
       $all_banner = get_all_banner();
       $j = 1;
       foreach ($all_banner as $key => $banner) {
@@ -183,8 +268,8 @@ input::placeholder {
 
 <!-- new -->
 <div class="container"  >
-   <ul class="pt-0 pb-0 mb-0 cut-list">
-    <li>
+   <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll">
+  
        <?php
 
               $category = get_all_category();
@@ -194,7 +279,7 @@ input::placeholder {
 
                 ?>
                  <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                      <p  class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
+                      <p <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php } ?> class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
 
                 </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
           
@@ -225,7 +310,7 @@ input::placeholder {
                     </svg>
                 </button>
 
-                <div class="va-carrousel-flexbox">
+                <div class="va-carrousel-flexbox" id="sub-list">
                     <?php
                 $category = get_all_subcategory();
                 foreach ($category as $key => $cat) {
@@ -265,90 +350,150 @@ input::placeholder {
 
 
 
-
 <div class="container mt-5">
-    <div class="row">
-        <div class=" col-lg-4  col-md-12 ">
-            <div class="card" style="height:1830px;">
-                <div class="row text-center mt-2">
-                    <div class=" col-md-6 col-sm-6">
-                        <p><b>Brand </b></p>
-                        <p>Brand 1</p>
-                        <p>Brand 2</p>
-                        <p>Brand 3</p>
-                        <p>Brand 4</p>
-                    </div>
+<div class="row">
+    <div class="col-lg-4">
+<nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom">
+    <a class="navbar-brand ml-2 font-weight-bold" href="#">Brand</a>
+   
+   
+     
+</nav>
 
+<div id="mobile-filter">
+    <div>
+      
+        <ul>
+            <li><a href="#">Living</a></li>
+            <li><a href="#">Dining</a></li>
+            <li><a href="#">Office</a></li>
+            <li><a href="#">Bedroom</a></li>
+            <li><a href="#">Kitchen</a></li>
+        </ul>
+    </div>
+   
+    <div>
+        <h6>Product Type</h6>
+        <form class="ml-md-2">
+            <div class="form-inline border rounded p-sm-2 my-2">
+                <input type="radio" name="type" id="boring">
+                <label for="boring" class="pl-1 pt-sm-0 pt-1">Normal</label>
+            </div>
+            <div class="form-inline border rounded p-sm-2 my-2">
+                <input type="radio" name="type" id="ugly">
+                <label for="ugly" class="pl-1 pt-sm-0 pt-1">Boost</label>
+            </div>
+            <div class="form-inline border rounded p-md-2 p-sm-1">
+                <input type="radio" name="type" id="notugly">
+                <label for="notugly" class="pl-1 pt-sm-0 pt-1">Donate</label>
+            </div>
+        </form>
+    </div>
+</div>
+       
 
-                    <div class="col-md-6 col-sm-6">
-                        <p><b>Total 512 </b></p>
-                        <p><button class=" button5">320</button></p>
-                        <p><button class=" button5">112</button></p>
-                        <p><button class=" button5">32</button></p>
-                        <p><button class=" button5">48</button></p>
-                    </div>
-
-                    <div class=" col-md-6 col-sm-6 mt-3 ">
-                        <p><b>Product type</b></p>
-                        <p>All</p>
-                        <p>Normal </p>
-                        <p>Boast</p>
-                        <p>Donate </p>
-                    </div>
-
-                    <div class="col-md-6 col-sm-6 mt-5">
-                        <p><b></b></p>
-                        <p><button class=" button5">320</button></p>
-                        <p><button class=" button5">112</button></p>
-                        <p><button class=" button5">32</button></p>
-                        <p><button class=" button5">48</button></p>
-                    </div>
 
                 </div>
-            </div>
-
-        </div>
-
-
-
 
         <div class=" col-lg-8 col-sm-12 ">
-            <div class="row ">
-                <div class=" col-lg-6  col-md-6  col-sm-6">
-                    <div class="fillter_product_img"
-                        style="background: url(<?php echo base_url();?>assets/images/bike1.png);">
-                    </div>
-                    <div class="fillter_product_card">
-                        <div class="row">
-                            <div class="col-6">
-                                <div class="fillter_product_name mt-3">
-                                    Lorem ipsum dolor sit amet
+       
+    <div class="row">
+    <?php  
+            if($id==1){
+                $products = get_category_reusable_parts_by_category();
+               
+               
+            }
+            else if($id==2){
+                $products = get_category_tuitions_category();
+            }
+            else if($id==3){
+                $products = get_category_job_category();
+            }
+            else if($id==4){
+                $products = get_category_internships_category();
+              
+            }
+            else if($id==5){
+                $products = get_category_internships_category();
+              
+            }
+           
+            foreach ($products as $relatedproduct){
+               
+             ?>
+        <div class="col-lg-6 col-sm-6 col-6 offset-sm-0 offset-1 p-4">
+        <div class="card"
+                            style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
+                            <img class="related_ads_card_img  img-fluid"
+                                src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
+                                alt="related_ads_card_img">
+                            <div class="card-body related_ads_card">
+                                <div class="row">
+                                    <div class="col-5">
+                                        <p class="related_ads_card_title"> Product title</p>
+                                    </div>
+                                    <div class="col-3">
+                                        <b style='font-size:18px;'><i class="fa fa-heart-o "
+                                                style="color:#ff6737;padding: 0px;"></i></b>
+                                    </div>
+                                    <div class="col-4">
+                                        <p class="details_price">$<span><?php echo $relatedproduct->price; ?></span></p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-12">
+                                        <small class="card-text"
+                                            style="color: #575757;"><?php echo $relatedproduct->Description;?></small><br>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Fresheness</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;">New(Extra fresh)</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Model</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;">2015</p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <i class="bi bi-geo-alt-fill" aria-hidden="true"
+                                            style="font-size:18px; color:#69d3b0"></i>
+                                    </div>
+                                    <div class="col-5">
+                                        <p tyle="color: #575757;"><?php echo $relatedproduct->address;?></p>
+                                    </div>
+                                    <div class="col-3 pe-2">
+                                        <a
+                                            href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
+                                            <p class="related_ads_details_button ">
+                                                <spam class="related_ads_details_button_text">Product Detail</spam>
+                                            </p>
+                                        </a>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="col-3">
-                                <img src="<?php echo base_url();?>assets/images/heart.png" class="img-fluid" alt="haert"
-                                    width="30" height="30">
-                            </div>
-                            <div class="col-3">
-
-                            </div>
                         </div>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-
-
         </div>
+        <?php } ?>
+    </div>
+
+           
     </div>
 
 
 </div>
 
 </div>
+
 
 
 
@@ -386,6 +531,43 @@ input::placeholder {
     
 
     $("#message-list").html(res);
+       
+  
+
+    // $('#load_cound').val("10");
+    
+  }
+  });
+
+}
+  </script>
+
+  
+<script>
+  function getsubcategory(category_id){
+
+ 
+//var res = "";
+ $("p").removeClass("selected");
+ $(".new"+category_id).addClass("selected");
+
+    // var allch =  $("#").val();
+
+  jQuery.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
+  data: { category_id:category_id},
+  success: function(res) 
+  {
+
+    
+   
+
+
+ 
+    
+
+    $("#sub-list").html(res);
        
   
 

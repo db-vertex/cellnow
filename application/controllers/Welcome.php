@@ -616,6 +616,21 @@ echo $sub;
         }
 		
 	}
+
+	public function search(){
+ 
+		$term = $this->input->get('term');
+  
+	  //   $this->db->like('category', $term);
+  
+	  //   $data = $this->db->get("category")->result();
+	   
+	   $data = get_all_search_product($term);
+		// $data    = $this->product_model->get_search($term);	
+	  
+		echo json_encode( $data);
+		
+	}
 	public function fillter_product()
 	{
 	    

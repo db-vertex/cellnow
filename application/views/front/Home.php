@@ -1,3 +1,6 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 
     <style>
 
@@ -93,14 +96,7 @@
      }  
  }
 
- .hide-scroll{
-    overflow-x: scroll;
-}
-
-.hide-scroll::-webkit-scrollbar {
-    background: transparent; /* make scrollbar transparent */
-    width: 0px;
-}
+ 
 
     </style>
   
@@ -157,9 +153,16 @@
       <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
          
-		       <input type="search" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+		       <input type="search" id="search" name="search" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
           <button type="button" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
         </div>
+        <div class="row">
+                                    <div id="display"></div>
+                                   
+   
+                              
+                           
+                    </div>
   </div>
 </div>
 </div>
@@ -222,7 +225,7 @@
                   ?>
 
                     <div class="va-card va-card_category"> <a class=" border-0"
-                            href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;">
+                            href="#" style="max-width: 45%;">
                             <p style="text-align:center;" class="my-auto pouler_Categories">
                                 <img class="btn-change"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
@@ -398,6 +401,13 @@
 		       <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
           <button type="button" class="btn btn-success  rounded-5" style="padding:6px 10px" >search ></button>
         </div>
+        <div class="row">
+                                    <div id="display"></div>
+                                   
+   
+                              
+                           
+                    </div>
   </div>
     </div>
   </div>
@@ -779,3 +789,49 @@
 
 }
   </script>
+
+<script type='text/javascript'>
+    
+    $(document).ready(function() {
+    $( "#search" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({ 
+            url: "<?php echo base_url();?>welcome/search",
+            data: {term : request.term},
+            dataType: "json",
+            success: function(data){
+             
+              var resp = $.map(data,function(obj){
+                  var id = obj.id;
+                   var category_id = obj.category_id;
+                     var subcategory_id = obj.subcategory_id;
+                   var add = category_id +'/'+id +'/'+subcategory_id;
+                  return {
+                            label: obj.title,
+                           value: add
+                            
+                        }
+                   
+              }); 
+              response(resp);
+            console.log(resp);
+              $("#display").html(data).show();
+            } 
+            
+           
+        });
+       
+        
+    },
+      select: function(event, ui) {  
+                        location.href="<?php echo base_url();?>welcome/productdetail/" +ui.item.value ;
+            },
+    minLength: 2
+ });
+ 
+
+});
+ 
+ 
+    </script>

@@ -530,7 +530,7 @@ padding-top:10px;
       }
   
       .deals-scroll-right {
-          top: 0;
+          top: -35px;
           bottom: 0;
           right: 5px;
       }
@@ -570,6 +570,15 @@ padding-top:10px;
           bottom: 0;
           right: 5px;
       }
+
+      .hide-scroll{
+    overflow-x: scroll;
+}
+
+.hide-scroll::-webkit-scrollbar {
+    background: transparent; /* make scrollbar transparent */
+    width: 0px;
+}
       
       
       .va-carrousel-section {

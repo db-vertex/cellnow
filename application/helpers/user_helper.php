@@ -64,6 +64,90 @@ function get_all_category_reusable_parts($id)
   return $category_data->row(); 
 }
 
+
+function get_category_reusable_parts_by_category()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_category_tuitions_category()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_tuitions";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_category_job_category()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_job";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_category_internships_category()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_internships";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+
+
+function get_all_search_product($term)
+{ 
+   
+    //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+      
+    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id from category_reusable_parts 
+    UNION SELECT title,id,category_id ,subcategory_id from category_internships 
+    UNION SELECT title,id,category_id ,subcategory_id from category_job
+    UNION SELECT title,id,category_id ,subcategory_id from category_tuitions
+    ) as  custam  WHERE title like "%'.$term.'%"';
+    
+       $category_data = $ci->db->query($query);  
+             
+  return $category_data->result(); 
+   
+}
+
 function get_seller_product($id)
 {
   //get main CodeIgniter object
