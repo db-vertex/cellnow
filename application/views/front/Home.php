@@ -110,12 +110,11 @@ html,body
   
   </head>
   <body>
-    
-<<<<<<< HEAD
+ 
   <div class="container-fluid" >
-=======
+
   <div class="container-fluid home_background" >
->>>>>>> 19afa6528b969e2bda8b0570f6ccd98e78f7c66d
+
 <div class="container">
   <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
