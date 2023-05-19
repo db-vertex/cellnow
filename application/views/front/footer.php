@@ -340,17 +340,17 @@
            updateUpaCarrouselInfo();
         
             if(maxCarrouselScroll < 0 ){
-                  document.getElementById("right_view_button").style.display = "none";
+                  document.getElementById("right_popular_button").style.display = "none";
             }
             document.querySelector("#" + dealCarrouselID + " .deals-scroll-left_popular").addEventListener("click",
                 function () {
                     updateUpaCarrouselInfo(); //in case window resized, will get new info
                     if (target.scrollLeft > 0) {
                         scrollLeftAnimate(target, -cardOutterWidth * 2);
-                         document.getElementById("right_view_button").style.display = "block";
+                         document.getElementById("right_popular_button").style.display = "block";
                     }
                     else{
-                        document.getElementById("left_view_button").style.display = "none"; 
+                        document.getElementById("left_popular_button").style.display = "none"; 
                     }
                 }
             );
@@ -360,10 +360,10 @@
                     updateUpaCarrouselInfo(); //in case window resized, will get new info 
                     if (target.scrollLeft < maxCarrouselScroll) {
                         scrollLeftAnimate(target, cardOutterWidth * 2);
-                        document.getElementById("left_view_button").style.display = "block"; 
+                        document.getElementById("left_popular_button").style.display = "block"; 
                     }
                     else{
-                     document.getElementById("right_view_button").style.display = "none";
+                     document.getElementById("right_popular_button").style.display = "none";
                     }
                 }
             );

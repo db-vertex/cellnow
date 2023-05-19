@@ -659,6 +659,14 @@ padding-top:10px;
     font-size:16px;
 }
 
+.navbar-toggler {
+  border-color: #10B981;
+} 
+
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 32 32' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba(255,102,203, 0.5)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 8h24M4 16h24M4 24h24'/%3E%3C/svg%3E");
+}
+
 </style>
 
   </head>
@@ -674,7 +682,6 @@ padding-top:10px;
   <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" style="width:180px;padding-bottom:12px">
   </a>
     
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  id="myelement" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -693,7 +700,7 @@ padding-top:10px;
           <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
            <?php $category = get_all_category(); 
              foreach ($category as $key => $cat) {?>
-            <li><a class="dropdown-items" sid="hover" href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id?>"><?php echo $cat->category; ?></a></li>
+            <li><a class="dropdown-item"  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id?>"><?php echo $cat->category; ?></a></li>
           
             <?php }?>
           

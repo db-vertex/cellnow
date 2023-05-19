@@ -358,7 +358,7 @@
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center pl-4 pr-4 pt-3">
+  <div class="row align-items-center pl-4 pr-4 pt-5">
     <div class="col-md-6 " >
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -504,7 +504,7 @@
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center pl-4 pr-4 pt-3">
+  <div class="row align-items-center pl-4 pr-4 pt-4">
     <div class=" col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -536,7 +536,7 @@
        
 
         <div id="va_container_Popular">
-            <button class="deals-scroll-left_popular deals-paddle" id="left_view_button">
+            <button class="deals-scroll-left_popular deals-paddle" id="left_popular_button">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                     class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512">
@@ -604,7 +604,7 @@
                   <?php   }  $j++; };  ?>  
             
               
-            <button class="deals-scroll-right_popular deals-paddle" id="right_view_button">
+            <button class="deals-scroll-right_popular deals-paddle" id="right_popular_button">
                 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                     class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 320 512">
