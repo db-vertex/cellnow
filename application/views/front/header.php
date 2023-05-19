@@ -52,7 +52,7 @@
 }
     }
     
-    
+  
 
   .card2{
     --bs-card-spacer-y: 1rem;
@@ -63,7 +63,7 @@
     --bs-card-border-width: var(--bs-border-width);
     --bs-card-border-color: #C5DC49;
     --bs-card-border-radius: 0.575rem;
-    --bs-card-box-shadow: ;
+
     --bs-card-inner-border-radius: calc(var(--bs-border-radius) - (var(--bs-border-width)));
     --bs-card-cap-padding-y: 0.5rem;
     --bs-card-cap-padding-x: 1rem;
@@ -228,10 +228,7 @@ padding-top:10px;
         min-height: 246px;
       }
       
-      .link-plains:hover{
-          box-shadow: 0 0 11px rgba(33,33,33,.2); 
-          
-      }
+     
       .pouler_Categories:hover{
    	-webkit-transform: scale(1.0);
 	transform: scale(1.0);
@@ -276,8 +273,8 @@ padding-top:10px;
           border-radius: 20px;
           border: 0px;
           width: 100%;
-          max-height:300px;
-          min-height: 280px;
+          max-height:200px;
+          min-height: 200px;
       }
         .va-thumbnail_category {
           border-radius: 5px;
@@ -443,11 +440,11 @@ padding-top:10px;
           cursor: pointer;
           user-select: none;
           outline: none;
-          width: 315px;
+          width: 205px;
       }
       .va-card:hover {
           user-select: none;
-          outline: none;
+         
       }
   
       .va-card a {
@@ -656,12 +653,9 @@ padding-top:10px;
     <div class="container">
     <nav class="navbar navbar-expand-lg bg-body-">
  
-    
-    
   <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" style="width:180px;padding-bottom:12px">
   </a>
     
-
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -713,8 +707,8 @@ padding-top:10px;
    ?>
    
     
-            <img class="img-fluid rounded-corners  d-block" style="height: 40.9px;
-width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
+    <img class="img-fluid rounded-corners  d-block" style="height: 40.9px;
+   width: 40.9px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
    
    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false" style="font-size:15px;color:#10B981;font-weight:600;">
     &nbsp <?php echo ucfirst($profile->name);?> 

@@ -103,6 +103,8 @@ input::placeholder {
     flex-grow: 0;
 }
 </style>
+
+
 <?php  $id = $this->uri->segment(4); 
     ?>
 
@@ -168,37 +170,31 @@ input::placeholder {
 </div><br>
 
 <!-- new -->
-<div class="container">
-    <div class="row ">
-        <div class="col-lg-2 col-md-3 col-sm-6 col-12 mb-2">
-            <a style="background:#d1fae5;" class="btn shadow rounded-pill btn-change" href="#" role="button"><img
-                    class="rounded-pill me-1" width="20" height="20"
-                    src="<?php echo base_url();?>assets/images/img/menu1.png" alt=""> &nbsp &nbsp All</a>
-        </div>
+<div class="container"  >
+   <ul class="pt-0 pb-0 mb-0 cut-list">
+    <li>
+       <?php
+
+              $category = get_all_category();
+
+              foreach ($category as $key => $cat) {
 
 
-        <div class="col-lg-3 col-md-5 col-sm-6 col-12 mb-2">
-            <a class="btn shadow   rounded-pill btn-change" <?php if($id==1){?> style="background:#d1fae5;" <?php }?>
-                href="<?php echo base_url();?>welcome/fillter_product/1" role="button"><img class="rounded-circle me-1"
-                    src="<?php echo base_url();?>assets/images/img/reusable1.png" alt="">Reusable parts and Product</a>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6 mb-2">
-            <a class="btn shadow  bg-white rounded-pill btn-change"
-                href="<?php echo base_url();?>welcome/fillter_product/2" role="button"><img class="rounded-circle me-1"
-                    src="<?php echo base_url();?>assets/images/img/home1.png" alt=""> &nbsp Tuitions/Classes</a>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6  mb-2 btn-change">
-            <a class="btn shadow  bg-white rounded-pill" href="<?php echo base_url();?>welcome/fillter_product/3"
-                role="button"><img class="rounded-circle me-1" src="<?php echo base_url();?>assets/images/img/work1.png"
-                    alt=""> Part-time Jobs </a>
-        </div>
-        <div class="col-lg-2 col-md-4 col-sm-6  mb-2 btn-change">
-            <a class="btn shadow  bg-white rounded-pill" href="<?php echo base_url();?>welcome/fillter_product/4"
-                role="button"><img class="rounded-circle me-1"
-                    src="<?php echo base_url();?>assets/images/img/employee1.png" alt=""> &nbsp Internships </a>
-        </div>
-    </div>
-</div><br>
+                ?>
+                 <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
+                      <p  class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
+
+                </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
+          
+            <?php
+                      
+                      }
+
+                ?> 
+</ul>
+    
+</div>
+
 
 
 <div class="container">
@@ -351,3 +347,40 @@ input::placeholder {
         </div>
     </div>
 </div>
+
+
+<script>
+  function getsubcategory(category_id){
+
+ 
+//var res = "";
+ $("p").removeClass("selected");
+ $(".new"+category_id).addClass("selected");
+
+    // var allch =  $("#").val();
+
+  jQuery.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
+  data: { category_id:category_id},
+  success: function(res) 
+  {
+
+    
+   
+
+
+ 
+    
+
+    $("#message-list").html(res);
+       
+  
+
+    // $('#load_cound').val("10");
+    
+  }
+  });
+
+}
+  </script>

@@ -101,7 +101,7 @@ html,body
      <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
 width: 131.9px; border-color:#10B981;">
      <div style="text-align:center"><h5><b ><?php echo ucfirst($profile->name); ?></b></h5>
-     <?php echo ucfirst($profile->Address); ?>
+     <?php if(isset($profile->Address)){echo ucfirst($profile->Address);} ?>
      
     </div>
     <div class="row text-center ">
@@ -132,12 +132,6 @@ width: 131.9px; border-color:#10B981;">
 <h3 class="ml-5 mb-3"><b>Seller Ads</b></h3>
 <div class="row">
 
-
-   
-
-
-
-
 <?php $sellerproduct = get_seller_product($user['user_id']); 
 
  if(!empty($sellerproduct)){
@@ -145,7 +139,7 @@ width: 131.9px; border-color:#10B981;">
 
 
  <div class="col-lg-4 col-sm-6  mb-2">
-    <div class="card" style="max-width: 22rem; border-radius: 28px;margin:auto;">
+    <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
     <img class="va-thumbnail" src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top" alt="Card image cap">
       <div class="card-block" style="padding:20px">
       <div class="row">

@@ -115,7 +115,7 @@ width: 131.9px;">
             <h5><b>
                 <?php echo ucfirst($profile->name); ?>
               </b></h5>
-            <?php echo ucfirst($profile->Address); ?>
+            <?php if(isset($profile->Address)) {echo ucfirst($profile->Address);} ?>
 
           </div>
           <div class="row text-center ">
@@ -405,7 +405,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
    
 
     <div class="col-lg-4 col-md-6  mb-2">
-            <div class="card" style="max-width: 25rem; border-radius: 28px;margin:auto;">
+            <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
               <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>" class="card-img-top" alt="Card image cap">
               <div class="card-block" style="padding:5px">
                 <div class="card-title">
