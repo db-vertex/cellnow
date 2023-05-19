@@ -161,8 +161,8 @@
 
 
 <div class="container">
-   <ul class="pt-0 pb-0 mb-0 cut-list">
-    <li>
+   <ul class="pt-0 pb-0 mb-0 cut-list" style="overflow-x: scroll;">
+
        <?php
 
               $category = get_all_category();
