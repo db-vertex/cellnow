@@ -93,6 +93,15 @@
      }  
  }
 
+ .hide-scroll{
+    overflow-x: scroll;
+}
+
+.hide-scroll::-webkit-scrollbar {
+    background: transparent; /* make scrollbar transparent */
+    width: 0px;
+}
+
     </style>
   
   
@@ -160,8 +169,8 @@
 
 
 
-<div class="container">
-   <ul class="pt-0 pb-0 mb-0 cut-list" style="overflow-x: scroll;">
+<div class="container " >
+   <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll" >
 
        <?php
 
