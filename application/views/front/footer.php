@@ -42,7 +42,7 @@
    
   <div class="container  ">
     <div class="container">
-  <div class="row p-4">
+  <div class="row">
     <div class="col-sm-6 ">
     <img class="btn-change" src="<?php echo base_url();?>assets/images/CelNow 5 1.png" class="img-fluid mb-3" alt=""  width="150px"><br>
 <p style="color:#888b97">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Laboriosam rerum ipsa id recusandae quasi officia nihil! </p>

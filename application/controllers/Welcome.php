@@ -58,12 +58,6 @@ class Welcome extends CI_Controller {
 	public function getsubcategory($data = " ")
 	{
 
-	
-		$session_id = $this->session->userdata('id');
-      if($session_id)
-      {
-
-		 
           $category_id = $this->input->post('category_id');
 		 // echo $this->db->last_query();
 		 $sub="";
@@ -73,7 +67,7 @@ class Welcome extends CI_Controller {
 		 else{
 		$subcategory= get_subcategory_byid($category_id);
 		 }
-foreach($subcategory as $value){
+      foreach($subcategory as $value){
 	//print_r($subcategory);die();
                              
 	$sub .=	'
@@ -89,10 +83,7 @@ foreach($subcategory as $value){
 }                                
                                         
 echo $sub;                             
-		}else{
-        
-            return redirect('welcome');
-      }
+		
 	}
 
 	public function home1()

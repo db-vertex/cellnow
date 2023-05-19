@@ -273,8 +273,8 @@ padding-top:10px;
           border-radius: 20px;
           border: 0px;
           width: 100%;
-          max-height:200px;
-          min-height: 200px;
+          max-height:170px;
+          min-height: 170px;
       }
         .va-thumbnail_category {
           border-radius: 5px;
@@ -334,7 +334,7 @@ padding-top:10px;
   
       .va-carrousel-flexbox_most .va-card {
           flex: 0 0 auto;
-          padding-left: 25px;
+          padding-left: 20px;
       }
   
       .va-carrousel-flexbox_most .va-card:last-child {
@@ -369,7 +369,7 @@ padding-top:10px;
   
       .va-carrousel-flexbox_urgent .va-card {
           flex: 0 0 auto;
-          padding-left: 25px;
+          padding-left: 20px;
       }
   
       .va-carrousel-flexbox_urgent .va-card:last-child {
@@ -392,8 +392,6 @@ padding-top:10px;
           display: none;
       }
       
-      
-      
       .va-carrousel-flexbox_popular {
           
           display: flex;
@@ -404,7 +402,6 @@ padding-top:10px;
       }
   
       .va-carrousel-flexbox_popular .va-card {
-
 
           flex: 0 0 auto;
           padding-left: 20px;
@@ -442,7 +439,7 @@ padding-top:10px;
           cursor: pointer;
           user-select: none;
           outline: none;
-          width: 180px;
+          width: 170px;
       }
       .va-card:hover {
           user-select: none;
@@ -453,31 +450,23 @@ padding-top:10px;
           display: block;
       }
   
-  
-   
       .va-carrousel-title {
           display: inline-block;
-  
           color: white;
           font-weight: 700;
           padding-bottom: 8px;
-  
           margin-bottom: 18px;
       }
   
       .va-title {
         margin-top: 8px;
-    font-size: 12px;
+        font-size: 12px;
        height: 24px;
        font-weight: 700;
        letter-spacing: 1px;
-     
        color: #3c3c3c;
 
       }
-  
-    
-  
       .va-start-from {
           font-size: 9px;
           display: flex;

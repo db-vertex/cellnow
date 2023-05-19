@@ -1,19 +1,6 @@
-<!doctype html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-   
+
     <style>
 
-
-
-
-html,body
-{
-  max-width: 100%;
-  overflow-x: hidden;
-}
 
 .selected {
   background: #d1fae5;
@@ -108,10 +95,8 @@ html,body
 
     </style>
   
-  </head>
-  <body>
+  
  
-  <div class="container-fluid" >
 
   <div class="container-fluid home_background" >
 
@@ -175,7 +160,7 @@ html,body
 
 
 
-<div class="container"  >
+<div class="container">
    <ul class="pt-0 pb-0 mb-0 cut-list">
     <li>
        <?php
@@ -221,7 +206,7 @@ html,body
                     </svg>
                 </button>
 
-                <div class="va-carrousel-flexbox">
+                <div class="va-carrousel-flexbox" id="sub-list">
                     <?php
                 $category = get_all_subcategory();
                 foreach ($category as $key => $cat) {
@@ -364,7 +349,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center pl-5 pr-5 pt-3">
+  <div class="row align-items-center pl-4 pr-4 pt-3">
     <div class="col-md-6 " >
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -381,7 +366,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-    <div class="row pl-5">
+    <div class="row pl-4">
     <p style="color: #F59E0B;">Search  Near  By Store</p>
     </div>
 </div>
@@ -393,7 +378,7 @@ html,body
 
 <!-- new  -->
 <div class="container  mt-3">
-  <div class="row pl-5">
+  <div class="row pl-4">
     <div class="col-lg-7 col-md-5 col-sm-4">
      <p style="color: #1B1C57; font-size:30px;">Stores</p>
     </div>
@@ -510,7 +495,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center pl-5 pr-5 pt-3">
+  <div class="row align-items-center pl-4 pr-4 pt-3">
     <div class=" col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -527,7 +512,7 @@ html,body
 
 <!-- new  -->
 <div class="container">
-  <div class="row pl-5">
+  <div class="row pl-4">
     <div class="col-12">
       <p id="donate" style="color: #1B1C57; font-size:30px;">Donate</p>
     </div>
@@ -640,7 +625,7 @@ html,body
 </div><br>
 
 <div class="container">
-  <div class="row align-items-center pl-5 pr-5 pt-3">
+  <div class="row align-items-center pl-4 pr-4 pt-3">
     <div class="col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -748,8 +733,7 @@ html,body
 
 
 
-  </body>
-</html>
+ 
 
 <script>
   function getsubcategory(category_id){
@@ -775,7 +759,7 @@ html,body
  
     
 
-    $("#message-list").html(res);
+    $("#sub-list").html(res);
        
   
 
