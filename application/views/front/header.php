@@ -404,6 +404,8 @@ padding-top:10px;
       }
   
       .va-carrousel-flexbox_popular .va-card {
+
+
           flex: 0 0 auto;
           padding-left: 20px;
       }
@@ -440,7 +442,7 @@ padding-top:10px;
           cursor: pointer;
           user-select: none;
           outline: none;
-          width: 205px;
+          width: 180px;
       }
       .va-card:hover {
           user-select: none;

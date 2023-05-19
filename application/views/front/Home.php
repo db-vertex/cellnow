@@ -294,7 +294,7 @@ html,body
             ?>  
             
                   <div class="va-card va-cards "> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
-                  <p  text-align:center;" class="my-auto">
+                  <p  class="my-auto">
                  
                   <?php if($pro->cover_img !== NULL) { ?> 
                                           <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>">
