@@ -685,12 +685,11 @@ padding-top:10px;
   <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" style="width:180px;padding-bottom:12px">
   </a>
     
-<<<<<<< HEAD
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-=======
+
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse"  id="myelement" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
->>>>>>> 19afa6528b969e2bda8b0570f6ccd98e78f7c66d
+
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent" >
