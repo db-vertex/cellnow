@@ -396,21 +396,22 @@
         display: none;
         margin-left: 55px;
     }
-    .handline{
-      font-family: 'Open Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
 
-color: #0C0B0B;
+    .handline {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+
+        color: #0C0B0B;
 
 
-/* Inside auto layout */
+        /* Inside auto layout */
 
-flex: none;
-order: 0;
-flex-grow: 0;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
     }
     </style>
 
@@ -487,9 +488,9 @@ flex-grow: 0;
                                             <input type="file" class="form-control-file" id="cover_images"
                                                 name="profile_img[]" style="visibility:hidden;" accept="image/*"
                                                 required>
-                                                <div class="invalid-feedback">
-                                           Please Select Cover Images.
-                                           </div>  
+                                            <div class="invalid-feedback">
+                                                Please Select Cover Images.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -1342,10 +1343,14 @@ flex-grow: 0;
 
                             <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                        required>
                                     <label class="form-check-label" for="flexCheckChecked">
-                                         Terms and Conditions
-                                    </label><a href="<?php echo base_url();?>welcome/termscondition" style=" text-decoration: none; color:black;"><span><i class="fa fa-question-circle-o" aria-hidden="true" style="font-size: 22px; padding: 0px; width: 25px;"></i></span></a>
+                                        Terms and Conditions
+                                    </label><a href="<?php echo base_url();?>welcome/termscondition"
+                                        style=" text-decoration: none; color:black;"><span><i
+                                                class="fa fa-question-circle-o" aria-hidden="true"
+                                                style="font-size: 22px; padding: 0px; width: 25px;"></i></span></a>
                                     <div class="invalid-feedback">You must agree to the terms and conditions.</div>
                                 </div>
                             </div>
@@ -1545,11 +1550,11 @@ flex-grow: 0;
     });
     </script>
 
-<script>
-        $("#submit_form").on("click", function(e) {
+    <script>
+    $("#submit_form").on("click", function(e) {
         e.preventDefault();
         $('#data_input').trigger("reset");
-        });
+    });
     </script>
 
     <script>
@@ -1626,7 +1631,7 @@ flex-grow: 0;
             document.getElementById("job_Office_Address_div").style.display = "none";
             $('#category').on('change.Price,use_years,Have_Bill,Warrenty', function() {
                 $("#Price_div,#use_years_div,#Have_Bill_div,#Warrenty_div").toggle($(this)
-                .val() == 1);
+                    .val() == 1);
 
                 if ($(this).val() == 1) {
                     Price.required = true;
@@ -1733,7 +1738,7 @@ flex-grow: 0;
                     }
                 }).trigger(
                 'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications,Tuitions_Positives_Outcomes,Tuitions_Joining_criteria'
-                );
+            );
 
 
             $('#subcategory').on(
@@ -1753,12 +1758,12 @@ flex-grow: 0;
                     }
                 }).trigger(
                 'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers,Tuitions_Teachers_Experience'
-                );
+            );
 
 
             $('#subcategory').on('change.Job_type,Job_Location', function() {
                 $("#Job_type_div,#Job_Location_div").toggle($(this).val() == 14 || $(this)
-                .val() == 15);
+                    .val() == 15);
                 if ($(this).val() == 14 || $(this).val() == 15) {
                     Job_type.required = true;
                     Job_Location.required = true;
@@ -1782,7 +1787,7 @@ flex-grow: 0;
                     }
                 }).trigger(
                 'change.intership_Job_type,Job_Location,intership_Need_Stipend,Tuitions_Available_Timings'
-                );
+            );
 
 
             $('#subcategory').on('change.job_Salery,job_Experience', function() {
@@ -1875,7 +1880,7 @@ flex-grow: 0;
                         .val() == "parts" && ($("#subcategory").val() == 1 || $("#subcategory")
                             .val() == 2));
                     if ($("#reusable_parts_Select_Type").val() == "parts" && ($("#subcategory")
-                        .val() == 1 || $("#subcategory").val() == 2)) {
+                            .val() == 1 || $("#subcategory").val() == 2)) {
                         reusable_parts_product_Type.required = true;
                     }
                 }).trigger('change.reusable_parts_product_Type');
@@ -1887,7 +1892,7 @@ flex-grow: 0;
                             "#reusable_parts_Select_Type").val() == "parts" && $("#subcategory")
                         .val() == 3);
                     if ($("#reusable_parts_Select_Type").val() == "parts" && $("#subcategory")
-                    .val() == 3) {
+                        .val() == 3) {
                         reusable_parts_Laptops_product_Type.required = true;
                     }
                 }).trigger('change.reusable_parts_Laptops_product_Type');
@@ -1899,7 +1904,7 @@ flex-grow: 0;
                             "#reusable_parts_Select_Type").val() == "parts" && $("#subcategory")
                         .val() == 4);
                     if ($("#reusable_parts_Select_Type").val() == "parts" && $("#subcategory")
-                    .val() == 4) {
+                        .val() == 4) {
                         reusable_parts_computer_product_Type.required = true;
                     }
                 }).trigger('change.reusable_parts_computer_product_Type');

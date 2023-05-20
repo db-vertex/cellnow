@@ -734,10 +734,11 @@ a:hover, a:visited, a:link, a:active
 					?>
 
                     <div class="va-card va-card_category"> <a class=" border-0"
-                            href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;">
+                            href="" style="max-width: 45%;">
                             <p style="text-align:center;" class="my-auto pouler_Categories">
-                                <img class="btn-change"
+                                <img class="btn-change common_selector" 
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon; ?>" alt="">
+                                    <input type="text"  id="icon_sub_category" value="<?php echo $sub->sub_category; ?>"  hidden>
                                 <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo ucfirst($sub->sub_category); ?></center>
                             </p>
@@ -882,40 +883,40 @@ a:hover, a:visited, a:link, a:active
                 
 <script>
 
- $(document).on('click', '.dddssaaf', function(e) {
-     e.stopPropagation();
-    var obj = $(this);
-    var pid=$(this).data("pid");
-    var cid=$(this).data("cid");
-    var uid=$(this).data("uid");
-    var status=$(this).data("wishlist");
-   
-    if(!uid==0)
-//   alert(status);
-    $.ajax({
-    type: "POST",
-    url: '<?php echo base_url("Welcome/setwishlist"); ?>',
-    cache:false,
-data: {'product_id':pid,'user_id':uid,'category_id':cid},
-             error: function() {
-    alert('Something is wrong');
-    },
-    success: function(data) {
-        $(".dddssaaf"+pid).toggleClass("fa-heart-o fa-heart");
-    if(status==0){
-       $(".fa-heart").addClass("fa-heart:before");
-    $(this).data("wishlist", 1);
-   swal("Product Added in Wishlist Successfully!","", "success");
-   }
-   else{
-    $(this).data("wishlist", 0);
-   swal("Product removed from Wishlist Successfully!","", "success");
-   }
-             } 
-          });
-   
-   
-});
+                    $(document).on('click', '.dddssaaf', function(e) {
+                        e.stopPropagation();
+                        var obj = $(this);
+                        var pid=$(this).data("pid");
+                        var cid=$(this).data("cid");
+                        var uid=$(this).data("uid");
+                        var status=$(this).data("wishlist");
+                    
+                        if(!uid==0)
+                    //   alert(status);
+                        $.ajax({
+                        type: "POST",
+                        url: '<?php echo base_url("Welcome/setwishlist"); ?>',
+                        cache:false,
+                    data: {'product_id':pid,'user_id':uid,'category_id':cid},
+                                error: function() {
+                        alert('Something is wrong');
+                        },
+                        success: function(data) {
+                            $(".dddssaaf"+pid).toggleClass("fa-heart-o fa-heart");
+                        if(status==0){
+                        $(".fa-heart").addClass("fa-heart:before");
+                        $(this).data("wishlist", 1);
+                    swal("Product Added in Wishlist Successfully!","", "success");
+                    }
+                    else{
+                        $(this).data("wishlist", 0);
+                    swal("Product removed from Wishlist Successfully!","", "success");
+                    }
+                                } 
+                            });
+                    
+                    
+                    });
 </script>                
 <script>
     $(document).ready(function(){
@@ -930,10 +931,12 @@ data: {'product_id':pid,'user_id':uid,'category_id':cid},
 		//var page = 1;
 		var minimum_price = $('#hidden_minimum_price').val();
 		var maximum_price = $('#hidden_maximum_price').val();
+
 		var brand = get_filter('brand');
 		var type = get_filter('type');
-		
-		var sub_category = get_filter('sub_category');
+     
+		var sub_category = $('#icon_sub_category').val();
+       
 		console.log(minimum_price);
 		console.log(maximum_price);
 		$.ajax({
