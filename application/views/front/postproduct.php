@@ -470,7 +470,7 @@ flex-grow: 0;
             <?php } ?>
 
             <form class="needs-validation" action="<?php echo base_url();?>welcome/saveproduct" method="post"
-                enctype="multipart/form-data" novalidate>
+                enctype="multipart/form-data" id="data_input" novalidate>
                 <div class="row g-5 justify-content-center">
 
                     <div class=" offset-lg-1 col-lg-5">
@@ -1356,7 +1356,7 @@ flex-grow: 0;
                             </div>
 
                             <div class="col-sm-6 col-6">
-                                <button class="w-100 btn  product_reset_button " type="">Reset</button>
+                                <button class="w-100 btn  product_reset_button " id="submit_form" type="">Reset</button>
                             </div>
                         </div>
 
@@ -1539,6 +1539,13 @@ flex-grow: 0;
             }
         });
     });
+    </script>
+
+<script>
+        $("#submit_form").on("click", function(e) {
+        e.preventDefault();
+        $('#data_input').trigger("reset");
+        });
     </script>
 
     <script>

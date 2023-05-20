@@ -49,6 +49,49 @@ class Product_model extends CI_Model {
         }
     }
 
+    public function edit_category_reusable_parts($data = array()) {
+        $this->db->where('id', $data['id']);   
+        $insert = $this->db->update('category_reusable_parts', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
+    public function edit_category_tuitions($data = array()) {
+        $this->db->where('id', $data['id']);   
+        $insert = $this->db->update('category_tuitions', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
+
+    public function edit_category_job($data = array()) {
+        $this->db->where('id', $data['id']);   
+        $insert = $this->db->update('category_job', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
+
+    public function edit_category_internships($data = array()) {
+        $this->db->where('id', $data['id']);   
+        $insert = $this->db->update('category_internships', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
+
 
     
      function get_all_products()
@@ -198,80 +241,30 @@ function delete_product($category_id,$product_id){
  
   
     if($category_id == 1){
-      $sql = "category_Mobile";
+      $sql = "category_reusable_parts";
         $query = $this->db->get_where($sql, array('id' => $product_id));
     }
     else if($category_id == 2){
-        $sql = "category_Electronic";  
+        $sql = "category_tuitions";  
           $query = $this->db->get_where($sql, array('id' => $product_id));
     }
     else if($category_id == 3){
-         $sql = "category_Furniture"; 
+         $sql = "category_job"; 
            $query = $this->db->get_where($sql, array('id' => $product_id));
     }
     else if($category_id == 4){
-        $sql = "category_Fashion";  
+        $sql = "category_internships";  
           $query = $this->db->get_where($sql, array('id' => $product_id));
     }
-    else if($category_id == 5){
-         $sql = "category_Bikes"; 
-         $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    
-    else if($category_id == 6){
-       $sql = "category_Cars";  
-         $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    else if($category_id == 7){
-       $sql = "category_Books";   
-       $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    else if($category_id == 8){
-       $sql = "category_Jobs";  
-         $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    else if($category_id == 9){
-       $sql = "category_Services";
-         $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    else if($category_id == 10){
-        $sql = "category_Pets";
-          $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    
-    else if($category_id == 11){
-         $sql = "category_Properties_sale"; 
-           $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    else if($category_id == 12){
-        $sql = "category_Properties_rent"; 
-        $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    else if($category_id == 13){
-        $sql = "category_Kids";  
-          $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    else if($category_id == 14){
-        $sql = "category_Business"; 
-          $query = $this->db->get_where($sql, array('id' => $product_id));
-    }
-    
-    else if($category_id == 15){
-         $sql = "category_Other"; 
-           $query = $this->db->get_where($sql, array('id' => $product_id));
-    }  
-    
     
          $pro = $query->result();
         foreach($pro as $images){
-         $thumbnails =  $images->thumbnails;
-         $images_1 =  $images->images_1;  
-        $images_2 =  $images->images_2;  
+         $cover_img =  $images->cover_img;
+         $images_2 =  $images->images_2;  
         $images_3 =  $images->images_3;  
-         $images_4 =  $images->images_4;  
-          $images_5 =  $images->images_5;  
-           unlink($thumbnails);
-            unlink($images_1);
+        $images_4 =  $images->images_4;  
+         $images_5 =  $images->images_5;  
+           unlink($cover_img);
              unlink($images_2);
               unlink($images_3);
                unlink($images_4);
@@ -289,6 +282,36 @@ function delete_product($category_id,$product_id){
  
     
 }
+
+
+
+function edit_product_get($category_id,$product_id){
+    
+ 
+  
+    if($category_id == 1){
+      $sql = "category_reusable_parts";
+        $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    else if($category_id == 2){
+        $sql = "category_tuitions";  
+          $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    else if($category_id == 3){
+         $sql = "category_job"; 
+           $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    else if($category_id == 4){
+        $sql = "category_internships";  
+          $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    
+         $pro = $query->result();
+         return  $pro;
+    
+}
+
+
 
 function getproduct($id = ""){
 
@@ -479,17 +502,17 @@ function getdeactproduct($id = ""){
        
        //load databse library
        $ci->load->database();
-  
     if($category_id == 1){
-      $sql = "category_Mobile";
+      $sql = "category_reusable_parts";
        $this->db->select($thumbnails);
                $this->db->from($sql);
              $this->db->where('id',$product_id);
       $query = $this->db->get()->result();
+   
        $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails =>  NULL]);
     }
     else if($category_id == 2){
-        $sql = "category_Electronic"; 
+        $sql = "category_tuitions"; 
           $this->db->select($thumbnails);
                $this->db->from($sql);
              $this->db->where('id',$product_id);
@@ -497,7 +520,7 @@ function getdeactproduct($id = ""){
        $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails =>  NULL]);
     }
     else if($category_id == 3){
-         $sql = "category_Furniture"; 
+         $sql = "category_job"; 
         $this->db->select($thumbnails);
                $this->db->from($sql);
              $this->db->where('id',$product_id);
@@ -505,103 +528,13 @@ function getdeactproduct($id = ""){
        $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails =>  NULL]);
     }
     else if($category_id == 4){
-        $sql = "category_Fashion"; 
+        $sql = "category_internships"; 
       $this->db->select($thumbnails);
                $this->db->from($sql);
              $this->db->where('id',$product_id);
       $query = $this->db->get()->result();
        $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails => NULL]);
     }
-    else if($category_id == 5){
-         $sql = "category_Bikes";
-          $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails =>  NULL]);
-    }
-    else if($category_id == 6){
-       $sql = "category_Cars"; 
-       $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails =>  NULL]);
-    }
-    else if($category_id == 7){
-       $sql = "category_Books";
-       $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails =>  NULL]);
-    }
-    else if($category_id == 8){
-       $sql = "category_Jobs";  
-      $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails =>  NULL]);
-    }
-    else if($category_id == 9){
-       $sql = "category_Services";
-        $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails => NULL]);
-    }
-    else if($category_id == 10){
-        $sql = "category_Pets"; 
-        $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails => NULL]);
-    }
-    else if($category_id == 11){
-         $sql = "category_Properties_sale"; 
-         $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails => NULL]);
-    }
-    else if($category_id == 12){
-        $sql = "category_Properties_rent"; 
-       $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails => NULL]);
-    }
-    else if($category_id == 13){
-        $sql = "category_Kids";  
-        $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails => NULL]);
-    }
-    else if($category_id == 14){
-         $sql = "category_Business"; 
-         $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails => NULL]);
-       
-    }
-    else if($category_id == 15){
-         $sql = "category_Other"; 
-            $this->db->select($thumbnails);
-               $this->db->from($sql);
-             $this->db->where('id',$product_id);
-      $query = $this->db->get()->result();
-       $update = $ci->db->where(array('id'=>$product_id,))->update($sql, [$thumbnails => NULL]);
-     
-    } 
       foreach($query as $images)
      $thumbnails =  $images->$thumbnails;
      unlink($thumbnails);
@@ -1121,6 +1054,7 @@ function paytype_update_comman_query($category_id,$product_id,$pay_type){
 //   $this->db->update("product", ["thumb_image"=>$destImagdePath], "id=".($value->id));
  
 }
+
 
 }
 ?>

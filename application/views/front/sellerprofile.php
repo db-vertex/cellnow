@@ -73,6 +73,22 @@ html,body
 
 <div class="container">
   
+<?php  if($error=$this->session->flashdata('Editproduct')){  ?>
+            <div class="row text-center" style="justify-content: center; ">
+                <div class="col-lg-6">
+                    <div class="alert alert-success ">
+                        <?= $error; 
+
+                               unset($_SESSION['Editproduct']);
+                               ?>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
+                            style="float:right;"></button>
+                    </div>
+                </div>
+            </div>
+
+            <?php } ?>
+  
     <div class="shadow p-4 mb-5 bg-body rounded-5" style="margin:25px"><br>
     <div class="row text-center" >
    
@@ -153,8 +169,12 @@ width: 131.9px; border-color:#10B981;">
     Model            <span style="padding-left:60px"> 2015</span><br>
    
     <img src="<?php echo base_url();?>assets/images/location .png" ><span style="padding-left:70px"><?php echo $value->address;?></span><br>
-    <div class="pt-3 pl-5"><a style="background-color:#10b981; color:#fff" href="#" class="btn " id="b">Edit</a> &nbsp &nbsp
-    <a href="#" class="btn" id="b">Delete</a></div>
+    <div class="pt-3 pl-5"><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $value->category_id?>/<?php echo  $value->id ?>" class="btn " id="b">Edit</a> &nbsp &nbsp
+  
+    <a href="javascript:void(0)" id="b" class="delete_product btn"  data-cid="<?php echo $value->category_id; ?>" data-pid="<?php echo $value->id; ?>"><span  style="color:#78d7b8">Delete</span></a>
+  
+  </div>
+
     </div>
     </div>
 </div> 
@@ -360,3 +380,40 @@ if (image == "" ) {
 
 }
 </script>
+
+<script>
+"use strict"; /* Start of use strict */
+(function () {
+function14();
+})();
+function function14() {
+$('.delete_product').on("click", function () {
+    var pid=$(this).data("pid");
+    var cid=$(this).data("cid");
+  
+swal({
+title: " DELETE!",
+text: "Are you sure you want to ?",
+type: "warning",
+showCancelButton: true,
+confirmButtonColor: "#DD6B55",
+confirmButtonText: "Yes",
+cancelButtonText: "No",
+closeOnConfirm: false,
+closeOnCancel: true},
+function (isConfirm) {
+if (isConfirm) {
+$.ajax({
+        type:'POST',
+        url:"<?php echo base_url();?>welcome/deleteproduct",
+        data: {pid:pid,cid,cid},
+        success: function(){
+             location.reload(); 
+          },
+});
+} else {
+}
+});
+});
+}
+</script>		
