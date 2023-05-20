@@ -463,6 +463,9 @@ flex-grow: 0;
                                             <input type="file" class="form-control-file" id="cover_images"
                                                 name="profile_img[]" style="visibility:hidden;" accept="image/*"
                                                 >
+                                                <div class="invalid-feedback">
+                                           Please Select Cover Images.
+                                           </div>  
                                         </div>
                                     </div>
                                 </div>
@@ -574,10 +577,11 @@ flex-grow: 0;
 
                             <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
                                     <label class="form-check-label" for="flexCheckChecked">
-                                        Terms and Conditions
-                                    </label>
+                                         Terms and Conditions
+                                    </label><a href="<?php echo base_url();?>welcome/termscondition" style=" text-decoration: none; color:black;"><span><i class="fa fa-question-circle-o" aria-hidden="true" style="font-size: 22px; padding: 0px; width: 25px;"></i></span></a>
+                                    <div class="invalid-feedback">You must agree to the terms and conditions.</div>
                                 </div>
                             </div>
                             <input type="text" class="form-control " name="product_id" id="product_id" placeholder=""
