@@ -199,8 +199,414 @@ input::placeholder {
     }
 }
 </style>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
+<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
+<script>
+  $(document).ready(function(){  
+    $("#Location").keyup(function(){  
+       $(".result > div [data-lat],[data-long]").show();
+    });  
+}); 
+        $(document).ready(function() {
+            $("#latitudeArea").addClass("d-none");
+            $("#longtitudeArea").addClass("d-none");
+        }); 
+      
+        google.maps.event.addDomListener(window, 'load', initialize);
+       
+        function initialize(){
+         
+            var input = document.getElementById('Location');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+          
+                  
+              
+            autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                  $div = $(this);
+                var lat1 = place.geometry['location'].lat();
+                var lon1 = place.geometry['location'].lng();
+             
+                 $(".result > div [data-lat],[data-long]").hide().filter(function() {
+                  $div = $(this);
+                  var lat2 = parseFloat($(this).data("lat"))
+                  var lon2 = parseFloat($(this).data("long"))
+                  
+                   var R = 6371; // Radius of the earth in km
+                    var dLat = lat2-lat1;  // deg2rad below
+                  var dLon = lon2-lon1; 
+                  var a = 
+                    Math.sin(dLat/2) * Math.sin(dLat/2) +
+                    Math.cos(lat1) * Math.cos(lat2) * 
+                    Math.sin(dLon/2) * Math.sin(dLon/2)
+                    ; 
+                  var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
+                  var d = R * c; // Distance in km
+                 var f =   d * (Math.PI/180);
+                 
+                
+                 
+                 return f <= 100;
+
+                $("#latitudeArea").removeClass("d-none");
+                $("#longtitudeArea").removeClass("d-none");
+                 }).show();
+            });
+
+        } 
+   
+    </script>
+<?php 
+             $id = $this->uri->segment(3);
+             $subcategory = get_subcategory_byid($id);
+             //$category = get_categoryname_byid($id);
+            
+
+               ?>
+
+<style>
+
+ #GFG {
+            text-decoration: none;
+        }
+  .lead{
+          background-color:rgba(241,242,235,255);
+          font-size:14px;
+      }
+      
+       .link{ 
+          color:black;
+          text-decoration: unset; 
+          
+          
+      }
+      
+      /*panel*/
+.panel {
+    border: none;
+    box-shadow: none;
+}
+
+.border {
+    border: 1px solid #C5DC49!important;
+}
+
+.panel-heading {
+    border-color:#eff2f7 ;
+    font-size: 16px;
+    font-weight: 300;
+  
+}
+.panel-default{
+      border-color:#eff2f7 ;
+    font-size: 16px;
+    font-weight: 300;
+    border:2px solid LightGrey ;  
+    padding-top:20px;
+    padding-bottom:20px;
+    padding-left:20px;
+}
+.panel-title {
+    color: #2A3542;
+    font-size: 14px;
+    font-weight: 400;
+    margin-bottom: 0;
+    margin-top: 0;
+    font-family: 'Open Sans', sans-serif;
+}
 
 
+/*product list*/
+
+.prod-cat li a{
+    border-bottom: 1px dashed #d9d9d9;
+}
+
+.prod-cat li a {
+    color: #3b3b3b;
+}
+
+.prod-cat li ul {
+    margin-left: 30px;
+}
+
+.prod-cat li ul li a{
+    border-bottom:none;
+}
+/*.prod-cat li ul li a:hover,.prod-cat li ul li a:focus, .prod-cat li ul li.active a , .prod-cat li a:hover,.prod-cat li a:focus, .prod-cat li a.active{*/
+/*    background: none;*/
+/*    color: #ff7261;*/
+/*}*/
+
+.pro-lab{
+    margin-right: 20px;
+    font-weight: normal;
+}
+
+.pro-sort {
+    padding-right: 20px;
+    float: left;
+}
+
+.pro-page-list {
+    margin: 5px 0 0 0;
+}
+
+.product-list img{
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+    -webkit-border-radius: 4px 4px 0 0;
+}
+
+.product-list .pro-img-box {
+    position: relative;
+}
+.adtocart {
+    background: #fc5959;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    color: #fff;
+    display: inline-block;
+    text-align: center;
+    border: 3px solid #fff;
+    left: 45%;
+    bottom: -25px;
+    position: absolute;
+}
+
+.adtocart i{
+    color: #fff;
+    font-size: 25px;
+    line-height: 42px;
+}
+
+.pro-title {
+    color: #5A5A5A;
+    display: inline-block;
+    margin-top: 20px;
+    font-size: 16px;
+}
+
+.product-list .price {
+    color:#fc5959 ;
+    font-size: 15px;
+}
+
+.pro-img-details {
+    margin-left: -15px;
+}
+
+.pro-img-details img {
+    width: 100%;
+}
+
+.pro-d-title {
+    font-size: 16px;
+    margin-top: 0;
+}
+
+.product_meta {
+    border-top: 1px solid #eee;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+    margin: 15px 0;
+}
+
+.product_meta span {
+    display: block;
+    margin-bottom: 10px;
+}
+.product_meta a, .pro-price{
+    color:#fc5959 ;
+}
+
+.pro-price, .amount-old {
+    font-size: 18px;
+    padding: 0 10px;
+}
+
+.amount-old {
+    text-decoration: line-through;
+}
+
+.quantity {
+    width: 120px;
+}
+
+.pro-img-list {
+    margin: 10px 0 0 -15px;
+    width: 100%;
+    display: inline-block;
+}
+
+.pro-img-list a {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+}
+
+.pro-d-head {
+    font-size: 18px;
+    font-weight: 300;
+}
+#no_product{
+    display:none;
+}
+img.center {
+    display: block;
+    margin: 0 auto;
+}
+
+
+@media screen and (min-width: 992px) {
+  .button_add_details {
+    margin-top: 50%;
+  }
+}
+.pagination {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    padding-left: 0;
+    list-style: none;
+    border-radius: 0.25rem;
+    justify-content: center;
+}
+.pagination>.active>a, .pagination>.active>a:focus, .pagination>.active>a:hover, .pagination>.active>span, .pagination>.active>span:focus, .pagination>.active>span:hover {
+    z-index: 3;
+    color: #fff;
+    cursor: default;
+    background-color: #337ab7;
+    border-color: #337ab7;
+}
+.pagination>li:last-child>a, .pagination>li:last-child>span {
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+}
+.pagination>li>a, .pagination>li>span {
+    position: relative;
+    float: left;
+    padding: 6px 12px;
+    margin-left: -1px;
+    line-height: 1.42857143;
+    color: #337ab7;
+    text-decoration: none;
+    background-color: #fff;
+    border: 1px solid #ddd;
+}
+
+</style>
+
+<style>
+#loading
+{
+	text-align:center; 
+	background: url('<?php echo base_url(); ?>assets/images/loader.gif') no-repeat center; 
+	height: 600px;
+}
+.list-group-item {
+    position: relative;
+    display: block;
+  
+    background-color: #fff;
+    border: 3px solid rgba(0,0,0,.125);
+    border-top: none;
+}
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+}
+.common_s {
+    font-weight:500;
+}
+.common_h{
+   font-weight:bold; 
+}
+.panel-default{
+  background-image:    url('https://dbvertex.com/classified/assets/images/arrow-down-sign-to-navigate.png');
+   background-position-x: right;
+  background-repeat: no-repeat;
+  background-origin: content-box;
+  padding-right:20px;
+}
+.temporery_hide{
+ display:none;
+}
+.fa-heart-o:before {
+    content: "\f08a";
+    font-size: 24px;
+}
+
+.fa-heart:before {
+    content: "\f004";
+    font-size: 24px;
+}
+
+@media screen and (min-width: 992px) {
+ .add_datiles_button{
+    margin-top:40%;
+}
+.small_type{
+    margin-top:10px;
+}
+.small_location{
+    margin-top:10px;
+}
+.small_price{
+    margin-top: 1.5rem!important
+}
+
+}
+
+@media screen and (max-width: 992px) {
+ .small_decription{
+    display:none;
+}
+.small_img{
+    max-height:100px;
+}
+.dddssaaf {
+    margin-top: -15px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+}
+.small_title{
+    
+}
+.small_title{
+   font-size: 16px;
+}
+.small_Condition{
+    margin-bottom:0px;
+}
+.small_type{
+   margin-bottom:0px; 
+    margin-top:2px; 
+}
+.small_location{
+  margin-bottom:0px;  
+  margin-top:2px; 
+}
+.small_price{
+     margin-bottom:0px; 
+      margin-top:2px;   
+}
+.small_loction_img{
+    max-height: 20px;
+}
+.small_price_size{
+    font-size: 17px;
+    margin-left: -10px;
+}
+.add_datiles_button{
+ max-width: fit-content;   
+}
+
+}
+
+</style>
 
 <div class="container-fluid home_background">
 <div class="container">
@@ -311,23 +717,37 @@ input::placeholder {
                 </button>
 
                 <div class="va-carrousel-flexbox" id="sub-list">
-                    <?php
-                $category = get_all_subcategory();
-                foreach ($category as $key => $cat) {
-                  ?>
+                <?php
+					  $cateory =  $this->uri->segment(3);
+               
+                     $v =  $this->session->set_userdata('filter_id',$cateory);
+                     $sub_ = '';
+                     if($cateory==5){
+                        $subcategory = get_subcategory_all($cateory);  
+                     }
+                     else{
+                        $subcategory = get_subcategory_byid($cateory);  
+                     }
+                      
+					  
+					  foreach($subcategory as $sub){
+					?>
 
                     <div class="va-card va-card_category"> <a class=" border-0"
                             href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;">
                             <p style="text-align:center;" class="my-auto pouler_Categories">
                                 <img class="btn-change"
-                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
+                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon; ?>" alt="">
                                 <center style="color:black; font-size:12px; font-weight:500">
-                                    <?php echo ucfirst($cat->sub_category); ?></center>
+                                    <?php echo ucfirst($sub->sub_category); ?></center>
                             </p>
                         </a>
                     </div>
 
-                    <?php } ; ?>
+                    <?php 
+					
+					 }
+					?>
 
 
                     <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
@@ -346,235 +766,340 @@ input::placeholder {
         </div>
     </div>
 </div>
-
-
-
-
-<div class="container mt-5">
-<div class="row">
-    <div class="col-lg-4">
-<nav class="navbar navbar-expand-sm navbar-light bg-white border-bottom">
-    <a class="navbar-brand ml-2 font-weight-bold" href="#">Brand</a>
-   
-   
-     
-</nav>
-
-<div id="mobile-filter">
-    <div>
-      
-        <ul>
-            <li><a href="#">Living</a></li>
-            <li><a href="#">Dining</a></li>
-            <li><a href="#">Office</a></li>
-            <li><a href="#">Bedroom</a></li>
-            <li><a href="#">Kitchen</a></li>
-        </ul>
-    </div>
-   
-    <div>
-        <h6>Product Type</h6>
-        <form class="ml-md-2">
-            <div class="form-inline border rounded p-sm-2 my-2">
-                <input type="radio" name="type" id="boring">
-                <label for="boring" class="pl-1 pt-sm-0 pt-1">Normal</label>
-            </div>
-            <div class="form-inline border rounded p-sm-2 my-2">
-                <input type="radio" name="type" id="ugly">
-                <label for="ugly" class="pl-1 pt-sm-0 pt-1">Boost</label>
-            </div>
-            <div class="form-inline border rounded p-md-2 p-sm-1">
-                <input type="radio" name="type" id="notugly">
-                <label for="notugly" class="pl-1 pt-sm-0 pt-1">Donate</label>
-            </div>
-        </form>
-    </div>
-</div>
-       
-
-
+        <div class="container mb-5">
+        <div class="row">
+            <div class="col-md-3">
+                
+				<br />
+				<br />
+					<center><h5>Filters</h5></center>
+				<br />
+				<div class="list-group">
+					<h6 class="common_h">PRICE</h6>
+					<input type="hidden" id="hidden_minimum_price" value="1" />
+					<input type="hidden" id="hidden_maximum_price" value="20000000" />
+					<p id="price_show">0 - 20000000</p>
+	                <div id="price_range"></div>
                 </div>
+                
+             
+                   <div class="panel-group mt-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                   <a data-toggle="collapse" href="#test"><h4 class="panel-title common_h">
+                    SUB CATEGORY
+                  </h4></a>
+               </div>
+               <div id="test" class="panel-collapse collapse">
+                   <div class="list-group mt-2">
+					
+					<?php
+					  $cateory =  $this->uri->segment(3);
+               
+                     $v =  $this->session->set_userdata('filter_id',$cateory);
+                     $sub_ = '';
+                      $subcategory = get_subcategory_byid($cateory);  
+					  
+					  foreach($subcategory as $sub){
+					?>
 
-        <div class=" col-lg-8 col-sm-12 ">
-       
-    <div class="row">
-    <?php  
-            if($id==1){
-                $products = get_category_reusable_parts_by_category();
+	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
+							<label class="common_s"><input type="checkbox" class="common_selector sub_category" value="<?php echo $sub->sub_id;?>"  > <?php  echo $sub->sub_category;?></label>
+						</div>
+					<?php 
+					
+					 }
+					?>
+                </div>
+               </div>
+            </div>
+         </div>
+         
+         
+                 <?php if($cateory == 1 )
+                { ?>
+            <div class="panel-group mt-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                   <a data-toggle="collapse" href="#brand"><h4 class="panel-title common_h">
+                   BRAND
+                  </h4></a>
+               </div>
+               <div id="brand" class="panel-collapse collapse">
+                
+               </div>
+            </div>
+            </div>
+           	<?php 
+		    	} 
+		    	
+		   else if ($cateory == 3 || $cateory == 4 ){
+					?>
+            <div class="panel-group mt-4 temporery_hide">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                   <a data-toggle="collapse"  href="#TYPE"><h4 class="panel-title common_h">
+                   TYPE
+                  </h4></a>
+               </div>
+               <div id="TYPE" class="panel-collapse collapse">
+                <div class="list-group mt-2">
+                     <?php 
+                     $v = $Brand->result_array();
+                     if($v !== Array( )){ ?>
+				
+					<?php
+                     }
+					foreach($Brand->result_array() as $row)
+					{
+					 
+					?>
+	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
+							<label class="common_s"><input type="checkbox" class="common_selector type" value="<?php echo $row['type']; ?>"  > <?php echo $row['type']; ?></label>
+						</div>
+					<?php 
+					} 
+					?>
+                </div>
+                
+               </div>
+            </div>
+            </div>
+           	<?php 
+			} 
+			
+			else if ($cateory == 1 || $cateory == 2){
+			    $v = $Brands->result_array();
+                     if($v !== Array( )){
+					?>
+					
+            <div class="panel-group mt-4 temporery_hide">
+            <div class="panel panel-default">
+               <div class="panel-heading ">
+                   <a data-toggle="collapse" class="under" href="#TYPEs"><h4 class="panel-title common_h ">
+                   TYPE
+                  </h4></a>
+               </div>
+                <div id="TYPEs" class="panel-collapse collapse">
+              <div class="list-group mt-2">
+                      
+					<?php
+                      
+					foreach($Brands->result_array() as $row)
+					{
+					 
+					?>
+	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
+							<label class="common_s"><input type="checkbox" class="common_selector type" value="<?php echo $row['type']; ?>"  > <?php echo $row['type']; ?></label>
+						</div>
+					<?php 
+					} 
+					?>
+                  </div>
+                 </div>  
+            </div>
+            </div>
+            <?php 
+				}
+				 $v = $Brand->result_array();
+                     if($v !== Array( )){
+				?>
+            
+            <div class="panel-group mt-4 temporery_hide">
+            <div class="panel panel-default">
+               <div class="panel-heading ">
+                   <a data-toggle="collapse" href="#MODEL"><h4 class="panel-title common_h">
+                   MODEL
+                  </h4></a>
+               </div>
+                  <div id="MODEL" class="panel-collapse collapse">
+                <div class="list-group mt-2">
+				    <?php 
+				      $v = $Brand->result_array();
+                     if($v !== Array( )){ ?> 
+					<?php
+                     }  
+					foreach($Brand->result_array() as $row)
+					{
+					 
+					?>
+	                    <div class=" checkbox" style="padding:3px; border-top: none;"> 
+							<label class="common_s"><input type="checkbox" class="common_selector Model" value="<?php echo $row['Model']; ?>"  > <?php echo $row['Model']; ?></label>
+						</div>
+					<?php 
+					} 
+					?>
+                  </div>
+                  </div>
+            </div>
+            </div>
+            
+           	<?php 
+			}
+			}?>
+			
+		    	
+			
+		
                
-               
-            }
-            else if($id==2){
-                $products = get_category_tuitions_category();
-            }
-            else if($id==3){
-                $products = get_category_job_category();
-            }
-            else if($id==4){
-                $products = get_category_internships_category();
-              
-            }
-            else if($id==5){
-                $products = get_category_internships_category();
-              
-            }
+            </div>
+            <div class="col-md-9">
+            
+				<br />
+				<br />
+				<br />
+                <div class="row filter_data">
+                
+                </div>
            
-            foreach ($products as $relatedproduct){
-               
-             ?>
-        <div class="col-lg-6 col-sm-6 col-6 offset-sm-0 offset-1 p-4">
-        <div class="card"
-                            style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
-                            <img class="related_ads_card_img  img-fluid"
-                                src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
-                                alt="related_ads_card_img">
-                            <div class="card-body related_ads_card">
-                                <div class="row">
-                                    <div class="col-5">
-                                        <p class="related_ads_card_title"> Product title</p>
-                                    </div>
-                                    <div class="col-3">
-                                        <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                style="color:#ff6737;padding: 0px;"></i></b>
-                                    </div>
-                                    <div class="col-4">
-                                        <p class="details_price">$<span><?php echo $relatedproduct->price; ?></span></p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-12">
-                                        <small class="card-text"
-                                            style="color: #575757;"><?php echo $relatedproduct->Description;?></small><br>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-3">
-                                        <p style="color: #575757;">Fresheness</p>
-                                    </div>
-                                    <div class="col-5">
-                                        <p style="color: #575757;">New(Extra fresh)</p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-3">
-                                        <p style="color: #575757;">Model</p>
-                                    </div>
-                                    <div class="col-5">
-                                        <p style="color: #575757;">2015</p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-3">
-                                        <i class="bi bi-geo-alt-fill" aria-hidden="true"
-                                            style="font-size:18px; color:#69d3b0"></i>
-                                    </div>
-                                    <div class="col-5">
-                                        <p tyle="color: #575757;"><?php echo $relatedproduct->address;?></p>
-                                    </div>
-                                    <div class="col-3 pe-2">
-                                        <a
-                                            href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
-                                            <p class="related_ads_details_button ">
-                                                <spam class="related_ads_details_button_text">Product Detail</spam>
-                                            </p>
-                                        </a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+				<br />
+				<div align="center" id="pagination_link">
+                
+				</div>
+            </div>
+            	
+         
+            
         </div>
-        <?php } ?>
+
     </div>
+                
+                
+<script>
 
-           
-    </div>
+ $(document).on('click', '.dddssaaf', function(e) {
+     e.stopPropagation();
+    var obj = $(this);
+    var pid=$(this).data("pid");
+    var cid=$(this).data("cid");
+    var uid=$(this).data("uid");
+    var status=$(this).data("wishlist");
+   
+    if(!uid==0)
+//   alert(status);
+    $.ajax({
+    type: "POST",
+    url: '<?php echo base_url("Welcome/setwishlist"); ?>',
+    cache:false,
+data: {'product_id':pid,'user_id':uid,'category_id':cid},
+             error: function() {
+    alert('Something is wrong');
+    },
+    success: function(data) {
+        $(".dddssaaf"+pid).toggleClass("fa-heart-o fa-heart");
+    if(status==0){
+       $(".fa-heart").addClass("fa-heart:before");
+    $(this).data("wishlist", 1);
+   swal("Product Added in Wishlist Successfully!","", "success");
+   }
+   else{
+    $(this).data("wishlist", 0);
+   swal("Product removed from Wishlist Successfully!","", "success");
+   }
+             } 
+          });
+   
+   
+});
+</script>                
+<script>
+    $(document).ready(function(){
+
+	filter_data(1);
+
+	function filter_data(page)
+	{
+		$('.filter_data').html('<div id="loading" style="" ></div>');
+		document.getElementById("pagination_link").style.display = "none";
+		var action = 'fetch_data';
+		//var page = 1;
+		var minimum_price = $('#hidden_minimum_price').val();
+		var maximum_price = $('#hidden_maximum_price').val();
+		var brand = get_filter('brand');
+		var type = get_filter('type');
+		
+		var sub_category = get_filter('sub_category');
+		console.log(minimum_price);
+		console.log(maximum_price);
+		$.ajax({
+			url:"<?php echo base_url(); ?>welcome/fetch_data/"+page,
+			method:"POST",
+			dataType:"JSON",
+			data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, brand:brand, sub_category:sub_category,type:type
+			},
+			success:function(data)
+			{
+			   document.getElementById("pagination_link").style.display = "block";
+				$('.filter_data').html(data.product_list);
+				$('#pagination_link').html(data.pagination_link);
+			}
+		})
+	}
+
+	$('#price_range').slider({
+		range:true,
+		min:1,
+		max:20000000,
+		values:[1, 20000000],
+		step: 500,
+		stop:function(event, ui){
+			//$('#price_show').show();
+			$('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
+			$('#hidden_minimum_price').val(ui.values[0]);
+			$('#hidden_maximum_price').val(ui.values[1]);
+			filter_data(1);
+		}
+	});
+
+	function get_filter(class_name)
+	{
+		var filter = [];
+		$('.'+class_name+':checked').each(function(){
+			filter.push($(this).val());
+		});
+		return filter;
+	}
+
+	$(document).on("click", ".pagination li a", function(event){
+		event.preventDefault();
+		var page = $(this).data("ci-pagination-page");
+		filter_data(page);
+	});
+
+	$('.common_selector').click(function(){
+        filter_data(1);
+    });
 
 
-</div>
 
-</div>
-
-
-
-
-<div class="container mt-5">
-    <div class="row">
-        <div class="col-12">
-            <img class="img-fluid" src="<?php echo base_url();?>assets/images/carbanner.png" alt="Second slide">
-        </div>
-    </div>
-</div>
-
+});
+</script>
 
 <script>
-  function getsubcategory(category_id){
+"use strict"; /* Start of use strict */
+(function () {
+function14();
+})();
+function function14() {
+$('.btnSweetalert').on("click", function () {
+swal({
+title: " Logout!",
+text: "Are you sure you want to logout?",
+type: "warning",
+showCancelButton: true,
+confirmButtonColor: "#DD6B55",
+confirmButtonText: "Yes",
+cancelButtonText: "No",
+closeOnConfirm: false,
+closeOnCancel: false},
+function (isConfirm) {
+if (isConfirm) {
 
- 
-//var res = "";
- $("p").removeClass("selected");
- $(".new"+category_id).addClass("selected");
-
-    // var allch =  $("#").val();
-
-  jQuery.ajax({
-  type: "POST",
-  url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
-  data: { category_id:category_id},
-  success: function(res) 
-  {
-
-    
-   
-
-
- 
-    
-
-    $("#message-list").html(res);
-       
-  
-
-    // $('#load_cound').val("10");
-    
-  }
-  });
-
+ window.location.href = "<?php echo base_url();?>welcome/logout";
+} else {
+swal("Cancelled", "Something went wrong. Please try again.)", "error");
 }
-  </script>
-
-  
-<script>
-  function getsubcategory(category_id){
-
- 
-//var res = "";
- $("p").removeClass("selected");
- $(".new"+category_id).addClass("selected");
-
-    // var allch =  $("#").val();
-
-  jQuery.ajax({
-  type: "POST",
-  url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
-  data: { category_id:category_id},
-  success: function(res) 
-  {
-
-    
-   
-
-
- 
-    
-
-    $("#sub-list").html(res);
-       
-  
-
-    // $('#load_cound').val("10");
-    
-  }
-  });
-
+});
+});
 }
-  </script>
+</script>

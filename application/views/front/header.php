@@ -11,6 +11,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 <link rel="icon" sizes="196x196" href="https://dbvertex.com/celnow/assets/images/CelNow 5 1.png" 
         type="image/png">
         <title>CelNow</title>
@@ -709,7 +712,7 @@ padding-top:10px;
           <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
            <?php $category = get_all_category(); 
              foreach ($category as $key => $cat) {?>
-            <li><a class="dropdown-item"  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id?>"><?php echo $cat->category; ?></a></li>
+            <li><a id="" class="dropdown-item"  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id?>"><?php echo $cat->category; ?></a></li>
           
             <?php }?>
           
