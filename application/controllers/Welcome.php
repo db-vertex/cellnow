@@ -645,7 +645,7 @@ echo $sub;
 			 else if($cateory == 2){
 				$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
 				  //$data['Brand'] = $this->product_filter_model->fetch_filter_type('Model',$cateory);
-				   $data['Brands'] = $this->product_filter_model->fetch_filter_type('Job_type',$cateory);
+				   $data['Brands'] = $this->product_filter_model->fetch_filter_type('Education_type',$cateory);
 			 }
 			 else if($cateory == 3 ){
 				$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
@@ -653,7 +653,7 @@ echo $sub;
 			 }
 			 else if($cateory == 4){
 			   $data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
-				 $data['Brand'] = $this->product_filter_model->fetch_filter_type('type',$cateory);
+				 $data['Brand'] = $this->product_filter_model->fetch_filter_type('Job_type',$cateory);
 			 }
 			 
       
