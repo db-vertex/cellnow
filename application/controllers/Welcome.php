@@ -26,13 +26,13 @@ class Welcome extends CI_Controller {
 		//load user model
          $this->load->helper('url');
 		 $this->load->helper('user_helper');
-
+		 $this->load->model('product_filter_model');
 		 $this->load->model('user');
 		 $this->load->model('product_model');
 		 	 $this->load->model('chat_model');
 		 $this->load->library('form_validation');
 		 $this->load->library('session');
-
+		 $this->load->library("pagination");
         
     }
 
@@ -633,8 +633,29 @@ echo $sub;
 	}
 	public function fillter_product()
 	{
-	    
+		$cateory =  $this->uri->segment(3);
 	    	$session_id = $this->session->userdata('id');
+
+			if($cateory ==1 ){
+				$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
+				 //$data['Brand'] = $this->product_filter_model->fetch_filter_type('Model',$cateory);
+				  $data['Brands'] = $this->product_filter_model->fetch_filter_type('type',$cateory);
+			   
+			 }
+			 else if($cateory == 2){
+				$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
+				  //$data['Brand'] = $this->product_filter_model->fetch_filter_type('Model',$cateory);
+				   $data['Brands'] = $this->product_filter_model->fetch_filter_type('Education_type',$cateory);
+			 }
+			 else if($cateory == 3 ){
+				$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
+				 $data['Brand'] = $this->product_filter_model->fetch_filter_type('Job_type',$cateory);
+			 }
+			 else if($cateory == 4){
+			   $data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
+				 $data['Brand'] = $this->product_filter_model->fetch_filter_type('Job_type',$cateory);
+			 }
+			 
       
        if($session_id)
        {
@@ -643,12 +664,12 @@ echo $sub;
 		 $user_detail = $this->user->loginuser($session_id);
 		 
 		 	$this->load->view('front/header',['user'=>$user_detail]);
-		$this->load->view('front/fillter',['user'=>$user_detail]);
+		$this->load->view('front/fillter',$data,['user'=>$user_detail]);
 		$this->load->view('front/footer');
 		 
        }else{
 				$this->load->view('front/header');
-		$this->load->view('front/fillter');
+		$this->load->view('front/fillter',$data);
 		$this->load->view('front/footer');
 			}
 	
@@ -662,12 +683,12 @@ echo $sub;
 		$brand = $this->input->post('brand');
 		$sub_category = $this->input->post('sub_category');
 		$type = $this->input->post('type');
-		$Model = $this->input->post('Model');
+	
 	    $category = $this->session->userdata('filter_id');
 		
 		$config = array();
 		$config["base_url"] = "";
-		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand,$sub_category, $category,$type,$Model);
+		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand,$sub_category, $category,$type);
 		$config["per_page"] = 5;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
@@ -694,7 +715,7 @@ echo $sub;
 		
 		$output = array(
 			'pagination_link'		=>	$this->pagination->create_links(),
-			'product_list'			=>	$this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category,$category,$type,$Model)
+			'product_list'			=>	$this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category,$category,$type)
 		);
 		echo json_encode($output);
 	}
