@@ -843,24 +843,7 @@ a:hover, a:visited, a:link, a:active
                   </h4></a>
                </div>
                <div id="TYPE" class="panel-collapse collapse">
-                <div class="list-group mt-2">
-                     <?php 
-                     $v = $Brand->result_array();
-                     if($v !== Array( )){ ?>
-				
-					<?php
-                     }
-					foreach($Brand->result_array() as $row)
-					{
-					 
-					?>
-	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
-							<label class="common_s"><input type="checkbox" class="common_selector type" value="<?php echo $row['type']; ?>"  > <?php echo $row['type']; ?></label>
-						</div>
-					<?php 
-					} 
-					?>
-                </div>
+             
                 
                </div>
             </div>
@@ -868,75 +851,7 @@ a:hover, a:visited, a:link, a:active
            	<?php 
 			} 
 			
-			else if ($cateory == 1 || $cateory == 2){
-			    $v = $Brands->result_array();
-                     if($v !== Array( )){
-					?>
-					
-            <div class="panel-group mt-4 temporery_hide">
-            <div class="panel panel-default">
-               <div class="panel-heading ">
-                   <a data-toggle="collapse" class="under" href="#TYPEs"><h4 class="panel-title common_h ">
-                   TYPE
-                  </h4></a>
-               </div>
-                <div id="TYPEs" class="panel-collapse collapse">
-              <div class="list-group mt-2">
-                      
-					<?php
-                      
-					foreach($Brands->result_array() as $row)
-					{
-					 
-					?>
-	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
-							<label class="common_s"><input type="checkbox" class="common_selector type" value="<?php echo $row['type']; ?>"  > <?php echo $row['type']; ?></label>
-						</div>
-					<?php 
-					} 
-					?>
-                  </div>
-                 </div>  
-            </div>
-            </div>
-            <?php 
-				}
-				 $v = $Brand->result_array();
-                     if($v !== Array( )){
-				?>
-            
-            <div class="panel-group mt-4 temporery_hide">
-            <div class="panel panel-default">
-               <div class="panel-heading ">
-                   <a data-toggle="collapse" href="#MODEL"><h4 class="panel-title common_h">
-                   MODEL
-                  </h4></a>
-               </div>
-                  <div id="MODEL" class="panel-collapse collapse">
-                <div class="list-group mt-2">
-				    <?php 
-				      $v = $Brand->result_array();
-                     if($v !== Array( )){ ?> 
-					<?php
-                     }  
-					foreach($Brand->result_array() as $row)
-					{
-					 
-					?>
-	                    <div class=" checkbox" style="padding:3px; border-top: none;"> 
-							<label class="common_s"><input type="checkbox" class="common_selector Model" value="<?php echo $row['Model']; ?>"  > <?php echo $row['Model']; ?></label>
-						</div>
-					<?php 
-					} 
-					?>
-                  </div>
-                  </div>
-            </div>
-            </div>
-            
-           	<?php 
-			}
-			}?>
+			?>
 			
 		    	
 			
