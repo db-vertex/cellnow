@@ -369,7 +369,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
     <div class="row">
 
-    <?php $product = get_productid_by_shop($shop->id);
+    <?php if(!empty($shop->id)){
+      $product = get_productid_by_shop($shop->id);
     foreach($product as $value){
 
     
@@ -457,8 +458,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
           </div> 
 
-     <?php } ?>
-
+     <?php } }else{?>
+<?php } ?>
     </div>
   </div>
 

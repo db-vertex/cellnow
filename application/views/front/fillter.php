@@ -1,4 +1,6 @@
-<style>
+
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script><style>
 
 .Related_Ads {
         font-family: 'Lexend';
@@ -734,13 +736,12 @@ a:hover, a:visited, a:link, a:active
 					?>
 
                     <div class="va-card va-card_category"> <a class=" border-0"
-                            href="" style="max-width: 45%;">
+                            href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;">
                             <p style="text-align:center;" class="my-auto pouler_Categories">
-                                <img class="btn-change common_selector" 
+                                <img class="btn-change"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon; ?>" alt="">
-                                    <input type="text"  id="icon_sub_category" value="<?php echo $sub->sub_category; ?>"  hidden>
                                 <center style="color:black; font-size:12px; font-weight:500">
-                                    <?php echo ucfirst($sub->sub_category); ?></center>
+                                  <?php echo ucfirst($sub->sub_category); ?></center>
                             </p>
                         </a>
                     </div>
@@ -934,9 +935,8 @@ a:hover, a:visited, a:link, a:active
 
 		var brand = get_filter('brand');
 		var type = get_filter('type');
-     
-		var sub_category = $('#icon_sub_category').val();
-       
+		
+		var sub_category = get_filter('sub_category');
 		console.log(minimum_price);
 		console.log(maximum_price);
 		$.ajax({
@@ -1021,3 +1021,35 @@ swal("Cancelled", "Something went wrong. Please try again.)", "error");
 });
 }
 </script>
+<script>
+  function getsubcategory(category_id){
+
+ 
+//var res = "";
+ $("p").removeClass("selected");
+ $(".new"+category_id).addClass("selected");
+
+    // var allch =  $("#").val();
+
+  jQuery.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
+  data: { category_id:category_id},
+  success: function(res) 
+  {
+
+    
+   
+
+
+ 
+    
+
+    $("#sub-list").html(res);
+       
+  
+
+    // $('#load_cound').val("10");
+    
+  }
+  });
