@@ -735,15 +735,15 @@ a:hover, a:visited, a:link, a:active
 					  foreach($subcategory as $sub){
 					?>
 
-                    <div class="va-card va-card_category"> <a class=" border-0"
-                            href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;">
-                            <p style="text-align:center;" class="my-auto pouler_Categories">
-                                <img class="btn-change"
-                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon; ?>" alt="">
-                                <center style="color:black; font-size:12px; font-weight:500">
-                                  <?php echo ucfirst($sub->sub_category); ?></center>
-                            </p>
-                        </a>
+                      <div class="va-card va-card_category">
+                        <p style="text-align:center;" class="my-auto pouler_Categories">
+                            <img class="btn-change common_selector sub_category"
+                                data-sub-id="<?php echo $sub->sub_id; ?>"
+                                src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon; ?>" alt="">
+                            <center style="color:black; font-size:12px; font-weight:500">
+                                <?php echo ucfirst($sub->sub_category); ?></center>
+                        </p>
+
                     </div>
 
                     <?php 
@@ -920,73 +920,101 @@ a:hover, a:visited, a:link, a:active
                     });
 </script>                
 <script>
-    $(document).ready(function(){
+   $(document).ready(function() {
 
-	filter_data(1);
+filter_data(1);
 
-	function filter_data(page)
-	{
-		$('.filter_data').html('<div id="loading" style="" ></div>');
-		document.getElementById("pagination_link").style.display = "none";
-		var action = 'fetch_data';
-		//var page = 1;
-		var minimum_price = $('#hidden_minimum_price').val();
-		var maximum_price = $('#hidden_maximum_price').val();
 
-		var brand = get_filter('brand');
-		var type = get_filter('type');
-		
-		var sub_category = get_filter('sub_category');
-		console.log(minimum_price);
-		console.log(maximum_price);
-		$.ajax({
-			url:"<?php echo base_url(); ?>welcome/fetch_data/"+page,
-			method:"POST",
-			dataType:"JSON",
-			data:{action:action, minimum_price:minimum_price, maximum_price:maximum_price, brand:brand, sub_category:sub_category,type:type
-			},
-			success:function(data)
-			{
-			   document.getElementById("pagination_link").style.display = "block";
-				$('.filter_data').html(data.product_list);
-				$('#pagination_link').html(data.pagination_link);
-			}
-		})
-	}
+function filter_data(page)
+{
+    $('.filter_data').html('<div id="loading" style="" ></div>');
+    document.getElementById("pagination_link").style.display = "none";
+    var action = 'fetch_data';
+    //var page = 1;
+    var minimum_price = $('#hidden_minimum_price').val();
+    var maximum_price = $('#hidden_maximum_price').val();
 
-	$('#price_range').slider({
-		range:true,
-		min:1,
-		max:20000000,
-		values:[1, 20000000],
-		step: 500,
-		stop:function(event, ui){
-			//$('#price_show').show();
-			$('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
-			$('#hidden_minimum_price').val(ui.values[0]);
-			$('#hidden_maximum_price').val(ui.values[1]);
-			filter_data(1);
-		}
-	});
+    var brand = get_filter('brand');
+    var type = get_filter('type');
 
-	function get_filter(class_name)
-	{
-		var filter = [];
-		$('.'+class_name+':checked').each(function(){
-			filter.push($(this).val());
-		});
-		return filter;
-	}
 
-	$(document).on("click", ".pagination li a", function(event){
-		event.preventDefault();
-		var page = $(this).data("ci-pagination-page");
-		filter_data(page);
-	});
 
-	$('.common_selector').click(function(){
+    var sub_category = get_filter('sub_category');
+
+
+    $.ajax({
+        url: "<?php echo base_url(); ?>welcome/fetch_data/" + page,
+        method: "POST",
+        dataType: "JSON",
+        data: {
+            action: action,
+            minimum_price: minimum_price,
+            maximum_price: maximum_price,
+            sub_category: sub_category,
+            brand: brand,
+            type: type
+        },
+        success: function(data) {
+            document.getElementById("pagination_link").style.display = "block";
+            $('.filter_data').html(data.product_list);
+            $('#pagination_link').html(data.pagination_link);
+        }
+    })
+}
+
+$('#price_range').slider({
+    range: true,
+    min: 1,
+    max: 20000000,
+    values: [1, 20000000],
+    step: 500,
+    stop: function(event, ui) {
+        //$('#price_show').show();
+        $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
+        $('#hidden_minimum_price').val(ui.values[0]);
+        $('#hidden_maximum_price').val(ui.values[1]);
         filter_data(1);
-    });
+    }
+});
+
+var selectedSubId = null;
+
+function get_filter(class_name) {
+    var filter = [];
+
+    if (class_name === 'sub_category') {
+        if (selectedSubId !== null) {
+            filter.push(selectedSubId);
+        }
+    } else {
+        $('.' + class_name + ':checked').each(function() {
+            filter.push($(this).val());
+        });
+    }
+    return filter;
+}
+
+$(document).on('click', '.sub_category', function() {
+    var subId = $(this).data('sub-id');
+    selectedSubId = subId;
+    $('.sub_category').removeClass('active');
+    $(this).addClass('active');
+    filter_data(1);
+});
+
+
+
+
+$(document).on("click", ".pagination li a", function(event) {
+    event.preventDefault();
+    var page = $(this).data("ci-pagination-page");
+    filter_data(page)
+;
+});
+
+$('.common_selector').click(function() {
+    filter_data(1);
+});
 
 
 
@@ -1053,3 +1081,6 @@ swal("Cancelled", "Something went wrong. Please try again.)", "error");
     
   }
   });
+
+}
+</script>
