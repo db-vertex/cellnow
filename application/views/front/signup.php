@@ -117,6 +117,10 @@
             border: 1px solid #13C571 !important;
             border-radius: 30px;
         }
+        .Signup_header{
+            padding-bottom: 0px;
+          border-bottom: 6px solid #10B981;
+        }
     </style>
 </head>
 <script>
@@ -132,7 +136,7 @@
 </script>
 
 <body>
-    <main>
+    <main style="margin-top: 135px;">
         <div class="container " style="margin-top:20px">
 
             <div class="row " style="min-height:90%;">

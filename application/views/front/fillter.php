@@ -189,17 +189,7 @@ input::placeholder {
     flex-grow: 0;
 }
 
-@media (min-width: 991px) {
-    .home_background {
-        background: linear-gradient(154.02deg, #77D4B5 -12.01%, rgba(213, 253, 252, 0) 21.7%);
-    }
-}
 
-@media (max-width: 992px) {
-    .home_background {
-        background: linear-gradient(154.02deg, #77D4B5 -21.01%, rgba(213, 253, 252, 0) 21.7%);
-    }
-}
 </style>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
@@ -607,10 +597,13 @@ a:hover, a:visited, a:link, a:active
 }
 
 }
-
+.Categories_header{
+    padding-bottom: 0px;
+    border-bottom: 6px solid #10B981;
+}
 </style>
 
-<div class="container-fluid home_background">
+<div class="container-fluid home_background" style=" margin-top: 125px;">
 <div class="container">
     <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
@@ -779,8 +772,8 @@ a:hover, a:visited, a:link, a:active
 				<div class="list-group">
 					<h6 class="common_h">PRICE</h6>
 					<input type="hidden" id="hidden_minimum_price" value="1" />
-					<input type="hidden" id="hidden_maximum_price" value="20000000" />
-					<p id="price_show">0 - 20000000</p>
+					<input type="hidden" id="hidden_maximum_price" value="200000" />
+					<p id="price_show">0 - 200000</p>
 	                <div id="price_range"></div>
                 </div>
                 
@@ -965,8 +958,8 @@ function filter_data(page)
 $('#price_range').slider({
     range: true,
     min: 1,
-    max: 20000000,
-    values: [1, 20000000],
+    max: 200000,
+    values: [1, 200000],
     step: 500,
     stop: function(event, ui) {
         //$('#price_show').show();

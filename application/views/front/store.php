@@ -68,19 +68,14 @@ input::placeholder {
     }
 }
 
-@media (min-width: 991px) {
-    .home_background {
-        background: linear-gradient(154.02deg, #77D4B5 -12.01%, rgba(213, 253, 252, 0) 21.7%);
-    }
+.Services_header{
+    padding-bottom: 0px;
+    border-bottom: 6px solid #10B981;
 }
 
-@media (max-width: 992px) {
-    .home_background {
-        background: linear-gradient(154.02deg, #77D4B5 -21.01%, rgba(213, 253, 252, 0) 21.7%);
-    }
-}
+
 </style>
-<div class="container-fluid home_background">
+<div class="container-fluid home_background" style=" margin-top: 125px;">
 <div class="container ">
     <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">

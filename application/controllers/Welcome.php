@@ -1030,7 +1030,9 @@ public function fav_list(){
 		
 		}else{
 		
-			return redirect('welcome');
+			$this->load->view('front/header');
+			$this->load->view('front/login');
+			$this->load->view('front/footer');
 		}
 
 	}

@@ -117,6 +117,10 @@
             border: 1px solid #13C571 !important;
             border-radius: 30px;
         }
+        .login_header{
+            padding-bottom: 0px;
+          border-bottom: 6px solid #10B981;
+        }
     </style>
 </head>
 <script>
@@ -132,7 +136,7 @@
 </script>
 
 <body>
-    <main>
+    <main style="margin-top: 125px;">
         <div class="container py-4" style="margin-top:10px">
 
             <div class="row align-items-md-stretch" style="min-height:90%;">

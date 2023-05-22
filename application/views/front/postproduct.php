@@ -413,6 +413,10 @@
         order: 0;
         flex-grow: 0;
     }
+    .Post_header{
+        padding-bottom: 0px;
+          border-bottom: 6px solid #10B981;
+    }
     </style>
 
 

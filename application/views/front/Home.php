@@ -84,18 +84,6 @@
   }
 } 
 
-@media (min-width: 991px) {
-  .home_background{
-    background: linear-gradient(154.02deg, #77D4B5 -12.01%, rgba(213, 253, 252, 0) 21.7%);
-     }  
-  }
- 
- @media (max-width: 992px) {
-     .home_background{
-      background: linear-gradient(154.02deg, #77D4B5 -21.01%, rgba(213, 253, 252, 0) 21.7%);
-     }  
- }
-
  
 
     </style>
@@ -103,7 +91,7 @@
   
  
 
-  <div class="container-fluid home_background" >
+  <div class="container-fluid home_background"  style=" margin-top: 125px;">
 
 <div class="container">
   <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
@@ -138,7 +126,7 @@
 
 <div class="container">
     <div class="row pl-4">
-    <p style="color: #F59E0B;"> -----Our Recomandation</p>
+    <p style="color: #F59E0B;"></p>
     </div>
    </div><br>
 
@@ -392,7 +380,7 @@
 <div class="container  mt-3">
   <div class="row pl-4">
     <div class="col-lg-7 col-md-5 col-sm-4">
-     <p style="color: #1B1C57; font-size:30px;">Stores</p>
+     <p style="color: #1B1C57; font-size:30px;">Shops Offering Services</p>
     </div>
     <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
     <div class="search_wrap search_wrap_6 m-0">
@@ -533,7 +521,7 @@
 <div class="container">
   <div class="row pl-4">
     <div class="col-12">
-      <p id="donate" style="color: #1B1C57; font-size:30px;">Donate</p>
+      <p id="donate" style="color: #1B1C57; font-size:30px;">Donated</p>
     </div>
   </div>
 </div><br>

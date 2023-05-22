@@ -212,7 +212,7 @@ function get_all_category()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM category order by category";
+  $query="SELECT * FROM category order by orders";
 
   $category_data = $ci->db->query($query);        
 
@@ -233,6 +233,7 @@ function get_all_shopcategory()
 
   return $category_data->result(); 
 }
+
 
 function get_all_subcategory()
 {
@@ -985,5 +986,30 @@ function shorttime($datetime, $full = false) {
 
     if (!$full) $string = array_slice($string, 0, 1);
     return $string ? implode(', ', $string) . ' ago' : 'just now';
+}
+
+function update_count_comman_query($category_id, $count,$product_id){
+    
+  $ci =& get_instance();
+   
+   //load databse library
+   $ci->load->database();
+
+if($category_id == 1){
+  $sql = "category_reusable_parts";
+}
+else if($category_id == 2){
+    $sql = "category_tuitions";  
+}
+else if($category_id == 3){
+     $sql = "category_job"; 
+}
+else if($category_id == 4){
+    $sql = "category_internships";  
+}
+
+// $update = 'update '.$sql.' set Count ='.$count.' where id = '.$product_id.'';
+$update = $ci->db->where(array('id'=>$product_id,))->update($sql, ['Count'=>$count]);
+$erorr =  $ci->db->error();
 }
 ?>

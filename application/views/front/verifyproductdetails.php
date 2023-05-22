@@ -64,7 +64,7 @@
     }
 
     .details_img_cover {
-     
+
         max-height: 467px;
         left: 114px;
         top: 588px;
@@ -74,7 +74,7 @@
         min-width: 55%;
     }
 
-.cover_img_div{
+    .cover_img_div {
         text-align: center;
     }
 
@@ -305,28 +305,29 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
-        
-    .btn_Verified_text {
-        font-family: 'Lexend';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 13px;
-        text-transform: capitalize;
-        color: #047857;
+
+        .btn_Verified_text {
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: capitalize;
+            color: #047857;
+        }
+
+        .btn_Verified_img {
+            width: 30px;
+            height: 30px;
+            left: 33px;
+            top: 10px;
+        }
+
+        .margin_left_css {
+            margin-left: 1rem !important;
+        }
     }
 
-    .btn_Verified_img {
-        width: 30px;
-        height: 30px;
-        left: 33px;
-        top: 10px;
-    }
-    .margin_left_css{
-        margin-left: 1rem!important;
-    }
-    }
-
-    @media  (min-width: 500px) and (max-width: 768px) {
+    @media (min-width: 500px) and (max-width: 768px) {
         .btn_Verified_shop_name {
             width: 400px;
             height: 54px;
@@ -336,28 +337,29 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
-        
-    .btn_Verified_text {
-        font-family: 'Lexend';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 17px;
-        text-transform: capitalize;
-        color: #047857;
+
+        .btn_Verified_text {
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 17px;
+            text-transform: capitalize;
+            color: #047857;
+        }
+
+        .btn_Verified_img {
+            width: 30px;
+            height: 30px;
+            left: 33px;
+            top: 10px;
+        }
+
+        .margin_left_css {
+            margin-left: 1rem !important;
+        }
+
     }
 
-    .btn_Verified_img {
-        width: 30px;
-        height: 30px;
-        left: 33px;
-        top: 10px;
-    }
-    .margin_left_css{
-        margin-left: 1rem!important;
-    }
-
-    }
-  
     @media (min-width: 768px) and (max-width: 991.98px) {
         .btn_Verified_shop_name {
             width: 269px;
@@ -368,25 +370,26 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
-        
-    .btn_Verified_text {
-        font-family: 'Lexend';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 13px;
-        text-transform: capitalize;
-        color: #047857;
-    }
 
-    .btn_Verified_img {
-        width: 30px;
-        height: 30px;
-        left: 33px;
-        top: 10px;
-    }
-    .margin_left_css{
-        margin-left: 2rem!important;
-    }
+        .btn_Verified_text {
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: capitalize;
+            color: #047857;
+        }
+
+        .btn_Verified_img {
+            width: 30px;
+            height: 30px;
+            left: 33px;
+            top: 10px;
+        }
+
+        .margin_left_css {
+            margin-left: 2rem !important;
+        }
 
     }
 
@@ -400,25 +403,26 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
-        
-    .btn_Verified_text {
-        font-family: 'Lexend';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 15px;
-        text-transform: capitalize;
-        color: #047857;
-    }
 
-    .btn_Verified_img {
-        width: 30px;
-        height: 30px;
-        left: 33px;
-        top: 10px;
-    }
-    .margin_left_css{
-        margin-left: 3rem!important;
-    }
+        .btn_Verified_text {
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 15px;
+            text-transform: capitalize;
+            color: #047857;
+        }
+
+        .btn_Verified_img {
+            width: 30px;
+            height: 30px;
+            left: 33px;
+            top: 10px;
+        }
+
+        .margin_left_css {
+            margin-left: 3rem !important;
+        }
 
     }
 
@@ -432,25 +436,26 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
-        
-    .btn_Verified_text {
-        font-family: 'Lexend';
-        font-style: normal;
-        font-weight: 500;
-        font-size: 17px;
-        text-transform: capitalize;
-        color: #047857;
-    }
 
-    .btn_Verified_img {
-        width: 30px;
-        height: 30px;
-        left: 33px;
-        top: 10px;
-    }
-    .margin_left_css{
-        margin-left: 3rem!important;
-    }
+        .btn_Verified_text {
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 17px;
+            text-transform: capitalize;
+            color: #047857;
+        }
+
+        .btn_Verified_img {
+            width: 30px;
+            height: 30px;
+            left: 33px;
+            top: 10px;
+        }
+
+        .margin_left_css {
+            margin-left: 3rem !important;
+        }
 
 
     }
@@ -597,7 +602,7 @@
         .margin_top_css {
             margin-top: 1rem !important;
         }
-       
+
     }
 
 
@@ -730,6 +735,8 @@
         border-radius: 32px;
 
     }
+  
+
     </style>
 </head>
 
@@ -753,7 +760,12 @@
   } else {
     $wishlist = 0;
   }
+  $i = $product_detail->Count;
+$data = ++$i; // Increment $i and assign the value to $data
+$product_count_update = update_count_comman_query($product_detail->category_id, $data, $product_detail->id);
   ?>
+
+
     <div class="py-3 text-center">
         <img class="d-block mx-auto mb-2" src="<?php echo base_url();?>assets/images/product_banner.png" alt=""
             width=100%>
@@ -764,7 +776,9 @@
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
-                            <span class="me-2 handline"><a class="text-dark link-underline-opacity-0" href="<?php echo base_url();?>" >Homepage</a></span>/<span class="ms-2 handline">Bike</span>
+                            <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
+                                    href="<?php echo base_url();?>">Homepage</a></span>/<span
+                                class="ms-2 handline">Bike</span>
                         </div>
                     </div>
                 </div>
@@ -875,7 +889,7 @@
                                                 style="font-size:18px; color:#69d3b0"></i>
                                         </div>
                                         <div class="col-8 mt-3">
-                                            <span class="detalis_option_text">50 views</span>
+                                            <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
                                         </div>
                                     </div>
                                 </div>
@@ -896,10 +910,12 @@
                                     <div class="row">
                                         <div class="col-4">
                                             <a class="btn-change" style="color:black;" id="GFG"
-                                            <?php if (empty($user) || !isset($user)) { ?> href="<?php echo base_url();?>welcome/login" <?php }else{ ""; }?> id="share_desk"
+                                                <?php if (empty($user) || !isset($user)) { ?>
+                                                href="<?php echo base_url();?>welcome/login" <?php }else{ ""; }?>
+                                                id="share_desk"
                                                 onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');">
-                                                <i class="fa fareport_productdata-target="#login"-share-alt" aria-hidden="true"
-                                                    style="font-size:18px; color:#69d3b0"> </i> </a>
+                                                <i class="fa fareport_productdata-target=" #login"-share-alt"
+                                                    aria-hidden="true" style="font-size:18px; color:#69d3b0"> </i> </a>
 
                                         </div>
                                         <div class="col-8 mt-3">
@@ -910,9 +926,10 @@
                                 <div class="col-3 px-0">
                                     <div class="row">
                                         <div class="col-4">
-                                            <a class="btn-change" style="color:black; " id="GFG" 
-                                                <?php if (empty($user) || !isset($user)) { ?> href="<?php echo base_url();?>welcome/login" <?php } else { ?> data-toggle="modal"
-                                                data-target="#report_product" <?php } ?>><i
+                                            <a class="btn-change" style="color:black; " id="GFG"
+                                                <?php if (empty($user) || !isset($user)) { ?>
+                                                href="<?php echo base_url();?>welcome/login" <?php } else { ?>
+                                                data-toggle="modal" data-target="#report_product" <?php } ?>><i
                                                     class="fa fa-exclamation-triangle" aria-hidden="true"
                                                     style="font-size:18px; color:#69d3b0"></i></a>
                                         </div>
@@ -941,7 +958,7 @@
                             <i lass="bi bi-suit-heart" aria-hidden="true"
                                 style="font-size:25px; color:#69d3b0; padding: 0px;"
                                 <?php if (empty($user) || !isset($user)) { ?>
-                                     href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
+                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
                                 data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
                                 class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product_detail->id; ?>"
                                 data-pid="<?php echo $product_detail->id; ?>"
@@ -949,7 +966,10 @@
                                 data-wishlist="<?php echo $wishlist; ?>"></i>
                         </div>
                         <div class="col-5">
+                            <?php if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
                             <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
+                            <?php  } ?>
+
                         </div>
                     </div>
                     <div class="row  margin_top_css ms-5">
@@ -995,93 +1015,93 @@
 
                     <div class="row  margin_top_css margin_left_css">
 
-                                        <?php   $shoplist = 0;
+                        <?php   $shoplist = 0;
                 if (!empty($user) && isset($user)) {
                     $shop =check_shoplist($user['user_id']);
                     if(empty($shop)){  $shop_list =check_shoplist_by_productid($product_detail->id);
                     if(empty($shop_list)){ echo"";}else{
                     $shop_name= get_shop_name($shop_list->shop_id);?>
-                                        <div class="" style="">
-                                            <div class="col-12" style="text-align:center;">
-                                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
-                                                            class="btn_Verified_img"
-                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                                        <?php echo $shop_name;?></span></p>
-                                            </div>
+                        <div class="" style="">
+                            <div class="col-12" style="text-align:center;">
+                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                            class="btn_Verified_img"
+                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                        <?php echo $shop_name;?></span></p>
+                            </div>
 
 
-                                        </div>
-                                        <?php } }else{
+                        </div>
+                        <?php } }else{
                     $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
                     if (empty($wishlit)) {
 
                     ?> <div class="" style="">
 
-                                            <div class="">
-                                                <form class="" action="<?php echo base_url();?>welcome/setshoplist" method="POST">
-                                                    <input type="hidden" name="product_id" id="product_id"
-                                                        value="<?php echo $product_detail->id; ?>">
-                                                    <input type="hidden" name="category_id" id="category_id"
-                                                        value="<?php echo $product_detail->category_id; ?>">
-                                                    <input type="hidden" name="user_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
+                            <div class="">
+                                <form class="" action="<?php echo base_url();?>welcome/setshoplist" method="POST">
+                                    <input type="hidden" name="product_id" id="product_id"
+                                        value="<?php echo $product_detail->id; ?>">
+                                    <input type="hidden" name="category_id" id="category_id"
+                                        value="<?php echo $product_detail->category_id; ?>">
+                                    <input type="hidden" name="user_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
                                                             if($session_id){echo $_SESSION['id'];} ?>">
-                                                    <input type="hidden" name="seller_id" id="receiver_id"
-                                                        value="<?php echo $product_detail->user_id; ?>">
-                                                    <input type="hidden" name="shop_id" id="receiver_id"
-                                                        value="<?php echo $shop->id; ?>">
-                                                    <input type="hidden" name="subcategory_id" id="receiver_id"
-                                                        value="<?php echo $product_detail->subcategory_id; ?>">
+                                    <input type="hidden" name="seller_id" id="receiver_id"
+                                        value="<?php echo $product_detail->user_id; ?>">
+                                    <input type="hidden" name="shop_id" id="receiver_id"
+                                        value="<?php echo $shop->id; ?>">
+                                    <input type="hidden" name="subcategory_id" id="receiver_id"
+                                        value="<?php echo $product_detail->subcategory_id; ?>">
 
 
-                                                    <div class="col-12" style="text-align:center;">
-                                                        <button class=" btn btn_Verified"><span class="pe-2"><img
-                                                                    class="btn_Verified_img"
-                                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                                    alt="check 1.png"></span><span
-                                                                class="btn_Verified_text"type="submit" name="submit" >Verified</span></button>
-                                                    </div>
-                                                </form>
-                                            </div>
+                                    <div class="col-12" style="text-align:center;">
+                                        <button class=" btn btn_Verified"><span class="pe-2"><img
+                                                    class="btn_Verified_img"
+                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                    alt="check 1.png"></span><span class="btn_Verified_text"
+                                                type="submit" name="submit">Verified</span></button>
+                                    </div>
+                                </form>
+                            </div>
 
-                                        </div>
+                        </div>
 
 
-                                        <?php  } else {
+                        <?php  } else {
                     $shop_list =check_shoplist_by_productid($product_detail->id);
                     if(empty($shop_list)) {echo"";}else{
                     $shop_name= get_shop_name($shop_list->shop_id);
                     ?>
 
-                                        <div class="" style="">
+                        <div class="" style="">
 
-                                        <div class="col-12" style="text-align:center;">
-                                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
-                                                            class="btn_Verified_img"
-                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                                        <?php echo $shop_name;?></span></p>
-                                            </div>
+                            <div class="col-12" style="text-align:center;">
+                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                            class="btn_Verified_img"
+                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                        <?php echo $shop_name;?></span></p>
+                            </div>
 
-                                        </div>
-                                        <?php } } }
+                        </div>
+                        <?php } } }
                 } 
                 else { $shop_list =check_shoplist_by_productid($product_detail->id);
                     if(empty($shop_list)) {echo"";}else{
                 $shop_name= get_shop_name($shop_list->shop_id);
                 ?>
-                                        <div class="" style="">
+                        <div class="" style="">
 
-                                        <div class="col-12" style="text-align:center;">
-                                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
-                                                            class="btn_Verified_img"
-                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                                        <?php echo $shop_name;?></span></p>
-                                            </div>
+                            <div class="col-12" style="text-align:center;">
+                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                            class="btn_Verified_img"
+                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                        <?php echo $shop_name;?></span></p>
+                            </div>
 
-                                        </div>
-                                        <?php }} ?>
+                        </div>
+                        <?php }} ?>
 
                     </div>
 
@@ -1141,6 +1161,7 @@
                                     </div>
                                     <div class="col-4">
                                         <div>
+                                        <?php if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
                                             <form class="" id="chat_frm"
                                                 action="<?php echo base_url();?>welcome/chat/<?php echo $product_detail->category_id; ?>"
                                                 method="POST">
@@ -1158,10 +1179,11 @@
                                                     data-toggle="modal" data-target="#login"
                                                     <?php }else{ ?>type="submit" <?php }  ?> readonly>
                                             </form>
+                                          
                                             <a
                                                 href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><b
                                                     class="View_Seller_profile" id="">View Seller profile</b></a>
-
+                                                    <?php  } ?> 
                                         </div>
                                     </div>
                                 </div>
@@ -1201,8 +1223,11 @@
                                                 style="color:#ff6737;padding: 0px;"></i></b>
                                     </div>
                                     <div class="col-4">
-                                        <p class="details_price">$<span><?php echo $relatedproduct->price; ?></span></p>
+                                        <?php if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
+                                        <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
+                                        <?php  } ?>
                                     </div>
+
                                 </div>
                                 <div class="row mt-1">
                                     <div class="col-12">

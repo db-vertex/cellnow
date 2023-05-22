@@ -72,6 +72,10 @@
       color: white;
       background-color: #78d7b8;
     }
+    .Shop_header{
+      padding-bottom: 0px;
+          border-bottom: 6px solid #10B981;
+    }
   </style>
 </head>
 
