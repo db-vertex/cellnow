@@ -86,6 +86,8 @@ echo $sub;
 		
 	}
 
+	
+
 	public function home1()
 	{
 		$session_id = $this->session->userdata('id');
@@ -656,7 +658,7 @@ echo $sub;
 				 $data['Brand'] = $this->product_filter_model->fetch_filter_type('Job_type',$cateory);
 			 }
 			 
-      
+     
        if($session_id)
        {
 		//$myproduct = $this->product_model->myproduct($session_id);
