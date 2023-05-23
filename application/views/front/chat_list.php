@@ -390,9 +390,7 @@ breadcrumb_container {
     clear: both;
     border-bottom: 1px solid #ddd;
   }
-  .chat .chat-wrapper .chat-list-wrapper .chat-list li .avatar {
-    display: none;
-  }
+  
   .chat .chat-wrapper .chat-list-wrapper .chat-list li .body .header {
     margin-top: 4px;
     margin-bottom: 4px;
@@ -833,9 +831,13 @@ breadcrumb_container {
 
                                          
                                      
-                                        <div class="col-3 mg-btm-10"> 
+                                        <div class="col-3 mg-btm-10 "> 
                                             <button type="button" id="btn-send" class="btn btn-green  btn-sm">
-<img style="padding:10px;" src="<?php echo base_url();?>assets/images/arrow.png">                                            </button>
+<img style="padding:5px;" src="<?php echo base_url();?>assets/images/arrow.png">                                            </button>
+
+                                            
+                                          
+                                        
 
                                           <?php } ?>
                                             

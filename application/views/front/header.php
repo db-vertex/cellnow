@@ -830,7 +830,7 @@
                             aria-expanded="false" style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
                             &nbsp <?php echo ucfirst($profile->name);?>
                         </a>
-                        <ul class="dropdown-menu" style="margin-left:90%;margin-top: -30px;">
+                        <ul class="dropdown-menu" style="margin-left:85%;margin-top: -30px;">
 
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My
                                     profile</a></li>
@@ -842,7 +842,7 @@
                             <li> <a class="dropdown-item" href="<?php echo base_url();?>welcome/changepassword"
                                     class="">Change Password</a></li>
                             <?php } ?>
-                            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/logout">logout</a></li>
+                            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/logout">Logout</a></li>
                         </ul>
                         <?php  }
 
@@ -854,10 +854,10 @@
                             <a  class="nav-link fs-5 login_header" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:bold;">Login
                                 </a>
                         </li>
-                        <li class="nav-item" style="padding-right:10px" ;>
+                        <!-- <li class="nav-item" style="padding-right:10px" ;>
                             <a class="nav-link fs-5 Signup_header" href="<?php echo base_url();?>welcome/signup"
                                 style="color:#10B981;font-weight:bold;">Signup</a>
-                        </li>
+                        </li> -->
                     </ul>
                     <?php }?>
                 </div>
