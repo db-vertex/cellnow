@@ -76,6 +76,47 @@
       padding-bottom: 0px;
           border-bottom: 6px solid #10B981;
     }
+
+    .related_ads_details_button {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 9.42857px 12.5714px;
+        gap: 4.71px;
+
+        width: 104.43px;
+        height: 36.86px;
+
+        background: #10B981;
+        /* C2/B */
+
+        border: 1.57143px solid #46760A;
+        border-radius: 25.42857px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        align-self: center;
+        flex-grow: 0;
+    }
+    .related_ads_details_button_text {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 12.7857px;
+        line-height: 18px;
+        color: #FFFFFF;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
+
   </style>
 </head>
 
@@ -83,7 +124,7 @@
 <body>
 
 <?php $shop = get_id_by_shop($user['user_id']);?>
-  <div class="container" style="padding-top:8%">
+  <div class="container" style=" margin-top: 180px;">
 
     <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
       <div class="row text-center">
@@ -455,7 +496,14 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                       <?php echo $Categories_all_product->address; ?>
                     </p>
                   </div>
-                 
+                  <div class="col-4 ">
+                                        <a
+                                            href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
+                                            <p class="related_ads_details_button ">
+                                                <spam class="related_ads_details_button_text">Product Detail</spam>
+                                            </p>
+                                        </a>
+                                    </div>
                 </div>
 
               </div>

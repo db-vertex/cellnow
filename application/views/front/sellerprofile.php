@@ -71,7 +71,7 @@ html,body
   <body>
   
 
-<div class="container" style=" margin-top: 125px;">
+<div class="container" style=" margin-top: 180px;">
   
 <?php  if($error=$this->session->flashdata('Editproduct')){  ?>
             <div class="row text-center" style="justify-content: center; ">

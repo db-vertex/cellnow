@@ -14,7 +14,7 @@
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Verify product details</title>
     <style>
-    breadcrumb_container {
+    .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
         max-width: 1126px;
@@ -766,11 +766,11 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
   ?>
 
 
-    <div class="py-3 text-center " style="padding-top:8%">
+    <div class=" text-center " style="margin-top:7%">
         <img class="d-block mx-auto mb-2" src="<?php echo base_url();?>assets/images/product_banner.png" alt=""
             width=100%>
     </div>
-    <div class="container">
+    <div class="container mt-4" >
         <main>
             <div class="breadcrumb_container container mb-5">
                 <div class="row breadcrumb_row">
@@ -1216,7 +1216,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             <div class="card-body related_ads_card">
                                 <div class="row">
                                     <div class="col-5">
-                                        <p class="related_ads_card_title"> Product title</p>
+                                        <p class="related_ads_card_title"> <?php echo $relatedproduct->title;?></p>
                                     </div>
                                     <div class="col-3">
                                         <b style='font-size:18px;'><i class="fa fa-heart-o "

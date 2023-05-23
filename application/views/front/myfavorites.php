@@ -71,7 +71,7 @@
 
 
 
-  <div class="container-fluid " style="padding-top:8%">
+  <div class="container-fluid " style=" margin-top: 130px;">
     <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
   </div>
 
