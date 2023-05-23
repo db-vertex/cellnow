@@ -83,7 +83,7 @@
 <body>
 
 <?php $shop = get_id_by_shop($user['user_id']);?>
-  <div class="container">
+  <div class="container" style="padding-top:8%">
 
     <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
       <div class="row text-center">

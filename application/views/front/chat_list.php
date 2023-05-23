@@ -15,8 +15,11 @@
 
 ?>  
 <style type="text/css">
+ ul {
+    padding-left: 0rem;
+}
 
-breadcrumb_container {
+.breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
         max-width: 1126px;
@@ -104,7 +107,7 @@ breadcrumb_container {
 }
 .checkmark-sent-delivered {
     position: absolute;
-    bottom: -23px;
+    bottom: -18px;
     right: 0px;
     font-size: 12px;
     
@@ -112,7 +115,7 @@ breadcrumb_container {
 .checkmark-read {
     
     position: absolute;
-    bottom: -23px;
+    bottom: -18px;
     right: 6px;
     font-size: 12px;
 }
@@ -205,6 +208,7 @@ breadcrumb_container {
 }
 .chat .chat-wrapper .message-list-wrapper .message-list li.left .avatar {
   margin-right: 12px;
+  margin-left: -12px;
   display: block;
   float: left;
   
@@ -309,7 +313,7 @@ breadcrumb_container {
   font-size: 10px;
   line-height: 18px;
   font-style: italic;
-  margin-top: 6px;
+  margin-bottom: 4px;
   
 }
 .chat .chat-wrapper .message-list-wrapper .message-list li.right .timestamp i {
@@ -404,9 +408,11 @@ breadcrumb_container {
     font-size: 11px;
     line-height: 18px;
     font-style: italic;
+    
   }
   .chat .chat-wrapper .chat-list-wrapper .chat-list li .body .header .timestamp i {
     margin-right: 4px;
+    margin-top: 4px;
   }
   .chat .chat-wrapper .chat-list-wrapper .chat-list li .body p {
     display: none;
@@ -461,7 +467,8 @@ breadcrumb_container {
 }
 
 .btn-green {
-    background-color: #2ecc71;
+    background-color:  #D1FAE5 ;
+
     border-color: #27ae60;
     color: white;
 }

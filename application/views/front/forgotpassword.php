@@ -129,7 +129,7 @@ input[type=number] {
     </script>
 <body>
     <main>
-        <div class="container py-4" style="margin-top:10px">
+        <div class="container " style="padding-top:8%">
 
             <div class="row align-items-md-stretch" style="min-height:90%;">
             <div class="col-md-7 ps-0" >
@@ -138,7 +138,7 @@ input[type=number] {
                             src="<?php echo base_url()?>/assets/images/forgot.png">
                     </div>
                 </div>
-                <div class="col-md-5 ps-4 pe-4">
+                <div class="col-md-5 ps-4 pe-4" style="padding-top:8%">
                 <div class="card  border p-4">
 <article class="card-body">
 

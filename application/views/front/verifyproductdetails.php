@@ -766,7 +766,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
   ?>
 
 
-    <div class="py-3 text-center">
+    <div class="py-3 text-center " style="padding-top:8%">
         <img class="d-block mx-auto mb-2" src="<?php echo base_url();?>assets/images/product_banner.png" alt=""
             width=100%>
     </div>
