@@ -15,6 +15,39 @@
 
 ?>  
 <style type="text/css">
+
+breadcrumb_container {
+        box-sizing: border-box;
+        width: 100%;
+        max-width: 1126px;
+        margin: 0 auto;
+    }
+
+    .breadcrumb_row {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 0 -15px;
+    }
+
+    .breadcrumb_col {
+        box-sizing: border-box;
+        flex: 1;
+        padding: 0 15px;
+    }
+
+    .breadcrumbs {
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 16px 45px;
+        position: relative;
+        height: 48px;
+        background: linear-gradient(90.02deg, #77D4B5 -23.01%, rgba(213, 253, 252, 0) 97.7%);
+        border: 0.5px solid #6AD3B0;
+        border-radius: 20px;
+    }
+
   .action_menu{
 	
 		
@@ -168,7 +201,7 @@
   padding: 20px 20px;
   clear: both;
   position: relative;
-  color: white;
+  color: black;
 }
 .chat .chat-wrapper .message-list-wrapper .message-list li.left .avatar {
   margin-right: 12px;
@@ -198,7 +231,7 @@
   text-align: left;
   display: block;
   color: #999;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 18px;
   font-style: italic;
   margin-bottom: 4px;
@@ -219,8 +252,9 @@
   display: inline-block;
   width: auto;
   height:auto;
-  background: #2ecc71;
-  padding:7px;
+  background: #E7E7E7;
+  padding:7px ;
+  border-radius: 15px;
 
 }
 .chat .chat-wrapper .message-list-wrapper .message-list li.left .body .message:before {
@@ -229,11 +263,7 @@
   position: absolute;
   width: 0;
   height: 0;
-  border-style: solid;
-  border-width: 9px 9px 9px 0;
-  border-color: transparent #2ecc71 transparent transparent;
-  left: 0;
-  top: 5px;
+ 
   margin-left: -7px;
 }
 .chat .chat-wrapper .message-list-wrapper .message-list li.left .body .message a.white {
@@ -276,10 +306,11 @@
   text-align: right;
   display: block;
   color: #999;
-  font-size: 11px;
+  font-size: 10px;
   line-height: 18px;
   font-style: italic;
   margin-top: 6px;
+  
 }
 .chat .chat-wrapper .message-list-wrapper .message-list li.right .timestamp i {
   margin-right: 4px;
@@ -297,9 +328,9 @@
   display: inline-block;
   width: auto;
   height:auto;
-  background: #3498db;
-  color:white;
-  
+  background: #D1FAE5 ;
+  color:#194B74;
+  border-radius: 15px;
     padding:7px;
  
 }
@@ -309,11 +340,7 @@
   position: absolute;
   width: 0;
   height: 0;
-  border-style: solid;
-  border-width: 9px 9px 9px 0;
-  border-color: transparent #3498db transparent transparent;
-  right: 0;
-  top: 5px;
+
  
   margin-right: -7px;
   -moz-transform: rotate(180deg);
@@ -471,12 +498,24 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- <script src="http://91.234.35.26/iwiki-admin/v1.0.0/admin/js/jquery.nicescroll.min.js"></script> -->
 
-<div class="container mt-4">
+<div class="container mt-5">
 <div class="row">
 <div class="col p-2" style="border-radius:18px;background-image: linear-gradient(to right, #77d4b5 ,#77d4b5 ,#d5fdfc, #f5f5f5);"><small style="padding-left:20px"><a href="<?php echo base_url(); ?>">Homepage</a> / Chat</small></div>
 </div>
 </div><br>
-<div class="container mt-4" >
+<div class="container mt-5" >
+
+<div class="breadcrumb_container container mb-5">
+                <div class="row breadcrumb_row">
+                    <div class="breadcrumb_col col">
+                        <div class="breadcrumbs">
+                            <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
+                                    href="<?php echo base_url();?>">Homepage</a></span>/<span
+                                class="ms-2 handline">Chat</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
 <div class="row">
         <div class="col-sm-12">
             <div class="panel panel-white ">
@@ -788,20 +827,15 @@
                                     
                                     <div class="row">
                                       <?php if(empty($blocked)){ ?>
-                                       <div class="col-10 mg-btm-10">
+                                       <div class="col-9 mg-btm-10">
                                            <textarea id="message" style="backgound-color:#77d4b5 " class="form-control input-sm" name="message" placeholder="Type your message here..." onkeyup="return checkchatmessage();"></textarea>
                                         </div>
 
                                          
                                      
-                                        <div class="col-2 mg-btm-10"> 
+                                        <div class="col-3 mg-btm-10"> 
                                             <button type="button" id="btn-send" class="btn btn-green  btn-sm">
-                                                <i class="fa fa-location-arrow"></i> Send
-                                            </button>
-
-                                            
-                                          
-                                        
+<img style="padding:10px;" src="<?php echo base_url();?>assets/images/arrow.png">                                            </button>
 
                                           <?php } ?>
                                             

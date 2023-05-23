@@ -2165,7 +2165,7 @@ echo $pro;
                                             
                                             <span class="avatar available tooltips" data-toggle="tooltip " data-placement="right" data-original-title="Yanique Robinson">';
                                           
-                                                $pro .= ' <img src="https://dbvertex.com/classified/uploads/profile/'.$profile_pic1.'" alt="avatar" class="img-circle">';
+                                                $pro .= ' <img src="https://dbvertex.com/celnow/uploads/profile/'.$profile_pic1.'" alt="avatar" class="img-circle">';
 
 
 
@@ -2196,7 +2196,7 @@ echo $pro;
                                             <span class="avatar tooltips" data-toggle="tooltip " data-placement="left" data-original-title="Kevin Mckoy">';
                                                   
 
-                                                $pro .= '<img src="https://dbvertex.com/classified/uploads/profile/'.$profile_pic2.'" alt="avatar" class="img-circle">';
+                                                $pro .= '<img src="https://dbvertex.com/celnow/uploads/profile/'.$profile_pic2.'" alt="avatar" class="img-circle">';
 
 
                                              
