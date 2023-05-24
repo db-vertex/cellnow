@@ -1631,18 +1631,19 @@ echo $pro;
 					$postData['Education_Type'] = $this->input->post('Tuitions_Education_Type');
 					$postData['high_school'] = $this->input->post('school_eduction');
 					$postData['gender'] = $this->input->post('Tuitions_gender');
-					$postData['Available_Timings'] = $this->input->post('Tuitions_Available_Timings');
 					$postData['price'] = $this->input->post('Tuitions_person_Fees');
 					if($postData['subcategory_id'] == 12){
 						$postData['Years_Experience'] = $this->input->post('Tuitions_Years_Experience');
 						$postData['Teachers_Qualifications'] = $this->input->post('Tuitions_Teachers_Qualifications');
 						$postData['Positives_Outcomes'] = $this->input->post('Tuitions_Positives_Outcomes');
 						$postData['Joining_criteria'] = $this->input->post('Tuitions_Joining_criteria');
+						$postData['Available_Timings'] = $this->input->post('Tuitions_Available_Timings');
 					}
 					else if($postData['subcategory_id'] == 13){
 						$postData['Years_Experience'] = $this->input->post('Tuitions_Teachers_Experience');
 						$postData['Teachers_Qualifications'] = $this->input->post('Tuitions_Teachers_type');
 						$postData['Positives_Outcomes'] = $this->input->post('Tuitions_Requirements_Teachers');
+						$postData['Available_Timings'] = $this->input->post('Tuitions_Available_Timings_post');
 					}
 					
 					$postData['postal_code'] = $this->input->post('Postal_code'); 
@@ -1713,7 +1714,7 @@ echo $pro;
 								$postData['intership_Post_Vacant'] = $this->input->post('intership_Post_Vacant');
 							}
 							$postData['intership_Need_Stipend'] = $this->input->post('intership_Need_Stipend');
-							$postData['Available_Timings'] = $this->input->post('Tuitions_Available_Timings');
+							$postData['Available_Timings'] = $this->input->post('Tuitions_Available_Timings_intership');
 							$postData['postal_code'] = $this->input->post('Postal_code'); 
 							$postData['town'] = $this->input->post('Town');
 							$postData['lat'] = $this->input->post('latitude');
