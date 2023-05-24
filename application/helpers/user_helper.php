@@ -288,11 +288,11 @@ function get_all_boost()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT id, user_id,title,category_id,subcategory_id,town,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 1 UNION
-  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1 UNION
-  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 1  UNION 
+  $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 1 UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1 UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 1  UNION 
  
-  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1 ";
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1 ";
   
   
   $category_data = $ci->db->query($query);        
@@ -309,11 +309,11 @@ function get_product_by_subid($subcategory_id)
        //load databse library
        $ci->load->database();
 
-  $query="SELECT id, user_id,title,category_id,subcategory_id,town,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 1 AND subcategory_id = $subcategory_id UNION
-  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1  AND Job_type	 = $subcategory_id UNION
-  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 1  AND Job_type	 = $subcategory_id UNION 
+  $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 1 AND subcategory_id = $subcategory_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1  AND Job_type	 = $subcategory_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 1  AND Job_type	 = $subcategory_id UNION 
  
-  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1  AND Education_type = $subcategory_id";
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1  AND Education_type = $subcategory_id";
   
   
   $category_data = $ci->db->query($query);        
