@@ -62,21 +62,31 @@ class Welcome extends CI_Controller {
 		 // echo $this->db->last_query();
 		 $sub="";
 		 if($category_id==5){
-			$subcategory= get_all_subcategory();
+			$subcategory= get_all_product_type();
 		 }
 		 else{
-		$subcategory= get_subcategory_byid($category_id);
+		$subcategory= get_producttype_byid($category_id);
 		 }
       foreach($subcategory as $value){
 	//print_r($subcategory);die();
                              
 	$sub .=	'
-	<div class="va-card va-card_category"> <a class=" border-0"  href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;"> 
-		<p style="text-align:center;" class="my-auto pouler_Categories">
-		<img class="btn-change"  src="https://dbvertex.com/celnow/uploads/shopcategory/'.$value->icon.'" alt="">
-		 <center style="color:black; font-size:12px; font-weight:500">'.$value->sub_category.'</center>
+	<div class="va-card va-card_category"> <a class=" border-0"   
+		<p style="text-align:center;" class="my-auto pouler_Categories " ';
+		 if($category_id==1)
+		{
+		$sub.='	onclick="return getproduct( '.$value->subcategory_id.')"';
+	   
+		}
+		else
+		{
+			$sub.='	onclick="return getproduct( '.$value->id.')"';
+		}
+		$sub.='>
+		<img class="btn-change sub_new'.$value->subcategory_id.'"  src="https://dbvertex.com/celnow/uploads/shopcategory/'.$value->icon.'" alt="">
+		 <center style="color:black; font-size:12px; font-weight:500">'.$value->product_type.'</center>
 		</p>
-		  </a> 
+		
 		  </div>';
 		 
                           
@@ -85,6 +95,67 @@ class Welcome extends CI_Controller {
 echo $sub;                             
 		
 	}
+
+
+	public function getproduct($data = " ")
+	{
+
+          $subcategory_id = $this->input->post('subcategory_id');
+		 // echo $this->db->last_query();
+		 $sub="";
+		 if($subcategory_id==5){
+			$product= get_all_boost();
+		 }
+		 else{
+			
+		$product= get_product_by_subid($subcategory_id);
+		
+		 }
+		 if(!empty($product)){
+			
+		  foreach($product as $value){
+		  
+		
+      
+	//print_r($subcategory);die();
+                             
+	$sub .=	'
+	
+		  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
+                  <p  class="my-auto">
+                   <img class="va-thumbnail" src="https://dbvertex.com/celnow/'.$value->cover_img.'">
+                            
+    
+                  
+                  </p>
+
+                            <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$'.$value->price.'</p>
+                        <div class="va-title ms-3"><p>'.$value->title.'
+						</p> 
+                           </div>
+                           <div class="ms-3 align-items-center">
+                                        <p class="text-muted mb-2"
+                                            style="color:black;cursor: pointer; width: 100%; overflow:clip; line-height: 1.4; white-space:nowrap; text-overflow: ellipsis; line-height: 1.4; display:inline-block">
+                                             <span class="ms-0">'.$value->address.'</span></p><br>
+                                    
+                                    </div>
+                    </a> 
+                
+                    </div> '
+		  
+		  ;
+		 
+                          
+}                                
+		 }
+ 
+else {
+$sub.='<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
+ }                                 
+echo $sub;                             
+		
+	}
+
 
 	
 

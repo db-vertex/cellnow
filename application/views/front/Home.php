@@ -9,6 +9,11 @@
   background: #d1fae5;
   color: black;
 }
+.select {
+  background: #d1fae5;
+  color: black;
+  border-radius: 50%;
+}
 
 
 
@@ -208,17 +213,17 @@
 
                 <div class="va-carrousel-flexbox" id="sub-list">
                     <?php
-                $category = get_all_subcategory();
+                $category = get_all_product_type();
                 foreach ($category as $key => $cat) {
                   ?>
 
                     <div class="va-card va-card_category"> <a class=" border-0"
                             href="#" style="max-width: 45%;">
-                            <p style="text-align:center;" class="my-auto pouler_Categories">
+                            <p  style="text-align:center;" class="my-auto pouler_Categories sub_new<?php echo $cat->id; ?>" onclick="return getproduct(<?php echo $cat->id; ?>)">
                                 <img class="btn-change"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
                                 <center style="color:black; font-size:12px; font-weight:500">
-                                    <?php echo ucfirst($cat->sub_category); ?></center>
+                                    <?php echo ucfirst($cat->product_type); ?></center>
                             </p>
                         </a>
                     </div>
@@ -259,17 +264,18 @@
                 </svg>
             </button>
 
-            <div class="va-carrousel-flexbox_most">
+            <div class="va-carrousel-flexbox_most" id="product_list">
                    <?php
                   
             
                   $product = get_all_boost();   
-               
+              
             
               if(!empty($product)){
               $i = 1;
               $j = 1;
             foreach($product as $pro){
+            
              $session_login_id  = $user['user_id'] ?? null;
               $product_user_id = $pro->user_id;
               if($session_login_id !== $product_user_id){
@@ -286,14 +292,14 @@
 						          <img class=" rounded-5 va-thumbnail" src="<?php echo base_url();?>assets/images/Group 486.png" />
 
 						       <?php }?>
-                   <!-- <img class="img-fluid" 
-                            src="<?php echo base_url(); ?>assets/images/boost.png" style="
+                   <img class="img-fluid" 
+                            src="<?php echo base_url(); ?>assets/images/boost.png" style="width:100px;
    margin-top:-30%; margin-left:-20%">
-    <?php if($pro->verified_product==1){?>
+    <?php if(isset($pro->verified_product) ==1){?>
       <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" style="
    margin-top: -30%; ">
 
-   <?php }?>        -->
+   <?php }?>       
                   </p>
 
                             <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>
@@ -572,7 +578,6 @@
 						       <?php }?>
                             
                   </p>
-                            <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>
                         <div class="va-title ms-3">  <?php
                            $title = $pro->title;
                             if(strlen($title) <= 15)
@@ -776,6 +781,37 @@
   });
 
 }
+
+
+function getproduct(subcategory_id){
+
+ 
+//var res = "";
+ $("img").removeClass("select");
+ $(".sub_new"+subcategory_id).addClass("select");
+
+    // var allch =  $("#").val();
+
+  jQuery.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getproduct'); ?>",
+  data: { subcategory_id:subcategory_id},
+  success: function(res) 
+  {
+
+
+    $("#product_list").html(res);
+       
+  
+
+    // $('#load_cound').val("10");
+    
+  }
+  });
+
+}
+
+
   </script>
 
 <script type='text/javascript'>

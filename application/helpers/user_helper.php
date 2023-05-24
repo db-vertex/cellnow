@@ -250,6 +250,21 @@ function get_all_subcategory()
   return $category_data->result(); 
 }
 
+function get_all_product_type()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM product_type order by product_type";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
 function get_all_reusable()
 {
   //get main CodeIgniter object
@@ -273,12 +288,40 @@ function get_all_boost()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM category_reusable_parts WHERE pay_type=1";
-
+  $query="SELECT id, user_id,title,category_id,subcategory_id,town,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 1 UNION
+  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1 UNION
+  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 1  UNION 
+ 
+  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1 ";
+  
+  
   $category_data = $ci->db->query($query);        
 
   return $category_data->result(); 
 }
+
+
+function get_product_by_subid($subcategory_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT id, user_id,title,category_id,subcategory_id,town,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 1 AND subcategory_id = $subcategory_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1  AND Job_type	 = $subcategory_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 1  AND Job_type	 = $subcategory_id UNION 
+ 
+  SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1  AND Education_type = $subcategory_id";
+  
+  
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+
 
 function get_all_donate()
 {
@@ -288,8 +331,11 @@ function get_all_donate()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM category_reusable_parts WHERE pay_type=2";
-
+       $query="SELECT id, user_id,title,category_id,subcategory_id,town,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 2 UNION
+       SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 2 UNION
+       SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 2  UNION 
+      
+       SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 2 ";
   $category_data = $ci->db->query($query);        
 
   return $category_data->result(); 
@@ -541,6 +587,22 @@ function get_subcategory_byid($category_id)
 
   return $category_data->result(); 
 }
+
+function get_producttype_byid($category_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM product_type WHERE category_id=".$category_id ;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
 
 function get_subcategoryname_byid($sub_id)
 {
