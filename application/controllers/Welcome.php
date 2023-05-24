@@ -84,7 +84,9 @@ class Welcome extends CI_Controller {
 		 <center style="color:black; font-size:12px; font-weight:500">'.$value->product_type.'</center>
 		</p>
 		
-		  </div>';
+		  </div>
+		  '
+		  ;
 		 
                           
 }                                
@@ -118,7 +120,7 @@ echo $sub;
                              
 	$sub .=	'
 	
-		  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
+		  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="https://dbvertex.com/celnow/welcome/productdetail/'.$value->category_id.'/'.$value->id.'/'.$value->subcategory_id.'" style=""> 
                   <p  class="my-auto">
                    <img class="va-thumbnail" src="https://dbvertex.com/celnow/'.$value->cover_img.'">
                             

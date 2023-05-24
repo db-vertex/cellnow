@@ -212,8 +212,8 @@
                 </button>
 
                 <div class="va-carrousel-flexbox" id="sub-list">
-                   
-
+      
+                </div>
                     <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
@@ -224,7 +224,7 @@
                         </svg>
                     </button>
 
-                </div>
+              
             </div>
 
         </div>
