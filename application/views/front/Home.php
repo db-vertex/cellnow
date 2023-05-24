@@ -212,24 +212,7 @@
                 </button>
 
                 <div class="va-carrousel-flexbox" id="sub-list">
-                    <?php
-                $category = get_all_product_type();
-                foreach ($category as $key => $cat) {
-                  ?>
-
-                    <div class="va-card va-card_category"> <a class=" border-0"
-                            href="#" style="max-width: 45%;">
-                            <p  style="text-align:center;" class="my-auto pouler_Categories sub_new<?php echo $cat->id; ?>" onclick="return getproduct(<?php echo $cat->id; ?>)">
-                                <img class="btn-change"
-                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
-                                <center style="color:black; font-size:12px; font-weight:500">
-                                    <?php echo ucfirst($cat->product_type); ?></center>
-                            </p>
-                        </a>
-                    </div>
-
-                    <?php } ; ?>
-
+                   
 
                     <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
@@ -292,12 +275,10 @@
 						          <img class=" rounded-5 va-thumbnail" src="<?php echo base_url();?>assets/images/Group 486.png" />
 
 						       <?php }?>
-                   <img class="img-fluid" 
-                            src="<?php echo base_url(); ?>assets/images/boost.png" style="width:100px;
-   margin-top:-30%; margin-left:-20%">
-    <?php if(isset($pro->verified_product) ==1){?>
+                
+    <?php if($pro->verified_product ==1){ ?>
       <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" style="
-   margin-top: -30%; ">
+   margin-top: -40%; width:70px; margin-left:10px;">
 
    <?php }?>       
                   </p>

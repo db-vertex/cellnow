@@ -61,12 +61,9 @@ class Welcome extends CI_Controller {
           $category_id = $this->input->post('category_id');
 		 // echo $this->db->last_query();
 		 $sub="";
-		 if($category_id==5){
-			$subcategory= get_all_product_type();
-		 }
-		 else{
+		
 		$subcategory= get_producttype_byid($category_id);
-		 }
+		
       foreach($subcategory as $value){
 	//print_r($subcategory);die();
                              
