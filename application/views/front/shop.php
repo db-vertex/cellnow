@@ -472,7 +472,19 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                 </div>
                 <div class="row pl-3">
                 <small class="card-text ">
-                  <?php echo ucfirst($Categories_all_product->Description); ?>
+                <?php
+                           $title =$Categories_all_product->Description;
+                            if(strlen($title) <= 25)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,25) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
                 </small><br>
         </div>
 

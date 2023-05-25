@@ -1,4 +1,12 @@
-<div class="container" style=" margin-top: 180px;">
+<style>
+   .va-thumbnail {
+        border-radius: 20px;
+        border: 0px;
+        width: 100%;
+        max-height: 190px;
+        min-height: 190px;
+    }
+</style><div class="container" style=" margin-top: 180px;">
 
 <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
  
@@ -131,7 +139,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
      ?>
 
 <div class="col-lg-4 col-md-6  mb-2 ">
-    <div class="card" style="max-width: 25rem; border-radius: 28px;margin:auto;">
+    <div class="card" style="max-width: 22rem; border-radius: 28px;margin:auto;">
     <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
       <div class="card-block" style="padding:5px">
       <div class="card-title">
