@@ -561,13 +561,13 @@
                   </p>
                         <div class="va-title ms-3">  <?php
                            $title = $pro->title;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
                            
