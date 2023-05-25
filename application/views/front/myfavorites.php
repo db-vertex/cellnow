@@ -90,17 +90,18 @@
 
 
             $product = get_all_category_reusable_parts($product_id);
+           
 
           }
-          //   else if($value->category_id==2){
-          //       $product = get_all_category_Electronic($product_id);
-          //   }
-          //   else if($value->category_id==3){
-          //       $product = get_all_category_Furniture($product_id);
-          //   }
-          //   else if($value->category_id==4){
-          //       $product = get_all_category_Fashion($product_id);
-          //   }
+             else if($value->category_id==2){
+               $product = get_all_category_tuitions($product_id);
+           }
+            else if($value->category_id==3){
+                $product = get_all_category_job($product_id);
+             }
+             else if($value->category_id==4){
+                $product = get_all_category_internships($product_id);
+             }
       
           $wishlist = 0;
           if (!empty($user) && isset($user)) {
