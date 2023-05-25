@@ -71,7 +71,7 @@
         background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
         filter: drop-shadow(0px 0px 4.79774px #10B981);
         border-radius: 21px;
-        min-width: 55%;
+        min-width: 70%;
     }
 
     .cover_img_div {
@@ -158,7 +158,7 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: bold;
-            font-size: 24px;
+            font-size: 20px;
             line-height: 30px;
             /* identical to box height */
             color: #000000;
@@ -172,7 +172,7 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 600;
-            font-size: 24px;
+            font-size: 20px;
             line-height: 27px;
             color: #151515;
         }
@@ -202,8 +202,8 @@
         .details_profile {
             width: 434px;
             height: 140px;
-            left: 826px;
-            margin-top: 60px;
+            left: 426px;
+            margin-top: 30px;
             float: right;
             background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
@@ -285,7 +285,7 @@
             font-weight: 400;
             font-size: 14px;
             line-height: 0px;
-            padding-left: 9px;
+            padding-left: 5px;
             color: #898686;
         }
 
@@ -466,7 +466,7 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: bold;
-            font-size: 14px;
+            font-size: 10px;
             line-height: 30px;
             /* identical to box height */
             color: #000000;
@@ -501,7 +501,7 @@
         .details_text {
             font-family: 'Poppins';
             font-style: normal;
-            font-size: 15px;
+            font-size: 10px;
             line-height: 27px;
             color: #151515;
         }
@@ -974,14 +974,14 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                         </div>
                     </div>
-                    <div class="row  margin_top_css ms-5">
+                    <div class="row  mt-3 ms-5">
                         <p class="details_handing">General Details</p>
                     </div>
-                    <div class="row  mt-4" style="margin-left: 2.5rem!important;">
+                    <div class="row  mt-2" style="margin-left: 2.5rem!important;">
                         <hr class="hr " style="width: 200px; border: 1px solid #69D3B0; " />
                     </div>
                     <?php if($product_detail->category_id==1){?>
-                    <div class="row  mt-2 ms-5">
+                    <div class="row  ms-5">
                         <div class="col-3">
                             <p class="details_text">Brand</p>
                         </div>
@@ -990,7 +990,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
                     <?php } else if($product_detail->category_id==2){ ?>
-                    <div class="row  mt-2 ms-5">
+                    <div class="row   ms-5">
                         <div class="col-3">
                             <p class="details_text">Tuition Location</p>
                         </div>
@@ -999,7 +999,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
                     <?php } else if($product_detail->category_id==3 && $product_detail->category_id==4){ ?>
-                    <div class="row  mt-2 ms-5">
+                    <div class="row   ms-5">
                         <div class="col-3">
                             <p class="details_text">Job Location </p>
                         </div>
@@ -1008,7 +1008,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
                     <?php } ?>
-                    <div class="row  mt-2 ms-5">
+                    <div class="row  ms-5">
                         <div class="col-3">
                             <p class="details_text">City</p>
                         </div>
@@ -1017,7 +1017,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
 
-                    <div class="row  mt-2 ms-5">
+                    <div class="row   ms-5">
                         <div class="col-3">
                             <p class="details_text">Type</p>
                         </div>
@@ -1027,14 +1027,14 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     </div>
 
 
-                    <div class="row  margin_top_css ms-5">
+                    <div class="row  mt-3 ms-5">
                         <div class="col-12">
                             <i class="bi bi-geo-alt-fill" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
                             <span class="ms-2 details_text"> <?php echo $product_detail->address; ?></span>
                         </div>
                     </div>
 
-                    <div class="row  margin_top_css margin_left_css">
+                    <div class="row  mt-2 margin_left_css">
 
                         <?php   $shoplist = 0;
                 if (!empty($user) && isset($user)) {
@@ -1044,7 +1044,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     $shop_name= get_shop_name($shop_list->shop_id);?>
                         <div class="" style="">
                             <div class="col-12" style="text-align:center;">
-                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                <p class="  btn_Verified_shop_name pt-2"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                             alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:

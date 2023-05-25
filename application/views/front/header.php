@@ -747,6 +747,8 @@
     margin-left: 1px;
     border-left: 0.3em solid transparent;
 }
+
+
     </style>
 
 </head>
@@ -760,7 +762,7 @@
             <nav class="navbar navbar-expand-lg bg-body-">
 
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
-                        class="img-fluid" style="width:180px;padding-bottom:12px">
+                        class="img-fluid" style="width:180px;">
                 </a>
 
 
@@ -774,7 +776,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="margin-left: auto;">
                         <li class="nav-item dropdown" style="padding-right:10px" ;>
-                            <a class="nav-link dropdown-toggle fs-5 Categories_header" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" style=" color:#10B981;font-weight:bold;" id="ab">
                                 Categories
                             </a>
@@ -790,7 +792,7 @@
                             </ul>
                         </li>
                         <li class="nav-item dropdown" style="padding-right:10px" ;>
-                            <a class="nav-link dropdown-toggle fs-5 Services_header" href="#" role="button" data-bs-toggle="dropdown"
+                            <a class="nav-link dropdown-toggle  Services_header" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" style="color:#10B981;font-weight:bold;" id="ab">
                                 Services
                             </a>
@@ -809,12 +811,12 @@
                         </li>
 
                         <li class="nav-item" style="padding-right:10px" ;>
-                            <a class="nav-link fs-5 Post_header" href="<?php echo base_url();?>welcome/postproduct"
+                            <a class="nav-link  Post_header" href="<?php echo base_url();?>welcome/postproduct"
                                 style="color:#10B981;font-weight:bold;" id="ab">Post Ad</a>
                         </li>
 
                         <li class="nav-item" style="padding-right:10px" ;>
-                            <a class="nav-link fs-5 Shop_header" href="<?php echo base_url();?>welcome/shop"
+                            <a class="nav-link  Shop_header" href="<?php echo base_url();?>welcome/shop"
                                 style="color:#10B981;font-weight:bold;" id="ab">Shop</a>
                         </li>
 
@@ -826,7 +828,7 @@
                         <img class="img-fluid rounded-corners  d-block" style="height: 30.9px;
                                       width: 30.9px; margin-top: 10px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
 
-                        <a class="nav-link dropdown-toggle fs-5" href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
                             &nbsp <?php echo ucfirst($profile->name);?>
                         </a>
