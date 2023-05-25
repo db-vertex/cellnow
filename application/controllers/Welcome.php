@@ -120,7 +120,7 @@ echo $sub;
                              
 	$sub .=	'
 	
-		  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="http://localhost:8000/welcome/productdetail/'.$value->category_id.'/'.$value->id.'/'.$value->subcategory_id.'" style=""> 
+		  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="https://dbvertex.com/celnow/welcome/productdetail/'.$value->category_id.'/'.$value->id.'/'.$value->subcategory_id.'" style=""> 
                   <p  class="my-auto">
                    <img class="va-thumbnail" src="https://dbvertex.com/celnow/'.$value->cover_img.'">
                             
