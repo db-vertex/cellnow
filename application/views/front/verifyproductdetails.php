@@ -79,8 +79,10 @@
     }
 
     .details_img_box {
-        width: 137.69px;
-        max-height: 132.31px;
+        min-width: 127.69px;
+    max-width: 127.69px;
+    max-height: 122.31px;
+    min-height: 122.31px;
         left: 114px;
         top: 1213.13px;
         filter: drop-shadow(0px 0px 1.07571px #10B981);
