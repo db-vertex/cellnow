@@ -204,14 +204,15 @@ foreach($shop as $value){
             <div class="col-lg-4 col-sm-6 mt-3 mb-2">
                 <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
                     <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img
-                            style="max-height: 261px;" class="card-img-top" alt="Card image cap"
+                            style="max-height: 261px;" class="va-thumbnail card-img-top" alt="Card image cap"
                             src="<?php echo base_url();?>uploads/shop/<?php echo $value->shop_images;?>"></a>
                     <div class="card-block" style="padding:8px">
                         <h4 class="card-title"><?php echo $value->name;?></h4>
                         <p class="card-text"><?php echo $value->description;?></p><br>
                         <?php $username = get_user_name($value->user_id);?>
                         <h5 class="card-title"><?php echo $username;?></h5>
-                        <i class="fa fa-map-marker"></i> <span><?php echo $value->Address;?></span><br>
+                        <i class="bi bi-geo-alt-fill" aria-hidden="true"
+                                            style="font-size:18px; color:#69d3b0"></i> <span><?php echo $value->Address;?></span><br>
 
                     </div>
                 </div>

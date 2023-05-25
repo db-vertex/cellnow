@@ -1239,13 +1239,13 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="col-5">
                                         <p class="related_ads_card_title"> <?php
                            $title =$relatedproduct->title;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -1267,13 +1267,13 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <small class="card-text"
                                             style="color: #575757;"> <?php
                            $title =$relatedproduct->Description;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            

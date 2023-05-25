@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete"></script>
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCMAgcA5UHPOEPMEnUrU3LEOrvKTIR2FY8&libraries=places&callback=initAutocomplete"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
 
@@ -378,8 +378,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               </div>
                 </div>
           </div>
-          <input type="text" class="form-control" name="latitude" id="latitude" hidden/>
-         <input type="text" class="form-control" name="longitude" id="longitude" hidden/>
+          <input type="text" class="form-control" name="latitude" id="latitude" />
+         <input type="text" class="form-control" name="longitude" id="longitude" />
        
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>
@@ -582,8 +582,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
             <div class="form-group">
               <label>Google Address</label>
-              <input name="Address" class="form-control" placeholder="Address" id="location" type="text"  maxlength="30"
-                value="<?php echo set_value('Address'); ?>" style="border-radius:30px; border-color:#13C571" required>
+              <input name="Address" class="form-control" placeholder="Address" id="Address" type="text"  maxlength="30"
+                value="" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Address is required.
               </div>
@@ -675,7 +675,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               </div>
                 </div>
           </div>
-
+          <input type="text" class="form-control" name="latitude" id="latitude" />
+         <input type="text" class="form-control" name="longitude" id="longitude" />
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>
 
