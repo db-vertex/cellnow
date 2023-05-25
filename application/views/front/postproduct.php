@@ -922,15 +922,16 @@
                                 <select class="form-select post_input_fild" id="Tuitions_Education_Type"
                                     name="Tuitions_Education_Type">
                                     <option value="">Select Education Type</option>
-                                    <option value="Academic based">Academic based</option>
-                                    <option value="Dance Classes">Dance Classes</option>
-                                    <option value="Self-defence Classes">Self-defence Classes</option>
-                                    <option value="Sports">Sports</option>
-                                    <option value="Swimming Classes">Swimming Classes </option>
-                                    <option value="Typing">Typing</option>
-                                    <option value="Computer Classes">Computer Classes</option>
-                                    <option value="Special abled Teachers">Special abled Teachers</option>
-                                    <option value="Computer Classes">Others</option>
+                                    <option value="13">Academic based</option>
+                                    <option value="69">Dance Classes</option>
+                                    <option value="14">Music Classes</option>
+                                    <option value="15">Self-defence Classes</option>
+                                    <option value="16">Sports</option>
+                                    <option value="17">Swimming Classes </option>
+                                    <option value="18">Typing</option>
+                                    <option value="19">Computer Classes</option>
+                                    <option value="20">Special abled Teachers</option>
+                                    <option value="70">Others</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Tuitions loction.
@@ -969,8 +970,7 @@
                             </div>
 
                             <div class="col-sm-6 hiddens" id="Tuitions_Teachers_Experience_div">
-                                <label for="Tuitions_Teachers_Experience" class="form-label post_input_lable">Experience
-                                    required</label>
+                                <label for="Tuitions_Teachers_Experience" class="form-label post_input_lable">Experience</label>
                                 <select class="form-select post_input_fild" id="Tuitions_Teachers_Experience"
                                     name="Tuitions_Teachers_Experience">
                                     <option value="">Select Experience</option>
@@ -978,7 +978,7 @@
                                     <option value="No">No</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid Experience required .
+                                    Please provide a valid Experience.
                                 </div>
                             </div>
 
@@ -1017,6 +1017,29 @@
                                     Please select Available Timings.
                                 </div>
                             </div>
+
+                            <div class="col-sm-6 hiddens" id="Tuitions_Available_Timings_post_div">
+                                <label for="Tuitions_Available_Timings_post" class="form-label post_input_lable">Available
+                                    Timings</label>
+                                <input type="text" class="form-control post_input_fild" id="Tuitions_Available_Timings_post"
+                                    name="Tuitions_Available_Timings_post" placeholder="Please select Available_Timings">
+                                <div class="invalid-feedback">
+                                    Please select Available Timings.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="Tuitions_Available_Timings_intership_div">
+                                <label for="Tuitions_Available_Timings_intership" class="form-label post_input_lable">Available
+                                    Timings</label>
+                                <input type="text" class="form-control post_input_fild" id="Tuitions_Available_Timings_intership"
+                                    name="Tuitions_Available_Timings_intership" placeholder="Please select Available_Timings">
+                                <div class="invalid-feedback">
+                                    Please select Available Timings.
+                                </div>
+                            </div>
+
+
+                         
 
 
                             <div class="col-sm-6 hiddens" id="Tuitions_person_Fees_div">
@@ -1078,32 +1101,33 @@
                                 <label for="Job_type" class="form-label post_input_lable">Job Type</label>
                                 <select class="form-select post_input_fild" id="Job_type" name="Job_type">
                                     <option value="">Select Job Type</option>
-                                    <option value="Photographer">Photographer</option>
-                                    <option value="Videographer">Videographer</option>
-                                    <option value="Event planers">Event planers</option>
-                                    <option value="Event execution helpers">Event execution helpers</option>
-                                    <option value="Painters">Painters</option>
-                                    <option value="Legal assistant">Legal assistant</option>
-                                    <option value="Billing manager">Billing manager</option>
-                                    <option value="Sales Executing">Sales Executing</option>
-                                    <option value="Marketing Executive">Marketing Executive</option>
-                                    <option value="Brand Manager">Brand Manager</option>
-                                    <option value="Babysitter">Babysitter</option>
-                                    <option value="Nurse">Nurse</option>
-                                    <option value="Elderly Helpers">Elderly Helpers</option>
-                                    <option value="Personal Drivers">Personal Drivers</option>
-                                    <option value="Special abled helper and teacher">Special abled helper and teacher
+                                    <option value="21">Photographer</option>
+                                    <option value="71">Videographer</option>
+                                    <option value="23">Event planers</option>
+                                    <option value="24">Event execution helpers</option>
+                                    <option value="25">Painters</option>
+                                    <option value="26">Legal assistant</option>
+                                    <option value="27">Billing manager</option>
+                                    <option value="28">Sales Executing</option>
+                                    <option value="29">Marketing Executive</option>
+                                    <option value="30">Brand Manager</option>
+                                    <option value="31">Babysitter</option>
+                                    <option value="32">Nurse</option>
+                                    <option value="33">Elderly Helpers</option>
+                                    <option value="34">Personal Drivers</option>
+                                    <option value="35">Special abled helper and teacher
                                     </option>
-                                    <option value="NGO">NGO</option>
-                                    <option value="Web development">Web development</option>
-                                    <option value="Digital Marketing">Digital Marketing</option>
-                                    <option value="App Development">App Development</option>
-                                    <option value="SCO">SCO</option>
-                                    <option value="Copywriter">Copywriter</option>
-                                    <option value="Graphic Designer">Graphic Designer</option>
-                                    <option value="Animator/Video game designers">Animator/Video game designers</option>
-                                    <option value="Logo Designers">Logo Designers</option>
-                                    <option value="Other jobs">Other jobs</option>
+                                    <option value="36">NGO</option>
+                                    <option value="37">Web development</option>
+                                    <option value="38">Digital Marketing</option>
+                                    <option value="39">App Development</option>
+                                    <option value="40">SCO</option>
+                                    <option value="41">Copywriter</option>
+                                    <option value="42">Graphic Designer</option>
+                                    <option value="43">Animator/Video game designers</option>
+                                    <option value="44">Designers</option>
+                                    <option value="45">Logo Designers</option>
+                                    <option value="46">Other jobs</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Job Type.
@@ -1117,33 +1141,33 @@
                                 <select class="form-select post_input_fild" id="intership_Job_type"
                                     name="intership_Job_type">
                                     <option value="">Select Job Type</option>
-                                    <option value="Field Marketing">Field Marketing</option>
-                                    <option value="Sales Manager">Sales Manager</option>
-                                    <option value="Human Resources">Human Resources</option>
-                                    <option value="Event Management">Event Management</option>
-                                    <option value="Software">Software</option>
-                                    <option value="Digital marketing">Digital marketing</option>
-                                    <option value="Accounts executive">Accounts executive</option>
-                                    <option value="Data Management">Data Management</option>
-                                    <option value="Fashion design">Fashion design</option>
-                                    <option value="Architecture">Architecture</option>
-                                    <option value="Engineering">Engineering</option>
-                                    <option value="Para legal">Para legal</option>
-                                    <option value="Lawyer">Lawyer</option>
-                                    <option value="Dental Assistant">Dental Assistant</option>
-                                    <option value="Nurse">Nurse</option>
-                                    <option value="Laboratory Technician">Laboratory Technician</option>
-                                    <option value="Journalist">Journalist</option>
-                                    <option value="Copywriter">Copywriter</option>
-                                    <option value="Communications manager">Communications manager</option>
-                                    <option value="Public relations specialist">Public relations specialist</option>
-                                    <option value="Meeting/event planner">Meeting/event planner</option>
-                                    <option value="Social media manager">Social media manager</option>
-                                    <option value="Brand manager">Brand manager</option>
-                                    <option value="Graphic designer">Graphic designer</option>
-                                    <option value="Animator/video game designer">Animator/video game designer</option>
-                                    <option value="Photographer">Photographer</option>
-                                    <option value="Others">Others</option>
+                                    <option value="47">Field Marketing</option>
+                                    <option value="48">Sales Manager</option>
+                                    <option value="49">Human Resources</option>
+                                    <option value="50">Event Management</option>
+                                    <option value="51">Software</option>
+                                    <option value="52">Digital marketing</option>
+                                    <option value="53">Accounts executive</option>
+                                    <option value="54">Data Management</option>
+                                    <option value="55">Fashion design</option>
+                                    <option value="56">Architecture</option>
+                                    <option value="57">Engineering</option>
+                                    <option value="58">Para legal</option>
+                                    <option value="59">Lawyer</option>
+                                    <option value="60">Dental Assistant</option>
+                                    <option value="61">Nurse</option>
+                                    <option value="62">Laboratory Technician</option>
+                                    <option value="63">Journalist</option>
+                                    <option value="64">Copywriter</option>
+                                    <option value="65">Communications manager</option>
+                                    <option value="66">Public relations specialist</option>
+                                    <option value="67">Meeting/event planner</option>
+                                    <option value="68">Social media manager</option>
+                                    <option value="72">Brand manager</option>
+                                    <option value="73">Graphic designer</option>
+                                    <option value="74">Animator/video game designer</option>
+                                    <option value="22">Photographer</option>
+                                    <option value="">Others</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Job Type.
@@ -1563,7 +1587,7 @@
 
     <script>
     $('#Tuitions_Education_Type').change(function() {
-        if ($(this).val() == "Academic based") {
+        if ($(this).val() == "13") {
             document.getElementById("school_eduction_div").style.display = "block";
             school_eduction.required = true;
 
@@ -1628,6 +1652,8 @@
             $('#intership_Skills_Qualifications').prop('required', false);
             $('#intership_Need_Stipend').prop('required', false);
             $('#intership_Post_Vacant').prop('required', false);
+            $('#Tuitions_Available_Timings_post').prop('required', false);
+            $('#Tuitions_Available_Timings_intership').prop('required', false);
 
 
 
@@ -1691,8 +1717,9 @@
             $('#intership_qustions').prop('required', false);
             $('#intership_Skills_Qualifications').prop('required', false);
             $('#intership_Need_Stipend').prop('required', false);
-            $('#intership_Post_Vacant').prop('required', false);
-
+            $('#intership_Post_Vacant').prop('required', false); 
+            $('#Tuitions_Available_Timings_post').prop('required', false);
+            $('#Tuitions_Available_Timings_intership').prop('required', false);
 
             document.getElementById("school_eduction_div").style.display = "none";
 
@@ -1746,22 +1773,22 @@
 
 
             $('#subcategory').on(
-                'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings,Tuitions_Teachers_Experience,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers',
+                'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings_post,Tuitions_Teachers_Experience,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers',
                 function() {
-                    $("#Tuitions_loction_div,#Tuitions_gender_div,#Tuitions_Education_Type_div,#Tuitions_Available_Timings_div,#Tuitions_Teachers_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_type_div,#Tuitions_Requirements_Teachers_div")
+                    $("#Tuitions_loction_div,#Tuitions_gender_div,#Tuitions_Education_Type_div,#Tuitions_Available_Timings_post_div,#Tuitions_Teachers_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_type_div,#Tuitions_Requirements_Teachers_div")
                         .toggle($(this).val() == 13);
                     if ($(this).val() == 13) {
                         Tuitions_loction.required = true;
                         Tuitions_gender.required = true;
                         Tuitions_Education_Type.required = true;
-                        Tuitions_Available_Timings.required = true;
+                        Tuitions_Available_Timings_post.required = true;
                         Tuitions_Teachers_Experience.required = true;
                         Tuitions_person_Fees.required = true;
                         Tuitions_Teachers_type.required = true;
                         Tuitions_Requirements_Teachers.required = true;
                     }
                 }).trigger(
-                'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers,Tuitions_Teachers_Experience'
+                'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings_post,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers,Tuitions_Teachers_Experience'
             );
 
 
@@ -1778,19 +1805,19 @@
 
 
             $('#subcategory').on(
-                'change.intership_Job_type,Job_Location,intership_Need_Stipend,Tuitions_Available_Timings',
+                'change.intership_Job_type,Job_Location,intership_Need_Stipend,Tuitions_Available_Timings_intership',
                 function() {
-                    $("#intership_Job_type_div,#Job_Location_div,#intership_Need_Stipend_div,#Tuitions_Available_Timings_div")
+                    $("#intership_Job_type_div,#Job_Location_div,#intership_Need_Stipend_div,#Tuitions_Available_Timings_intership_div")
                         .toggle($(this).val() == 17 || $(this).val() == 18);
                     if ($(this).val() == 17 || $(this).val() == 18) {
                         intership_Job_type.required = true;
                         Job_Location.required = true;
                         intership_Need_Stipend.required = true;
-                        Tuitions_Available_Timings.required = true;
+                        Tuitions_Available_Timings_intership.required = true;
 
                     }
                 }).trigger(
-                'change.intership_Job_type,Job_Location,intership_Need_Stipend,Tuitions_Available_Timings'
+                'change.intership_Job_type,Job_Location,intership_Need_Stipend,Tuitions_Available_Timings_intership'
             );
 
 
@@ -1876,6 +1903,9 @@
             $('#intership_Skills_Qualifications').prop('required', false);
             $('#intership_Need_Stipend').prop('required', false);
             $('#intership_Post_Vacant').prop('required', false);
+            $('#Tuitions_Available_Timings_post').prop('required', false);
+            $('#Tuitions_Available_Timings_intership').prop('required', false);
+            
 
             $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_product_Type',
                 function() {
