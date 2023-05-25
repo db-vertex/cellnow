@@ -63,6 +63,14 @@
       color: white;
       background-color: #;
     }
+
+    .va-thumbnail {
+        border-radius: 20px;
+        border: 0px;
+        width: 100%;
+        max-height: 190px;
+        min-height: 190px;
+    }
   </style>
 </head>
 
@@ -129,7 +137,7 @@
 
 
           <div class="col-lg-4 col-md-6  mb-2">
-            <div class="card" style="max-width: 25rem; border-radius: 28px;margin:auto;">
+            <div class="card" style="max-width: 22rem; border-radius: 28px;margin:auto;">
               <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $product->cover_img;?>" class="card-img-top" alt="Card image cap">
               <div class="card-block" style="padding:5px">
                 <div class="card-title">
