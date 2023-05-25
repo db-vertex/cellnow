@@ -79,10 +79,10 @@
     }
 
     .details_img_box {
-        min-width: 127.69px;
-    max-width: 127.69px;
-    max-height: 122.31px;
-    min-height: 122.31px;
+        min-width: 117.69px;
+    max-width: 117.69px;
+    max-height: 112.31px;
+    min-height: 112.31px;
         left: 114px;
         top: 1213.13px;
         filter: drop-shadow(0px 0px 1.07571px #10B981);
@@ -195,7 +195,7 @@
         .details_text {
             font-family: 'Poppins';
             font-style: normal;
-            font-size: 12px;
+            font-size: 15px;
             line-height: 17px;
             color: #151515;
         }
