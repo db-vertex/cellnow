@@ -183,7 +183,7 @@
                   <div class=col-6><?php echo $type_name; ?></div>
                 </div>
                 <?php } else if($product->category_id==3 && $product->category_id==4){ 
-                  $type_name = get_product_type_name($product->Job_Type); 
+                  $type_name = get_product_type_name($product->Job_type); 
                   ?>
  <div class="row pl-3">
  <div class=col-6>Job Type</div>
