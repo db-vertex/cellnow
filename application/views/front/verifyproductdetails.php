@@ -160,8 +160,8 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: bold;
-            font-size: 20px;
-            line-height: 30px;
+            font-size: 12px;
+            line-height: 17px;
             /* identical to box height */
             color: #000000;
             /* Inside auto layout */
@@ -469,7 +469,7 @@
             font-style: normal;
             font-weight: bold;
             font-size: 10px;
-            line-height: 30px;
+            line-height: 17px;
             /* identical to box height */
             color: #000000;
             /* Inside auto layout */
