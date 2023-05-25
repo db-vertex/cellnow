@@ -160,7 +160,7 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: bold;
-            font-size: 12px;
+            font-size: 20px;
             line-height: 17px;
             /* identical to box height */
             color: #000000;
@@ -504,7 +504,7 @@
             font-family: 'Poppins';
             font-style: normal;
             font-size: 10px;
-            line-height: 27px;
+            line-height: 17px;
             color: #151515;
         }
 
