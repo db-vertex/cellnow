@@ -64,6 +64,51 @@ function get_all_category_reusable_parts($id)
   return $category_data->row(); 
 }
 
+function get_all_category_tuitions($id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_tuitions WHERE id=".$id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
+function get_all_category_job($id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_job WHERE id=".$id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
+function get_all_category_internships($id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_internships WHERE id=".$id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
 
 function get_category_reusable_parts_by_category()
 {

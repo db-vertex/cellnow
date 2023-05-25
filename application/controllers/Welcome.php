@@ -1294,15 +1294,15 @@ $session_id = $this->session->userdata('id');
            
          }
          else if($cateory == 2){
-             $Categories_all_product = get_all_category_Electronic($id);  
+             $Categories_all_product = get_all_category_tuitions($id);  
              
          }
          else if($cateory == 3 ){
-             $Categories_all_product = get_all_category_Furniture($id); 
+             $Categories_all_product = get_all_category_job($id); 
              
          }
          else if($cateory == 4){
-          $Categories_all_product = get_all_category_Fashion($id);
+          $Categories_all_product = get_all_category_internships($id);
          
          }
       
