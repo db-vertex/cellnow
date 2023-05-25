@@ -234,13 +234,13 @@ function is_user_exists($phone){
 
 function get_category_name($id){
   $CI =& get_instance();
-    $category=$this->db->get_where("category", "id=$id")->row()->category;
+    $category=$CI->db->get_where("category", "id=$id")->row()->category;
     return $category;
 }
 
 function get_product_type_name($id){
   $CI =& get_instance();
-    $category=$this->db->get_where("product_type", "id=$id")->row()->product_type;
+    $category=$CI->db->get_where("product_type", "id=$id")->row()->product_type;
     return $category;
 }
 
