@@ -137,12 +137,24 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
       <div class="card-title">
       <div class="row">
         <div class="col-6"><b style="font-size:18px"><?php echo $Categories_all_product->title; ?> </b></div>
-        <div class="col-2">      <i style="margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"  data-uid="<?php echo $user["user_id"]; ?>"  class="<?php echo ($wishlist==0)?'fa fa-heart-o':'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>" data-pid="<?php echo $Categories_all_product->id; ?>" data-cid="<?php echo $Categories_all_product->category_id; ?>" data-wishlist="<?php echo $wishlist; ?>" ></i>
+        <div class="col-2">     
 </div>
         <div class="col-4" style="color:#10b981"><h5><b>$<?php echo $Categories_all_product->price; ?></b></h5></div>
       </div>
       </div>
-    <small class="card-text"><?php echo $Categories_all_product->Description; ?></small><br>
+    <small class="card-text"><?php
+                           $title =$Categories_all_product->Description;
+                            if(strlen($title) <= 25)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,25) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></small><br>
     
     <div class="row pt-3">
       <div class=col-6>Fresheness </div>
