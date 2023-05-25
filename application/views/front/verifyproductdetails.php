@@ -1253,7 +1253,19 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 <div class="row mt-1">
                                     <div class="col-12">
                                         <small class="card-text"
-                                            style="color: #575757;"><?php echo $relatedproduct->Description;?></small><br>
+                                            style="color: #575757;"> <?php
+                           $title =$relatedproduct->Description;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></small><br>
                                     </div>
                                 </div>
                                 <div class="row mt-1">

@@ -156,6 +156,7 @@ input::placeholder {
                 <div class="va-carrousel-flexbox">
                     <?php
                 $category = get_all_shopcategory();
+             
                 foreach ($category as $key => $cat) {
                   ?>
 
@@ -195,7 +196,7 @@ input::placeholder {
 
         <div class="row">
             <?php $shop = get_all_store();
-
+if(!empty($shop)){
 foreach($shop as $value){
    
 
@@ -215,11 +216,11 @@ foreach($shop as $value){
                     </div>
                 </div>
             </div>
-            <?php } ?>
+            <?php } }else{ ?>
+                <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
 
 
-
-
+<?php } ?>
 
 
 

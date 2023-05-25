@@ -446,8 +446,6 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
     }
     ?>
   
-    <!-- <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center> -->
-
    
 
     <div class="col-lg-4 col-md-6  mb-2">
@@ -511,6 +509,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
           </div> 
 
      <?php } }else{?>
+      <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
 <?php } ?>
     </div>
   </div>
