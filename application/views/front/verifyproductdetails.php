@@ -743,6 +743,7 @@
 <body>
     <?php
   $product_detail = $categories_data;
+ 
   $wishlist = 0;
   if (!empty($user) && isset($user)) {
     $wishlit = get_wishlist($product_detail->id, $product_detail->category_id, $user["user_id"]);
@@ -966,9 +967,10 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 data-wishlist="<?php echo $wishlist; ?>"></i>
                         </div>
                         <div class="col-5">
-                            <?php if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
+                            <?php if(isset($product_detail->price)){
+                                if( $product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
                             <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
-                            <?php  } ?>
+                            <?php  } }?>
 
                         </div>
                     </div>
@@ -978,15 +980,34 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <div class="row  mt-4" style="margin-left: 2.5rem!important;">
                         <hr class="hr " style="width: 200px; border: 1px solid #69D3B0; " />
                     </div>
-
+                    <?php if($product_detail->category_id==1){?>
                     <div class="row  mt-2 ms-5">
-                        <div class="col-3">
-                            <p class="details_text">Condition</p>
-                        </div>
                         <div class="col-3">
                             <p class="details_text">Brand</p>
                         </div>
+                        <div class="col-3">
+                            <p class="details_text"><?php echo $product_detail->brand; ?></p>
+                        </div>
                     </div>
+                    <?php } else if($product_detail->category_id==2){ ?>
+                    <div class="row  mt-2 ms-5">
+                        <div class="col-3">
+                            <p class="details_text">Tuition Location</p>
+                        </div>
+                        <div class="col-3">
+                            <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
+                        </div>
+                    </div>
+                    <?php } else if($product_detail->category_id==3 && $product_detail->category_id==4){ ?>
+                    <div class="row  mt-2 ms-5">
+                        <div class="col-3">
+                            <p class="details_text">Job Location </p>
+                        </div>
+                        <div class="col-3">
+                            <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
+                        </div>
+                    </div>
+                    <?php } ?>
                     <div class="row  mt-2 ms-5">
                         <div class="col-3">
                             <p class="details_text">City</p>
@@ -998,10 +1019,10 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                     <div class="row  mt-2 ms-5">
                         <div class="col-3">
-                            <p class="details_text">Model</p>
+                            <p class="details_text">Type</p>
                         </div>
                         <div class="col-3">
-                            <p class="details_text"><?php echo $product_detail->type; ?></p>
+                            <p class="details_text"><?php if($product_detail->category_id==1){ echo $product_detail->type;} else if($product_detail->category_id==2 ){ echo $product_detail->Education_Type;} else if($product_detail->category_id==4 && $product_detail->category_id==3){ echo $product_detail->Job_type;}  ?></p>
                         </div>
                     </div>
 
@@ -1223,9 +1244,9 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                                 style="color:#ff6737;padding: 0px;"></i></b>
                                     </div>
                                     <div class="col-4">
-                                        <?php if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
+                                        <?php if(isset($product_detail->price)){ if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
                                         <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
-                                        <?php  } ?>
+                                        <?php  } }?>
                                     </div>
 
                                 </div>

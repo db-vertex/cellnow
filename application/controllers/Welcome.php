@@ -120,7 +120,7 @@ echo $sub;
                              
 	$sub .=	'
 	
-		  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="https://dbvertex.com/celnow/welcome/productdetail/'.$value->category_id.'/'.$value->id.'/'.$value->subcategory_id.'" style=""> 
+		  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="http://localhost:8000/welcome/productdetail/'.$value->category_id.'/'.$value->id.'/'.$value->subcategory_id.'" style=""> 
                   <p  class="my-auto">
                    <img class="va-thumbnail" src="https://dbvertex.com/celnow/'.$value->cover_img.'">
                             
@@ -1294,15 +1294,21 @@ $session_id = $this->session->userdata('id');
            
          }
          else if($cateory == 2){
-             $Categories_all_product = get_all_category_tuitions($id);  
+             $Categories_all_product = get_all_category_tuitions($id);	
+			 	   $Category_product = $this->db->query("SELECT * FROM category_tuitions  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC")->result();
+  
              
          }
          else if($cateory == 3 ){
              $Categories_all_product = get_all_category_job($id); 
+			 $Category_product = $this->db->query("SELECT * FROM category_job  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC")->result();
+
              
          }
          else if($cateory == 4){
           $Categories_all_product = get_all_category_internships($id);
+		  $Category_product = $this->db->query("SELECT * FROM category_internships  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC")->result();
+
          
          }
       
