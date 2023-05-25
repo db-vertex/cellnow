@@ -132,23 +132,37 @@ echo $sub;
                         <div class="va-title ms-3"><p>';
 						$title = $value->title;
 						
-						if(strlen($title) <= 50)
+						if(strlen($title) <= 10)
 						{
-						$pro .= ucfirst($title);
+						$sub .= ucfirst($title);
 					   
    
 						}
 						else
 						{
-						$y = substr($title, 0, 50) .'...';
-						$pro .= ucfirst($y);
+						$y = substr($title, 0, 10) .'...';
+						$sub .= ucfirst($y);
 						}
-						$pro.=' </p> 
+						$sub.=' </p> 
                            </div>
                            <div class="ms-3 align-items-center">
                                         <p class="text-muted mb-2"
                                             style="color:black;cursor: pointer; width: 100%; overflow:clip; line-height: 1.4; white-space:nowrap; text-overflow: ellipsis; line-height: 1.4; display:inline-block">
-                                             <span class="ms-0">'.$value->address.'</span></p><br>
+                                             <span class="ms-0">';
+											 $title = $value->address;
+						
+						if(strlen($title) <= 10)
+						{
+						$sub .= ucfirst($title);
+					   
+   
+						}
+						else
+						{
+						$y = substr($title, 0, 10) .'...';
+						$sub .= ucfirst($y);
+						}
+						$sub.='</span></p><br>
                                     
                                     </div>
                     </a> 
