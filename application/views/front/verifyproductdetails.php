@@ -491,8 +491,8 @@
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 700;
-            font-size: 24px;
-            line-height: 35px;
+            font-size: 20px;
+            line-height: 25px;
             display: flex;
             align-items: flex-end;
             text-align: right;
@@ -959,7 +959,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <div class="col-2">
                             <i lass="bi bi-suit-heart" aria-hidden="true"
-                                style="font-size:25px; color:#69d3b0; padding: 0px;"
+                                style="font-size:18px; color:#69d3b0; padding: 0px;"
                                 <?php if (empty($user) || !isset($user)) { ?>
                                 href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
                                 data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
