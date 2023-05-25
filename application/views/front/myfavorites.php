@@ -150,7 +150,20 @@
                 </div>
                 <div class="row pl-3">
                 <small class="card-text ">
-                  <?php echo ucfirst($product->Description); ?>
+                <?php
+                           $title =$product->Description;
+                            if(strlen($title) <= 25)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,25) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
+                 
                 </small><br>
         </div>
 
