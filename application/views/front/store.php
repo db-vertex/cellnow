@@ -214,7 +214,19 @@ foreach($shop as $value){
                             src="<?php echo base_url();?>uploads/shop/<?php echo $value->shop_images;?>"></a>
                     <div class="card-block" style="padding:8px">
                         <h4 class="card-title"><?php echo $value->name;?></h4>
-                        <p class="card-text"><?php echo $value->description;?></p><br>
+                        <p class="card-text"> <?php
+                           $title = $value->description;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p><br>
                         <?php $username = get_user_name($value->user_id);?>
                         <h5 class="card-title"><?php echo $username;?></h5>
                         <i class="bi bi-geo-alt-fill" aria-hidden="true"

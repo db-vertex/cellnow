@@ -123,7 +123,8 @@
 
 <body>
 
-<?php $shop = get_id_by_shop($user['user_id']);?>
+<?php 
+   $shop = get_id_by_shop($user['user_id']);?>
   <div class="container" style=" margin-top: 180px;">
 
     <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
@@ -378,8 +379,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               </div>
                 </div>
           </div>
-          <input type="text" class="form-control" name="latitude" id="latitude" />
-         <input type="text" class="form-control" name="longitude" id="longitude" />
+          <input type="text" class="form-control" name="latitude" id="latitude" hidden/>
+         <input type="text" class="form-control" name="longitude" id="longitude" hidden/>
        
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>
@@ -675,8 +676,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
               </div>
                 </div>
           </div>
-          <input type="text" class="form-control" name="latitude" id="latitude" />
-         <input type="text" class="form-control" name="longitude" id="longitude" />
+          <input type="text" class="form-control" name="latitude" id="latitude" hidden/>
+         <input type="text" class="form-control" name="longitude" id="longitude" hidden/>
             <center><button class=" mb-2 btn btn-lg  text-white mt-2"
                 style="background-color:#13C571;border-radius:30px;width:40%;" type="submit" name="submit">Save</button>
 
