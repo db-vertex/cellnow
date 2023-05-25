@@ -238,6 +238,12 @@ function get_category_name($id){
     return $category;
 }
 
+function get_product_type_name($id){
+  $CI =& get_instance();
+    $category=$this->db->get_where("product_type", "id=$id")->row()->product_type;
+    return $category;
+}
+
 function get_shop_name($id){
   $CI =& get_instance();
   $category=$CI->db->get_where("shop", "id=$id")->row()->name;

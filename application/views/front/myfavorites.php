@@ -168,17 +168,28 @@
                 </small><br>
         </div>
 
+               
+                <?php if($product->category_id==1){
+                  ?>
                 <div class="row pl-3">
-                  <div class=col-6>Fresheness </div>
-                  <div class=col-6>New(Extra fresh)</div>
-                </div>
-
-                <div class="row pl-3">
-                  <div class=col-6>Model</div>
+                  <div class=col-6>Type</div>
                   <div class=col-6><?php echo $product->type; ?></div>
                 </div>
-
-
+                <?php } else if($product->category_id==2){
+                   $type_name = get_product_type_name($product->Education_Type); 
+                  ?>
+ <div class="row pl-3">
+                  <div class=col-6>Education Type</div>
+                  <div class=col-6><?php echo $type_name; ?></div>
+                </div>
+                <?php } else if($product->category_id==3 && $product->category_id==4){ 
+                  $type_name = get_product_type_name($product->Job_Type); 
+                  ?>
+ <div class="row pl-3">
+ <div class=col-6>Job Type</div>
+ <div class=col-6><?php echo $type_name; ?></div>
+</div>
+<?php } ?>
 
                 <div class="row text-center p-3">
                   <div class="col-1"><img src="<?php echo base_url();?>assets/images/location .png" ></i></div>
