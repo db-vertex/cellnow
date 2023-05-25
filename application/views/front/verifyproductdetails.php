@@ -1237,7 +1237,19 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             <div class="card-body related_ads_card">
                                 <div class="row">
                                     <div class="col-5">
-                                        <p class="related_ads_card_title"> <?php echo $relatedproduct->title;?></p>
+                                        <p class="related_ads_card_title"> <?php
+                           $title =$relatedproduct->title;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
                                     </div>
                                     <div class="col-3">
                                         <b style='font-size:18px;'><i class="fa fa-heart-o "
