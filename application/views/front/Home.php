@@ -275,10 +275,11 @@
 						          <img class=" rounded-5 va-thumbnail" src="<?php echo base_url();?>assets/images/Group 486.png" />
 
 						       <?php }?>
-                
+                  <p> <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
+   margin-top: -40%; width:50px; margin-left:10px;">
     <?php if($pro->verified_product ==1){ ?>
       <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" style="
-   margin-top: -40%; width:70px; margin-left:10px;">
+   margin-top: -70%; width:50px; margin-left:62px;"><p>
 
    <?php }?>       
                   </p>
