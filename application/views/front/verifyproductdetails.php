@@ -195,8 +195,8 @@
         .details_text {
             font-family: 'Poppins';
             font-style: normal;
-            font-size: 20px;
-            line-height: 27px;
+            font-size: 12px;
+            line-height: 17px;
             color: #151515;
         }
 
