@@ -129,8 +129,21 @@ echo $sub;
                   </p>
 
                             <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$'.$value->price.'</p>
-                        <div class="va-title ms-3"><p>'.$value->title.'
-						</p> 
+                        <div class="va-title ms-3"><p>';
+						$title = $value->title;
+						
+						if(strlen($title) <= 50)
+						{
+						$pro .= ucfirst($title);
+					   
+   
+						}
+						else
+						{
+						$y = substr($title, 0, 50) .'...';
+						$pro .= ucfirst($y);
+						}
+						$pro.=' </p> 
                            </div>
                            <div class="ms-3 align-items-center">
                                         <p class="text-muted mb-2"
