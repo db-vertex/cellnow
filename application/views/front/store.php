@@ -72,7 +72,13 @@ input::placeholder {
     padding-bottom: 0px;
     border-bottom: 6px solid #10B981;
 }
-
+.va-thumbnail {
+        border-radius: 20px;
+        border: 0px;
+        width: 100%;
+        max-height: 270px;
+        min-height: 270px;
+    }
 
 </style>
 <div class="container-fluid home_background" style=" margin-top: 125px;">
