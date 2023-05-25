@@ -853,7 +853,7 @@
 
 
                         <li class="nav-item" style="padding-right:10px" ;>
-                            <a  class="nav-link fs-5 login_header" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:bold;">Login
+                            <a  class="nav-link  login_header" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:bold;">Login
                                 </a>
                         </li>
                         <!-- <li class="nav-item" style="padding-right:10px" ;>

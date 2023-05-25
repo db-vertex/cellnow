@@ -183,8 +183,8 @@
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 700;
-            font-size: 30px;
-            line-height: 35px;
+            font-size: 25px;
+            line-height: 25px;
             display: flex;
             align-items: flex-end;
             text-align: right;
