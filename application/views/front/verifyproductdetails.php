@@ -65,24 +65,25 @@
 
     .details_img_cover {
 
-        max-height: 467px;
+        max-height: 367px;
         left: 114px;
         top: 588px;
         background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
         filter: drop-shadow(0px 0px 4.79774px #10B981);
         border-radius: 21px;
-        min-width: 70%;
+        min-width: 100%;
     }
+    
 
     .cover_img_div {
         text-align: center;
     }
 
     .details_img_box {
-        min-width: 117.69px;
-    max-width: 117.69px;
-    max-height: 112.31px;
-    min-height: 112.31px;
+        min-width: 90.69px;
+    max-width: 90.69px;
+    max-height: 90.31px;
+    min-height: 90.31px;
         left: 114px;
         top: 1213.13px;
         filter: drop-shadow(0px 0px 1.07571px #10B981);
@@ -183,7 +184,7 @@
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 700;
-            font-size: 25px;
+            font-size: 20px;
             line-height: 25px;
             display: flex;
             align-items: flex-end;
@@ -242,6 +243,11 @@
             /* identical to box height */
             color: #000000;
         }
+
+        .col-xl-4 {
+    flex: 0 0 auto;
+    width: 29.33333333%;
+}
 
         .deatails_profile_name_ads {
             font-family: 'Poppins';
@@ -344,7 +350,7 @@
             font-family: 'Lexend';
             font-style: normal;
             font-weight: 500;
-            font-size: 17px;
+            font-size: 15px;
             text-transform: capitalize;
             color: #047857;
         }
@@ -443,7 +449,7 @@
             font-family: 'Lexend';
             font-style: normal;
             font-weight: 500;
-            font-size: 17px;
+            font-size: 15px;
             text-transform: capitalize;
             color: #047857;
         }
@@ -647,8 +653,8 @@
     }
 
     .related_ads_card {
-        min-height: 235px;
-        max-height: 235px;
+        min-height: 200px;
+        max-height: 200px;
         left: 105px;
         top: 2174px;
         border-radius: 37px 37px 0px 0px;
@@ -658,11 +664,11 @@
     }
 
     .related_ads_card_img {
-        min-height: 282.1px;
-        max-height: 282.1px;
+        min-height: 200.1px;
+        max-height: 200.1px;
         left: 105px;
         top: 1889px;
-        border-radius: 37px 37px 0px 0px;
+        border-radius: 27px 27px 0px 0px;
     }
 
     .related_ads_card_title {
@@ -687,11 +693,11 @@
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 9.42857px 12.5714px;
+        padding: 7.42857px 6.5714px;
         gap: 4.71px;
 
-        width: 104.43px;
-        height: 36.86px;
+        width: 80.43px;
+        height: 26.86px;
 
         background: #10B981;
         /* C2/B */
@@ -711,7 +717,7 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
-        font-size: 12.7857px;
+        font-size: 9.7857px;
         line-height: 18px;
         color: #FFFFFF;
         flex: none;
@@ -775,7 +781,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
     </div>
     <div class="container mt-4" >
         <main>
-            <div class="breadcrumb_container container mb-5">
+            <div class=" container mb-4">
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
@@ -786,8 +792,9 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     </div>
                 </div>
             </div>
-
-            <div class="row ">
+<div class="container">
+            <div class="row " style="margin-left: 30px;
+        margin-right: 30px;">
                 <div class="col-md-6">
                     <div class="cover_img_div">
                         <?php if ($product_detail->cover_img !== NULL) { ?>
@@ -848,7 +855,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="row">
                                         <div class="col-4">
                                             <i class="fa fa-calendar " aria-hidden="true"
-                                                style="font-size:18px; color:#69d3b0"></i>
+                                                style="font-size:15px; color:#69d3b0"></i>
                                         </div>
                                         <div class="col-8 mt-3">
                                             <span class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
@@ -885,11 +892,11 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-2 px-0">
+                                <div class="col-3 px-0">
                                     <div class="row">
                                         <div class="col-4">
                                             <i class="fa fa-eye" aria-hidden="true"
-                                                style="font-size:18px; color:#69d3b0"></i>
+                                                style="font-size:15px; color:#69d3b0"></i>
                                         </div>
                                         <div class="col-8 mt-3">
                                             <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
@@ -901,11 +908,11 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="row">
                                         <div class="col-4">
                                             <i class="fa fa-heart" aria-hidden="true"
-                                                style="font-size:18px; color:#69d3b0"></i>
+                                                style="font-size:15px; color:#69d3b0"></i>
 
                                         </div>
                                         <div class="col-8 mt-3">
-                                            <span class="detalis_option_text">Like</span>
+                                            <span class="detalis_option_text"> Like</span>
                                         </div>
                                     </div>
                                 </div>
@@ -914,19 +921,20 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <div class="col-4">
                                             <a class="btn-change" style="color:black;" id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
-                                                href="<?php echo base_url();?>welcome/login" <?php }else{ ""; }?>
-                                                id="share_desk"
-                                                onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');">
-                                                <i class="fa fareport_productdata-target=" #login"-share-alt"
-                                                    aria-hidden="true" style="font-size:18px; color:#69d3b0"> </i> </a>
+                                                href="<?php echo base_url();?>welcome/login" <?php } else{?>   id="share_desk"
+                                                onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"
+                                             <?php } ?>
+                                               >
+                                                <i class="fa fareport_productdata-target fa-share-alt"
+                                                    aria-hidden="true" style="font-size:15px; color:#69d3b0"> </i> </a>
 
                                         </div>
                                         <div class="col-8 mt-3">
-                                            <span class="detalis_option_text">Share</span>
+                                            <span class="detalis_option_text"> Share</span>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-3 px-0">
+                                <div class="col-2 px-0">
                                     <div class="row">
                                         <div class="col-4">
                                             <a class="btn-change" style="color:black; " id="GFG"
@@ -934,10 +942,10 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                                 href="<?php echo base_url();?>welcome/login" <?php } else { ?>
                                                 data-toggle="modal" data-target="#report_product" <?php } ?>><i
                                                     class="fa fa-exclamation-triangle" aria-hidden="true"
-                                                    style="font-size:18px; color:#69d3b0"></i></a>
+                                                    style="font-size:15px; color:#69d3b0"></i></a>
                                         </div>
                                         <div class="col-8 mt-3">
-                                            <span class="detalis_option_text">Report</span>
+                                            <span class="detalis_option_text"> Report</span>
                                         </div>
                                     </div>
                                 </div>
@@ -953,7 +961,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                 </div>
 
                 <div class="col-md-6 mb-4 details_box_content">
-                    <div class="row margin_top_css ms-5">
+                    <div class="row margin_top_css ms-4">
                         <div class="col-5">
                             <p class="details_title"> <?php echo ucfirst($product_detail->title); ?></p>
                         </div>
@@ -976,14 +984,14 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                         </div>
                     </div>
-                    <div class="row  mt-3 ms-5">
+                    <div class="row  mt-3 ms-4">
                         <p class="details_handing">General Details</p>
                     </div>
                     <div class="row  mt-2" style="margin-left: 2.5rem!important;">
                         <hr class="hr " style="width: 200px; border: 1px solid #69D3B0; " />
                     </div>
                     <?php if($product_detail->category_id==1){?>
-                    <div class="row  ms-5">
+                    <div class="row  ms-4">
                         <div class="col-3">
                             <p class="details_text">Brand</p>
                         </div>
@@ -992,7 +1000,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
                     <?php } else if($product_detail->category_id==2){ ?>
-                    <div class="row   ms-5">
+                    <div class="row   ms-4">
                         <div class="col-3">
                             <p class="details_text">Tuition Location</p>
                         </div>
@@ -1001,7 +1009,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
                     <?php } else if($product_detail->category_id==3 && $product_detail->category_id==4){ ?>
-                    <div class="row   ms-5">
+                    <div class="row   ms-4">
                         <div class="col-3">
                             <p class="details_text">Job Location </p>
                         </div>
@@ -1010,7 +1018,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
                     <?php } ?>
-                    <div class="row  ms-5">
+                    <div class="row  ms-4">
                         <div class="col-3">
                             <p class="details_text">City</p>
                         </div>
@@ -1019,7 +1027,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
 
-                    <div class="row   ms-5">
+                    <div class="row   ms-4">
                         <div class="col-3">
                             <p class="details_text">Type</p>
                         </div>
@@ -1029,7 +1037,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     </div>
 
 
-                    <div class="row  mt-3 ms-5">
+                    <div class="row  mt-3 ms-4">
                         <div class="col-12">
                             <i class="bi bi-geo-alt-fill" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
                             <span class="ms-2 details_text"> <?php echo $product_detail->address; ?></span>
@@ -1213,14 +1221,16 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             </div>
                         </div>
                     </div>
-                    <div class="col-8  margin_top_css ms-5">
+                    <div class="col-8  margin_top_css ms-4">
                         <p class="details_handing_Description">Description</p>
                         <p class="details_Description"> <?php echo $product_detail->Description; ?></p>
                     </div>
                 </div>
             </div>
+                                                    </div>
 
-            <div class="row mt-5 justify-content-center">
+                                                    <div class="container">
+            <div class="row mt-5 justify-content-center" style="margin-left:30px; margin-right: 30px;">
                 <p class="Related_Ads">Related Ads</p>
 
                 <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
@@ -1230,7 +1240,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
 
 
-                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4">
+                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4 ml-4 mr-4">
                         <div class="card"
                             style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
                             <img class="related_ads_card_img  img-fluid"
@@ -1255,7 +1265,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     </div>
                                     <div class="col-3">
                                         <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                style="color:#ff6737;padding: 0px;"></i></b>
+                                                style="font-size:20px;color:#ff6737;padding: 0px;"></i></b>
                                     </div>
                                     <div class="col-4">
                                         <?php if(isset($product_detail->price)){ if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
@@ -1269,27 +1279,20 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <small class="card-text"
                                             style="color: #575757;"> <?php
                            $title =$relatedproduct->Description;
-                            if(strlen($title) <= 25)
+                            if(strlen($title) <= 55)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,25) . '...';
+                                $y = substr($title,0,55) . '...';
                                 echo ucfirst($y);
                               }
                            
                            ?></small><br>
                                     </div>
                                 </div>
-                                <div class="row mt-1">
-                                    <div class="col-3">
-                                        <p style="color: #575757;">Fresheness</p>
-                                    </div>
-                                    <div class="col-5">
-                                        <p style="color: #575757;">New(Extra fresh)</p>
-                                    </div>
-                                </div>
+                               
                                 <div class="row mt-1">
                                     <div class="col-3">
                                         <p style="color: #575757;">Model</p>
@@ -1306,7 +1309,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="col-5">
                                         <p tyle="color: #575757;"><?php echo $relatedproduct->address;?></p>
                                     </div>
-                                    <div class="col-3 pe-2">
+                                    <div class="col-4 pe-2">
                                         <a
                                             href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
                                             <p class="related_ads_details_button ">
@@ -1325,7 +1328,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
             </div>
 
-
+                            </div>
         </main>
     </div>
 </body>

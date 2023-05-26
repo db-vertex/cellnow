@@ -546,6 +546,7 @@
         align-items: center;
         cursor: pointer;
     }
+    
 
     .deals-paddle:focus {
         outline: none;
