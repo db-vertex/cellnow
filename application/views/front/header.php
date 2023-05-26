@@ -846,7 +846,7 @@
                         <img class="img-fluid rounded-corners  d-block" style="height: 30.9px;
                                       width: 30.9px; margin-top: 10px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
 
-                        <a class="nav-link dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
                             &nbsp <?php echo ucfirst($profile->name);?>
                         </a>
