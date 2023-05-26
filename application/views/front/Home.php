@@ -98,7 +98,7 @@
 
   <div class="container-fluid home_background"  style=" margin-top: 125px;">
 
-<div class="container-fluid">
+<div class="container">
   <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
   <?php
@@ -108,7 +108,7 @@
         ?>  
     <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
       <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px; max-height: 500px;
-    min-width: 500px;" class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
+    min-height: 500px;" class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
     </div>
     <?php
 
