@@ -133,11 +133,11 @@
 
 <body>
     <main>
-        <div class="container py-4" style="margin-top:25px">
+        <div class="container py-4" style="margin-top:8%">
 
             <div class="row " style="min-height:90%;">
                 <div class="col-md-7 col-sm-12 ps-0">
-                    <div class="h-100 p-5 ">
+                    <div class="h-100 p-3 ">
                         <img class="img-fluid" src="<?php echo base_url();?>assets/images/change.png">
                     </div>
                 </div>

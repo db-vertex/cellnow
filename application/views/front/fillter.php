@@ -662,7 +662,15 @@ flex-grow: 0;
 }
 
 
-
+.selected {
+  background: #d1fae5;
+  color: black;
+}
+.select {
+  background: #d1fae5;
+  color: black;
+  border-radius: 50%;
+}
 
 /* search btn line 11 to 89 */
 .search_wrap {
@@ -1259,7 +1267,7 @@ a:hover, a:visited, a:link, a:active
 
                 ?>
                  <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                      <p <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php } ?> class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
+                      <p <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?> class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
 
                 </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
           

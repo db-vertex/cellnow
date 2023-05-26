@@ -803,7 +803,7 @@
                 foreach ($shopcategory as $key => $cat) {
                   ?>
                                 <li><a class="dropdown-item" style="color:#10B981;font-weight:bold;"
-                                        href="<?php echo base_url();?>welcome/store"><?php echo $cat->shop_category; ?></a>
+                                        href="<?php echo base_url();?>welcome/store/<?php echo $cat->id?>"><?php echo $cat->shop_category; ?></a>
                                 </li>
 
                                 <?php }?>

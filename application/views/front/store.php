@@ -160,7 +160,7 @@ input::placeholder {
                 </button>
 
                 <div class="va-carrousel-flexbox">
-                    <?php
+                    <?php $id = $this->uri->segment(3); 
                 $category = get_all_shopcategory();
              
                 foreach ($category as $key => $cat) {
@@ -168,8 +168,8 @@ input::placeholder {
 
                     <div class="va-card va-card_category"> <a class=" border-0"
                             href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;">
-                            <p style="text-align:center;" class="my-auto pouler_Categories">
-                                <img class="btn-change"
+                            <p  style="text-align:center;" class="my-auto pouler_Categories">
+                                <img <?php if($id== $cat->id){ ?>style="background:#d1fae5; border-radius:50%;" <?php } ?> class="btn-change"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
                                 <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo ucfirst($cat->shop_category); ?></center>
@@ -201,21 +201,21 @@ input::placeholder {
     <div class="container">
 
         <div class="row">
-            <?php $shop = get_all_store();
+            <?php  
+            $shop = get_all_store();
 if(!empty($shop)){
 foreach($shop as $value){
    
 
 ?>
             <div class="col-lg-4 col-sm-6 mt-3 mb-2">
-                <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
+                <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
                     <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img
                             class="va-thumbnail card-img-top" alt="Card image cap"
                             src="<?php echo base_url();?>uploads/shop/<?php echo $value->shop_images;?>"></a>
                     <div class="card-block" style="padding:8px">
-                        <h4 class="card-title"><?php echo $value->name;?></h4>
-                        <p class="card-text"> <?php
-                           $title = $value->description;
+                        <p class="card-title"><b><?php
+                           $title = $value->name;
                             if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
@@ -226,11 +226,35 @@ foreach($shop as $value){
                                 echo ucfirst($y);
                               }
                            
+                           ?></b></p>
+                        <p class="card-text"> <?php
+                           $title = $value->description;
+                            if(strlen($title) <= 30)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,30) . '...';
+                                echo ucfirst($y);
+                              }
+                           
                            ?></p><br>
                         <?php $username = get_user_name($value->user_id);?>
-                        <h5 class="card-title"><?php echo $username;?></h5>
-                        <i class="bi bi-geo-alt-fill" aria-hidden="true"
-                                            style="font-size:18px; color:#69d3b0"></i> <span><?php echo $value->Address;?></span><br>
+                        <p class="card-title"><?php echo $username;?></p>
+                        <img src="<?php echo base_url();?>assets/images/location .png" > <span><?php
+                           $title = $value->Address;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></span><br>
 
                     </div>
                 </div>
