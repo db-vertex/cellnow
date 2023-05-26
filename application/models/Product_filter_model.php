@@ -223,7 +223,7 @@ class Product_filter_model extends CI_Model
                                         </div>
                                         <div class="col-3 pe-2">
                                             <a
-                                                href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
+                                                href="https://dbvertex.com/celnow/welcome/productdetail/'.$relatedproduct->category_id.'/'. $relatedproduct->id.'/'.$relatedproduct->subcategory_id.'">
                                                 <p class="related_ads_details_button ">
                                                     <spam class="related_ads_details_button_text">Product Detail</spam>
                                                 </p>

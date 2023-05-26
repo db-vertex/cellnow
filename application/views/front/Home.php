@@ -107,7 +107,8 @@
       foreach ($all_banner as $key => $banner) {
         ?>  
     <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-      <a href="<?php echo $banner->url; ?>" target="_blank"><img  class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
+      <a href="<?php echo $banner->url; ?>" target="_blank"><img style="max-height: 500px;
+    min-width: 500px;" class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
     </div>
     <?php
 

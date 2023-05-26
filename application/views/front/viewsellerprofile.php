@@ -116,7 +116,8 @@ width: 131.9px; border-color:#10B981;">
 <h3 class="ml-5 mb-3"><b>Seller Ads</b></h3>
 <div class="row">
 
-<?php $sellerproduct =get_seller_product($user_id); 
+<?php if(isset($user_id)){
+  $sellerproduct =get_seller_product($user_id); 
  if(!empty($sellerproduct)){?>
 
 
@@ -138,7 +139,7 @@ width: 131.9px; border-color:#10B981;">
 </div> 
 <?php }else{?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
-<?php }?>
+<?php }}?>
 
 </div>
 </div>
