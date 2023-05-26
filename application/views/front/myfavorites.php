@@ -143,9 +143,22 @@
                 <div class="card-title">
                   <div class="row pl-3">
                     <div class="col-6"><b style="font-size:18px">
-                        <?php echo ucfirst($product->title); ?>
+                    <?php
+                           $title =$product->title;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
+                       
                       </b></div>
-                    <div class="col-2"> <i style="margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
+                    <div class="col-2"> <i style="font-size:17px;margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
                         data-uid="<?php echo $user["user_id"]; ?>"
                         class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product->id; ?>"
                         data-pid="<?php echo $product->id; ?>" data-cid="<?php echo $product->category_id; ?>"
