@@ -782,21 +782,21 @@
                                 Categories
                             </a>
                             <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
-                                
+                           
                                 <li><a id="" class="dropdown-item"
-                                        href="<?php echo base_url();?>welcome/fillter_product/1">Reusable parts and products</a>
+                                        href="<?php echo base_url();?>welcome/fillter_product/1">Reusable Parts and Products</a>
                                 </li>
                                 <li><a id="" class="dropdown-item"
-                                        href="<?php echo base_url();?>welcome/fillter_product/2">Tuitions /Classes</a>
+                                        href="<?php echo base_url();?>welcome/fillter_product/2">Tuitions/Classes</a>
                                 </li>
                                 <li><a id="" class="dropdown-item"
-                                        href="<?php echo base_url();?>welcome/fillter_product/3">Freelancing /Parttime Jobs</a>
+                                        href="<?php echo base_url();?>welcome/fillter_product/3">freelancing/Parttime Jobs</a>
                                 </li>
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/4">Internships</a>
                                 </li>
 
-                               
+                            
 
                             </ul>
                         </li>
@@ -808,10 +808,10 @@
                             <ul class="dropdown-menu" style="margin-bottom:10px;">
                                 <?php
                   $shopcategory = get_all_shopcategory();
-                foreach ($shopcategory as $key => $cat) {
+                foreach ($shopcategory as $key => $shopcat) {
                   ?>
                                 <li><a class="dropdown-item" style="color:#10B981;font-weight:bold;"
-                                        href="<?php echo base_url();?>welcome/store/<?php echo $cat->id?>"><?php echo $cat->shop_category; ?></a>
+                                        href="<?php echo base_url();?>welcome/store/<?php echo $shopcat->id; ?>"><?php echo $shopcat->shop_category; ?></a>
                                 </li>
 
                                 <?php }?>

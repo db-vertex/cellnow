@@ -392,7 +392,7 @@ function get_all_donate()
   return $category_data->result(); 
 }
 
-function get_all_store($category_id)
+function get_all_store()
 {
   //get main CodeIgniter object
        $ci =& get_instance();
@@ -400,7 +400,22 @@ function get_all_store($category_id)
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM shop WHERE id=".$category_id;
+  $query="SELECT * FROM shop order by name";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_category_all_store($id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM shop WHERE user_id=".$id;
 
   $category_data = $ci->db->query($query);        
 
