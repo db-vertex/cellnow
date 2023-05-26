@@ -68,8 +68,8 @@
         border-radius: 20px;
         border: 0px;
         width: 100%;
-        max-height: 190px;
-        min-height: 190px;
+        max-height: 200px;
+        min-height: 200px;
     }
   </style>
 </head>
@@ -86,7 +86,7 @@
 
   <div class="container">
     <h3 class="ml-5 mb-3"><b>My Favorites Ads</b></h3>
-    <div class="row">
+    <div class="row" style="margin-left:30px; margin-right:30px;">
       <?php $favroite = get_all_favroite($user["user_id"]);
 
       if (!empty($favroite)) {
@@ -136,13 +136,13 @@
 
 
 
-          <div class="col-lg-4 col-md-6  mb-2">
-            <div class="card" style="max-width: 22rem; border-radius: 28px;margin:auto;">
+          <div class="col-lg-4 col-md-6 mb-3">
+            <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
               <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $product->cover_img;?>" class="card-img-top" alt="Card image cap">
               <div class="card-block" style="padding:5px">
                 <div class="card-title">
                   <div class="row pl-3">
-                    <div class="col-6"><b style="font-size:18px">
+                    <div class="col-6"><b style="font-size:15px">
                     <?php
                            $title =$product->title;
                             if(strlen($title) <= 10)
