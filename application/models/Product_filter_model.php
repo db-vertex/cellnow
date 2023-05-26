@@ -205,7 +205,21 @@ class Product_filter_model extends CI_Model
                                                 style="font-size:18px; color:#69d3b0"></i>
                                         </div>
                                         <div class="col-5">
-                                            <p tyle="color: #575757;">'.$row['address'].'</p>
+                                            <p tyle="color: #575757;">';
+											$title = $row['address'];
+						
+											if(strlen($title) <= 12)
+											{
+											$pro .= ucfirst($title);
+										   
+					   
+											}
+											else
+											{
+											$y = substr($title, 0, 12) .'...';
+											$pro .= ucfirst($y);
+											}
+											$pro.='</p>
                                         </div>
                                         <div class="col-3 pe-2">
                                             <a
