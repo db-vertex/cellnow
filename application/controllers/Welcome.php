@@ -754,6 +754,9 @@ echo $sub;
 			   $data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
 				 $data['Brand'] = $this->product_filter_model->fetch_filter_type('Job_type',$cateory);
 			 }
+			 else if($cateory == 5){
+				$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id',$cateory);
+			  }
 			 
      
        if($session_id)
