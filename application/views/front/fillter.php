@@ -1,4 +1,5 @@
 <style>
+    
   .details_img_cover {
 
 max-height: 367px;
