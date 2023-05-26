@@ -782,13 +782,21 @@
                                 Categories
                             </a>
                             <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
-                                <?php $category = get_all_category(); 
-                                 foreach ($category as $key => $cat) {?>
+                                
                                 <li><a id="" class="dropdown-item"
-                                        href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id?>"><?php echo $cat->category; ?></a>
+                                        href="<?php echo base_url();?>welcome/fillter_product/1">Reusable parts and products</a>
+                                </li>
+                                <li><a id="" class="dropdown-item"
+                                        href="<?php echo base_url();?>welcome/fillter_product/2">Tuitions /Classes</a>
+                                </li>
+                                <li><a id="" class="dropdown-item"
+                                        href="<?php echo base_url();?>welcome/fillter_product/3">Freelancing /Parttime Jobs</a>
+                                </li>
+                                <li><a id="" class="dropdown-item"
+                                        href="<?php echo base_url();?>welcome/fillter_product/4">Internships</a>
                                 </li>
 
-                                <?php }?>
+                               
 
                             </ul>
                         </li>
