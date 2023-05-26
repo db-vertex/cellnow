@@ -1,4 +1,8 @@
-<style>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  
+  <style>
 .search_wrap {
     width: 100%;
 
@@ -26,6 +30,16 @@
 	transform: translate(-50%,-50%); */
     /* color: #fff; */
 
+}
+
+.selected {
+  background: #d1fae5;
+  color: black;
+}
+.select {
+  background: #d1fae5;
+  color: black;
+  border-radius: 50%;
 }
 
 .search_wrap.search_wrap_6 .search_box .btn {
@@ -143,7 +157,7 @@ input::placeholder {
     </div>
 </div><br>
 
-<<div class="container">
+<div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
 
@@ -166,15 +180,15 @@ input::placeholder {
                 foreach ($category as $key => $cat) {
                   ?>
 
-                    <div class="va-card va-card_category"> <a class=" border-0"
-                            href="<?php echo base_url();?>welcome/fillter_product" style="max-width: 45%;">
-                            <p  style="text-align:center;" class="my-auto pouler_Categories">
-                                <img <?php if($id== $cat->id){ ?>style="background:#d1fae5; border-radius:50%;" <?php } ?> class="btn-change"
+                    <div class="va-card va-card_category"> 
+                           
+                            <p  style="text-align:center;" class="my-auto pouler_Categories " onclick="return getshop(<?php echo $cat->id; ?>)">
+                                <img  <?php if($id== $cat->id){ ?>style="background:#d1fae5; border-radius:50%;" <?php } ?> class="btn-change new<?php echo $cat->id; ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
                                 <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo ucfirst($cat->shop_category); ?></center>
                             </p>
-                        </a>
+                     
                     </div>
 
                     <?php } ; ?>
@@ -201,73 +215,45 @@ input::placeholder {
     <div class="container">
 
         <div class="row">
-            <?php  
-            $shop = get_category_all_store($id);
-if(!empty($shop)){
-foreach($shop as $value){
-   
-
-?>
-            <div class="col-lg-4 col-sm-6 mt-3 mb-2">
-                <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
-                    <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img
-                            class="va-thumbnail card-img-top" alt="Card image cap"
-                            src="<?php echo base_url();?>uploads/shop/<?php echo $value->shop_images;?>"></a>
-                    <div class="card-block" style="padding:8px">
-                        <p class="card-title"><b><?php
-                           $title = $value->name;
-                            if(strlen($title) <= 10)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,10) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></b></p>
-                        <p class="card-text"> <?php
-                           $title = $value->description;
-                            if(strlen($title) <= 30)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,30) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></p><br>
-                        <?php $username = get_user_name($value->user_id);?>
-                        <p class="card-title"><?php echo $username;?></p>
-                        <img src="<?php echo base_url();?>assets/images/location .png" > <span><?php
-                           $title = $value->Address;
-                            if(strlen($title) <= 10)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,10) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></span><br>
-
-                    </div>
+        
+           <div id="sub-list">
                 </div>
-            </div>
-            <?php } }else{ ?>
-                <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
-
-
-<?php } ?>
-
-
-
+           
 
 
         </div>
     </div>
+
+    <script>
+
+function getshop(category_id){
+
+ 
+//var res = "";
+ $("img").removeClass("select");
+ $(".new"+category_id).addClass("select");
+
+    // var allch =  $("#").val();
+
+  jQuery.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getshop'); ?>",
+  data: { category_id:category_id},
+  success: function(res) 
+  {
+
+    
+
+    $("#sub-list").html(res);
+       
+  
+
+    // $('#load_cound').val("10");
+    
+  }
+  });
+
+}
+
+
+        </script>

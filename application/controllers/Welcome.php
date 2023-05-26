@@ -182,6 +182,84 @@ echo $sub;
 		
 	}
 
+	public function getshop($data = " ")
+	{
+
+          $category_id = $this->input->post('category_id');
+		 // echo $this->db->last_query();
+		 $sub="";
+		
+		$shop= get_category_all_store($category_id);
+		if(!empty($shop)){
+      foreach($shop as $value){
+	//print_r($subcategory);die();
+                             
+	$sub .=	'
+	<div class="col-lg-4 col-sm-6 mt-3 mb-2">
+                <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
+                    <a href="https://dbvertex.com/celnow/welcome/shopdetail/'. $value->id.'"><img
+                            class="va-thumbnail card-img-top" alt="Card image cap"
+                            src="https://dbvertex.com/celnow/uploads/shop/'. $value->shop_images.'"></a>
+                    <div class="card-block" style="padding:8px">
+                        <p class="card-title"><b>';
+                           $title = $value->name;
+                            if(strlen($title) <= 20)
+                              {
+                               $sub.= ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                               $sub.= ucfirst($y);
+                              }
+                           
+                           $sub.='</b></p>
+                        <p class="card-text">';
+                           $title = $value->description;
+                            if(strlen($title) <= 50)
+                              {
+								$sub.= ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,50) . '...';
+                                $sub.= ucfirst($y);
+                              }
+                           
+                           $sub.='</p><br>';
+                        $username = get_user_name($value->user_id);
+                       $sub.=' <p class="card-title">'. $username.'</p>
+                        <img src="https://dbvertex.com/celnow/assets/images/location .png" > <span>';
+                           $title = $value->Address;
+                            if(strlen($title) <= 20)
+                              {
+								$sub.= ucfirst($title);
+                              }
+                              else
+                              {
+                                $sub.=  substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           $sub.='</span><br>
+
+                    </div>
+                </div>
+            </div>
+		  '
+		  ;
+		 
+                          
+		}                                
+	}
+
+else {
+$sub.='<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
+}                                
+                                        
+echo $sub;                             
+		
+	}
 
 	
 
