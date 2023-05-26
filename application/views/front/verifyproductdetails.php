@@ -280,7 +280,7 @@
         }
 
         .detalis_option {
-            max-width: 646.7px;
+            max-width: 566.7px;
             left: 112px;
             top: 1373.5px;
             background: #FFFFFF;
