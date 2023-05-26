@@ -136,7 +136,7 @@ class Product_filter_model extends CI_Model
                 $wishlist = 0;
             }
             
-            $pro .= '    <div class="col-lg-6 col-sm-6 col-6 offset-sm-0 offset-1 p-4">
+            $pro .= '    <div class="col-lg-6 col-sm-6 col-6 offset-sm-0 offset-1 p-5">
             <div class="card"
                                 style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
                                 <img class="related_ads_card_img  img-fluid"
@@ -144,12 +144,26 @@ class Product_filter_model extends CI_Model
                                     alt="related_ads_card_img">
                                 <div class="card-body related_ads_card">
                                     <div class="row">
-                                        <div class="col-5">
-                                            <p class="related_ads_card_title">'.$row['title'].'</p>
+                                        <div class="col-6">
+                                            <p class="related_ads_card_title">';
+                                            $title = $row['title'];
+						
+						if(strlen($title) <= 10)
+						{
+						$pro .= ucfirst($title);
+					   
+   
+						}
+						else
+						{
+						$y = substr($title, 0, 10) .'...';
+						$pro .= ucfirst($y);
+						}
+						$pro.='</p>
                                         </div>
-                                        <div class="col-3">
+                                        <div class="col-2">
                                             <b>   
-                                              <i style="color:#F15927; text-align: right;" ' . (empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"') . ' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'" ></i>
+                                              <i style="font-size:18px;color:#F15927; text-align: right;" ' . (empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"') . ' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'" ></i>
                                             </b>
                                         </div>
                                         <div class="col-4">
@@ -159,17 +173,24 @@ class Product_filter_model extends CI_Model
                                     <div class="row mt-1">
                                         <div class="col-12">
                                             <small class="card-text"
-                                                style="color: #575757;">'.$row['Description'].'</small><br>
+                                                style="color: #575757;">';
+                                                $title = $row['Description'];
+						
+						if(strlen($title) <= 25)
+						{
+						$pro .= ucfirst($title);
+					   
+   
+						}
+						else
+						{
+						$y = substr($title, 0, 25) .'...';
+						$pro .= ucfirst($y);
+						}
+						$pro.='</small><br>
                                         </div>
                                     </div>
-                                    <div class="row mt-1">
-                                        <div class="col-3">
-                                            <p style="color: #575757;">Fresheness</p>
-                                        </div>
-                                        <div class="col-5">
-                                            <p style="color: #575757;">New(Extra fresh)</p>
-                                        </div>
-                                    </div>
+                                   
                                     <div class="row mt-1">
                                         <div class="col-3">
                                             <p style="color: #575757;">Model</p>

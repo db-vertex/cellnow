@@ -280,7 +280,7 @@
         }
 
         .detalis_option {
-            max-width: 566.7px;
+            max-width: 590.7px;
             left: 112px;
             top: 1373.5px;
             background: #FFFFFF;
@@ -675,7 +675,7 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 900;
-        font-size: 20px;
+        font-size: 15px;
         line-height: 10px;
         /* identical to box height */
         color: #000000;
@@ -1248,7 +1248,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 alt="related_ads_card_img">
                             <div class="card-body related_ads_card">
                                 <div class="row">
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p class="related_ads_card_title"> <?php
                            $title =$relatedproduct->title;
                             if(strlen($title) <= 10)
@@ -1263,9 +1263,9 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                            
                            ?></p>
                                     </div>
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                style="font-size:20px;color:#ff6737;padding: 0px;"></i></b>
+                                                style="font-size:18px;color:#ff6737;padding: 0px;"></i></b>
                                     </div>
                                     <div class="col-4">
                                         <?php if(isset($product_detail->price)){ if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
@@ -1279,13 +1279,13 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <small class="card-text"
                                             style="color: #575757;"> <?php
                            $title =$relatedproduct->Description;
-                            if(strlen($title) <= 55)
+                            if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,55) . '...';
+                                $y = substr($title,0,30) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -1307,7 +1307,19 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                             style="font-size:18px; color:#69d3b0"></i>
                                     </div>
                                     <div class="col-5">
-                                        <p tyle="color: #575757;"><?php echo $relatedproduct->address;?></p>
+                                        <p tyle="color: #575757;"><?php
+                           $title =$relatedproduct->address;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
                                     </div>
                                     <div class="col-4 pe-2">
                                         <a
