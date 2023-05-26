@@ -268,8 +268,8 @@ foreach($shop as $value){
                     </div>
                 </div>
             </div>
-            <?php } }else{ ?>
-                <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
+            <?php }  ?>
+               
 
 
 <?php } ?>
