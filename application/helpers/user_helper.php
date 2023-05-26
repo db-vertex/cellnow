@@ -392,7 +392,7 @@ function get_all_donate()
   return $category_data->result(); 
 }
 
-function get_all_store()
+function get_all_store($category_id)
 {
   //get main CodeIgniter object
        $ci =& get_instance();
@@ -400,7 +400,7 @@ function get_all_store()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM shop order by name";
+  $query="SELECT * FROM shop WHERE id=".$category_id;
 
   $category_data = $ci->db->query($query);        
 

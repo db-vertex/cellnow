@@ -202,7 +202,7 @@ input::placeholder {
 
         <div class="row">
             <?php  
-            $shop = get_all_store();
+            $shop = get_all_store($id);
 if(!empty($shop)){
 foreach($shop as $value){
    
