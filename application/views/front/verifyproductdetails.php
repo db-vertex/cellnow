@@ -923,21 +923,26 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 <?php } ?>
 <?php if ($product_detail->images_2 !== NULL) { ?>
  <li data-thumb="<?php echo base_url() . $product_detail->images_2 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" /> </li>
+ <li data-thumb="<?php echo base_url() . $product_detail->images_2 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" /> </li>
+
  <?php } else { ?>
 
 <?php } ?> 
 <?php if ($product_detail->images_3 !== NULL) { ?>
     <li data-thumb="<?php echo base_url() . $product_detail->images_3 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" /> </li> 
-    <?php } else { ?>
+    <li data-thumb="<?php echo base_url() . $product_detail->images_3 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" /> </li> 
+<?php } else { ?>
 
 <?php } ?>  <?php if ($product_detail->images_4 !== NULL) { ?>
  <li data-thumb="<?php echo base_url() . $product_detail->images_4 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" /> </li> 
- <?php } else { ?>
+ <li data-thumb="<?php echo base_url() . $product_detail->images_4 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" /> </li> 
+<?php } else { ?>
 
 <?php } ?> 
 <?php if ($product_detail->images_5 !== NULL) { ?>
   <li data-thumb="<?php echo base_url() . $product_detail->images_5 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" /> </li> 
-  <?php } else { ?>
+  <li data-thumb="<?php echo base_url() . $product_detail->images_5 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" /> </li> 
+<?php } else { ?>
 
 <?php } ?>
 </ul>
