@@ -27,7 +27,7 @@ html,body
   border-radius: 60px;
   font-family:open sans;
   font-weight:550;
-  font-size:15px;
+  font-size:22px;
   padding: 4px 18px;
   
 }
@@ -35,8 +35,7 @@ html,body
 
 #a:visited {
   color: #78d7b8;
-  
-  
+ 
 }
 #a:hover {
   color: white;
