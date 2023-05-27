@@ -27,7 +27,7 @@ html,body
   border-radius: 60px;
   font-family:open sans;
   font-weight:550;
-  font-size:22px;
+  font-size:15px;
   padding: 4px 18px;
   
 }
@@ -161,13 +161,13 @@ width: 131.9px; border-color:#10B981;">
       <div class="row">
         <div class="col-7"><b style="font-size:18px"><?php
                            $title =$value->title;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 12)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,12) . '...';
                                 echo ucfirst($y);
                               }
                            
