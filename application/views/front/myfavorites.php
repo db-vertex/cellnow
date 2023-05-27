@@ -29,7 +29,7 @@
       font-family: open sans;
       font-weight: 550;
       font-size: 18px;
-      padding: 2px 32px;
+      padding: 4px 18px;
 
     }
 

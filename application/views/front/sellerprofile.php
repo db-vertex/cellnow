@@ -163,7 +163,19 @@ width: 131.9px; border-color:#10B981;">
        
         <div class="col-5" style="color:#10b981"><h5><b>$<?php echo $value->price; ?></b></h5></div>
       </div>
-    <small class="card-text"><?php echo $value->Description; ?>.</small><br>
+    <small class="card-text"> <?php
+                           $title =$value->Description;
+                            if(strlen($title) <= 30)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,30) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>.</small><br>
     
     Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
     Model            <span style="padding-left:60px"> 2015</span><br>
