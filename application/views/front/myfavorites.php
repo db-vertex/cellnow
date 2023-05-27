@@ -29,7 +29,7 @@
       font-family: open sans;
       font-weight: 550;
       font-size: 18px;
-      padding: 4px 32px;
+      padding:  32px;
 
     }
 
@@ -165,8 +165,8 @@
                         data-wishlist="<?php echo $wishlist; ?>"></i>
                     </div>
                     <div class="col-4" style="color:#10b981">
-                      <h5><b>$<?php echo $product->price; ?>
-                        </b></h5>
+                      <h6><b>$<?php echo $product->price; ?>
+                        </b></h6>
                     </div>
                   </div>
                 </div>
@@ -194,26 +194,26 @@
                   ?>
                 <div class="row pl-3">
                   <div class=col-6>Type</div>
-                  <div class=col-6><?php echo $product->type; ?></div>
+                  <div class=col-6><p><?php echo $product->type; ?></p></div>
                 </div>
                 <?php } else if($product->category_id==2){
                    $type_name = get_product_type_name($product->Education_Type); 
                   ?>
- <div class="row pl-3">
+                <div class="row pl-3">
                   <div class=col-6>Education Type</div>
-                  <div class=col-6><?php echo $type_name; ?></div>
+                  <div class=col-6><p><?php echo $type_name; ?><p></div>
                 </div>
                 <?php } else if($product->category_id==3 && $product->category_id==4){ 
                   $type_name = get_product_type_name($product->Job_type); 
                   ?>
  <div class="row pl-3">
  <div class=col-6>Job Type</div>
- <div class=col-6><?php echo $type_name; ?></div>
+ <div class=col-6><p><?php echo $type_name; ?></p></div>
 </div>
 <?php } ?>
 
                 <div class="row text-center p-3">
-                  <div class="col-1"><img src="<?php echo base_url();?>assets/images/location .png" ></i></div>
+                  <div class="col-1 "><img class="img-fluid" src="<?php echo base_url();?>assets/images/location .png" ></i></div>
                   <div class="col-5">
                     <p>
                       <?php echo $product->address; ?>
