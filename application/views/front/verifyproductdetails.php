@@ -1245,7 +1245,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
 
 
-                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4 ">
+                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4 ml-3">
                         <div class="card"
                             style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
                             <img class="related_ads_card_img  img-fluid"
