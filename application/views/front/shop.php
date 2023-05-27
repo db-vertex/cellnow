@@ -88,8 +88,8 @@
         padding: 9.42857px 12.5714px;
         gap: 4.71px;
 
-        width: 104.43px;
-        height: 36.86px;
+        width: 80.43px;
+        height: 30.86px;
 
         background: #10B981;
         /* C2/B */
@@ -108,8 +108,8 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 700;
-        font-size: 12.7857px;
-        line-height: 18px;
+        font-size: 9.7857px;
+        line-height: 15px;
         color: #FFFFFF;
         flex: none;
         order: 0;
@@ -450,23 +450,35 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
    
 
     <div class="col-lg-4 col-md-6  mb-2">
-            <div class="card" style="max-width: 23rem; border-radius: 28px;margin:auto;">
+            <div class="card" style="max-width: 19rem; border-radius: 28px;margin:auto;">
               <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>" class="card-img-top" alt="Card image cap">
               <div class="card-block" style="padding:5px">
                 <div class="card-title">
                   <div class="row pl-3">
-                    <div class="col-6"><b style="font-size:18px">
-                        <?php echo ucfirst($Categories_all_product->title); ?>
+                    <div class="col-6"><b style="font-size:15px">
+                    <?php
+                           $title =$Categories_all_product->title;
+                            if(strlen($title) <= 12)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,12) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
                       </b></div>
-                    <div class="col-2"> <i style="margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
+                    <div class="col-2"> <i style=" font-size:19px; margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
                         data-uid="<?php echo $user["user_id"]; ?>"
                         class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
                         data-pid="<?php echo $Categories_all_product->id; ?>" data-cid="<?php echo $Categories_all_product->category_id; ?>"
                         data-wishlist="<?php echo $wishlist; ?>"></i>
                     </div>
                     <div class="col-4" style="color:#10b981">
-                      <h5><b>$<?php echo $Categories_all_product->price; ?>
-                        </b></h5>
+                      <h6><b>$<?php echo $Categories_all_product->price; ?>
+                        </b></h6>
                     </div>
                   </div>
                 </div>
@@ -488,26 +500,21 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                 </small><br>
         </div>
 
+               
                 <div class="row pl-3">
-                  <div class=col-4>Fresheness </div>
-                  <div class=col-8>New(Extra fresh)</div>
-                </div>
-
-                <div class="row pl-3">
-                  <div class=col-4>Model</div>
-                  <div class=col-8><?php echo $Categories_all_product->type; ?></div>
+                  <div class=col-4><p>Model</p></div>
+                  <div class=col-8><p><?php echo $Categories_all_product->type; ?></p></div>
                 </div>
 
 
 
                 <div class="row text-center p-3">
-                  <div class="col-1"><img src="<?php echo base_url();?>assets/images/location .png" ></i></div>
-                  <div class="col-7">
+                  <div class="col-6"> 
                     <p>
-                      <?php echo $Categories_all_product->address; ?>
+                    <i class="fa fa-map-marker" aria-hidden="true" style="font-size:22px; color:#69d3b0"></i> <?php echo $Categories_all_product->address; ?>
                     </p>
                   </div>
-                  <div class="col-4 ">
+                  <div class="col-6 ">
                                         <a
                                             href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
                                             <p class="related_ads_details_button ">

@@ -660,13 +660,14 @@ $SQL="SELECT Distinct * FROM `chat_list` Where (sender_id = $sender_id AND recei
 function push_notification_android($device_id,$message, $type="other"){
 
 
-  /*      $url = "https://fcm.googleapis.com/fcm/send";
+       $url = "https://fcm.googleapis.com/fcm/send";
     $token = $device_id;
     $serverKey = 'AAAAZK3TFjM:APA91bFMqAfMveWDzP8hHyEz4-1So3rdkLMn3XloLcO_I04GSJyifenYrv6VH1A_4ax7O2JwAhGquIgVY-POGKQE12P5PNkbW-NF9w7x8sXfivf-sXwDBp9_XRXyXYXeUqOgCEboqhS5';
     $title = "Notification title";
     $body = "Hello I am from Your php server";
     $notification = array('title' =>$title , 'body' => $message, 'sound' => 'default', 'badge' => '1');
     $arrayToSend = array('to' => $token, 'notification' => $notification,'priority'=>'high');
+  
     $json = json_encode($arrayToSend);
     $headers = array();
     $headers[] = 'Content-Type: application/json';
@@ -683,7 +684,7 @@ function push_notification_android($device_id,$message, $type="other"){
     die('FCM Send Error: ' . curl_error($ch));
     }
     curl_close($ch);
-    return $response;*/
+    return $response;
 
     //API URL of FCM
     $url = 'https://fcm.googleapis.com/fcm/send';
