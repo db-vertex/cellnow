@@ -6,18 +6,11 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
 
-  <!-- link for map -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+ 
 
   <title>Sellerprofile</title>
   <style>
-    html,
-    body {
-      max-width: 100%;
-      overflow-x: hidden;
-    }
-
-
+   
     img.rounded-corners {
       border-radius: 50%;
     }
@@ -79,7 +72,7 @@
 
 
 
-  <div class="container-fluid " style=" margin-top: 130px;">
+  <div class="container-fluid " style=" margin-top: 110px;">
     <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
   </div>
 
@@ -137,7 +130,7 @@
 
 
           <div class="col-lg-4 col-md-6 mb-3">
-            <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
+            <div class="card" style="max-width: 20rem; border-radius: 22px;margin:auto;">
               <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $product->cover_img;?>" class="card-img-top" alt="Card image cap">
               <div class="card-block" style="padding:5px">
                 <div class="card-title">

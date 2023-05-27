@@ -28,7 +28,7 @@ html,body
   font-family:open sans;
   font-weight:550;
   font-size:22px;
-  padding: 4px 32px;
+  padding: 4px 18px;
   
 }
 
@@ -159,7 +159,19 @@ width: 131.9px; border-color:#10B981;">
     <img class="va-thumbnail" src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top" alt="Card image cap">
       <div class="card-block" style="padding:20px">
       <div class="row">
-        <div class="col-7"><b style="font-size:18px"><?php echo $value->title; ?> </b></div>
+        <div class="col-7"><b style="font-size:18px"><?php
+                           $title =$value->title;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?> </b></div>
        
         <div class="col-5" style="color:#10b981"><h5><b>$<?php echo $value->price; ?></b></h5></div>
       </div>
@@ -181,7 +193,7 @@ width: 131.9px; border-color:#10B981;">
     Model            <span style="padding-left:60px"> 2015</span><br>
    
     <img src="<?php echo base_url();?>assets/images/location .png" ><span style="padding-left:70px"><?php echo $value->address;?></span><br>
-    <div class="pt-3 pl-5"><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $value->category_id?>/<?php echo  $value->id ?>" class="btn " id="b">Edit</a> &nbsp &nbsp
+    <div class="pt-3 pl-5"><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $value->category_id?>/<?php echo  $value->id ?>" class="btn " id="a">Edit</a> &nbsp &nbsp
   
     <a href="javascript:void(0)" id="b" class="delete_product btn"  data-cid="<?php echo $value->category_id; ?>" data-pid="<?php echo $value->id; ?>"><span  style="color:#78d7b8">Delete</span></a>
   
