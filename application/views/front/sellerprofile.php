@@ -154,7 +154,7 @@ width: 131.9px; border-color:#10B981;">
 
 
  <div class="col-lg-4 col-sm-4  mb-2">
-    <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
+    <div class="card" style="max-width: 19rem; border-radius: 25px;margin:auto;">
     <img class="va-thumbnail" src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top" alt="Card image cap">
       <div class="card-block" style="padding:20px">
       <div class="row">
