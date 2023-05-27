@@ -12,6 +12,7 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
         integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        
     <title>Verify product details</title>
     <style>
     .breadcrumb_container {
@@ -1231,17 +1232,20 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                                     </div>
 
                                                     <div class="container">
-            <div class="row mt-5 justify-content-center" style="margin-left:30px; margin-right: 30px;">
+            <div class="row mt-5 justify-content-center" style="margin-left:25px; margin-right: 25px;">
                 <p class="Related_Ads">Related Ads</p>
 
                 <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?php
    foreach($category_data as $relatedproduct){
+    $session_login_id  = $this->session->userdata("id");
+    $product_user_id = $relatedproduct->user_id;
+    if($session_login_id !== $product_user_id){
    ?>
 
 
 
-                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4 ml-4 mr-4">
+                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4 ">
                         <div class="card"
                             style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
                             <img class="related_ads_card_img  img-fluid"
@@ -1335,7 +1339,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
 
-                    <?php } ?>
+                    <?php }} ?>
 
                 </div>
 

@@ -217,7 +217,7 @@ foreach($shop as $value){
    
 
 ?>
-            <div class="col-lg-4 col-sm-6 mt-3 mb-2">
+            <div class="col-lg-4 col-sm-6 mt-3 mb-2" id="hide">
                 <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
                     <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img
                             class="va-thumbnail card-img-top" alt="Card image cap"
@@ -304,13 +304,13 @@ function getshop(category_id){
    
 
 
- 
-    
-
-    $("#sub-list").html(res);
-       
   
 
+    
+       
+  
+    $("#hide").style.display = "none";
+    
     // $('#load_cound').val("10");
     
   }

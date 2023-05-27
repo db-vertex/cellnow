@@ -113,7 +113,9 @@ echo $sub;
 		 if(!empty($product)){
 			
 		  foreach($product as $value){
-		  
+		    $session_login_id  = $this->session->userdata("id");
+              $product_user_id = $value->user_id;
+              if($session_login_id !== $product_user_id){
 		
       
 	//print_r($subcategory);die();
@@ -173,7 +175,7 @@ echo $sub;
 		 
                           
 }                                
-		 }
+		   } }
  
 else {
 $sub.='<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
@@ -1151,7 +1153,7 @@ public function fav_list(){
 	   }
 }
 
-		public function updatesellerreg()
+	public function updatesellerreg()
 	{
 
 			$name=$this->input->post('name');
@@ -1161,11 +1163,11 @@ public function fav_list(){
 			$email=$this->input->post('email');
 			$phone=$this->input->post('phone');
 			$aboutus=$this->input->post('aboutus');
-					$seller = check_seller_profile($user_id);
+			$seller = check_seller_profile($user_id);
 
 
-				$userData['name'] = $name;
-				$userData['Address'] = $Address;
+			$userData['name'] = $name;
+			$userData['Address'] = $Address;
 				//$userData['user_id'] = $user_id;
 			
 		$userData['phone'] = $phone;
@@ -1174,9 +1176,6 @@ public function fav_list(){
 			
 		$this->user->update($userData,$user_id);
 
-				
-
-		
 					$userData['modified'] = date("Y-m-d H:i:s");
 
 		
@@ -1321,11 +1320,8 @@ public function fav_list(){
 	   $this->session->set_flashdata('msg','Request Sent Successfully');
 	   $this->session->set_flashdata('msg_class','alert-success');
    
-   
-	  
 	  return redirect('welcome');
    
-	 
 	 }
 
 

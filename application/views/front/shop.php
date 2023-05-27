@@ -5,7 +5,7 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <script src="https://maps.google.com/maps/api/js?key=AIzaSyCMAgcA5UHPOEPMEnUrU3LEOrvKTIR2FY8&libraries=places&callback=initAutocomplete"></script>
+  <script src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete"></script>
   <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
 
@@ -281,7 +281,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
             <div class="form-group">
               <label>Google Address</label>
-              <input name="Address" class="form-control" placeholder="Address" id="Address" type="text" maxlength="20"
+              <input name="text" class="form-control" placeholder="Address" id="Location" type="text" 
                 value="<?php echo $shop->Address; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Address is required.
@@ -595,7 +595,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
             <div class="form-group">
               <label>Google Address</label>
-              <input name="Address" class="form-control" placeholder="Address" id="Address" type="text"  maxlength="30"
+              <input name="Address" class="form-control" placeholder="Address" id="Location" type="text"  maxlength="30"
                 value="" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Address is required.
@@ -761,7 +761,8 @@ if (image == "" ) {
   })
 })()
 
-</script> <script>
+</script>
+<script>
         $(document).ready(function() {
             $("#latitudeArea").addClass("d-none");
             $("#longtitudeArea").addClass("d-none");
@@ -770,14 +771,14 @@ if (image == "" ) {
         google.maps.event.addDomListener(window, 'load', initialize);
 
         function initialize() {
-            var input = document.getElementById('Address');
+            var input = document.getElementById('Location');
             var autocomplete = new google.maps.places.Autocomplete(input);
             
             autocomplete.addListener('place_changed', function() {
                 var place = autocomplete.getPlace();
                 
-                $('#latitude').val(place.geometry['Address'].lat());
-                $('#longitude').val(place.geometry['Address'].lng());
+                $('#latitude').val(place.geometry['location'].lat());
+                $('#longitude').val(place.geometry['location'].lng());
                 
                 $("#latitudeArea").removeClass("d-none");
                 $("#longtitudeArea").removeClass("d-none");
