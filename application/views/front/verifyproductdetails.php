@@ -295,7 +295,7 @@
             font-weight: 400;
             font-size: 14px;
             line-height: 0px;
-            padding-left: 5px;
+          
             color: #898686;
         }
 
@@ -306,6 +306,29 @@
     }
 
     @media (max-width: 499px) {
+
+        .details_img_cover {
+    max-height: 257px;
+    min-height: 257px;
+    left: 114px;
+    top: 588px;
+    background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+    filter: drop-shadow(0px 0px 4.79774px #10B981);
+    border-radius: 21px;
+    min-width: 100%;
+}
+
+        .details_img_box {
+        min-width: 40.69px;
+    max-width: 40.69px;
+    max-height: 40.31px;
+    min-height: 40.31px;
+        left: 114px;
+        top: 1213.13px;
+        filter: drop-shadow(0px 0px 1.07571px #10B981);
+        border-radius: 11.8328px;
+    }
+
         .btn_Verified_shop_name {
             width: 250px;
             height: 54px;
@@ -335,7 +358,94 @@
         .margin_left_css {
             margin-left: 1rem !important;
         }
+        .details_profile {
+    width: 236px;
+    height: 90px;
+    left: 826px;
+    margin-top: 30px;
+    float: right;
+    background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    border-radius: 80px 0px 0px 80px;
+}
     }
+
+    @media (min-width: 359px) and (max-width: 459px){
+
+        
+
+        .detalis_option_text {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 6px;
+    line-height: 0px;
+    padding-left: 1px;
+    color: #898686;
+}
+
+.details_img_cover {
+max-height: 200px;
+min-height: 200px;
+left: 114px;
+top: 588px;
+background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+filter: drop-shadow(0px 0px 4.79774px #10B981);
+border-radius: 21px;
+min-width: 100%;
+}
+
+.details_img_box {
+min-width: 30.69px;
+max-width: 30.69px;
+max-height: 30.31px;
+min-height: 30.31px;
+left: 100px;
+top: 1213.13px;
+filter: drop-shadow(0px 0px 1.07571px #10B981);
+border-radius: 11.8328px;
+}
+
+.btn_Verified_shop_name {
+    width: 250px;
+    height: 54px;
+    left: 988px;
+    top: 941px;
+    background: #D1FAE5;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 32px;
+}
+
+.btn_Verified_text {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 13px;
+    text-transform: capitalize;
+    color: #047857;
+}
+
+.btn_Verified_img {
+    width: 30px;
+    height: 30px;
+    left: 33px;
+    top: 10px;
+}
+
+.margin_left_css {
+    margin-left: 1rem !important;
+}
+.details_profile {
+width: 236px;
+height: 90px;
+left: 826px;
+margin-top: 30px;
+float: right;
+background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
+filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+border-radius: 80px 0px 0px 80px;
+}
+}
 
     @media (min-width: 500px) and (max-width: 768px) {
         .btn_Verified_shop_name {
@@ -605,7 +715,7 @@
             font-weight: 400;
             font-size: 10px;
             line-height: 0px;
-            padding-left: 14px;
+            padding-left: 10px;
             color: #898686;
         }
 
@@ -856,7 +966,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 <div class="col-3 px-0">
                                     <div class="row">
                                         <div class="col-4">
-                                            <i class="fa fa-calendar " aria-hidden="true"
+                                            <i class="fa fa-calendar fa-icon" aria-hidden="true"
                                                 style="font-size:15px; color:#69d3b0"></i>
                                         </div>
                                         <div class="col-8 mt-3">
@@ -914,7 +1024,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                                         </div>
                                         <div class="col-8 mt-3">
-                                            <span class="detalis_option_text"> Like</span>
+                                            <span class="detalis_option_text">&nbsp Like</span>
                                         </div>
                                     </div>
                                 </div>
@@ -932,7 +1042,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                                         </div>
                                         <div class="col-8 mt-3">
-                                            <span class="detalis_option_text"> Share</span>
+                                            <span class="detalis_option_text">&nbsp Share</span>
                                         </div>
                                     </div>
                                 </div>
@@ -947,7 +1057,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                                     style="font-size:15px; color:#69d3b0"></i></a>
                                         </div>
                                         <div class="col-8 mt-3">
-                                            <span class="detalis_option_text"> Report</span>
+                                            <span class="detalis_option_text">&nbsp Report</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1232,8 +1342,8 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                                     </div>
 
                                                     <div class="container">
-            <div class="row mt-5 justify-content-center" style="margin-left:25px; margin-right: 25px;">
-                <p class="Related_Ads">Related Ads</p>
+            <div class="row mt-5 justify-content-center" style=" margin-right: 25px;">
+                <p class="Related_Ads ml-5">Related Ads</p>
 
                 <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?php
