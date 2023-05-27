@@ -5,6 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 
     <!-- link for map -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -15,6 +16,8 @@
         
     <title>Verify product details</title>
     <style>
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
+
     .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
@@ -71,7 +74,7 @@
         left: 114px;
         top: 588px;
         background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
-        filter: drop-shadow(0px 0px 4.79774px #10B981);
+      
         border-radius: 21px;
         min-width: 100%;
     }
@@ -904,62 +907,29 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     </div>
                 </div>
             </div>
+       
 <div class="container">
             <div class="row " style="margin-left: 30px;
         margin-right: 30px;">
                 <div class="col-md-6">
-                    <div class="cover_img_div">
-                        <?php if ($product_detail->cover_img !== NULL) { ?>
-                        <img class="details_img_cover img-fluid"
-                            src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" alt="img_cover"
-                            id="main-image">
-                        <?php } else { ?>
-                        <img style="" id="main-image" src="<?php echo base_url(); ?>assets/images/Group 486.png"
-                            id="main-image" />
-                        <?php } ?>
-                    </div>
-                    <div class="row mt-3 justify-content-center">
-                        <div class="col active">
-                            <?php if ($product_detail->cover_img !== NULL) { ?>
-                            <img class="details_img_box img-fluid" onclick="change_image(this)"
-                                src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" alt="img_cover">
-                            <?php } else { ?>
+             
 
-                            <?php } ?>
-                        </div>
-                        <div class="col">
-                            <?php if ($product_detail->images_2 !== NULL) { ?>
-                            <img class="details_img_box img-fluid" onclick="change_image(this)"
-                                src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" alt="img_cover">
-                            <?php } else { ?>
+     
+         <ul id="lightSlider">
+         <li data-thumb="<?php echo base_url() . $product_detail->cover_img . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" /> </li>
+         <li data-thumb="<?php echo base_url() . $product_detail->images_2 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" /> </li>
+     <li data-thumb="<?php echo base_url() . $product_detail->images_3 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" /> </li> 
+     <li data-thumb="<?php echo base_url() . $product_detail->images_4 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" /> </li> 
+     <li data-thumb="<?php echo base_url() . $product_detail->images_5 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" /> </li> 
+ </ul>
 
-                            <?php } ?>
-                        </div>
-                        <div class="col">
-                            <?php if ($product_detail->images_3 !== NULL) { ?>
-                            <img class="details_img_box img-fluid" onclick="change_image(this)"
-                                src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" alt="img_cover">
-                            <?php } else { ?>
 
-                            <?php } ?>
-                        </div>
-                        <div class="col">
-                            <?php if ($product_detail->images_4 !== NULL) { ?>
-                            <img class="details_img_box img-fluid" onclick="change_image(this)"
-                                src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" alt="img_cover">
-                            <?php } else { ?>
-
-                            <?php } ?>
-                        </div>
-                        <div class="col">
-                            <?php if ($product_detail->images_5 !== NULL) { ?>
-                            <img class="details_img_box img-fluid" onclick="change_image(this)"
-                                src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" alt="img_cover">
-                            <?php } else { ?>
-
-                            <?php } ?>
-                        </div>
-                    </div>
+                     
+                   
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
+<script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
+<script> $('#lightSlider').lightSlider({ gallery: true, item: 1, loop: true, slideMargin: 0, thumbItem: 9 });
+</script>
                     <div class="row mt-3">
                         <div class="detalis_option">
                             <div class="row">
