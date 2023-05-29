@@ -482,18 +482,18 @@ function get_all_district()
 
 
 
-function get_user_nickname($user_id)
-{
-	//get main CodeIgniter object
-       $ci =& get_instance();
-  //load databse library
-       $ci->load->database();
-  $query="SELECT username,email, phone, agentcode FROM users WHERE user_id=".$user_id;
+// function get_user_phone($user_id)
+// {
+// 	//get main CodeIgniter object
+//        $ci =& get_instance();
+//   //load databse library
+//        $ci->load->database();
+//   $query="SELECT  phone FROM users WHERE user_id=".$user_id;
 
-  $category_data = $ci->db->query($query);        
+//   $category_data = $ci->db->query($query);        
 
-  return $category_data->row();	
-}
+//   return $category_data->row();	
+// }
 
 function get_username($user_id)
 {

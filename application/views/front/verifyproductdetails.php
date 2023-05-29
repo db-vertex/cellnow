@@ -5,8 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-    <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <!-- link for map -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet"
@@ -16,8 +15,6 @@
         
     <title>Verify product details</title>
     <style>
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800&display=swap");
-
     .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
@@ -74,7 +71,7 @@
         left: 114px;
         top: 588px;
         background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
-      
+        filter: drop-shadow(0px 0px 4.79774px #10B981);
         border-radius: 21px;
         min-width: 100%;
     }
@@ -858,7 +855,66 @@ border-radius: 80px 0px 0px 80px;
         border-radius: 32px;
 
     }
+    .container .master,
+.container .thumbnails {
+    margin: auto;
+    width: 100%;
   
+    padding: 5px;
+}
+
+.container .master {
+    padding-bottom: 0;
+    position: relative;
+}
+
+.container .master img {
+    z-index: 1;
+    width: 100%;
+    height: 99%;
+    border-radius: 20px;
+}
+
+.container .master .fa-chevron-left,
+.container .master .fa-chevron-right {
+    position: absolute;
+    left: 5px;
+    top: 50%;
+    background-color: rgb(0,0,0, .7);
+    color: #fff;
+    padding: 10px 15px;
+    z-index: 2;
+    cursor: pointer;
+}
+
+.container .master .fa-chevron-right {
+    right: 5px;
+    left: auto;
+}
+
+.container .thumbnails {
+    overflow: hidden;
+}
+
+.container .thumbnails img {
+    float: left;
+    width: 19.2%;
+   
+    cursor: pointer;
+    transition: all .6s ease-in-out;
+}
+
+.container .thumbnails img:last-child {
+    margin-right: 0!important;
+}
+
+.container .thumbnails img.active {
+    outline: 2px solid #e63946;
+   
+}
+
+
+
 
     </style>
 </head>
@@ -907,53 +963,24 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     </div>
                 </div>
             </div>
-       
 <div class="container">
             <div class="row " style="margin-left: 30px;
         margin-right: 30px;">
                 <div class="col-md-6">
-             
-
-     
-         <ul id="lightSlider">
-         <?php if ($product_detail->cover_img !== NULL) { ?>
-         <li data-thumb="<?php echo base_url() . $product_detail->cover_img . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" /> </li>
-         <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_2 !== NULL) { ?>
- <li data-thumb="<?php echo base_url() . $product_detail->images_2 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" /> </li>
- <li data-thumb="<?php echo base_url() . $product_detail->images_2 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" /> </li>
-
- <?php } else { ?>
-
-<?php } ?> 
-<?php if ($product_detail->images_3 !== NULL) { ?>
-    <li data-thumb="<?php echo base_url() . $product_detail->images_3 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" /> </li> 
-    <li data-thumb="<?php echo base_url() . $product_detail->images_3 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" /> </li> 
-<?php } else { ?>
-
-<?php } ?>  <?php if ($product_detail->images_4 !== NULL) { ?>
- <li data-thumb="<?php echo base_url() . $product_detail->images_4 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" /> </li> 
- <li data-thumb="<?php echo base_url() . $product_detail->images_4 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" /> </li> 
-<?php } else { ?>
-
-<?php } ?> 
-<?php if ($product_detail->images_5 !== NULL) { ?>
-  <li data-thumb="<?php echo base_url() . $product_detail->images_5 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" /> </li> 
-  <li data-thumb="<?php echo base_url() . $product_detail->images_5 . ""; ?>"> <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" /> </li> 
-<?php } else { ?>
-
-<?php } ?>
-</ul>
-
-
-                     
                    
-<script src='https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js'></script>
-<script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
-<script> $('#lightSlider').lightSlider({ gallery: true, item: 1, loop: true, slideMargin: 0, thumbItem: 9 });
-</script>
+                <div class="master">
+            <img class="details_img_cover img-fluid" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
+            <i class="fa-solid fa-chevron-left"></i>
+            <i class="fas fa-chevron-right"></i>
+        </div>
+
+        <div class="thumbnails">
+            <img class="details_img_box img-fluid active" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
+            <img class="details_img_box img-fluid " src="<?php echo base_url() . $product_detail->images_2 . ""; ?>">
+            <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>">
+            <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>">
+            <img class="details_img_box img-fluid" src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+        </div>
                     <div class="row mt-3">
                         <div class="detalis_option">
                             <div class="row">
@@ -1717,4 +1744,51 @@ $(document).ready(function() {
     });
 
 });
+
+
+$(function() {
+    /*make the master div has a static height to prevent it from disppearing while the master img is feading in,
+    this step is important if you use a fadeIn duration for the master img more than 1s, but if you use a duration less than 1s
+    you don't need to make the height of the master div is static, and it is preferred to make the duration less than 1s to prevent the
+    user to choose 2 images at the same time, so the implementation of the code will be faster than the user selection*/
+    $(".master").css({
+        height: $(".master img").height() + 13
+    });
+
+    //make the width of the thumbnails images is dynamic
+    var imagesNumber        = $(".thumbnails").children().length,
+        marginBetweenImages =  1,
+        totalMargins        = marginBetweenImages * (imagesNumber - 1),
+        imageWidth          = (100 - totalMargins) / (imagesNumber);
+        
+    $(".thumbnails img").css({
+        width: imageWidth + "%",
+        marginRight: marginBetweenImages + "%"
+    });
+
+
+    //remove the active class from all thumbnails images and add it to the selected one, then add this selected as the master image in the master div
+    $(".thumbnails img").on("click", function() {
+        $(this).addClass("active").siblings().removeClass("active");
+        $(".master img").hide().attr("src", $(this).attr("src")).fadeIn(300);
+    });
+
+
+    //use the chevron left and right to select images and translate between them
+    $(".master .fas").on("click", function() {
+        if($(this).hasClass("fa-chevron-left")) {
+            if($(".thumbnails img.active").is(":first-child")) {
+                $(".thumbnails img:last-child").click();
+            } else {
+                $(".thumbnails img.active").prev().click();
+            }
+        } else {
+            if($(".thumbnails img.active").is(":last-child")) {
+                $(".thumbnails img:first-child").click();
+            } else {
+                $(".thumbnails img.active").next().click();
+            }
+        }
+    })
+})
 </script>

@@ -2341,6 +2341,7 @@ class Welcome extends CI_Controller
 
 			$message = $this->input->post('message');
 			print_r($message);
+			
 			$token = $this->db->query("SELECT device_id as phone FROM users where user_id=$receiver_id")->row()->phone;
 			$messadge = "Someone Message You";
 			$notifi = $this->user->push_notification_android($token, $messadge, "Chat");
@@ -2360,8 +2361,36 @@ class Welcome extends CI_Controller
 
 
 			} else {
-
-
+                $phone= get_user_phone($receiver_id);
+				$size = 4;
+				$alpha_key = '';
+				$keys = range('0', '9');
+				for ($i = 0; $i < 4; $i++) {
+					$alpha_key .= $keys[array_rand($keys)];
+				}
+				$randCode = $alpha_key;
+				$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+				$messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+	
+				$apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+	
+				$numbers = array($phone);
+				$sender = urlencode('UPAHAD');
+				$message = rawurlencode($messages);
+	
+				$numbers = implode(',', $numbers);
+	
+				$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+	
+				// Send the POST request with cURL
+				$ch = curl_init('https://api.textlocal.in/send/');
+				curl_setopt($ch, CURLOPT_POST, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				$response = curl_exec($ch);
+				//print_r($response);
+	
+				curl_close($ch);
 				$chat_list = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 
 				$this->db->insert('chat_list', $chat_list);
