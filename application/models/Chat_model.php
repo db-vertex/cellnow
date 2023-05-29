@@ -88,8 +88,10 @@ class Chat_model extends CI_Model {
         date_default_timezone_set('Asia/Kolkata');
 		if(!array_key_exists('created', $data)){
 			$data['created'] = date("Y-m-d H:i:s");
+           
 		}
         $data['chat_created'] = date("Y-m-d H:i:s");
+       
         //$this->db->insert('chat_list', $data);
 	    $date = date('Y-m-d H:i:s');
 

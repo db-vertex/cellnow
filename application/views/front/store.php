@@ -209,7 +209,7 @@ input::placeholder {
 
     <div class="container">
 
-        <div class="row">
+        <div class="row" id="sub-list">
             <?php  
             $shop = get_category_all_store($id);
 if(!empty($shop)){
@@ -274,8 +274,7 @@ foreach($shop as $value){
 
 <?php } ?>
 
-<div id="sub-list">
-            </div>
+
 
 
 
@@ -309,7 +308,7 @@ function getshop(category_id){
     
        
   
-    $("#hide").style.display = "none";
+    $("#sub-list").html(res);
     
     // $('#load_cound').val("10");
     

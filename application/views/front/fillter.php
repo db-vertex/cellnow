@@ -1365,7 +1365,7 @@ a:hover, a:visited, a:link, a:active
 	                <div id="price_range"></div>
                 </div>
                 
-             
+<!--              
                    <div class="panel-group mt-4">
             <div class="panel panel-default">
                <div class="panel-heading">
@@ -1396,7 +1396,7 @@ a:hover, a:visited, a:link, a:active
                 </div>
                </div>
             </div>
-         </div>
+         </div> -->
          
          
                  <?php if($cateory == 1 )

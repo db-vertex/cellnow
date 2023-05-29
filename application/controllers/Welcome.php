@@ -2361,36 +2361,7 @@ class Welcome extends CI_Controller
 
 
 			} else {
-                $phone= get_user_phone($receiver_id);
-				$size = 4;
-				$alpha_key = '';
-				$keys = range('0', '9');
-				for ($i = 0; $i < 4; $i++) {
-					$alpha_key .= $keys[array_rand($keys)];
-				}
-				$randCode = $alpha_key;
-				$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-				$messages = "You verification otp for PAHADi UNCLE is " . $randCode;
-	
-				$apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
-	
-				$numbers = array($phone);
-				$sender = urlencode('UPAHAD');
-				$message = rawurlencode($messages);
-	
-				$numbers = implode(',', $numbers);
-	
-				$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-	
-				// Send the POST request with cURL
-				$ch = curl_init('https://api.textlocal.in/send/');
-				curl_setopt($ch, CURLOPT_POST, true);
-				curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				$response = curl_exec($ch);
-				//print_r($response);
-	
-				curl_close($ch);
+               
 				$chat_list = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 
 				$this->db->insert('chat_list', $chat_list);
@@ -2400,12 +2371,48 @@ class Welcome extends CI_Controller
 
 
 			}
+
+			
 			// echo $this->db->last_query();exit;
 
 			$chat = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 
-			$this->chat_model->insert($chat);
+			$inser_id = $this->chat_model->insert($chat);
 
+			$userphone= get_user_phone_id($receiver_id);
+            
+			$phone= $userphone->phone;
+			$size = 4;
+			$alpha_key = '';
+			$keys = range('0', '9');
+			for ($i = 0; $i < 4; $i++) {
+				$alpha_key .= $keys[array_rand($keys)];
+			}
+			$randCode = $alpha_key;
+			$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+			$messages = "Someone message you " . $randCode;
+
+			$apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+
+			$numbers = array($phone);
+			$sender = urlencode('UPAHAD');
+			$message = rawurlencode($messages);
+
+			$numbers = implode(',', $numbers);
+
+			$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+
+			// Send the POST request with cURL
+			$ch = curl_init('https://api.textlocal.in/send/');
+			curl_setopt($ch, CURLOPT_POST, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response = curl_exec($ch);
+			//print_r($response);
+
+			curl_close($ch);
+
+			$this->db->update('chat', array('status'=>1) ,array('id'=>$inser_id));
 
 			$chat_list = $this->chat_model->chatlist($session_id);
 
