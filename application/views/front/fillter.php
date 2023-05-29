@@ -1,4 +1,6 @@
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <style>
+
     
   .details_img_cover {
 
@@ -1268,7 +1270,7 @@ a:hover, a:visited, a:link, a:active
 
                 ?>
                  <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                      <p <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?> class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
+                      <a <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id; ?>" class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
 
                 </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
           
@@ -1365,12 +1367,13 @@ a:hover, a:visited, a:link, a:active
 	                <div id="price_range"></div>
                 </div>
                 
-<!--              
+                <?php if($cateory == 2 )
+                { ?>
                    <div class="panel-group mt-4">
             <div class="panel panel-default">
                <div class="panel-heading">
                    <a data-toggle="collapse" href="#test"><h4 class="panel-title common_h">
-                    SUB CATEGORY
+               Education Type
                   </h4></a>
                </div>
                <div id="test" class="panel-collapse collapse">
@@ -1381,13 +1384,13 @@ a:hover, a:visited, a:link, a:active
                
                      $v =  $this->session->set_userdata('filter_id',$cateory);
                      $sub_ = '';
-                      $subcategory = get_subcategory_byid($cateory);  
+                      $subcategory = get_producttype_byid($cateory);  
 					  
 					  foreach($subcategory as $sub){
 					?>
 
 	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
-							<label class="common_s"><input type="checkbox" class="common_selector sub_category" value="<?php echo $sub->sub_id;?>"  > <?php  echo $sub->sub_category;?></label>
+							<label class="common_s"><input type="checkbox" class="common_select product_type" value="<?php echo $sub->id;?>"  > <?php  echo $sub->product_type;?></label>
 						</div>
 					<?php 
 					
@@ -1396,11 +1399,83 @@ a:hover, a:visited, a:link, a:active
                 </div>
                </div>
             </div>
-         </div> -->
-         
+         </div>
+         <?php 
+					
+					 }
+					?>
+
+<?php if ($cateory == 3 &&  $cateory == 4)
+                { ?>
+                   <div class="panel-group mt-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                   <a data-toggle="collapse" href="#test"><h4 class="panel-title common_h">
+               Job Type
+                  </h4></a>
+               </div>
+               <div id="test" class="panel-collapse collapse">
+                   <div class="list-group mt-2">
+					
+					<?php
+					  $cateory =  $this->uri->segment(3);
+               
+                     $v =  $this->session->set_userdata('filter_id',$cateory);
+                     $sub_ = '';
+                      $subcategory = get_producttype_byid($cateory);  
+					  
+					  foreach($subcategory as $sub){
+					?>
+
+	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
+							<label class="common_s"><input type="checkbox" class="common_select product_type" value="<?php echo $sub->id;?>"  > <?php  echo $sub->product_type;?></label>
+						</div>
+					<?php 
+					
+					 }
+					?>
+                </div>
+               </div>
+            </div>
+         </div>
+         <?php 
+					
+					 }
+					?>
          
                  <?php if($cateory == 1 )
                 { ?>
+                  <div class="panel-group mt-4">
+            <div class="panel panel-default">
+               <div class="panel-heading">
+                   <a data-toggle="collapse" href="#test"><h4 class="panel-title common_h">
+               Education Type
+                  </h4></a>
+               </div>
+               <div id="test" class="panel-collapse collapse">
+                   <div class="list-group mt-2">
+					
+					<?php
+					  $cateory =  $this->uri->segment(3);
+               
+                     $v =  $this->session->set_userdata('filter_id',$cateory);
+                     $sub_ = '';
+                      $subcategory = get_producttype_byid($cateory);  
+					  
+					  foreach($subcategory as $sub){
+					?>
+
+	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
+							<label class="common_s"><input type="checkbox" class="common_select product_type" value="<?php echo $sub->id;?>"  > <?php  echo $sub->product_type;?></label>
+						</div>
+					<?php 
+					
+					 }
+					?>
+                </div>
+               </div>
+            </div>
+         </div>
             <div class="panel-group mt-4">
             <div class="panel panel-default">
                <div class="panel-heading">
@@ -1516,12 +1591,12 @@ function filter_data(page)
     var maximum_price = $('#hidden_maximum_price').val();
 
     var brand = get_filter('brand');
-    var type = get_filter('type');
+    var type = get_filter('producy_type');
 
 
 
     var sub_category = get_filter('sub_category');
-
+ 
 
     $.ajax({
         url: "<?php echo base_url(); ?>welcome/fetch_data/" + page,
@@ -1575,6 +1650,17 @@ function get_filter(class_name) {
     return filter;
 }
 
+
+function get_type_filter(class_name)
+	{
+		var filter = [];
+		$('.'+class_name+':checked').each(function(){
+			filter.push($(this).val());
+		});
+		  console.log(filter)
+		return filter;
+	}
+
 $(document).on('click', '.sub_category', function() {
     var subId = $(this).data('sub-id');
     selectedSubId = subId;
@@ -1597,6 +1683,9 @@ $('.common_selector').click(function() {
     filter_data(1);
 });
 
+$('.common_select').click(function() {
+    filter_data(1);
+});
 
 
 });

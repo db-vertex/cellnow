@@ -81,7 +81,7 @@ class Product_filter_model extends CI_Model
 		{
 		  $type_filter = implode("','", $type);
 			$query .= "
-			 AND type IN('".$type_filter."')
+			 AND Education_Type IN('".$type_filter."')
 			";
 		}
 		// if(isset($Model))
@@ -223,7 +223,7 @@ class Product_filter_model extends CI_Model
                                         </div>
                                         <div class="col-3 pe-2">
                                             <a
-                                                href="https://dbvertex.com/celnow/welcome/productdetail/'.$relatedproduct->category_id.'/'. $relatedproduct->id.'/'.$relatedproduct->subcategory_id.'">
+                                                href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
                                                 <p class="related_ads_details_button ">
                                                     <spam class="related_ads_details_button_text">Product Detail</spam>
                                                 </p>
