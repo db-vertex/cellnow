@@ -1428,15 +1428,39 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                            ?></small><br>
                                     </div>
                                 </div>
-                               
+                                <?php if($relatedproduct->category_id==1){
+                  ?>
                                 <div class="row mt-1">
                                     <div class="col-3">
-                                        <p style="color: #575757;">Model</p>
+                                        <p style="color: #575757;">Type</p>
                                     </div>
                                     <div class="col-5">
-                                        <p style="color: #575757;">2015</p>
+                                        <p style="color: #575757;"><?php echo $relatedproduct->type; ?></p>
                                     </div>
                                 </div>
+                                <?php } else if($relatedproduct->category_id==2){
+                   $type_name = get_product_type_name($relatedproduct->Education_Type); 
+                  ?>
+                   <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Edcation Type</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                    </div>
+                                </div>
+                                <?php } else if($product->category_id==3 && $product->category_id==4){ 
+                  $type_name = get_product_type_name($product->Job_type); 
+                  ?>
+                  <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Job Type</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                    </div>
+                                </div>
+                                <?php } ?>
                                 <div class="row mt-1">
                                     <div class="col-3">
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"
