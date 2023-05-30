@@ -125,7 +125,7 @@ width: 131.9px; border-color:#10B981;">
 
  <div class="col-lg-4 col-sm-6  mb-2">
     <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
+    <img src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top" alt="Card image cap">
       <div class="card-block" style="padding:8px">
       <h5 class="card-title"><?php
                            $title =$value->title;
@@ -142,13 +142,13 @@ width: 131.9px; border-color:#10B981;">
                            ?></h5>
     <small class="card-text"><?php
                            $title =$value->title;
-                            if(strlen($title) <= 25)
+                            if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,25) . '...';
+                                $y = substr($title,0,30) . '...';
                                 echo ucfirst($y);
                               }
                            
