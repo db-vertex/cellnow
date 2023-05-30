@@ -1218,7 +1218,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         <?php } }else{
                     $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
                     if (empty($wishlit)) {
-
+if($shop->admin_approval==1){
                     ?> <div class="" style="">
 
                             <div class="">
@@ -1250,7 +1250,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
 
 
-                        <?php  } else {
+                        <?php  }} else {
                     $shop_list =check_shoplist_by_productid($product_detail->id);
                     if(empty($shop_list)) {echo"";}else{
                     $shop_name= get_shop_name($shop_list->shop_id);
