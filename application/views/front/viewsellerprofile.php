@@ -127,15 +127,38 @@ width: 131.9px; border-color:#10B981;">
     <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
     <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
       <div class="card-block" style="padding:8px">
-      <h5 class="card-title"><?php echo $value->title; ?></h5>
-    <small class="card-text"><?php echo $value->Description; ?>.</small><br>
+      <h5 class="card-title"><?php
+                           $title =$value->title;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></h5>
+    <small class="card-text"><?php
+                           $title =$value->title;
+                            if(strlen($title) <= 25)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,25) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>.</small><br>
     
     Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
     Model            <span style="padding-left:60px"> 2015</span><br>
-    Color     <span style="padding-left:66px"> Red</span><br>
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px">West India</span><br>
-    <a href="#" class="btn " id="b">Edit</a>
-    <a href="#" class="btn " id="b">Delete</a>
+   
+    <i class="fa fa-map-marker"></i> <span style="padding-left:50px"><?php echo  $value->address?></span><br>
+   
     </div>
     </div>
 </div> 
