@@ -1462,7 +1462,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <p style="color: #575757;">Tuitions Location </p>
                                     </div>
                                     <div class="col-5">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->Tuitions_Location; ?></p>
+                                        <p style="color: #575757;"><?php echo $relatedproduct->Tuitions_location; ?></p>
                                     </div>
                                 </div>
                                 <?php } else if($relatedproduct->category_id==3 && $relatedproduct->category_id==4){ 
