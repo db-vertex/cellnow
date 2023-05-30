@@ -392,4 +392,47 @@
     var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
   })();
 
+
+
+
+
+
+  $(document).on('click', '.dddssaaf', function(e) {
+    e.stopPropagation();
+    var obj = $(this);
+    var pid = $(this).data("pid");
+    var cid = $(this).data("cid");
+    var uid = $(this).data("uid");
+    var status = $(this).data("wishlist");
+
+    if (!uid == 0)
+        //   alert(status);
+        $.ajax({
+            type: "POST",
+            url: '<?php echo base_url("Welcome/setwishlist"); ?>',
+            cache: false,
+            data: {
+                'product_id': pid,
+                'user_id': uid,
+                'category_id': cid
+            },
+            error: function() {
+                alert('Something is wrong');
+            },
+            success: function(data) {
+                $(".dddssaaf" + pid).toggleClass("fa-heart-o fa-heart");
+                if (status == 0) {
+                    $(this).data("wishlist", 1);
+                    swal("Product Added in Wishlist Successfully!", "", "success");
+                } else {
+                    $(this).data("wishlist", 0);
+                    swal("Product removed from Wishlist Successfully!", "", "success");
+                }
+            }
+        });
+
+
+});
+
+
 </script>

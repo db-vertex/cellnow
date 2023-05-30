@@ -1205,7 +1205,8 @@ a:hover, a:visited, a:link, a:active
       foreach ($all_banner as $key => $banner) {
         ?>
             <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-                <a href="<?php echo $banner->url; ?>" target="_blank"><img class="d-block w-100"
+                <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px; max-height:500px;
+    min-height:500px;" class="d-block w-100"
                         id='<?php  echo $banner->url ?>'
                         src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>"
                         alt="First slide"></a>
@@ -1231,11 +1232,7 @@ a:hover, a:visited, a:link, a:active
     </div>
 </div><br>
     </div>
-<div class="container">
-    <div class="row">
-        <p style="color: #F59E0B;"> -------Our Recomandation</p>
-    </div>
-</div><br>
+
 
 
 <!-- search bar -->
@@ -1270,7 +1267,7 @@ a:hover, a:visited, a:link, a:active
 
                 ?>
                  <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                      <a <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id; ?>" class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
+                      <p <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>  class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
 
                 </li> &nbsp  &nbsp &nbsp &nbsp &nbsp
           
@@ -1283,8 +1280,10 @@ a:hover, a:visited, a:link, a:active
     
 </div>
 
-
-
+<div id="sub-list">
+  
+</div>
+<!-- 
 <div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
@@ -1350,7 +1349,7 @@ a:hover, a:visited, a:link, a:active
 
         </div>
     </div>
-</div>
+</div> -->
         <div class="container mb-5">
         <div class="row">
             <div class="col-md-3">

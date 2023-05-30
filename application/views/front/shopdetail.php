@@ -6,6 +6,44 @@
         max-height: 190px;
         min-height: 190px;
     }
+    .related_ads_details_button {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 9.42857px 12.5714px;
+        gap: 4.71px;
+
+        width: 80.43px;
+        height: 30.86px;
+
+        background: #10B981;
+        /* C2/B */
+
+        border: 1.57143px solid #46760A;
+        border-radius: 25.42857px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        align-self: center;
+        flex-grow: 0;
+    }
+    .related_ads_details_button_text {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 9.7857px;
+        line-height: 15px;
+        color: #FFFFFF;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
 </style><div class="container" style=" margin-top: 180px;">
 
 <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
