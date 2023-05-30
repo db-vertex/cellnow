@@ -1449,7 +1449,7 @@ a:hover, a:visited, a:link, a:active
             <div class="panel panel-default">
                <div class="panel-heading">
                    <a data-toggle="collapse" href="#test"><h4 class="panel-title common_h">
-               Education Type
+                Type
                   </h4></a>
                </div>
                <div id="test" class="panel-collapse collapse">

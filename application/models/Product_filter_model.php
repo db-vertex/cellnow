@@ -144,7 +144,7 @@ class Product_filter_model extends CI_Model
                                     alt="related_ads_card_img">
                                 <div class="card-body related_ads_card">
                                     <div class="row">
-                                        <div class="col-6">
+                                        <div class="col-5">
                                             <p class="related_ads_card_title">';
                                             $title = $row['title'];
 						
@@ -161,9 +161,9 @@ class Product_filter_model extends CI_Model
 						}
 						$pro.='</p>
                                         </div>
-                                        <div class="col-2">
+                                        <div class="col-3">
                                             <b>   
-                                              <i style="font-size:18px;color:#F15927; text-align: right;" ' . (empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"') . ' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'" ></i>
+                                              <i style="padding:0px;font-size:12px;color:#F15927; text-align: right;" ' . (empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"') . ' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'" ></i>
                                             </b>
                                         </div>
                                         <div class="col-4">
@@ -193,18 +193,17 @@ class Product_filter_model extends CI_Model
                                    
                                     <div class="row mt-1">
                                         <div class="col-3">
-                                            <p style="color: #575757;">Model</p>
+                                            <p style="color: #575757;">Type</p>
                                         </div>
                                         <div class="col-5">
                                             <p style="color: #575757;">2015</p>
                                         </div>
                                     </div>
-                                    <div class="row mt-1">
+                                    <div class="row mt-2">
                                         <div class="col-3">
-                                            <i class="bi bi-geo-alt-fill" aria-hidden="true"
-                                                style="font-size:18px; color:#69d3b0"></i>
+										<img src="https://dbvertex.com/celnow/assets/images/location .png" >
                                         </div>
-                                        <div class="col-5">
+                                        <div class="col-5 mt-2">
                                             <p tyle="color: #575757;">';
 											$title = $row['address'];
 						
@@ -221,7 +220,7 @@ class Product_filter_model extends CI_Model
 											}
 											$pro.='</p>
                                         </div>
-                                        <div class="col-3 pe-2">
+                                        <div class="col-3 pe-2 mt-2">
                                             <a
                                                 href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
                                                 <p class="related_ads_details_button ">

@@ -281,7 +281,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
             <div class="form-group">
               <label>Google Address</label>
-              <input name="text" class="form-control" placeholder="Address" id="Location" type="text" 
+              <input type="text"   class="form-control" name="Address" placeholder="Address" id="Location" 
                 value="<?php echo $shop->Address; ?>" style="border-radius:30px; border-color:#13C571" required>
                 <div class="invalid-feedback">
                 Address is required.
