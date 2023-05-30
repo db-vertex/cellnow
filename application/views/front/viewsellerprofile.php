@@ -125,9 +125,9 @@ width: 131.9px; border-color:#10B981;">
 
  <div class="col-lg-4 col-sm-6  mb-2">
     <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top" alt="Card image cap">
+    <img src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top va-thumbnail" alt="Card image cap">
       <div class="card-block" style="padding:8px">
-      <h5 class="card-title"><?php
+      <h6 class="card-title"><?php
                            $title =$value->title;
                             if(strlen($title) <= 10)
                               {
@@ -139,7 +139,7 @@ width: 131.9px; border-color:#10B981;">
                                 echo ucfirst($y);
                               }
                            
-                           ?></h5>
+                           ?></h6>
     <small class="card-text"><?php
                            $title =$value->title;
                             if(strlen($title) <= 30)
@@ -154,10 +154,10 @@ width: 131.9px; border-color:#10B981;">
                            
                            ?>.</small><br>
     
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
+    Fresheness  <span style="padding-left:30px"><p>New(Extra fresh)</p></span><br>
+    Model  <span style="padding-left:60px"><p> 2015</p></span><br>
    
-    <i class="fa fa-map-marker"></i> <span style="padding-left:50px"><?php echo  $value->address?></span><br>
+    <img src="<?php echo base_url();?>assets/images/location .png" ></i> <span style="padding-left:50px"><p><?php echo  $value->address?></p></span><br>
    
     </div>
     </div>
