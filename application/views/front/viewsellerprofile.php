@@ -154,10 +154,10 @@ width: 131.9px; border-color:#10B981;">
                            
                            ?>.</small><br>
     
-    Fresheness  <span style="padding-left:30px"><p>New(Extra fresh)</p></span><br>
-    Model  <span style="padding-left:60px"><p> 2015</p></span><br>
+    Fresheness  <span style="padding-left:20px">>New(Extra fresh)</span><br>
+    Model  <span style="padding-left:50px"> 2015</span><br>
    
-    <img src="<?php echo base_url();?>assets/images/location .png" ></i> <span style="padding-left:50px"><p><?php echo  $value->address?></p></span><br>
+    <img src="<?php echo base_url();?>assets/images/location .png" ></i> <span style="padding-left:40px"><?php echo  $value->address?></span><br>
    
     </div>
     </div>
