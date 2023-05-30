@@ -195,12 +195,21 @@ function get_all_search_product($term)
        
        //load databse library
        $ci->load->database();
-      
-    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id from category_reusable_parts 
-    UNION SELECT title,id,category_id ,subcategory_id from category_internships 
-    UNION SELECT title,id,category_id ,subcategory_id from category_job
-    UNION SELECT title,id,category_id ,subcategory_id from category_tuitions
+       $session_id = $ci->session->userdata("id");
+     if ($session_id) {
+    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id from category_reusable_parts WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id from category_internships WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id from category_job WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id from category_tuitions WHERE user_id !='.$session_id.'
     ) as  custam  WHERE title like "%'.$term.'%"';
+     }
+     else{
+      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id from category_reusable_parts 
+      UNION SELECT title,id,category_id ,subcategory_id from category_internships 
+      UNION SELECT title,id,category_id ,subcategory_id from category_job
+      UNION SELECT title,id,category_id ,subcategory_id from category_tuitions
+      ) as  custam  WHERE title like "%'.$term.'%"  ';
+     }
     
        $category_data = $ci->db->query($query);  
              
