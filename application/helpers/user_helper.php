@@ -49,6 +49,21 @@ function get_all_favroite($user_id)
   return $category_data->result(); 
 }
 
+function get_wishlist_count($product_id,$category_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query='SELECT * from wishlist where category_id ='.$category_id.' AND product_id ='.$product_id.'';
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->num_rows(); 
+}
+
 function get_all_category_reusable_parts($id)
 {
   //get main CodeIgniter object

@@ -1045,7 +1045,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                                         </div>
                                         <div class="col-8 mt-3">
-                                            <span class="detalis_option_text">&nbsp Like</span>
+                                            <span class="detalis_option_text">&nbsp <?php $product_wishlist = get_wishlist_count($product_detail->id ,$product_detail->category_id); echo $product_wishlist; ?></span>
                                         </div>
                                     </div>
                                 </div>
