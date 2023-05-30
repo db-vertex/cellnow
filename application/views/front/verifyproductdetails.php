@@ -1450,37 +1450,37 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                    $type_name = get_product_type_name($relatedproduct->Education_Type); 
                   ?>
                    <div class="row mt-1">
-                                    <div class="col-3">
-                                        <p style="color: #575757;">Edcation Type</p>
-                                    </div>
                                     <div class="col-5">
+                                        <p style="color: #575757;">Education Type</p>
+                                    </div>
+                                    <div class="col-6">
                                         <p style="color: #575757;"><?php echo $type_name; ?></p>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-3">
+                                    <div class="col-6">
                                         <p style="color: #575757;">Tuitions Location </p>
                                     </div>
-                                    <div class="col-5">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->Tuitions_location; ?></p>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $relatedproduct->Tuitions_loction; ?></p>
                                     </div>
                                 </div>
                                 <?php } else if($relatedproduct->category_id==3 && $relatedproduct->category_id==4){ 
                   $type_name = get_product_type_name($relatedproduct->Job_type); 
                   ?>
                   <div class="row mt-1">
-                                    <div class="col-3">
+                                    <div class="col-5">
                                         <p style="color: #575757;">Job Type</p>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;"><?php echo $type_name; ?></p>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-3">
+                                    <div class="col-5">
                                         <p style="color: #575757;">Job Location</p>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;"><?php echo $relatedproduct->Job_Location; ?></p>
                                     </div>
                                 </div>
