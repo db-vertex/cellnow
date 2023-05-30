@@ -139,7 +139,7 @@ width: 131.9px; border-color:#10B981;">
                                 echo ucfirst($y);
                               }
                            
-                           ?></h6>
+                           ?> &nbsp <p style="color:#10b981"><?php echo $value->price; ?></p></h6>
     <small class="card-text"><?php
                            $title =$value->title;
                             if(strlen($title) <= 30)
@@ -157,7 +157,19 @@ width: 131.9px; border-color:#10B981;">
     Fresheness  <span style="padding-left:20px">>New(Extra fresh)</span><br>
     Model  <span style="padding-left:50px"> 2015</span><br>
    
-    <img src="<?php echo base_url();?>assets/images/location .png" ></i> <span style="padding-left:40px"><?php echo  $value->address?></span><br>
+    <img src="<?php echo base_url();?>assets/images/location .png" ></i> <span style="padding-left:40px"><?php
+                           $title =$value->address;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></span><br>
    
     </div>
     </div>
