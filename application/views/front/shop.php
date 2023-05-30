@@ -502,7 +502,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
                
                 <div class="row pl-3">
-                  <div class=col-4><p>Model</p></div>
+                  <div class=col-4><p>Type</p></div>
                   <div class=col-8><p><?php echo $Categories_all_product->type; ?></p></div>
                 </div>
 
@@ -511,7 +511,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                 <div class="row text-center p-3">
                   <div class="col-6"> 
                     <p>
-                    <i class="fa fa-map-marker" aria-hidden="true" style="font-size:22px; color:#69d3b0"></i> <?php echo $Categories_all_product->address; ?>
+                    <img src="<?php echo base_url();?>assets/images/location .png" ><?php echo $Categories_all_product->address; ?>
                     </p>
                   </div>
                   <div class="col-6 ">
