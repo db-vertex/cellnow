@@ -508,10 +508,22 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
 
-                <div class="row text-center p-3">
+                <div class="row text-center pl-3">
                   <div class="col-6"> 
                     <p>
-                    <img src="<?php echo base_url();?>assets/images/location .png" ><?php echo $Categories_all_product->address; ?>
+                    <img src="<?php echo base_url();?>assets/images/location .png" > <?php
+                           $title =$Categories_all_product->address;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
                     </p>
                   </div>
                   <div class="col-6 ">
