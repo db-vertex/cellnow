@@ -138,19 +138,42 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
        }  
      ?>
 
-<div class="col-lg-4 col-md-6  mb-2 ">
-    <div class="card" style="max-width: 22rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:5px">
-      <div class="card-title">
-      <div class="row">
-        <div class="col-6"><b style="font-size:18px"><?php echo $Categories_all_product->title; ?> </b></div>
-        <div class="col-2">     
-</div>
-        <div class="col-4" style="color:#10b981"><h5><b>$<?php echo $Categories_all_product->price; ?></b></h5></div>
-      </div>
-      </div>
-    <small class="card-text"><?php
+<div class="col-lg-4 col-md-6  mb-2">
+            <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
+              <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>" class="card-img-top" alt="Card image cap">
+              <div class="card-block" style="padding:5px">
+                <div class="card-title">
+                  <div class="row pl-3">
+                    <div class="col-6"><b style="font-size:15px">
+                    <?php
+                           $title =$Categories_all_product->title;
+                            if(strlen($title) <= 12)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,12) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
+                      </b></div>
+                    <div class="col-2"> <i style=" font-size:19px; margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
+                        data-uid="<?php echo $user["user_id"]; ?>"
+                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
+                        data-pid="<?php echo $Categories_all_product->id; ?>" data-cid="<?php echo $Categories_all_product->category_id; ?>"
+                        data-wishlist="<?php echo $wishlist; ?>"></i>
+                    </div>
+                    <div class="col-4" style="color:#10b981">
+                      <h6><b>$<?php echo $Categories_all_product->price; ?>
+                        </b></h6>
+                    </div>
+                  </div>
+                </div>
+                <div class="row pl-3">
+                <small class="card-text ">
+                <?php
                            $title =$Categories_all_product->Description;
                             if(strlen($title) <= 25)
                               {
@@ -162,31 +185,52 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 echo ucfirst($y);
                               }
                            
-                           ?></small><br>
-    
-    <div class="row pt-3">
-      <div class=col-6>Fresheness </div>
-      <div class=col-6>New(Extra fresh)</div>
-    </div>
+                           ?>
+                </small><br>
+        </div>
 
-    <div class="row">
-      <div class=col-6>Model</div>
-      <div class=col-6><?php echo $Categories_all_product->type; ?></div>
-    </div>
+               
+                <div class="row pl-3">
+                  <div class=col-4><p>Type</p></div>
+                  <div class=col-8><p><?php echo $Categories_all_product->type; ?></p></div>
+                </div>
 
-   
 
-    <div class="row text-center">
-        <div class="col-1"><i class="fa fa-map-marker"></i></div>
-        <div class="col-5"><p><?php echo $Categories_all_product->address; ?></p></div>
-        <div class="col-6" >     <a href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id;?>/<?php echo $Categories_all_product->id;?>/<?php echo $Categories_all_product->subcategory_id;?>" class="btn btn-change" id="a" style="font-size:15px; background-color:#10B981; color:#fff;" >Ads Details </a>
-</div>
-      </div>
-  
-    </div>
-    </div>
-</div>
 
+                <div class="row text-center p-3">
+                  <div class="col-2">
+                  <img src="<?php echo base_url();?>assets/images/location .png" >
+                            </div>
+                  <div class="col-5"> 
+                    <p>
+                    <?php
+                           $title =$Categories_all_product->address;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?>
+                    </p>
+                  </div>
+                  <div class="col-5">
+                                        <a
+                                            href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
+                                            <p class="related_ads_details_button ">
+                                                <spam class="related_ads_details_button_text">Product Detail</spam>
+                                            </p>
+                                        </a>
+                                    </div>
+                </div>
+
+              </div>
+            </div>
+          </div> 
 
 <?php }}else{?>
          <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
