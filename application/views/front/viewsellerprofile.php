@@ -118,15 +118,17 @@ width: 131.9px; border-color:#10B981;">
 
 <?php if(isset($user_id)){
   $sellerproduct =get_seller_product($user_id); 
- if(!empty($sellerproduct)){?>
+ if(!empty($sellerproduct)){
+  foreach($sellerproduct as $value){
+    ?>
 
 
  <div class="col-lg-4 col-sm-6  mb-2">
     <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
     <img src="<?php echo base_url();?>assets/images/bike1.png" class="card-img-top" alt="Card image cap">
       <div class="card-block" style="padding:8px">
-      <h5 class="card-title"><?php echo $sellerproduct->title; ?></h5>
-    <small class="card-text"><?php echo $sellerproduct->Description; ?>.</small><br>
+      <h5 class="card-title"><?php echo $value->title; ?></h5>
+    <small class="card-text"><?php echo $value->Description; ?>.</small><br>
     
     Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
     Model            <span style="padding-left:60px"> 2015</span><br>
@@ -137,7 +139,7 @@ width: 131.9px; border-color:#10B981;">
     </div>
     </div>
 </div> 
-<?php }else{?>
+<?php }}else{?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
 <?php }}?>
 
