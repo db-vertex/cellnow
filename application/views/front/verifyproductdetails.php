@@ -1438,6 +1438,14 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <p style="color: #575757;"><?php echo $relatedproduct->type; ?></p>
                                     </div>
                                 </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Brand</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $relatedproduct->brand; ?></p>
+                                    </div>
+                                </div>
                                 <?php } else if($relatedproduct->category_id==2){
                    $type_name = get_product_type_name($relatedproduct->Education_Type); 
                   ?>
@@ -1449,8 +1457,16 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <p style="color: #575757;"><?php echo $type_name; ?></p>
                                     </div>
                                 </div>
-                                <?php } else if($product->category_id==3 && $product->category_id==4){ 
-                  $type_name = get_product_type_name($product->Job_type); 
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Tuitions Location </p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $relatedproduct->Tuitions_Location; ?></p>
+                                    </div>
+                                </div>
+                                <?php } else if($relatedproduct->category_id==3 && $relatedproduct->category_id==4){ 
+                  $type_name = get_product_type_name($relatedproduct->Job_type); 
                   ?>
                   <div class="row mt-1">
                                     <div class="col-3">
@@ -1458,6 +1474,14 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     </div>
                                     <div class="col-5">
                                         <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Job Location</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $relatedproduct->Job_Location; ?></p>
                                     </div>
                                 </div>
                                 <?php } ?>
