@@ -975,12 +975,31 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
         </div>
 
         <div class="thumbnails">
+        <?php if ($product_detail->cover_img !== NULL) { ?>
             <img class="details_img_box img-fluid active" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
-            <img class="details_img_box img-fluid " src="<?php echo base_url() . $product_detail->images_2 . ""; ?>">
-            <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>">
-            <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>">
-            <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>">
-        </div>
+            <?php } else { ?>
+
+<?php } ?>
+<?php if ($product_detail->images_2 !== NULL) { ?>
+ <img class="details_img_box img-fluid " src="<?php echo base_url() . $product_detail->images_2 . ""; ?>">
+ <?php } else { ?>
+
+<?php } ?>
+<?php if ($product_detail->images_3 !== NULL) { ?>
+ <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>">
+ <?php } else { ?>
+
+<?php } ?>
+<?php if ($product_detail->images_4 !== NULL) { ?>
+    <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>">
+    <?php } else { ?>
+
+<?php } ?>
+<?php if ($product_detail->images_5 !== NULL) { ?>
+    <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>">
+    <?php } else { ?>
+
+<?php } ?>   </div>
                     <div class="row mt-3">
                         <div class="detalis_option">
                             <div class="row">
