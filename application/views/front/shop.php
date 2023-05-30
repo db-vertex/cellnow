@@ -508,7 +508,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
 
-                <div class="row text-center pl-3">
+                <div class="row text-center ">
                   <div class="col-6"> 
                     <p>
                     <img src="<?php echo base_url();?>assets/images/location .png" > <?php
