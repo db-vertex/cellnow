@@ -450,7 +450,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
    
 
     <div class="col-lg-4 col-md-6  mb-2">
-            <div class="card" style="max-width: 19rem; border-radius: 28px;margin:auto;">
+            <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
               <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>" class="card-img-top" alt="Card image cap">
               <div class="card-block" style="padding:5px">
                 <div class="card-title">
@@ -508,11 +508,11 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
 
-                <div class="row text-center ">
+                <div class="row text-center p-3">
                   <div class="col-2">
                   <img src="<?php echo base_url();?>assets/images/location .png" >
                             </div>
-                  <div class="col-4"> 
+                  <div class="col-5"> 
                     <p>
                     <?php
                            $title =$Categories_all_product->address;
@@ -529,7 +529,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                            ?>
                     </p>
                   </div>
-                  <div class="col-6 ">
+                  <div class="col-5">
                                         <a
                                             href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
                                             <p class="related_ads_details_button ">
