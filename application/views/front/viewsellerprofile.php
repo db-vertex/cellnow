@@ -120,6 +120,7 @@ width: 131.9px; border-color:#10B981;">
   $sellerproduct =get_seller_product($user_id); 
  if(!empty($sellerproduct)){
   foreach($sellerproduct as $value){
+ 
     ?>
 
 
@@ -127,7 +128,8 @@ width: 131.9px; border-color:#10B981;">
     <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
     <img src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top va-thumbnail" alt="Card image cap">
       <div class="card-block" style="padding:8px">
-      <h6 class="card-title"><?php
+      <div class="row card-title">
+        <div class="col-6"><?php
                            $title =$value->title;
                             if(strlen($title) <= 10)
                               {
@@ -139,9 +141,12 @@ width: 131.9px; border-color:#10B981;">
                                 echo ucfirst($y);
                               }
                            
-                           ?> &nbsp <p style="color:#10b981"><?php echo $value->price; ?></p></h6>
-    <small class="card-text"><?php
-                           $title =$value->title;
+                           ?></div> 
+                           <div class="col-6">
+                            <b style="color:#10b981">$<?php echo $value->price; ?></b>
+                            </div></div>
+    <p class="card-text"><?php
+                           $title =$value->Description;
                             if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
@@ -152,10 +157,58 @@ width: 131.9px; border-color:#10B981;">
                                 echo ucfirst($y);
                               }
                            
-                           ?>.</small><br>
-    
-    Fresheness  <span style="padding-left:20px">>New(Extra fresh)</span><br>
-    Model  <span style="padding-left:50px"> 2015</span><br>
+                           ?>.</p>
+                            <?php if($value->category_id==1){
+                  ?>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Type</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $value->type; ?></p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Brand</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $value->brand; ?></p>
+                                    </div>
+                                </div>
+                                <?php } else if($value->category_id==2){
+                   $type_name = get_product_type_name($value->type); 
+                  ?>
+                   <div class="row mt-1">
+                                    <div class="col-5">
+                                        <p style="color: #575757;">Education Type</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                    </div>
+                                </div>
+                            
+                                <?php } else if($value->category_id==3 && $value->category_id==4){ 
+                  $type_name = get_product_type_name($value->type); 
+                 
+                  ?>
+                  <div class="row mt-1">
+                                    <div class="col-5">
+                                        <p style="color: #575757;">Job Type</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-5">
+                                        <p style="color: #575757;">Job Location</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $value->Job_Location; ?></p>
+                                    </div>
+                                </div>
+                                <?php } ?><br>
    
     <img src="<?php echo base_url();?>assets/images/location .png" ></i> <span style="padding-left:40px"><?php
                            $title =$value->address;
