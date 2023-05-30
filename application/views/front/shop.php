@@ -509,9 +509,12 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
                 <div class="row text-center ">
-                  <div class="col-6"> 
+                  <div class="col-2">
+                  <img src="<?php echo base_url();?>assets/images/location .png" >
+                            </div>
+                  <div class="col-4"> 
                     <p>
-                    <img src="<?php echo base_url();?>assets/images/location .png" > <?php
+                    <?php
                            $title =$Categories_all_product->address;
                             if(strlen($title) <= 15)
                               {
