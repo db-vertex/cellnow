@@ -859,7 +859,7 @@ border-radius: 80px 0px 0px 80px;
 .container .thumbnails {
     margin: auto;
     width: 100%;
-  
+  margin-top: 20px;
     padding: 5px;
 }
 
@@ -979,7 +979,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
             <img class="details_img_box img-fluid " src="<?php echo base_url() . $product_detail->images_2 . ""; ?>">
             <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>">
             <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>">
-            <img class="details_img_box img-fluid" src="https://images.unsplash.com/photo-1426604966848-d7adac402bff?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80">
+            <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>">
         </div>
                     <div class="row mt-3">
                         <div class="detalis_option">
@@ -1458,8 +1458,8 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-6">
-                                        <p style="color: #575757;">Tuitions Location </p>
+                                    <div class="col-5">
+                                        <p style="color: #575757;">Tuition Location </p>
                                     </div>
                                     <div class="col-6">
                                         <p style="color: #575757;"><?php echo $relatedproduct->Tuitions_loction; ?></p>
@@ -1467,6 +1467,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 </div>
                                 <?php } else if($relatedproduct->category_id==3 && $relatedproduct->category_id==4){ 
                   $type_name = get_product_type_name($relatedproduct->Job_type); 
+                 
                   ?>
                   <div class="row mt-1">
                                     <div class="col-5">
