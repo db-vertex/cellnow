@@ -146,7 +146,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 					//print_r($subcategory);die();
 
-					$sub .= '<div class="col-lg-3 col-md-6 mb-4">
+					$sub .= '<div class="col-xl-3 col-md-6 mb-4 ">
 					<div class="card">
 					  <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
 					  <a  href="https://dbvertex.com/celnow/welcome/productdetail/'.$value->category_id.'/'. $value->id.'/'. $value->subcategory_id.'"><img src="https://dbvertex.com/celnow/' . $value->cover_img . '"
