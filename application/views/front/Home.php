@@ -266,13 +266,13 @@
             <a href="" class="text-reset">
               <h6><?php
                            $title = $pro->address;
-                            if(strlen($title) <= 30)
+                            if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,30) . '...';
+                                $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
                            

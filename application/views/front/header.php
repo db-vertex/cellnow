@@ -309,7 +309,7 @@
     }
 
     .va-thumbnail {
-        border-radius: 20px;
+        border-radius: 6px;
         border: 0px;
         width: 100%;
         max-height: 200px;
