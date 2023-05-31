@@ -1,4 +1,7 @@
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+  <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <style>
 
     
@@ -1243,12 +1246,22 @@ a:hover, a:visited, a:link, a:active
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
-                <div class="search_box">
+            <div class="search_box">
+         
+         <input type="search" id="search" name="search" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+    <button type="button" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
+  </div>
+  <div class="row">
+                              <div id="display"></div>
+                             
 
-                    <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!"
-                        aria-label="Search" aria-describedby="search-addon" style="padding:12px 22px" />
-                    <button type="button" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
-                </div>
+                        
+                     
+            
+   
+                              
+                           
+                    </div>
             </div>
         </div>
     </div>
@@ -1752,4 +1765,46 @@ swal("Cancelled", "Something went wrong. Please try again.)", "error");
   });
 
 }
+
+
+$(document).ready(function() {
+    $( "#search" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({ 
+            url: "<?php echo base_url();?>welcome/search",
+            data: {term : request.term},
+            dataType: "json",
+            success: function(data){
+             
+              var resp = $.map(data,function(obj){
+                  var id = obj.id;
+                   var category_id = obj.category_id;
+                     var subcategory_id = obj.subcategory_id;
+                   var add = category_id +'/'+id +'/'+subcategory_id;
+                  return {
+                            label: obj.title,
+                           value: add
+                            
+                        }
+                   
+              }); 
+              response(resp);
+            console.log(resp);
+              $("#display").html(data).show();
+            } 
+            
+           
+        });
+       
+        
+    },
+      select: function(event, ui) {  
+                        location.href="<?php echo base_url();?>welcome/productdetail/" +ui.item.value ;
+            },
+    minLength: 2
+ });
+ 
+
+});
 </script>

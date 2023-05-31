@@ -312,8 +312,8 @@
         border-radius: 6px;
         border: 0px;
         width: 100%;
-        max-height: 200px;
-        min-height: 200px;
+        max-height: 250px;
+        min-height: 250px;
     }
 
     .va-thumbnail_category {
@@ -929,6 +929,45 @@ function function14() {
     });
 }
 
+$(document).ready(function() {
+    $( "#search" ).autocomplete({
+ 
+        source: function(request, response) {
+            $.ajax({ 
+            url: "<?php echo base_url();?>welcome/search",
+            data: {term : request.term},
+            dataType: "json",
+            success: function(data){
+             
+              var resp = $.map(data,function(obj){
+                  var id = obj.id;
+                   var category_id = obj.category_id;
+                     var subcategory_id = obj.subcategory_id;
+                   var add = category_id +'/'+id +'/'+subcategory_id;
+                  return {
+                            label: obj.title,
+                           value: add
+                            
+                        }
+                   
+              }); 
+              response(resp);
+            console.log(resp);
+              $("#display").html(data).show();
+            } 
+            
+           
+        });
+       
+        
+    },
+      select: function(event, ui) {  
+                        location.href="<?php echo base_url();?>welcome/productdetail/" +ui.item.value ;
+            },
+    minLength: 2
+ });
+ 
 
+});
 
 </script>
