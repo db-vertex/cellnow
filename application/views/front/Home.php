@@ -94,7 +94,7 @@
 .col-lg-4{
   display: none;
 }
-.more
+.mores
  {
   display: none;
 }
@@ -305,7 +305,7 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <button class="btn btn-danger loadmore">See All</button>
+            <button class="btn btn-danger loadMore">See All</button>
   </div>
 </section>
 
@@ -493,7 +493,7 @@
                 if($i > 0){
              ?>  
             
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 more">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores">
         <div class="card">
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a  href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>"><img src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
@@ -555,7 +555,7 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <button class="btn btn-danger loadmore">See All</button>
+            <button class="btn btn-danger more">See All</button>
   </div>
 </section>
 
@@ -908,10 +908,10 @@ function getproduct(subcategory_id){
 
 
 $(".col-lg-3").slice(0,4).show();
-$(".loadmore").on("click",function(){
+$(".loadMore").on("click",function(){
 $(".col-lg-3:hidden").slice(0,4).show();
 if($(".col-lg-3:hidden").length==0){
-  $(".loadmore").fadeOut();
+  $(".loadMore").fadeOut();
 }
 })
 
@@ -924,11 +924,11 @@ if($(".col-lg-4:hidden").length==0){
 }
 })
 
-$(".more").slice(0,4).show();
-$(".loadmore").on("click",function(){
-$(".more:hidden").slice(0,4).show();
-if($(".mmore:hidden").length==0){
-  $(".loadmore").fadeOut();
+$(".mores").slice(0,4).show();
+$(".more").on("click",function(){
+$(".mores:hidden").slice(0,4).show();
+if($(".mores:hidden").length==0){
+  $(".more").fadeOut();
 }
 })
  
