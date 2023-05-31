@@ -88,6 +88,9 @@
     font-weight: bold;
   }
 } 
+.col-lg-3{
+  display: none;
+}
 
  
 
@@ -200,7 +203,100 @@
   
 </div>
 
-<div class="container">
+<section >
+  <div class="text-center container py-5">
+    
+
+    <div class="row" id="product_list" style="margin-left:20px; margin-right:20px;">
+    <?php
+                  
+            
+                  $product = get_all_boost();   
+              
+            
+              if(!empty($product)){
+              $i = 1;
+              $j = 1;
+            foreach($product as $pro){
+            
+             $session_login_id  = $user['user_id'] ?? null;
+              $product_user_id = $pro->user_id;
+              if($session_login_id !== $product_user_id){
+                  if($i > 0){
+            
+            ?>  
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+              class="w-100 va-thumbnail" /></a>
+            <a href="#!">
+             
+              <div class="hover-overlay">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+          <h6 class="mb-3">
+             <strong class="ms-2 ">$50.99</strong>
+            </h6>
+                  </div>
+          <div class="d-flex justify-content-between align-items-center">
+
+<h6 class="dress-name"><?php
+                           $title = $pro->title;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></h6>
+
+
+
+</div>
+<div class="d-flex justify-content-between align-items-center"> 
+            <a href="" class="text-reset">
+              <h6><?php
+                           $title = $pro->address;
+                            if(strlen($title) <= 30)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,30) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></h6>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <?php $i++;} } else if($j == 1) {?>
+                   
+                   <?php   }  $j++; };  ?>  
+    <?php }
+              else {?>
+            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
+            <?php }?>
+            </div>
+            <button class="btn btn-danger loadmore">See All</button>
+  </div>
+</section>
+
+
+<!-- <div class="container">
 <div class="va-carrousel-section">
     <div class="va-whitewrap">
        
@@ -301,7 +397,7 @@
 
     </div>
 </div>
-</div>
+</div> -->
 
 
 <!-- new  -->
@@ -807,6 +903,15 @@ function getproduct(subcategory_id){
  
 
 });
+
+
+$(".col-lg-3").slice(0,4).show();
+$(".loadmore").on("click",function(){
+$(".col-lg-3:hidden").slice(0,4).show();
+if($(".col-lg-3:hidden").length==0){
+  $(".loadmore").fadeOut();
+}
+})
  
  
     </script>

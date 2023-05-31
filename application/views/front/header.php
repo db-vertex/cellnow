@@ -312,8 +312,8 @@
         border-radius: 20px;
         border: 0px;
         width: 100%;
-        max-height: 170px;
-        min-height: 170px;
+        max-height: 200px;
+        min-height: 200px;
     }
 
     .va-thumbnail_category {

@@ -146,50 +146,64 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 					//print_r($subcategory);die();
 
-					$sub .= '
+					$sub .= '<div class="col-lg-3 col-md-6 mb-4">
+					<div class="card">
+					  <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+					  <a  href="https://dbvertex.com/celnow/welcome/productdetail/'.$value->category_id.'/'. $value->id.'/'. $value->subcategory_id.'"><img src="https://dbvertex.com/celnow/' . $value->cover_img . '"
+						  class="w-100 va-thumbnail" /></a>
+						<a href="#!">
+						
+						  <div class="hover-overlay">
+							<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+						  </div>
+						</a>
+					  </div>
+					  <div class="card-body">
+					  <div class="d-flex justify-content-between align-items-center">
+					  <h6 class="mb-3">
+						 <strong class="ms-2 ">$'.$value->price.'</strong>
+						</h6>
+							  </div>
+					  <div class="d-flex justify-content-between align-items-center">
+
+					  <h6 class="dress-name">';
+						  $title = $value->title;
+	  
+						  if (strlen($title) <= 10) {
+							  $sub .= ucfirst($title);
+	  
+	  
+						  } else {
+							  $y = substr($title, 0, 10) . '...';
+							  $sub .= ucfirst($y);
+						  }
+						  $sub .= '</h6>
+
+
+
+						  </div>
+						  <div class="d-flex justify-content-between align-items-center"> 
+									  <a href="" class="text-reset">
+										<h6>';
+										$title = $value->title;
+					
+										if (strlen($title) <= 10) {
+											$sub .= ucfirst($title);
+					
+					
+										} else {
+											$y = substr($title, 0, 10) . '...';
+											$sub .= ucfirst($y);
+										}
+										$sub .= '</h6>
+						</a>
+						</div>
+						
+					  </div>
+					</div>
+				  </div>
 	
-		  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="https://dbvertex.com/celnow/welcome/productdetail/' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '" style=""> 
-                  <p  class="my-auto">
-                   <img class="va-thumbnail" src="https://dbvertex.com/celnow/' . $value->cover_img . '">
-                            
-    
-                  
-                  </p>
-
-                            <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$' . $value->price . '</p>
-                        <div class="va-title ms-3"><p>';
-					$title = $value->title;
-
-					if (strlen($title) <= 10) {
-						$sub .= ucfirst($title);
-
-
-					} else {
-						$y = substr($title, 0, 10) . '...';
-						$sub .= ucfirst($y);
-					}
-					$sub .= ' </p> 
-                           </div>
-                           <div class="ms-3 align-items-center">
-                                        <p class="text-muted mb-2"
-                                            style="color:black;cursor: pointer; width: 100%; overflow:clip; line-height: 1.4; white-space:nowrap; text-overflow: ellipsis; line-height: 1.4; display:inline-block">
-                                             <span class="ms-0">';
-					$title = $value->address;
-
-					if (strlen($title) <= 10) {
-						$sub .= ucfirst($title);
-
-
-					} else {
-						$y = substr($title, 0, 10) . '...';
-						$sub .= ucfirst($y);
-					}
-					$sub .= '</span></p><br>
-                                    
-                                    </div>
-                    </a> 
-                
-                    </div> '
+		  '
 
 					;
 
