@@ -236,6 +236,14 @@
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
               class="w-100 va-thumbnail" /></a>
+              <p style="margin-left:-90px;"> <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
+   margin-top: -20%; width:80px; ">
+    <?php if($pro->verified_product ==1){ ?>
+      <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   margin-top: -20%; width:80px; "><p>
+
+   <?php }?>       
+                  </p>
             <a href="#!">
              
               <div class="hover-overlay">
@@ -461,47 +469,47 @@
 </div><br>
 
 
-<div class="container">
-<div class="va-carrousel-section">
-    <div class="va-whitewrap">
-       
 
-        <div id="va_container_urgent">
-        <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                    class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512">
-                    <path fill="currentColor"
-                        d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                    </path>
-                </svg>
-            </button>
 
-            <div class="va-carrousel-flexbox_urgent">
-                   <?php
+<section >
+
+  <div class="text-center container py-4">
+  
+
+    <div class="row"  style="margin-left:20px; margin-right:20px;">
+    <?php
               
-                $product = get_all_store();
-             
-             
-             
-              if(!empty($product)){
-              $i = 1;
-              $j = 1;
-            foreach($product as $pro){
-             $session_login_id  = $user['user_id'] ?? null;
-              $product_user_id = $pro->user_id;
-              if($session_login_id !== $product_user_id){
-                  if($i > 0){
-               ?>  
+              $product = get_all_store();
+           
+           
+           
+            if(!empty($product)){
+            $i = 1;
+            $j = 1;
+          foreach($product as $pro){
+           $session_login_id  = $user['user_id'] ?? null;
+            $product_user_id = $pro->user_id;
+            if($session_login_id !== $product_user_id){
+                if($i > 0){
+             ?>  
             
-                  <div class="va-card va-cards"> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>" style=""> 
-                  <p style="min-height:151px; text-align:center;" class="my-auto">
-                 
-                      <img class="va-thumbnail" 
-                            src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>">
-                            
-                  </p>
-                        <div style="font-weigth:800px;" class="va-title ms-3">  <?php
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 more">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <a  href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>"><img src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
+              class="w-100 va-thumbnail" /></a>
+            <a href="#!">
+             
+              <div class="hover-overlay">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+        
+          <div class="d-flex justify-content-between align-items-center">
+
+<h6 class="dress-name"><?php
                            $title = $pro->name;
                             if(strlen($title) <= 15)
                               {
@@ -513,50 +521,43 @@
                                 echo ucfirst($y);
                               }
                            
-                           ?>
-                           </div>
-                           <div class="ms-3 align-items-center">
-                                        <p class="text-muted mb-1"
-                                            style="color:black;cursor: pointer; width: 100%; overflow:clip; line-height: 1.4; white-space:nowrap; text-overflow: ellipsis; line-height: 1.4; display:inline-block">
-                                             <span class="ms-0"><?php echo ucfirst($pro->Address) ?></span></p><br>
-                                    
-                                    </div>
-                    </a> 
-                
-                    </div>
-                    
-                      <?php $i++;} }
-                      elseif($j == 1){
-                      ?>
-                     
-                      
-                    
-                  <?php } $j++; };  ?>  
-            
-           
+                           ?></h6>
 
-            <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                    class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512">
-                    <path fill="currentColor"
-                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                    </path>
-                </svg>
-            </button>
-           <?php }
-               else {?>
+
+
+</div>
+<div class="d-flex justify-content-between align-items-center"> 
+            <a href="" class="text-reset">
+              <h6><?php
+                           $title = $pro->Address;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></h6>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <?php $i++;} } else if($j == 1) {?>
+                   
+                   <?php   }  $j++; };  ?>  
+    <?php }
+              else {?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-        </div>
-         </div>
-
-
-    </div>
-
-</div>
-</div>
-
+            </div>
+            <button class="btn btn-danger loadmore">See All</button>
+  </div>
+</section>
 
 
 <!-- new  -->
@@ -606,7 +607,7 @@
             
             ?>  
             
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 more">
+      <div class="col-lg-4 col-md-4 col-sm-6 mb-4 ">
         <div class="card">
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"

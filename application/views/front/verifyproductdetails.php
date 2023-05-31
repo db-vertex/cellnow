@@ -969,8 +969,13 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                 <div class="col-md-6">
                    
                 <div class="master">
+                
             <img class="details_img_cover img-fluid" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
-            <i class="fa-solid fa-chevron-left"></i>
+            <?php if($product_detail->verified_product ==1){ ?>
+      <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" style="margin-left:80%; margin-top:20px;
+   width:80px; ">
+
+   <?php }?> <i class="fa-solid fa-chevron-left"></i>
             <i class="fas fa-chevron-right"></i>
         </div>
 
