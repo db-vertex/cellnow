@@ -88,9 +88,7 @@
     font-weight: bold;
   }
 } 
-.col-lg-3{
-  display: none;
-}
+
 .col-lg-4{
   display: none;
 }
@@ -305,7 +303,7 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <button class="btn btn-danger loadMore">See All</button>
+          
   </div>
 </section>
 
