@@ -214,10 +214,13 @@
     <div class="row" id="product_list" style="margin-left:20px; margin-right:20px;">
     <?php
                   
-            
+                  if(empty($location) && !empty($anything)){
                   $product =  get_all_search_product($anything); 
-             
-            
+                  }
+                  else if(!empty($location) && empty($anything)){
+                  $product= get_all_locationsearch_product($location);
+                 
+                  }
               if(!empty($product)){
               $i = 1;
               $j = 1;

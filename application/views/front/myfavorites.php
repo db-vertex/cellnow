@@ -73,12 +73,12 @@
 
 
   <div class="container-fluid " style=" margin-top: 110px;">
-    <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
+    <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
   </div>
 
 
   <div class="container">
-    <h3 class="ml-5 mb-3"><b>My Favorites Ads</b></h3>
+    <h3 class="m-5 mb-3"><b>My Favorites Ads</b></h3>
     <div class="row" style="margin-left:30px; margin-right:30px;">
       <?php $favroite = get_all_favroite($user["user_id"]);
 
@@ -151,11 +151,15 @@
                            ?>
                        
                       </b></div>
-                    <div class="col-2"> <i style="font-size:17px;margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
-                        data-uid="<?php echo $user["user_id"]; ?>"
-                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product->id; ?>"
-                        data-pid="<?php echo $product->id; ?>" data-cid="<?php echo $product->category_id; ?>"
-                        data-wishlist="<?php echo $wishlist; ?>"></i>
+                    <div class="col-2">   <i lass="bi bi-suit-heart" aria-hidden="true"
+                                style="font-size:18px; color:#69d3b0; padding: 0px;"
+                                <?php if (empty($user) || !isset($user)) { ?>
+                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
+                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product->id; ?>"
+                                data-pid="<?php echo $product->id; ?>"
+                                data-cid="<?php echo $product->category_id; ?>"
+                                data-wishlist="<?php echo $wishlist; ?>"></i>
                     </div>
                     <div class="col-4" style="color:#10b981">
                       <h6><b>$<?php echo $product->price; ?>
@@ -240,38 +244,3 @@
 
 </html>
 
-<script>
-  $(document).on('click', '.dddssaaf', function (e) {
-    e.stopPropagation();
-    var obj = $(this);
-    var pid = $(this).data("pid");
-    var cid = $(this).data("cid");
-    var uid = $(this).data("uid");
-    var status = $(this).data("wishlist");
-
-    if (!uid == 0)
-      //   alert(status);
-      $.ajax({
-        type: "POST",
-        url: '<?php echo base_url("Welcome/setwishlist"); ?>',
-        cache: false,
-        data: { 'product_id': pid, 'user_id': uid, 'category_id': cid },
-        error: function () {
-          alert('Something is wrong');
-        },
-        success: function (data) {
-          $(".dddssaaf" + pid).toggleClass("fa-heart-o fa-heart");
-          if (status == 0) {
-            $(this).data("wishlist", 1);
-            swal("Product Added in Wishlist Successfully!", "", "success");
-          }
-          else {
-            $(this).data("wishlist", 0);
-            swal("Product removed from Wishlist Successfully!", "", "success");
-          }
-        }
-      });
-
-
-  });
-</script>

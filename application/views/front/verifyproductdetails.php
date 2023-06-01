@@ -1307,15 +1307,15 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             <p class="details_title"> <?php echo ucfirst($product_detail->title); ?></p>
                         </div>
                         <div class="col-2">
-                            <i lass="bi bi-suit-heart" aria-hidden="true"
+                            <a  style="font-size:18px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
+                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
                                 style="font-size:18px; color:#69d3b0; padding: 0px;"
-                                <?php if (empty($user) || !isset($user)) { ?>
-                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
+                               
                                 data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
                                 class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product_detail->id; ?>"
                                 data-pid="<?php echo $product_detail->id; ?>"
                                 data-cid="<?php echo $product_detail->category_id; ?>"
-                                data-wishlist="<?php echo $wishlist; ?>"></i>
+                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
                         </div>
                         <div class="col-5">
                             <?php if(isset($product_detail->price)){

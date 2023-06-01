@@ -183,7 +183,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 						  </div>
 						  <div class="d-flex justify-content-between align-items-center"> 
-									  <a href="" class="text-reset">
+									
 										<h6>';
 										$title = $value->title;
 					
@@ -196,7 +196,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 											$sub .= ucfirst($y);
 										}
 										$sub .= '</h6>
-						</a>
+						
 						</div>
 						
 					  </div>
@@ -790,7 +790,8 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 	public function searchproduct()
   {
 
-   // $location = $this->input->post('location');
+   $location = $this->input->post('location');
+   
     $anything = $this->input->post('anything');
 	
     $session_id = $this->session->userdata('id');
@@ -802,7 +803,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
     $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
     $this->output->set_header('Pragma: no-cache');
     $this->load->view('front/header',['user'=>$user_detail] );
-    $this->load->view('front/newhome',['anything'=>$anything, 'user'=>$user_detail]);
+    $this->load->view('front/newhome',['anything'=>$anything,'location'=>$location, 'user'=>$user_detail]);
     $this->load->view('front/footer');
     
   /*  $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
@@ -828,7 +829,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
     $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
     $this->output->set_header('Pragma: no-cache');
     $this->load->view('front/header');
-    $this->load->view('front/newhome',['anything'=>$anything]);
+    $this->load->view('front/newhome',['anything'=>$anything,'location'=>$location]);
     $this->load->view('front/footer');
      }
     

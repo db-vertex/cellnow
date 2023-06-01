@@ -61,7 +61,46 @@
         }
     }
 
+    .search_wrap{
+	width: 100%;
+	
+}
 
+.search_wrap .search_boxs{
+	position: relative;
+	
+	
+}
+
+.search_wrap .search_boxs .btn{
+	position: absolute;
+	
+	height: 80%;
+	background: #10B981;
+  color: white;
+	
+}
+.search_wrap .search_boxs .btn.btn_common .fas{
+	
+	/* top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%); */
+	/* color: #fff; */
+ 
+}
+.search_wrap.search_wrap_6 .search_boxs .btn{
+	max-width: 100%;
+	height: 70%;
+	top: 15%;
+	left: 100.3%;
+    padding: 6px 0px;
+    
+	
+	/* color: #fff; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
 
     .card2 {
         --bs-card-spacer-y: 1rem;
@@ -758,6 +797,11 @@
     pointer-events: none;
 }
 
+.click.form-select .bg-img {
+transform: rotate(180deg);
+transition: .3s ease-in-out;
+}
+
 
     </style>
 
@@ -784,7 +828,17 @@
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
+               
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="margin-left: auto;">
+                    <li class="nav-item " style="padding-right:150px" ;>
+                    <div class="search_wrap search_wrap_6 m-0">
+			<div class="search_boxs">
+                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                           <input type="text" placeholder="Search for location..." class="form-control form-input"  name="location" style="border-radius:20px; width:140%">
+                           <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
+</form>
+            </div></div>                
+                    </li>
                         <li class="nav-item dropdown" style="padding-right:10px" ;>
                             <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button" data-bs-toggle="dropdown"
                                 aria-expanded="false" style=" color:#10B981;font-weight:bold;" id="ab">
