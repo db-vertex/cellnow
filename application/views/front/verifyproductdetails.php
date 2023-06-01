@@ -15,6 +15,92 @@
         
     <title>Verify product details</title>
     <style>
+
+img {
+  vertical-align: middle;
+}
+
+/* Position the image container (needed to position the left and right arrows) */
+.container {
+  position: relative;
+}
+
+/* Hide the images by default */
+.mySlides {
+  display: none;
+}
+
+/* Add a pointer when hovering over the thumbnail images */
+.cursor {
+  cursor: pointer;
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  width: auto;
+  padding: 16px;
+  margin-top: -50px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* Container for image text */
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Six columns side by side */
+.column {
+  float: left;
+  width: 16.66%;
+}
+
+/* Add a transparency effect for thumnbail images */
+.demo {
+  opacity: 0.6;
+}
+
+.active,
+.demo:hover {
+  opacity: 1;
+}
     .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
@@ -914,7 +1000,17 @@ border-radius: 80px 0px 0px 80px;
 }
 
 
-
+.verifid-right {
+    position: absolute;
+    right: 2px;
+   
+    color: #fff;
+    padding: 10px 15px;
+   
+    cursor: pointer;
+    max-width: 30%;
+    max-height: 15%;
+}
 
     </style>
 </head>
@@ -967,13 +1063,100 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
             <div class="row " style="margin-left: 30px;
         margin-right: 30px;">
                 <div class="col-md-6">
-                   
-                <div class="master">
+                <div class="container">
+  <div class="mySlides">
+ 
+    <?php if ($product_detail->cover_img !== NULL) { ?>
+    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%">
+    <?php if($product_detail->verified_product ==1){ ?>
+      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
+   >
+
+   <?php }?> <?php } else { ?>
+        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
+        <?php } ?></div>
+
+  <div class="mySlides">
+   
+    <?php if ($product_detail->images_2 !== NULL) { ?>
+    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%">
+    <?php if($product_detail->verified_product ==1){ ?>
+      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
+   >
+
+   <?php }?> <?php } else { ?>
+        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
+        <?php } ?></div>
+
+  <div class="mySlides">
+  
+    <?php if ($product_detail->images_3 !== NULL) { ?>
+    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%">
+    <?php } else { ?>
+        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
+        <?php } ?></div>
+    
+  <div class="mySlides">
+   
+    <?php if ($product_detail->images_4 !== NULL) { ?>
+    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%">
+    <?php } else { ?>
+        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
+        <?php } ?></div>
+
+  <div class="mySlides">
+   
+    <?php if ($product_detail->images_5 !== NULL) { ?>
+    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
+    <?php } else { ?>
+        <img  class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
+        <?php } ?></div>
+    
+ 
+    
+  <a class="prev" onclick="plusSlides(-1)">❮</a>
+  <a class="next" onclick="plusSlides(1)">❯</a>
+
+  
+
+  <div class="row mt-3">
+    <div class="column">
+    <?php if ($product_detail->cover_img !== NULL) { ?>
+      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+      <?php } else { ?>
+        
+        <?php } ?>
+    </div>
+    <div class="column">
+    <?php if ($product_detail->images_2 !== NULL) { ?>
+      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+      <?php } else { ?>
+        <?php } ?></div>
+    <div class="column">
+    <?php if ($product_detail->images_3 !== NULL) { ?>
+      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+      <?php } else { ?>
+        <?php } ?></div>
+    <div class="column">
+    <?php if ($product_detail->images_4 !== NULL) { ?>
+      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+      <?php } else { ?>
+        <?php } ?></div>
+    <div class="column">
+    <?php if ($product_detail->images_5 !== NULL) { ?>
+   
+        <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
+        <?php } else { ?>
+        <?php } ?></div>    
+    
+  </div>
+</div>
+                <!-- <div class="master">
                 
             <img class="details_img_cover img-fluid" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
             <?php if($product_detail->verified_product ==1){ ?>
-      <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" style="margin-left:80%; margin-top:20px;
-   width:80px; ">
+      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
+   >
 
    <?php }?> <i class="fa-solid fa-chevron-left"></i>
             <i class="fas fa-chevron-right"></i>
@@ -1004,7 +1187,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
     <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>">
     <?php } else { ?>
 
-<?php } ?>   </div>
+<?php } ?>   </div> -->
                     <div class="row mt-3">
                         <div class="detalis_option">
                             <div class="row">
@@ -1827,3 +2010,34 @@ $(function() {
     })
 })
 </script>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
+    
