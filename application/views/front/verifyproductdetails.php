@@ -1188,6 +1188,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
     <?php } else { ?>
 
 <?php } ?>   </div> -->
+
                     <div class="row mt-3">
                         <div class="detalis_option">
                             <div class="row">
