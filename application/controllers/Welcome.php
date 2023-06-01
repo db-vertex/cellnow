@@ -787,6 +787,53 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 	}
 
+	public function searchproduct()
+  {
+
+   // $location = $this->input->post('location');
+    $anything = $this->input->post('anything');
+	
+    $session_id = $this->session->userdata('id');
+
+		 $user_detail = $this->user->loginuser($session_id);
+     if(!empty($user_detail)){
+      $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    $this->output->set_header('Pragma: no-cache');
+    $this->load->view('front/header',['user'=>$user_detail] );
+    $this->load->view('front/newhome',['anything'=>$anything, 'user'=>$user_detail]);
+    $this->load->view('front/footer');
+    
+  /*  $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    $this->output->set_header('Pragma: no-cache');
+*/     
+   /*  $pro_id="";
+
+      $pro_id = $this->uri->segment(3); 
+
+ $this->load->view('front/header',['location'=>$location,'pro_id'=>$pro_id]);
+    $this->load->view('front/newhome',['anything'=>$anything]);
+    $this->load->view('front/footer');
+*/
+
+   /* $this->load->view('front/header',['location'=>$location,'pro_id'=>$pro_id]);
+    $this->load->view('front/newhome',['anything'=>$anything,'pro_id'=>$pro_id]);
+    $this->load->view('front/footer');*/
+     }else{
+         $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+    $this->output->set_header('Pragma: no-cache');
+    $this->load->view('front/header');
+    $this->load->view('front/newhome',['anything'=>$anything]);
+    $this->load->view('front/footer');
+     }
+    
+  }
+
 	public function search()
 	{
 

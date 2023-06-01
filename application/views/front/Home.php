@@ -155,10 +155,10 @@
       <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
       <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
-         
-		       <input type="search" id="search" name="search" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-          <button type="button" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
-        </div>
+         <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+		       <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+          <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
+         </form></div>
         <div class="row">
                                     <div id="display"></div>
                                    
@@ -175,7 +175,7 @@
 
 
 
-<div class="container " >
+<div class="container">
    <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll" >
 
        <?php
