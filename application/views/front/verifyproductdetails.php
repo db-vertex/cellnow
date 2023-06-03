@@ -1319,7 +1319,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <div class="col-5">
                             <?php if(isset($product_detail->price)){
-                                if( $product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
+                                if(($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)){ ?>
                             <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
                             <?php  } }?>
 
@@ -1612,7 +1612,9 @@ if($shop->admin_approval==1){
                                                 style="font-size:18px;color:#ff6737;padding: 0px;"></i></b>
                                     </div>
                                     <div class="col-4">
-                                        <?php if(isset($product_detail->price)){ if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
+                                        <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
+                                     
+                                            ?>
                                         <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
                                         <?php  } }?>
                                     </div>
