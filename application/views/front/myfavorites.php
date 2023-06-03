@@ -129,7 +129,7 @@
 
 
 
-          <div class="col-lg-4 col-md-6 mb-3">
+          <div class="col-lg-4 col-md-6 mb-3" id="hide_f">
             <div class="card" style="max-width: 20rem; border-radius: 22px;margin:auto;">
               <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $product->cover_img;?>" class="card-img-top" alt="Card image cap">
               <div class="card-block" style="padding:5px">

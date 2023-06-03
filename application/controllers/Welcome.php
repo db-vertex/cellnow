@@ -64,7 +64,7 @@ class Welcome extends CI_Controller
 		$sub = "";
 
 		$subcategory = get_producttype_byid($category_id);
-$sub.='
+		$sub .= '
 <div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
@@ -93,7 +93,7 @@ $sub.='
 				$sub .= '	onclick="return getproduct( ' . $value->id . ')"';
 			}
 			$sub .= '>
-		<img class="btn-change common_selector sub_category sub_new' . $value->subcategory_id . '"  data-sub-id=" '.$value->subcategory_id.'" src="https://dbvertex.com/celnow/uploads/shopcategory/' . $value->icon . '" alt="">
+		<img class="btn-change common_selector sub_category sub_new' . $value->subcategory_id . '"  data-sub-id=" ' . $value->subcategory_id . '" src="https://dbvertex.com/celnow/uploads/shopcategory/' . $value->icon . '" alt="">
 		 <center style="color:black; font-size:12px; font-weight:500">' . $value->product_type . '</center>
 		</p>
 		
@@ -104,7 +104,7 @@ $sub.='
 
 
 		}
-$sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
+		$sub .= '  </div> <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
 <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
 	class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
 	xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -117,7 +117,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 </div>
 </div>
 </div>'
-;
+		;
 		echo $sub;
 
 	}
@@ -125,15 +125,17 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 	public function getproduct($data = " ")
 	{
-
+		$row = $this->input->post('row');
 		$subcategory_id = $this->input->post('subcategory_id');
 		// echo $this->db->last_query();
 		$sub = "";
-		if ($subcategory_id == 5) {
-			$product = get_all_boost();
+		if ($subcategory_id) {
+			$product = get_product_by_subid($subcategory_id);
+
+
 		} else {
 
-			$product = get_product_by_subid($subcategory_id);
+			$product = get_all_bost($row);
 
 		}
 		if (!empty($product)) {
@@ -146,66 +148,128 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 					//print_r($subcategory);die();
 
-					$sub .= '<div class="col-xl-3 col-md-6 mb-4 ">
-					<div class="card">
-					  <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-					  <a  href="https://dbvertex.com/celnow/welcome/productdetail/'.$value->category_id.'/'. $value->id.'/'. $value->subcategory_id.'"><img src="https://dbvertex.com/celnow/' . $value->cover_img . '"
-						  class="w-100 va-thumbnail" /></a>
-						<a href="#!">
-						
-						  <div class="hover-overlay">
-							<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-						  </div>
-						</a>
-					  </div>
-					  <div class="card-body">
-					  <div class="d-flex justify-content-between align-items-center">
-					  <h6 class="mb-3">
-						 <strong class="ms-2 ">$'.$value->price.'</strong>
-						</h6>
-							  </div>
-					  <div class="d-flex justify-content-between align-items-center">
+					$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
+    <div class="card">
+        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <a href="https://dbvertex.com/celnow/welcome/productdetail/' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
+                <img src="https://dbvertex.com/celnow/' . $value->cover_img . '" class="w-100 va-thumbnail" />
+            </a>
+            <a href="#!">
+                <div class="hover-overlay">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </div>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 class="mb-3">
+                    <strong class="ms-2 ">$' . $value->price . '</strong>
+                </h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 class="dress-name">';
+$title = $value->title;
 
-					  <h6 class="dress-name">';
-						  $title = $value->title;
-	  
-						  if (strlen($title) <= 10) {
-							  $sub .= ucfirst($title);
-	  
-	  
-						  } else {
-							  $y = substr($title, 0, 10) . '...';
-							  $sub .= ucfirst($y);
-						  }
-						  $sub .= '</h6>
+if (strlen($title) <= 10) {
+    $sub .= ucfirst($title);
+} else {
+    $y = substr($title, 0, 10) . '...';
+    $sub .= ucfirst($y);
+}
+$sub .= '</h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6>';
+$title = $value->address;
+
+if (strlen($title) <= 10) {
+    $sub .= ucfirst($title);
+} else {
+    $y = substr($title, 0, 10) . '...';
+    $sub .= ucfirst($y);
+}
+$sub .= '</h6>
+            </div>
+        </div>
+    </div>
+</div>';
 
 
+				}
+			}
+		} else {
+			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
+		}
+		echo $sub;
 
-						  </div>
-						  <div class="d-flex justify-content-between align-items-center"> 
-									
-										<h6>';
-										$title = $value->title;
-					
-										if (strlen($title) <= 10) {
-											$sub .= ucfirst($title);
-					
-					
-										} else {
-											$y = substr($title, 0, 10) . '...';
-											$sub .= ucfirst($y);
-										}
-										$sub .= '</h6>
-						
-						</div>
-						
-					  </div>
-					</div>
-				  </div>
-	
-		  '
+	}
 
-					;
+
+	public function getdonateproduct($data = " ")
+	{
+		$row = $this->input->post('row');
+		$subcategory_id = $this->input->post('subcategory_id');
+		// echo $this->db->last_query();
+		$sub = "";
+		
+			$product = get_all_donates($row);
+
+		
+		if (!empty($product)) {
+
+			foreach ($product as $value) {
+				$session_login_id = $this->session->userdata("id");
+				$product_user_id = $value->user_id;
+				if ($session_login_id !== $product_user_id) {
+
+
+					//print_r($subcategory);die();
+
+					$sub .= '<div class="col-lg-3 col-md-6 mb-4 postdonate" id="postdonate' . $value->id . '">
+    <div class="card">
+        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <a href="https://dbvertex.com/celnow/welcome/productdetail/' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
+                <img src="https://dbvertex.com/celnow/' . $value->cover_img . '" class="w-100 va-thumbnail" />
+            </a>
+            <a href="#!">
+                <div class="hover-overlay">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </div>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 class="mb-3">
+                    <strong class="ms-2 ">$' . $value->price . '</strong>
+                </h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 class="dress-name">';
+$title = $value->title;
+
+if (strlen($title) <= 10) {
+    $sub .= ucfirst($title);
+} else {
+    $y = substr($title, 0, 10) . '...';
+    $sub .= ucfirst($y);
+}
+$sub .= '</h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6>';
+$title = $value->address;
+
+if (strlen($title) <= 10) {
+    $sub .= ucfirst($title);
+} else {
+    $y = substr($title, 0, 10) . '...';
+    $sub .= ucfirst($y);
+}
+$sub .= '</h6>
+            </div>
+        </div>
+    </div>
+</div>';
 
 
 				}
@@ -350,7 +414,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 						$randCode = $alpha_key;
 						/*$j=1;
-										  if($j == 1){*/
+															if($j == 1){*/
 
 						// $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
 						// $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
@@ -788,52 +852,52 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 	}
 
 	public function searchproduct()
-  {
+	{
 
-   $location = $this->input->post('location');
-   
-    $anything = $this->input->post('anything');
-	
-    $session_id = $this->session->userdata('id');
+		$location = $this->input->post('location');
 
-		 $user_detail = $this->user->loginuser($session_id);
-     if(!empty($user_detail)){
-      $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
-    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-    $this->output->set_header('Pragma: no-cache');
-    $this->load->view('front/header',['user'=>$user_detail] );
-    $this->load->view('front/newhome',['anything'=>$anything,'location'=>$location, 'user'=>$user_detail]);
-    $this->load->view('front/footer');
-    
-  /*  $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
-    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-    $this->output->set_header('Pragma: no-cache');
-*/     
-   /*  $pro_id="";
+		$anything = $this->input->post('anything');
 
-      $pro_id = $this->uri->segment(3); 
+		$session_id = $this->session->userdata('id');
 
- $this->load->view('front/header',['location'=>$location,'pro_id'=>$pro_id]);
-    $this->load->view('front/newhome',['anything'=>$anything]);
-    $this->load->view('front/footer');
-*/
+		$user_detail = $this->user->loginuser($session_id);
+		if (!empty($user_detail)) {
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+			$this->load->view('front/header', ['user' => $user_detail]);
+			$this->load->view('front/newhome', ['anything' => $anything, 'location' => $location, 'user' => $user_detail]);
+			$this->load->view('front/footer');
 
-   /* $this->load->view('front/header',['location'=>$location,'pro_id'=>$pro_id]);
-    $this->load->view('front/newhome',['anything'=>$anything,'pro_id'=>$pro_id]);
-    $this->load->view('front/footer');*/
-     }else{
-         $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
-    $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
-    $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
-    $this->output->set_header('Pragma: no-cache');
-    $this->load->view('front/header');
-    $this->load->view('front/newhome',['anything'=>$anything,'location'=>$location]);
-    $this->load->view('front/footer');
-     }
-    
-  }
+			/*  $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			  $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			  $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			  $this->output->set_header('Pragma: no-cache');
+		  */
+			/*  $pro_id="";
+
+			   $pro_id = $this->uri->segment(3); 
+
+		  $this->load->view('front/header',['location'=>$location,'pro_id'=>$pro_id]);
+			 $this->load->view('front/newhome',['anything'=>$anything]);
+			 $this->load->view('front/footer');
+		 */
+
+			/* $this->load->view('front/header',['location'=>$location,'pro_id'=>$pro_id]);
+			 $this->load->view('front/newhome',['anything'=>$anything,'pro_id'=>$pro_id]);
+			 $this->load->view('front/footer');*/
+		} else {
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+			$this->load->view('front/header');
+			$this->load->view('front/newhome', ['anything' => $anything, 'location' => $location]);
+			$this->load->view('front/footer');
+		}
+
+	}
 
 	public function search()
 	{
@@ -2194,13 +2258,13 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 				} /*else{
 
-						  $chat_list = array('message'=>$message);
+									 $chat_list = array('message'=>$message);
 
-						  $this->chat_model->update($chat_list,$chat_exist['id']);
-						  //echo "here1";
-						  //echo $this->db->last_query();
+									 $this->chat_model->update($chat_list,$chat_exist['id']);
+									 //echo "here1";
+									 //echo $this->db->last_query();
 
-					  }*/
+								 }*/
 
 			}
 			// echo $this->db->last_query();exit;
@@ -2432,7 +2496,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 			$message = $this->input->post('message');
 			print_r($message);
-			
+
 			$token = $this->db->query("SELECT device_id as phone FROM users where user_id=$receiver_id")->row()->phone;
 			$messadge = "Someone Message You";
 			$notifi = $this->user->push_notification_android($token, $messadge, "Chat");
@@ -2452,7 +2516,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 
 			} else {
-               
+
 				$chat_list = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 
 				$this->db->insert('chat_list', $chat_list);
@@ -2463,16 +2527,16 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 			}
 
-			
+
 			// echo $this->db->last_query();exit;
 
 			$chat = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 
 			$inser_id = $this->chat_model->insert($chat);
 
-			$userphone= get_user_phone_id($receiver_id);
-            
-			$phone= $userphone->phone;
+			$userphone = get_user_phone_id($receiver_id);
+
+			$phone = $userphone->phone;
 			$size = 4;
 			$alpha_key = '';
 			$keys = range('0', '9');
@@ -2503,7 +2567,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 			curl_close($ch);
 
-			$this->db->update('chat', array('status'=>1) ,array('id'=>$inser_id));
+			$this->db->update('chat', array('status' => 1), array('id' => $inser_id));
 
 			$chat_list = $this->chat_model->chatlist($session_id);
 
@@ -2519,7 +2583,7 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 
 					/*$data = array('read_status'=>1);
 
-				$updated =  $this->chat_model->updateunreadmessage($data,$chatmessages['sender_id'],$_SESSION['id']);*/
+							   $updated =  $this->chat_model->updateunreadmessage($data,$chatmessages['sender_id'],$_SESSION['id']);*/
 
 					//$pro .= $updated;
 
@@ -2572,8 +2636,8 @@ $sub.='  </div> <button class="deals-scroll-right deals-paddle" id="right_sponse
 			/*return redirect('welcome/chat');*/
 
 			/*$this->load->view('front/header',['user'=>$user_detail,'sender_id'=>$sender_id,'receiver_id'=>$receiver_id,'chat_list'=>$chat_list,'chat'=>$chat]);
-				  $this->load->view('front/chat_list',['user'=>$user_detail,'sender_id'=>$sender_id,'receiver_id'=>$receiver_id,'chat_list'=>$chat_list,'chat'=>$chat]);
-				  $this->load->view('front/footer');*/
+						   $this->load->view('front/chat_list',['user'=>$user_detail,'sender_id'=>$sender_id,'receiver_id'=>$receiver_id,'chat_list'=>$chat_list,'chat'=>$chat]);
+						   $this->load->view('front/footer');*/
 
 		} else {
 

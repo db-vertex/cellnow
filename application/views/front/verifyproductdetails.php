@@ -440,6 +440,7 @@ img {
             left: 33px;
             top: 10px;
         }
+        
 
         .margin_left_css {
             margin-left: 1rem !important;
@@ -1548,7 +1549,7 @@ if($shop->admin_approval==1){
 
                                                 <input class="chat_button" style="font-size:15px;border-color:#46760a"
                                                     value="Chat" <?php if(empty($user) || !isset($user)){ ?>
-                                                    data-toggle="modal" data-target="#login"
+                                                        onClick="location.href='<?php echo base_url();?>welcome/login/'"
                                                     <?php }else{ ?>type="submit" <?php }  ?> readonly>
                                             </form>
                                           
