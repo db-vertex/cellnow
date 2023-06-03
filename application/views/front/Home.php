@@ -1,6 +1,8 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
   <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+  
 
     <style>
 
@@ -88,12 +90,7 @@
     font-weight: bold;
   }
 } 
-.col-lg-3{
-  display: none;
-}
-.col-lg-4{
-  display: none;
-}
+
 .mores
  {
   display: none;
@@ -219,8 +216,9 @@
                   
             
                   $product = get_all_boost();   
-              
-            
+              $all_count =get_all_boost_count();
+             
+         
               if(!empty($product)){
               $i = 1;
               $j = 1;
@@ -232,7 +230,7 @@
                   if($i > 0){
             
             ?>  
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
         <div class="card">
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
@@ -306,7 +304,12 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <button class="btn btn-danger loadMore">See All</button>
+            <?php if($all_count >4){ ?> 
+            <button  class="btn btn-danger load-more" >See All</button>
+            <?php } ?>
+            <input type="hidden" id="row" value="0">
+            <input type="hidden" id="all" value="<?php echo $all_count; ?>">
+           
   </div>
 </section>
 
@@ -595,7 +598,7 @@
                   
             
                   $product = get_all_donate();   
-               
+                  $allcount =get_all_donate_count();
             
               if(!empty($product)){
               $i = 1;
@@ -608,7 +611,7 @@
             
             ?>  
             
-      <div class="col-lg-4 col-md-4 col-sm-6 mb-4 ">
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 postdonate">
         <div class="card">
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
@@ -670,7 +673,11 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <button class="btn btn-danger loadmore">See All</button>
+            <?php if($allcount >4){ ?> 
+            <button  class="btn btn-danger donate-load-more" >See All</button>
+            <?php } ?>
+            <input type="hidden" id="row-donate" value="0">
+            <input type="hidden" id="all-donate" value="<?php echo $allcount; ?>">
   </div>
 </section>
 
@@ -933,5 +940,136 @@ if($(".mores:hidden").length==0){
 }
 })
  
- 
+$(document).ready(function(){
+
+// Load more data
+$('.load-more').click(function(){
+    var row = Number($('#row').val());
+    var allcount = Number($('#all').val());
+    var rowperpage = 4;
+    row = row + rowperpage;
+
+    if(row <= allcount){
+        $("#row").val(row);
+
+        $.ajax({
+            url: '<?php echo base_url();?>welcome/getproduct',
+            type: 'post',
+            data: {row:row},
+            beforeSend:function(){
+                $(".load-more").text("Loading...");
+            },
+            success: function(response){
+
+                // Setting little delay while displaying new content
+                setTimeout(function() {
+                    // appending posts after last post with class="post"
+                    $(".post:last").after(response).show().fadeIn("slow");
+
+                    var rowno = row + rowperpage;
+
+                    // checking row value is greater than allcount or not
+                    if(rowno > allcount){
+
+                        // Change the text and background
+                        $('.load-more').hide();
+                      
+                    }else{
+                        $(".load-more").text("Load more");
+                    }
+                }, 1000);
+
+            }
+        });
+    }else{
+        $('.load-more').text("Loading...");
+
+        // Setting little delay while removing contents
+        setTimeout(function() {
+
+            // When row is greater than allcount then remove all class='post' element after 3 element
+            $('.post:nth-child(3)').nextAll('.post').remove();
+
+            // Reset the value of row
+            $("#row").val(0);
+
+            // Change the text and background
+            $('.load-more').text("Load more");
+           
+            
+        }, 1000);
+
+
+    }
+
+});
+
+});
+
+
+$(document).ready(function(){
+
+// Load more data
+$('.donate-load-more').click(function(){
+    var row = Number($('#row-donate').val());
+    var allcount = Number($('#all-donate').val());
+    var rowperpage = 4;
+    row = row + rowperpage;
+
+    if(row <= allcount){
+        $("#row-donate").val(row);
+
+        $.ajax({
+            url: '<?php echo base_url();?>welcome/getdonateproduct',
+            type: 'post',
+            data: {row:row},
+            beforeSend:function(){
+                $(".donate-load-more").text("Loading...");
+            },
+            success: function(response){
+
+                // Setting little delay while displaying new content
+                setTimeout(function() {
+                    // appending posts after last post with class="post"
+                    $(".postdonate:last").after(response).show().fadeIn("slow");
+
+                    var rowno = row + rowperpage;
+
+                    // checking row value is greater than allcount or not
+                    if(rowno > allcount){
+
+                        // Change the text and background
+                        $('.donate-load-more').hide();
+                      
+                    }else{
+                        $(".donate-load-more").text("Load more");
+                    }
+                }, 1000);
+
+            }
+        });
+    }else{
+        $('.donate-load-more').text("Loading...");
+
+        // Setting little delay while removing contents
+        setTimeout(function() {
+
+            // When row is greater than allcount then remove all class='post' element after 3 element
+            $('.postdonate:nth-child(3)').nextAll('.postdonate').remove();
+
+            // Reset the value of row
+            $("#row-donate").val(0);
+
+            // Change the text and background
+            $('.donate-load-more').text("Load more");
+           
+            
+        }, 1000);
+
+
+    }
+
+});
+
+});
     </script>
