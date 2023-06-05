@@ -205,7 +205,12 @@ input::placeholder {
 
         <div class="row" id="sub-list">
             <?php  
+            if($id == 16){
+                $shop = get_all_store();
+            }
+            else{
             $shop = get_category_all_store($id);
+            }
 if(!empty($shop)){
 foreach($shop as $value){
    

@@ -1020,6 +1020,29 @@ $sub .= '</h6>
 		$cateory = $this->uri->segment(3);
 		$session_id = $this->session->userdata('id');
 
+		if($cateory == 5){
+
+			$data= get_all_boost();
+		
+
+			if ($session_id) {
+				//$myproduct = $this->product_model->myproduct($session_id);
+	
+				$user_detail = $this->user->loginuser($session_id);
+	
+				$this->load->view('front/header', ['user' => $user_detail]);
+				$this->load->view('front/fillter', $data, ['user' => $user_detail]);
+				$this->load->view('front/footer');
+	
+			} else {
+				$this->load->view('front/header');
+				$this->load->view('front/fillter', $data);
+				$this->load->view('front/footer');
+			}
+
+		}
+		else{
+
 		if ($cateory == 1) {
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
 			//$data['Brand'] = $this->product_filter_model->fetch_filter_type('Model',$cateory);
@@ -1053,6 +1076,7 @@ $sub .= '</h6>
 			$this->load->view('front/fillter', $data);
 			$this->load->view('front/footer');
 		}
+	}
 
 	}
 

@@ -596,7 +596,8 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <button class="btn btn-danger more">See All</button>
+            <a  href ="<?php echo base_url();?>welcome/store/16" class="btn btn-danger " >See All</a>
+
   </div>
 </section>
 
