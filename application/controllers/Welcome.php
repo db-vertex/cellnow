@@ -281,6 +281,81 @@ $sub .= '</h6>
 
 	}
 
+
+	public function getsearchroduct($data = " ")
+	{
+		$row = $this->input->post('row');
+		$subcategory_id = $this->input->post('subcategory_id');
+		// echo $this->db->last_query();
+		$sub = "";
+		
+			$product = get_all_search_products($row);
+
+		
+		if (!empty($product)) {
+
+			foreach ($product as $value) {
+				$session_login_id = $this->session->userdata("id");
+				$product_user_id = $value->user_id;
+				if ($session_login_id !== $product_user_id) {
+
+
+					//print_r($subcategory);die();
+
+					$sub .= '<div class="col-lg-3 col-md-6 mb-4 postdonate" id="postdonate' . $value->id . '">
+    <div class="card">
+        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <a href="https://dbvertex.com/celnow/welcome/productdetail/' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
+                <img src="https://dbvertex.com/celnow/' . $value->cover_img . '" class="w-100 va-thumbnail" />
+            </a>
+            <a href="#!">
+                <div class="hover-overlay">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </div>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 class="dress-name">';
+$title = $value->title;
+
+if (strlen($title) <= 10) {
+    $sub .= ucfirst($title);
+} else {
+    $y = substr($title, 0, 10) . '...';
+    $sub .= ucfirst($y);
+}
+$sub .= '</h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6>';
+$title = $value->address;
+
+if (strlen($title) <= 10) {
+    $sub .= ucfirst($title);
+} else {
+    $y = substr($title, 0, 10) . '...';
+    $sub .= ucfirst($y);
+}
+$sub .= '</h6>
+            </div>
+        </div>
+    </div>
+</div>';
+
+
+				}
+			}
+		} else {
+			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
+		}
+		echo $sub;
+
+	}
+
 	public function getshop($data = " ")
 	{
 

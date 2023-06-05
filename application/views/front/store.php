@@ -91,47 +91,39 @@ input::placeholder {
     }
 
 </style>
-<div class="container-fluid home_background" style=" margin-top: 125px;">
-<div class="container ">
-    <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <?php
+<div class="container-fluid home_background"  style=" margin-top: 125px;">
+
+<div class="container">
+  <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+  <?php
       $all_banner = get_all_banner();
       $j = 1;
       foreach ($all_banner as $key => $banner) {
-        ?>
-            <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-                <a href="<?php echo $banner->url; ?>" target="_blank"><img class="d-block w-100"
-                        id='<?php  echo $banner->url ?>'
-                        src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>"
-                        alt="First slide"></a>
-            </div>
-            <?php
+        ?>  
+    <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
+      <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px; max-height:500px;
+    min-height:500px;" class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
+    </div>
+    <?php
 
         $j++;
 
       }
       ?>
-
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlss"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
-    </div>
-</div><br>
+   
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Previous</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlss" data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Next</span>
+  </button>
 </div>
-<div class="container">
-    <div class="row">
-        <p style="color: #F59E0B;"> -------Our Recomandation</p>
-    </div>
-</div><br>
+</div>
+    </div><br>
 
 
 <!-- search bar -->

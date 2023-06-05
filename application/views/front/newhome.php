@@ -448,242 +448,6 @@
 
 
 
-
-
-<!-- new  -->
-<div class="container  mt-3">
-  <div class="row pl-4">
-    <div class="col-lg-7 col-md-5 col-sm-4">
-     <p style="color: #1B1C57; font-size:30px;">Shops Offering Services</p>
-    </div>
-    <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
-    <div class="search_wrap search_wrap_6 m-0">
-			<div class="search_box">
-         
-		       <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-          <button type="button" class="btn btn-success  rounded-5" style="padding:6px 10px" >search ></button>
-        </div>
-        <div class="row">
-                                    <div id="display"></div>
-                                   
-   
-                              
-                           
-                    </div>
-  </div>
-    </div>
-  </div>
-</div><br>
-
-
-
-
-<section >
-
-  <div class="text-center container py-4">
-  
-
-    <div class="row"  style="margin-left:20px; margin-right:20px;">
-    <?php
-              
-              $product = get_all_store();
-           
-           
-           
-            if(!empty($product)){
-            $i = 1;
-            $j = 1;
-          foreach($product as $pro){
-           $session_login_id  = $user['user_id'] ?? null;
-            $product_user_id = $pro->user_id;
-            if($session_login_id !== $product_user_id){
-                if($i > 0){
-             ?>  
-            
-      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores">
-        <div class="card">
-          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-            <a  href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>"><img src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
-              class="w-100 va-thumbnail" /></a>
-            <a href="#!">
-             
-              <div class="hover-overlay">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </div>
-            </a>
-          </div>
-          <div class="card-body">
-        
-          <div class="d-flex justify-content-between align-items-center">
-
-<h6 class="dress-name"><?php
-                           $title = $pro->name;
-                            if(strlen($title) <= 15)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,15) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></h6>
-
-
-
-</div>
-<div class="d-flex justify-content-between align-items-center"> 
-            <a href="" class="text-reset">
-              <h6><?php
-                           $title = $pro->Address;
-                            if(strlen($title) <= 20)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,20) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></h6>
-            </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-    <?php $i++;} } else if($j == 1) {?>
-                   
-                   <?php   }  $j++; };  ?>  
-    <?php }
-              else {?>
-            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
-            <?php }?>
-            </div>
-            <button class="btn btn-danger more">See All</button>
-  </div>
-</section>
-
-
-<!-- new  -->
-<div class="container">
-  <div class="row align-items-center pl-4 pr-4 pt-4">
-    <div class=" col-md-6 ">
-    <div class="ratio ratio-16x9">
-  <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
-</div>
- </div>
-
- <div class="col-md-6  ">
-    <h1>How the store works?</h1><br>
-
-    <p style="color: #565656;">Our Business Plan is a written document describing a company's core business activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high quality Product with modern idea accordingly their budgets and according thir reuirements..</p>
- </div>
-  </div>
-</div><br>
-
-<!-- new  -->
-<section >
-<div class=" container ">
-<div class="row pl-4 text-align-left">
-   
-      <p id="donate" style="color: #1B1C57; font-size:30px;">Donated</p>
-  
-  </div>
-  </div>
-  <div class="text-center container py-5">
-  
-
-    <div class="row"  style="margin-left:20px; margin-right:20px;">
-    <?php
-                  
-            
-                  $product = get_all_donate();   
-               
-            
-              if(!empty($product)){
-              $i = 1;
-              $j = 1;
-            foreach($product as $pro){
-             $session_login_id  = $user['user_id'] ?? null;
-              $product_user_id = $pro->user_id;
-              if($session_login_id !== $product_user_id){
-                  if($i > 0){
-            
-            ?>  
-            
-      <div class="col-lg-4 col-md-4 col-sm-6 mb-4 ">
-        <div class="card">
-          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-            <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
-              class="w-100 va-thumbnail" /></a>
-            <a href="#!">
-             
-              <div class="hover-overlay">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </div>
-            </a>
-          </div>
-          <div class="card-body">
-        
-          <div class="d-flex justify-content-between align-items-center">
-
-<h6 class="dress-name"><?php
-                           $title = $pro->title;
-                            if(strlen($title) <= 15)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,15) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></h6>
-
-
-
-</div>
-<div class="d-flex justify-content-between align-items-center"> 
-            <a href="" class="text-reset">
-              <h6><?php
-                           $title = $pro->address;
-                            if(strlen($title) <= 20)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,20) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></h6>
-            </a>
-            </div>
-          </div>
-        </div>
-      </div>
-    
-    <?php $i++;} } else if($j == 1) {?>
-                   
-                   <?php   }  $j++; };  ?>  
-    <?php }
-              else {?>
-            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
-            <?php }?>
-            </div>
-            <button class="btn btn-danger loadmore">See All</button>
-  </div>
-</section>
-
-
-
-
-
 <div class="container">
   <div class="row p-4">
     <div class="col-12">
@@ -924,12 +688,12 @@ $('.load-more').click(function(){
     var allcount = Number($('#all').val());
     var rowperpage = 4;
     row = row + rowperpage;
-alert(row);
+
     if(row <= allcount){
         $("#row").val(row);
 
         $.ajax({
-            url: '<?php echo base_url();?>welcome/getproduct',
+            url: '<?php echo base_url();?>welcome/getsearchroduct',
             type: 'post',
             data: {row:row},
             beforeSend:function(){
@@ -948,7 +712,7 @@ alert(row);
                     if(rowno > allcount){
 
                         // Change the text and background
-                        $('.load-more').text("Hide");
+                        $('.load-more').hide();
                       
                     }else{
                         $(".load-more").text("Load more");
