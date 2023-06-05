@@ -63,11 +63,11 @@ class Welcome extends CI_Controller
 		// echo $this->db->last_query();
 		$sub = "";
 
-		if($cateory_id ==5){
+		if($category_id ==5){
 			$subcategory = get_all_product_type();  
 		 }
 		 else{
-			$subcategory = get_producttype_byid($cateory_id);  
+			$subcategory = get_producttype_byid($category_id);  
 		 }
 	
 		foreach ($subcategory as $value) {
