@@ -1543,20 +1543,7 @@ a:active {
                     </div>
                 </div>
             </div>
-            <div class="panel-group mt-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" href="#brand">
-                            <h4 class="panel-title common_h">
-                                BRAND
-                            </h4>
-                        </a>
-                    </div>
-                    <div id="brand" class="panel-collapse collapse">
-
-                    </div>
-                </div>
-            </div>
+        
             <?php 
 		    	} 
 		    	
@@ -1593,7 +1580,7 @@ a:active {
             <br />
             <br />
             <?php  if(!empty($products)){?>
-            <div class="row">
+            <div class="row filter_data">
             <?php
                   
             

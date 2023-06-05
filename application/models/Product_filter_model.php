@@ -131,7 +131,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 		   
 		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
 		   <div class="card">
-			   <img class="related_ads_card_img img-fluid" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
+			   <img  class="w-100 va-thumbnail" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
 			   <div class="card-body ">
 			   <div class="d-flex justify-content-between align-items-center"><p>';
 	   $title = $row['title'];
@@ -144,9 +144,9 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 	   }
 	   $pro .= '</p>
 					   
-						   <b>   
+						   <p>   
 							   <i style="padding:0px;font-size:12px;color:#F15927; text-align: right;" '.(empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
-						   </b>
+						   </p>
 					  ';
 
 			 	   		  
