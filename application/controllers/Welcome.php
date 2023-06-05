@@ -1024,6 +1024,7 @@ $sub .= '</h6>
 
 			$data= get_all_products();
 		
+	
 
 			if ($session_id) {
 				//$myproduct = $this->product_model->myproduct($session_id);
