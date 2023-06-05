@@ -304,9 +304,9 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <?php if($all_count >4){ ?> 
-            <button  class="btn btn-danger load-more" >See All</button>
-            <?php } ?>
+           
+            <a  href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger " >See All</a>
+          
             <input type="hidden" id="row" value="0">
             <input type="hidden" id="all" value="<?php echo $all_count; ?>">
            
@@ -457,8 +457,11 @@
     <div class="search_wrap search_wrap_6 m-0">
 			<div class="search_box">
 
-		       <input type="search" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-          <button type="button" class="btn btn-success  rounded-5" style="padding:6px 10px" >search ></button>
+      <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+         
+         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
+       </form>
         </div>
         <div class="row">
                                     <div id="display"></div>
