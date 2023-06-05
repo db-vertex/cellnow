@@ -197,11 +197,15 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                            
                            ?>
                       </b></div>
-                    <div class="col-2"> <i style=" font-size:19px; margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
-                        data-uid="<?php if(isset($user)){ echo $user["user_id"];} ?>"
-                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
-                        data-pid="<?php echo $Categories_all_product->id; ?>" data-cid="<?php echo $Categories_all_product->category_id; ?>"
-                        data-wishlist="<?php echo $wishlist; ?>"></i>
+                    <div class="col-2">  <a  style="font-size:18px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
+                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
+                                style="font-size:18px; color:#69d3b0; padding: 0px;"
+                               
+                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
+                                data-pid="<?php echo $Categories_all_product->id; ?>"
+                                data-cid="<?php echo $Categories_all_product->category_id; ?>"
+                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
                     </div>
                     <div class="col-4" style="color:#10b981">
                       <h6><b>$<?php echo $Categories_all_product->price; ?>
