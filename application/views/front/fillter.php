@@ -1592,8 +1592,114 @@ a:active {
             <br />
             <br />
             <br />
-            <div class="row filter_data">
+            <?php  if(!empty($products)){?>
+            <div class="row">
+            <?php
+                  
+            
+                  if(!empty($products)){
+             
+              $i = 1;
+              $j = 1;
+            foreach($products as $pro){
+            
+             $session_login_id  = $user['user_id'] ?? null;
+              $product_user_id = $pro->user_id;
+              if($session_login_id !== $product_user_id){
+                  if($i > 0){
+            
+            ?>  
+      <div class="col-lg-4 col-md-4 col-sm-6 mb-4 post">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+              class="w-100 va-thumbnail" /></a>
+            
+            <a href="#!">
+             
+              <div class="hover-overlay">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+          <h6 class="dress-name"><?php
+                           $title = $pro->title;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></h6>
+          <h6 class="details_price">$<?php echo $pro->price; ?>
+            </h6>
+                  
 
+
+
+
+
+</div>
+<div class="d-flex justify-content-between align-items-center"> 
+            
+              <p><?php
+                           $title = $pro->Description;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
+           
+            </div>
+<div class="d-flex justify-content-between align-items-center"> 
+            <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+              <p><?php
+                           $title = $pro->address;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
+                         <a
+											   href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
+											   <p class="related_ads_details_button ">
+												   <spam class="related_ads_details_button_text">Product Detail</spam>
+											   </p>
+										   </a>  
+           
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <?php $i++;} } else if($j == 1) {?>
+                   
+                   <?php   }  $j++; };  ?>  
+    <?php }
+              else {?>
+            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
+            <?php }?>
+          <?php } else{?>  
+            <div class="row filter_data">
+            <?php } ?>
             </div>
 
             <br />

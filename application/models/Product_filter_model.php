@@ -129,13 +129,11 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 			   $wishlist = 0;
 		   }
 		   
-		   $pro .= '    <div class="col-lg-6 col-sm-6 col-6 offset-sm-0 offset-1 p-5">
-		   <div class="card" style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
+		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
+		   <div class="card">
 			   <img class="related_ads_card_img img-fluid" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
-			   <div class="card-body related_ads_card">
-				   <div class="row">
-					   <div class="col-5">
-						   <p class="related_ads_card_title">';
+			   <div class="card-body ">
+			   <div class="d-flex justify-content-between align-items-center"><p>';
 	   $title = $row['title'];
 	   
 	   if (strlen($title) <= 10) {
@@ -145,13 +143,11 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 		   $pro .= ucfirst($y);
 	   }
 	   $pro .= '</p>
-					   </div>
-					   <div class="col-3">
+					   
 						   <b>   
 							   <i style="padding:0px;font-size:12px;color:#F15927; text-align: right;" '.(empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
 						   </b>
-					   </div>
-					   <div class="col-4">';
+					  ';
 
 			 	   		  
 	   if (($row['pay_type'] == 0 || $row['pay_type'] == 1) && ($row['category_id'] == 1 || $row['category_id'] == 2 || $row['category_id'] == 3)) {
@@ -159,7 +155,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 		   $pro .= $row['price'];
 	   }
 	   $pro .= '</span></p>
-					   </div>
+					  
 				   </div>
 				   <div class="row mt-1">
 					   <div class="col-12">
@@ -176,17 +172,10 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 					   </div>
 				   </div>
 				 
-				   <div class="row mt-1">
-					   <div class="col-3">
-						   <p style="color: #575757;">Type</p>
-					   </div>
-					   <div class="col-5">
-						   <p style="color: #575757;">2015</p>
-					   </div>
-				   </div>
+				 
 				   <div class="row mt-2">
 					   <div class="col-3">
-					   <img src="https://dbvertex.com/celnow/assets/images/location.png">
+					   <img src="https://dbvertex.com/celnow/assets/images/location .png">
 					   </div>
 					   <div class="col-5 mt-2">
 						   <p style="color: #575757;">';

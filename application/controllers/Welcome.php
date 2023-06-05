@@ -1022,9 +1022,8 @@ $sub .= '</h6>
 
 		if($cateory == 5){
 
-			$data= get_all_products();
-		
-	
+			$data['products']= get_all_products();
+			
 
 			if ($session_id) {
 				//$myproduct = $this->product_model->myproduct($session_id);

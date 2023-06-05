@@ -58,11 +58,7 @@ img {
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
-.prev:hover,
-.next:hover {
-  background-color: rgba(0, 0, 0, 0.8);
-}
+
 
 /* Number text (1/3 etc) */
 .numbertext {
