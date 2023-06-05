@@ -1094,7 +1094,7 @@ $sub .= '</h6>
 		$config = array();
 		$config["base_url"] = "";
 		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
-		$config["per_page"] = 5;
+		$config["per_page"] = 6;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
 		$config["full_tag_open"] = '<ul class="pagination">';

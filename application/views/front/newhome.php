@@ -309,7 +309,8 @@
             <?php }?>
             </div>
             <?php if($allcount >4){ ?> 
-            <button class="btn btn-danger load-more">See All</button>
+              <a  href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger " >See All</a>
+
             <?php } ?>
             <input type="hidden" id="row" value="0">
             <input type="hidden" id="all" value="<?php echo $allcount; ?>">
