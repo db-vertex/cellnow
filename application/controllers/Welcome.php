@@ -346,10 +346,10 @@ $sub .= '</h6>
 				//print_r($subcategory);die();
 
 				$sub .= '
-	<div class="col-lg-4 col-sm-6 mt-3 mb-2">
+				<div class="col-lg-3 col-md-4 col-sm-6 mb-4 mt-3 post">
                 <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
                     <a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '"><img
-                            class="va-thumbnail card-img-top" alt="Card image cap"
+                            class="va-thumbnail " alt="Card image cap"
                             src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '"></a>
                     <div class="card-block" style="padding:8px">
                         <p class="card-title"><b>';

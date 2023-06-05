@@ -216,10 +216,10 @@ foreach($shop as $value){
    
 
 ?>
-            <div class="col-lg-4 col-sm-6 mt-3 mb-2" id="hide">
-                <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mt-3 post">
+                <div class="card" >
                     <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img
-                            class="va-thumbnail card-img-top" alt="Card image cap"
+                            class="va-thumbnail " alt="Card image cap"
                             src="<?php echo base_url();?>uploads/shop/<?php echo $value->shop_images;?>"></a>
                     <div class="card-block" style="padding:8px">
                         <p class="card-title"><b><?php
