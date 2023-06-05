@@ -1022,7 +1022,7 @@ $sub .= '</h6>
 
 		if($cateory == 5){
 
-			$data= get_all_boost();
+			$data= get_all_products();
 		
 
 			if ($session_id) {
