@@ -1579,7 +1579,7 @@ a:active {
             <br />
             <br />
             <br />
-            <?php  if(!empty($products)){?>
+           
             <div class="row filter_data">
             <?php
                   
@@ -1684,9 +1684,7 @@ a:active {
               else {?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-          <?php } else{?>  
-            <div class="row filter_data">
-            <?php } ?>
+        
             </div>
 
             <br />
