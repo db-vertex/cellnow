@@ -198,7 +198,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                            ?>
                       </b></div>
                     <div class="col-2"> <i style=" font-size:19px; margin-top:-20px;color:#F15927;" data-toggle="modal" data-target="#login"
-                        data-uid="<?php echo $user["user_id"]; ?>"
+                        data-uid="<?php if(isset($user)){ echo $user["user_id"];} ?>"
                         class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
                         data-pid="<?php echo $Categories_all_product->id; ?>" data-cid="<?php echo $Categories_all_product->category_id; ?>"
                         data-wishlist="<?php echo $wishlist; ?>"></i>
