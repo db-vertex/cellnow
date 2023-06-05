@@ -1335,10 +1335,8 @@ a:active {
 
 </div>
 
-<div id="sub-list">
 
-</div>
-<!-- 
+
 <div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
@@ -1362,29 +1360,53 @@ a:active {
                  
                      $sub_ = '';
                      if($cateory==5){
-                        $subcategory = get_subcategory_all($cateory);  
+                        $subcategory = get_all_product_type();  
                      }
                      else{
-                        $subcategory = get_subcategory_byid($cateory);  
+                        $subcategory = get_producttype_byid($cateory);  
                      }
                       
 					  
 					  foreach($subcategory as $sub){
 					?>
 
-                     
-                    <?php 
+<div class="va-card va-card_category">
+		<p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
+				onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)"
+
+			<?php } else { ?>
+				onclick="return getproduct( <?php echo $sub->id; ?>)"
+			<?php } ?> >
+			
+		<img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"  data-sub-id="<?php echo $sub->subcategory_id; ?>" src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
+		 <center style="color:black; font-size:12px; font-weight:500"><?php echo $sub->product_type; ?></center>
+		</p>
+		
+		  </div>
+		 
+          <?php 
 					
-					 }
-					?>
+                }
+               ?>
+
+	
+		 </div> <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
+<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+	class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
+	xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+	<path fill="currentColor"
+		d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+	</path>
+</svg>
+</button> </div>
+
+</div>
+</div>
+</div>
+                
 
 
-                </div>
-            </div>
-
-        </div>
-    </div>
-</div> -->
+            
 <div class="container mb-5">
     <div class="row">
         <div class="col-md-3">
@@ -1837,4 +1859,34 @@ $(document).ready(function() {
 
 
 });
+
+
+
+function getproduct(subcategory_id){
+
+ 
+//var res = "";
+ $("img").removeClass("select");
+ $(".sub_new"+subcategory_id).addClass("select");
+
+    // var allch =  $("#").val();
+
+  jQuery.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getproduct'); ?>",
+  data: { subcategory_id:subcategory_id},
+  success: function(res) 
+  {
+
+
+    $("#product_list").html(res);
+       
+  
+
+    // $('#load_cound').val("10");
+    
+  }
+  });
+
+}
 </script>

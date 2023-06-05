@@ -218,6 +218,26 @@ function get_all_search_product($term)
 }
 
 
+function get_all_search_shop($term)
+{ 
+   
+    //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+     
+    $query= 'SELECT * from  shop  WHERE name like "%'.$term.'%"';
+    
+    
+    
+       $category_data = $ci->db->query($query);  
+             
+  return $category_data->result(); 
+   
+}
+
+
 function get_all_search_products($row)
 { 
    
@@ -915,6 +935,9 @@ function get_producttype_byid($category_id)
 
   return $category_data->result(); 
 }
+
+
+
 
 
 function get_subcategoryname_byid($sub_id)

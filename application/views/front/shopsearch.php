@@ -130,7 +130,7 @@ input::placeholder {
 <div class="container">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4 ">
-            <p style="font-size:30px;color:#1B1C57;"> Featured </p>
+            <p style="font-size:30px;color:#1B1C57;"> Search Shops </p>
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
@@ -204,14 +204,16 @@ input::placeholder {
     <div class="container">
 
         <div class="row" id="sub-list">
-            <?php  
-            $shop = get_category_all_store($id);
+            <?php 
+            if(!empty($anything)) {
+            $shop = get_all_search_shop($anything);
+            }
 if(!empty($shop)){
 foreach($shop as $value){
    
 
 ?>
-            <div class="col-lg-4 col-sm-6 mt-3 mb-2" id="hide">
+            <div class="col-lg-4 col-sm-6 mt-3 mb-2">
                 <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
                     <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img
                             class="va-thumbnail card-img-top" alt="Card image cap"

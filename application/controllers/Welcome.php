@@ -63,23 +63,13 @@ class Welcome extends CI_Controller
 		// echo $this->db->last_query();
 		$sub = "";
 
-		$subcategory = get_producttype_byid($category_id);
-		$sub .= '
-<div class="container">
-    <div class="va-carrousel-section">
-        <div class="va-whitewrap">
-
-
-            <div id="va_container">
-	 <button class="deals-scroll-left deals-paddle" id="left_sponser_button">
-<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-	class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-	viewBox="0 0 320 512">
-	<path fill="currentColor"
-		d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-	</path>
-</svg>
-</button><div class="va-carrousel-flexbox" >';
+		if($cateory_id ==5){
+			$subcategory = get_all_product_type();  
+		 }
+		 else{
+			$subcategory = get_producttype_byid($cateory_id);  
+		 }
+	
 		foreach ($subcategory as $value) {
 			//print_r($subcategory);die();
 
@@ -104,20 +94,7 @@ class Welcome extends CI_Controller
 
 
 		}
-		$sub .= '  </div> <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
-<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-	class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
-	xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-	<path fill="currentColor"
-		d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-	</path>
-</svg>
-</button> </div>
-
-</div>
-</div>
-</div>'
-		;
+		
 		echo $sub;
 
 	}
@@ -974,6 +951,55 @@ $sub .= '</h6>
 
 	}
 
+
+	public function searchshop()
+	{
+
+		
+
+		$anything = $this->input->post('anything');
+
+		$session_id = $this->session->userdata('id');
+
+		$user_detail = $this->user->loginuser($session_id);
+		if (!empty($user_detail)) {
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+			$this->load->view('front/header', ['user' => $user_detail]);
+			$this->load->view('front/shopsearch', ['anything' => $anything,  'user' => $user_detail]);
+			$this->load->view('front/footer');
+
+			/*  $this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			  $this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			  $this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			  $this->output->set_header('Pragma: no-cache');
+		  */
+			/*  $pro_id="";
+
+			   $pro_id = $this->uri->segment(3); 
+
+		  $this->load->view('front/header',['location'=>$location,'pro_id'=>$pro_id]);
+			 $this->load->view('front/newhome',['anything'=>$anything]);
+			 $this->load->view('front/footer');
+		 */
+
+			/* $this->load->view('front/header',['location'=>$location,'pro_id'=>$pro_id]);
+			 $this->load->view('front/newhome',['anything'=>$anything,'pro_id'=>$pro_id]);
+			 $this->load->view('front/footer');*/
+		} else {
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+			$this->load->view('front/header');
+			$this->load->view('front/shopsearch', ['anything' => $anything]);
+			$this->load->view('front/footer');
+		}
+
+	}
+
 	public function search()
 	{
 
@@ -1010,6 +1036,7 @@ $sub .= '</h6>
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
 			$data['brand'] = $this->product_filter_model->fetch_filter_type('Job_type', $cateory);
 		}
+	 
 
 
 		if ($session_id) {
