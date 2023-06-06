@@ -145,7 +145,7 @@ width: 131.9px; border-color:#10B981;">
 
 <div class="container" >
 <h3 class="ml-5 mb-3"><b>Seller Ads</b></h3>
-<div class="row">
+<div class="row ml-4">
 
 <?php $sellerproduct = get_seller_product($user['user_id']); 
 
@@ -153,12 +153,12 @@ width: 131.9px; border-color:#10B981;">
   foreach($sellerproduct as $value){?>
 
 
- <div class="col-lg-4 col-sm-4  mb-2">
-    <div class="card" style="max-width: 19rem; border-radius: 25px;margin:auto;">
+ <div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
+    <div class="card" >
     <img class="va-thumbnail" src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top" alt="Card image cap">
-      <div class="card-block" style="padding:20px">
-      <div class="row">
-        <div class="col-7"><b style="font-size:18px"><?php
+    <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+            <b><?php
                            $title =$value->title;
                             if(strlen($title) <= 12)
                               {
@@ -170,10 +170,10 @@ width: 131.9px; border-color:#10B981;">
                                 echo ucfirst($y);
                               }
                            
-                           ?> </b></div>
+                           ?> </b>
        
-        <div class="col-5" style="color:#10b981"><h5><b>$<?php echo $value->price; ?></b></h5></div>
-      </div>
+      <b style="color:#10b981;">$<?php echo $value->price; ?></b>
+       </div>
     <small class="card-text"> <?php
                            $title =$value->Description;
                             if(strlen($title) <= 30)
@@ -186,13 +186,10 @@ width: 131.9px; border-color:#10B981;">
                                 echo ucfirst($y);
                               }
                            
-                           ?>.</small><br>
-    
-    Fresheness  <span style="padding-left:30px">New(Extra fresh)</span><br>
-    Model            <span style="padding-left:60px"> 2015</span><br>
-   
-    <img src="<?php echo base_url();?>assets/images/location .png" ><span style="padding-left:70px"><?php echo $value->address;?></span><br>
-    <div class="pt-3 pl-5"><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $value->category_id?>/<?php echo  $value->id ?>" class="btn " id="b">Edit</a> &nbsp &nbsp
+                           ?>.</small>
+    <div class="d-flex justify-content-between align-items-center">
+    <img class="mt-2" src="<?php echo base_url();?>assets/images/location .png" ><span><?php echo $value->address;?></span><br>
+                            </div><div class="pt-3 pl-5"><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $value->category_id?>/<?php echo  $value->id ?>" class="btn " id="b">Edit</a> &nbsp &nbsp
   
     <a href="javascript:void(0)" id="b" class="delete_product btn"  data-cid="<?php echo $value->category_id; ?>" data-pid="<?php echo $value->id; ?>"><span  style="color:#78d7b8">Delete</span></a>
   

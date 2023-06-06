@@ -599,7 +599,7 @@ border-radius: 80px 0px 0px 80px;
     @media (min-width: 991.98px) and (max-width: 1199.98px) {
         .btn_Verified_shop_name {
             width: 335px;
-            height: 54px;
+            height: 44px;
             left: 988px;
             top: 941px;
             background: #D1FAE5;
@@ -631,8 +631,8 @@ border-radius: 80px 0px 0px 80px;
 
     @media (min-width: 1199.98px) {
         .btn_Verified_shop_name {
-            width: 400px;
-            height: 54px;
+            width: 300px;
+            height: 34px;
             left: 988px;
             top: 941px;
             background: #D1FAE5;
@@ -1392,7 +1392,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     $shop_name= get_shop_name($shop_list->shop_id);?>
                         <div class="" style="">
                             <div class="col-12" style="text-align:center;">
-                                <p class="  btn_Verified_shop_name pt-2"><span class="pe-2"><img
+                                <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                             alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
@@ -1445,7 +1445,7 @@ if($shop->admin_approval==1){
                         <div class="" style="">
 
                             <div class="col-12" style="text-align:center;">
-                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                             alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
@@ -1573,10 +1573,19 @@ if($shop->admin_approval==1){
 
                 <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?php
+              if(!empty($category_data)){
    foreach($category_data as $relatedproduct){
+   
+    if($product_detail->id!== $relatedproduct->id){
     $session_login_id  = $this->session->userdata("id");
     $product_user_id = $relatedproduct->user_id;
     if($session_login_id !== $product_user_id){
+       
+           
+
+        
+
+        
    ?>
 
 
@@ -1725,8 +1734,10 @@ if($shop->admin_approval==1){
                             </div>
                         </div>
                     </div>
+<?php }} } }else{?>
+    <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
 
-                    <?php }} ?>
+                    <?php } ?>
 
                 </div>
 

@@ -108,12 +108,13 @@ class Welcome extends CI_Controller
 		$sub = "";
 		if ($subcategory_id) {
 			$product = get_product_by_subid($subcategory_id);
+			$all_count= get_product_by_subid_count($subcategory_id);
 
 
 		} else {
 
 			$product = get_all_bost($row);
-
+			$all_count =get_all_boost_count();
 		}
 		if (!empty($product)) {
 
@@ -177,6 +178,9 @@ $sub .= '</h6>
 		} else {
 			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
 		}
+		 if($all_count >4){
+         $sub .='  <center> <a style="width:100px;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger" >See All</a></center>';
+            } 
 		echo $sub;
 
 	}
