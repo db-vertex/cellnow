@@ -145,7 +145,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 	   $pro .= '</p>
 					   
 						   <p>   
-							   <i style="padding:0px;font-size:12px;color:#F15927; text-align: right;" '.(empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
+							   <i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;" '.(empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
 						   </p>
 					  ';
 
@@ -173,11 +173,9 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 				   </div>
 				 
 				 
-				   <div class="row mt-2">
-					   <div class="col-3">
+				   <div class="d-flex justify-content-between align-items-center">
 					   <img src="https://dbvertex.com/celnow/assets/images/location .png">
-					   </div>
-					   <div class="col-5 mt-2">
+					  
 						   <p style="color: #575757;">';
 										   $title = $row['address'];
 					   
@@ -193,8 +191,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 										   $pro .= ucfirst($y);
 										   }
 										   $pro.='</p>
-									   </div>
-									   <div class="col-3 pe-2 mt-2">
+									  
 										   <a
 											   href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
 											   <p class="related_ads_details_button ">

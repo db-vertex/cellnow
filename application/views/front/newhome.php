@@ -256,7 +256,7 @@
                   }
                   else if(!empty($location) && empty($anything)){
                   $product= get_all_locationsearch_product($location);
-                 
+                  $allcount=get_all_locationsearch_product_count($location);
                   }
               if(!empty($product)){
               $i = 1;

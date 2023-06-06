@@ -1378,7 +1378,7 @@ a:active {
 				onclick="return getproduct( <?php echo $sub->id; ?>)"
 			<?php } ?> >
 			
-		<img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"  data-sub-id="<?php echo $sub->subcategory_id; ?>" src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
+		<img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"  data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>" src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
 		 <center style="color:black; font-size:12px; font-weight:500"><?php echo $sub->product_type; ?></center>
 		</p>
 		
@@ -1425,7 +1425,7 @@ a:active {
                 <div id="price_range"></div>
             </div>
 
-            <?php if($cateory == 2 )
+            <!-- <?php if($cateory == 2 )
                 { ?>
             <div class="panel-group mt-4">
                 <div class="panel panel-default">
@@ -1567,7 +1567,7 @@ a:active {
             <?php 
 			} 
 			
-			?>
+			?> -->
 
 
 
@@ -1590,6 +1590,23 @@ a:active {
               $j = 1;
             foreach($products as $pro){
             
+                $wishlist = 0;
+  if (!empty($user) && isset($user)) {
+    $wishlit = get_wishlist($pro->id, $pro->category_id, $user["user_id"]);
+
+    if (empty($wishlit)) {
+
+      $wishlist = 0;
+
+
+    } else {
+
+      $wishlist = 1;
+
+    }
+  } else {
+    $wishlist = 0;
+  }
              $session_login_id  = $user['user_id'] ?? null;
               $product_user_id = $pro->user_id;
               if($session_login_id !== $product_user_id){
@@ -1611,7 +1628,7 @@ a:active {
           </div>
           <div class="card-body">
           <div class="d-flex justify-content-between align-items-center">
-          <h6 class="dress-name"><?php
+          <p class="dress-name"><?php
                            $title = $pro->title;
                             if(strlen($title) <= 15)
                               {
@@ -1623,9 +1640,18 @@ a:active {
                                 echo ucfirst($y);
                               }
                            
-                           ?></h6>
-          <h6 class="details_price">$<?php echo $pro->price; ?>
-            </h6>
+                           ?></p>
+                            <a  style="font-size:10px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
+                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
+                                style="font-size:10px; color:#69d3b0; padding: 0px;"
+                               
+                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $pro->id; ?>"
+                                data-pid="<?php echo $pro->id; ?>"
+                                data-cid="<?php echo $pro->category_id; ?>"
+                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
+          <p class="details_price">$<?php echo $pro->price; ?>
+                                </p>
                   
 
 
@@ -1654,13 +1680,13 @@ a:active {
             <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
               <p><?php
                            $title = $pro->address;
-                            if(strlen($title) <= 20)
+                            if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,20) . '...';
+                                $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -1701,45 +1727,6 @@ a:active {
 </div>
 
 
-<script>
-$(document).on('click', '.dddssaaf', function(e) {
-    e.stopPropagation();
-    var obj = $(this);
-    var pid = $(this).data("pid");
-    var cid = $(this).data("cid");
-    var uid = $(this).data("uid");
-    var status = $(this).data("wishlist");
-
-    if (!uid == 0)
-        //   alert(status);
-        $.ajax({
-            type: "POST",
-            url: '<?php echo base_url("Welcome/setwishlist"); ?>',
-            cache: false,
-            data: {
-                'product_id': pid,
-                'user_id': uid,
-                'category_id': cid
-            },
-            error: function() {
-                alert('Something is wrong');
-            },
-            success: function(data) {
-                $(".dddssaaf" + pid).toggleClass("fa-heart-o fa-heart");
-                if (status == 0) {
-                    $(".fa-heart").addClass("fa-heart:before");
-                    $(this).data("wishlist", 1);
-                    swal("Product Added in Wishlist Successfully!", "", "success");
-                } else {
-                    $(this).data("wishlist", 0);
-                    swal("Product removed from Wishlist Successfully!", "", "success");
-                }
-            }
-        });
-
-
-});
-</script>
 <script>
 $(document).ready(function() {
 
@@ -1815,14 +1802,14 @@ $(document).ready(function() {
     }
 
 
-    function get_type_filter(class_name) {
-        var filter = [];
-        $('.' + class_name + ':checked').each(function() {
-            filter.push($(this).val());
-        });
-        console.log(filter)
-        return filter;
-    }
+    // function get_type_filter(class_name) {
+    //     var filter = [];
+    //     $('.' + class_name + ':checked').each(function() {
+    //         filter.push($(this).val());
+    //     });
+    //     console.log(filter)
+    //     return filter;
+    // }
 
     $(document).on('click', '.sub_category', function() {
         var subId = $(this).data('sub-id');
@@ -1842,9 +1829,7 @@ $(document).ready(function() {
         filter_data(page);
     });
 
-    $('.common_selector').click(function() {
-        filter_data(1);
-    });
+   
 
     $('.common_select').click(function() {
         filter_data(1);

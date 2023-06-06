@@ -339,12 +339,12 @@
               else {?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
+            <?php if($all_count >4){ ?> 
+              <center><a style="width:100px;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger" >See All</a></center>
+            <?php } ?>
             </div>
            
-            <a  href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger " >See All</a>
           
-            <input type="hidden" id="row" value="0">
-            <input type="hidden" id="all" value="<?php echo $all_count; ?>">
            
   </div>
 </section>
@@ -523,7 +523,7 @@
     <?php
               
               $product = get_all_store();
-           
+             $shop_count= get_all_store_count();
            
            
             if(!empty($product)){
@@ -598,8 +598,9 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
+            <?php if($shop_count > 4){ ?>
             <a  href ="<?php echo base_url();?>welcome/store/16" class="btn btn-danger " >See All</a>
-
+<?php } ?>
   </div>
 </section>
 
@@ -713,11 +714,11 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <?php if($allcount >4){ ?> 
+            <!-- <?php if($allcount >4){ ?> 
             <button  class="btn btn-danger donate-load-more" >See All</button>
             <?php } ?>
             <input type="hidden" id="row-donate" value="0">
-            <input type="hidden" id="all-donate" value="<?php echo $allcount; ?>">
+            <input type="hidden" id="all-donate" value="<?php echo $allcount; ?>"> -->
   </div>
 </section>
 
