@@ -1596,6 +1596,8 @@
         }
     });
 
+
+
     $('#Job_Location').change(function() {
         if ($(this).val() == "Office") {
             document.getElementById("job_Office_Address_div").style.display = "block";
@@ -1791,33 +1793,35 @@
                 'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings_post,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers,Tuitions_Teachers_Experience'
             );
 
-
-            $('#subcategory').on('change.Job_type,Job_Location', function() {
-                $("#Job_type_div,#Job_Location_div").toggle($(this).val() == 14 || $(this)
-                    .val() == 15);
+          
+            $('#subcategory').on('change.Job_type', function() {
+                $("#Job_type_div").toggle($(this).val() == 14 || $(this).val() == 15);
                 if ($(this).val() == 14 || $(this).val() == 15) {
+                    console.log($(this).val());
                     Job_type.required = true;
-                    Job_Location.required = true;
-
                 }
-            }).trigger('change.Job_type,Job_Location');
+            }).trigger('change.Job_type');
 
-
+            $('#subcategory').on('change.Job_Location', function() {
+                $("#Job_Location_div").toggle($(this).val() == 14 || $(this).val() == 15||$(this).val() == 17 || $(this).val() == 18);
+                if ($(this).val() == 14 || $(this).val() == 15||$(this).val() == 17 || $(this).val() == 18) {
+                    Job_Location.required = true;
+                }
+            }).trigger('change.Job_Location');
 
             $('#subcategory').on(
-                'change.intership_Job_type,Job_Location,intership_Need_Stipend,Tuitions_Available_Timings_intership',
+                'change.intership_Job_type,intership_Need_Stipend,Tuitions_Available_Timings_intership',
                 function() {
-                    $("#intership_Job_type_div,#Job_Location_div,#intership_Need_Stipend_div,#Tuitions_Available_Timings_intership_div")
+                    $("#intership_Job_type_div,#intership_Need_Stipend_div,#Tuitions_Available_Timings_intership_div")
                         .toggle($(this).val() == 17 || $(this).val() == 18);
                     if ($(this).val() == 17 || $(this).val() == 18) {
                         intership_Job_type.required = true;
-                        Job_Location.required = true;
                         intership_Need_Stipend.required = true;
                         Tuitions_Available_Timings_intership.required = true;
 
                     }
                 }).trigger(
-                'change.intership_Job_type,Job_Location,intership_Need_Stipend,Tuitions_Available_Timings_intership'
+                'change.intership_Job_type,intership_Need_Stipend,Tuitions_Available_Timings_intership'
             );
 
 
@@ -2073,6 +2077,9 @@
         function initialize() {
             var input = document.getElementById('Location');
             var autocomplete = new google.maps.places.Autocomplete(input);
+
+            var job_Office_Address = document.getElementById('job_Office_Address');
+            var autocomplete = new google.maps.places.Autocomplete(job_Office_Address);
             
             autocomplete.addListener('place_changed', function() {
                 var place = autocomplete.getPlace();
