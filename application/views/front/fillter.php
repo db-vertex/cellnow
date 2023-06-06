@@ -1829,9 +1829,7 @@ $(document).ready(function() {
         filter_data(page);
     });
 
-    $('.common_selector').click(function() {
-        filter_data(1);
-    });
+   
 
     $('.common_select').click(function() {
         filter_data(1);
