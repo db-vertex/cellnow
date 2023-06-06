@@ -1303,7 +1303,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         <div class="col-5">
                             <p class="details_title"> <?php echo ucfirst($product_detail->title); ?></p>
                         </div>
-                        <div class="col-2">
+                        <div class="col-3">
                             <a  style="font-size:18px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
                                 href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
                                 style="font-size:18px; color:#69d3b0; padding: 0px;"
@@ -1314,7 +1314,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 data-cid="<?php echo $product_detail->category_id; ?>"
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
                         </div>
-                        <div class="col-5">
+                        <div class="col-4">
                             <?php if(isset($product_detail->price)){
                                 if(($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)){ ?>
                             <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
@@ -1559,7 +1559,7 @@ if($shop->admin_approval==1){
                             </div>
                         </div>
                     </div>
-                    <div class="col-8  margin_top_css ms-4">
+                    <div class="col-10  margin_top_css ms-4">
                         <p class="details_handing_Description">Description</p>
                         <p class="details_Description"> <?php echo $product_detail->Description; ?></p>
                     </div>
