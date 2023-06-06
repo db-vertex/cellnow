@@ -1378,7 +1378,7 @@ a:active {
 				onclick="return getproduct( <?php echo $sub->id; ?>)"
 			<?php } ?> >
 			
-		<img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"  data-sub-id="<?php echo $sub->subcategory_id; ?>" src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
+		<img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"  data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>" src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
 		 <center style="color:black; font-size:12px; font-weight:500"><?php echo $sub->product_type; ?></center>
 		</p>
 		
@@ -1680,13 +1680,13 @@ a:active {
             <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
               <p><?php
                            $title = $pro->address;
-                            if(strlen($title) <= 20)
+                            if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,20) . '...';
+                                $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -1802,14 +1802,14 @@ $(document).ready(function() {
     }
 
 
-    function get_type_filter(class_name) {
-        var filter = [];
-        $('.' + class_name + ':checked').each(function() {
-            filter.push($(this).val());
-        });
-        console.log(filter)
-        return filter;
-    }
+    // function get_type_filter(class_name) {
+    //     var filter = [];
+    //     $('.' + class_name + ':checked').each(function() {
+    //         filter.push($(this).val());
+    //     });
+    //     console.log(filter)
+    //     return filter;
+    // }
 
     $(document).on('click', '.sub_category', function() {
         var subId = $(this).data('sub-id');
