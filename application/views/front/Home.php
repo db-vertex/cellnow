@@ -523,7 +523,7 @@
     <?php
               
               $product = get_all_store();
-           
+             $shop_count= get_all_store_count();
            
            
             if(!empty($product)){
@@ -598,8 +598,9 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
+            <?php if($shop_count > 4){ ?>
             <a  href ="<?php echo base_url();?>welcome/store/16" class="btn btn-danger " >See All</a>
-
+<?php } ?>
   </div>
 </section>
 

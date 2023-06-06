@@ -687,6 +687,21 @@ function get_all_store()
   return $category_data->result(); 
 }
 
+function get_all_store_count()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM shop order by name";
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->num_rows(); 
+}
+
 function get_category_all_store($id)
 {
   //get main CodeIgniter object
