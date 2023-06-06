@@ -1425,7 +1425,7 @@ a:active {
                 <div id="price_range"></div>
             </div>
 
-            <?php if($cateory == 2 )
+            <!-- <?php if($cateory == 2 )
                 { ?>
             <div class="panel-group mt-4">
                 <div class="panel panel-default">
@@ -1567,7 +1567,7 @@ a:active {
             <?php 
 			} 
 			
-			?>
+			?> -->
 
 
 

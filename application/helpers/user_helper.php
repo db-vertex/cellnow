@@ -329,6 +329,37 @@ function get_all_locationsearch_product($location)
    
 }
 
+
+function get_all_locationsearch_product_count($location)
+{ 
+   
+    //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+       $session_id = $ci->session->userdata("id");
+     if ($session_id) {
+    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE user_id !='.$session_id.'
+    ) as  custam  WHERE address like "%'.$location.'%"';
+     }
+     else{
+      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts 
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships 
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions
+      ) as  custam  WHERE address like "%'.$location.'%"  ';
+     }
+    
+       $category_data = $ci->db->query($query);  
+             
+  return $category_data->num_rows(); 
+   
+}
+
 function get_seller_product($id)
 {
   //get main CodeIgniter object
