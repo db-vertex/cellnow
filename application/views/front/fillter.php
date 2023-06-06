@@ -1318,11 +1318,11 @@ a:active {
 
 
                 ?>
-        <li class="" id="" onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-            <p <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>
+        <li class="" id="" >
+            <a  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id;?>" <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>
                 class="new<?php echo $cat->id; ?> btn shadow  rounded-pill" role="button"><img
                     class="rounded-circle me-1" src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
-                    alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </p>
+                    alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
 
         </li> &nbsp &nbsp &nbsp &nbsp &nbsp
 
@@ -1579,8 +1579,8 @@ a:active {
             <br />
             <br />
             <br />
-           
-            <div class="row filter_data">
+           <?php  if(!empty($products)){ ?>
+            <div class="row " id="product_list">
             <?php
                   
             
@@ -1684,7 +1684,8 @@ a:active {
               else {?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-        
+          <?php }else{ ?>  <div class="row filter_data">
+            <?php } ?>
             </div>
 
             <br />
