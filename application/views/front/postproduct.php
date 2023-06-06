@@ -381,7 +381,6 @@
         float: right;
         position: absolute;
         margin-left: 85%;
-        color: white;
         display: none;
     }
 
@@ -392,7 +391,6 @@
         font-size: 16px;
         float: right;
         position: absolute;
-        color: white;
         display: none;
         margin-left: 55px;
     }
