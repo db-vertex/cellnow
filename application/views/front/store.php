@@ -172,7 +172,7 @@ input::placeholder {
 
                     <div class="va-card va-card_category"> 
                             <p  style="text-align:center;" class="my-auto pouler_Categories" onclick="return getshop(<?php echo $cat->id; ?>)">
-                                <img <?php if($id== $cat->id){ ?>style="background:#d1fae5; border-radius:50%;" <?php } ?> class="btn-change new<?php echo $cat->id; ?>"
+                                <img  class="btn-change new<?php echo $cat->id; ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
                                 <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo ucfirst($cat->shop_category); ?></center>
