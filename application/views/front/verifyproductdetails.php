@@ -1386,9 +1386,12 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                         <?php   $shoplist = 0;
                 if (!empty($user) && isset($user)) {
-                    $shop =check_shoplist($user['user_id']);
-                    if(empty($shop)){  $shop_list =check_shoplist_by_productid($product_detail->id);
-                    if(empty($shop_list)){ echo"";}else{
+                    $shop =check_shoplist($user['user_id']); 
+                   
+                    if(empty($shop)){
+                          $shop_list =check_shoplist_by_productid($product_detail->id);
+                     
+                    if(empty($shop_list)){ echo"";}else{  
                     $shop_name= get_shop_name($shop_list->shop_id);?>
                         <div class="" style="">
                             <div class="col-12" style="text-align:center;">
@@ -1403,8 +1406,9 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <?php } }else{
                     $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
-                    if (empty($wishlit)) {
+                 if (empty($wishlit)) {
 if($shop->admin_approval==1){
+  
                     ?> <div class="" style="">
 
                             <div class="">
@@ -1436,7 +1440,7 @@ if($shop->admin_approval==1){
                         </div>
 
 
-                        <?php  }} else {
+                        <?php }} else {
                     $shop_list =check_shoplist_by_productid($product_detail->id);
                     if(empty($shop_list)) {echo"";}else{
                     $shop_name= get_shop_name($shop_list->shop_id);
@@ -1462,7 +1466,7 @@ if($shop->admin_approval==1){
                         <div class="" style="">
 
                             <div class="col-12" style="text-align:center;">
-                                <p class="  btn_Verified_shop_name pt-3"><span class="pe-2"><img
+                                <p class="  btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                             alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
@@ -1615,7 +1619,7 @@ if($shop->admin_approval==1){
                                     </div>
                                     <div class="col-2">
                                         <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                style="font-size:18px;color:#ff6737;padding: 0px;"></i></b>
+                                                style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
                                     </div>
                                     <div class="col-4">
                                         <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 

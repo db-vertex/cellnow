@@ -1590,6 +1590,23 @@ a:active {
               $j = 1;
             foreach($products as $pro){
             
+                $wishlist = 0;
+  if (!empty($user) && isset($user)) {
+    $wishlit = get_wishlist($pro->id, $pro->category_id, $user["user_id"]);
+
+    if (empty($wishlit)) {
+
+      $wishlist = 0;
+
+
+    } else {
+
+      $wishlist = 1;
+
+    }
+  } else {
+    $wishlist = 0;
+  }
              $session_login_id  = $user['user_id'] ?? null;
               $product_user_id = $pro->user_id;
               if($session_login_id !== $product_user_id){
@@ -1611,7 +1628,7 @@ a:active {
           </div>
           <div class="card-body">
           <div class="d-flex justify-content-between align-items-center">
-          <h6 class="dress-name"><?php
+          <p class="dress-name"><?php
                            $title = $pro->title;
                             if(strlen($title) <= 15)
                               {
@@ -1623,9 +1640,18 @@ a:active {
                                 echo ucfirst($y);
                               }
                            
-                           ?></h6>
-          <h6 class="details_price">$<?php echo $pro->price; ?>
-            </h6>
+                           ?></p>
+                            <a  style="font-size:10px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
+                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
+                                style="font-size:10px; color:#69d3b0; padding: 0px;"
+                               
+                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $pro->id; ?>"
+                                data-pid="<?php echo $pro->id; ?>"
+                                data-cid="<?php echo $pro->category_id; ?>"
+                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
+          <p class="details_price">$<?php echo $pro->price; ?>
+                                </p>
                   
 
 
