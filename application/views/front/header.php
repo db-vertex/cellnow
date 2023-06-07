@@ -15,7 +15,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
+    <script
+        src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete">
+    </script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <link rel="icon" sizes="196x196" href="https://dbvertex.com/celnow/assets/images/CelNow 5 1.png" type="image/png">
@@ -869,10 +871,10 @@ transition: .3s ease-in-out;
                
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="margin-left: auto;">
                     <li class="nav-item " style="padding-right:150px" ;>
-                    <div class="search_wrap search_wrap_6 m-0">
+                    <div class="search_wrap search_wrap_6 m-0 ">
 			<div class="search_boxs">
                     <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-                           <input type="text" placeholder="Search for location..." class="form-control form-input" value="<?php echo set_value('location'); ?>" name="location" style="border-radius:20px; width:140%">
+                           <input type="text" placeholder="Search for location..." class="form-control form-input" id="locate" value="<?php echo set_value('location'); ?>" name="location" style="border-radius:20px; width:140%">
                            <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
 </form>
             </div></div>                
@@ -1061,5 +1063,15 @@ $(document).ready(function() {
  
 
 });
+
+</script>
+<script>
+    $(function () {
+        var input = document.getElementById("locate");
+        var autocomplete = new google.maps.places.Autocomplete(input);
+
+      
+
+    });
 
 </script>
