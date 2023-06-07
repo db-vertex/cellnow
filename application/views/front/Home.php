@@ -189,17 +189,10 @@
 
                 </li> &nbsp  &nbsp &nbsp  
           
-            <?php
-                      
-                      }
-
-                ?> 
+            <?php  }?> 
 </ul>
     
 </div>
-
-
-
 
 <div class="container">
     <div class="va-carrousel-section">
@@ -219,9 +212,6 @@
 
                 <div class="va-carrousel-flexbox" id="sub-list">
               
-
-		 
-         
 	
 		  </div> 
      <!-- <button class="deals-scroll-right deals-paddle" id="right_sponser_button">

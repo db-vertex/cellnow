@@ -252,11 +252,12 @@
                   if(empty($location) && !empty($anything)){
                   $product =  get_all_search_product($anything); 
                   $allcount = get_all_search_product_count($anything);
-              
+                
                   }
                   else if(!empty($location) && empty($anything)){
                   $product= get_all_locationsearch_product($location);
-                  $allcount=get_all_locationsearch_product_count($location);
+                  $allcount =get_all_locationsearch_product_count($location);
+               
                   }
               if(!empty($product)){
               $i = 1;
@@ -343,12 +344,11 @@
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             </div>
-            <?php if($allcount >4){ ?> 
-              <a  href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger " >See All</a>
+            <?php if($allcount > 4){ ?> 
+              <a href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger " >See All</a>
 
             <?php } ?>
-            <input type="hidden" id="row" value="0">
-            <input type="hidden" id="all" value="<?php echo $allcount; ?>">
+          
   </div>
 </section>
 
@@ -480,8 +480,129 @@
     <p style="color: #F59E0B;">Search  Near  By Store</p>
     </div>
 </div>
+<?php if(!empty($location)&& empty($anything)){
+              $product = get_all_location_store($location);
+             $shop_count= get_all_location_store_count($location);
+                 ?>
+<div class="container  mt-3">
+  <div class="row pl-4">
+    <div class="col-lg-7 col-md-5 col-sm-4">
+     <p style="color: #1B1C57; font-size:30px;">Shops Offering Services</p>
+    </div>
+    <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
+    <div class="search_wrap search_wrap_6 m-0">
+			<div class="search_box">
+
+      <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+         
+         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
+       </form>
+        </div>
+        <div class="row">
+                                    <div id="display"></div>
+                                   
+   
+                              
+                           
+                    </div>
+  </div>
+    </div>
+  </div>
+</div><br>
 
 
+
+
+<section >
+
+  <div class="text-center container py-4">
+  
+
+    <div class="row"  style="margin-left:20px; margin-right:20px;">
+    <?php
+              
+             
+           
+            if(!empty($product)){
+            $i = 1;
+            $j = 1;
+          foreach($product as $pro){
+           $session_login_id  = $user['user_id'] ?? null;
+            $product_user_id = $pro->user_id;
+            if($session_login_id !== $product_user_id){
+                if($i > 0){
+             ?>  
+            
+      <div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
+        <div class="card">
+          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <a  href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>"><img src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
+              class="w-100 va-thumbnail" /></a>
+            <a href="#!">
+             
+              <div class="hover-overlay">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+        
+          <div class="d-flex justify-content-between align-items-center">
+
+<h6 class="dress-name"><?php
+                           $title = $pro->name;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></h6>
+
+
+
+</div>
+<div class="d-flex justify-content-between align-items-center"> 
+            <a href="" class="text-reset">
+              <h6><?php
+                           $title = $pro->Address;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></h6>
+            </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+    <?php $i++;} } else if($j == 1) {?>
+                   
+                   <?php   }  $j++; };  ?>  
+    <?php }
+              else {?>
+            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
+            <?php }?>
+            </div>
+            <?php if($shop_count > 4){ ?>
+            <a  href ="<?php echo base_url();?>welcome/store/16" class="btn btn-danger " >See All</a>
+<?php } ?>
+  </div>
+</section>
+
+<?php } ?>
 
 
 <div class="container">
