@@ -508,9 +508,9 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
             <div class="col-lg-4 col-md-6  mb-2">
                 <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-                    <img class="va-thumbnail"
+                <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>"> <img class="va-thumbnail"
                         src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>"
-                        class="card-img-top" alt="Card image cap">
+                        class="card-img-top" alt="Card image cap"></a>
                     <div class="card-block" style="padding:5px">
                         <div class="card-title">
                             <div class="row pl-3">

@@ -372,12 +372,12 @@ img {
         }
 
         .detalis_option_text {
+          
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 400;
             font-size: 14px;
             line-height: 0px;
-          
             color: #898686;
         }
 
@@ -457,7 +457,7 @@ img {
 
         
 
-        .detalis_option_text {
+    .detalis_option_text {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
@@ -1466,7 +1466,7 @@ if($shop->admin_approval==1){
                         <div class="" style="">
 
                             <div class="col-12" style="text-align:center;">
-                                <p class="  btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                             alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:

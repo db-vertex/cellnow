@@ -1425,6 +1425,41 @@ a:active {
                 <div id="price_range"></div>
             </div>
 
+            <div class="panel-group mt-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" href="#test">
+                            <h4 class="panel-title common_h">
+                              Sub Category
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="test" class="panel-collapse collapse">
+                        <div class="list-group mt-2">
+
+                            <?php
+					  $cateory =  $this->uri->segment(3);
+               
+                  
+                     $sub_ = '';
+                      $subcategory = get_subcategory_byid($cateory);  
+					  
+					  foreach($subcategory as $sub){
+					?>
+
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                                <label class="common_s"><input type="checkbox" class="common_select product_type"
+                                        value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
+                            </div>
+                            <?php 
+					
+					 }
+					?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <!-- <?php if($cateory == 2 )
                 { ?>
             <div class="panel-group mt-4">
@@ -1444,14 +1479,14 @@ a:active {
                
                   
                      $sub_ = '';
-                      $subcategory = get_producttype_byid($cateory);  
+                      $subcategory = get_subcategory_byid($cateory);  
 					  
 					  foreach($subcategory as $sub){
 					?>
 
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select product_type"
-                                        value="<?php echo $sub->id;?>"> <?php  echo $sub->product_type;?></label>
+                                        value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
                             </div>
                             <?php 
 					
