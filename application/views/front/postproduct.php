@@ -932,7 +932,7 @@
                                     <option value="70">Others</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid Tuitions loction.
+                                    Please provide a valid Education Type.
                                 </div>
                             </div>
 
@@ -1751,15 +1751,26 @@
                     }
                 }).trigger('change.reusable_parts_Publisher,reusable_parts_Publisher_type');
 
-            $('#subcategory').on(
-                'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications,Tuitions_Positives_Outcomes,Tuitions_Joining_criteria',
+
+
+
+                $('#subcategory').on('change.Tuitions_loction,Tuitions_Education_Type,Tuitions_gender',
                 function() {
-                    $("#Tuitions_loction_div,#Tuitions_gender_div,#Tuitions_Education_Type_div,#Tuitions_Available_Timings_div,#Tuitions_Years_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_Qualifications_div,#Tuitions_Positives_Outcomes_div,#Tuitions_Joining_criteria_div")
+                    $("#Tuitions_loction_div,#Tuitions_Education_Type_div,#Tuitions_gender_div").toggle($(this).val() == 12 || $(this).val() == 13);
+                    if ($(this).val() == 12 || $(this).val() == 13) {
+                        Tuitions_loction.required = true;
+                        Tuitions_Education_Type.required = true; 
+                        Tuitions_gender.required = true;
+                    }
+                }).trigger('change.Tuitions_loction,Tuitions_Education_Type,Tuitions_gender');
+
+                
+            $('#subcategory').on(
+                'change.Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications,Tuitions_Positives_Outcomes,Tuitions_Joining_criteria',
+                function() {
+                    $("#Tuitions_Available_Timings_div,#Tuitions_Years_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_Qualifications_div,#Tuitions_Positives_Outcomes_div,#Tuitions_Joining_criteria_div")
                         .toggle($(this).val() == 12);
                     if ($(this).val() == 12) {
-                        Tuitions_loction.required = true;
-                        Tuitions_gender.required = true;
-                        Tuitions_Education_Type.required = true;
                         Tuitions_Available_Timings.required = true;
                         Tuitions_Years_Experience.required = true;
                         Tuitions_person_Fees.required = true;
@@ -1768,19 +1779,16 @@
                         Tuitions_Joining_criteria.required = true;
                     }
                 }).trigger(
-                'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications,Tuitions_Positives_Outcomes,Tuitions_Joining_criteria'
+                'change.Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications,Tuitions_Positives_Outcomes,Tuitions_Joining_criteria'
             );
 
 
             $('#subcategory').on(
-                'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings_post,Tuitions_Teachers_Experience,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers',
+                'change.Tuitions_Available_Timings_post,Tuitions_Teachers_Experience,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers',
                 function() {
-                    $("#Tuitions_loction_div,#Tuitions_gender_div,#Tuitions_Education_Type_div,#Tuitions_Available_Timings_post_div,#Tuitions_Teachers_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_type_div,#Tuitions_Requirements_Teachers_div")
+                    $("#Tuitions_Available_Timings_post_div,#Tuitions_Teachers_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_type_div,#Tuitions_Requirements_Teachers_div")
                         .toggle($(this).val() == 13);
                     if ($(this).val() == 13) {
-                        Tuitions_loction.required = true;
-                        Tuitions_gender.required = true;
-                        Tuitions_Education_Type.required = true;
                         Tuitions_Available_Timings_post.required = true;
                         Tuitions_Teachers_Experience.required = true;
                         Tuitions_person_Fees.required = true;
@@ -1788,7 +1796,7 @@
                         Tuitions_Requirements_Teachers.required = true;
                     }
                 }).trigger(
-                'change.Tuitions_loction,Tuitions_gender,Tuitions_Education_Type,Tuitions_Available_Timings_post,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers,Tuitions_Teachers_Experience'
+                'change.Tuitions_Available_Timings_post,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers,Tuitions_Teachers_Experience'
             );
 
           
