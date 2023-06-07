@@ -128,7 +128,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 <div class="container">
     <h3 class="ml-5 mb-3"><b>Verified by shop </b></h3>
-    <div class="row">
+    <div class="row ml-4 mr-4">
         
         <?php $product = get_productid_by_shop($id); 
          if(!empty($product)){
@@ -176,12 +176,13 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
        }  
      ?>
 
-<div class="col-lg-4 col-md-6  mb-2">
-            <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-              <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>" class="card-img-top" alt="Card image cap">
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
+            <div class="card">
+              <a  href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
+              <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>" class="card-img-top" alt="Card image cap"></a>
               <div class="card-block" style="padding:5px">
                 <div class="card-title">
-                  <div class="row pl-3">
+                  <div class="row pl-2">
                     <div class="col-6"><b style="font-size:15px">
                     <?php
                            $title =$Categories_all_product->title;
@@ -213,7 +214,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                     </div>
                   </div>
                 </div>
-                <div class="row pl-3">
+                <div class="row pl-2">
                 <small class="card-text ">
                 <?php
                            $title =$Categories_all_product->Description;
@@ -232,14 +233,14 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
         </div>
 
                
-                <div class="row pl-3">
+                <div class="row pl-2">
                   <div class=col-4><p>Type</p></div>
                   <div class=col-8><p><?php echo $Categories_all_product->type; ?></p></div>
                 </div>
 
 
 
-                <div class="row text-center p-3">
+                <div class="row text-center p-2">
                   <div class="col-2">
                   <img src="<?php echo base_url();?>assets/images/location .png" >
                             </div>

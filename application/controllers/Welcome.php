@@ -2881,6 +2881,30 @@ $sub .= '</h6>
 		}
 	}
 
+	public function subscribe(){
+
+		$this->form_validation->set_rules('email_newsletter', 'email', 'required|valid_email');
+		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
+
+		if ($this->form_validation->run()) {
+			$email =  $this->input->post('email_newsletter');
+				 $post_data = array( 'email_newsletter'=>$email);
+			 $sent=   $this->db->insert('newsletter',$post_data);
+			 
+			$this->load->view('front/header');
+			$this->load->view('front/Home');
+			$this->load->view('front/footer');
+		} else {
+		
+				
+			 $this->load->view('front/header');
+			$this->load->view('front/Home');
+			$this->load->view('front/footer');
+	   }
+   
+			   
+			  
+   }
 
 
 }

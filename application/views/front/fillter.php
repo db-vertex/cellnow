@@ -1424,7 +1424,7 @@ a:active {
                 <p id="price_show">0 - 100000</p>
                 <div id="price_range"></div>
             </div>
-
+<!-- 
             <div class="panel-group mt-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -1448,7 +1448,7 @@ a:active {
 					?>
 
                             <div class="checkbox" style="padding:3px; border-top: none;">
-                                <label class="common_s"><input type="checkbox" class="common_select product_type"
+                                <label class="common_s"><input type="checkbox" class="common_select sub_category"
                                         value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
                             </div>
                             <?php 
@@ -1458,16 +1458,18 @@ a:active {
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> -->
 
-            <!-- <?php if($cateory == 2 )
+            
+
+            <?php if($cateory == 2 )
                 { ?>
             <div class="panel-group mt-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" href="#test">
                             <h4 class="panel-title common_h">
-                                Education Type
+                            Sub Category
                             </h4>
                         </a>
                     </div>
@@ -1485,7 +1487,48 @@ a:active {
 					?>
 
                             <div class="checkbox" style="padding:3px; border-top: none;">
-                                <label class="common_s"><input type="checkbox" class="common_select product_type"
+                                <label class="common_s"><input type="checkbox" class="common_select sub_category"
+                               value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
+                            </div>
+                            <?php 
+					
+					 }
+					?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <?php 
+					
+					 }
+					?>
+
+            <?php if ($cateory == 3)
+                { ?>
+            <div class="panel-group mt-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" href="#test">
+                            <h4 class="panel-title common_h">
+                                Sub Category
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="test" class="panel-collapse collapse">
+                        <div class="list-group mt-2">
+
+                            <?php
+					  $cateory =  $this->uri->segment(3);
+               
+             
+                     $sub_ = '';
+                      $subcategory = get_subcategory_byid($cateory);  
+					  
+					  foreach($subcategory as $sub){
+					?>
+
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                                <label class="common_s"><input type="checkbox" class="common_select sub_category"
                                         value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
                             </div>
                             <?php 
@@ -1501,55 +1544,14 @@ a:active {
 					 }
 					?>
 
-            <?php if ($cateory == 3 &&  $cateory == 4)
+            <?php if($cateory == 4 )
                 { ?>
             <div class="panel-group mt-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" href="#test">
                             <h4 class="panel-title common_h">
-                                Job Type
-                            </h4>
-                        </a>
-                    </div>
-                    <div id="test" class="panel-collapse collapse">
-                        <div class="list-group mt-2">
-
-                            <?php
-					  $cateory =  $this->uri->segment(3);
-               
-             
-                     $sub_ = '';
-                      $subcategory = get_producttype_byid($cateory);  
-					  
-					  foreach($subcategory as $sub){
-					?>
-
-                            <div class="checkbox" style="padding:3px; border-top: none;">
-                                <label class="common_s"><input type="checkbox" class="common_select product_type"
-                                        value="<?php echo $sub->id;?>"> <?php  echo $sub->product_type;?></label>
-                            </div>
-                            <?php 
-					
-					 }
-					?>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <?php 
-					
-					 }
-					?>
-
-            <?php if($cateory == 1 )
-                { ?>
-            <div class="panel-group mt-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" href="#test">
-                            <h4 class="panel-title common_h">
-                                Type
+                            Sub Category
                             </h4>
                         </a>
                     </div>
@@ -1561,14 +1563,14 @@ a:active {
                
               
                      $sub_ = '';
-                      $subcategory = get_producttype_byid($cateory);  
+                      $subcategory = get_subcategory_byid($cateory);  
 					  
 					  foreach($subcategory as $sub){
 					?>
 
                             <div class="checkbox" style="padding:3px; border-top: none;">
-                                <label class="common_s"><input type="checkbox" class="common_select product_type"
-                                        value="<?php echo $sub->id;?>"> <?php  echo $sub->product_type;?></label>
+                                <label class="common_s"><input type="checkbox" class="common_select sub_category"
+                                        value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
                             </div>
                             <?php 
 					
@@ -1582,27 +1584,9 @@ a:active {
             <?php 
 		    	} 
 		    	
-		   else if ($cateory == 3 || $cateory == 4 ){
-					?>
-            <div class="panel-group mt-4 temporery_hide">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" href="#TYPE">
-                            <h4 class="panel-title common_h">
-                                TYPE
-                            </h4>
-                        </a>
-                    </div>
-                    <div id="TYPE" class="panel-collapse collapse">
-
-
-                    </div>
-                </div>
-            </div>
-            <?php 
-			} 
+		  
 			
-			?> -->
+			?>
 
 
 
@@ -1837,14 +1821,14 @@ $(document).ready(function() {
     }
 
 
-    // function get_type_filter(class_name) {
-    //     var filter = [];
-    //     $('.' + class_name + ':checked').each(function() {
-    //         filter.push($(this).val());
-    //     });
-    //     console.log(filter)
-    //     return filter;
-    // }
+    function get_type_filter(class_name) {
+        var filter = [];
+        $('.' + class_name + ':checked').each(function() {
+            filter.push($(this).val());
+        });
+        console.log(filter)
+        return filter;
+    }
 
     $(document).on('click', '.sub_category', function() {
         var subId = $(this).data('sub-id');
@@ -1869,6 +1853,9 @@ $(document).ready(function() {
     $('.common_select').click(function() {
         filter_data(1);
     });
+
+    
+
 
 
 });

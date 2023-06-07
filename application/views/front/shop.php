@@ -470,7 +470,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
     <div class="container">
 
-        <div class="row">
+        <div class="row ml-4 mr-4">
 
             <?php if(!empty($shop->id)){
       $product = get_productid_by_shop($shop->id);
@@ -506,15 +506,15 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
 
-            <div class="col-lg-4 col-md-6  mb-2">
-                <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
+<div class="col-lg-3 col-md-6 col-sm-6 mb-4" >
+                <div class="card" >
                 <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>"> <img class="va-thumbnail"
                         src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>"
                         class="card-img-top" alt="Card image cap"></a>
                     <div class="card-block" style="padding:5px">
                         <div class="card-title">
                             <div class="row pl-3">
-                                <div class="col-6"><b style="font-size:15px">
+                                <div class="col-5"><b style="font-size:15px">
                                         <?php
                            $title =$Categories_all_product->title;
                             if(strlen($title) <= 12)
@@ -529,7 +529,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                            
                            ?>
                                     </b></div>
-                                <div class="col-2"> <i style=" font-size:19px; margin-top:-20px;color:#69d3b0;"
+                                <div class="col-3"> <i style=" font-size:19px; margin-top:-20px;color:#69d3b0;"
                                         data-toggle="modal" data-target="#login"
                                         data-uid="<?php echo $user["user_id"]; ?>"
                                         class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"

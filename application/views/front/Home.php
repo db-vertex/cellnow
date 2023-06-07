@@ -749,62 +749,38 @@
   </div>
 </div><br>
 
-<div class="container ">
-  <div class="row p-4">
-    <div class="col">
-      <p style="color:#000000; text-align:center; font-weight:bolder; font-size:28px;">What our happy client say</p>
-       <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">Several selected clients, who already believe in our service.</p>
-    </div>
-  </div>
-</div><br>
 
-<!-- new  -->
+
 
 <div class="container">
-<div id="carouselExampleControlsl" class="carousel slide" data-bs-ride="carousel">
+  <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
-  
+   
     <div class="carousel-item active">
-      <div class="row pl-4">
-        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
-        <div class="col align-self-center"> 
-          <h5><b >Matthew Paul</b></h5>
-                  <p style="color: #000000;font-size:1.3vw">Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
-        </div>
-        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
-      </div>
-        
-      
-      </div>
-
-      <div class="carousel-item ">
-      <div class="row p-4">
-        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
-        <div class="col align-self-center"> 
-          <h5><b >Matthew Paul</b></h5>
-                  <p style="color: #000000;font-size:1.3vw">Perfect, very good job! Thank you for the amazing design and work. Really impressed with the high quality and quick turnaround time. Highly recommend.</p>
-        </div>
-        <div class="col"> <img src="<?php echo base_url();?>assets/images/img/mathewpal.png" class="d-block w-100" alt="..."></div>
-      </div>
-         </div>
+      <img 
+  class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>assets/images/Happy Client.png" alt="First slide">
     </div>
-
-  <!-- </div> -->
-  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlsl" data-bs-slide="prev" >
+    <div class="carousel-item ">
+      <img 
+  class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>assets/images/Happy Client.png" alt="First slide">
+    </div>
+  
+   
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss" data-bs-slide="prev">
     <span class="carousel-control-prev-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Previous</span>
   </button>
-  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlsl" data-bs-slide="next" >
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlss" data-bs-slide="next">
     <span class="carousel-control-next-icon" aria-hidden="true"></span>
     <span class="visually-hidden">Next</span>
   </button>
 </div>
 </div>
-</div><br>
 
 <div class="container">
     <div class="row p-4">
-        <div class="col-sm-4">
+        <div class="col-sm-4 ">
             <div class="row">
                 <div class="col"> <img src="<?php echo base_url();?>assets/images/img/chairimg.png" class="img-fluid" alt="..."></div>
                 <div class="col"><img src="<?php echo base_url();?>assets/images/img/mtimg.png" class="img-fluid" alt="..."></div>
@@ -814,11 +790,22 @@
                 <div class="col"><img src="<?php echo base_url();?>assets/images/img/house.png" class="img-fluid" alt="..."></div>
             </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 ">
             <h2><b style="color:#1b1c57">Subscribe For More Info
             And Update For Celnow</b></h2>
+            <div class="search_wrap search_wrap_6 m-0 mt-3">
+			<div class="search_box">
+         <form method="post" action="<?php echo base_url();?>welcome/subscribe">
+         
+		       <input type="search"  name="email_newsletter" id="email_newsletter" class="form-control rounded-5"  placeholder="Your Email Here!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+          
+            <button type="button" name="submit" class="btn btn-success rounded-5" style="padding:6px 10px" onclick="return checkemail();">Subscribe </button>
+            <span id="email_er" style="color: red; font-size:12px;"></span>
+</form></div>
+       
+  </div>
         </div>
-        <div class="col-sm-4">
+        <div class="col-sm-4 ">
         <div class="row">
                 <div class="col"> <img src="<?php echo base_url();?>assets/images/img/h2.png" class="img-fluid" alt="..."></div>
                 <div class="col"><img src="<?php echo base_url();?>assets/images/img/gimg.png" class="img-fluid" alt="..."></div>
@@ -1104,3 +1091,33 @@ $('.donate-load-more').click(function(){
 
 });
     </script>
+
+<script>
+   function checkemail(event) { 
+     
+        var email_newsletter = $('#email_newsletter').val();
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (email_newsletter == "" ) {
+            $("#email_er").text("Please Enter Email");
+        } 
+         else if(!(email_newsletter.match(mailformat))){
+              $("#email_er").text("Please Enter valid Email");
+             }else {
+            
+           $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>welcome/subscribe',
+            data:'newsletterSubmit=1&email_newsletter='+email_newsletter,
+           
+            success:function(data){
+                 $("#email_er").text("");
+               swal("Subscribe successfully!","", "success");
+            }
+        });
+           
+        }
+       
+
+    }
+
+</script>
