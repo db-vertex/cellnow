@@ -170,10 +170,19 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 	   }
 	   $pro .= '</small><br>
 					   </div>
+				   </div>';
+				   if ($row['category_id']==1) {
+				  $pro.=' <div class="row">
+				   <div class=col-4>
+					   <p style="color: #575757;">Brand</p>
 				   </div>
+				   <div class=col-8>
+					   <p style="color: #575757;">'.$row['brand'].'</p>
+				   </div>
+			   </div>';
+			    }
 				 
-				 
-				   <div class="d-flex justify-content-between align-items-center">
+				$pro .= '  <div class="d-flex justify-content-between align-items-center">
 					   <img src="https://dbvertex.com/celnow/assets/images/location .png">
 					  
 						   <p style="color: #575757;">';
