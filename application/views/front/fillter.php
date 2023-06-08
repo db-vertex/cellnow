@@ -1761,7 +1761,7 @@ $(document).ready(function() {
         var maximum_price = $('#hidden_maximum_price').val();
 
         var brand = get_filter('brand');
-        var type = get_filter('producy_type');
+        var type = get_type_filter('sub_category');
 
 
 
@@ -1825,6 +1825,7 @@ $(document).ready(function() {
         var filter = [];
         $('.' + class_name + ':checked').each(function() {
             filter.push($(this).val());
+            
         });
         console.log(filter)
         return filter;

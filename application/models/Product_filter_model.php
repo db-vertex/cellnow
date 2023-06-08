@@ -81,14 +81,14 @@ class Product_filter_model extends CI_Model
     }
     if (isset($type)) {
         $type_filter = implode("','", $type);
-        $query .= " AND Education_Type IN('$type_filter')";
+        $query .= " AND subcategory_id IN('$type_filter')";
     }
     if (isset($sub_category)) {
         $sub_category_filter = implode("','", $sub_category);
 	     if($sub_category_filter <= 12){
 			$query .= " AND subcategory_id IN('$sub_category_filter')";
 		 }
-		 else if (($sub_category_filter >= 13 && $sub_category_filter <= 20) || $sub_category_filter == 69) {
+		 else if (($sub_category_filter >= 13 && $sub_category_filter <= 20) || $sub_category_filter == 69 ) {
 			$query .= " AND Education_Type IN('$sub_category_filter')";
 		 }
 		 else if($sub_category_filter >= 21 && $sub_category_filter <= 68){

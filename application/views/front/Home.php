@@ -793,7 +793,7 @@
         <div class="col-sm-4 ">
             <h2><b style="color:#1b1c57">Subscribe For More Info
             And Update For Celnow</b></h2>
-            <div class="search_wrap search_wrap_6 m-0 mt-3">
+            <div class="search_wrap search_wrap_6 m-0 mt-4">
 			<div class="search_box">
          <form method="post" action="<?php echo base_url();?>welcome/subscribe">
          
