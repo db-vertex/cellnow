@@ -77,7 +77,7 @@ class Product_filter_model extends CI_Model
    
     if (isset($brand)) {
         $brand_filter = implode("','", $brand);
-        $query .= " AND Brand IN('$brand_filter')";
+        $query .= " AND brand IN('$brand_filter')";
     }
     if (isset($type)) {
         $type_filter = implode("','", $type);
