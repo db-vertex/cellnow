@@ -743,6 +743,11 @@
         .body_background {
             background: linear-gradient(130.02deg, #77D4B5 -15.01%, rgba(213, 253, 252, 0) 39.7%);
             background-color: white;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100; 
         }
     }
 
@@ -750,6 +755,11 @@
         .body_background {
             background: linear-gradient(130.02deg, #77D4B5 -15.01%, rgba(213, 253, 252, 0) 39.7%);
             background-color: white;
+            position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                z-index: 100; 
         }
     }
 
@@ -850,7 +860,7 @@ transition: .3s ease-in-out;
 
 <body>
     <!-- <h1 >Hello, world!</h1> -->
-    <div class="container-fluid body_background fixed-top" id="body_background">
+    <div class="container-fluid body_background " id="body_background">
 
         <div class="container">
             <nav class="navbar navbar-expand-lg bg-body-">
