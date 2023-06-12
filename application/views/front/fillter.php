@@ -1672,7 +1672,11 @@ a:active {
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
               class="w-100 va-thumbnail" /></a>
-            
+              <?php if($pro->verified_product ==1){ ?>
+                <p style="margin-left:10px;"><img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   margin-top: -30%; width:80px; "></p>
+
+   <?php }?>
             <a href="#!">
              
               <div class="hover-overlay">

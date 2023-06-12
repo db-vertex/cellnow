@@ -390,7 +390,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                                     <input name="GST" class="form-control" placeholder="GST Number"
                                                         type="text" maxlength="20" value="<?php echo $shop->GST; ?>"
                                                         style="border-radius:30px; border-color:#13C571" required>
-                                                    <div class="invalid-feedback">
+                                                        <input type="file" class="form-control mt-3"  name="shop_images[]"
+                                style="border-radius:30px; border-color:#13C571" ><div class="invalid-feedback">
                                                         Valid GST is required.
                                                     </div>
 
@@ -411,7 +412,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
                                                     <label>Shop document photo Upload size(180 x 190) px</label>
                                                     <input type="file" class="form-control" id="cover_image"
-                                                        name="shop_images"
+                                                        name="shop_images[]"
                                                         style="border-radius:30px; border-color:#13C571"
                                                         accept="image/*" required>
                                                     <span id="cover_err" style="color:red;"></span>
@@ -752,13 +753,15 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                             <input name="GST" class="form-control" placeholder="GST Number" type="text" maxlength="20"
                                 value="<?php echo set_value('name'); ?>"
                                 style="border-radius:30px; border-color:#13C571" required>
+                                <input type="file" class="form-control mt-3"  name="shop_images[]"
+                                style="border-radius:30px; border-color:#13C571">
                             <div class="invalid-feedback">
                                 Valid GST is required.
                             </div>
 
                         </div>
                         <div class="form-group">
-                            <label> Description</label>
+                            <label>Description</label>
                             <textarea name="description" class="form-control" id="aboutus" placeholder="Description"
                                 maxlength="200" rows="4" style="border-radius:20px; border-color:#13C571"
                                 required></textarea>
@@ -772,7 +775,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                         <div class="form-group">
 
                             <label>Shop document photo Upload size(180 x 190) px</label>
-                            <input type="file" class="form-control" id="cover_image" name="shop_images"
+                            <input type="file" class="form-control" id="cover_image" name="shop_images[]"
                                 style="border-radius:30px; border-color:#13C571" accept="image/*">
                             <span id="cover_err" style="color:red;"></span>
                         </div>
@@ -836,8 +839,8 @@ function initialize() {
     autocomplete.addListener('place_changed', function() {
         var place = autocomplete.getPlace();
         $('#addshopdetail').modal('show');
-        $('#latitude').val(place.geometry['location'].lat());
-        $('#longitude').val(place.geometry['location'].lng());
+        $('#latitude').val(place.geometry['Location'].lat());
+        $('#longitude').val(place.geometry['Location'].lng());
 
         $("#latitudeArea").removeClass("d-none");
         $("#longtitudeArea").removeClass("d-none");

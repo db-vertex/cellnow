@@ -104,11 +104,7 @@ img {
         margin: 0 auto;
     }
 
-    .breadcrumb_row {
-        display: flex;
-        flex-wrap: wrap;
-        margin: 0 -15px;
-    }
+    
 
     .breadcrumb_col {
         box-sizing: border-box;
@@ -1052,7 +1048,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
     </div>
     <div class="container mt-4" >
         <main>
-            <div class=" container mb-4">
+            <div class=" container mb-4 ml-2">
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">

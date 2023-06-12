@@ -1177,28 +1177,70 @@ $sub .= '</h6>
 		$GST = $this->input->post('GST');
 		$description = $this->input->post('description');
 
-		if (!empty($_FILES['shop_images']['name'])) {
-			$config['upload_path'] = './uploads/shop/';
-			// $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
-			$config['allowed_types'] = '*';
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('shop_images')) {
+		
 
-			} else {
-
-				//---- Successfully upload than add member-----
-				$image_data = $this->upload->data();
-				$filename = $image_data['file_name'];
-
-				$post_data = array('name' => $name, 'email' => $email, 'user_id' => $user_id, 'mobile' => $mobile, 'shop_category_id' => $shop_category, 'Address' => $Address, 'GST' => $GST, 'description' => $description, 'shop_images' => $filename, 'service_type' => $service_type, 'open_close_time' => $open_close_time);
+				$post_data = array('name' => $name, 'email' => $email, 'user_id' => $user_id, 'mobile' => $mobile, 'shop_category_id' => $shop_category, 'Address' => $Address, 'GST' => $GST, 'description' => $description, 'service_type' => $service_type, 'open_close_time' => $open_close_time);
 
 				$this->db->insert('shop', $post_data);
+				$id = $this->db->insert_id();
 
-				return redirect('welcome/shop');
+				$this->load->library('upload');
+		$dataInfo = array();
+		if (!empty($_FILES['shop_images']['name'])) {
+
+			$filesCount = count($_FILES['shop_images']['name']);
+			
+			for ($i = 0; $i < $filesCount; $i++) {
+				$_FILES['file']['name'] = $_FILES['shop_images']['name'][$i];
+				$_FILES['file']['type'] = $_FILES['shop_images']['type'][$i];
+				$_FILES['file']['tmp_name'] = $_FILES['shop_images']['tmp_name'][$i];
+				$_FILES['file']['error'] = $_FILES['shop_images']['error'][$i];
+				$_FILES['file']['size'] = $_FILES['shop_images']['size'][$i];
+
+
+				$config['upload_path'] = './uploads/shop';
+				$config['allowed_types'] = '*';
+
+				// Load and initialize upload library
+				$this->load->library('upload', $config);
+				$this->upload->initialize($config);
+				/*$id = $this->post('product_id');*/
+				// Upload file to server
+				if ($this->upload->do_upload('file')) {
+					// Uploaded file data
+					$fileData = $this->upload->data();
+					$uploadData[$i]['file_name'] = $fileData['file_name'];
+					$uploadData[$i]['created'] = date("Y-m-d H:i:s");
+					$pimage = $uploadData[$i]['file_name'];
+
+
+					if ($i == 0) {
+						$img = $pimage;
+						$source = "./uploads/document/$img";
+						$destImagePath = $img;
+						$destImagdePath = $destImagePath;
+						$thumbWidth = 300;
+						$this->db->update('shop', ["document" => $destImagdePath], "id=$id");
+
+					} else if ($i == 1) {
+						$img = $pimage;
+						$source = "./uploads/shop/$img";
+						$destImagePath = $img;
+						$destImagdePath = $destImagePath;
+						$thumbWidth = 300;
+
+						$this->db->update('shop', ["shop_images" => $destImagdePath], "id=$id");
+
+
+				}
 			}
+
 		}
 	}
 
+				return redirect('welcome/shop');
+		
+	}
 
 	public function editshop()
 	{
@@ -1214,28 +1256,68 @@ $sub .= '</h6>
 		$description = $this->input->post('description');
 		$id = $this->input->post('id');
 
-		if (!empty($_FILES['shop_images']['name'])) {
-			$config['upload_path'] = './uploads/shop/';
-			// $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
-			$config['allowed_types'] = '*';
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('shop_images')) {
-
-			} else {
-
-				//---- Successfully upload than add member-----
-				$image_data = $this->upload->data();
-				$filename = $image_data['file_name'];
-
-				$post_data = array('name' => $name, 'email' => $email, 'user_id' => $user_id, 'mobile' => $mobile, 'shop_category_id' => $shop_category, 'Address' => $Address, 'GST' => $GST, 'description' => $description, 'shop_images' => $filename, 'service_type' => $service_type, 'open_close_time' => $open_close_time, 'admin_approval' => 0);
+				$post_data = array('name' => $name, 'email' => $email, 'user_id' => $user_id, 'mobile' => $mobile, 'shop_category_id' => $shop_category, 'Address' => $Address, 'GST' => $GST, 'description' => $description, 'service_type' => $service_type, 'open_close_time' => $open_close_time, 'admin_approval' => 0);
 
 
 				$this->db->update("shop", $post_data, "id=$id");
 
-				return redirect('welcome/shop');
+		
+
+		$this->load->library('upload');
+		$dataInfo = array();
+		if (!empty($_FILES['shop_images']['name'])) {
+
+			$filesCount = count($_FILES['shop_images']['name']);
+			
+			for ($i = 0; $i < $filesCount; $i++) {
+				$_FILES['file']['name'] = $_FILES['shop_images']['name'][$i];
+				$_FILES['file']['type'] = $_FILES['shop_images']['type'][$i];
+				$_FILES['file']['tmp_name'] = $_FILES['shop_images']['tmp_name'][$i];
+				$_FILES['file']['error'] = $_FILES['shop_images']['error'][$i];
+				$_FILES['file']['size'] = $_FILES['shop_images']['size'][$i];
+
+
+				$config['upload_path'] = './uploads/shop';
+				$config['allowed_types'] = '*';
+
+				// Load and initialize upload library
+				$this->load->library('upload', $config);
+				$this->upload->initialize($config);
+				/*$id = $this->post('product_id');*/
+				// Upload file to server
+				if ($this->upload->do_upload('file')) {
+					// Uploaded file data
+					$fileData = $this->upload->data();
+					$uploadData[$i]['file_name'] = $fileData['file_name'];
+					$uploadData[$i]['created'] = date("Y-m-d H:i:s");
+					$pimage = $uploadData[$i]['file_name'];
+
+
+					if ($i == 0) {
+						$img = $pimage;
+						$source = "./uploads/document/$img";
+						$destImagePath = $img;
+						$destImagdePath = $destImagePath;
+						$thumbWidth = 300;
+						$this->db->update('shop', ["document" => $destImagdePath], "id=$id");
+
+					} else if ($i == 1) {
+						$img = $pimage;
+						$source = "./uploads/shop/$img";
+						$destImagePath = $img;
+						$destImagdePath = $destImagePath;
+						$thumbWidth = 300;
+
+						$this->db->update('shop', ["shop_images" => $destImagdePath], "id=$id");
+
+
+				}
 			}
+
 		}
 	}
+	return redirect('welcome/shop');
+			}
 
 
 	public function buyerprofile()
