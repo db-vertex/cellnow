@@ -1424,6 +1424,9 @@ a:active {
                 <p id="price_show">0 - 100000</p>
                 <div id="price_range"></div>
             </div>
+
+            
+            
 <!-- 
             <div class="panel-group mt-4">
                 <div class="panel panel-default">
@@ -1459,9 +1462,43 @@ a:active {
                     </div>
                 </div>
             </div> -->
+            <?php if($cateory == 1 )
+                { ?>
+            <div class="panel-group mt-4 ">
+            <div class="panel panel-default">
+               <div class="panel-heading ">
+                   <a data-toggle="collapse" class="under" href="#TYPEs"><h4 class="panel-title common_h ">
+                   Brand
+                  </h4></a>
+               </div>
+                <div id="TYPEs" class="panel-collapse collapse">
+              <div class="list-group mt-2">
+              <?php 
+				      $v = $brand->result_array();
+                     if($v !== Array( )){ ?> 
 
-            
-
+					<?php
+                     }
+					
+                      
+					foreach($brand->result_array() as $row)
+					{
+					 
+					?>
+	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
+							<label class="common_s"><input type="checkbox" class="common_select brand" value="<?php echo $row['brand']; ?>"  > <?php echo $row['brand']; ?></label>
+						</div>
+					<?php 
+					} 
+					?>
+                  </div>
+                 </div>  
+            </div>
+            </div>
+            <?php 
+					
+                }
+               ?>
             <?php if($cateory == 2 )
                 { ?>
             <div class="panel-group mt-4">
@@ -1760,8 +1797,8 @@ $(document).ready(function() {
         var minimum_price = $('#hidden_minimum_price').val();
         var maximum_price = $('#hidden_maximum_price').val();
 
-        var brand = get_filter('brand');
-        var type = get_filter('producy_type');
+        var brand = get_brand('brand');
+        var type = get_type_filter('sub_category');
 
 
 
@@ -1825,10 +1862,22 @@ $(document).ready(function() {
         var filter = [];
         $('.' + class_name + ':checked').each(function() {
             filter.push($(this).val());
+            
         });
         console.log(filter)
         return filter;
     }
+
+    function get_brand(class_name) {
+        var filter = [];
+        $('.' + class_name + ':checked').each(function() {
+            filter.push($(this).val());
+            
+        });
+        console.log(filter)
+        return filter;
+    }
+
 
     $(document).on('click', '.sub_category', function() {
         var subId = $(this).data('sub-id');

@@ -77,18 +77,18 @@ class Product_filter_model extends CI_Model
    
     if (isset($brand)) {
         $brand_filter = implode("','", $brand);
-        $query .= " AND Brand IN('$brand_filter')";
+        $query .= " AND brand IN('$brand_filter')";
     }
     if (isset($type)) {
         $type_filter = implode("','", $type);
-        $query .= " AND Education_Type IN('$type_filter')";
+        $query .= " AND subcategory_id IN('$type_filter')";
     }
     if (isset($sub_category)) {
         $sub_category_filter = implode("','", $sub_category);
 	     if($sub_category_filter <= 12){
 			$query .= " AND subcategory_id IN('$sub_category_filter')";
 		 }
-		 else if (($sub_category_filter >= 13 && $sub_category_filter <= 20) || $sub_category_filter == 69) {
+		 else if (($sub_category_filter >= 13 && $sub_category_filter <= 20) || $sub_category_filter == 69 ) {
 			$query .= " AND Education_Type IN('$sub_category_filter')";
 		 }
 		 else if($sub_category_filter >= 21 && $sub_category_filter <= 68){
@@ -170,10 +170,19 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 	   }
 	   $pro .= '</small><br>
 					   </div>
+				   </div>';
+				   if ($row['category_id']==1) {
+				  $pro.=' <div class="row">
+				   <div class=col-4>
+					   <p style="color: #575757;">Brand</p>
 				   </div>
+				   <div class=col-8>
+					   <p style="color: #575757;">'.$row['brand'].'</p>
+				   </div>
+			   </div>';
+			    }
 				 
-				 
-				   <div class="d-flex justify-content-between align-items-center">
+				$pro .= '  <div class="d-flex justify-content-between align-items-center">
 					   <img src="https://dbvertex.com/celnow/assets/images/location .png">
 					  
 						   <p style="color: #575757;">';

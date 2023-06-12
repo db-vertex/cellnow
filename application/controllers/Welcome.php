@@ -1055,9 +1055,9 @@ $sub .= '</h6>
 		else{
 
 		if ($cateory == 1) {
-			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			//$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
 			//$data['Brand'] = $this->product_filter_model->fetch_filter_type('Model',$cateory);
-			$data['brand'] = $this->product_filter_model->fetch_filter_type('type', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
 
 		} else if ($cateory == 2) {
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);

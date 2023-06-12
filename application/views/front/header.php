@@ -94,7 +94,7 @@
 	max-width: 100%;
 	height: 70%;
 	top: 15%;
-	left: 100.3%;
+	left: 123.3%;
     padding: 6px 0px;
     
 	
