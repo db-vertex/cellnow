@@ -882,11 +882,11 @@ transition: .3s ease-in-out;
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="margin-left: auto;">
                     <li class="nav-item " style="padding-right:150px" ;>
                     <div class="search_wrap search_wrap_6 m-0 ">
-			<div class="search_boxs">
+			   <div class="search_boxs">
                     <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                            <input type="text" placeholder="Search for location..." class="form-control form-input" id="locate" value="<?php echo set_value('location'); ?>" name="location" style="border-radius:20px; width:160%">
                            <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
-</form>
+         </form>
             </div></div>                
                     </li>
                         <li class="nav-item dropdown" style="padding-right:10px" ;>

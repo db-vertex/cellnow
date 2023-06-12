@@ -227,7 +227,7 @@ function get_all_search_shop($term)
        //load databse library
        $ci->load->database();
      
-    $query= 'SELECT * from  shop  WHERE name like "%'.$term.'%"';
+    $query= 'SELECT * from  shop  WHERE Address like "%'.$term.'%"';
     
     
     

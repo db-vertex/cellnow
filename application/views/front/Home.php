@@ -176,20 +176,20 @@
 <div class="container">
    <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll" >
 
-       <?php
+   <?php
 
-              $category = get_all_category();
+$category = get_all_category();
 
-              foreach ($category as $key => $cat) {
+foreach ($category as $key => $cat) {
 
 
-                ?>
-                 <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                      <p  class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp  <?php echo $cat->category; ?> </p>
+  ?>
+   <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
+        <p  class="new<?php echo $cat->id; ?> btn border  rounded-pill"  role="button" style="width: max-content;"><img class="img-fluid me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt="" width="20"  height="20"> &nbsp  <?php echo $cat->category; ?> </p>
 
-                </li> &nbsp  &nbsp &nbsp  
-          
-            <?php  }?> 
+  </li> &nbsp  &nbsp &nbsp  
+
+<?php  }?> 
 </ul>
     
 </div>
@@ -485,7 +485,7 @@
 
       <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
          
-         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the store" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
        </form>
         </div>
@@ -719,7 +719,7 @@
 <div class="container">
   <div class="row p-4">
     <div class="col-12">
-    <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner2.png" width="100%" alt="Second slide">
+    <a href="<?php echo base_url();?>welcome/shop"><img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner2.png" width="100%" alt="Second slide"></a>
     </div>
   </div>
 </div><br>
@@ -744,7 +744,7 @@
 <div class="container ">
   <div class="row p-4">
     <div class="col-12">
-    <img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner.png" width="100%" alt="Second slide">
+    <a href="<?php echo base_url(); ?>welcome/postproduct"><img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner.png" width="100%" alt="Second slide"></a>
     </div>
   </div>
 </div><br>
@@ -780,17 +780,8 @@
 
 <div class="container">
     <div class="row p-4">
-        <div class="col-sm-4 ">
-            <div class="row">
-                <div class="col"> <img src="<?php echo base_url();?>assets/images/img/chairimg.png" class="img-fluid" alt="..."></div>
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/mtimg.png" class="img-fluid" alt="..."></div>
-            </div>
-            <div class="row">
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/gi.png" class="img-fluid" alt="..."></div>
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/house.png" class="img-fluid" alt="..."></div>
-            </div>
-        </div>
-        <div class="col-sm-4 ">
+        
+       
             <h2><b style="color:#1b1c57">Subscribe For More Info
             And Update For Celnow</b></h2>
             <div class="search_wrap search_wrap_6 m-0 mt-4">
@@ -803,18 +794,9 @@
             <span id="email_er" style="color: red; font-size:12px;"></span>
 </form></div>
        
-  </div>
+  
         </div>
-        <div class="col-sm-4 ">
-        <div class="row">
-                <div class="col"> <img src="<?php echo base_url();?>assets/images/img/h2.png" class="img-fluid" alt="..."></div>
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/gimg.png" class="img-fluid" alt="..."></div>
-            </div>
-            <div class="row">
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/bimg.png" class="img-fluid" alt="..."></div>
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/c2.png" class="img-fluid" alt="..."></div>
-            </div>
-        </div>
+       
     </div>
 </div>
 
@@ -1121,3 +1103,29 @@ $('.donate-load-more').click(function(){
     }
 
 </script>
+<script>
+        $(document).ready(function() {
+            $("#latitudeArea").addClass("d-none");
+            $("#longtitudeArea").addClass("d-none");
+        }); 
+        
+        google.maps.event.addDomListener(window, 'load', initialize);
+
+        function initialize() {
+            var input = document.getElementById('Location');
+            var autocomplete = new google.maps.places.Autocomplete(input);
+
+            var job_Office_Address = document.getElementById('job_Office_Address');
+            var autocomplete = new google.maps.places.Autocomplete(job_Office_Address);
+            
+            autocomplete.addListener('place_changed', function() {
+                var place = autocomplete.getPlace();
+                
+                $('#latitude').val(place.geometry['location'].lat());
+                $('#longitude').val(place.geometry['location'].lng());
+                
+                $("#latitudeArea").removeClass("d-none");
+                $("#longtitudeArea").removeClass("d-none");
+            });
+        } 
+    </script>

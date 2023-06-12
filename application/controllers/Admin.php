@@ -50,36 +50,7 @@ class Admin extends CI_Controller {
 
   public function index()
   {
-    $serverkey = 'AAAAG_C5nVo:APA91bHtsgZfIAQdNKav5WhKFc1Lk8PVd0HKd_owpvIoAuI1U7EiYgKTEFP1Qyj117gFWd0E-oe3dToQWUthXuPpvEUQy7GHbbMRjmgrgtP4M3xKHN8E1M45CluI_xL32HlawXCTtQIF';
-    $otp = mt_rand(100000, 999999); // Generate a random 6-digit OTP
-    
-    $data = array(
-        'registration_ids' => array(
-            "eMWzACjUSOqaxwNy2hQqj3:APA91bFQOg0qPRX5ay5mMjhRo-7_D19VdBVpNhjNImohmMXclC6Qqst6kZo8lGTZHISA4Mhfc9RsA4BNBmAELlIYTDXzPs0m0YFuqihPOoWGZjfUlZsSxVDxBZ1MeXBcdEdTx9H9n3kn"
-        ),
-        'notification' => array(
-            'body' => 'Hello Ranu , This is your OTP: ' . $otp. ' Do not share this OTP with anyone.', // Include the OTP in the notification message
-            'title' => 'New Product',
-    
-        ),
-        "data" => array(
-            "click_action" => "FLUTTER_NOTIFICATION_CLICK",
-            "sound" => "default",
-            "status" => "done"
-        )
-    );
-    
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, "https://fcm.googleapis.com/fcm/send");
-    curl_setopt($ch, CURLOPT_POST, 1);
-    curl_setopt($ch, CURLOPT_POSTFIELDS, json_encode($data));  //Post Fields
-    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-    curl_setopt($ch, CURLOPT_HTTPHEADER, array('Content-Type: application/json', 'Authorization: key=' . $serverkey));
-    $output = curl_exec($ch);
-    curl_close($ch);
-    print_r($output);
-    
-  //  $this->load->view('login');
+    $this->load->view('login');
   }
 
 

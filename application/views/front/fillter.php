@@ -1486,7 +1486,7 @@ a:active {
 					 
 					?>
 	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
-							<label class="common_s"><input type="checkbox" class="common_select brand" value="<?php echo $row['brand']; ?>"  > <?php echo $row['brand']; ?></label>
+							<label class="common_s"><input type="checkbox" class="common_select brand" value="<?php echo $row['brand']; ?>"  > <?php echo ucfirst($row['brand']); ?></label>
 						</div>
 					<?php 
 					} 
