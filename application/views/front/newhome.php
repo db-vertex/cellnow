@@ -345,7 +345,7 @@
             <?php }?>
             </div>
             <?php if($allcount > 4){ ?> 
-              <a href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger " >See All</a>
+              <a class="rounded-5" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn " style="background-color: #10B981; color:white;" >See All</a>
 
             <?php } ?>
           
@@ -597,7 +597,7 @@
             <?php }?>
             </div>
             <?php if($shop_count > 4){ ?>
-            <a  href ="<?php echo base_url();?>welcome/store/16" class="btn btn-danger " >See All</a>
+            <a class="rounded-5" href ="<?php echo base_url();?>welcome/store/16" class="btn" style="background-color: #10B981; color:white;" >See All</a>
 <?php } ?>
   </div>
 </section>
