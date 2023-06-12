@@ -179,7 +179,7 @@ $sub .= '</h6>
 			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
 		}
 		 if($all_count >4){
-         $sub .='  <center> <a style="width:100px;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger" >See All</a></center>';
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn">See All</a></center>';
             } 
 		echo $sub;
 
@@ -914,6 +914,10 @@ $sub .= '</h6>
 	{
 
 		$location = $this->input->post('location');
+
+		$latitude = $this->input->post('latitude');
+		$longitude = $this->input->post('longitude');
+
 
 		$anything = $this->input->post('anything');
 

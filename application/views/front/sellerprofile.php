@@ -119,12 +119,7 @@ width: 131.9px; border-color:#10B981;">
      <?php if(isset($profile->Address)){echo ucfirst($profile->Address);} ?>
      
     </div>
-    <div class="row text-center ">
-    <p>
-            <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
-            <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
-            </p>
-    </div><br>
+   
     
    
     </div>

@@ -95,14 +95,21 @@
  {
   display: none;
 }
- 
-
+ .va-carrousel-section{
+  padding-left: 0px;
+    padding-right: 0px;
+ }
+ .cut-list>li {
+    /* margin-left: 25px; */
+    margin-right: 50px;
+    padding-bottom: 2px;
+}
     </style>
   
   
  
 
-  <div class="container-fluid home_background"  style=" margin-top: 125px;">
+  <div class="container home_background"  style=" margin-top: 125px;">
 
 <div class="container">
   <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
@@ -147,7 +154,7 @@
     <div class="container">
     <div class="row pl-4">
       <div class="col-lg-7 col-md-5 col-sm-4 ">
-        <p style="font-size:30px;color:#1B1C57;"> Featured </p>
+        
       </div>
       <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
       <div class="search_wrap search_wrap_6 m-0">
@@ -183,9 +190,9 @@ $category = get_all_category();
 foreach ($category as $key => $cat) {
 
 
-  ?>
-   <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-        <p  class="new<?php echo $cat->id; ?> btn border  rounded-pill"  role="button" style="width: max-content;"><img class="img-fluid me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt="" width="20"  height="20"> &nbsp  <?php echo $cat->category; ?> </p>
+                ?>
+                 <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
+                      <p  class="new<?php echo $cat->id; ?> btn border  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp  <?php echo $cat->category; ?> </p>
 
   </li> &nbsp  &nbsp &nbsp  
 
@@ -330,7 +337,7 @@ foreach ($category as $key => $cat) {
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
             <?php if($all_count >4){ ?> 
-              <center><a style="width:100px;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger" >See All</a></center>
+              <center class="rounded-5" ><a style="width:100px; background-color: #10B981; color:white; border-color:#10B981; " href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger" >See All</a></center>
             <?php } ?>
             </div>
            
@@ -589,7 +596,7 @@ foreach ($category as $key => $cat) {
             <?php }?>
             </div>
             <?php if($shop_count > 4){ ?>
-            <a  href ="<?php echo base_url();?>welcome/store/16" class="btn btn-danger " >See All</a>
+              <center class="rounded-5"><a  href ="<?php echo base_url();?>welcome/store/16" class="btn btn-danger " style="width:100px; background-color: #10B981; color:white; border-color:#10B981; ">See All</a></center>
 <?php } ?>
   </div>
 </section>

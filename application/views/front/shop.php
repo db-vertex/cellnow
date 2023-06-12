@@ -386,7 +386,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
                                                 <div class="form-group">
-                                                    <label> GST/PAN Number</label>
+                                                    <label> GST/PAN Number/Adhar Number</label>
                                                     <input name="GST" class="form-control" placeholder="GST Number"
                                                         type="text" maxlength="20" value="<?php echo $shop->GST; ?>"
                                                         style="border-radius:30px; border-color:#13C571" required>
@@ -748,7 +748,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                         </div>
 
                         <div class="form-group">
-                            <label> GST/PAN Number</label>
+                            <label> GST/PAN Number/Adhar Number</label>
                             <input name="GST" class="form-control" placeholder="GST Number" type="text" maxlength="20"
                                 value="<?php echo set_value('name'); ?>"
                                 style="border-radius:30px; border-color:#13C571" required>

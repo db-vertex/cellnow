@@ -94,11 +94,9 @@
 	max-width: 100%;
 	height: 70%;
 	top: 15%;
-	left: 123.3%;
+	left: 103.3%;
     padding: 6px 0px;
     
-	
-	/* color: #fff; */
 	display: flex;
 	align-items: center;
 	justify-content: center;
@@ -884,7 +882,11 @@ transition: .3s ease-in-out;
                     <div class="search_wrap search_wrap_6 m-0 ">
 			   <div class="search_boxs">
                     <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-                           <input type="text" placeholder="Search for location..." class="form-control form-input" id="locate" value="<?php echo set_value('location'); ?>" name="location" style="border-radius:20px; width:160%">
+                           <input type="text" placeholder="Search for location..." class="form-control form-input" id="locate" value="<?php echo set_value('location'); ?>" name="location" style="border-radius:20px; width:140%">
+                           <input type="text" class="form-control" name="latitude" id="latitude"
+                                                    hidden />
+                                                <input type="text" class="form-control" name="longitude" id="longitude"
+                                                    hidden />
                            <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
          </form>
             </div></div>                
@@ -948,7 +950,7 @@ transition: .3s ease-in-out;
 
 
                         <img class="img-fluid rounded-corners  d-block" style="height: 30.9px;
-                                      width: 30.9px; margin-top: 10px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
+                                      width: 30.9px; margin-top: 5px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
 
                         <a class="nav-link dropdown dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false" style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
@@ -1076,12 +1078,25 @@ $(document).ready(function() {
 
 </script>
 <script>
-    $(function () {
-        var input = document.getElementById("locate");
-        var autocomplete = new google.maps.places.Autocomplete(input);
+    $(document).ready(function() {
+    $("#latitudeArea").addClass("d-none");
+    $("#longtitudeArea").addClass("d-none");
+});
 
-      
+google.maps.event.addDomListener(window, 'load', initialize);
 
+function initialize() {
+    var input = document.getElementById('locate');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+        $('#addshopdetail').modal('show');
+        $('#latitude').val(place.geometry['location'].lat());
+        $('#longitude').val(place.geometry['location'].lng());
+
+        $("#latitudeArea").removeClass("d-none");
+        $("#longtitudeArea").removeClass("d-none");
     });
-
+}
 </script>
