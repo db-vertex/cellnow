@@ -194,7 +194,7 @@ foreach ($category as $key => $cat) {
                  <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
                       <p  class="new<?php echo $cat->id; ?> btn border  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp  <?php echo $cat->category; ?> </p>
 
-  </li> &nbsp  &nbsp &nbsp  
+  </li>  
 
 <?php  }?> 
 </ul>
@@ -784,14 +784,13 @@ foreach ($category as $key => $cat) {
   </button>
 </div>
 </div>
-
-<div class="container">
-    <div class="row p-4">
-        
-       
-            <h2><b style="color:#1b1c57">Subscribe For More Info
-            And Update For Celnow</b></h2>
-            <div class="search_wrap search_wrap_6 m-0 mt-4">
+<div class="container" style="max-width:600px;">
+  <div class="row">
+    <div class="col">
+      <p style="color:#1b1c57; text-align:center; font-weight:bolder; font-size:30px;">Subscribe For More Info
+            And Update For Celnow</p>
+       <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">
+        <div class="search_wrap search_wrap_6 m-0 mt-4 ">
 			<div class="search_box">
          <form method="post" action="<?php echo base_url();?>welcome/subscribe">
          
@@ -802,10 +801,11 @@ foreach ($category as $key => $cat) {
 </form></div>
        
   
-        </div>
-       
+        </div></p>
     </div>
-</div>
+  </div>
+</div><br>
+
 
 
 

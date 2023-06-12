@@ -364,7 +364,7 @@ img {
         }
 
         .detalis_option {
-            max-width: 590.7px;
+            max-width: 620.7px;
             left: 112px;
             top: 1373.5px;
             background: #FFFFFF;
@@ -657,9 +657,16 @@ border-radius: 80px 0px 0px 80px;
         }
 
         .margin_left_css {
-            margin-left: 3rem !important;
+            margin-left: 8rem !important;
         }
-
+        .detalis_option {
+            max-width: 620.7px;
+            left: 90px;
+            top: 1373.5px;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 4px #69D3B0;
+        }
+        
 
     }
 
@@ -1039,7 +1046,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
   ?>
 
 
-    <div class=" text-center " style="margin-top:7%">
+    <div class=" text-center " style="margin-top:5%">
         <img class="d-block mx-auto mb-2" src="<?php echo base_url();?>assets/images/product_banner.png" alt=""
             width=100%>
     </div>
@@ -1051,14 +1058,13 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         <div class="breadcrumbs">
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
                                     href="<?php echo base_url();?>">Homepage</a></span>/<span
-                                class="ms-2 handline">Bike</span>
+                                class="ms-2 handline"><?php echo ucfirst($product_detail->title); ?></span>
                         </div>
                     </div>
                 </div>
             </div>
 <div class="container">
-            <div class="row " style="margin-left: 30px;
-        margin-right: 30px;">
+            <div class="row " >
                 <div class="col-md-6">
                 <div class="container">
   <div class="mySlides">
@@ -1185,7 +1191,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
     <?php } else { ?>
 
 <?php } ?>   </div> -->
-
+<div class="container">
                     <div class="row mt-3">
                         <div class="detalis_option">
                             <div class="row">
@@ -1290,7 +1296,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             </div>
                         </div>
                     </div>
-                    <div class="py-3 text-center">
+                                                </div>  <div class="py-3 text-center">
                         <img class="d-block mx-auto mb-2" src="<?php echo base_url();?>assets/images/product_banner.png"
                             alt="" width=100%>
                     </div>
@@ -1573,7 +1579,7 @@ if($shop->admin_approval==1){
 
                                                     <div class="container">
             <div class="row mt-5 justify-content-center" style=" margin-right: 25px;">
-                <p class="Related_Ads ml-5">Related Ads</p>
+                <p class="Related_Ads">Related Ads</p>
 
                 <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?php
