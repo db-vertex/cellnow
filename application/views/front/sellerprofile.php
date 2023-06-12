@@ -183,7 +183,19 @@ width: 131.9px; border-color:#10B981;">
                            
                            ?>.</small>
     <div class="d-flex justify-content-between align-items-center">
-    <img class="mt-2" src="<?php echo base_url();?>assets/images/location .png" ><span><?php echo $value->address;?></span><br>
+    <img class="mt-2" src="<?php echo base_url();?>assets/images/location .png" ><span><?php
+                           $title =$value->address;
+                            if(strlen($title) <= 30)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,30) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></span><br>
                             </div><div class="pt-3 pl-5"><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $value->category_id?>/<?php echo  $value->id ?>" class="btn " id="b">Edit</a> &nbsp &nbsp
   
     <a href="javascript:void(0)" id="b" class="delete_product btn"  data-cid="<?php echo $value->category_id; ?>" data-pid="<?php echo $value->id; ?>"><span  style="color:#78d7b8">Delete</span></a>

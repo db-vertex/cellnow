@@ -1600,13 +1600,13 @@ if($shop->admin_approval==1){
 
 
 
-                    <div class="col col-sm-12 col-md-6 col-lg-6 col-xl-4 ml-4">
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
                         <div class="card"
-                            style="border-radius: 37px 37px 37px 37px; box-shadow:rgba(0, 0, 0, 0.10) 0px 5px 15px;">
+                           >
                             <img class="related_ads_card_img  img-fluid"
                                 src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
                                 alt="related_ads_card_img">
-                            <div class="card-body related_ads_card">
+                            <div class="card-body ">
                                 <div class="row">
                                     <div class="col-6">
                                         <p class="related_ads_card_title"> <?php
@@ -1713,7 +1713,7 @@ if($shop->admin_approval==1){
                                 </div>
                                 <?php } ?>
                                 <div class="row mt-1">
-                                    <div class="col-3">
+                                    <div class="col-2">
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"
                                             style="font-size:18px; color:#69d3b0"></i>
                                     </div>

@@ -867,9 +867,7 @@ function initialize() {
     box-shadow: none;
 }
 
-.border {
-    border: 1px solid #C5DC49 !important;
-}
+
 
 .panel-heading {
     border-color: #eff2f7;
@@ -1276,7 +1274,7 @@ a:active {
 <div class="container">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4 ">
-            <p style="font-size:30px;color:#1B1C57;"> Featured </p>
+            <p style="font-size:30px;color:#1B1C57;">  </p>
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
@@ -1320,11 +1318,11 @@ a:active {
                 ?>
         <li class="" id="" >
             <a  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id;?>" <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>
-                class="new<?php echo $cat->id; ?> btn shadow  rounded-pill" role="button"><img
+                class="new<?php echo $cat->id; ?> btn border  rounded-pill" role="button"><img
                     class="rounded-circle me-1" src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
                     alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
 
-        </li> &nbsp &nbsp &nbsp &nbsp &nbsp
+        </li> 
 
         <?php
                       
@@ -1408,7 +1406,7 @@ a:active {
 
             
 <div class="container mb-5">
-    <div class="row">
+    <div class="row m-3">
         <div class="col-md-3">
 
             <br />
@@ -1669,7 +1667,7 @@ a:active {
                   if($i > 0){
             
             ?>  
-      <div class="col-lg-4 col-md-4 col-sm-6 mb-4 post">
+      <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
         <div class="card">
           <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"

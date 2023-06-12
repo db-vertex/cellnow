@@ -32,6 +32,8 @@
         color: #555;
     }
 
+    
+
     .fa {
         /* padding: 20px; */
         font-size: 30px;

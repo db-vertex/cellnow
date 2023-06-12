@@ -22,7 +22,7 @@
 .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
-        max-width: 1126px;
+        max-width: 1300px;
         margin: 0 auto;
     }
 
