@@ -573,7 +573,7 @@ border-radius: 80px 0px 0px 80px;
         font-style: normal;
         font-weight: 400;
         font-size: 10px;
-        line-height: 24px;
+        line-height: 20px;
 
         color: #000000;
     }
@@ -828,7 +828,7 @@ border-radius: 80px 0px 0px 80px;
             font-style: normal;
             font-weight: 400;
             font-size: 10px;
-            line-height: 24px;
+            line-height: 20px;
 
             color: #000000;
         }
@@ -1580,7 +1580,7 @@ if($shop->admin_approval==1){
                       echo time_string($userdetail->created); ?>
                                                 </span></p>
                                             <p class="deatails_profile_name_ads mt-1">Total 20 Ads</p>
-                                            <p class="deatails_profile_name_ads mt-1">Active 10 Ads</p>
+                                            <p class="deatails_profile_name_ads">Active 10 Ads</p>
 
                                         </div>
 
