@@ -947,6 +947,7 @@ border-radius: 80px 0px 0px 80px;
     }
 
     .btn_Verified {
+        margin-right:80px;
         width: 192px;
         height: 54px;
         left: 988px;
