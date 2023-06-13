@@ -305,6 +305,10 @@
     .margin_left_css {
         margin-left: 1rem !important;
     }
+    .img-size{
+  max-height:200px;
+    min-height:200px;"
+}
 
 }
 
@@ -338,6 +342,11 @@
     .margin_left_css {
         margin-left: 2rem !important;
     }
+
+    .img-size{
+  max-height:300px;
+    min-height:300px;"
+}
 
 }
 
@@ -1094,6 +1103,19 @@ img.center {
     background-color: #fff;
     border: 1px solid #ddd;
 }
+
+.cut-list>li {
+        
+        margin-right: 55px;
+
+        padding-bottom: 2px;
+    }
+
+    .deals-scroll-left {
+        top: -35px;
+        left: -0px;
+        bottom: 0;
+    }
 </style>
 
 <style>
@@ -1241,8 +1263,7 @@ a:active {
       foreach ($all_banner as $key => $banner) {
         ?>
                 <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-                    <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px; max-height:500px;
-    min-height:500px;" class="d-block w-100" id='<?php  echo $banner->url ?>'
+                    <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px;" class="d-block w-100 img-size" id='<?php  echo $banner->url ?>'
                             src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>"
                             alt="First slide"></a>
                 </div>
@@ -1320,7 +1341,7 @@ a:active {
             <a  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id;?>" <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>
                 class="new<?php echo $cat->id; ?> btn border  rounded-pill" role="button"><img
                     class="rounded-circle me-1" src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
-                    alt=""> &nbsp &nbsp <?php echo $cat->category; ?> </a>
+                    alt=""> &nbsp  <?php echo $cat->category; ?> </a>
 
         </li> 
 

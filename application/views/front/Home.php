@@ -30,6 +30,10 @@
 	
 	height: 64px;
 }
+.img-size{
+  max-height:500px;
+    min-height:500px;"
+}
 
 .search_wrap .search_box .btn{
 	position: absolute;
@@ -81,6 +85,10 @@
      font-size: 10px;
      font-weight: bold;
   }
+  .img-size{
+  max-height:300px;
+    min-height:300px;"
+}
 
 
 }
@@ -89,6 +97,11 @@
      font-size: 12px;
     font-weight: bold;
   }
+
+  .img-size{
+  max-height:200px;
+    min-height:200px;"
+}
 } 
 
 .mores
@@ -120,8 +133,7 @@
       foreach ($all_banner as $key => $banner) {
         ?>  
     <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-      <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px; max-height:500px;
-    min-height:500px;" class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
+      <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px;" class="d-block w-100 img-size"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
     </div>
     <?php
 

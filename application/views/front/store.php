@@ -69,6 +69,10 @@ input::placeholder {
         font-size: 10px;
         font-weight: bold;
     }
+    .img-size{
+  max-height:300px;
+    min-height:300px;"
+}
 }
 
 @media screen and (max-width: 560px) {
@@ -76,6 +80,11 @@ input::placeholder {
         font-size: 12px;
         font-weight: bold;
     }
+
+    .img-size{
+  max-height:200px;
+    min-height:200px;"
+}
 }
 
 .Services_header{
@@ -102,8 +111,7 @@ input::placeholder {
       foreach ($all_banner as $key => $banner) {
         ?>  
     <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-      <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px; max-height:500px;
-    min-height:500px;" class="d-block w-100"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
+      <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px;" class="d-block w-100 img-size"  id='<?php  echo $banner->url ?>' src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>" alt="First slide"></a>
     </div>
     <?php
 
@@ -130,7 +138,7 @@ input::placeholder {
 <div class="container">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4 ">
-            <p style="font-size:30px;color:#1B1C57;"> Featured </p>
+           
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
