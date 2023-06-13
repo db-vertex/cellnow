@@ -41,7 +41,10 @@
     padding-right: 0px;
 }
 
-
+.img-size{
+  max-height:500px;
+    min-height:500px;"
+}
 
 
 
