@@ -467,6 +467,17 @@ img {
     color:#69D3B0;
 }
 
+.View_Seller_profile {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 14px;
+
+        color: #000000;
+        margin-top: 10px;
+    }
+
 .handline {
         font-family: 'Open Sans';
         font-style: normal;
@@ -556,6 +567,17 @@ background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 6
 filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
 border-radius: 80px 0px 0px 80px;
 }
+
+.deatails_profile_name_ads {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 10px;
+        line-height: 24px;
+
+        color: #000000;
+    }
+
 }
 
     @media (min-width: 500px) and (max-width: 768px) {
