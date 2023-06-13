@@ -458,6 +458,23 @@ img {
     color:#69D3B0;
 }
 
+.handline {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+
+        color: #0C0B0B;
+
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        flex-grow: 0;
+    }
+
 
     .detalis_option_text {
     font-family: 'Roboto';
@@ -1239,7 +1256,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="row">
                                     
                                         <div class="col-12 mt-3">
-                                        <img class="img-size" src="<?php echo base_url();?>assets/images/eye.png"><span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
+                                        <img class="img-size" src="<?php echo base_url();?>assets/images/eye.png"> <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
                                         </div>
                                     </div>
                                 </div>
