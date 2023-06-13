@@ -409,7 +409,7 @@ img {
 
         .btn_Verified_shop_name {
             width: 250px;
-            height: 54px;
+            height: 34px;
             left: 988px;
             top: 941px;
             background: #D1FAE5;
@@ -452,14 +452,20 @@ img {
     @media (min-width: 359px) and (max-width: 459px){
 
         
+        .img-size{
+    max-width: 12px;
+    min-width: 12px;
+    color:#69D3B0;
+}
+
 
     .detalis_option_text {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 400;
-    font-size: 6px;
+    font-size: 5px;
     line-height: 0px;
-    padding-left: 1px;
+   
     color: #898686;
 }
 
@@ -487,7 +493,7 @@ border-radius: 11.8328px;
 
 .btn_Verified_shop_name {
     width: 250px;
-    height: 54px;
+    height: 34px;
     left: 988px;
     top: 941px;
     background: #D1FAE5;
@@ -528,8 +534,8 @@ border-radius: 80px 0px 0px 80px;
 
     @media (min-width: 500px) and (max-width: 768px) {
         .btn_Verified_shop_name {
-            width: 400px;
-            height: 54px;
+            width: 300px;
+            height: 34px;
             left: 988px;
             top: 941px;
             background: #D1FAE5;
@@ -562,7 +568,7 @@ border-radius: 80px 0px 0px 80px;
     @media (min-width: 768px) and (max-width: 991.98px) {
         .btn_Verified_shop_name {
             width: 269px;
-            height: 54px;
+            height: 34px;
             left: 988px;
             top: 941px;
             background: #D1FAE5;
@@ -1193,12 +1199,9 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             <div class="row">
                                 <div class="col-3 px-0">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <i class="fa fa-calendar fa-icon" aria-hidden="true"
-                                                style="font-size:15px; color:#69d3b0"></i>
-                                        </div>
-                                        <div class="col-8 mt-3">
-                                            <span class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
+                                        
+                                        <div class="col-12 mt-3 ml-2">
+                                        <img class="img-size" src="<?php echo base_url();?>assets/images/calendar.png"> <span class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
                   {
                     $now = new DateTime;
                     $ago = new DateTime($datetime);
@@ -1234,59 +1237,47 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 </div>
                                 <div class="col-3 px-0">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <i class="fa fa-eye" aria-hidden="true"
-                                                style="font-size:15px; color:#69d3b0"></i>
-                                        </div>
-                                        <div class="col-8 mt-3">
-                                            <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
+                                    
+                                        <div class="col-12 mt-3">
+                                        <img class="img-size" src="<?php echo base_url();?>assets/images/eye.png"><span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-2 px-0">
 
                                     <div class="row">
-                                        <div class="col-4">
-                                            <i class="fa fa-heart" aria-hidden="true"
-                                                style="font-size:15px; color:#69d3b0"></i>
-
-                                        </div>
-                                        <div class="col-8 mt-3">
-                                            <span class="detalis_option_text">&nbsp <?php $product_wishlist = get_wishlist_count($product_detail->id ,$product_detail->category_id); echo $product_wishlist; ?></span>
+                                       
+                                        <div class="col-12 mt-3">
+                                        <img class="img-size"  src="<?php echo base_url();?>assets/images/hearts.png"><span class="detalis_option_text">&nbsp <?php $product_wishlist = get_wishlist_count($product_detail->id ,$product_detail->category_id); echo $product_wishlist; ?></span>
                                         </div>
                                     </div>
                                 </div>
                                 <div class="col-2 px-0">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <a class="btn-change" style="color:black;" id="GFG"
+                                        <div class="col-12 mt-3">
+                                            <a class="btn-change" style="color:black;text-decoration:unset;" id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
                                                 href="<?php echo base_url();?>welcome/login" <?php } else{?>   id="share_desk"
                                                 onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"
                                              <?php } ?>
                                                >
-                                                <i class="fa fareport_productdata-target fa-share-alt"
-                                                    aria-hidden="true" style="font-size:15px; color:#69d3b0"> </i> </a>
+                                               <img class="img-size" src="<?php echo base_url();?>assets/images/share.png"><span class="detalis_option_text">&nbsp Share</span>
+ </a>
 
                                         </div>
-                                        <div class="col-8 mt-3">
-                                            <span class="detalis_option_text">&nbsp Share</span>
-                                        </div>
+                                        
                                     </div>
                                 </div>
                                 <div class="col-2 px-0">
                                     <div class="row">
-                                        <div class="col-4">
-                                            <a class="btn-change" style="color:black; " id="GFG"
+                                        <div class="col-12 mt-3 mb-3">
+                                            <a class="btn-change" style="color:black;text-decoration:unset; " id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
                                                 href="<?php echo base_url();?>welcome/login" <?php } else { ?>
-                                                data-toggle="modal" data-target="#report_product" <?php } ?>><i
-                                                    class="fa fa-exclamation-triangle" aria-hidden="true"
-                                                    style="font-size:15px; color:#69d3b0"></i></a>
+                                                data-toggle="modal" data-target="#report_product" <?php } ?>><img class="img-size" src="<?php echo base_url();?>assets/images/report.png"><span  class="detalis_option_text"> Report</span>
+</a>
                                         </div>
-                                        <div class="col-8 mt-3">
-                                            <span class="detalis_option_text">&nbsp Report</span>
-                                        </div>
+                                      
                                     </div>
                                 </div>
                             </div>
@@ -1574,7 +1565,7 @@ if($shop->admin_approval==1){
                                                     </div>
 
                                                     <div class="container">
-            <div class="row mt-5 justify-content-center" style=" margin-right: 25px;">
+            <div class="row mt-5 justify-content-center" >
                 <p class="Related_Ads">Related Ads</p>
 
                 <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
