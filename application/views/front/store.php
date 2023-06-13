@@ -3,6 +3,11 @@
   <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
   
   <style>
+
+.img-size{
+  max-height:500px;
+    min-height:500px;"
+}
 .search_wrap {
     width: 100%;
 
