@@ -58,7 +58,16 @@ img {
   border-radius: 3px 0 0 3px;
 }
 
-
+.btn_Verified {
+        margin-right:90px;
+        width: 192px;
+        height: 54px;
+        left: 988px;
+        top: 941px;
+        background: #D1FAE5;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 32px;
+    }
 
 /* Number text (1/3 etc) */
 .numbertext {
@@ -685,6 +694,17 @@ border-radius: 80px 0px 0px 80px;
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
         }
+
+        .btn_Verified {
+        margin-right:90px;
+        width: 192px;
+        height: 54px;
+        left: 988px;
+        top: 941px;
+        background: #D1FAE5;
+        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+        border-radius: 32px;
+    }
         
 
     }
