@@ -193,6 +193,7 @@
 
 
 <div class="container">
+<div class="row">
    <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll" >
 
    <?php
@@ -210,10 +211,11 @@ foreach ($category as $key => $cat) {
 
 <?php  }?> 
 </ul>
-    
+</div>
 </div>
 
 <div class="container">
+<div class="row">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
 
@@ -247,6 +249,7 @@ foreach ($category as $key => $cat) {
 </div>
 </div>
 </div>
+</div>
 
 <div id="sub-list">
   
@@ -256,7 +259,7 @@ foreach ($category as $key => $cat) {
   <div class="text-center container py-5">
     
 
-    <div class="row" id="product_list" style="margin-left:20px; margin-right:20px;">
+    <div class="row" id="product_list" >
     <?php
                   
             
@@ -465,7 +468,7 @@ foreach ($category as $key => $cat) {
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center pl-4 pr-4 pt-5">
+  <div class="row align-items-center pt-2">
     <div class="col-md-6 " >
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -482,7 +485,7 @@ foreach ($category as $key => $cat) {
 
 <!-- new  -->
 <div class="container">
-    <div class="row pl-4">
+    <div class="row ">
     <p style="color: #F59E0B;">Search  Near  By Store</p>
     </div>
 </div>
@@ -494,7 +497,7 @@ foreach ($category as $key => $cat) {
 
 <!-- new  -->
 <div class="container  mt-3">
-  <div class="row pl-4">
+  <div class="row">
     <div class="col-lg-7 col-md-5 col-sm-4">
      <p style="color: #1B1C57; font-size:30px;">Shops Offering Services</p>
     </div>
@@ -528,7 +531,7 @@ foreach ($category as $key => $cat) {
   <div class="text-center container py-4">
   
 
-    <div class="row"  style="margin-left:20px; margin-right:20px;">
+    <div class="row">
     <?php
               
               $product = get_all_store();
@@ -616,7 +619,7 @@ foreach ($category as $key => $cat) {
 
 <!-- new  -->
 <div class="container">
-  <div class="row align-items-center pl-4 pr-4 pt-4">
+  <div class="row align-items-center pt-4">
     <div class=" col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 20px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -634,16 +637,16 @@ foreach ($category as $key => $cat) {
 <!-- new  -->
 <section >
 <div class=" container ">
-<div class="row pl-4 text-align-left">
+<div class="row  text-align-left">
    
       <p id="donate" style="color: #1B1C57; font-size:30px;">Donated</p>
   
   </div>
   </div>
-  <div class="text-center container py-5">
+  <div class="text-center container py-3">
   
 
-    <div class="row"  style="margin-left:20px; margin-right:20px;">
+    <div class="row">
     <?php
                   
             
@@ -736,7 +739,7 @@ foreach ($category as $key => $cat) {
 
 
 <div class="container">
-  <div class="row p-4">
+  <div class="row pt-2" >
     <div class="col-12">
     <a href="<?php echo base_url();?>welcome/shop"><img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner2.png" width="100%" alt="Second slide"></a>
     </div>
@@ -744,7 +747,7 @@ foreach ($category as $key => $cat) {
 </div><br>
 
 <div class="container">
-  <div class="row align-items-center pl-4 pr-4 pt-3">
+  <div class="row align-items-center pt-2">
     <div class="col-md-6 ">
     <div class="ratio ratio-16x9">
   <iframe style="border-radius: 15px;" class="embed-responsive-item" src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
@@ -761,7 +764,7 @@ foreach ($category as $key => $cat) {
 </div><br>
 
 <div class="container ">
-  <div class="row p-4">
+  <div class="row pt-2">
     <div class="col-12">
     <a href="<?php echo base_url(); ?>welcome/postproduct"><img class="img-fluid" src="<?php echo base_url();?>assets/images/img/carbanner.png" width="100%" alt="Second slide"></a>
     </div>

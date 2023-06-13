@@ -224,7 +224,7 @@ foreach($shop as $value){
    
 
 ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mt-3 post">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post">
                 <div class="card" >
                     <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img
                             class="va-thumbnail " alt="Card image cap"

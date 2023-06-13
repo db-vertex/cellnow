@@ -185,7 +185,7 @@
 
                 ?>
                  <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                      <p  class="new<?php echo $cat->id; ?> btn shadow  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp  <?php echo $cat->category; ?> </p>
+                      <p  class="new<?php echo $cat->id; ?> btn border  rounded-pill"  role="button"><img class="rounded-circle me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp  <?php echo $cat->category; ?> </p>
 
                 </li> &nbsp  &nbsp &nbsp  
           
@@ -691,35 +691,27 @@
 </div>
 </div><br>
 
-<div class="container">
-    <div class="row p-4">
-        <div class="col-sm-4">
-            <div class="row">
-                <div class="col"> <img src="<?php echo base_url();?>assets/images/img/chairimg.png" class="img-fluid" alt="..."></div>
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/mtimg.png" class="img-fluid" alt="..."></div>
-            </div>
-            <div class="row">
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/gi.png" class="img-fluid" alt="..."></div>
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/house.png" class="img-fluid" alt="..."></div>
-            </div>
-        </div>
-        <div class="col-sm-4">
-            <h2><b style="color:#1b1c57">Subscribe For More Info
-            And Update For Celnow</b></h2>
-        </div>
-        <div class="col-sm-4">
-        <div class="row">
-                <div class="col"> <img src="<?php echo base_url();?>assets/images/img/h2.png" class="img-fluid" alt="..."></div>
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/gimg.png" class="img-fluid" alt="..."></div>
-            </div>
-            <div class="row">
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/bimg.png" class="img-fluid" alt="..."></div>
-                <div class="col"><img src="<?php echo base_url();?>assets/images/img/c2.png" class="img-fluid" alt="..."></div>
-            </div>
-        </div>
+<div class="container" style="max-width:600px;">
+  <div class="row">
+    <div class="col">
+      <p style="color:#1b1c57; text-align:center; font-weight:bolder; font-size:30px;">Subscribe For More Info
+            And Update For Celnow</p>
+       <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">
+        <div class="search_wrap search_wrap_6 m-0 mt-4 ">
+			<div class="search_box">
+         <form method="post" action="<?php echo base_url();?>welcome/subscribe">
+         
+		       <input type="search"  name="email_newsletter" id="email_newsletter" class="form-control rounded-5"  placeholder="Your Email Here!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+          
+            <button type="button" name="submit" class="btn btn-success rounded-5" style="padding:6px 10px" onclick="return checkemail();">Subscribe </button>
+            <span id="email_er" style="color: red; font-size:12px;"></span>
+</form></div>
+       
+  
+        </div></p>
     </div>
-</div>
-
+  </div>
+</div><br>
 
 
  
@@ -790,7 +782,35 @@ function getproduct(subcategory_id){
 
 
   </script>
+<script>
+   function checkemail(event) { 
+     
+        var email_newsletter = $('#email_newsletter').val();
+        var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+        if (email_newsletter == "" ) {
+            $("#email_er").text("Please Enter Email");
+        } 
+         else if(!(email_newsletter.match(mailformat))){
+              $("#email_er").text("Please Enter valid Email");
+             }else {
+            
+           $.ajax({
+            type:'POST',
+            url:'<?php echo base_url();?>welcome/subscribe',
+            data:'newsletterSubmit=1&email_newsletter='+email_newsletter,
+           
+            success:function(data){
+                 $("#email_er").text("");
+               swal("Subscribe successfully!","", "success");
+            }
+        });
+           
+        }
+       
 
+    }
+
+</script>
 <script type='text/javascript'>
     
     $(document).ready(function() {
