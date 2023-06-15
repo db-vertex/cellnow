@@ -150,11 +150,21 @@ input::placeholder {
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
 
-                <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
-         
+                <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+  
          <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-       </form>
+       </form> -->
+
+       <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+                                    <div class="searchbox-wrap">
+                                        <input ype="search"  name="anything" aria-label="Search" aria-describedby="search-addon"  class="search_input form-input" placeholder="Search for the Product you want!">
+                                        <input type="text" class="form-control" name="latitude" id="latitude" hidden />
+                                        <input type="text" class="form-control" name="longitude" id="longitude"
+                                            hidden />
+                                        <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
+                                    </div>
+                                    </form>
                 </div>
             </div>
         </div>

@@ -857,6 +857,81 @@
         order: 0;
         flex-grow: 0;
     }
+
+
+    * {
+        outline: none;
+    }
+
+    .searchbox-wrap {
+        display: flex;
+        width: 500px;
+        margin-left: auto;
+        margin-right: auto;
+
+    }
+
+    .search_input {
+        flex: 1;
+        padding: 14px 20px;
+        font-size: 1.1em;
+
+        -webkit-border-top-left-radius: 25px;
+        -webkit-border-bottom-left-radius: 25px;
+        -moz-border-radius-topleft: 25px;
+        -moz-border-radius-bottomleft: 25px;
+        border-top-left-radius: 25px;
+        border-bottom-left-radius: 25px;
+        box-shadow: none;
+        border: none;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.19);
+
+    }
+
+    .search_b {
+        padding-right: 10px;
+        background-color: #fff;
+        -webkit-border-top-right-radius: 25px;
+        -webkit-border-bottom-right-radius: 25px;
+        -moz-border-radius-topright: 25px;
+        -moz-border-radius-bottomright: 25px;
+        border-top-right-radius: 25px;
+        border-bottom-right-radius: 25px;
+        box-shadow: 5px 4px 6px rgba(0, 0, 0, 0.19);
+        border: none;
+        cursor: pointer;
+        cursor: hand;
+    }
+
+    .Search_text{
+        margin-left: 50px;
+        padding: 13px 45px;
+        font-size: 0.9em;
+        text-transform: uppercase;
+        font-weight: 300;
+        color: #fff;
+        background-color: #10B981;
+        border-radius: 20px;
+        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.19);
+        font-weight: 500;
+
+    }
+
+    .Search_text:hover {
+        background-color: #10B981;
+        box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.19);
+    }
+    @media (min-width: 1200px){
+.navbar-nav{
+    align-items: center;
+}
+}
+@media (max-width: 1200px){
+.nav-item_serach{
+    margin-right: auto;
+}
+}
+
     </style>
 
 </head>
@@ -867,7 +942,7 @@
     <div class="container-fluid body_background " id="body_background">
 
         <div class="container">
-            <nav class="navbar navbar-expand-lg bg-body-">
+            <nav class="navbar navbar-expand-xl bg-body-">
 
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
                         class="img-fluid" style="width:180px;">
@@ -884,20 +959,20 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="margin-left: auto;">
-                        <li class="nav-item " style="padding-right:150px" ;>
+                        <li class="nav-item nav-item_serach" style="padding-right:80px" ;>
                             <div class="search_wrap search_wrap_6 m-0 ">
-                                <div class="search_boxs">
+                                <div class="">
                                     <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-                                        <input type="text" placeholder="Search for location..."
-                                            class="form-control form-input rounded-5" id="locate"
-                                            value="<?php echo set_value('location'); ?>" name="location"
-                                            style="width:140% ">
+                                    <div class="searchbox-wrap">
+                                        <input type="text" value="<?php echo set_value('location'); ?>" id="locate" name="location"  class="search_input form-input" placeholder="Search for location...">
                                         <input type="text" class="form-control" name="latitude" id="latitude" hidden />
                                         <input type="text" class="form-control" name="longitude" id="longitude"
                                             hidden />
-                                        <button type="submit" class="btn btn-success rounded-5"
-                                            style="padding: 6px 10px 10px;width: 67px;">Search</button>
+                                        <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
+                                    </div>
                                     </form>
+
+
 
                                 </div>
                             </div>
