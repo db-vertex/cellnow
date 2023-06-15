@@ -887,9 +887,8 @@ transition: .3s ease-in-out;
                            <input type="text" placeholder="Search for location..." class="form-control form-input" id="locate" value="<?php echo set_value('location'); ?>" name="location" style="border-radius:20px; width:140%">
                            <input type="text" class="form-control" name="latitude" id="latitude"
                                                     hidden />
-                                                <input type="text" class="form-control" name="longitude" id="longitude"
-                                                    hidden />
-                           <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
+                                                <input type="text" class="form-control" name="longitude" id="longitude" hidden />
+                           <button type="submit" class="btn btn-success rounded-5" style="padding: 6px 10px 10px;width: 67px;">Search</button>
          </form>
             </div></div>                
                     </li>
@@ -912,9 +911,6 @@ transition: .3s ease-in-out;
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/4">Internships</a>
                                 </li>
-
-                            
-
                             </ul>
                         </li>
                         <li class="nav-item dropdown" style="padding-right:10px" ;>

@@ -81,6 +81,7 @@ input::placeholder {
 .Services_header{
     padding-bottom: 0px;
     border-bottom: 6px solid #10B981;
+    width: fit-content;
 }
 .va-thumbnail {
         border-radius: 20px;
@@ -139,7 +140,7 @@ input::placeholder {
                 <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
          
          <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
+        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
        </form>
                 </div>
             </div>

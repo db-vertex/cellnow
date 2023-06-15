@@ -174,7 +174,7 @@
          <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
          
 		       <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-          <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
+          <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
          </form></div>
         <div class="row">
              <div id="display"></div>
@@ -508,7 +508,7 @@ foreach ($category as $key => $cat) {
       <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
          
          <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the store" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
+        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
        </form>
         </div>
         <div class="row">

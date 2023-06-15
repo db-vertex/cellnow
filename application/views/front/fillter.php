@@ -1251,6 +1251,7 @@ a:active {
 .Categories_header {
     padding-bottom: 0px;
     border-bottom: 6px solid #10B981;
+    width: fit-content;
 }
 </style>
 
