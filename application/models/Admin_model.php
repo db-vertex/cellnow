@@ -478,6 +478,16 @@ public function get_terms_condition_data()
              return $q->row();
   }
 
+  public function get_FAQs()
+  {
+            
+           $q=$this->db->select('*')
+              ->from('faqs')
+              ->get();
+             
+             return $q->row();
+  }
+
 
 public function update_shop_status($id,$arr)
    {

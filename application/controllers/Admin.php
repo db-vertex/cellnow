@@ -415,6 +415,73 @@ public function logout()
            
   }
 
+  public function FAQs()
+  {
+
+     $session_id = $this->session->userdata('admin_id');
+     
+       if($session_id)
+       {
+     
+     
+     $admin_detail = $this->admin_model->get_admin_data($session_id);
+     $terms =    $this->admin_model->get_FAQs();
+     $this->load->view('FAQs',['admin_detail'=>$admin_detail,'terms'=>$terms]);
+     
+       }else{
+           
+             return redirect('admin');
+           
+       }
+           
+  }
+
+  public function add_FAQs()
+  {
+
+     $session_id = $this->session->userdata('admin_id');
+     
+    $this->form_validation->set_rules('terms_condition_text','Privacy', 'required');
+    
+    $terms_condition_text =  $this->input->post('terms_condition_text');
+
+
+        
+     if($this->form_validation->run())
+      {
+       $terms = $this->admin_model->get_FAQs();
+       
+      if(!empty($terms)){
+           
+            $where = array('id' => $terms->id);
+          
+            $data = array("FAQs"=>$terms_condition_text);
+                $admin_detail = $this->admin_model->addEditRecords('faqs',$data,$where);
+                $this->session->set_flashdata('msg','Added Successfully');
+                $this->session->set_flashdata('msg_class','alert-success');
+
+       }else{
+           
+            $data = array("FAQs"=>$terms_condition_text);
+           
+                $admin_detail = $this->admin_model->addEditRecords('faqs',$data);
+           
+            $this->session->set_flashdata('msg','Added Successfully');
+                $this->session->set_flashdata('msg_class','alert-success');
+      
+       }
+          return redirect('admin/FAQs');
+
+      }else{
+                      $session_id = $this->session->userdata('admin_id');
+             $admin_detail = $this->admin_model->get_admin_data($session_id);
+                   $this->load->view('FAQs',['admin_detail'=>$admin_detail]);
+      }
+
+  }
+
+
+
 
   public function add_help_support()
   {

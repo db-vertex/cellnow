@@ -363,6 +363,18 @@ $SQL="SELECT Distinct * FROM `chat_list` Where (sender_id = $sender_id AND recei
         }
     }
 
+    function getFAQs($id = ""){
+        if(!empty($id)){
+            $query = $this->db->get_where('faqs', array('id' => $id));
+            return $query->row_array();
+        }else{
+            $this->db->limit(1,0);
+            $this->db->order_by("id", "ASC"); 
+            $query = $this->db->get('faqs');
+            return $query->result_array();
+        }
+    }
+
 
     
         /*
