@@ -32,7 +32,7 @@
         color: #555;
     }
 
-    
+
 
     .fa {
         /* padding: 20px; */
@@ -65,44 +65,46 @@
         }
     }
 
-    .search_wrap{
-	width: 100%;
-	
-}
+    .search_wrap {
+        width: 100%;
 
-.search_wrap .search_boxs{
-	position: relative;
-	
-	
-}
+    }
 
-.search_wrap .search_boxs .btn{
-	position: absolute;
-	
-	height: 80%;
-	background: #10B981;
-  color: white;
-	
-}
-.search_wrap .search_boxs .btn.btn_common .fas{
-	
-	/* top: 50%;
+    .search_wrap .search_boxs {
+        position: relative;
+
+
+    }
+
+    .search_wrap .search_boxs .btn {
+        position: absolute;
+
+        height: 80%;
+        background: #10B981;
+        color: white;
+
+    }
+
+    .search_wrap .search_boxs .btn.btn_common .fas {
+
+        /* top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%); */
-	/* color: #fff; */
- 
-}
-.search_wrap.search_wrap_6 .search_boxs .btn{
-	max-width: 100%;
-	height: 70%;
-	top: 15%;
-	left: 103.3%;
-    padding: 6px 0px;
-    
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
+        /* color: #fff; */
+
+    }
+
+    .search_wrap.search_wrap_6 .search_boxs .btn {
+        max-width: 100%;
+        height: 70%;
+        top: 15%;
+        left: 103.3%;
+        padding: 6px 0px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
     .card2 {
         --bs-card-spacer-y: 1rem;
@@ -194,7 +196,7 @@
     }
 
     .cut-list>li {
-         margin-left:10px; 
+        margin-left: 10px;
         margin-right: 25px;
 
         padding-bottom: 2px;
@@ -587,7 +589,7 @@
         align-items: center;
         cursor: pointer;
     }
-    
+
 
     .deals-paddle:focus {
         outline: none;
@@ -747,7 +749,7 @@
             top: 0;
             left: 0;
             width: 100%;
-            z-index: 100; 
+            z-index: 100;
         }
     }
 
@@ -756,10 +758,10 @@
             background: linear-gradient(130.02deg, #77D4B5 -15.01%, rgba(213, 253, 252, 0) 39.7%);
             background-color: white;
             position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                z-index: 100; 
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 100;
         }
     }
 
@@ -783,38 +785,40 @@
     }
 
     .navbar-toggler-icon {
-    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%2310B981' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
-.navbar-toggler{
-    border:none;
-}
+        background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='30' height='30' viewBox='0 0 30 30'%3e%3cpath stroke='%2310B981' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
+
+    .navbar-toggler {
+        border: none;
+    }
+
     .dropdown-toggle::after {
-    display: inline-block;
-    margin-left: 0.255em;
-    vertical-align: 0.255em;
-    content: "";
-    border-top: 0.3em solid;
-    border-right: 0.3em solid transparent;
-    border-bottom: 0;
-    margin-left: 1px;
-    border-left: 0.3em solid transparent;
-}
+        display: inline-block;
+        margin-left: 0.255em;
+        vertical-align: 0.255em;
+        content: "";
+        border-top: 0.3em solid;
+        border-right: 0.3em solid transparent;
+        border-bottom: 0;
+        margin-left: 1px;
+        border-left: 0.3em solid transparent;
+    }
 
-.dropdown:hover>.dropdown-menu {
-  display: block;
-}
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
 
-.dropdown>.dropdown-toggle:active {
-  /*Without this, clicking will make it sticky*/
-    pointer-events: none;
-}
+    .dropdown>.dropdown-toggle:active {
+        /*Without this, clicking will make it sticky*/
+        pointer-events: none;
+    }
 
-.click.form-select .bg-img {
-transform: rotate(180deg);
-transition: .3s ease-in-out;
-}
+    .click.form-select .bg-img {
+        transform: rotate(180deg);
+        transition: .3s ease-in-out;
+    }
 
-.related_ads_details_button {
+    .related_ads_details_button {
         box-sizing: border-box;
 
         /* Auto layout */
@@ -878,35 +882,48 @@ transition: .3s ease-in-out;
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-               
+
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="margin-left: auto;">
-                    <li class="nav-item " style="padding-right:150px" ;>
-                    <div class="search_wrap search_wrap_6 m-0 ">
-			   <div class="search_boxs">
-                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-                           <input type="text" placeholder="Search for location..." class="form-control form-input" id="locate" value="<?php echo set_value('location'); ?>" name="location" style="border-radius:20px; width:140%">
-                           <input type="text" class="form-control" name="latitude" id="latitude"
-                                                    hidden />
-                                                <input type="text" class="form-control" name="longitude" id="longitude" hidden />
-                           <button type="submit" class="btn btn-success rounded-5" style="padding: 6px 10px 10px;width: 67px;">Search</button>
-         </form>
-            </div></div>                
-                    </li>
+                        <li class="nav-item " style="padding-right:150px" ;>
+                            <div class="search_wrap search_wrap_6 m-0 ">
+                                <div class="search_boxs">
+                                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                                        <input type="text" placeholder="Search for location..."
+                                            class="form-control form-input rounded-5" id="locate"
+                                            value="<?php echo set_value('location'); ?>" name="location"
+                                            style="width:140% ">
+                                        <input type="text" class="form-control" name="latitude" id="latitude" hidden />
+                                        <input type="text" class="form-control" name="longitude" id="longitude"
+                                            hidden />
+                                        <button type="submit" class="btn btn-success rounded-5"
+                                            style="padding: 6px 10px 10px;width: 67px;">Search</button>
+                                    </form>
+<!-- 
+                                    <form method="post" action="http://localhost:8000/welcome/searchproduct/">
+                         <input type="search" name="anything" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon" style="padding:12px 22px">
+                          <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
+                                </form> -->
+                                </div>
+                            </div>
+                        </li>
                         <li class="nav-item dropdown" style="padding-right:10px" ;>
-                            <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" style=" color:#10B981;font-weight:bold;" id="ab">
+                            <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style=" color:#10B981;font-weight:bold;"
+                                id="ab">
                                 Categories
                             </a>
                             <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
-                           
+
                                 <li><a id="" class="dropdown-item"
-                                        href="<?php echo base_url();?>welcome/fillter_product/1">Reusable Parts and Products</a>
+                                        href="<?php echo base_url();?>welcome/fillter_product/1">Reusable Parts and
+                                        Products</a>
                                 </li>
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/2">Tuitions/Classes</a>
                                 </li>
                                 <li><a id="" class="dropdown-item"
-                                        href="<?php echo base_url();?>welcome/fillter_product/3">freelancing/Parttime Jobs</a>
+                                        href="<?php echo base_url();?>welcome/fillter_product/3">freelancing/Parttime
+                                        Jobs</a>
                                 </li>
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/4">Internships</a>
@@ -914,8 +931,9 @@ transition: .3s ease-in-out;
                             </ul>
                         </li>
                         <li class="nav-item dropdown" style="padding-right:10px" ;>
-                            <a class="nav-link dropdown-toggle  Services_header" href="#" role="button" data-bs-toggle="dropdown"
-                                aria-expanded="false" style="color:#10B981;font-weight:bold;" id="ab">
+                            <a class="nav-link dropdown-toggle  Services_header" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false" style="color:#10B981;font-weight:bold;"
+                                id="ab">
                                 Services
                             </a>
                             <ul class="dropdown-menu" style="margin-bottom:10px;">
@@ -942,16 +960,18 @@ transition: .3s ease-in-out;
                                 style="color:#10B981;font-weight:bold;" id="ab">Shop</a>
                         </li>
 
-                                                <?php  if(!empty($user)){
+                        <?php  if(!empty($user)){
                                             $profile = get_seller_profile($user['user_id']);
                                         ?>
 
 
                         <img class="img-fluid rounded-corners  d-block" style="height: 30.9px;
-                                      width: 30.9px; margin-top: 5px;" src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
+                                      width: 30.9px; margin-top: 5px;"
+                            src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
 
                         <a class="nav-link dropdown dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false" style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
+                            aria-expanded="false"
+                            style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
                             &nbsp <?php echo ucfirst($profile->name);?>
                         </a>
                         <ul class="dropdown-menu" style="margin-left:85%;margin-top: -30px;">
@@ -975,8 +995,9 @@ transition: .3s ease-in-out;
 
 
                         <li class="nav-item" style="padding-right:10px" ;>
-                            <a  class="nav-link  login_header" href="<?php echo base_url();?>welcome/login" style="color:#10B981;font-weight:bold;">Login
-                                </a>
+                            <a class="nav-link  login_header" href="<?php echo base_url();?>welcome/login"
+                                style="color:#10B981;font-weight:bold;">Login
+                            </a>
                         </li>
                         <!-- <li class="nav-item" style="padding-right:10px" ;>
                             <a class="nav-link fs-5 Signup_header" href="<?php echo base_url();?>welcome/signup"
@@ -1034,49 +1055,50 @@ function function14() {
 }
 
 $(document).ready(function() {
-    $( "#search" ).autocomplete({
- 
+    $("#search").autocomplete({
+
         source: function(request, response) {
-            $.ajax({ 
-            url: "<?php echo base_url();?>welcome/search",
-            data: {term : request.term},
-            dataType: "json",
-            success: function(data){
-             
-              var resp = $.map(data,function(obj){
-                  var id = obj.id;
-                   var category_id = obj.category_id;
-                     var subcategory_id = obj.subcategory_id;
-                   var add = category_id +'/'+id +'/'+subcategory_id;
-                  return {
+            $.ajax({
+                url: "<?php echo base_url();?>welcome/search",
+                data: {
+                    term: request.term
+                },
+                dataType: "json",
+                success: function(data) {
+
+                    var resp = $.map(data, function(obj) {
+                        var id = obj.id;
+                        var category_id = obj.category_id;
+                        var subcategory_id = obj.subcategory_id;
+                        var add = category_id + '/' + id + '/' + subcategory_id;
+                        return {
                             label: obj.title,
-                           value: add
-                            
+                            value: add
+
                         }
-                   
-              }); 
-              response(resp);
-            console.log(resp);
-              $("#display").html(data).show();
-            } 
-            
-           
-        });
-       
-        
-    },
-      select: function(event, ui) {  
-                        location.href="<?php echo base_url();?>welcome/productdetail/" +ui.item.value ;
-            },
-    minLength: 2
- });
- 
+
+                    });
+                    response(resp);
+                    console.log(resp);
+                    $("#display").html(data).show();
+                }
+
+
+            });
+
+
+        },
+        select: function(event, ui) {
+            location.href = "<?php echo base_url();?>welcome/productdetail/" + ui.item.value;
+        },
+        minLength: 2
+    });
+
 
 });
-
 </script>
 <script>
-    $(document).ready(function() {
+$(document).ready(function() {
     $("#latitudeArea").addClass("d-none");
     $("#longtitudeArea").addClass("d-none");
 });
