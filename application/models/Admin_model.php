@@ -98,6 +98,9 @@ public function addEditRecords($table,$data,$where='')
         } 
     }
   }
+
+  
+
     
    
 
@@ -460,6 +463,16 @@ public function get_terms_condition_data()
             
            $q=$this->db->select('*')
               ->from('terms_condition')
+              ->get();
+             
+             return $q->row();
+  }
+
+  public function get_help_support()
+  {
+            
+           $q=$this->db->select('*')
+              ->from('help_support')
               ->get();
              
              return $q->row();

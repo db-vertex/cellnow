@@ -184,7 +184,7 @@ input::placeholder {
                 foreach ($category as $key => $cat) {
                   ?>
 
-                    <div class="va-card va-card_category"> 
+                    <div class="va-card va-card_category mt-2"> 
                             <p  style="text-align:center;" class="my-auto pouler_Categories" onclick="return getshop(<?php echo $cat->id; ?>)">
                                 <img  class="btn-change new<?php echo $cat->id; ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">

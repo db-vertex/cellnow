@@ -394,6 +394,75 @@ public function logout()
   }
 
 
+  public function help_support()
+  {
+
+     $session_id = $this->session->userdata('admin_id');
+     
+       if($session_id)
+       {
+     
+     
+     $admin_detail = $this->admin_model->get_admin_data($session_id);
+     $terms =    $this->admin_model->get_help_support();
+     $this->load->view('help_support',['admin_detail'=>$admin_detail,'terms'=>$terms]);
+     
+       }else{
+           
+             return redirect('admin');
+           
+       }
+           
+  }
+
+
+  public function add_help_support()
+  {
+
+     $session_id = $this->session->userdata('admin_id');
+     
+    $this->form_validation->set_rules('terms_condition_text','Privacy', 'required');
+    
+    $terms_condition_text =  $this->input->post('terms_condition_text');
+
+
+        
+     if($this->form_validation->run())
+      {
+       $terms = $this->admin_model->get_help_support();
+       
+      if(!empty($terms)){
+           
+            $where = array('id' => $terms->id);
+          
+            $data = array("help_support"=>$terms_condition_text);
+                $admin_detail = $this->admin_model->addEditRecords('help_support',$data,$where);
+                $this->session->set_flashdata('msg','Added Successfully');
+                $this->session->set_flashdata('msg_class','alert-success');
+
+       }else{
+           
+            $data = array("help_support"=>$terms_condition_text);
+           
+                $admin_detail = $this->admin_model->addEditRecords('help_support',$data);
+           
+            $this->session->set_flashdata('msg','Added Successfully');
+                $this->session->set_flashdata('msg_class','alert-success');
+      
+       }
+          return redirect('admin/help_support');
+
+      }else{
+                      $session_id = $this->session->userdata('admin_id');
+             $admin_detail = $this->admin_model->get_admin_data($session_id);
+                   $this->load->view('help_support',['admin_detail'=>$admin_detail]);
+      }
+
+  }
+
+
+
+
   public function add_terms()
   {
 

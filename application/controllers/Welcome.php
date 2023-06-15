@@ -74,7 +74,7 @@ class Welcome extends CI_Controller
 			//print_r($subcategory);die();
 
 			$sub .= '
-	<div class="va-card va-card_category"> <a class=" border-0"   
+	<div class="va-card va-card_category mt-2"> <a class=" border-0"   
 		<p style="text-align:center;" class="my-auto pouler_Categories " ';
 			if ($category_id == 1) {
 				$sub .= '	onclick="return getproduct( ' . $value->subcategory_id . ')"';
@@ -1614,10 +1614,40 @@ $sub .= '</h6>
 			$this->load->view('front/termscondition', ['termscondition' => $termscondition]);
 			$this->load->view('front/footer');
 		}
-
-
-
 	}
+
+
+	public function help_support()
+	{
+
+		$session_id = $this->session->userdata('id');
+
+		if ($session_id) {
+			$user_detail = $this->user->loginuser($session_id);
+			$gethelp_support = $this->user->gethelp_support();
+
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+
+			$this->load->view('front/header', ['user' => $user_detail]);
+			$this->load->view('front/help_support', ['help_support' => $gethelp_support]);
+			$this->load->view('front/footer');
+
+
+		} else {
+			$gethelp_support = $this->user->gethelp_support();
+			$this->load->view('front/header');
+			$this->load->view('front/help_support', ['help_support' => $gethelp_support]);
+			$this->load->view('front/footer');
+		}
+	}
+
+
+
+
+
 
 	public function savecontact()
 	{

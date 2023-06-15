@@ -58,6 +58,7 @@
       <a href="<?php echo base_url();?>welcome/aboutus" style="text-decoration:none;color:#888b97" id="bc"> About us</a> <br>
       <a href="<?php echo base_url();?>welcome/termscondition" style="text-decoration:none;color:#888b97" id="bc">Terms & Conditions</a> <br>
       <a href="<?php echo base_url();?>welcome/privacypolicy" style="text-decoration:none;color:#888b97" id="bc">Privacy policy</a> <br>
+      <a href="<?php echo base_url();?>welcome/help_support" style="text-decoration:none;color:#888b97" id="bc">Help and Support</a> <br>
      
     </div>
     <div class="col-sm-3 col-6" style="color:#888b97">

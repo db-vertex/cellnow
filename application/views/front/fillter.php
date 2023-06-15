@@ -1309,8 +1309,7 @@ a:active {
                         <input type="search" name="anything" class="form-control rounded-5"
                             placeholder="Search for the Product you want!" aria-label="Search"
                             aria-describedby="search-addon" style="padding:12px 22px" />
-                        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search
-                            ></button>
+                        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
                     </form>
                 </div>
                 <div class="row">
@@ -1388,7 +1387,7 @@ a:active {
 					  foreach($subcategory as $sub){
 					?>
 
-<div class="va-card va-card_category">
+<div class="va-card va-card_category mt-2" style="">
 		<p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
 				onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)"
 

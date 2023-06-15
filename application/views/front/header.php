@@ -898,11 +898,7 @@
                                         <button type="submit" class="btn btn-success rounded-5"
                                             style="padding: 6px 10px 10px;width: 67px;">Search</button>
                                     </form>
-<!-- 
-                                    <form method="post" action="http://localhost:8000/welcome/searchproduct/">
-                         <input type="search" name="anything" class="form-control rounded-5" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon" style="padding:12px 22px">
-                          <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-                                </form> -->
+
                                 </div>
                             </div>
                         </li>
