@@ -227,7 +227,7 @@ input::placeholder {
 
     <div class="container">
 
-        <div class="row" id="sub-list">
+        <div class="row" >
             <?php  
             if($id == 16){
                 $shop = get_all_store();
@@ -240,7 +240,7 @@ foreach($shop as $value){
    
 
 ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post" id="sub-list">
                 <div class="card" >
                     <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $value->id;?>"><img
                             class="va-thumbnail " alt="Card image cap"
