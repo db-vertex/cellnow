@@ -88,12 +88,7 @@ width: 131.9px; border-color:#10B981;">
      <?php echo ucfirst($profile->Address); ?>
      
     </div>
-    <div class="row text-center ">
-    <p>
-            <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
-            <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
-            </p>
-    </div><br>
+   
     
    
     </div>
@@ -143,7 +138,7 @@ width: 131.9px; border-color:#10B981;">
                            
                            ?></div> 
                            <div class="col-6">
-                            <b style="color:#10b981">$<?php echo $value->price; ?></b>
+                            <b style="color:#10b981">₹<?php echo $value->price; ?></b>
                             </div></div>
     <p class="card-text"><?php
                            $title =$value->Description;
