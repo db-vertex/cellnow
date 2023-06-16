@@ -95,7 +95,7 @@
         padding: 9.42857px 12.5714px;
         gap: 4.71px;
 
-        width: 80.43px;
+        width: 88.43px;
         height: 30.86px;
 
         background: #10B981;
@@ -507,81 +507,25 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
 
-<div class="col-lg-3 col-md-6 col-sm-6 mb-4" >
-                <div class="card" >
-                <a href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>"> <img class="va-thumbnail"
-                        src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>"
-                        class="card-img-top" alt="Card image cap"></a>
-                    <div class="card-block" style="padding:5px">
-                        <div class="card-title">
-                            <div class="row pl-3">
-                                <div class="col-5"><b style="font-size:15px">
-                                        <?php
-                           $title =$Categories_all_product->title;
-                            if(strlen($title) <= 12)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,12) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?>
-                                    </b></div>
-                                <div class="col-3"> <i style=" font-size:19px; margin-top:-20px;color:#69d3b0;"
-                                        data-toggle="modal" data-target="#login"
-                                        data-uid="<?php echo $user["user_id"]; ?>"
-                                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
-                                        data-pid="<?php echo $Categories_all_product->id; ?>"
-                                        data-cid="<?php echo $Categories_all_product->category_id; ?>"
-                                        data-wishlist="<?php echo $wishlist; ?>"></i>
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
+            <div class="card">
+            <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <a
+                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>"><img
+                                    src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img ?>"
+                                    class="w-100 va-thumbnail" /></a>
+
+                            <a href="#!">
+
+                                <div class="hover-overlay">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </div>
-                                <div class="col-4" style="color:#10b981">
-                                    <h6><b>₹<?php echo $Categories_all_product->price; ?>
-                                        </b></h6>
-                                </div>
-                            </div>
+                            </a>
                         </div>
-                        <div class="row pl-3">
-                            <small class="card-text ">
-                                <?php
-                           $title =$Categories_all_product->Description;
-                            if(strlen($title) <= 25)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,25) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?>
-                            </small><br>
-                        </div>
-
-
-                        <div class="row pl-3">
-                            <div class=col-4>
-                                <p>Type</p>
-                            </div>
-                            <div class=col-8>
-                                <p><?php echo $Categories_all_product->type; ?></p>
-                            </div>
-                        </div>
-
-
-
-                        <div class="row text-center p-3">
-                            <div class="col-2">
-                                <img src="<?php echo base_url();?>assets/images/location .png">
-                            </div>
-                            <div class="col-5">
-                                <p>
-                                    <?php
-                           $title =$Categories_all_product->address;
+              <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="dress-name"><?php
+                           $title = $Categories_all_product->title;
                             if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
@@ -592,22 +536,64 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 echo ucfirst($y);
                               }
                            
-                           ?>
+                           ?></p>
+                            <a  style="font-size:20px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
+                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
+                                style="font-size:20px; color:#69d3b0; padding: 0px;"
+                               
+                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
+                                data-pid="<?php echo $Categories_all_product->id; ?>"
+                                data-cid="<?php echo $Categories_all_product->category_id; ?>"
+                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
+                         <p class="details_price">₹<?php echo $Categories_all_product->price; ?>
                                 </p>
+
+
                             </div>
-                            <div class="col-5">
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <p><?php
+                           $title = $Categories_all_product->Description;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
+
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                <p><?php
+                           $title = $Categories_all_product->address;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
                                 <a
-                                    href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
+                                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
                                     <p class="related_ads_details_button ">
                                         <spam class="related_ads_details_button_text">Product Detail</spam>
                                     </p>
                                 </a>
+
                             </div>
                         </div>
-
-                    </div>
-                </div>
             </div>
+          </div> 
 
             <?php } }else{?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
