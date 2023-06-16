@@ -178,8 +178,19 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 <div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
             <div class="card">
-              <a  href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
-              <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img;?>" class="card-img-top" alt="Card image cap"></a>
+            <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <a
+                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>"><img
+                                    src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                                    class="w-100 va-thumbnail" /></a>
+
+                            <a href="#!">
+
+                                <div class="hover-overlay">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </div>
+                            </a>
+                        </div>
               <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                                 <p class="dress-name"><?php
@@ -229,7 +240,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                             <div class="d-flex justify-content-between align-items-center">
                                 <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
                                 <p><?php
-                           $title = $pro->address;
+                           $title = $Categories_all_product->address;
                             if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
