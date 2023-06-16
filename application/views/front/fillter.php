@@ -1742,18 +1742,6 @@ a:active {
                               }
                            
                            ?></p>
-<<<<<<< HEAD
-                                <a style="font-size:10px; color:#69d3b0; padding: 0px;"
-                                    <?php if (empty($user) || !isset($user)) { ?>
-                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
-                                        lass="bi bi-suit-heart" aria-hidden="true"
-                                        style="font-size:10px; color:#69d3b0; padding: 0px;"
-                                        data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
-                                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $pro->id; ?>"
-                                        data-pid="<?php echo $pro->id; ?>" data-cid="<?php echo $pro->category_id; ?>"
-                                        data-wishlist="<?php echo $wishlist; ?>"></i></a>
-                                <p class="details_price">$<?php echo $pro->price; ?>
-=======
                             <a  style="font-size:10px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
                                 href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
                                 style="font-size:10px; color:#69d3b0; padding: 0px;"
@@ -1764,7 +1752,6 @@ a:active {
                                 data-cid="<?php echo $pro->category_id; ?>"
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
           <p class="details_price">₹<?php echo $pro->price; ?>
->>>>>>> ca4ef742fe7565adff04054bc74fb598ffc11be9
                                 </p>
 
 
