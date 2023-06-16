@@ -1192,8 +1192,8 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
     
  
     
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
+  <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
+  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
 
   
 
@@ -1383,7 +1383,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         <div class="col-4">
                             <?php if(isset($product_detail->price)){
                                 if(($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)){ ?>
-                            <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
+                            <p class="details_price"><span>₹<?php echo $product_detail->price; ?></span></p>
                             <?php  } }?>
 
                         </div>
@@ -1691,7 +1691,7 @@ if($shop->admin_approval==1){
                                         <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
                                      
                                             ?>
-                                        <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
+                                        <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
                                         <?php  } }?>
                                     </div>
 

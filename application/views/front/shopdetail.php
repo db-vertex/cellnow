@@ -209,7 +209,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
                     </div>
                     <div class="col-4" style="color:#10b981">
-                      <h6><b>$<?php echo $Categories_all_product->price; ?>
+                      <h6><b>₹<?php echo $Categories_all_product->price; ?>
                         </b></h6>
                     </div>
                   </div>

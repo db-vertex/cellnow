@@ -167,7 +167,7 @@ width: 131.9px; border-color:#10B981;">
                            
                            ?> </b>
        
-      <b style="color:#10b981;">$<?php echo $value->price; ?></b>
+      <b style="color:#10b981;">₹<?php echo $value->price; ?></b>
        </div>
     <small class="card-text"> <?php
                            $title =$value->Description;

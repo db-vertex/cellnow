@@ -151,7 +151,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 
 			 	   		  
 	   if (($row['pay_type'] == 0 || $row['pay_type'] == 1) && ($row['category_id'] == 1 || $row['category_id'] == 2 || $row['category_id'] == 3)) {
-		$pro .= '<p class="details_price">$<span>';		
+		$pro .= '<p class="details_price">₹<span>';		
 		   $pro .= $row['price'];
 	   }
 	   $pro .= '</span></p>
