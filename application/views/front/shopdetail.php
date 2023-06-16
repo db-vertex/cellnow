@@ -134,6 +134,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
          if(!empty($product)){
         
           foreach($product as $value){
+            
         $product_id=$value->product_id;
         $category_id=$value->category_id;
          if($category_id ==1 ){
@@ -181,7 +182,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <a
                                 href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>"><img
-                                    src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                                    src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img ?>"
                                     class="w-100 va-thumbnail" /></a>
 
                             <a href="#!">
