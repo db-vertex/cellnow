@@ -1716,7 +1716,7 @@ a:active {
                     <div class="card">
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <a
-                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
+                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>/<?php if($pro->category_id==1){ echo $pro->type;} else if($pro->category_id==2){ echo $pro->Education_Type; } else if($pro->category_id==3 && $pro->category_id==4){ echo $pro->Job_type; } ?>"><img
                                     src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                     class="w-100 va-thumbnail" /></a>
 
@@ -1793,7 +1793,7 @@ a:active {
                            
                            ?></p>
                                 <a
-                                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
+                                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>/<?php if($pro->category_id==1){ echo $pro->type;} else if($pro->category_id==2){ echo $pro->Education_Type; } else if($pro->category_id==3 && $pro->category_id==4){ echo $pro->Job_type; } ?>">
                                     <p class="related_ads_details_button ">
                                         <spam class="related_ads_details_button_text">Product Detail</spam>
                                     </p>

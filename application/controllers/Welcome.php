@@ -129,7 +129,7 @@ class Welcome extends CI_Controller
 					$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-            <a href="https://dbvertex.com/celnow/welcome/productdetail/' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
+            <a href="https://dbvertex.com/celnow/welcome/productdetail/' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
                 <img src="https://dbvertex.com/celnow/' . $value->cover_img . '" class="w-100 va-thumbnail" />
             </a>
             <a href="#!">
@@ -386,7 +386,7 @@ $sub .= '</h6>
 				if (strlen($title) <= 20) {
 					$sub .= ucfirst($title);
 				} else {
-					$sub .= substr($title, 0, 20) . '...';
+					$y .= substr($title, 0, 20) . '...';
 					echo ucfirst($y);
 				}
 

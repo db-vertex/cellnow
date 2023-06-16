@@ -171,7 +171,7 @@ input::placeholder {
     </div>
 </div><br>
 
-<<div class="container">
+<div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
 
