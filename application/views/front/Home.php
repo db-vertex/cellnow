@@ -1,7 +1,7 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 
 
 <style>
@@ -11,7 +11,7 @@
 }
 
 .select {
-   
+    background: #d1fae5;
     color: black;
     border-radius: 50%;
 }
@@ -153,7 +153,9 @@ input::placeholder {
                             alt="First slide"></a>
                 </div>
                 <?php
+
         $j++;
+
       }
       ?>
 
@@ -208,6 +210,10 @@ input::placeholder {
 
                 <div class="row">
                     <div id="display"></div>
+
+
+
+
                 </div>
             </div>
         </div>
@@ -224,9 +230,9 @@ input::placeholder {
 
             <?php
 
-         $category = get_all_category();
+$category = get_all_category();
 
-                foreach ($category as $key => $cat) {
+foreach ($category as $key => $cat) {
 
 
                 ?>
@@ -257,7 +263,7 @@ input::placeholder {
                         </svg>
                     </button>
                     <div class="va-carrousel-flexbox" id="sub-list">
-                    <?php
+                        <?php
 					         $cateory =  '';
                
                  
@@ -273,27 +279,29 @@ input::placeholder {
 					  foreach($subcategory as $sub){
 					?>
 
-                    <div class="va-card va-card_category mt-2" style="">
-                        <p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
-                            onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
-                            onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
+                        <div class="va-card va-card_category mt-2" style="">
+                            <p style="text-align:center;" class="my-auto pouler_Categories "
+                                <?php if ($category == 1) { ?>
+                                onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
+                                onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
 
-                            <img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"
-                                data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
-                                src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
-                            <center style="color:black; font-size:12px; font-weight:500">
-                                <?php echo $sub->product_type; ?></center>
-                        </p>
+                                <img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"
+                                    data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
+                                    src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>"
+                                    alt="">
+                                <center style="color:black; font-size:12px; font-weight:500">
+                                    <?php echo $sub->product_type; ?></center>
+                            </p>
 
-                    </div>
+                        </div>
 
-                    <?php 
+                        <?php 
 					
                 }
                ?>
 
 
-                </div>
+                    </div>
                     <button class="deals-scroll-right deals-paddle" id="right_sponsor_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
@@ -308,6 +316,7 @@ input::placeholder {
         </div>
     </div>
 </div>
+
 
 
 
@@ -342,27 +351,16 @@ input::placeholder {
                                 src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                 class="w-100 va-thumbnail" /></a>
                         <p style="margin-left:-90px;"> <img class="img-fluid"
-                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style="margin-top: -20%; width:80px; ">
+                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
+   margin-top: -20%; width:80px; ">
                             <?php if($pro->verified_product ==1){ ?>
-                            <img class="img-fluid" src="<?php echo base_url(); ?>assets/images/verified.png" style="margin-top: -20%; width:80px; ">
+                            <img class="img-fluid" src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   margin-top: -20%; width:80px; ">
                         <p>
 
-   <?php }?>       
-                  </p>
-            <a href="#!">
-             
-              <div class="hover-overlay">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </div>
-            </a>
-          </div>
-          <div class="card-body">
-          <div class="d-flex justify-content-between align-items-center">
-          <h6 class="mb-3">
-             <strong class="ms-2 ">₹<?php echo $pro->price; ?></strong>
-            </h6>
-                  </div>
-          <div class="d-flex justify-content-between align-items-center">
+                            <?php }?>
+                        </p>
+                        <a href="#!">
 
                             <div class="hover-overlay">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
@@ -962,7 +960,20 @@ function getsubcategory(category_id) {
             category_id: category_id
         },
         success: function(res) {
+
+
+
+
+
+
+
+
             $("#sub-list").html(res);
+
+
+
+            // $('#load_cound').val("10");
+
         }
     });
 

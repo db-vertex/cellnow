@@ -1751,7 +1751,7 @@ a:active {
                                 data-pid="<?php echo $pro->id; ?>"
                                 data-cid="<?php echo $pro->category_id; ?>"
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
-          <p class="details_price">₹<?php echo $pro->price; ?>
+                         <p class="details_price">₹<?php echo $pro->price; ?>
                                 </p>
 
 
