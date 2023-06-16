@@ -1,6 +1,6 @@
 <style>
    .va-thumbnail {
-        border-radius: 20px;
+        border-radius: 6px;
         border: 0px;
         width: 100%;
         max-height: 190px;
@@ -134,7 +134,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
          if(!empty($product)){
         
           foreach($product as $value){
-            
+
         $product_id=$value->product_id;
         $category_id=$value->category_id;
          if($category_id ==1 ){
@@ -207,7 +207,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                               }
                            
                            ?></p>
-                            <a  style="font-size:10px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
+                            <a  style="font-size:20px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
                                 href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
                                 style="font-size:10px; color:#69d3b0; padding: 0px;"
                                
