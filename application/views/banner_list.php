@@ -58,9 +58,9 @@ $msg_class=$this->session->flashdata('msg_class')
           <?php 
           
          // print_r($agent);
-$i=0;
+$i=1;
           foreach ($banner as $value) { 
-              $i++;
+           
 
           ?>
 
@@ -97,7 +97,7 @@ $i=0;
 
  </td>
                 </tr> 
-                <?php } ?>
+                <?php }    $i++; ?>
             </tbody>
                 
             </table>
