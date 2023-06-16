@@ -56,7 +56,7 @@ public function update_password($id,$pwd)
   {
 
         return $this->db->where('id',$id)
-                 ->update('admin',array('password'=>$pwd));
+           ->update('admin',array('password'=>$pwd));
 
   }
     
@@ -76,6 +76,7 @@ public function updateproductkeyword($table,$data,$where='')
     $this->db->where($where);
         $sql=$this->db->update($table,$data);
         return 1; 
+        
 
   }
 

@@ -1157,7 +1157,12 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
   
     <?php if ($product_detail->images_3 !== NULL) { ?>
     <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%">
-    <?php } else { ?>
+    <?php if($product_detail->verified_product ==1){ ?>
+      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
+   >
+
+   <?php }?>
+   <?php } else { ?>
         <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
         <?php } ?></div>
     
@@ -1165,22 +1170,30 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
    
     <?php if ($product_detail->images_4 !== NULL) { ?>
     <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%">
-    <?php } else { ?>
+    <?php if($product_detail->verified_product ==1){ ?>
+      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
+   >
+
+   <?php }?><?php } else { ?>
         <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
         <?php } ?></div>
 
   <div class="mySlides">
    
     <?php if ($product_detail->images_5 !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
+        <?php if($product_detail->verified_product ==1){ ?>
+      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
+   >
+
+   <?php }?><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
     <?php } else { ?>
         <img  class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
         <?php } ?></div>
     
  
     
-  <a class="prev" onclick="plusSlides(-1)">❮</a>
-  <a class="next" onclick="plusSlides(1)">❯</a>
+  <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
+  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
 
   
 
@@ -1370,7 +1383,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         <div class="col-4">
                             <?php if(isset($product_detail->price)){
                                 if(($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)){ ?>
-                            <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
+                            <p class="details_price"><span>₹<?php echo $product_detail->price; ?></span></p>
                             <?php  } }?>
 
                         </div>
@@ -1448,11 +1461,11 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     $shop_name= get_shop_name($shop_list->shop_id);?>
                         <div class="" style="">
                             <div class="col-12" style="text-align:center;">
-                                <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                             alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p>
+                                        <?php echo $shop_name;?></span></p></a>
                             </div>
 
 
@@ -1519,11 +1532,11 @@ if($shop->admin_approval==1){
                         <div class="" style="">
 
                             <div class="col-12" style="text-align:center;">
-                                <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                             alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p>
+                                        <?php echo $shop_name;?></span></p></a>
                             </div>
 
                         </div>
@@ -1678,7 +1691,7 @@ if($shop->admin_approval==1){
                                         <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
                                      
                                             ?>
-                                        <p class="details_price">$<span><?php echo $product_detail->price; ?></span></p>
+                                        <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
                                         <?php  } }?>
                                     </div>
 

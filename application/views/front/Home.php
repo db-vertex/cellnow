@@ -347,9 +347,28 @@ input::placeholder {
                             <img class="img-fluid" src="<?php echo base_url(); ?>assets/images/verified.png" style="margin-top: -20%; width:80px; ">
                         <p>
 
+<<<<<<< HEAD
                             <?php }?>
                         </p>
                         <a href="#!">
+=======
+   <?php }?>       
+                  </p>
+            <a href="#!">
+             
+              <div class="hover-overlay">
+                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+              </div>
+            </a>
+          </div>
+          <div class="card-body">
+          <div class="d-flex justify-content-between align-items-center">
+          <h6 class="mb-3">
+             <strong class="ms-2 ">₹<?php echo $pro->price; ?></strong>
+            </h6>
+                  </div>
+          <div class="d-flex justify-content-between align-items-center">
+>>>>>>> ca4ef742fe7565adff04054bc74fb598ffc11be9
 
                             <div class="hover-overlay">
                                 <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>

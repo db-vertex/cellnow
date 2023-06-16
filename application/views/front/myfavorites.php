@@ -162,7 +162,7 @@
                                 data-wishlist="<?php echo $wishlist; ?>"></i>
                     </div>
                     <div class="col-4" style="color:#10b981">
-                      <h6><b>$<?php echo $product->price; ?>
+                      <h6><b>₹<?php echo $product->price; ?>
                         </b></h6>
                     </div>
                   </div>
