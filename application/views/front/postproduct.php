@@ -1253,7 +1253,7 @@
 
 
                             <div class="col-sm-6 hiddens" id="Price_div">
-                                <label for="Price" class="form-label post_input_lable">Price</label>
+                                <label for="Price" class="form-label post_input_lable">Price(INR)</label>
                                 <input type="text" class="form-control post_input_fild" id="Price" name="Price"
                                     placeholder="Please Enter Price">
                                 <div class="invalid-feedback">
