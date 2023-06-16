@@ -45,7 +45,7 @@
             	?>
               <h3><?php echo $buyer; ?></h3>
 
-              <p>Buyer</p>
+              <p>Users</p>
             </div>
             <div class="icon">
               <i class="fa fa-user"></i>
@@ -79,7 +79,11 @@
           <!-- small box -->
           <div class="small-box bg-yellow">
             <div class="inner">
-            
+            <?php 
+
+$buyer = get_all_boost_count();
+
+?> 
               <h3><?php echo $buyer; ?></h3>
 
               <p>Boost Product</p>
@@ -95,7 +99,11 @@
           <!-- small box -->
           <div class="small-box bg-orange">
             <div class="inner">
-            
+            <?php 
+
+$buyer = get_all_donate_count();
+
+?> 
               <h3><?php echo $buyer; ?></h3>
 
               <p>Donate Product</p>
@@ -111,7 +119,11 @@
           <!-- small box -->
           <div class="small-box bg-red">
             <div class="inner">
-            
+            <?php 
+
+$buyer = get_all_boost_count();
+
+?> 
               <h3><?php echo $buyer; ?></h3>
 
               <p>Normal Product</p>
