@@ -76,7 +76,7 @@ public function updateproductkeyword($table,$data,$where='')
     $this->db->where($where);
         $sql=$this->db->update($table,$data);
         return 1; 
-        
+
 
   }
 

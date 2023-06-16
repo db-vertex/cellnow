@@ -41,7 +41,7 @@ $msg_class=$this->session->flashdata('msg_class')
 
 <div class="box">
 <div class="box-body">
-<table id="example3" class="table table-bordered table-striped">
+<table id="" class="table table-bordered table-striped">
               <thead>
                 <tr>
                   <th>S no.</th>
@@ -60,7 +60,7 @@ $msg_class=$this->session->flashdata('msg_class')
          // print_r($agent);
 $i=1;
           foreach ($banner as $value) { 
-           
+             
 
           ?>
 
@@ -97,7 +97,7 @@ $i=1;
 
  </td>
                 </tr> 
-                <?php }    $i++; ?>
+                <?php  $i++;} ?>
             </tbody>
                 
             </table>
@@ -162,7 +162,7 @@ $i=1;
       'paging'      : true,
       'lengthChange': false,
       'searching'   : false,
-      'ordering'    : true,
+      'ordering'    : false,
       'info'        : true,
       'autoWidth'   : false
     })

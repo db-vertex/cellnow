@@ -52,11 +52,11 @@ $msg_class=$this->session->flashdata('msg_class')
               </thead>
         <tbody>
 
-          <?php foreach ($category as $value) {?>
+          <?php $i=1; foreach ($category as $value) {?>
 
                 <tr id="<?php echo $value->id; ?>">
 
-                <td><?php echo  $value->id;?></td>
+                <td><?php echo $i; ?></td>
                 <td><?php echo  $value->category;?></td>
                 
                  <td style="text-align: center;">
@@ -79,7 +79,7 @@ $msg_class=$this->session->flashdata('msg_class')
 
  </td>
                 </tr> 
-                <?php } ?>
+                <?php $i++;} ?>
             </tbody>
                 
             </table>
@@ -134,7 +134,7 @@ $msg_class=$this->session->flashdata('msg_class')
             "columnDefs": [{
                 "orderSequence": ["desc", "asc"],
                 "searchable": false,
-                "orderable": false,
+                "orderable": true,
                 "targets": 0
             }]
             ,
