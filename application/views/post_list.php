@@ -189,7 +189,7 @@ unset($_SESSION['msg']);?>
 <div class="box-body">
 
 <ul class="nav nav-tabs">
-    <li class="active"><a data-toggle="tab" href="#home">Active Products</a></li>
+    <li class="active"><a data-toggle="tab" href="#home">Normal Products</a></li>
     <li><a data-toggle="tab" href="#menu1">Boost Products</a></li>
     <li><a data-toggle="tab" href="#menu2">Donate Product</a></li>
     
@@ -223,7 +223,7 @@ unset($_SESSION['msg']);?>
         <tbody>
   
           <?php
-      $allproduct =get_all_reusable();
+      $allproduct =get_all_normal();
       $i=1;
           foreach ($allproduct as $value) {
 
@@ -290,23 +290,23 @@ unset($_SESSION['msg']);?>
 
 
         	          <table id="example4" class="table table-bordered table-striped">
-                <thead>
+                    <thead>
                 <tr>
                <th>S.no</th>
                   <th>Post</th>
                   <th>Image</th>
                  <th>Category</th>
                 
-                  <th>Posted by</th>
+                  <th>Type</th>
                   <th>Brand</th>
                   
                    <th>Price</th>
 
                   
-                 <th>Condition</th>  
-                 <th>Type</th>    
+                 <th>Description</th>        
                   
-                
+                  <th>Pay Type</th>
+                 
                   
                   
                   
@@ -315,8 +315,8 @@ unset($_SESSION['msg']);?>
         <tbody id="sortable">
                 
           <?php 
-          $urgent = get_all_boost_product();
-          print_r($urgent);
+          $urgent = get_all_boost();
+         
 $i=1;
 foreach($urgent as $valueu){
            // print_r($posts);
@@ -337,7 +337,7 @@ foreach($urgent as $valueu){
 
                 <?php ?>
                  
-                <img src="<?php echo base_url().$valueu->thumbnails."";?>" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
+                <img src="<?php echo base_url().$valueu->cover_img."";?>" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
 
                <?php  ?>
 
@@ -349,14 +349,14 @@ foreach($urgent as $valueu){
                </td>
                <td><?=$this->db->get_where("category", "id=".($valueu->category_id))->row()->category?></td>
                
-                <td><?php echo  $valueu->For_sale_by;?></td>
-                 <td><?php echo  $valueu->Brand;?></td>
-                       <td><?php echo  $valueu->Price;?></td>
-               <td><?php echo  $valueu->Condition_product;?></td>
+               <td><?php echo  $value->type;?></td>
+                 <td><?php echo  $valueu->brand;?></td>
+                       <td><?php echo  $valueu->price;?></td>
+               <td><?php echo  $valueu->Description;?></td>
                <td><select  id="pay_type" data-product_id="<?php echo $valueu->id?>"  data-category_id="<?php echo $valueu->category_id?>" class="prioritydrop">
            
-            <option value="2" <?=(($valueu->pay_type==2)?"selected":"")?>>Urgent</option>
-            <option  value="1" <?=(($valueu->pay_type==1)?"selected":"")?>>Sponsor</option>
+            <option value="2" <?=(($valueu->pay_type==2)?"selected":"")?>>Donate</option>
+            <option  value="1" <?=(($valueu->pay_type==1)?"selected":"")?>>Boost</option>
             <option value="0"<?=(($valueu->pay_type==0)?"selected":"")?>>Active</option>
            
         </select></td>
@@ -384,16 +384,16 @@ foreach($urgent as $valueu){
                   <th>Image</th>
                  <th>Category</th>
                 
-                  <th>Posted by</th>
+                  <th>Type</th>
                   <th>Brand</th>
                   
                    <th>Price</th>
 
                   
-                 <th>Condition</th>        
+                 <th>Description</th>        
                   
                  
-                  
+                 <th>Pattype</th>   
                   
                   
                 </tr>
@@ -401,7 +401,7 @@ foreach($urgent as $valueu){
         <tbody id="sortable">
                 
           <?php 
-          $sponsored = get_all_Sponsored_product();
+          $sponsored = get_all_donate();
 $i=1;
 foreach($sponsored as $valuef){
            // print_r($posts);
@@ -422,27 +422,23 @@ foreach($sponsored as $valuef){
 
                 <?php ?>
                  
-                <img src="<?php echo base_url().$valuef->thumbnails."";?>" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
+                <img src="<?php echo base_url().$valuef->cover_img."";?>" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
 
                <?php  ?>
 
-
-
-
-               
                  
                </td>
                <td><?=$this->db->get_where("category", "id=".($valuef->category_id))->row()->category?></td>
                
-                <td><?php echo  $valuef->For_sale_by;?></td>
-                 <td><?php echo  $valuef->Brand;?></td>
-                       <td><?php echo  $valuef->Price;?></td>
-               <td><?php echo  $valuef->Condition_product;?></td>
-               <td><select  id="pay_type" data-product_id="<?php echo $valuef->id?>"  data-category_id="<?php echo $valuef->category_id?>" class="prioritydrop">
+                <td><?php echo  $valuef->type;?></td>
+                 <td><?php echo  $valuef->brand;?></td>
+                       <td><?php echo  $valuef->price;?></td>
+               <td><?php echo  $valuef->Description;?></td>
+               <td><select id="pay_type" data-product_id="<?php echo $valuef->id?>"  data-category_id="<?php echo $valuef->category_id?>" class="prioritydrop">
            
-            <option value="1" <?=(($valuef->pay_type==1)?"selected":"")?>>Sponsor</option>
-            <option  value="2" <?=(($valuef->pay_type==2)?"selected":"")?>>Urgent</option>
-            <option value="0"<?=(($valuef->pay_type==0)?"selected":"")?>>Active</option>
+            <option value="1" <?=(($valuef->pay_type==1)?"selected":"")?>>Boost</option>
+            <option  value="2" <?=(($valuef->pay_type==2)?"selected":"")?>>Donate</option>
+            <option value="0"<?=(($valuef->pay_type==0)?"selected":"")?>>Normal</option>
            
         </select></td>
                 </tr> 
@@ -599,7 +595,7 @@ foreach($sponsored as $valuef){
              },
              success: function(data) {
                
-                  
+                  location.reload();
              } 
           });
 })

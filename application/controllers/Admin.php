@@ -2157,6 +2157,44 @@ public function chats($chatlist=0){
     }
 }
 
+public function updateproductfeaturestatus()
+   {
+ 
+     $userid= $this->input->post('product_id');
+    $category_id= $this->input->post('category_id');
+
+     $status=$this->input->post('pay_type');
+    if($category_id==1){
+     $arr=array('pay_type'=>$status,'created_at'=>date("Y-m-d H:i:s"));
+      $res=$this->admin_model->update_reusable_status($userid,$arr);
+    }
+    else if($category_id==2){
+        $arr=array('pay_type'=>$status,'created_at'=>date("Y-m-d H:i:s"));
+      $res=$this->admin_model->update_tuition_status($userid,$arr);
+    }
+     else if($category_id==3){
+        $arr=array('pay_type'=>$status,'created_at'=>date("Y-m-d H:i:s"));
+      $res=$this->admin_model->update_job_status($userid,$arr);
+    }
+     else if($category_id==4){
+        $arr=array('pay_type'=>$status,'created_at'=>date("Y-m-d H:i:s"));
+      $res=$this->admin_model->update_internship_status($userid,$arr);
+    }
+    
+    //   if($res==1)
+    //       {
+    //         $this->session->set_flashdata('msg','Update successfully!!');
+    //         $this->session->set_flashdata('msg_class','alert-success');
+    //       }
+    //       else
+    //       {
+    //         $this->session->set_flashdata('msg','Update Not Successfully!!');
+    //         $this->session->set_flashdata('msg_class','alert-danger');
+    //       }
+
+         // return redirect('admin/products');
+   } 
+
 public function updateproduct(){
     $pid=$this->input->post("pid");
     $data=$this->input->post();

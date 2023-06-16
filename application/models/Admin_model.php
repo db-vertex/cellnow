@@ -159,6 +159,54 @@ public function all_category()
       return $result;
   }
 
+  public function update_reusable_status($id,$arr)
+  {
+    if($this->db->where('id',$id)
+             ->update('category_reusable_parts',$arr)){
+       return true;
+      } 
+      else{
+       return false;
+      } 
+  }
+
+  public function update_internship_status($id,$arr)
+  {
+    if($this->db->where('id',$id)
+             ->update('category_internships',$arr)){
+       return true;
+      } 
+      else{
+       return false;
+      } 
+  }
+
+
+  public function update_tuition_status($id,$arr)
+  {
+    if($this->db->where('id',$id)
+             ->update('category_tuitions',$arr)){
+       return true;
+      } 
+      else{
+       return false;
+      } 
+  }
+
+
+
+  public function update_job_status($id,$arr)
+  {
+    if($this->db->where('id',$id)
+             ->update('category_job',$arr)){
+       return true;
+      } 
+      else{
+       return false;
+      } 
+  }
+
+
   public function all_subcategory()
   {
         $this->db->select("*");
