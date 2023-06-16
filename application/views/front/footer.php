@@ -47,8 +47,9 @@
     <img class="btn-change" src="<?php echo base_url();?>assets/images/CelNow 5 1.png" class="img-fluid mb-3" alt=""  width="150px"><br>
 <p style="color:#888b97">Lorem ipsum dolor sit amet consectetur adipisicing elit. <br>Laboriosam rerum ipsa id recusandae quasi officia nihil! </p>
 <a href="https://www.facebook.com/" class="fa fa-facebook"></a> 
-<a href="https://twitter.com/i/flow/login" class="fa fa-twitter" ></a>
-<a href="https://www.instagram.com/" class="fa fa-instagram" ></a>
+<a href="https://www.linkedin.com/company/celnow/" class="fa fa-linkedin" ></a>
+<a href="https://www.instagram.com/celnow.ind/" class="fa fa-instagram" ></a>
+<a href="https://www.youtube.com/channel/UCfStYDt1cu6IpYrOrGAP0Cw" class="fa fa-youtube-play" ></a>
 
     </div>
     <div class="col-sm-3 col-6"  >
@@ -57,7 +58,9 @@
       <a href="<?php echo base_url();?>welcome/aboutus" style="text-decoration:none;color:#888b97" id="bc"> About us</a> <br>
       <a href="<?php echo base_url();?>welcome/termscondition" style="text-decoration:none;color:#888b97" id="bc">Terms & Conditions</a> <br>
       <a href="<?php echo base_url();?>welcome/privacypolicy" style="text-decoration:none;color:#888b97" id="bc">Privacy policy</a> <br>
-     
+      <a href="<?php echo base_url();?>welcome/help_support" style="text-decoration:none;color:#888b97" id="bc">Help and Support</a> <br>
+      <a href="<?php echo base_url();?>welcome/FAQs" style="text-decoration:none;color:#888b97" id="bc">FAQs</a> <br>
+
     </div>
     <div class="col-sm-3 col-6" style="color:#888b97">
      <b style="color:black"> Contact </b><br><br>

@@ -95,6 +95,7 @@ input::placeholder {
 .Services_header{
     padding-bottom: 0px;
     border-bottom: 6px solid #10B981;
+    width: fit-content;
 }
 .va-thumbnail {
         border-radius: 20px;
@@ -149,11 +150,21 @@ input::placeholder {
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
 
-                <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
-         
+                <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+  
          <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search ></button>
-       </form>
+        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
+       </form> -->
+
+       <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+                                    <div class="searchbox-wrap">
+                                        <input ype="search"  name="anything" aria-label="Search" aria-describedby="search-addon"  class="search_input form-input" placeholder="Search for the Product you want!">
+                                        <input type="text" class="form-control" name="latitude" id="latitude" hidden />
+                                        <input type="text" class="form-control" name="longitude" id="longitude"
+                                            hidden />
+                                        <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
+                                    </div>
+                                    </form>
                 </div>
             </div>
         </div>
@@ -183,7 +194,7 @@ input::placeholder {
                 foreach ($category as $key => $cat) {
                   ?>
 
-                    <div class="va-card va-card_category"> 
+                    <div class="va-card va-card_category mt-2"> 
                             <p  style="text-align:center;" class="my-auto pouler_Categories" onclick="return getshop(<?php echo $cat->id; ?>)">
                                 <img  class="btn-change new<?php echo $cat->id; ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">

@@ -1251,6 +1251,7 @@ a:active {
 .Categories_header {
     padding-bottom: 0px;
     border-bottom: 6px solid #10B981;
+    width: fit-content;
 }
 </style>
 
@@ -1304,13 +1305,21 @@ a:active {
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
 
-                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                         <input type="search" name="anything" class="form-control rounded-5"
                             placeholder="Search for the Product you want!" aria-label="Search"
                             aria-describedby="search-addon" style="padding:12px 22px" />
-                        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search
-                            ></button>
-                    </form>
+                        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
+                    </form> -->
+                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                                    <div class="searchbox-wrap">
+                                        <input type="text" value="" name="anything" aria-label="Search" aria-describedby="search-addon"  class="search_input form-input" placeholder="Search for the Product you want!">
+                                        <input type="text" class="form-control" name="latitude" id="latitude" hidden />
+                                        <input type="text" class="form-control" name="longitude" id="longitude"
+                                            hidden />
+                                        <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
+                                    </div>
+                                    </form>
                 </div>
                 <div class="row">
                     <div id="display"></div>
@@ -1338,7 +1347,7 @@ a:active {
         <li class="" id="" >
             <a  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id;?>" <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>
                 class="new<?php echo $cat->id; ?> btn border  rounded-pill" role="button"><img
-                    class="rounded-circle me-1" src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
+                    class="me-1" src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
                     alt=""> &nbsp  <?php echo $cat->category; ?> </a>
 
         </li> 
@@ -1387,7 +1396,7 @@ a:active {
 					  foreach($subcategory as $sub){
 					?>
 
-<div class="va-card va-card_category">
+<div class="va-card va-card_category mt-2" style="">
 		<p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
 				onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)"
 
