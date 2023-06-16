@@ -3,8 +3,8 @@
         border-radius: 6px;
         border: 0px;
         width: 100%;
-        max-height: 190px;
-        min-height: 190px;
+        max-height: 250px;
+        min-height: 250px;
     }
     .related_ads_details_button {
         box-sizing: border-box;
@@ -17,7 +17,7 @@
         padding: 9.42857px 12.5714px;
         gap: 4.71px;
 
-        width: 80.43px;
+        width: 85.43px;
         height: 30.86px;
 
         background: #10B981;
