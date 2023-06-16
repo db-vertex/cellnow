@@ -369,8 +369,8 @@ foreach ($category as $key => $cat) {
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
-                            <h6 class="mb-3">
-                                <strong class="ms-2 ">$50.99</strong>
+                            <h6 style="color:#10B981" class="mb-3">
+                                <strong class="ms-2 ">₹<?php echo $pro->price; ?></strong>
                             </h6>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
