@@ -315,7 +315,7 @@ unset($_SESSION['msg']);?>
         <tbody id="sortable">
                 
           <?php 
-          $urgent = get_all_boost();
+          $urgent = get_all_boost_admin();
          
 $i=1;
 foreach($urgent as $valueu){
