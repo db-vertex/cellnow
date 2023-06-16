@@ -41,9 +41,11 @@
     padding-right: 0px;
 }
 
-.img-size{
-  max-height:500px;
-    min-height:500px;"
+.img-size {
+    max-height: 500px;
+    min-height: 500px;
+    "
+
 }
 
 
@@ -308,10 +310,13 @@
     .margin_left_css {
         margin-left: 1rem !important;
     }
-    .img-size{
-  max-height:200px;
-    min-height:200px;"
-}
+
+    .img-size {
+        max-height: 200px;
+        min-height: 200px;
+        "
+
+    }
 
 }
 
@@ -346,10 +351,12 @@
         margin-left: 2rem !important;
     }
 
-    .img-size{
-  max-height:300px;
-    min-height:300px;"
-}
+    .img-size {
+        max-height: 300px;
+        min-height: 300px;
+        "
+
+    }
 
 }
 
@@ -1108,17 +1115,17 @@ img.center {
 }
 
 .cut-list>li {
-        
-        margin-right: 55px;
 
-        padding-bottom: 2px;
-    }
+    margin-right: 55px;
 
-    .deals-scroll-left {
-        top: -35px;
-        left: -0px;
-        bottom: 0;
-    }
+    padding-bottom: 2px;
+}
+
+.deals-scroll-left {
+    top: -35px;
+    left: -0px;
+    bottom: 0;
+}
 </style>
 
 <style>
@@ -1267,7 +1274,8 @@ a:active {
       foreach ($all_banner as $key => $banner) {
         ?>
                 <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
-                    <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px;" class="d-block w-100 img-size" id='<?php  echo $banner->url ?>'
+                    <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px;"
+                            class="d-block w-100 img-size" id='<?php  echo $banner->url ?>'
                             src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>"
                             alt="First slide"></a>
                 </div>
@@ -1299,7 +1307,7 @@ a:active {
 <div class="container">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4 ">
-            <p style="font-size:30px;color:#1B1C57;">  </p>
+            <p style="font-size:30px;color:#1B1C57;"> </p>
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
@@ -1312,14 +1320,15 @@ a:active {
                         <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
                     </form> -->
                     <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-                                    <div class="searchbox-wrap">
-                                        <input type="text" value="" name="anything" aria-label="Search" aria-describedby="search-addon"  class="search_input form-input" placeholder="Search for the Product you want!">
-                                        <input type="text" class="form-control" name="latitude" id="latitude" hidden />
-                                        <input type="text" class="form-control" name="longitude" id="longitude"
-                                            hidden />
-                                        <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
-                                    </div>
-                                    </form>
+                        <div class="searchbox-wrap">
+                            <input type="text" value="" name="anything" aria-label="Search"
+                                aria-describedby="search-addon" class="search_input form-input"
+                                placeholder="Search for the Product you want!">
+                            <input type="text" class="form-control" name="latitude" id="latitude" hidden />
+                            <input type="text" class="form-control" name="longitude" id="longitude" hidden />
+                            <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
+                        </div>
+                    </form>
                 </div>
                 <div class="row">
                     <div id="display"></div>
@@ -1344,13 +1353,14 @@ a:active {
 
 
                 ?>
-        <li class="" id="" >
-            <a  href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id;?>" <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>
-                class="new<?php echo $cat->id; ?> btn border  rounded-pill" role="button"><img
-                    class="me-1" src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
-                    alt=""> &nbsp  <?php echo $cat->category; ?> </a>
+        <li class="" id="">
+            <a href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id;?>"
+                <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>
+                class="new<?php echo $cat->id; ?> btn border  rounded-pill" role="button"><img class="me-1"
+                    src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp
+                <?php echo $cat->category; ?> </a>
 
-        </li> 
+        </li>
 
         <?php
                       
@@ -1380,7 +1390,7 @@ a:active {
                 </button>
 
                 <div class="va-carrousel-flexbox" id="sub-list">
-                <?php
+                    <?php
 					  $cateory =  $this->uri->segment(3);
                
                  
@@ -1396,43 +1406,46 @@ a:active {
 					  foreach($subcategory as $sub){
 					?>
 
-<div class="va-card va-card_category mt-2" style="">
-		<p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
-				onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)"
+                    <div class="va-card va-card_category mt-2" style="">
+                        <p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
+                            onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
+                            onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
 
-			<?php } else { ?>
-				onclick="return getproduct( <?php echo $sub->id; ?>)"
-			<?php } ?> >
-			
-		<img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"  data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>" src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
-		 <center style="color:black; font-size:12px; font-weight:500"><?php echo $sub->product_type; ?></center>
-		</p>
-		
-		  </div>
-		 
-          <?php 
+                            <img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"
+                                data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
+                                src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
+                            <center style="color:black; font-size:12px; font-weight:500">
+                                <?php echo $sub->product_type; ?></center>
+                        </p>
+
+                    </div>
+
+                    <?php 
 					
                 }
                ?>
 
-	
-		 </div> <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
-<svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-	class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
-	xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-	<path fill="currentColor"
-		d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-	</path>
-</svg>
-</button> </div>
 
+                </div>
+
+                <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
+                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                        class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path fill="currentColor"
+                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                        </path>
+                    </svg>
+                </button>
+            </div>
+
+        </div>
+    </div>
 </div>
-</div>
-</div>
-                
 
 
-            
+
+
 <div class="container mb-5">
     <div class="row m-3">
         <div class="col-md-3">
@@ -1451,9 +1464,9 @@ a:active {
                 <div id="price_range"></div>
             </div>
 
-            
-            
-<!-- 
+
+
+            <!-- 
             <div class="panel-group mt-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
@@ -1491,19 +1504,21 @@ a:active {
             <?php if($cateory == 1 )
                 { ?>
             <div class="panel-group mt-4 ">
-            <div class="panel panel-default">
-               <div class="panel-heading ">
-                   <a data-toggle="collapse" class="under" href="#TYPEs"><h4 class="panel-title common_h ">
-                   Brand
-                  </h4></a>
-               </div>
-                <div id="TYPEs" class="panel-collapse collapse">
-              <div class="list-group mt-2">
-              <?php 
+                <div class="panel panel-default">
+                    <div class="panel-heading ">
+                        <a data-toggle="collapse" class="under" href="#TYPEs">
+                            <h4 class="panel-title common_h ">
+                                Brand
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="TYPEs" class="panel-collapse collapse">
+                        <div class="list-group mt-2">
+                            <?php 
 				      $v = $brand->result_array();
-                     if($v !== Array( )){ ?> 
+                     if($v !== Array( )){ ?>
 
-					<?php
+                            <?php
                      }
 					
                       
@@ -1511,15 +1526,17 @@ a:active {
 					{
 					 
 					?>
-	                    <div class="checkbox" style="padding:3px; border-top: none;"> 
-							<label class="common_s"><input type="checkbox" class="common_select brand" value="<?php echo $row['brand']; ?>"  > <?php echo ucfirst($row['brand']); ?></label>
-						</div>
-					<?php 
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                                <label class="common_s"><input type="checkbox" class="common_select brand"
+                                        value="<?php echo $row['brand']; ?>">
+                                    <?php echo ucfirst($row['brand']); ?></label>
+                            </div>
+                            <?php 
 					} 
 					?>
-                  </div>
-                 </div>  
-            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
             <?php 
 					
@@ -1532,7 +1549,7 @@ a:active {
                     <div class="panel-heading">
                         <a data-toggle="collapse" href="#test">
                             <h4 class="panel-title common_h">
-                            Sub Category
+                                Sub Category
                             </h4>
                         </a>
                     </div>
@@ -1551,7 +1568,7 @@ a:active {
 
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select sub_category"
-                               value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
+                                        value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
                             </div>
                             <?php 
 					
@@ -1614,7 +1631,7 @@ a:active {
                     <div class="panel-heading">
                         <a data-toggle="collapse" href="#test">
                             <h4 class="panel-title common_h">
-                            Sub Category
+                                Sub Category
                             </h4>
                         </a>
                     </div>
@@ -1643,7 +1660,7 @@ a:active {
                     </div>
                 </div>
             </div>
-        
+
             <?php 
 		    	} 
 		    	
@@ -1661,9 +1678,9 @@ a:active {
             <br />
             <br />
             <br />
-           <?php  if(!empty($products)){ ?>
+            <?php  if(!empty($products)){ ?>
             <div class="row " id="product_list">
-            <?php
+                <?php
                   
             
                   if(!empty($products)){
@@ -1694,23 +1711,25 @@ a:active {
               if($session_login_id !== $product_user_id){
                   if($i > 0){
             
-            ?>  
-      <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
-        <div class="card">
-          <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-            <a  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
-              class="w-100 va-thumbnail" /></a>
-             
-            <a href="#!">
-             
-              <div class="hover-overlay">
-                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-              </div>
-            </a>
-          </div>
-          <div class="card-body">
-          <div class="d-flex justify-content-between align-items-center">
-          <p class="dress-name"><?php
+            ?>
+                <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
+                    <div class="card">
+                        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <a
+                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
+                                    src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                                    class="w-100 va-thumbnail" /></a>
+
+                            <a href="#!">
+
+                                <div class="hover-overlay">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p class="dress-name"><?php
                            $title = $pro->title;
                             if(strlen($title) <= 15)
                               {
@@ -1723,27 +1742,27 @@ a:active {
                               }
                            
                            ?></p>
-                            <a  style="font-size:10px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
-                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
-                                style="font-size:10px; color:#69d3b0; padding: 0px;"
-                               
-                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
-                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $pro->id; ?>"
-                                data-pid="<?php echo $pro->id; ?>"
-                                data-cid="<?php echo $pro->category_id; ?>"
-                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
-          <p class="details_price">$<?php echo $pro->price; ?>
+                                <a style="font-size:10px; color:#69d3b0; padding: 0px;"
+                                    <?php if (empty($user) || !isset($user)) { ?>
+                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
+                                        lass="bi bi-suit-heart" aria-hidden="true"
+                                        style="font-size:10px; color:#69d3b0; padding: 0px;"
+                                        data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $pro->id; ?>"
+                                        data-pid="<?php echo $pro->id; ?>" data-cid="<?php echo $pro->category_id; ?>"
+                                        data-wishlist="<?php echo $wishlist; ?>"></i></a>
+                                <p class="details_price">$<?php echo $pro->price; ?>
                                 </p>
-                  
 
 
 
 
 
-</div>
-<div class="d-flex justify-content-between align-items-center"> 
-            
-              <p><?php
+
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <p><?php
                            $title = $pro->Description;
                             if(strlen($title) <= 20)
                               {
@@ -1756,11 +1775,11 @@ a:active {
                               }
                            
                            ?></p>
-           
-            </div>
-<div class="d-flex justify-content-between align-items-center"> 
-            <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
-              <p><?php
+
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                <p><?php
                            $title = $pro->address;
                             if(strlen($title) <= 15)
                               {
@@ -1773,294 +1792,296 @@ a:active {
                               }
                            
                            ?></p>
-                         <a
-											   href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
-											   <p class="related_ads_details_button ">
-												   <spam class="related_ads_details_button_text">Product Detail</spam>
-											   </p>
-										   </a>  
-           
-            </div>
-          </div>
-        </div>
-      </div>
-    
-    <?php $i++;} } else if($j == 1) {?>
-                   
-                   <?php   }  $j++; };  ?>  
-    <?php }
+                                <a
+                                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
+                                    <p class="related_ads_details_button ">
+                                        <spam class="related_ads_details_button_text">Product Detail</spam>
+                                    </p>
+                                </a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <?php $i++;} } else if($j == 1) {?>
+
+                <?php   }  $j++; };  ?>
+                <?php }
               else {?>
-            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
-            <?php }?>
-          <?php }else{ ?>  <div class="row filter_data">
-            <?php } ?>
+                <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
+                <?php }?>
+                <?php }else{ ?> <div class="row filter_data">
+                    <?php } ?>
+                </div>
+
+                <br />
+                <div align="center" id="pagination_link">
+
+                </div>
             </div>
 
-            <br />
-            <div align="center" id="pagination_link">
 
-            </div>
+
         </div>
-
-
 
     </div>
 
-</div>
+
+    <script>
+    $(document).ready(function() {
+
+        filter_data(1);
 
 
-<script>
-$(document).ready(function() {
+        function filter_data(page) {
+            $('.filter_data').html('<div id="loading" style="" ></div>');
+            document.getElementById("pagination_link").style.display = "none";
+            var action = 'fetch_data';
+            //var page = 1;
+            var minimum_price = $('#hidden_minimum_price').val();
+            var maximum_price = $('#hidden_maximum_price').val();
 
-    filter_data(1);
-
-
-    function filter_data(page) {
-        $('.filter_data').html('<div id="loading" style="" ></div>');
-        document.getElementById("pagination_link").style.display = "none";
-        var action = 'fetch_data';
-        //var page = 1;
-        var minimum_price = $('#hidden_minimum_price').val();
-        var maximum_price = $('#hidden_maximum_price').val();
-
-        var brand = get_brand('brand');
-        var type = get_type_filter('sub_category');
+            var brand = get_brand('brand');
+            var type = get_type_filter('sub_category');
 
 
 
-        var sub_category = get_filter('sub_category');
+            var sub_category = get_filter('sub_category');
 
 
-        $.ajax({
-            url: "<?php echo base_url(); ?>welcome/fetch_data/" + page,
-            method: "POST",
-            dataType: "JSON",
-            data: {
-                action: action,
-                minimum_price: minimum_price,
-                maximum_price: maximum_price,
-                sub_category: sub_category,
-                brand: brand,
-                type: type
-            },
-            success: function(data) {
-                document.getElementById("pagination_link").style.display = "block";
-                $('.filter_data').html(data.product_list);
-                $('#pagination_link').html(data.pagination_link);
-            }
-        })
-    }
-
-    $('#price_range').slider({
-        range: true,
-        min: 1,
-        max: 100000,
-        values: [1, 100000],
-        step: 100,
-        stop: function(event, ui) {
-            //$('#price_show').show();
-            $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
-            $('#hidden_minimum_price').val(ui.values[0]);
-            $('#hidden_maximum_price').val(ui.values[1]);
-            filter_data(1);
+            $.ajax({
+                url: "<?php echo base_url(); ?>welcome/fetch_data/" + page,
+                method: "POST",
+                dataType: "JSON",
+                data: {
+                    action: action,
+                    minimum_price: minimum_price,
+                    maximum_price: maximum_price,
+                    sub_category: sub_category,
+                    brand: brand,
+                    type: type
+                },
+                success: function(data) {
+                    document.getElementById("pagination_link").style.display = "block";
+                    $('.filter_data').html(data.product_list);
+                    $('#pagination_link').html(data.pagination_link);
+                }
+            })
         }
-    });
 
-    var selectedSubId = null;
-
-    function get_filter(class_name) {
-        var filter = [];
-
-        if (class_name === 'sub_category') {
-            if (selectedSubId !== null) {
-                filter.push(selectedSubId);
+        $('#price_range').slider({
+            range: true,
+            min: 1,
+            max: 100000,
+            values: [1, 100000],
+            step: 100,
+            stop: function(event, ui) {
+                //$('#price_show').show();
+                $('#price_show').html(ui.values[0] + ' - ' + ui.values[1]);
+                $('#hidden_minimum_price').val(ui.values[0]);
+                $('#hidden_maximum_price').val(ui.values[1]);
+                filter_data(1);
             }
-        } else {
+        });
+
+        var selectedSubId = null;
+
+        function get_filter(class_name) {
+            var filter = [];
+
+            if (class_name === 'sub_category') {
+                if (selectedSubId !== null) {
+                    filter.push(selectedSubId);
+                }
+            } else {
+                $('.' + class_name + ':checked').each(function() {
+                    filter.push($(this).val());
+                });
+            }
+            return filter;
+        }
+
+
+        function get_type_filter(class_name) {
+            var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
+
             });
+            console.log(filter)
+            return filter;
         }
-        return filter;
-    }
 
+        function get_brand(class_name) {
+            var filter = [];
+            $('.' + class_name + ':checked').each(function() {
+                filter.push($(this).val());
 
-    function get_type_filter(class_name) {
-        var filter = [];
-        $('.' + class_name + ':checked').each(function() {
-            filter.push($(this).val());
-            
-        });
-        console.log(filter)
-        return filter;
-    }
-
-    function get_brand(class_name) {
-        var filter = [];
-        $('.' + class_name + ':checked').each(function() {
-            filter.push($(this).val());
-            
-        });
-        console.log(filter)
-        return filter;
-    }
-
-
-    $(document).on('click', '.sub_category', function() {
-        var subId = $(this).data('sub-id');
-        
-        selectedSubId = subId;
-        $('.sub_category').removeClass('active');
-        $(this).addClass('active');
-        filter_data(1);
-    });
-
-
-
-
-    $(document).on("click", ".pagination li a", function(event) {
-        event.preventDefault();
-        var page = $(this).data("ci-pagination-page");
-        filter_data(page);
-    });
-
-   
-
-    $('.common_select').click(function() {
-        filter_data(1);
-    });
-
-    
-
-
-
-});
-</script>
-
-<script>
-"use strict"; /* Start of use strict */
-(function() {
-    function14();
-})();
-
-function function14() {
-    $('.btnSweetalert').on("click", function() {
-        swal({
-                title: " Logout!",
-                text: "Are you sure you want to logout?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes",
-                cancelButtonText: "No",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-            function(isConfirm) {
-                if (isConfirm) {
-
-                    window.location.href = "<?php echo base_url();?>welcome/logout";
-                } else {
-                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                }
             });
-    });
-}
-</script>
-<script>
-function getsubcategory(category_id) {
-
-
-    //var res = "";
-    $("p").removeClass("selected");
-    $(".new" + category_id).addClass("selected");
-
-    // var allch =  $("#").val();
-
-    jQuery.ajax({
-        type: "POST",
-        url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
-        data: {
-            category_id: category_id
-        },
-        success: function(res) {
-            $("#sub-list").html(res);
-            // $('#load_cound').val("10"); 
+            console.log(filter)
+            return filter;
         }
+
+
+        $(document).on('click', '.sub_category', function() {
+            var subId = $(this).data('sub-id');
+
+            selectedSubId = subId;
+            $('.sub_category').removeClass('active');
+            $(this).addClass('active');
+            filter_data(1);
+        });
+
+
+
+
+        $(document).on("click", ".pagination li a", function(event) {
+            event.preventDefault();
+            var page = $(this).data("ci-pagination-page");
+            filter_data(page);
+        });
+
+
+
+        $('.common_select').click(function() {
+            filter_data(1);
+        });
+
+
+
+
+
     });
+    </script>
 
-}
+    <script>
+    "use strict"; /* Start of use strict */
+    (function() {
+        function14();
+    })();
 
-
-$(document).ready(function() {
-    $("#search").autocomplete({
-
-        source: function(request, response) {
-            $.ajax({
-                url: "<?php echo base_url();?>welcome/search",
-                data: {
-                    term: request.term
+    function function14() {
+        $('.btnSweetalert').on("click", function() {
+            swal({
+                    title: " Logout!",
+                    text: "Are you sure you want to logout?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
                 },
-                dataType: "json",
-                success: function(data) {
+                function(isConfirm) {
+                    if (isConfirm) {
 
-                    var resp = $.map(data, function(obj) {
-                        var id = obj.id;
-                        var category_id = obj.category_id;
-                        var subcategory_id = obj.subcategory_id;
-                        var add = category_id + '/' + id + '/' + subcategory_id;
-                        return {
-                            label: obj.title,
-                            value: add
-
-                        }
-
-                    });
-                    response(resp);
-                    console.log(resp);
-                    $("#display").html(data).show();
-                }
+                        window.location.href = "<?php echo base_url();?>welcome/logout";
+                    } else {
+                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    }
+                });
+        });
+    }
+    </script>
+    <script>
+    function getsubcategory(category_id) {
 
 
-            });
+        //var res = "";
+        $("p").removeClass("selected");
+        $(".new" + category_id).addClass("selected");
+
+        // var allch =  $("#").val();
+
+        jQuery.ajax({
+            type: "POST",
+            url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
+            data: {
+                category_id: category_id
+            },
+            success: function(res) {
+                $("#sub-list").html(res);
+                // $('#load_cound').val("10"); 
+            }
+        });
+
+    }
 
 
-        },
-        select: function(event, ui) {
-            location.href = "<?php echo base_url();?>welcome/productdetail/" + ui.item.value;
-        },
-        minLength: 2
+    $(document).ready(function() {
+        $("#search").autocomplete({
+
+            source: function(request, response) {
+                $.ajax({
+                    url: "<?php echo base_url();?>welcome/search",
+                    data: {
+                        term: request.term
+                    },
+                    dataType: "json",
+                    success: function(data) {
+
+                        var resp = $.map(data, function(obj) {
+                            var id = obj.id;
+                            var category_id = obj.category_id;
+                            var subcategory_id = obj.subcategory_id;
+                            var add = category_id + '/' + id + '/' +
+                                subcategory_id;
+                            return {
+                                label: obj.title,
+                                value: add
+
+                            }
+
+                        });
+                        response(resp);
+                        console.log(resp);
+                        $("#display").html(data).show();
+                    }
+
+
+                });
+
+
+            },
+            select: function(event, ui) {
+                location.href = "<?php echo base_url();?>welcome/productdetail/" + ui.item.value;
+            },
+            minLength: 2
+        });
+
+
     });
 
 
-});
+
+    function getproduct(subcategory_id) {
+
+
+        //var res = "";
+        $("img").removeClass("select");
+        $(".sub_new" + subcategory_id).addClass("select");
+
+        // var allch =  $("#").val();
+
+        jQuery.ajax({
+            type: "POST",
+            url: "<?php echo base_url('/welcome/getproduct'); ?>",
+            data: {
+                subcategory_id: subcategory_id
+            },
+            success: function(res) {
+
+
+                $("#product_list").html(res);
 
 
 
-function getproduct(subcategory_id){
+                // $('#load_cound').val("10");
 
- 
-//var res = "";
- $("img").removeClass("select");
- $(".sub_new"+subcategory_id).addClass("select");
+            }
+        });
 
-    // var allch =  $("#").val();
-
-  jQuery.ajax({
-  type: "POST",
-  url: "<?php echo base_url('/welcome/getproduct'); ?>",
-  data: { subcategory_id:subcategory_id},
-  success: function(res) 
-  {
-
-
-    $("#product_list").html(res);
-       
-  
-
-    // $('#load_cound').val("10");
-    
-  }
-  });
-
-}
-</script>
+    }
+    </script>
