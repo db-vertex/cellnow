@@ -613,14 +613,14 @@
 
     .deals-scroll-left {
         top: -35px;
-        left: -30px;
+        left: -0px;
         bottom: 0;
     }
 
     .deals-scroll-right {
         top: -35px;
         bottom: 0;
-        right: -30px;
+        right: -0px;
     }
 
     .deals-scroll-left_urgent {
