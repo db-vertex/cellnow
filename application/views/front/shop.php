@@ -44,7 +44,18 @@
         padding: 4px 32px;
 
     }
+    .details_price {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        display: flex;
+        align-items: flex-end;
+        text-align: right;
 
+        color: #10B981;
+    }
 
     #a:visited {
         color: #78d7b8;

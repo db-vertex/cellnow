@@ -1,4 +1,16 @@
 <style>
+   .details_price {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        display: flex;
+        align-items: flex-end;
+        text-align: right;
+
+        color: #10B981;
+    }
    .va-thumbnail {
         border-radius: 6px;
         border: 0px;
