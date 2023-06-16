@@ -17,7 +17,7 @@
         padding: 9.42857px 12.5714px;
         gap: 4.71px;
 
-        width: 85.43px;
+        width: 88.43px;
         height: 30.86px;
 
         background: #10B981;
