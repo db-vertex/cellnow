@@ -865,17 +865,13 @@
 
     .searchbox-wrap {
         display: flex;
-        width: 500px;
         margin-left: auto;
         margin-right: auto;
-
     }
-
     .search_input {
         flex: 1;
         padding: 14px 20px;
         font-size: 1.1em;
-
         -webkit-border-top-left-radius: 25px;
         -webkit-border-bottom-left-radius: 25px;
         -moz-border-radius-topleft: 25px;
