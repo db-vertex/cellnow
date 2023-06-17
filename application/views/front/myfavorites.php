@@ -265,18 +265,18 @@
                                         <p style="color: #575757;"><?php echo $pro->Job_Location; ?></p>
                                     </div>
                                 </div>
-                                <?php } ?><br>
+                                <?php } ?>
                             <div class="d-flex justify-content-between align-items-center">
-                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                <p> <img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"></p> 
                                 <p style="color: #575757;"><?php
                            $title = $pro->address;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 12)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,12) . '...';
                                 echo ucfirst($y);
                               }
                            
