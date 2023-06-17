@@ -292,7 +292,7 @@ img {
 
 
         .details_profile {
-            width: 434px;
+            width: 534px;
             height: 140px;
             left: 426px;
             margin-top: 30px;
@@ -447,8 +447,8 @@ img {
             margin-left: 1rem !important;
         }
         .details_profile {
-    width: 236px;
-    height: 90px;
+    width: 436px;
+    height: 100px;
     left: 826px;
     margin-top: 30px;
     float: right;
@@ -558,8 +558,8 @@ border-radius: 11.8328px;
     margin-left: 1rem !important;
 }
 .details_profile {
-width: 236px;
-height: 90px;
+width: 256px;
+height: 100px;
 left: 826px;
 margin-top: 30px;
 float: right;
@@ -883,7 +883,7 @@ border-radius: 80px 0px 0px 80px;
         align-items: center;
         padding: 12px 16px;
         gap: 6px;
-        margin-top: 10px;
+        margin-top: 25px;
         width: 70px;
         height: 44px;
         left: 1218px;
@@ -1599,7 +1599,7 @@ if($shop->admin_approval==1){
 
                                     </div>
                                     <div class="col-4">
-                                        <div>
+                                        <div class="">
                                         <?php if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
                                             <form class="" id="chat_frm"
                                                 action="<?php echo base_url();?>welcome/chat/<?php echo $product_detail->category_id; ?>"

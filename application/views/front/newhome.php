@@ -154,12 +154,12 @@
       <div class="search_wrap search_wrap_6 m-0">
 			      <div class="search_box">
 
-         <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+         <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
 		       <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
           <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-         </form> -->
+         </form>
 
-                             <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                             <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                                     <div class="searchbox-wrap">
                                         <input type="search"  name="anything" class="search_input form-input" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon">
                                         <input type="text" class="form-control" name="latitude" id="latitude" hidden />
@@ -167,7 +167,7 @@
                                             hidden />
                                         <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
                                     </div>
-                                    </form>
+                                    </form> -->
 
         </div>
             <div class="row">
@@ -504,6 +504,11 @@
 			<div class="search_box">
 
       <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+         
+         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the store" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search</button>
+       </form>
+      <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
                                     <div class="searchbox-wrap">
                                         <input type="text" value="<?php echo set_value('location'); ?>"   id="Location" name="anything" aria-label="Search" aria-describedby="search-addon"  class="search_input form-input" placeholder="Search for the Product you want!">
                                         <input type="text" class="form-control" name="latitude" id="latitude" hidden />
@@ -511,7 +516,7 @@
                                             hidden />
                                         <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
                                     </div>
-                                    </form>
+                                    </form> -->
         </div>
         <div class="row">
                                     <div id="display"></div>
@@ -714,13 +719,18 @@
         <div class="search_wrap search_wrap_6 m-0 mt-4 ">
 			<div class="search_box">
       <form method="post" action="<?php echo base_url();?>welcome/subscribe">
+		       <input type="search"  name="email_newsletter" id="email_newsletter" class="form-control rounded-5"  placeholder="Your Email Here!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+            <button type="button" name="submit" class="btn btn-success rounded-5" style="padding:6px 10px" onclick="return checkemail();">Subscribe </button>
+            <span id="email_er" style="color: red; font-size:12px;"></span>
+           </form>
+      <!-- <form method="post" action="<?php echo base_url();?>welcome/subscribe">
                                     <div class="searchbox-wrap">
                                         <input type="search"  name="email_newsletter" id="email_newsletter"  placeholder="Your Email Here!" aria-label="Search" aria-describedby="search-addon" class="search_input form-input">
                                         <button type="button" class="search_b"><span class="Search_text" onclick="return checkemail();">Subscribe</span> </button>
                                      
                                       </div>
                                       <span id="email_er" class="ms-5" style="color: red; font-size:12px;"></span>
-                                    </form>
+                                    </form> -->
 </div>
        
   

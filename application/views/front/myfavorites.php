@@ -218,18 +218,18 @@
                             <?php if($pro->category_id==1){
                   ?>
                                 <div class="row mt-1">
-                                    <div class="col-5">
+                                    <div class="col-4">
                                         <p style="color: #575757;">Type</p>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-8">
                                         <p style="color: #575757;"><?php echo $pro->type; ?></p>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-5">
+                                    <div class="col-4">
                                         <p style="color: #575757;">Brand</p>
                                     </div>
-                                    <div class="col-6">
+                                    <div class="col-8">
                                         <p style="color: #575757;"><?php echo $pro->brand; ?></p>
                                     </div>
                                 </div>

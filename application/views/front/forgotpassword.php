@@ -146,6 +146,22 @@ input[type=number] {
 <p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
 <h2 class="card-title mb-4 mt-1">Forgot Password</h2>
 	 <form action="<?php echo base_url();?>welcome/forgotpassword" method="post">
+     <?php if ($error = $this->session->flashdata('Login_failed')) { ?>
+                                    <div class="row">
+                                        <div class="col-lg-12">
+                                            <div class="alert alert-danger ">
+                                                <?= $error;
+
+                                                unset($_SESSION['Login_failed']);
+                                                ?>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                <?php } ?>
+
+
     <div class="form-group mt-5">
     	<label>Enter Your Mobile</label>
         <input name="phone" class="form-control" placeholder="Mobile" type="number" style="border-radius:30px; border-color:#13C571">

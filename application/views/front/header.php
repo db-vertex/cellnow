@@ -1014,11 +1014,16 @@
                 </button>
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
-                    <ul class="navbar-nav  mb-2 mb-lg-0" style="margin-left: auto;">
-                        <li class="nav-item nav-item_serach" style="padding-right:80px" ;>
+                    <ul class="navbar-nav  mb-2 mb-lg-0" style="">
+                        <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
                             <div class="search_wrap search_wrap_6 m-0 ">
-                                <div class="">
-                                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                                <div class="search_box mt-3" style="width:140%; margin-right:120px; margin-left:30px">
+                                <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+         
+         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
+       </form>
+                                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                                     <div class="searchbox-wrap">
                                         <input type="text" value="<?php echo set_value('location'); ?>" id="locate" name="location"  class="search_input form-input" placeholder="Search for location...">
                                         <input type="text" class="form-control" name="latitude" id="latitude" hidden />
@@ -1026,7 +1031,7 @@
                                             hidden />
                                         <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
                                     </div>
-                                    </form>
+                                    </form> -->
 
 
 
