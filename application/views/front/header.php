@@ -37,7 +37,7 @@
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 700;
-        font-size: 20px;
+        font-size: 15px;
         line-height: 25px;
         display: flex;
         align-items: flex-end;

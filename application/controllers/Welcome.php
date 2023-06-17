@@ -386,8 +386,8 @@ $sub .= '</h6>
 				if (strlen($title) <= 20) {
 					$sub .= ucfirst($title);
 				} else {
-					$y .= substr($title, 0, 20) . '...';
-					echo ucfirst($y);
+					$sub .= substr($title, 0, 20) . '...';
+					echo ucfirst($sub);
 				}
 
 				$sub .= '</span><br>

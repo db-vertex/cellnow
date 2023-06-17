@@ -173,20 +173,20 @@
                             <div class="d-flex justify-content-between align-items-center">
                                 <p class="dress-name"><b><?php
                            $title = $pro->title;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
                            
                            ?></b></p>
-                            <a  style="font-size:20px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
+                            <a  style="font-size:15px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
                                 href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
-                                style="font-size:20px; color:#69d3b0; padding: 0px;"
+                                style="font-size:15px; color:#69d3b0; padding: 0px;"
                                
                                 data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
                                 class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $pro->id; ?>"
@@ -218,18 +218,18 @@
                             <?php if($pro->category_id==1){
                   ?>
                                 <div class="row mt-1">
-                                    <div class="col-3">
+                                    <div class="col-5">
                                         <p style="color: #575757;">Type</p>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;"><?php echo $pro->type; ?></p>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-3">
+                                    <div class="col-5">
                                         <p style="color: #575757;">Brand</p>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;"><?php echo $pro->brand; ?></p>
                                     </div>
                                 </div>
@@ -237,7 +237,7 @@
                    $type_name = get_product_type_name($pro->type); 
                   ?>
                    <div class="row mt-1">
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;">Education Type</p>
                                     </div>
                                     <div class="col-6">
@@ -258,7 +258,7 @@
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;">Job Location</p>
                                     </div>
                                     <div class="col-6">
