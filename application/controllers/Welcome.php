@@ -1404,6 +1404,7 @@ $sub .= '</h6>
 
 		$reportData = array();
 		$reportData['product_id'] = $this->input->post('product_id');
+	
 		$reportData['category_id'] = $this->input->post('category_id');
 		$reportData['reported_by'] = $this->input->post('reported_by');
 		$reportData['report'] = $this->input->post('report');
@@ -1420,8 +1421,8 @@ $sub .= '</h6>
 		$this->session->set_flashdata('msg_class', 'alert-success');
 		$cat_id = $this->input->post('category_id');
 		$pro_id = $this->input->post('product_id');
-
-		return redirect('welcome/productdetail/' . $cat_id . '/' . $pro_id);
+		$sub_id = $this->input->post('subcategory_id');
+		return redirect('welcome/productdetail/' . $cat_id . '/' . $pro_id.'/'.$sub_id);
 
 	}
 

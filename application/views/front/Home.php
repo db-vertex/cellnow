@@ -910,13 +910,13 @@ foreach ($category as $key => $cat) {
                 <div class="search_box">
 
 
-                    <!-- <form method="post" action="<?php echo base_url();?>welcome/subscribe">
+                    <form method="post" action="<?php echo base_url();?>welcome/subscribe">
 		       <input type="search"  name="email_newsletter" id="email_newsletter" class="form-control rounded-5"  placeholder="Your Email Here!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
             <button type="button" name="submit" class="btn btn-success rounded-5" style="padding:6px 10px" onclick="return checkemail();">Subscribe </button>
             <span id="email_er" style="color: red; font-size:12px;"></span>
-           </form> -->
+           </form>
 
-                    <form method="post" action="<?php echo base_url();?>welcome/subscribe">
+                    <!-- <form method="post" action="<?php echo base_url();?>welcome/subscribe">
                         <div class="searchbox-wrap">
                             <input type="search" name="email_newsletter" id="email_newsletter"
                                 placeholder="Your Email Here!" aria-label="Search" aria-describedby="search-addon"
@@ -926,7 +926,7 @@ foreach ($category as $key => $cat) {
 
                         </div>
                         <span id="email_er" class="ms-5" style="color: red; font-size:12px;"></span>
-                    </form>
+                    </form> -->
 
 
                 </div>

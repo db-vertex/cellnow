@@ -1854,6 +1854,7 @@ if($shop->admin_approval==1){
                         <input type="hidden" name="reported_by" value="<?php echo $user['user_id'] ?>">
                         <input type="hidden" name="category_id" value="<?php echo $product_detail->category_id; ?>">
                         <input type="hidden" name="product_id" value="<?php echo $product_detail->id; ?>">
+                        <input type="hidden" name="subcategory_id" value="<?php echo $product_detail->subcategory_id; ?>">
                         <div class=" input-container my-3 px-3">
                             <label>Name</label>
                             <input name="name" type="text" class="form-control   text-dark Name" id="firstName" value=""
