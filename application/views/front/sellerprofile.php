@@ -222,7 +222,7 @@ width: 131.9px; border-color:#10B981;">
                    $type_name = get_product_type_name($pro->type); 
                   ?>
                    <div class="row mt-1">
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;">Education Type</p>
                                     </div>
                                     <div class="col-6">

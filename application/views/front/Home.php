@@ -184,19 +184,19 @@ input::placeholder {
 <!-- search bar -->
 <div class="container">
     <div class="row pl-4">
-        <div class="col-lg-7 col-md-5 col-sm-4 ">
+        <div class="col-lg-6 col-md-5 col-sm-4 ">
 
         </div>
-        <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
+        <div class="col-lg-6 col-md-7 col-sm-6 pr-4">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
-                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
          
 		       <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
           <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-         </form> -->
+         </form>
 
-                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                         <div class="searchbox-wrap">
                             <input type="text" value="" name="anything" aria-label="Search"
                                 aria-describedby="search-addon" class="search_input form-input"
@@ -205,7 +205,7 @@ input::placeholder {
                             <input type="text" class="form-control" name="longitude" id="longitude" hidden />
                             <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
                         </div>
-                    </form>
+                    </form> -->
                 </div>
 
                 <div class="row">
@@ -579,12 +579,12 @@ foreach ($category as $key => $cat) {
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
 
-                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+                    <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
          
          <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the store" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-       </form> -->
-                    <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+       </form>
+                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
                         <div class="searchbox-wrap">
                             <input type="text" value="" id="Location" name="anything" aria-label="Search"
                                 aria-describedby="search-addon" class="search_input form-input"
@@ -593,7 +593,7 @@ foreach ($category as $key => $cat) {
                             <input type="text" class="form-control" name="longitude" id="longitude" hidden />
                             <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
                         </div>
-                    </form>
+                    </form> -->
 
 
                 </div>
