@@ -81,7 +81,7 @@ $db['default'] = array(
 	// 'database' => 'celnow',
 	'hostname' => 'localhost',
 	'username' => 'admin_dbvertex',
-	'password' => '123456',
+	'password' => '123456', 
 	'database' => 'Celnow',
 	'dbdriver' => 'mysqli',
 	'dbprefix' => '',
@@ -98,3 +98,4 @@ $db['default'] = array(
 	'failover' => array(),
 	'save_queries' => TRUE
 );
+//sandeep
