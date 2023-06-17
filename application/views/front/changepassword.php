@@ -133,7 +133,7 @@
 
 <body>
     <main>
-        <div class="container py-4" style="margin-top:10px">
+        <div class="container py-4" style="margin-top:8%">
 
             <div class="row " style="min-height:90%;">
                 <div class="col-md-7 col-sm-12 ps-0">
@@ -184,7 +184,7 @@
                         </div>
 
                         <?php } ?>
-                        <p><?php echo $otp; ?></p>
+                        <p><?php if(isset($otp)){ echo $otp; } ?></p>
                                 <div class="form-group mt-2">
                                     <label>Enter Otp</label>
                                     <input name="otp" class="form-control" placeholder="otp" type="text" maxlength="4"
