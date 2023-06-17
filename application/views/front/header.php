@@ -33,7 +33,18 @@
     }
 
 
+    .details_price {
+        font-family: 'Roboto';
+        font-style: normal;
+        font-weight: 700;
+        font-size: 20px;
+        line-height: 25px;
+        display: flex;
+        align-items: flex-end;
+        text-align: right;
 
+        color: #10B981;
+    }
     .fa {
         /* padding: 20px; */
         font-size: 30px;
@@ -610,6 +621,8 @@
             width: 300px;
         }
     }
+
+   
 
     .deals-scroll-left {
         top: -35px;

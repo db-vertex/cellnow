@@ -21,6 +21,34 @@ html,body
   border-radius: 50%;
 }
 
+.related_ads_details_button {
+        box-sizing: border-box;
+
+        /* Auto layout */
+
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        padding: 9.42857px 12.5714px;
+        gap: 4.71px;
+
+        width: 87.43px;
+        height: 30.86px;
+
+        background: #10B981;
+        /* C2/B */
+
+        border: 1.57143px solid #46760A;
+        border-radius: 25.42857px;
+
+        /* Inside auto layout */
+
+        flex: none;
+        order: 0;
+        align-self: center;
+        flex-grow: 0;
+    }
+
     #a{
   margin-right: 10px;
   border-color: #78d7b8;
@@ -109,58 +137,77 @@ width: 131.9px; border-color:#10B981;">
 
 <div class="container" >
 <h3 class="ml-5 mb-3"><b>Seller Ads</b></h3>
-<div class="row">
+<div class="row ml-3">
 
 <?php if(isset($user_id)){
   $sellerproduct =get_seller_product($user_id); 
  if(!empty($sellerproduct)){
-  foreach($sellerproduct as $value){
+  foreach($sellerproduct as $pro){
  
     ?>
 
 
- <div class="col-lg-4 col-sm-6  mb-2">
-    <div class="card" style="max-width: 18rem; border-radius: 28px;margin:auto;">
-    <img src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top va-thumbnail" alt="Card image cap">
-      <div class="card-block" style="padding:8px">
-      <div class="row card-title">
-        <div class="col-6"><?php
-                           $title =$value->title;
-                            if(strlen($title) <= 10)
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4 post">
+                    <div class="card">
+                        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <a
+                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
+                                    src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                                    class="w-100 va-thumbnail" /></a>
+
+                            <a href="#!">
+
+                                <div class="hover-overlay">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                               <p class="dress-name"><b><?php
+                           $title = $pro->title;
+                            if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
                               }
                            
-                           ?></div> 
-                           <div class="col-6">
-                            <b style="color:#10b981">₹<?php echo $value->price; ?></b>
-                            </div></div>
-    <p class="card-text"><?php
-                           $title =$value->Description;
-                            if(strlen($title) <= 30)
+                           ?></b></p>
+                           
+                         <p class="details_price">₹<?php echo $pro->price; ?>
+                                </p>
+
+
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <p style="color: #575757;"><?php
+                           $title = $pro->Description;
+                            if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,30) . '...';
+                                $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
                            
-                           ?>.</p>
-                            <?php if($value->category_id==1){
+                           ?></p>
+
+                            </div>
+                            <?php if($pro->category_id==1){
                   ?>
                                 <div class="row mt-1">
                                     <div class="col-3">
                                         <p style="color: #575757;">Type</p>
                                     </div>
                                     <div class="col-5">
-                                        <p style="color: #575757;"><?php echo $value->type; ?></p>
+                                        <p style="color: #575757;"><?php echo $pro->type; ?></p>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
@@ -168,11 +215,11 @@ width: 131.9px; border-color:#10B981;">
                                         <p style="color: #575757;">Brand</p>
                                     </div>
                                     <div class="col-5">
-                                        <p style="color: #575757;"><?php echo $value->brand; ?></p>
+                                        <p style="color: #575757;"><?php echo $pro->brand; ?></p>
                                     </div>
                                 </div>
-                                <?php } else if($value->category_id==2){
-                   $type_name = get_product_type_name($value->type); 
+                                <?php } else if($pro->category_id==2){
+                   $type_name = get_product_type_name($pro->type); 
                   ?>
                    <div class="row mt-1">
                                     <div class="col-5">
@@ -183,8 +230,8 @@ width: 131.9px; border-color:#10B981;">
                                     </div>
                                 </div>
                             
-                                <?php } else if($value->category_id==3 && $value->category_id==4){ 
-                  $type_name = get_product_type_name($value->type); 
+                                <?php } else if($pro->category_id==3 && $pro->category_id==4){ 
+                  $type_name = get_product_type_name($pro->type); 
                  
                   ?>
                   <div class="row mt-1">
@@ -200,28 +247,39 @@ width: 131.9px; border-color:#10B981;">
                                         <p style="color: #575757;">Job Location</p>
                                     </div>
                                     <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $value->Job_Location; ?></p>
+                                        <p style="color: #575757;"><?php echo $pro->Job_Location; ?></p>
                                     </div>
                                 </div>
                                 <?php } ?><br>
-   
-    <img src="<?php echo base_url();?>assets/images/location .png" ></i> <span style="padding-left:40px"><?php
-                           $title =$value->address;
-                            if(strlen($title) <= 10)
+                                <div class="d-flex justify-content-between align-items-center">
+                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                <p style="color: #575757;"><?php
+                           $title = $pro->address;
+                            if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
                               }
                            
-                           ?></span><br>
-   
-    </div>
-    </div>
-</div> 
+                           ?></p>
+                                <a
+                                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
+                                    <p class="related_ads_details_button ">
+                                        <spam class="related_ads_details_button_text">Product Detail</spam>
+                                    </p>
+                                </a>
+
+                            </div>
+                           
+                     
+                        </div>
+                    </div>
+                </div>
+ 
 <?php }}else{?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
 <?php }}?>

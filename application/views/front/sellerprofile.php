@@ -145,10 +145,140 @@ width: 131.9px; border-color:#10B981;">
 <?php $sellerproduct = get_seller_product($user['user_id']); 
 
  if(!empty($sellerproduct)){
-  foreach($sellerproduct as $value){?>
+  foreach($sellerproduct as $pro){?>
+
+<div class="col-lg-3 col-md-4 col-sm-6 mb-4 post">
+                    <div class="card">
+                        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <a
+                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
+                                    src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                                    class="w-100 va-thumbnail" /></a>
+
+                            <a href="#!">
+
+                                <div class="hover-overlay">
+                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                                </div>
+                            </a>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                               <p class="dress-name"><b><?php
+                           $title = $pro->title;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></b></p>
+                           
+                         <p class="details_price">₹<?php echo $pro->price; ?>
+                                </p>
 
 
- <div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <p style="color: #575757;"><?php
+                           $title = $pro->Description;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
+
+                            </div>
+                            <?php if($pro->category_id==1){
+                  ?>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Type</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $pro->type; ?></p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-3">
+                                        <p style="color: #575757;">Brand</p>
+                                    </div>
+                                    <div class="col-5">
+                                        <p style="color: #575757;"><?php echo $pro->brand; ?></p>
+                                    </div>
+                                </div>
+                                <?php } else if($pro->category_id==2){
+                   $type_name = get_product_type_name($pro->type); 
+                  ?>
+                   <div class="row mt-1">
+                                    <div class="col-5">
+                                        <p style="color: #575757;">Education Type</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                    </div>
+                                </div>
+                            
+                                <?php } else if($pro->category_id==3 && $pro->category_id==4){ 
+                  $type_name = get_product_type_name($pro->type); 
+                 
+                  ?>
+                  <div class="row mt-1">
+                                    <div class="col-5">
+                                        <p style="color: #575757;">Job Type</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                    </div>
+                                </div>
+                                <div class="row mt-1">
+                                    <div class="col-5">
+                                        <p style="color: #575757;">Job Location</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $pro->Job_Location; ?></p>
+                                    </div>
+                                </div>
+                                <?php } ?>
+                                <div class="d-flex justify-content-between align-items-center">
+                                <p style="color: #575757;"> <img src="<?php echo base_url();?>assets/images/location .png"> &nbsp
+                                <?php
+                           $title = $pro->address;
+                            if(strlen($title) <= 25)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,25) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
+                               
+
+                            </div>
+                            <div class="pt-1 pl-5"><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $pro->category_id?>/<?php echo  $pro->id ?>" class="btn " id="b">Edit</a> &nbsp &nbsp
+  
+  <a href="javascript:void(0)" id="b" class="delete_product btn"  data-cid="<?php echo $pro->category_id; ?>" data-pid="<?php echo $pro->id; ?>"><span  style="color:#78d7b8">Delete</span></a>
+
+</div>
+                     
+                        </div>
+                    </div>
+                </div>
+ <!-- <div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
     <div class="card" >
     <img class="va-thumbnail" src="<?php echo base_url();?><?php echo $value->cover_img; ?>" class="card-img-top" alt="Card image cap">
     <div class="card-body">
@@ -204,7 +334,7 @@ width: 131.9px; border-color:#10B981;">
 
     </div>
     </div>
-</div> 
+</div>  -->
 <?php }}else{?>
             <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
 <?php }?>

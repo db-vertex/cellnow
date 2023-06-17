@@ -1397,7 +1397,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <?php if($product_detail->category_id==1){?>
                     <div class="row  ms-4">
                         <div class="col-3">
-                            <p class="details_text">Brand</p>
+                            <p class="details_text"><b>Brand</b></p>
                         </div>
                         <div class="col-3">
                             <p class="details_text"><?php echo $product_detail->brand; ?></p>
@@ -1406,7 +1406,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <?php } else if($product_detail->category_id==2){ ?>
                     <div class="row   ms-4">
                         <div class="col-3">
-                            <p class="details_text">Tuition Location</p>
+                            <p class="details_text"><b>Tuition Location</b></p>
                         </div>
                         <div class="col-3">
                             <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
@@ -1415,7 +1415,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <?php } else if($product_detail->category_id==3 && $product_detail->category_id==4){ ?>
                     <div class="row   ms-4">
                         <div class="col-3">
-                            <p class="details_text">Job Location </p>
+                            <p class="details_text"><b>Job Location </b></p>
                         </div>
                         <div class="col-3">
                             <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
@@ -1424,7 +1424,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <?php } ?>
                     <div class="row  ms-4">
                         <div class="col-3">
-                            <p class="details_text">City</p>
+                            <p class="details_text"><b>City</b></p>
                         </div>
                         <div class="col-3">
                             <p class="details_text"><?php echo $product_detail->town; ?></p>
@@ -1433,7 +1433,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                     <div class="row   ms-4">
                         <div class="col-3">
-                            <p class="details_text">Type</p>
+                            <p class="details_text"><b>Type</b></p>
                         </div>
                         <div class="col-3">
                             <p class="details_text"><?php if($product_detail->category_id==1){ echo $product_detail->type;} else if($product_detail->category_id==2 ){  $type_name = get_product_type_name($product_detail->Education_Type); echo $type_name;} else if($product_detail->category_id==4 && $product_detail->category_id==3){ $type_name = get_product_type_name($product_detail->Job_type); echo $type_name;}  ?></p>

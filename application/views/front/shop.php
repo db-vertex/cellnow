@@ -53,30 +53,23 @@
         display: flex;
         align-items: flex-end;
         text-align: right;
-
         color: #10B981;
     }
 
     #a:visited {
         color: #78d7b8;
-
-
     }
 
     #a:hover {
         color: white;
         background-color: #78d7b8;
-
-
     }
 
 
     #b {
-
         border: 1px solid #78d7b8;
         border-radius: 25px;
         font-size: 12px;
-
     }
 
     #b:visited {
