@@ -810,9 +810,12 @@ function get_category_all_store($id)
        
        //load databse library
        $ci->load->database();
-
-  $query="SELECT * FROM shop WHERE user_id=".$id;
-
+       $session_id = $ci->session->userdata("id");
+       if ($session_id) {
+  $query="SELECT * FROM shop WHERE user_id=".$id." And user_id!=".$session_id;
+       }else{
+        $query="SELECT * FROM shop WHERE user_id=".$id;
+       }
   $category_data = $ci->db->query($query);        
 
   return $category_data->result(); 
