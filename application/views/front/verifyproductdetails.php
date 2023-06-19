@@ -830,7 +830,7 @@ border-radius: 80px 0px 0px 80px;
 
 
         .details_profile {
-            width: 436px;
+            width: 350px;
             height: 97px;
             left: 826px;
             margin-top: 30px;
