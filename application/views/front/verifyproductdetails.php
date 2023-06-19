@@ -294,7 +294,7 @@ img {
 
 
         .details_profile {
-            width: 534px;
+            width: 434px;
             height: 140px;
             left: 426px;
             margin-top: 30px;
@@ -462,6 +462,17 @@ img {
     padding-right: 0!important;
     padding-left: 0!important;
 }
+
+.View_Seller_profile {
+        font-family: 'Poppins';
+        font-style: normal;
+        font-weight: 600;
+        font-size: 8px;
+        line-height: 14px;
+
+        color: #000000;
+        margin-top: 10px;
+    }
     }
 
     @media (min-width: 359px) and (max-width: 459px){
@@ -488,6 +499,8 @@ img {
         color: #000000;
         margin-top: 10px;
     }
+
+    
 
 .handline {
         font-family: 'Open Sans';
@@ -626,6 +639,16 @@ border-radius: 80px 0px 0px 80px;
     padding-right: 0!important;
     padding-left: 0!important;
 }
+.details_profile {
+            width: 334px;
+            height: 140px;
+            left: 426px;
+            margin-top: 30px;
+            float: right;
+            background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 80px 0px 0px 80px;
+        }
 
     }
 
@@ -658,6 +681,17 @@ border-radius: 80px 0px 0px 80px;
 
         .margin_left_css {
             margin-left: 2rem !important;
+        }
+
+        .details_profile {
+            width: 434px;
+            height: 140px;
+            left: 426px;
+            margin-top: 30px;
+            float: right;
+            background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 80px 0px 0px 80px;
         }
 
     }
@@ -796,7 +830,7 @@ border-radius: 80px 0px 0px 80px;
 
 
         .details_profile {
-            width: 336px;
+            width: 436px;
             height: 97px;
             left: 826px;
             margin-top: 30px;
@@ -1615,7 +1649,7 @@ if($shop->admin_approval==1){
 
                                     </div>
                                     <div class="col-4">
-                                        <div class="">
+                                      
                                       
                                             <form class="" id="chat_frm"
                                                 action="<?php echo base_url();?>welcome/chat/<?php echo $product_detail->category_id; ?>"
@@ -1629,7 +1663,7 @@ if($shop->admin_approval==1){
                                                 <input type="hidden" name="receiver_id" id="receiver_id"
                                                     value="<?php echo $product_detail->user_id; ?>">
 
-                                                <input class="chat_button pointer" style="font-size:15px;border-color:#46760a"
+                                                <input class="chat_button pointer" style="border-color:#46760a"
                                                     value="Chat" <?php if(empty($user) || !isset($user)){ ?>
                                                         onClick="location.href='<?php echo base_url();?>welcome/login/'"
                                                     <?php }else{ ?>type="submit" <?php }  ?> readonly>
@@ -1639,7 +1673,7 @@ if($shop->admin_approval==1){
                                                 href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><b
                                                     class="View_Seller_profile" id="">View Seller profile</b></a>
                                                 
-                                        </div>
+                                     
                                     </div>
                                 </div>
                             </div>
