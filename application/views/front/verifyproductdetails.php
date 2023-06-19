@@ -20,6 +20,8 @@ img {
   vertical-align: middle;
 }
 
+.pointer {cursor: pointer;}
+
 /* Position the image container (needed to position the left and right arrows) */
 .container {
   position: relative;
@@ -456,6 +458,10 @@ img {
     filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
     border-radius: 80px 0px 0px 80px;
 }
+.small{
+    padding-right: 0!important;
+    padding-left: 0!important;
+}
     }
 
     @media (min-width: 359px) and (max-width: 459px){
@@ -465,6 +471,11 @@ img {
     max-width: 12px;
     min-width: 12px;
     color:#69D3B0;
+}
+
+.small{
+    padding-right: 0!important;
+    padding-left: 0!important;
 }
 
 .View_Seller_profile {
@@ -610,6 +621,11 @@ border-radius: 80px 0px 0px 80px;
         .margin_left_css {
             margin-left: 1rem !important;
         }
+
+        .small{
+    padding-right: 0!important;
+    padding-left: 0!important;
+}
 
     }
 
@@ -1114,21 +1130,21 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
     </div>
     <div class="container mt-4" >
         <main>
-            <div class=" container mb-4 ml-2">
-                <div class="row breadcrumb_row">
-                    <div class="breadcrumb_col col">
+            <div class=" container mb-4 ">
+                <div class="row ">
+                   
                         <div class="breadcrumbs">
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
                                     href="<?php echo base_url();?>">Homepage</a></span>/<span
                                 class="ms-2 handline"><?php echo ucfirst($product_detail->title); ?></span>
                         </div>
-                    </div>
+                    
                 </div>
             </div>
 <div class="container">
-            <div class="row " >
-                <div class="col-md-6">
-                <div class="container">
+            <div class="row" >
+                <div class="col-md-6 small">
+           
   <div class="mySlides">
  
     <?php if ($product_detail->cover_img !== NULL) { ?>
@@ -1228,7 +1244,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
         <?php } ?></div>    
     
   </div>
-</div>
+
                 <!-- <div class="master">
                 
             <img class="details_img_cover img-fluid" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
@@ -1613,7 +1629,7 @@ if($shop->admin_approval==1){
                                                 <input type="hidden" name="receiver_id" id="receiver_id"
                                                     value="<?php echo $product_detail->user_id; ?>">
 
-                                                <input class="chat_button" style="font-size:15px;border-color:#46760a"
+                                                <input class="chat_button pointer" style="font-size:15px;border-color:#46760a"
                                                     value="Chat" <?php if(empty($user) || !isset($user)){ ?>
                                                         onClick="location.href='<?php echo base_url();?>welcome/login/'"
                                                     <?php }else{ ?>type="submit" <?php }  ?> readonly>

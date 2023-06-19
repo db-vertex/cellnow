@@ -112,6 +112,12 @@
         font-weight: 500;
 
     }
+    .hide-button {
+   
+   display: none;
+ 
+}
+  
 }
     @media (min-width: 576px) {
         .nav-scroller {
@@ -121,7 +127,11 @@
 
         }
     }
-
+    .hide-button {
+   
+    display: none;
+  
+}
    
     .search_wrap {
         width: 100%;
