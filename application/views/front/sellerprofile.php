@@ -177,10 +177,10 @@ width: 131.9px; border-color:#10B981;">
                               }
                            
                            ?></b></p>
-                           
+                              <?php if($pro->category_id != 4 && $pro->pay_type !=2){ ?>
                          <p class="details_price">₹<?php echo $pro->price; ?>
                                 </p>
-
+<?php } ?>
 
                             </div>
                             <div class="d-flex justify-content-between align-items-center">

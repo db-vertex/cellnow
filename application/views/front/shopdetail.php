@@ -228,9 +228,10 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 data-pid="<?php echo $Categories_all_product->id; ?>"
                                 data-cid="<?php echo $Categories_all_product->category_id; ?>"
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
+                                <?php if($Categories_all_product->category_id != 4 && $Categories_all_product->pay_type !=2){ ?>
                          <p class="details_price">₹<?php echo $Categories_all_product->price; ?>
                                 </p>
-
+<?php } ?>
 
                             </div>
                             <div class="d-flex justify-content-between align-items-center">

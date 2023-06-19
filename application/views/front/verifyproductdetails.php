@@ -1600,7 +1600,7 @@ if($shop->admin_approval==1){
                                     </div>
                                     <div class="col-4">
                                         <div class="">
-                                        <?php if($product_detail->pay_type == 0 || $product_detail->pay_type == 1){ ?>
+                                      
                                             <form class="" id="chat_frm"
                                                 action="<?php echo base_url();?>welcome/chat/<?php echo $product_detail->category_id; ?>"
                                                 method="POST">
@@ -1622,7 +1622,7 @@ if($shop->admin_approval==1){
                                             <a
                                                 href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><b
                                                     class="View_Seller_profile" id="">View Seller profile</b></a>
-                                                    <?php  } ?> 
+                                                
                                         </div>
                                     </div>
                                 </div>
@@ -1646,7 +1646,7 @@ if($shop->admin_approval==1){
               if(!empty($category_data)){
    foreach($category_data as $relatedproduct){
    
-    if($product_detail->id!== $relatedproduct->id){
+   
     $session_login_id  = $this->session->userdata("id");
     $product_user_id = $relatedproduct->user_id;
     if($session_login_id !== $product_user_id){
@@ -1804,7 +1804,7 @@ if($shop->admin_approval==1){
                             </div>
                         </div>
                     </div>
-<?php }} } }else{?>
+<?php } } }else{?>
     <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
 
                     <?php } ?>

@@ -1762,22 +1762,22 @@ $sub .= '</h6>
 
 		if ($cateory == 1) {
 			$Categories_all_product = get_all_category_reusable_parts($id);
-			$Category_product = $this->db->query("SELECT * FROM category_reusable_parts  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC")->result();
+			$Category_product = $this->db->query("SELECT * FROM category_reusable_parts  WHERE subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
 
 
 		} else if ($cateory == 2) {
 			$Categories_all_product = get_all_category_tuitions($id);
-			$Category_product = $this->db->query("SELECT * FROM category_tuitions  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC")->result();
+			$Category_product = $this->db->query("SELECT * FROM category_tuitions  WHERE subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
 
 
 		} else if ($cateory == 3) {
 			$Categories_all_product = get_all_category_job($id);
-			$Category_product = $this->db->query("SELECT * FROM category_job  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC")->result();
+			$Category_product = $this->db->query("SELECT * FROM category_job  WHERE subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
 
 
 		} else if ($cateory == 4) {
 			$Categories_all_product = get_all_category_internships($id);
-			$Category_product = $this->db->query("SELECT * FROM category_internships  WHERE subcategory_id = $subcategory_id  ORDER BY id DESC")->result();
+			$Category_product = $this->db->query("SELECT * FROM category_internships  WHERE subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
 
 
 		}

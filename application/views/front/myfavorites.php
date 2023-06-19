@@ -193,9 +193,10 @@
                                 data-pid="<?php echo $pro->id; ?>"
                                 data-cid="<?php echo $pro->category_id; ?>"
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
+                                <?php if($pro->category_id != 4 && $pro->pay_type !=2){ ?>
                          <p class="details_price">₹<?php echo $pro->price; ?>
                                 </p>
-
+<?php } ?>
 
                             </div>
                             <div class="d-flex justify-content-between align-items-center">

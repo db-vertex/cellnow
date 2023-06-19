@@ -766,7 +766,7 @@ function get_all_location_store($location)
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM shop WHERE address  like '%$location%' ";
+  $query="SELECT * FROM shop WHERE Address  like '%$location%' ";
 
   $category_data = $ci->db->query($query);        
 
@@ -781,7 +781,7 @@ function get_all_location_store_count($location)
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM shop WHERE address  like '%$location%' ";
+  $query="SELECT * FROM shop WHERE Address  like '%$location%' ";
 
   $category_data = $ci->db->query($query);        
 

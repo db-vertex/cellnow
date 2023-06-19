@@ -1020,7 +1020,7 @@
                                 <div class="search_box mt-3" style="width:140%; margin-right:120px; margin-left:30px">
                                 <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
          
-         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+         <input type="text" value="<?php echo set_value('location'); ?>" name="location" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
        </form>
                                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
