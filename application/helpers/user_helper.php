@@ -1061,7 +1061,7 @@ function get_producttype_byid($category_id)
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM product_type WHERE category_id=".$category_id ;
+  $query="SELECT * FROM product_type WHERE category_id=".$category_id ." order by product_type asc";
 
   $category_data = $ci->db->query($query);        
 

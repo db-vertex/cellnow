@@ -1343,7 +1343,7 @@ a:active {
 
 <!-- new -->
 <div class="container">
-    <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll">
+    <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll px-0">
 
         <?php
 
@@ -1406,7 +1406,7 @@ a:active {
 					  foreach($subcategory as $sub){
 					?>
 
-                    <div class="va-card va-card_category mt-2" style="">
+                    <div class="va-card va-card_category mt-2 px-0" style="">
                         <p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
                             onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
                             onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>

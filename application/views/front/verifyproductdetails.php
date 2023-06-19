@@ -161,7 +161,7 @@ img {
         top: 588px;
         background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
         filter: drop-shadow(0px 0px 4.79774px #10B981);
-        border-radius: 21px;
+        border-radius: 15px;
         min-width: 100%;
     }
     

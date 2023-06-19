@@ -74,7 +74,7 @@ class Welcome extends CI_Controller
 			//print_r($subcategory);die();
 
 			$sub .= '
-	<div class="va-card va-card_category mt-2"> <a class=" border-0"   
+	<div class="va-card va-card_category mt-2 px-0"> <a class=" border-0"   
 		<p style="text-align:center;" class="my-auto pouler_Categories " ';
 			if ($category_id == 1) {
 				$sub .= '	onclick="return getproduct( ' . $value->subcategory_id . ')"';

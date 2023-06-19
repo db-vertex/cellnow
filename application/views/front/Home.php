@@ -183,11 +183,11 @@ input::placeholder {
 
 <!-- search bar -->
 <div class="container">
-    <div class="row pl-4">
+    <div class="row px-0">
         <div class="col-lg-6 col-md-5 col-sm-4 ">
 
         </div>
-        <div class="col-lg-6 col-md-7 col-sm-6 pr-4">
+        <div class="col-lg-6 col-md-7 col-sm-6 ">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
                     <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
@@ -225,7 +225,7 @@ input::placeholder {
 
 
 <div class="container">
-    <div class="row">
+    <div class="row px-0">
         <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll">
 
             <?php
@@ -302,7 +302,7 @@ foreach ($category as $key => $cat) {
 
 
                     </div>
-                    <button class="deals-scroll-right deals-paddle" id="right_sponsor_button">
+                    <button class="deals-scroll-right deals-paddle hide-button" id="right_sponsor_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">

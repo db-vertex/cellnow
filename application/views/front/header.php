@@ -114,7 +114,7 @@
     }
     .hide-button {
    
-   display: none;
+   display: block;
  
 }
   
@@ -127,10 +127,8 @@
 
         }
     }
-    .hide-button {
-   
-    display: none;
-  
+    button.hide-button{
+   display: none;
 }
    
     .search_wrap {
