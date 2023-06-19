@@ -114,7 +114,8 @@
     }
     .hide-button {
    
-   display: block;
+   display: block
+   ;
  
 }
   

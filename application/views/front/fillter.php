@@ -314,7 +314,7 @@
     .img-size {
         max-height: 200px;
         min-height: 200px;
-        "
+        
 
     }
 
@@ -354,7 +354,7 @@
     .img-size {
         max-height: 300px;
         min-height: 300px;
-        "
+        
 
     }
 
@@ -764,6 +764,10 @@ input::placeholder {
         font-size: 12px;
         font-weight: bold;
     }
+
+    .img-size {
+        max-height: 200px;
+        min-height: 200px;
 }
 
 .fillter_product_img {
@@ -1343,6 +1347,7 @@ a:active {
 
 <!-- new -->
 <div class="container">
+    <div class="row">
     <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll px-0">
 
         <?php
@@ -1368,7 +1373,7 @@ a:active {
 
                 ?>
     </ul>
-
+                    </div>
 </div>
 
 
@@ -1447,16 +1452,15 @@ a:active {
 
 
 <div class="container mb-5">
-    <div class="row m-3">
+    <div class="row">
         <div class="col-md-3">
 
-            <br />
-            <br />
+        <br />
             <center>
                 <h5>Filters</h5>
             </center>
             <br />
-            <div class="list-group">
+            <div class="list-group m-2">
                 <h6 class="common_h">PRICE</h6>
                 <input type="hidden" id="hidden_minimum_price" value="1" />
                 <input type="hidden" id="hidden_maximum_price" value="100000" />
@@ -1676,10 +1680,9 @@ a:active {
         <div class="col-md-9">
 
             <br />
-            <br />
-            <br />
+
             <?php  if(!empty($products)){ ?>
-            <div class="row " id="product_list">
+            <div class="row" id="product_list">
                 <?php
                   
             
@@ -1775,20 +1778,28 @@ a:active {
 
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
-                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
-                                <p><?php
-                           $title = $pro->address;
+                            <div class="row">
+                                    <div class="col-3">
+                                    <img src="<?php echo base_url();?>assets/images/location .png">
+                                    </div>
+                                    <div class="col-9 mt-1">
+                                        <p tyle="color: #575757;"><?php
+                           $title =$pro->address;
                             if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
                            
                            ?></p>
+                                    </div>
+                                   
+                                </div>
+                              
                                 <a
                                     href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
                                     <p class="related_ads_details_button ">

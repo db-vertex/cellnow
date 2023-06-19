@@ -183,9 +183,12 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 			    }
 				 
 				$pro .= '  <div class="d-flex justify-content-between align-items-center">
-					   <img src="https://dbvertex.com/celnow/assets/images/location .png">
-					  
-						   <p style="color: #575757;">';
+				<div class="row">
+				<div class="col-3">
+				<img src="https://dbvertex.com/celnow/assets/images/location .png">
+				</div>
+				<div class="col-9 mt-1">
+					<p tyle="color: #575757;">';
 										   $title = $row['address'];
 					   
 										   if(strlen($title) <= 12)
@@ -200,6 +203,8 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 										   $pro .= ucfirst($y);
 										   }
 										   $pro.='</p>
+										   </div>
+										   </div>
 									  
 										   <a
 											   href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">

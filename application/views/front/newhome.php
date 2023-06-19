@@ -16,7 +16,7 @@
 }
 
 .img-size {
-        max-height: 5%00px;
+        max-height: 500px;
         min-height: 500px;
         
 

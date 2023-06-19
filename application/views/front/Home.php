@@ -33,7 +33,7 @@
 .img-size {
     max-height: 500px;
     min-height: 500px;
-    "
+    
 
 }
 
@@ -96,7 +96,7 @@ input::placeholder {
     .img-size {
         max-height: 300px;
         min-height: 300px;
-        "
+        
 
     }
 
@@ -112,7 +112,7 @@ input::placeholder {
     .img-size {
         max-height: 200px;
         min-height: 200px;
-        "
+        
 
     }
 }
