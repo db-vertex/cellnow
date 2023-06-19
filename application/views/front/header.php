@@ -32,6 +32,51 @@
         color: #555;
     }
 
+    .search_wrap {
+    width: 100%;
+
+}
+
+.search_wrap .search_box {
+    position: relative;
+
+    height: 64px;
+}
+
+
+
+.search_wrap .search_box .btn {
+    position: absolute;
+
+    height: 80%;
+    background: #10B981;
+    color: white;
+
+}
+
+.search_wrap .search_box .btn.btn_common .fas {
+
+    /* top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%); */
+    /* color: #fff; */
+
+}
+
+.search_wrap.search_wrap_6 .search_box .btn {
+    max-width: 100%;
+    height: 60%;
+    top: 8%;
+    right: 1.3%;
+    padding: 6px 0px;
+
+
+    /* color: #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
 
     .details_price {
         font-family: 'Roboto';
@@ -1026,7 +1071,7 @@
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="">
                         <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
                             <div class="search_wrap search_wrap_6 m-0 ">
-                                <div class="search_box mt-3" style="width:140%; margin-right:120px; margin-left:30px">
+                                <div class="search_box mt-3" style="width:130%; margin-right:120px; margin-left:30px">
                                 <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
          
          <input type="text" value="<?php echo set_value('location'); ?>" name="location" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
@@ -1077,7 +1122,7 @@
                                 id="ab">
                                 Services
                             </a>
-                            <ul class="dropdown-menu" style="margin-bottom:10px;">
+                            <ul class="dropdown-menu" style="margin-bottom:0px;">
                                 <?php
                   $shopcategory = get_all_shopcategory();
                 foreach ($shopcategory as $key => $shopcat) {
@@ -1091,7 +1136,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item" style="padding-right:10px" ;>
+                        <li class="nav-item" style="padding-right:0px" ;>
                             <a class="nav-link  Post_header" href="<?php echo base_url();?>welcome/postproduct"
                                 style="color:#10B981;font-weight:bold;" id="ab">Post Ad</a>
                         </li>
