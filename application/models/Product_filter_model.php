@@ -97,10 +97,10 @@ class Product_filter_model extends CI_Model
         $query = "SELECT * FROM $sql WHERE pay_type != '3'";
 		}
     }
-	
+	if($categorys!='category_internships'){
     if (isset($minimum_price, $maximum_price) && !empty($minimum_price) && !empty($maximum_price)) {
         $query .= " AND price BETWEEN $minimum_price AND $maximum_price";
-    }
+    }}
 	if (isset($search)) {
        
         $query .= " AND title like '%".$search."%'";
@@ -136,6 +136,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 {
 	
     $query = $this->make_query($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
+
     $query .= ' LIMIT '.$start.', '.$limit;
     $data = $this->db->query($query);
 
@@ -162,8 +163,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 		   
 		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
 		   <div class="card">
-			   <img  class="w-100 va-thumbnail" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
-			   <div class="card-body ">
+			   <img  class="w-100 va-thumbnail" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img"><div class="card-body ">
 			   <div class="d-flex justify-content-between align-items-center"><p>';
 	   $title = $row['title'];
 	   
