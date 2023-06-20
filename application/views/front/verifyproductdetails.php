@@ -981,7 +981,7 @@ border-radius: 80px 0px 0px 80px;
         max-height: 200.1px;
         left: 105px;
         top: 1889px;
-        border-radius: 27px 27px 0px 0px;
+        border-radius: 0px 0px 0px 0px;
     }
 
     .related_ads_card_title {
@@ -1828,7 +1828,7 @@ if($shop->admin_approval==1){
                                             style="font-size:18px; color:#69d3b0"></i>
                                     </div>
                                     <div class="col-5">
-                                        <p tyle="color: #575757;"><?php
+                                        <p style="color: #575757;"><?php
                            $title =$relatedproduct->address;
                             if(strlen($title) <= 10)
                               {

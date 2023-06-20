@@ -36,6 +36,11 @@
     width: 100%;
 
 }
+.space{
+    margin-left:85%;
+    
+}
+
 
 .search_wrap .search_box {
     position: relative;
@@ -128,6 +133,7 @@
         box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.19);
 
     }
+    
 
     .search_b {
         padding-right: 10px;
@@ -1071,7 +1077,7 @@
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="">
                         <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
                             <div class="search_wrap search_wrap_6 m-0 ">
-                                <div class="search_box mt-3" style="width:130%; margin-right:120px; margin-left:30px">
+                                <div class="search_box mt-3" style="width:130%; margin-right:100px; margin-left:40px">
                                 <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
          
          <input type="text" value="<?php echo set_value('location'); ?>" name="location" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
@@ -1136,7 +1142,7 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item" style="padding-right:0px" ;>
+                        <li class="nav-item" style="padding-right:10px" ;>
                             <a class="nav-link  Post_header" href="<?php echo base_url();?>welcome/postproduct"
                                 style="color:#10B981;font-weight:bold;" id="ab">Post Ad</a>
                         </li>
@@ -1160,7 +1166,7 @@
                             style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
                             &nbsp <?php echo ucfirst($profile->name);?>
                         </a>
-                        <ul class="dropdown-menu" style="margin-left:85%;margin-top: -30px;">
+                        <ul class="dropdown-menu space" style="margin-top:-30px;">
 
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My
                                     profile</a></li>
@@ -1182,7 +1188,7 @@
 
                         <li class="nav-item" style="padding-right:10px" ;>
                             <a class="nav-link  login_header" href="<?php echo base_url();?>welcome/login"
-                                style="color:#10B981;font-weight:bold;">Login
+                                style="color:#10B981;font-weight:bold;"> &nbsp &nbsp Login
                             </a>
                         </li>
                         <!-- <li class="nav-item" style="padding-right:10px" ;>
