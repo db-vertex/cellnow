@@ -162,14 +162,14 @@
 
     <!-- search bar -->
     <div class="container">
-    <div class="row pl-4">
-      <div class="col-lg-7 col-md-5 col-sm-4 ">
+    <div class="row px-0">
+      <div class="col-lg-7 col-md-5 col-sm-4">
         <p style="font-size:30px;color:#1B1C57;"> Search Products </p>
       </div>
-      <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
+      <div class="col-lg-5 col-md-7 col-sm-8">
       <div class="search_wrap search_wrap_6 m-0">
 			      <div class="search_box">
-
+             
          <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
 		       <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
           <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
@@ -203,28 +203,17 @@
 
 
 <div class="container">
+  <div class="row px-0">
    <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll" >
-
-       <?php
-
-              $category = get_all_category();
-
-              foreach ($category as $key => $cat) {
-
-
-                ?>
-                 <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                      <p  class="new<?php echo $cat->id; ?> btn border  rounded-pill"  role="button"><img class="me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp  <?php echo $cat->category; ?> </p>
-
-                </li> &nbsp  &nbsp &nbsp  
+     <?php $category = get_all_category();
+     foreach ($category as $key => $cat) { ?>
+     <li class="" id=""  onclick="return getsubcategory(<?php echo $cat->id; ?>)">
+     <p  class="new<?php echo $cat->id; ?> btn border  rounded-pill"  role="button"><img class="me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp  <?php echo $cat->category; ?> </p>
+     </li> &nbsp  &nbsp &nbsp  
           
-            <?php
-                      
-                      }
-
-                ?> 
+            <?php  } ?> 
 </ul>
-    
+                    </div>  
 </div>
 
 

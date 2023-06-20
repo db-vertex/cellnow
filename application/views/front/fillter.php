@@ -1317,12 +1317,12 @@ a:active {
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
 
-                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-                        <input type="search" name="anything" class="form-control rounded-5"
+                   
+                        <input type="search" name="anything"  class="form-control rounded-5 search"
                             placeholder="Search for the Product you want!" aria-label="Search"
                             aria-describedby="search-addon" style="padding:12px 22px" />
-                        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">search</button>
-                    </form>
+                        <button type="submit" class="btn btn-success rounded-5 search"  style="padding:6px 10px">search</button>
+                   
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                         <div class="searchbox-wrap">
                             <input type="text" value="" name="anything" aria-label="Search"
@@ -1402,6 +1402,7 @@ a:active {
                      $sub_ = '';
                      if($cateory==5){
                         $subcategory = get_all_product_type();  
+                        
                      }
                      else{
                         $subcategory = get_producttype_byid($cateory);  
@@ -1853,7 +1854,7 @@ a:active {
             var brand = get_brand('brand');
             var type = get_type_filter('sub_category');
 
-
+          var search = get_search('search');
 
             var sub_category = get_filter('sub_category');
 
@@ -1868,7 +1869,8 @@ a:active {
                     maximum_price: maximum_price,
                     sub_category: sub_category,
                     brand: brand,
-                    type: type
+                    type: type,
+                    search:search
                 },
                 success: function(data) {
                     document.getElementById("pagination_link").style.display = "block";
@@ -1941,8 +1943,14 @@ a:active {
             filter_data(1);
         });
 
+        function get_search(class_name) {
+            var filter = [];
+        $('input .search').each(function(){
+            filter.push($(this).val());
+});
 
-
+return filter;
+        }
 
         $(document).on("click", ".pagination li a", function(event) {
             event.preventDefault();
@@ -2018,50 +2026,7 @@ a:active {
     }
 
 
-    $(document).ready(function() {
-        $("#search").autocomplete({
-
-            source: function(request, response) {
-                $.ajax({
-                    url: "<?php echo base_url();?>welcome/search",
-                    data: {
-                        term: request.term
-                    },
-                    dataType: "json",
-                    success: function(data) {
-
-                        var resp = $.map(data, function(obj) {
-                            var id = obj.id;
-                            var category_id = obj.category_id;
-                            var subcategory_id = obj.subcategory_id;
-                            var add = category_id + '/' + id + '/' +
-                                subcategory_id;
-                            return {
-                                label: obj.title,
-                                value: add
-
-                            }
-
-                        });
-                        response(resp);
-                        console.log(resp);
-                        $("#display").html(data).show();
-                    }
-
-
-                });
-
-
-            },
-            select: function(event, ui) {
-                location.href = "<?php echo base_url();?>welcome/productdetail/" + ui.item.value;
-            },
-            minLength: 2
-        });
-
-
-    });
-
+   
 
 
     function getproduct(subcategory_id) {

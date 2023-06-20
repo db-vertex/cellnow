@@ -965,6 +965,8 @@ $sub .= '</h6>
 
 	}
 
+	
+
 
 	public function searchshop()
 	{
@@ -1034,28 +1036,28 @@ $sub .= '</h6>
 		$cateory = $this->uri->segment(3);
 		$session_id = $this->session->userdata('id');
 
-		if($cateory == 5){
+		// if($cateory == 5){
 
-			$data['products']= get_all_products();
+		// 	$data['products']= get_all_products();
 			
 
-			if ($session_id) {
-				//$myproduct = $this->product_model->myproduct($session_id);
+		// 	if ($session_id) {
+		// 		//$myproduct = $this->product_model->myproduct($session_id);
 	
-				$user_detail = $this->user->loginuser($session_id);
+		// 		$user_detail = $this->user->loginuser($session_id);
 	
-				$this->load->view('front/header', ['user' => $user_detail]);
-				$this->load->view('front/fillter', $data, ['user' => $user_detail]);
-				$this->load->view('front/footer');
+		// 		$this->load->view('front/header', ['user' => $user_detail]);
+		// 		$this->load->view('front/fillter', $data, ['user' => $user_detail]);
+		// 		$this->load->view('front/footer');
 	
-			} else {
-				$this->load->view('front/header');
-				$this->load->view('front/fillter', $data);
-				$this->load->view('front/footer');
-			}
+		// 	} else {
+		// 		$this->load->view('front/header');
+		// 		$this->load->view('front/fillter', $data);
+		// 		$this->load->view('front/footer');
+		// 	}
 
-		}
-		else{
+		// }
+		// else{
 
 		if ($cateory == 1) {
 			//$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
@@ -1072,6 +1074,10 @@ $sub .= '</h6>
 		} else if ($cateory == 4) {
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
 			$data['brand'] = $this->product_filter_model->fetch_filter_type('Job_type', $cateory);
+		}
+		else if ($cateory == 5) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
 		}
 	 
 
@@ -1090,7 +1096,7 @@ $sub .= '</h6>
 			$this->load->view('front/fillter', $data);
 			$this->load->view('front/footer');
 		}
-	}
+	
 
 	}
 
@@ -1102,7 +1108,7 @@ $sub .= '</h6>
 		$brand = $this->input->post('brand');
 		$sub_category = $this->input->post('sub_category');
 		$type = $this->input->post('type');
-
+		$search = $this->input->post('search');
 		$category = $this->session->userdata('filter_id');
 
 		$config = array();
@@ -1134,7 +1140,7 @@ $sub .= '</h6>
 
 		$output = array(
 			'pagination_link' => $this->pagination->create_links(),
-			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category, $category, $type)
+			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category, $category, $type,$search)
 		);
 		echo json_encode($output);
 	}
