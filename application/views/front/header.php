@@ -1060,6 +1060,17 @@
     width: max-content;
 }
 
+
+@media (max-width: 400px){
+.deals-paddle{
+  display: none;  
+}
+#left_sponser_button{
+    display: none;     
+}
+
+}
+
     </style>
 
 </head>
