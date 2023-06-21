@@ -36,10 +36,7 @@
     width: 100%;
 
 }
-.space{
-    margin-left:85%;
-    
-}
+
 
 
 .search_wrap .search_box {
@@ -1047,6 +1044,18 @@
     margin-right: auto;
 }
 }
+@media (min-width: 1200px){
+.profile_name{
+    margin-left: 10px;
+}
+.space{
+    margin-left:85%;  
+    width: max-content;
+}
+}
+.space{
+    width: max-content;
+}
 
     </style>
 
@@ -1128,7 +1137,7 @@
                                 id="ab">
                                 Services
                             </a>
-                            <ul class="dropdown-menu" style="margin-bottom:0px;">
+                            <ul class="dropdown-menu" style="margin-bottom:0px; width: max-content;">
                                 <?php
                   $shopcategory = get_all_shopcategory();
                 foreach ($shopcategory as $key => $shopcat) {
@@ -1161,10 +1170,10 @@
                                       width: 30.9px; margin-top: 5px;"
                             src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
 
-                        <a class="nav-link dropdown dropdown-toggle " href="#" role="button" data-bs-toggle="dropdown"
+                        <a class="nav-link dropdown dropdown-toggle profile_name " href="#" role="button" data-bs-toggle="dropdown"
                             aria-expanded="false"
                             style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
-                            &nbsp <?php echo ucfirst($profile->name);?>
+                             <?php echo ucfirst($profile->name);?>
                         </a>
                         <ul class="dropdown-menu space" style="margin-top:-30px;">
 
@@ -1188,7 +1197,7 @@
 
                         <li class="nav-item" style="padding-right:10px" ;>
                             <a class="nav-link  login_header" href="<?php echo base_url();?>welcome/login"
-                                style="color:#10B981;font-weight:bold;"> &nbsp &nbsp Login
+                                style="color:#10B981;font-weight:bold;"> Login
                             </a>
                         </li>
                         <!-- <li class="nav-item" style="padding-right:10px" ;>
