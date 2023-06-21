@@ -150,11 +150,11 @@ input::placeholder {
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
 
-                <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+               
   
-         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-       </form>
+         <input type="search"  name="location" class="form-control rounded-5" id="location" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+        <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search </button>
+
 
        <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
                                     <div class="searchbox-wrap">
@@ -306,7 +306,37 @@ foreach($shop as $value){
 
         </div>
     </div>
+    <script>
+$(document).ready(function(){
+    // Get value on button click and show alert
+    $("#myBtn").click(function(){
+        var str = $("#location").val();
+alert(str);
+        jQuery.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getsearchshop'); ?>",
+  data: { str:str},
+  success: function(res) 
+  {
 
+    
+   
+
+
+  
+
+    
+       
+  
+    $("#sub-list").html(res);
+    
+    // $('#load_cound').val("10");
+    
+  }
+  });
+    });
+});
+</script>
     <script>
 
 function getshop(category_id){

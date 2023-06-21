@@ -188,6 +188,96 @@ $sub .= '</h6>
 
 	}
 
+	public function getsearchproduct($data = " ")
+	{
+		$anything = $this->input->post('anything');
+		
+		if(empty($location) && !empty($anything)){
+			$product =  get_all_search_product($anything); 
+			$all_count = get_all_search_product_count($anything);
+		
+			}
+			else if(!empty($location) && empty($anything)){
+			$product= get_all_locationsearch_product($location);
+			$all_count =get_all_locationsearch_product_count($location);
+			
+			}
+
+		$sub = "";
+		
+		if (!empty($product)) {
+
+			foreach ($product as $value) {
+				
+				$session_login_id = $this->session->userdata("id");
+				$product_user_id = $value->user_id;
+				if ($session_login_id !== $product_user_id) {
+
+
+					
+
+					$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
+    <div class="card">
+        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+            <a href="https://dbvertex.com/celnow/welcome/productdetail/' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
+                <img src="https://dbvertex.com/celnow/' . $value->cover_img . '" class="w-100 va-thumbnail" />
+            </a>
+            <a href="#!">
+                <div class="hover-overlay">
+                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                </div>
+            </a>
+        </div>
+        <div class="card-body">
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 style="color:#10B981" class="mb-3">';
+				if(isset($value->price)){
+					$sub.='
+                    <strong style="color:#10B981" class="ms-2 ">₹' . $value->price . '</strong>';
+				}
+               $sub.=' </h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6 class="dress-name">';
+$title = $value->title;
+
+if (strlen($title) <= 10) {
+    $sub .= ucfirst($title);
+} else {
+    $y = substr($title, 0, 10) . '...';
+    $sub .= ucfirst($y);
+}
+$sub .= '</h6>
+            </div>
+            <div class="d-flex justify-content-between align-items-center">
+                <h6>';
+$title = $value->address;
+
+if (strlen($title) <= 10) {
+    $sub .= ucfirst($title);
+} else {
+    $y = substr($title, 0, 10) . '...';
+    $sub .= ucfirst($y);
+}
+$sub .= '</h6>
+            </div>
+        </div>
+    </div>
+</div>';
+
+
+				}
+			}
+		} else {
+			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
+		}
+		 if($all_count >4){
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn">See All</a></center>';
+            } 
+		echo $sub;
+
+	}
+
 
 	
 
@@ -410,6 +500,77 @@ $sub .= '</h6>
 		echo $sub;
 
 	}
+
+
+	public function getsearchshop($data = " ")
+	{
+
+		$location = $this->input->post('location');
+		// echo $this->db->last_query();
+		$sub = "";
+
+		$shop =get_all_location_store($location);
+		
+		if (!empty($shop)) {
+			foreach ($shop as $value) {
+				//print_r($subcategory);die();
+
+				$sub .= '
+				<div class="col-lg-3 col-md-4 col-sm-6 mb-4 mt-3 post">
+                <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
+                    <a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '"><img
+                            class="va-thumbnail " alt="Card image cap"
+                            src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '"></a>
+                    <div class="card-block" style="padding:8px">
+                        <p class="card-title"><b>';
+				$title = $value->name;
+				if (strlen($title) <= 20) {
+					$sub .= ucfirst($title);
+				} else {
+					$y = substr($title, 0, 20) . '...';
+					$sub .= ucfirst($y);
+				}
+
+				$sub .= '</b></p>
+                        <p class="card-text">';
+				$title = $value->description;
+				if (strlen($title) <= 50) {
+					$sub .= ucfirst($title);
+				} else {
+					$y = substr($title, 0, 50) . '...';
+					$sub .= ucfirst($y);
+				}
+
+				$sub .= '</p><br>';
+				$username = get_user_name($value->user_id);
+				$sub .= ' <p class="card-title">' . $username . '</p>
+                        <img src="https://dbvertex.com/celnow/assets/images/location .png" > <span>';
+				$title = $value->Address;
+				if (strlen($title) <= 20) {
+					$sub .= ucfirst($title);
+				} else {
+					$sub .= substr($title, 0, 20) . '...';
+					echo ucfirst($sub);
+				}
+
+				$sub .= '</span><br>
+
+                    </div>
+                </div>
+            </div>
+		  '
+				;
+
+
+			}
+		} else {
+			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
+		}
+
+		echo $sub;
+
+	}
+
 
 
 

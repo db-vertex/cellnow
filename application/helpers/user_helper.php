@@ -197,17 +197,17 @@ function get_all_search_product($term)
        $ci->load->database();
        $session_id = $ci->session->userdata("id");
      if ($session_id) {
-    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE user_id !='.$session_id.'
+    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,prive,cover_img ,verified_product,address from category_reusable_parts WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_internships WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id , price, cover_img ,verified_product ,address from category_job WHERE user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_tuitions WHERE user_id !='.$session_id.'
     ) as  custam  WHERE title like "%'.$term.'%" LIMIT 0,4';
      }
      else{
-      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts 
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships 
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions
+      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_reusable_parts 
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_internships 
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_job
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_tuitions
       ) as  custam  WHERE title like "%'.$term.'%" LIMIT 0,4 ';
      }
     

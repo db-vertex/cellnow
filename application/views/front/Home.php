@@ -190,11 +190,11 @@ input::placeholder {
         <div class="col-lg-6 col-md-7 col-sm-6 ">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
-                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                  
          
-		       <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-          <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-         </form>
+		       <input type="search"  name="anything" id="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+          <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search </button>
+         
 
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                         <div class="searchbox-wrap">
@@ -324,14 +324,13 @@ foreach ($category as $key => $cat) {
     <div class="text-center container py-5">
 
 
-        <div class="row" id="product_list">
+        <div class="row boost" id="product_list">
             <?php
-                  
-            
+                                
                   $product = get_all_boost();   
               $all_count =get_all_boost_count();
              
-         
+            
               if(!empty($product)){
               $i = 1;
               $j = 1;
@@ -581,7 +580,7 @@ foreach ($category as $key => $cat) {
 
                     <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
          
-         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the store" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the store" id="location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
        </form>
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
@@ -1000,8 +999,7 @@ function getproduct(subcategory_id) {
 
             $("#product_list").html(res);
 
-
-
+     
             // $('#load_cound').val("10");
 
         }
@@ -1009,6 +1007,31 @@ function getproduct(subcategory_id) {
 
 }
 </script>
+<script>
+$(document).ready(function(){
+    // Get value on button click and show alert
+    $("#myBtn").click(function(){
+        var anything = $("#anything").val();
+        
+
+        $.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getsearchproduct'); ?>",
+  data: { anything:anything},
+  success: function(res) 
+  {
+
+  
+   
+  
+    $("#product_list").html(res);
+    
+  }
+  });
+    });
+});
+</script>
+
 
 <script type='text/javascript'>
 $(document).ready(function() {
