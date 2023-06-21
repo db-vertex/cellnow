@@ -1056,6 +1056,9 @@
 .space{
     width: max-content;
 }
+.category_show{
+    width: max-content;
+}
 
     </style>
 
@@ -1113,7 +1116,7 @@
                                 id="ab">
                                 Categories
                             </a>
-                            <ul class="dropdown-menu" style="margin-bottom:10px;min-width:80px">
+                            <ul class="dropdown-menu category_show " style="margin-bottom:10px;min-width:80px">
 
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/1">Reusable Parts and
