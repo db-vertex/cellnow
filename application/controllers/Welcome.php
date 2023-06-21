@@ -241,10 +241,10 @@ $sub .= '</h6>
                 <h6 class="dress-name">';
 $title = $value->title;
 
-if (strlen($title) <= 10) {
+if (strlen($title) <= 20) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 10) . '...';
+    $y = substr($title, 0, 20) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>
@@ -253,10 +253,10 @@ $sub .= '</h6>
                 <h6>';
 $title = $value->address;
 
-if (strlen($title) <= 10) {
+if (strlen($title) <= 20) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 10) . '...';
+    $y = substr($title, 0, 20) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>

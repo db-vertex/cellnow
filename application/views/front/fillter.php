@@ -1267,7 +1267,7 @@ a:active {
 </style>
 
 <div class="container-fluid home_background" style=" margin-top: 125px;">
-    <div class="container">
+    <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
                 <?php  $id = $this->uri->segment(3); 

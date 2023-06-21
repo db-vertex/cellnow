@@ -98,7 +98,7 @@ input::placeholder {
     width: fit-content;
 }
 .va-thumbnail {
-        border-radius: 20px;
+        border-radius: 2px;
         border: 0px;
         width: 100%;
         max-height: 270px;
@@ -108,7 +108,7 @@ input::placeholder {
 </style>
 <div class="container-fluid home_background"  style=" margin-top: 125px;">
 
-<div class="container">
+<div class="container px-0">
   <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
   <div class="carousel-inner">
   <?php
@@ -171,7 +171,7 @@ input::placeholder {
     </div>
 </div><br>
 
-<div class="container">
+<div class="container ">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
 
