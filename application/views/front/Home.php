@@ -253,7 +253,7 @@ foreach ($category as $key => $cat) {
         <div class="va-carrousel-section">
             <div class="va-whitewrap">
                 <div id="va_container">
-                    <button class="deals-scroll-left deals-paddle hide-button" id="left_sponsor_button">
+                    <button class="deals-scroll-left deals-paddle " id="left_sponsor_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                             class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 320 512">
@@ -302,7 +302,7 @@ foreach ($category as $key => $cat) {
 
 
                     </div>
-                    <button class="deals-scroll-right deals-paddle hide-button" id="right_sponsor_button">
+                    <button class="deals-scroll-right deals-paddle " id="right_sponsor_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
