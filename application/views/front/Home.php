@@ -237,7 +237,7 @@ foreach ($category as $key => $cat) {
 
                 ?>
             <li class="" id="" onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                <p class="new<?php echo $cat->id; ?> btn border  rounded-pill" role="button"><img width=30 height=30 class="me-1"
+                <p class="new<?php echo $cat->id; ?> btn border  rounded-pill" role="button"><img class="me-1"
                         src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp
                     <?php echo $cat->category; ?> </p>
 

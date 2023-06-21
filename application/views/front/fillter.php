@@ -1461,6 +1461,10 @@ a:active {
                 <h5>Filters</h5>
             </center>
             <br />
+            <?php
+					  $cateory =  $this->uri->segment(3);
+                      if($cateory!=4){
+                        ?>
             <div class="list-group m-2">
                 <h6 class="common_h">PRICE</h6>
                 <input type="hidden" id="hidden_minimum_price" value="1" />
@@ -1468,7 +1472,7 @@ a:active {
                 <p id="price_show">0 - 100000</p>
                 <div id="price_range"></div>
             </div>
-
+<?php } ?>
 
 
             <!-- 

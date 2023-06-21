@@ -88,11 +88,11 @@ class Product_filter_model extends CI_Model
         }
     } else {
 		if($categorys=='All'){
-			$query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type != '3' UNION
-			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type != '3'  UNION
-			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type != '3'  UNION 
+			$query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type = '1' UNION
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = '1'  UNION
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = '1'  UNION 
 		   
-			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type != '3' ";
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = '1' ";
 		}else{
         $query = "SELECT * FROM $sql WHERE pay_type != '3'";
 		}
@@ -163,7 +163,18 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 		   
 		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
 		   <div class="card">
-			   <img  class="w-100 va-thumbnail" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img"><div class="card-body ">
+			   <img  class="w-100 va-thumbnail" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
+			   <p style="margin-left:10px;"> <img class="img-fluid"
+                                src="https://dbvertex.com/celnow/assets/images/sponsor.png" style="
+   margin-top: -25%; width:80px; ">';
+                             if($row['verified_product'] ==1){ 
+                            $pro .='<img class="img-fluid" src="https://dbvertex.com/celnow/assets/images/verified.png" style="
+   margin-top: -25%; width:80px; ">
+                        <p>';
+
+                             }
+                        $pro .='</p>
+			   <div class="card-body ">
 			   <div class="d-flex justify-content-between align-items-center"><p>';
 	   $title = $row['title'];
 	   
