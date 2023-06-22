@@ -1131,7 +1131,7 @@
                                 id="ab">
                                 Categories
                             </a>
-                            <ul class="dropdown-menu category_show " style="margin-bottom:10px;min-width:80px">
+                            <ul class="dropdown-menu category_show " style="margin-bottom:10px;min-width:80px;">
 
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/1">Reusable Parts and
@@ -1169,12 +1169,12 @@
                             </ul>
                         </li>
 
-                        <li class="nav-item" style="padding-right:10px" ;>
+                        <li class="nav-item" style="padding-right:10px; min-width: fit-content;">
                             <a class="nav-link  Post_header" href="<?php echo base_url();?>welcome/postproduct"
                                 style="color:#10B981;font-weight:bold;" id="ab">Post Ad</a>
                         </li>
 
-                        <li class="nav-item" style="padding-right:10px" ;>
+                        <li class="nav-item" style="padding-right:10px;">
                             <a class="nav-link  Shop_header" href="<?php echo base_url();?>welcome/shop"
                                 style="color:#10B981;font-weight:bold;" id="ab">Shop</a>
                         </li>

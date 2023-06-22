@@ -237,7 +237,19 @@ width: 131.9px; border-color:#10B981;">
                                         <p style="color: #575757;">Education Type</p>
                                     </div>
                                     <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                        <p style="color: #575757;"><?php
+                           $title = $type_name;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
@@ -259,7 +271,19 @@ width: 131.9px; border-color:#10B981;">
                                         <p style="color: #575757;">Job Type</p>
                                     </div>
                                     <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                        <p style="color: #575757;"><?php
+                           $title = $type_name;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
                                     </div>
                                 </div>
                                 <div class="row mt-1">
@@ -281,7 +305,19 @@ width: 131.9px; border-color:#10B981;">
                                                     <p style="color: #575757;">Job Type</p>
                                                 </div>
                                                 <div class="col-6">
-                                                    <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                                    <p style="color: #575757;"><?php
+                           $title = $type_name;
+                            if(strlen($title) <= 10)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,10) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p>
                                                 </div>
                                             </div>
                                             <div class="row mt-1">
