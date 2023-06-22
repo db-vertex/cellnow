@@ -28,6 +28,25 @@
         overflow-x: hidden;
     }
 
+    .image1 {
+        position: relative;
+        top: 0;
+        left: 0;
+       
+      }
+      .image2 {
+        position: absolute;
+        top: 10px;
+        left: 10px;
+       
+      }
+      .image3 {
+        position: absolute;
+        top: 10px;
+        left: 100px;
+       
+      }
+
     .nav ul li a:hover {
         color: #555;
     }

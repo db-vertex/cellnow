@@ -196,7 +196,18 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>"><img
                                     src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img ?>"
                                     class="w-100 va-thumbnail" /></a>
+                                    <p style="margin-left:5px;"> 
+                                    <?php if($Categories_all_product->pay_type ==1){ ?>
+                                      <img class="img-fluid image2"
+                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
+   width:80px; ">
+                            <?php } if($Categories_all_product->verified_product ==1){ ?>
+                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   width:80px; ">
+                      
 
+                            <?php }?>
+                        </p>
                             <a href="#!">
 
                                 <div class="hover-overlay">

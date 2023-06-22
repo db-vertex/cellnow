@@ -21,6 +21,8 @@ html,body
   border-radius: 50%;
 }
 
+
+
     #a{
   margin-right: 10px;
   border-color: #78d7b8;
@@ -155,13 +157,15 @@ width: 131.9px; border-color:#10B981;">
                             <a
                                 href="<?php echo base_url();?>welcome/myproductdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
                                     src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
-                                    class="w-100 va-thumbnail" /></a>
-                                    <p style="margin-left:5px;"> <img class="img-fluid"
+                                    class="w-100 va-thumbnail image1" /></a>
+                                    <p style="margin-left:5px;"> 
+                                    <?php if($pro->pay_type ==1){ ?>
+                                      <img class="img-fluid image2"
                                 src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
-   margin-top: -20%; width:80px; ">
-                            <?php if($pro->verified_product ==1){ ?>
-                            <img class="img-fluid" src="<?php echo base_url(); ?>assets/images/verified.png" style="
-   margin-top: -20%; width:80px; ">
+   width:80px; ">
+                            <?php } if($pro->verified_product ==1){ ?>
+                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   width:80px; ">
                       
 
                             <?php }?>

@@ -229,7 +229,7 @@ $sub .= '</h6>
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
                 <h6 style="color:#10B981" class="mb-3">';
-				if(isset($value->price)){
+				if($value->category_id!=4){
 					$sub.='
                     <strong style="color:#10B981" class="ms-2 ">₹' . $value->price . '</strong>';
 				}

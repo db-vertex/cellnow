@@ -368,9 +368,15 @@ foreach ($category as $key => $cat) {
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
+                        <?php if($pro->category_id!=4){ ?>
                             <h6 style="color:#10B981" class="mb-3">
+                            <strong class="ms-2 ">₹<?php echo $pro->price; ?></strong>
+                        </h6>
+                            <?php } else{?>
+                                <h6 style="color:#fff" class="mb-3">
                                 <strong class="ms-2 ">₹<?php echo $pro->price; ?></strong>
                             </h6>
+                       <?php } ?>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
 
@@ -710,12 +716,13 @@ foreach ($category as $key => $cat) {
               else {?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-        </div>
+       
         <?php if($allcount >4){ ?>
             <center class=""><a
                     style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
                     href="<?php echo base_url();?>welcome/donatefillter_product/5" class="btn btn-danger">See All</a></center>
             <?php } ?>
+            </div>
     </div>
 </section>
 

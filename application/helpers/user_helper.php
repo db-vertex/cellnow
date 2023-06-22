@@ -825,12 +825,22 @@ function get_all_donate()
        
        //load databse library
        $ci->load->database();
-
-       $query="select * from(SELECT id, user_id,title,category_id,subcategory_id,town,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 2 UNION
-       SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 2 UNION
-       SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 2  UNION 
-      
-       SELECT id, user_id,title,category_id,subcategory_id,town,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 2 )s LIMIT 0 , 4";
+       $rowperpage=4;
+       $session_id = $ci->session->userdata("id");
+       if($session_id){
+  $query="select * from (SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 2 AND user_id != $session_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 2  AND user_id	!= $session_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 2  AND user_id	 != $session_id UNION 
+ 
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 2  AND user_id != $session_id )s LIMIT 0,4";
+       }
+       else{
+        $query="select * from (SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 2  UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 2    UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 2   UNION 
+       
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 2 )s LIMIT 0,4" ;
+       }
   $category_data = $ci->db->query($query);        
 
   return $category_data->result(); 
