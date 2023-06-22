@@ -324,7 +324,7 @@ foreach ($category as $key => $cat) {
     <div class="text-center container py-5">
 
 
-        <div class="row boost" id="product_list">
+        <div class="row" id="product_list">
             <?php
                                 
                   $product = get_all_boost();   
@@ -432,109 +432,6 @@ foreach ($category as $key => $cat) {
 </section>
 
 
-<!-- <div class="container">
-<div class="va-carrousel-section">
-    <div class="va-whitewrap">
-       
-
-        <div id="va_container_most_view">
-            <button class="deals-scroll-left_most_view deals-paddle" id="left_view_button">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                    class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512">
-                    <path fill="currentColor"
-                        d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                    </path>
-                </svg>
-            </button>
-
-            <div class="va-carrousel-flexbox_most" id="product_list">
-                   <?php
-                  
-            
-                  $product = get_all_boost();   
-              
-            
-              if(!empty($product)){
-              $i = 1;
-              $j = 1;
-            foreach($product as $pro){
-            
-             $session_login_id  = $user['user_id'] ?? null;
-              $product_user_id = $pro->user_id;
-              if($session_login_id !== $product_user_id){
-                  if($i > 0){
-            
-            ?>  
-            
-                  <div class="va-card va-cards "> <a class="link-plain link-plains"  href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>" style=""> 
-                  <p  class="my-auto">
-                 
-                  <?php if($pro->cover_img !== NULL) { ?> 
-                                          <img class="va-thumbnail" src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>">
-                            <?php } else { ?>
-						          <img class=" rounded-5 va-thumbnail" src="<?php echo base_url();?>assets/images/Group 486.png" />
-
-						       <?php }?>
-                  <p> <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
-   margin-top: -40%; width:50px; margin-left:10px;">
-    <?php if($pro->verified_product ==1){ ?>
-      <img class="img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" style="
-   margin-top: -70%; width:50px; margin-left:62px;"><p>
-
-   <?php }?>       
-                  </p>
-
-                            <p class="ms-1 mt-3 ms-3" style="color:black; font-weight:800;">$<?php echo $pro->price ?></p>
-                        <div class="va-title ms-3">  <?php
-                           $title = $pro->title;
-                            if(strlen($title) <= 10)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,10) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?>
-                           </div>
-                           <div class="ms-3 align-items-center">
-                                        <p class="text-muted mb-2"
-                                            style="color:black;cursor: pointer; width: 100%; overflow:clip; line-height: 1.4; white-space:nowrap; text-overflow: ellipsis; line-height: 1.4; display:inline-block">
-                                             <span class="ms-0"><?php echo ucfirst($pro->address) ?></span></p><br>
-                                    
-                                    </div>
-                    </a> 
-                
-                    </div>
-                    
-                    <?php $i++;} } else if($j == 1) {?>
-                   
-                  <?php   }  $j++; };  ?>  
-            
-              
-            <button class="deals-scroll-right_most_view deals-paddle" id="right_view_button">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                    class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512">
-                    <path fill="currentColor"
-                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                    </path>
-                </svg>
-            </button>
-            <?php }
-              else {?>
-            <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
-            <?php }?>
-            </div>
-        </div>
-
-    </div>
-</div>
-</div> -->
-
 
 <!-- new  -->
 <div class="container">
@@ -578,11 +475,11 @@ foreach ($category as $key => $cat) {
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
 
-                    <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
+                   
          
-         <input type="search"  name="anything" class="form-control rounded-5"  placeholder="Search for the store" id="location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-       </form>
+         <input type="search"  name="location" class="form-control rounded-5"  placeholder="Search for the store" id="location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+        <button type="submit" class="btn btn-success rounded-5" id="shopsubmit" style="padding:6px 10px">Search </button>
+      
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
                         <div class="searchbox-wrap">
                             <input type="text" value="" id="Location" name="anything" aria-label="Search"
@@ -596,13 +493,7 @@ foreach ($category as $key => $cat) {
 
 
                 </div>
-                <div class="row">
-                    <div id="display"></div>
-
-
-
-
-                </div>
+               
             </div>
         </div>
     </div>
@@ -616,24 +507,24 @@ foreach ($category as $key => $cat) {
     <div class="text-center container py-4">
 
 
-        <div class="row">
+        <div class="row" id="shop_list">
             <?php
               
-              $product = get_all_store();
+              $store = get_all_store();
              $shop_count= get_all_store_count();
            
            
-            if(!empty($product)){
+            if(!empty($store)){
             $i = 1;
             $j = 1;
-          foreach($product as $pro){
+          foreach($store as $pro){
            $session_login_id  = $user['user_id'] ?? null;
             $product_user_id = $pro->user_id;
             if($session_login_id !== $product_user_id){
                 if($i > 0){
              ?>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="post_<?php echo $pro->id; ?>">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                         <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>"><img
@@ -695,12 +586,13 @@ foreach ($category as $key => $cat) {
               else {?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-        </div>
+       
         <?php if($shop_count > 4){ ?>
         <center class=""><a href="<?php echo base_url();?>welcome/store/16" class="btn btn-danger "
                 style="width:100px; border-radius:20px; background-color: #10B981; color:white; border-color:#10B981; ">See
                 All</a></center>
         <?php } ?>
+    </div>
     </div>
 </section>
 
@@ -819,11 +711,11 @@ foreach ($category as $key => $cat) {
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
         </div>
-        <!-- <?php if($allcount >4){ ?> 
-            <button  class="btn btn-danger donate-load-more" >See All</button>
+        <?php if($allcount >4){ ?>
+            <center class=""><a
+                    style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
+                    href="<?php echo base_url();?>welcome/donatefillter_product/5" class="btn btn-danger">See All</a></center>
             <?php } ?>
-            <input type="hidden" id="row-donate" value="0">
-            <input type="hidden" id="all-donate" value="<?php echo $allcount; ?>"> -->
     </div>
 </section>
 
@@ -1014,7 +906,7 @@ $(document).ready(function(){
         var anything = $("#anything").val();
         
 
-        $.ajax({
+        jQuery.ajax({
   type: "POST",
   url: "<?php echo base_url('/welcome/getsearchproduct'); ?>",
   data: { anything:anything},
@@ -1032,7 +924,27 @@ $(document).ready(function(){
 });
 </script>
 
+<script>
+$(document).ready(function(){
+    // Get value on button click and show alert
+    $("#shopsubmit").click(function(){
+        var location = $("#location").val();
+        
 
+        $.ajax({
+  type: "POST",
+  url: "<?php echo base_url('/welcome/getsearchshop'); ?>",
+  data: { location:location},
+  success: function(res) 
+  {
+
+    $("#shop_list").html(res);
+    
+  }
+  });
+    });
+});
+</script>
 <script type='text/javascript'>
 $(document).ready(function() {
     $("#search").autocomplete({

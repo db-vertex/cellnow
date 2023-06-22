@@ -119,9 +119,7 @@ class Welcome extends CI_Controller
 		if (!empty($product)) {
 
 			foreach ($product as $value) {
-				$session_login_id = $this->session->userdata("id");
-				$product_user_id = $value->user_id;
-				if ($session_login_id !== $product_user_id) {
+				
 
 
 					//print_r($subcategory);die();
@@ -176,7 +174,7 @@ $sub .= '</h6>
 </div>';
 
 
-				}
+				
 			}
 		} else {
 			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
@@ -507,66 +505,77 @@ $sub .= '</h6>
 
 		$location = $this->input->post('location');
 		// echo $this->db->last_query();
-		$sub = "";
-
-		$shop =get_all_location_store($location);
 		
+
+		$shop = get_all_location_store($location);
+		$shop_count= get_all_location_store_count($location);
+		
+		$sub = "";
 		if (!empty($shop)) {
 			foreach ($shop as $value) {
-				//print_r($subcategory);die();
+				$session_login_id = $this->session->userdata("id");
+				$product_user_id = $value->user_id;
+				if ($session_login_id !== $product_user_id) {
 
 				$sub .= '
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4 mt-3 post">
-                <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
-                    <a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '"><img
-                            class="va-thumbnail " alt="Card image cap"
-                            src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '"></a>
-                    <div class="card-block" style="padding:8px">
-                        <p class="card-title"><b>';
-				$title = $value->name;
-				if (strlen($title) <= 20) {
-					$sub .= ucfirst($title);
-				} else {
-					$y = substr($title, 0, 20) . '...';
-					$sub .= ucfirst($y);
-				}
+				<div class="col-lg-3 col-md-4 col-sm-6 mb-4 " id="post_<?php echo $pro->id; ?>">
+                <div class="card">
+                    <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+					<a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '"><img
+					class="va-thumbnail " alt="Card image cap"
+					src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '"></a>
+                        <a href="#!">
 
-				$sub .= '</b></p>
-                        <p class="card-text">';
-				$title = $value->description;
-				if (strlen($title) <= 50) {
-					$sub .= ucfirst($title);
-				} else {
-					$y = substr($title, 0, 50) . '...';
-					$sub .= ucfirst($y);
-				}
+                            <div class="hover-overlay">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="card-body">
 
-				$sub .= '</p><br>';
-				$username = get_user_name($value->user_id);
-				$sub .= ' <p class="card-title">' . $username . '</p>
-                        <img src="https://dbvertex.com/celnow/assets/images/location .png" > <span>';
-				$title = $value->Address;
-				if (strlen($title) <= 20) {
-					$sub .= ucfirst($title);
-				} else {
-					$sub .= substr($title, 0, 20) . '...';
-					echo ucfirst($sub);
-				}
+                        <div class="d-flex justify-content-between align-items-center">
 
-				$sub .= '</span><br>
+                            <h6 class="dress-name">';
+							$title = $value->name;
+							if (strlen($title) <= 20) {
+								$sub .= ucfirst($title);
+							} else {
+								$y = substr($title, 0, 20) . '...';
+								$sub .= ucfirst($y);
+							}
+			
+							$sub .= '</h6>
 
+
+
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                            <a href="" class="text-reset">
+                                <h6>';
+								$title = $value->Address;
+								if (strlen($title) <= 20) {
+									$sub .= ucfirst($title);
+								} else {
+									$sub .= substr($title, 0, 20) . '...';
+									echo ucfirst($sub);
+								}
+				
+								$sub .= '</h6>
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
-		  '
-				;
-
+				';
 
 			}
-		} else {
+		}
+	} else {
 			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
 		}
-
+		if($shop_count >4){
+			$sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn">See All</a></center>';
+			   } 
 		echo $sub;
 
 	}
@@ -1261,6 +1270,8 @@ $sub .= '</h6>
 
 	}
 
+
+
 	public function fetch_data()
 	{
 		sleep(2);
@@ -1304,6 +1315,121 @@ $sub .= '</h6>
 			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category, $category, $type,$search)
 		);
 		echo json_encode($output);
+	}
+
+	public function donatefetch_data()
+	{
+		sleep(2);
+		$minimum_price = $this->input->post('minimum_price');
+		$maximum_price = $this->input->post('maximum_price');
+		$brand = $this->input->post('brand');
+		$sub_category = $this->input->post('sub_category');
+		$type = $this->input->post('type');
+		$search = $this->input->post('search');
+		$category = $this->session->userdata('filter_id');
+
+		$config = array();
+		$config["base_url"] = "";
+		$config["total_rows"] = $this->product_filter_model->donatecount_all($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
+		$config["per_page"] = 6;
+		$config['uri_segment'] = 3;
+		$config["use_page_numbers"] = TRUE;
+		$config["full_tag_open"] = '<ul class="pagination">';
+		$config["full_tag_close"] = '</ul>';
+		$config["first_tag_open"] = '<li>';
+		$config["first_tag_close"] = '</li>';
+		$config["last_tag_open"] = '<li>';
+		$config["last_tag_close"] = '</li>';
+		$config['next_link'] = '&gt;';
+		$config["next_tag_open"] = '<li>';
+		$config["next_tag_close"] = '</li>';
+		$config["prev_link"] = "&lt;";
+		$config["prev_tag_open"] = "<li>";
+		$config["prev_tag_close"] = "</li>";
+		$config["cur_tag_open"] = "<li class='active'><a  href='#'>";
+		$config["cur_tag_close"] = "</a></li>";
+		$config["num_tag_open"] = "<li class=hello>";
+		$config["num_tag_close"] = "</li>";
+		$config["num_links"] = 4;
+		$this->pagination->initialize($config);
+		$page = $this->uri->segment('3');
+		$start = ($page - 1) * $config["per_page"];
+
+		$output = array(
+			'pagination_link' => $this->pagination->create_links(),
+			'product_list' => $this->product_filter_model->donatefetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category, $category, $type,$search)
+		);
+		echo json_encode($output);
+	}
+
+
+	public function donatefillter_product()
+	{
+		$cateory = $this->uri->segment(3);
+		$session_id = $this->session->userdata('id');
+
+		// if($cateory == 5){
+
+		// 	$data['products']= get_all_products();
+			
+
+		// 	if ($session_id) {
+		// 		//$myproduct = $this->product_model->myproduct($session_id);
+	
+		// 		$user_detail = $this->user->loginuser($session_id);
+	
+		// 		$this->load->view('front/header', ['user' => $user_detail]);
+		// 		$this->load->view('front/fillter', $data, ['user' => $user_detail]);
+		// 		$this->load->view('front/footer');
+	
+		// 	} else {
+		// 		$this->load->view('front/header');
+		// 		$this->load->view('front/fillter', $data);
+		// 		$this->load->view('front/footer');
+		// 	}
+
+		// }
+		// else{
+
+		if ($cateory == 1) {
+			//$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			//$data['Brand'] = $this->product_filter_model->fetch_filter_type('Model',$cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
+
+		} else if ($cateory == 2) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			//$data['Brand'] = $this->product_filter_model->fetch_filter_type('Model',$cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('Education_type', $cateory);
+		} else if ($cateory == 3) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('Job_type', $cateory);
+		} else if ($cateory == 4) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('Job_type', $cateory);
+		}
+		else if ($cateory == 5) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
+		}
+	 
+
+
+		if ($session_id) {
+			//$myproduct = $this->product_model->myproduct($session_id);
+
+			$user_detail = $this->user->loginuser($session_id);
+
+			$this->load->view('front/header', ['user' => $user_detail]);
+			$this->load->view('front/donatefilter', $data, ['user' => $user_detail]);
+			$this->load->view('front/footer');
+
+		} else {
+			$this->load->view('front/header');
+			$this->load->view('front/donatefilter', $data);
+			$this->load->view('front/footer');
+		}
+	
+
 	}
 
 
@@ -1980,6 +2106,66 @@ $sub .= '</h6>
 			$this->load->view('front/footer');
 		}
 	}
+
+
+	public function myproductdetail()
+	{
+
+		$id = $this->uri->segment(4);
+		$cateory = $this->uri->segment(3);
+		$subcategory_id = $this->uri->segment(5);
+
+		if ($cateory == 1) {
+			$Categories_all_product = get_all_category_reusable_parts($id);
+			$Category_product = $this->db->query("SELECT * FROM category_reusable_parts  WHERE subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+
+
+		} else if ($cateory == 2) {
+			$Categories_all_product = get_all_category_tuitions($id);
+			$Category_product = $this->db->query("SELECT * FROM category_tuitions  WHERE subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+
+
+		} else if ($cateory == 3) {
+			$Categories_all_product = get_all_category_job($id);
+			$Category_product = $this->db->query("SELECT * FROM category_job  WHERE subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+
+
+		} else if ($cateory == 4) {
+			$Categories_all_product = get_all_category_internships($id);
+			$Category_product = $this->db->query("SELECT * FROM category_internships  WHERE subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+
+
+		}
+
+
+		//$product = $this->product_model->getproductall($id);
+
+
+		$session_id = $this->session->userdata('id');
+
+		if ($session_id) {
+			//echo $this->db->last_query();
+			$user_detail = $this->user->loginuser($session_id);
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+			$this->load->view('front/header', ['user' => $user_detail]);
+			$this->load->view('front/myproductdetail', ['user' => $user_detail, 'categories_data' => $Categories_all_product, 'category_data' => $Category_product]);
+			$this->load->view('front/footer');
+
+		} else {
+
+			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
+			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
+			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
+			$this->output->set_header('Pragma: no-cache');
+			$this->load->view('front/header');
+			$this->load->view('front/myproductdetail', ['categories_data' => $Categories_all_product, 'category_data' => $Category_product]);
+			$this->load->view('front/footer');
+		}
+	}
+
 
 
 	public function fetch()

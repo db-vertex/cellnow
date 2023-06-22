@@ -150,25 +150,25 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
         $product_id=$value->product_id;
         $category_id=$value->category_id;
          if($category_id ==1 ){
-           $Categories_all_product = get_all_category_reusable_parts($product_id);
+           $Categories_all_product = get_shopall_category_reusable_parts($product_id);
 
            
          }
          else if($category_id == 2){
-             $Categories_all_product = get_all_category_Electronic($product_id);  
+             $Categories_all_product = get_shopall_category_tuitions($product_id);  
              
          }
          else if($category_id == 3 ){
-             $Categories_all_product = get_all_category_Furniture($product_id); 
+             $Categories_all_product = get_shopall_category_job($product_id); 
              
          }
          else if($category_id == 4){
-          $Categories_all_product = get_all_category_Fashion($product_id);
+          $Categories_all_product = get_shopall_category_internships($product_id);
          
          }
          
         
-         
+         if(!empty($Categories_all_product)){
            $wishlist=0;
       if(!empty($user) && isset($user)){
   $wishlit = get_wishlist($Categories_all_product->id, $Categories_all_product->category_id,$user["user_id"]);
@@ -278,7 +278,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
             </div>
           </div> 
 
-<?php }}else{?>
+<?php } }}else{?>
          <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
    <?php }?>
 

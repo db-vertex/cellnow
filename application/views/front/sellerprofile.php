@@ -145,16 +145,27 @@ width: 131.9px; border-color:#10B981;">
 <?php $sellerproduct = get_seller_product($user['user_id']); 
 
  if(!empty($sellerproduct)){
-  foreach($sellerproduct as $pro){?>
+  foreach($sellerproduct as $pro){
+ 
+  ?>
 
 <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post">
                     <div class="card">
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <a
-                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
+                                href="<?php echo base_url();?>welcome/myproductdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
                                     src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                     class="w-100 va-thumbnail" /></a>
+                                    <p style="margin-left:5px;"> <img class="img-fluid"
+                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
+   margin-top: -20%; width:80px; ">
+                            <?php if($pro->verified_product ==1){ ?>
+                            <img class="img-fluid" src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   margin-top: -20%; width:80px; ">
+                      
 
+                            <?php }?>
+                        </p>
                             <a href="#!">
 
                                 <div class="hover-overlay">
@@ -229,13 +240,22 @@ width: 131.9px; border-color:#10B981;">
                                         <p style="color: #575757;"><?php echo $type_name; ?></p>
                                     </div>
                                 </div>
+                                <div class="row mt-1">
+                                    <div class="col-6">
+                                        <p style="color: #575757;">Tuitions Location</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $pro->bill; ?></p>
+                                    </div>
+                                </div>
                             
-                                <?php } else if($pro->category_id==3 && $pro->category_id==4){ 
+                                <?php } else if($pro->category_id==4){ 
+                              
                   $type_name = get_product_type_name($pro->type); 
-                 
+              
                   ?>
                   <div class="row mt-1">
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;">Job Type</p>
                                     </div>
                                     <div class="col-6">
@@ -243,14 +263,36 @@ width: 131.9px; border-color:#10B981;">
                                     </div>
                                 </div>
                                 <div class="row mt-1">
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;">Job Location</p>
                                     </div>
                                     <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $pro->Job_Location; ?></p>
+                                        <p style="color: #575757;"><?php echo $pro->bill; ?></p>
                                     </div>
                                 </div>
-                                <?php } ?>
+                              
+                                <?php } else if($pro->category_id==3){ 
+                              
+                              $type_name = get_product_type_name($pro->type); 
+                          
+                              ?>
+                              <div class="row mt-1">
+                                                <div class="col-6">
+                                                    <p style="color: #575757;">Job Type</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-6">
+                                                    <p style="color: #575757;">Job Location</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p style="color: #575757;"><?php echo $pro->bill; ?></p>
+                                                </div>
+                                            </div>
+                                            <?php } ?>
                                 <div class="d-flex justify-content-between align-items-center">
                                 <p style="color: #575757;"> <img src="<?php echo base_url();?>assets/images/location .png"> &nbsp
                                 <?php

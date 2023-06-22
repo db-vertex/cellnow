@@ -1501,6 +1501,27 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <div class="row  mt-2 margin_left_css">
 
                         <?php   $shoplist = 0;
+                        if($product_detail->verified_product){
+                            if(empty($shop)){
+                                $shop_list =check_shoplist_by_productid($product_detail->id);
+                           
+                          if(empty($shop_list)){ echo"";}else{  
+                          $shop_name= get_shop_name($shop_list->shop_id);?>
+                              <div class="" style="">
+                                  <div class="col-12" style="text-align:center;">
+                                      <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                  class="btn_Verified_img"
+                                                  src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                  alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                              <?php echo $shop_name;?></span></p></a>
+                                  </div>
+      
+      
+                              </div>
+                              <?php } }   
+                        }
+                        else{
+                        
                 if (!empty($user) && isset($user)) {
                     $shop =check_shoplist($user['user_id']); 
                    
@@ -1575,6 +1596,7 @@ if($shop->admin_approval==1){
                         </div>
                         <?php } } }
                 } 
+            
                 else { $shop_list =check_shoplist_by_productid($product_detail->id);
                     if(empty($shop_list)) {echo"";}else{
                 $shop_name= get_shop_name($shop_list->shop_id);
@@ -1590,7 +1612,7 @@ if($shop->admin_approval==1){
                             </div>
 
                         </div>
-                        <?php }} ?>
+                        <?php }} }?>
 
                     </div>
 

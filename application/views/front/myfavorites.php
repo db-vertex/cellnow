@@ -128,6 +128,7 @@
              }
              else if($value->category_id==4){
                 $pro = get_all_category_internships($product_id);
+               
              }
       
           $wishlist = 0;
@@ -245,13 +246,22 @@
                                         <p style="color: #575757;"><?php echo $type_name; ?></p>
                                     </div>
                                 </div>
+                                <div class="row mt-1">
+                                    <div class="col-6">
+                                        <p style="color: #575757;">Tuitions Location</p>
+                                    </div>
+                                    <div class="col-6">
+                                        <p style="color: #575757;"><?php echo $pro->Tuitions_loction; ?></p>
+                                    </div>
+                                </div>
                             
-                                <?php } else if($pro->category_id==3 && $pro->category_id==4){ 
-                  $type_name = get_product_type_name($pro->type); 
-                 
+                                <?php } else if($pro->category_id==4){ 
+                              
+                  $type_name = get_product_type_name($pro->Job_type); 
+              
                   ?>
                   <div class="row mt-1">
-                                    <div class="col-5">
+                                    <div class="col-6">
                                         <p style="color: #575757;">Job Type</p>
                                     </div>
                                     <div class="col-6">
@@ -266,6 +276,28 @@
                                         <p style="color: #575757;"><?php echo $pro->Job_Location; ?></p>
                                     </div>
                                 </div>
+                              
+                                <?php } else if($pro->category_id==3){ 
+                              
+                              $type_name = get_product_type_name($pro->Job_type); 
+                          
+                              ?>
+                              <div class="row mt-1">
+                                                <div class="col-6">
+                                                    <p style="color: #575757;">Job Type</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p style="color: #575757;"><?php echo $type_name; ?></p>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-6">
+                                                    <p style="color: #575757;">Job Location</p>
+                                                </div>
+                                                <div class="col-6">
+                                                    <p style="color: #575757;"><?php echo $pro->Job_Location; ?></p>
+                                                </div>
+                                            </div>
                                 <?php } ?>
                             <div class="d-flex justify-content-between align-items-center">
                                 <p> <img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"></p> 
