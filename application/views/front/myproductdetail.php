@@ -1493,96 +1493,27 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <div class="row  mt-2 margin_left_css">
 
                         <?php   $shoplist = 0;
-                if (!empty($user) && isset($user)) {
-                    $shop =check_shoplist($user['user_id']); 
-                   
-                    if(empty($shop)){
-                          $shop_list =check_shoplist_by_productid($product_detail->id);
-                     
-                    if(empty($shop_list)){ echo"";}else{  
-                    $shop_name= get_shop_name($shop_list->shop_id);?>
-                        <div class="" style="">
-                            <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p></a>
-                            </div>
-
-
-                        </div>
-                        <?php } }else{
-                    $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
-                 if (empty($wishlit)) {
-if($shop->admin_approval==1){
-  
-                    ?> <div class="" style="">
-
-                            <div class="">
-                                <form class="" action="<?php echo base_url();?>welcome/setshoplist" method="POST">
-                                    <input type="hidden" name="product_id" id="product_id"
-                                        value="<?php echo $product_detail->id; ?>">
-                                    <input type="hidden" name="category_id" id="category_id"
-                                        value="<?php echo $product_detail->category_id; ?>">
-                                    <input type="hidden" name="user_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
-                                                            if($session_id){echo $_SESSION['id'];} ?>">
-                                    <input type="hidden" name="seller_id" id="receiver_id"
-                                        value="<?php echo $product_detail->user_id; ?>">
-                                    <input type="hidden" name="shop_id" id="receiver_id"
-                                        value="<?php echo $shop->id; ?>">
-                                    <input type="hidden" name="subcategory_id" id="receiver_id"
-                                        value="<?php echo $product_detail->subcategory_id; ?>">
-
-
-                                    <div class="col-12" style="text-align:center;">
-                                        <button class=" btn btn_Verified"><span class="pe-2"><img
-                                                    class="btn_Verified_img"
-                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                    alt="check 1.png"></span><span class="btn_Verified_text"
-                                                type="submit" name="submit">Verified</span></button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
-
-
-                        <?php }} else {
-                    $shop_list =check_shoplist_by_productid($product_detail->id);
-                    if(empty($shop_list)) {echo"";}else{
-                    $shop_name= get_shop_name($shop_list->shop_id);
-                    ?>
-
-                        <div class="" style="">
-
-                            <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>" ><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p></a>
-                            </div>
-
-                        </div>
-                        <?php } } }
-                } 
-                else { $shop_list =check_shoplist_by_productid($product_detail->id);
-                    if(empty($shop_list)) {echo"";}else{
-                $shop_name= get_shop_name($shop_list->shop_id);
-                ?>
-                        <div class="" style="">
-
-                            <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p></a>
-                            </div>
-
-                        </div>
-                        <?php }} ?>
+                         if($product_detail->verified_product){
+                            if(empty($shop)){
+                                $shop_list =check_shoplist_by_productid($product_detail->id);
+                           
+                          if(empty($shop_list)){ echo"";}else{  
+                          $shop_name= get_shop_name($shop_list->shop_id);?>
+                              <div class="" style="">
+                                  <div class="col-12" style="text-align:center;">
+                                      <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                  class="btn_Verified_img"
+                                                  src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                  alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                              <?php echo $shop_name;?></span></p></a>
+                                  </div>
+      
+      
+                              </div>
+                              <?php } }   
+                        }
+                        else{
+                }?>
 
                     </div>
 
