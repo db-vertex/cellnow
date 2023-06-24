@@ -717,7 +717,7 @@ foreach ($category as $key => $cat) {
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
        
-        <?php if($allcount >4){ ?>
+        <?php if($allcount > 4){ ?>
             <center class=""><a
                     style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
                     href="<?php echo base_url();?>welcome/donatefillter_product/5" class="btn btn-danger">See All</a></center>

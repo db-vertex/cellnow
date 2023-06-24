@@ -220,6 +220,15 @@ $SQL="SELECT Distinct * FROM `chat_list` Where (sender_id = $sender_id AND recei
     return $query->row_array();
  }
 
+ function checkchat($sender_id,$reciever_id, $product_id){
+    $SQL="SELECT Distinct * FROM `chat` Where (sender_id = $sender_id AND receiver_id = $reciever_id AND product_id=$product_id) or (receiver_id = $sender_id AND sender_id = $reciever_id AND product_id=$product_id) order by id desc limit 1";    
+        $query = $this->db->query($SQL);
+        return $query->row_array();
+     }
+    
+
+ 
+
   function getuserallchat($sender_id,$reciever_id, $product_id=0){
 
    
@@ -685,31 +694,31 @@ $SQL="SELECT Distinct * FROM `chat_list` Where (sender_id = $sender_id AND recei
 function push_notification_android($device_id,$message, $type="other"){
 
 
-       $url = "https://fcm.googleapis.com/fcm/send";
-    $token = $device_id;
-    $serverKey = 'AAAAZK3TFjM:APA91bFMqAfMveWDzP8hHyEz4-1So3rdkLMn3XloLcO_I04GSJyifenYrv6VH1A_4ax7O2JwAhGquIgVY-POGKQE12P5PNkbW-NF9w7x8sXfivf-sXwDBp9_XRXyXYXeUqOgCEboqhS5';
-    $title = "Notification title";
-    $body = "Hello I am from Your php server";
-    $notification = array('title' =>$title , 'body' => $message, 'sound' => 'default', 'badge' => '1');
-    $arrayToSend = array('to' => $token, 'notification' => $notification,'priority'=>'high');
+    //    $url = "https://fcm.googleapis.com/fcm/send";
+    // $token = $device_id;
+    // $serverKey = 'AAAAZK3TFjM:APA91bFMqAfMveWDzP8hHyEz4-1So3rdkLMn3XloLcO_I04GSJyifenYrv6VH1A_4ax7O2JwAhGquIgVY-POGKQE12P5PNkbW-NF9w7x8sXfivf-sXwDBp9_XRXyXYXeUqOgCEboqhS5';
+    // $title = "Notification title";
+    // $body = "Hello I am from Your php server";
+    // $notification = array('title' =>$title , 'body' => $message, 'sound' => 'default', 'badge' => '1');
+    // $arrayToSend = array('to' => $token, 'notification' => $notification,'priority'=>'high');
   
-    $json = json_encode($arrayToSend);
-    $headers = array();
-    $headers[] = 'Content-Type: application/json';
-    $headers[] = 'Authorization: key='. $serverKey;
-    $ch = curl_init();
-    curl_setopt($ch, CURLOPT_URL, $url);
-    curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"POST");
-    curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
-    curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
-    //Send the request
-    $response = curl_exec($ch);
-    //Close request
-    if ($response === FALSE) {
-    die('FCM Send Error: ' . curl_error($ch));
-    }
-    curl_close($ch);
-    return $response;
+    // $json = json_encode($arrayToSend);
+    // $headers = array();
+    // $headers[] = 'Content-Type: application/json';
+    // $headers[] = 'Authorization: key='. $serverKey;
+    // $ch = curl_init();
+    // curl_setopt($ch, CURLOPT_URL, $url);
+    // curl_setopt($ch, CURLOPT_CUSTOMREQUEST,"POST");
+    // curl_setopt($ch, CURLOPT_POSTFIELDS, $json);
+    // curl_setopt($ch, CURLOPT_HTTPHEADER,$headers);
+    // //Send the request
+    // $response = curl_exec($ch);
+    // //Close request
+    // if ($response === FALSE) {
+    // die('FCM Send Error: ' . curl_error($ch));
+    // }
+    // curl_close($ch);
+    // return $response;
 
     //API URL of FCM
     $url = 'https://fcm.googleapis.com/fcm/send';
