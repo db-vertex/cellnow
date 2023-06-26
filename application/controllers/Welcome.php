@@ -517,55 +517,35 @@ $sub .= '</h6>
 				$product_user_id = $value->user_id;
 				if ($session_login_id !== $product_user_id) {
 
-				$sub .= '
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4 " id="post_<?php echo $pro->id; ?>">
-                <div class="card">
-                    <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-					<a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '"><img
-					class="va-thumbnail " alt="Card image cap"
-					src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '"></a>
-                        <a href="#!">
-
-                            <div class="hover-overlay">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="card-body">
-
-                        <div class="d-flex justify-content-between align-items-center">
-
-                            <h6>';
-							$title = $value->name;
-							if (strlen($title) <= 20) {
-								$sub .= ucfirst($title);
-							} else {
-								$y = substr($title, 0, 20) . '...';
-								$sub .= ucfirst($y);
-							}
-			
-							$sub .= '</h6>
-
-
-
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                           
-                                <h6>';
-								$title = $value->Address;
-								if (strlen($title) <= 20) {
-									$sub .= ucfirst($title);
-								} else {
-									$sub .= substr($title, 0, 20) . '...';
-									echo ucfirst($sub);
-								}
-				
-								$sub .= '</h6>
-                     
-                        </div>
-                    </div>
-                </div>
-            </div>
+					$sub .= '
+					<div class="col-lg-3 col-md-4 col-sm-6 mb-4" id="post_' . $value->id . '">
+						<div class="card">
+							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+								<a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '">
+									<img class="va-thumbnail" alt="Card image cap" src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '">
+								</a>
+								<a href="#!">
+									<div class="hover-overlay">
+										<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+									</div>
+								</a>
+							</div>
+							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-center">
+									<h6 class="dress-name">';
+				$sub .= strlen($value->name) <= 20 ? ucfirst($value->name) : ucfirst(substr($value->name, 0, 20) . '...');
+				$sub .= '</h6>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									<a href="" class="text-reset">
+										<h6>';
+				$sub .= strlen($value->Address) <= 20 ? ucfirst($value->Address) : ucfirst(substr($value->Address, 0, 20) . '...');
+				$sub .= '</h6>
+									</a>
+								</div>
+							</div>
+						</div>
+					</div>
 				';
 
 			}

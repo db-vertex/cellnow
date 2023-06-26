@@ -519,16 +519,12 @@ foreach ($category as $key => $cat) {
            
            
             if(!empty($store)){
-            $i = 1;
-            $j = 1;
+          
           foreach($store as $pro){
-           $session_login_id  = $user['user_id'] ?? null;
-            $product_user_id = $pro->user_id;
-            if($session_login_id !== $product_user_id){
-                if($i > 0){
+         
              ?>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="post_<?php echo $pro->id; ?>">
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="" >
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                         <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>"><img
@@ -583,10 +579,8 @@ foreach ($category as $key => $cat) {
                 </div>
             </div>
 
-            <?php $i++;} } else if($j == 1) {?>
-
-            <?php   }  $j++; };  ?>
-            <?php }
+           
+            <?php }}
               else {?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
