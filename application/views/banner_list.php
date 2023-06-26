@@ -41,7 +41,7 @@ $msg_class=$this->session->flashdata('msg_class')
 
 <div class="box">
 <div class="box-body">
-<table id="" class="table table-bordered table-striped">
+<table id="example3" class="table table-bordered table-striped">
               <thead>
                 <tr>
                   <th>S no.</th>
@@ -147,26 +147,16 @@ $i=1;
     
 </script>
 <script>
-
-    $('#example3').DataTable({
-            "columnDefs": [{
-                "orderSequence": ["desc", "asc"],
-                "searchable": false,
-                "orderable": false,
-                "targets": 0
-            }]
-            ,
-            "order": [[0, 'desc' ]]
-        } );
-    $('#example2').DataTable({
+ $('#example3, example5').DataTable({
+      
       'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
+      'lengthChange': true,
+      'searching'   : true,
       'ordering'    : false,
       'info'        : true,
-      'autoWidth'   : false
+      'autoWidth'   : true,
+
     })
- 
 </script>
 
 

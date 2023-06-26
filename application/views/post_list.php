@@ -357,7 +357,7 @@ foreach($urgent as $valueu){
            
             <option value="2" <?=(($valueu->pay_type==2)?"selected":"")?>>Donate</option>
             <option  value="1" <?=(($valueu->pay_type==1)?"selected":"")?>>Boost</option>
-            <option value="0"<?=(($valueu->pay_type==0)?"selected":"")?>>Active</option>
+            <option value="0"<?=(($valueu->pay_type==0)?"selected":"")?>>Normal</option>
            
         </select></td>
                 </tr> 
@@ -376,7 +376,7 @@ foreach($urgent as $valueu){
 
 
 
-        	          <table id="example4" class="table table-bordered table-striped">
+        	          <table id="example5" class="table table-bordered table-striped">
                 <thead>
                 <tr>
                <th>S.no</th>
@@ -393,7 +393,7 @@ foreach($urgent as $valueu){
                  <th>Description</th>        
                   
                  
-                 <th>Pattype</th>   
+                 <th>Paytype</th>   
                   
                   
                 </tr>
@@ -401,7 +401,7 @@ foreach($urgent as $valueu){
         <tbody id="sortable">
                 
           <?php 
-          $sponsored = get_all_donate();
+          $sponsored = get_all_donate_admin();
 $i=1;
 foreach($sponsored as $valuef){
            // print_r($posts);
@@ -624,6 +624,17 @@ foreach($sponsored as $valuef){
 //         ]
 //         });
 $('#example4').DataTable({
+      
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : true,
+
+    })
+
+    $('#example5').DataTable({
       
       'paging'      : true,
       'lengthChange': true,

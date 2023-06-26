@@ -129,24 +129,15 @@ $msg_class=$this->session->flashdata('msg_class')
     
 </script>
 <script>
-
-    $('#example3').DataTable({
-            "columnDefs": [{
-                "orderSequence": ["desc", "asc"],
-                "searchable": false,
-                "orderable": true,
-                "targets": 0
-            }]
-            ,
-            "order": [[0, 'desc' ]]
-        } );
-    $('#example2').DataTable({
+ $('#example3, example5').DataTable({
+      
       'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
       'info'        : true,
-      'autoWidth'   : false
+      'autoWidth'   : true,
+
     })
  
 </script>

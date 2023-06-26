@@ -913,6 +913,25 @@ function get_all_donate()
   return $category_data->result(); 
 }
 
+function get_all_donate_admin()
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+      
+  $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 2  UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 2   UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 2  UNION 
+ 
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 2";
+     
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
 function get_all_store()
 {
   //get main CodeIgniter object
@@ -942,6 +961,126 @@ function get_all_location_store($location)
 
   return $category_data->result(); 
 }
+
+
+function get_all_location_donate($location)
+{
+   //get main CodeIgniter object
+   $ci =& get_instance();
+       
+   //load databse library
+   $ci->load->database();
+   $session_id = $ci->session->userdata("id");
+ if ($session_id) {
+$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=2 And user_id !='.$session_id.'
+) as  custam  WHERE address like "%'.$location.'%"';
+ }
+ else{
+  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=2
+  ) as  custam  WHERE address like "%'.$location.'%"  ';
+ }
+
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_all_location__count_donate($location)
+{
+   //get main CodeIgniter object
+   $ci =& get_instance();
+       
+   //load databse library
+   $ci->load->database();
+   $session_id = $ci->session->userdata("id");
+ if ($session_id) {
+$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=2 And user_id !='.$session_id.'
+) as  custam  WHERE address like "%'.$location.'%"';
+ }
+ else{
+  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=2
+  ) as  custam  WHERE address like "%'.$location.'%"  ';
+ }
+
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->num_rows(); 
+}
+
+
+function get_all_location_boost($location)
+{
+   //get main CodeIgniter object
+   $ci =& get_instance();
+       
+   //load databse library
+   $ci->load->database();
+   $session_id = $ci->session->userdata("id");
+ if ($session_id) {
+$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE pay_type=1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=1 And user_id !='.$session_id.'
+) as  custam  WHERE address like "%'.$location.'%"';
+ }
+ else{
+  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type=1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=1
+  ) as  custam  WHERE address like "%'.$location.'%"  ';
+ }
+
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+function get_all_location_count_boost($location)
+{
+   //get main CodeIgniter object
+   $ci =& get_instance();
+       
+   //load databse library
+   $ci->load->database();
+   $session_id = $ci->session->userdata("id");
+ if ($session_id) {
+$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=2 And user_id !='.$session_id.'
+) as  custam  WHERE address like "%'.$location.'%"';
+ }
+ else{
+  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=2
+  ) as  custam  WHERE address like "%'.$location.'%"  ';
+ }
+
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->num_rows(); 
+}
+
+
 
 function get_all_location_store_count($location)
 {

@@ -1224,7 +1224,7 @@
                             <li> <a class="dropdown-item" href="<?php echo base_url();?>welcome/changepassword"
                                     class="">Change Password</a></li>
                             <?php } ?>
-                            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/logout">Logout</a></li>
+                            <li><a class="dropdown-item btnSweetalert" href="javascript:void(0)">Logout</a></li>
                         </ul>
                         <?php  }
 

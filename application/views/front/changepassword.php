@@ -184,6 +184,19 @@
                         </div>
 
                         <?php } ?>
+                        <?php  if($otpsent =$this->session->flashdata('password_success')){  ?>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-success">
+                                    <?= $otpsent; 
+                             
+                             unset($_SESSION['password_success']);
+              ?>
+                                </div>
+                            </div>
+                        </div>
+
+                        <?php } ?>
                         <p><?php if(isset($otp)){ echo $otp; } ?></p>
                                 <div class="form-group mt-2">
                                     <label>Enter Otp</label>

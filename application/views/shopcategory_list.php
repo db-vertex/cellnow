@@ -52,11 +52,11 @@ $msg_class=$this->session->flashdata('msg_class')
               </thead>
         <tbody>
 
-          <?php foreach ($category as $value) {?>
+          <?php $i=1;foreach ($category as $value) {?>
 
                 <tr id="<?php echo $value->id; ?>">
 
-                <td><?php echo  $value->id;?></td>
+                <td><?php echo  $i;?></td>
                 <td><?php echo  $value->shop_category;?></td>
                 
                  <td style="text-align: center;">
@@ -79,7 +79,7 @@ $msg_class=$this->session->flashdata('msg_class')
 
  </td>
                 </tr> 
-                <?php } ?>
+                <?php $i++;} ?>
             </tbody>
                 
             </table>
@@ -130,25 +130,16 @@ $msg_class=$this->session->flashdata('msg_class')
 </script>
 <script>
 
-    $('#example3').DataTable({
-            "columnDefs": [{
-                "orderSequence": ["desc", "asc"],
-                "searchable": false,
-                "orderable": false,
-                "targets": 0
-            }]
-            ,
-            "order": [[0, 'desc' ]]
-        } );
-    $('#example2').DataTable({
+$('#example3, example5').DataTable({
+      
       'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
       'info'        : true,
-      'autoWidth'   : false
+      'autoWidth'   : true,
+
     })
- 
 </script>
 
 

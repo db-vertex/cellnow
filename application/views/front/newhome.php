@@ -273,8 +273,8 @@
                 
                   }
                   else if(!empty($location) && empty($anything)){
-                  $product= get_all_locationsearch_product($location);
-                  $allcount =get_all_locationsearch_product_count($location);
+                  $product= get_all_location_boost($location);
+                  $allcount =get_all_location_count_boost($location);
                
                   }
               if(!empty($product)){
@@ -558,11 +558,16 @@ else{
 
         <div class="row">
             <?php
-                  
+                  if(!empty($location)&& empty($anything)){
+                    $store = get_all_location_donate($location);
+                
+                   $shop_count= get_all_location__count_donate($location);
+      }
+      else{
             
                   $product = get_all_donate();   
                   $allcount =get_all_donate_count();
-            
+      }
               if(!empty($product)){
               $i = 1;
               $j = 1;
@@ -998,3 +1003,34 @@ function initialize() {
     });
 }
 </script>
+
+<script>
+    "use strict"; /* Start of use strict */
+    (function() {
+        function14();
+    })();
+
+    function function14() {
+        $('.btnSweetalert').on("click", function() {
+            swal({
+                    title: " Logout!",
+                    text: "Are you sure you want to logout?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+
+                        window.location.href = "<?php echo base_url();?>welcome/logout";
+                    } else {
+                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    }
+                });
+        });
+    }
+    </script>

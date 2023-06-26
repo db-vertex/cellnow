@@ -959,7 +959,12 @@ $sub .= '</h6>
 					'password' => md5($password),
 				);
 				$this->db->update('users', $data);
-				return redirect('welcome');
+				$this->session->set_flashdata('password_success', 'Forgot password successfully');
+					$this->session->set_flashdata('msg_class', 'alert-success');
+
+					$this->load->view('front/header', ['success' => true]);
+					$this->load->view('front/changepassword');
+					$this->load->view('front/footer');
 			} else {
 				$this->session->set_flashdata('OTP_failed', 'Invalid OTP');
 				$this->session->set_flashdata('msg_class', 'alert-danger');
