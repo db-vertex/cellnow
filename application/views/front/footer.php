@@ -443,3 +443,62 @@
 
 
 </script>
+
+<script>
+$(document).ready(function() {
+    $("#latitudeArea").addClass("d-none");
+    $("#longtitudeArea").addClass("d-none");
+});
+
+google.maps.event.addDomListener(window, 'load', initialize);
+
+function initialize() {
+    var input = document.getElementById('Location');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    var job_Office_Address = document.getElementById('job_Office_Address');
+    var autocomplete = new google.maps.places.Autocomplete(job_Office_Address);
+
+    autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+
+        $('#latitude').val(place.geometry['location'].lat());
+        $('#longitude').val(place.geometry['location'].lng());
+
+        $("#latitudeArea").removeClass("d-none");
+        $("#longtitudeArea").removeClass("d-none");
+    });
+}
+</script>
+
+<script>
+"use strict";
+/ Start of use strict /
+(function() {
+    function14();
+})();
+
+function function14() {
+    $('.btnSweetalert').on("click", function() {
+        swal({
+                title: " Logout!",
+                text: "Are you sure you want to logout?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+
+                    window.location.href = "<?php echo base_url();?>welcome/logout";
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                }
+            });
+    });
+}
+</script>
