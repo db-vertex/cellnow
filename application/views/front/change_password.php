@@ -174,7 +174,7 @@
                         <?php  if($otpsent =$this->session->flashdata('password_success')){  ?>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="alert alert-success">
+                                <div class="alert alert-success alert-box" id="successMessage">
                                     <?= $otpsent; 
                              
                              unset($_SESSION['password_success']);
@@ -263,4 +263,10 @@
                 });
         });
     }
+
+   
+    setTimeout(function() {
+    $('.alert-box').remove();
+}, 3000); 
     </script>
+    

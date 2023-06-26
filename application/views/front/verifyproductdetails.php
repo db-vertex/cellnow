@@ -42,7 +42,7 @@ img {
 .next {
   cursor: pointer;
   position: absolute;
-  top: 40%;
+  top: 30%;
   width: auto;
   padding: 16px;
   margin-top: -50px;

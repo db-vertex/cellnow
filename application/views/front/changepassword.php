@@ -157,7 +157,7 @@
                             <?php  if($error=$this->session->flashdata('OTP_failed')){  ?>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="alert alert-danger ">
+                                <div class="alert alert-danger alert-box">
                                     <?= $error; 
 
                                unset($_SESSION['OTP_failed']);
@@ -174,7 +174,7 @@
                         <?php  if($otpsent =$this->session->flashdata('otp_sent')){  ?>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="alert alert-success">
+                                <div class="alert alert-success alert-box">
                                     <?= $otpsent; 
                              
                              unset($_SESSION['otp_sent']);
@@ -187,7 +187,7 @@
                         <?php  if($otpsent =$this->session->flashdata('password_success')){  ?>
                         <div class="row">
                             <div class="col-lg-12">
-                                <div class="alert alert-success">
+                                <div class="alert alert-success alert-box">
                                     <?= $otpsent; 
                              
                              unset($_SESSION['password_success']);
@@ -244,3 +244,8 @@
 </body>
 
 </html>
+<script>
+       setTimeout(function() {
+    $('.alert-box').remove();
+}, 3000); 
+    </script>
