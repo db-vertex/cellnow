@@ -91,7 +91,7 @@ $buyer = get_all_boost_count();
             <div class="icon">
               <i class="fa fa-user"></i>
             </div>
-            <a href="<?php echo base_url(); ?>admin/user" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url(); ?>admin/products" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -111,7 +111,7 @@ $buyer = get_all_donate_count();
             <div class="icon">
               <i class="fa fa-user"></i>
             </div>
-            <a href="<?php echo base_url(); ?>admin/user" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url(); ?>admin/products" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 
@@ -131,7 +131,7 @@ $buyer = get_all_boost_count();
             <div class="icon">
               <i class="fa fa-user"></i>
             </div>
-            <a href="<?php echo base_url(); ?>admin/user" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
+            <a href="<?php echo base_url(); ?>admin/products" class="small-box-footer">More info <i class="fa fa-arrow-circle-right"></i></a>
           </div>
         </div>
 

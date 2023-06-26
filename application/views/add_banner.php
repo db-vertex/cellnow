@@ -42,7 +42,7 @@ input[type=number] {
       <div class="form-group">
         <label for="Title">Banner Image : size(490 X 230 px )</label>
         <!-- <img src=""> -->
-        <input type="file" name="banner_image" id="banner_image">
+        <input type="file" name="banner_image" id="banner_image" required>
         <!-- <input type="text" class="form-control" id="agent_name" name="agent_name"  placeholder="Agent Name" maxlength="15"> -->
         <p id="head"  style="color:#ff0000" ></p>
       </div>
@@ -56,7 +56,7 @@ input[type=number] {
  <div class="col-lg-6 col-xs-6">
   <div class="form-group">
     <label for="Title">Url :</label>
-    <input type="text" class="form-control"  name="url"  placeholder="url" maxlength="50">
+    <input type="text" class="form-control"  name="url"  placeholder="url" maxlength="50" required>
     <p id="head2"  style="color:#ff0000" ></p>
   </div>
   </div>
