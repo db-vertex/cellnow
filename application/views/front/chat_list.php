@@ -1015,7 +1015,7 @@ setInterval(function()
 
 
 
-}, 100000);
+}, 1000);
 
 
 

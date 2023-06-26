@@ -1,7 +1,4 @@
-<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
-<script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 
 
 <style>
@@ -289,8 +286,9 @@ foreach ($category as $key => $cat) {
                                     data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                     src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>"
                                     alt="">
-                                <center style="color:black; font-size:12px; font-weight:500">
-                                    <?php echo $sub->product_type; ?></center>
+                                    <center style="color:black; font-size:12px; font-weight:500">
+                                    <?php echo $sub->product_type; ?>
+                                </center>
                             </p>
 
                         </div>
@@ -603,6 +601,8 @@ foreach ($category as $key => $cat) {
 </section>
 
 
+
+
 <!-- new  -->
 <div class="container">
     <div class="row align-items-center pt-4">
@@ -838,7 +838,36 @@ foreach ($category as $key => $cat) {
 
 
 
+<script>
+    "use strict"; /* Start of use strict */
+    (function() {
+        function14();
+    })();
 
+    function function14() {
+        $('.btnSweetalert').on("click", function() {
+            swal({
+                    title: " Logout!",
+                    text: "Are you sure you want to logout?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+
+                        window.location.href = "<?php echo base_url();?>welcome/logout";
+                    } else {
+                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    }
+                });
+        });
+    }
+    </script>
 
 
 <script>
@@ -944,7 +973,7 @@ $(document).ready(function(){
   data: { location:location},
   success: function(res) 
   {
-
+    
     $("#shop_list").html(res);
     
   }

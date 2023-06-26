@@ -213,17 +213,17 @@ class User extends CI_Model {
       
     }
 
-
-function checkchatlist($sender_id,$reciever_id, $product_id){
-$SQL="SELECT Distinct * FROM `chat_list` Where (sender_id = $sender_id AND receiver_id = $reciever_id AND product_id=$product_id) or (receiver_id = $sender_id AND sender_id = $reciever_id AND product_id=$product_id) order by id desc limit 1";    
-    $query = $this->db->query($SQL);
-    return $query->row_array();
- }
-
- function checkchat($sender_id,$reciever_id, $product_id){
-    $SQL="SELECT Distinct * FROM `chat` Where (sender_id = $sender_id AND receiver_id = $reciever_id AND product_id=$product_id) or (receiver_id = $sender_id AND sender_id = $reciever_id AND product_id=$product_id) order by id desc limit 1";    
-        $query = $this->db->query($SQL);
-        return $query->row_array();
+    function checkchatlist($sender_id,$reciever_id, $product_id,$category_id){
+        $SQL="SELECT Distinct * FROM `chat_list` Where (sender_id = $sender_id AND receiver_id = $reciever_id AND product_id=$product_id AND category_id=$category_id) or (receiver_id = $sender_id AND sender_id = $reciever_id AND product_id=$product_id AND category_id=$category_id) order by id desc limit 1";    
+            $query = $this->db->query($SQL);
+             
+            return $query->row_array();
+         }
+ function checkchat($sender_id,$reciever_id, $product_id,$category_id){
+    $SQL="SELECT Distinct * FROM `chat` Where (sender_id = $sender_id AND receiver_id = $reciever_id AND product_id=$product_id AND category_id=$category_id) or (receiver_id = $sender_id AND sender_id = $reciever_id AND product_id=$product_id AND category_id=$category_id) order by id desc limit 1";    
+            $query = $this->db->query($SQL);
+             
+            return $query->row_array();
      }
     
 

@@ -535,7 +535,7 @@ $sub .= '</h6>
 
                         <div class="d-flex justify-content-between align-items-center">
 
-                            <h6 class="dress-name">';
+                            <h6>';
 							$title = $value->name;
 							if (strlen($title) <= 20) {
 								$sub .= ucfirst($title);
@@ -550,7 +550,7 @@ $sub .= '</h6>
 
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <a href="" class="text-reset">
+                           
                                 <h6>';
 								$title = $value->Address;
 								if (strlen($title) <= 20) {
@@ -561,7 +561,7 @@ $sub .= '</h6>
 								}
 				
 								$sub .= '</h6>
-                            </a>
+                     
                         </div>
                     </div>
                 </div>
