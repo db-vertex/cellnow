@@ -1417,7 +1417,7 @@ a:active {
                             onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
                             onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
 
-                            <img class="btn-change common_selector sub_category sub_new<?php echo $sub->subcategory_id; ?>"
+                            <img class="btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
                                 data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                 src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
                             <center style="color:black; font-size:12px; font-weight:500">
