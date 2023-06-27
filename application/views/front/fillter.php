@@ -1347,7 +1347,7 @@ a:active {
 
 <!-- new -->
 <div class="container">
-    <div class="row">
+   
     <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll px-0">
 
         <?php
@@ -1367,13 +1367,9 @@ a:active {
 
         </li>
 
-        <?php
-                      
-                      }
-
-                ?>
+        <?php }  ?>
     </ul>
-                    </div>
+                  
 </div>
 
 

@@ -526,12 +526,7 @@ foreach ($category as $key => $cat) {
                        <img
                                 src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
                                 class="w-100 va-thumbnail" />
-                        <a href="#!">
-
-                            <div class="hover-overlay">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </div>
-                        </a>
+                        
                     </div>
                     <div class="card-body">
 
@@ -555,8 +550,8 @@ foreach ($category as $key => $cat) {
 
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <a href="" class="text-reset">
-                                <h6><?php
+                          
+                                <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->Address;
                             if(strlen($title) <= 20)
                               {
@@ -569,7 +564,7 @@ foreach ($category as $key => $cat) {
                               }
                            
                            ?></h6>
-                            </a>
+                         
                         </div>
                     </div>
                 </div>
@@ -675,8 +670,8 @@ foreach ($category as $key => $cat) {
 
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
-                            <a href="" class="text-reset">
-                                <h6><?php
+                           
+                                <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
                             if(strlen($title) <= 20)
                               {
@@ -689,7 +684,7 @@ foreach ($category as $key => $cat) {
                               }
                            
                            ?></h6>
-                            </a>
+                          
                         </div>
                     </div>
                 </div>
