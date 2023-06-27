@@ -362,13 +362,13 @@ foreach ($category as $key => $cat) {
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                         <?php if($pro->category_id!=4){ ?>
-                            <h6 style="color:#10B981" class="mb-3">
-                            <strong class=" ">₹<?php echo $pro->price; ?></strong>
-                        </h6>
+                            <p class="details_price mb-3">
+                            <span class=" ">₹<?php echo $pro->price; ?></span>
+                        </p>
                             <?php } else{?>
-                                <h6 style="color:#fff" class="mb-3">
-                                <strong class=" ">₹<?php echo $pro->price; ?></strong>
-                            </h6>
+                                <p style="color:#fff" class="details_price mb-3">
+                                <strong class="">₹<?php echo $pro->price; ?></strong>
+                            </p>
                        <?php } ?>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
@@ -394,13 +394,13 @@ foreach ($category as $key => $cat) {
 
                             <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 30)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,30) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -468,7 +468,7 @@ foreach ($category as $key => $cat) {
 <div class="container  mt-3">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4">
-            <p style="color: #1B1C57; font-size:30px;">Shops Offering Services</p>
+            <p style="color: #1B1C57; font-size:30px;"> Service Points / Professionals Near By</p>
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
             <div class="search_wrap search_wrap_6 m-0">
@@ -520,11 +520,12 @@ foreach ($category as $key => $cat) {
              ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="" >
+            <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                        <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>"><img
+                       <img
                                 src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
-                                class="w-100 va-thumbnail" /></a>
+                                class="w-100 va-thumbnail" />
                         <a href="#!">
 
                             <div class="hover-overlay">
@@ -572,6 +573,7 @@ foreach ($category as $key => $cat) {
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
 
            
@@ -643,18 +645,13 @@ foreach ($category as $key => $cat) {
             ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 postdonate">
+            <a href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                        <a
-                            href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
+                       <img
                                 src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
-                                class="w-100 va-thumbnail" /></a>
-                        <a href="#!">
-
-                            <div class="hover-overlay">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </div>
-                        </a>
+                                class="w-100 va-thumbnail" />
+                      
                     </div>
                     <div class="card-body">
 
@@ -696,6 +693,7 @@ foreach ($category as $key => $cat) {
                         </div>
                     </div>
                 </div>
+                </a>
             </div>
 
             <?php $i++;} } else if($j == 1) {?>

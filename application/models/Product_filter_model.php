@@ -267,21 +267,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
                              }
                         $pro .='</p>
 			   <div class="card-body ">
-			   <div class="d-flex justify-content-between align-items-center"><p>';
-	   $title = $row['title'];
-	   
-	   if (strlen($title) <= 10) {
-		   $pro .= ucfirst($title);
-	   } else {
-		   $y = substr($title, 0, 10) .'...';
-		   $pro .= ucfirst($y);
-	   }
-	   $pro .= '</p>
-					   
-						   <p>   
-							   <i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;" '.(empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
-						   </p>
-					  ';
+			   <div class="d-flex justify-content-between align-items-center"> ';
 
 			 	   		  
 	   if (($row['pay_type'] == 0 || $row['pay_type'] == 1) && ($row['category_id'] == 1 || $row['category_id'] == 2 || $row['category_id'] == 3)) {
@@ -289,12 +275,15 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 		   $pro .= $row['price'];
 	   }
 	   $pro .= '</span></p>
+	   <p>   
+	   <i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;" '.(empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
+   </p>
 					  
 				   </div>
 				   <div class="row mt-1">
 					   <div class="col-12">
-						   <small class="card-text" style="color: #575757;">';
-	   $title = $row['Description'];
+						   <small class="card-text">';
+	   $title = $row['title'];
 	   
 	   if (strlen($title) <= 25) {
 		   $pro .= ucfirst($title);
@@ -305,17 +294,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 	   $pro .= '</small><br>
 					   </div>
 				   </div>';
-				   if ($row['category_id']==1) {
-				  $pro.=' <div class="row">
-				   <div class=col-4>
-					   <p style="color: #575757;">Brand</p>
-				   </div>
-				   <div class=col-8>
-					   <p style="color: #575757;">'.$row['brand'].'</p>
-				   </div>
-			   </div>';
-			    }
-				 
+				  
 				$pro .= '  <div class="d-flex justify-content-between align-items-center">
 				<div class="row">
 				<div class="col-3">

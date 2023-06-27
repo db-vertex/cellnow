@@ -110,7 +110,7 @@ margin-top: 10%;
         font-family: 'Roboto';
         font-style: normal;
         font-weight: 700;
-        font-size: 15px;
+        font-size: 20px;
         line-height: 25px;
         display: flex;
         align-items: flex-end;

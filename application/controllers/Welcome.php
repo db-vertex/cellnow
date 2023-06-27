@@ -138,21 +138,21 @@ class Welcome extends CI_Controller
         </div>
         <div class="card-body">
             <div class="d-flex justify-content-between align-items-center">
-                <h6 style="color:#10B981" class="mb-3">';
+                <p  class="details_price mb-3">';
 				if($value->category_id!=4){
 					$sub.='
-                    <strong style="color:#10B981" class="ms-2 ">₹' . $value->price . '</strong>';
+                    <span class="">₹' . $value->price . '</span>';
 				}
-               $sub.=' </h6>
+               $sub.=' </p>
             </div>
             <div class="d-flex justify-content-between align-items-center">
                 <h6 class="dress-name">';
 $title = $value->title;
 
-if (strlen($title) <= 10) {
+if (strlen($title) <= 30) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 10) . '...';
+    $y = substr($title, 0, 30) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>
@@ -161,10 +161,10 @@ $sub .= '</h6>
                 <h6>';
 $title = $value->address;
 
-if (strlen($title) <= 10) {
+if (strlen($title) <= 25) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 10) . '...';
+    $y = substr($title, 0, 25) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>
