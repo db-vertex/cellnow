@@ -1169,7 +1169,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                    
                         <div class="breadcrumbs">
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
-                                    href="<?php echo base_url();?>">Homepage</a></span>/<span
+                                    href="<?php echo base_url();?>">Home</a></span>/<span
                                 class="ms-2 handline"><?php echo ucfirst($product_detail->title); ?></span>
                         </div>
                     

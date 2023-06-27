@@ -28,6 +28,13 @@
         overflow-x: hidden;
     }
 
+    .space-top{
+margin-top: 10%;
+    }
+    .a:hover{
+        text-decoration: none;
+    }
+
     .image1 {
         position: relative;
         top: 0;
@@ -134,6 +141,11 @@
   display: none;
 } */
 @media screen and (min-width: 375px) {
+
+    .space-top{
+margin-top: 30%;
+    }
+
 .search_input {
         flex: 1;
         padding: 10px 10px;
@@ -188,6 +200,9 @@
   
 }
     @media (min-width: 576px) {
+        .space-top{
+margin-top: 25%;
+    }
         .nav-scroller {
             position: relative;
             z-index: 2;
@@ -740,6 +755,9 @@
     }
 
     @media (min-width: 768px) {
+        .space-top{
+margin-top: 10%;
+    }
         .other-game-button {
             width: 300px;
         }

@@ -622,7 +622,7 @@ function get_all_product_type()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM product_type order by product_type";
+  $query="SELECT * FROM product_type WHERE category_id=1";
 
   $category_data = $ci->db->query($query);        
 
@@ -1031,17 +1031,17 @@ function get_all_location_boost($location)
    $ci->load->database();
    $session_id = $ci->session->userdata("id");
  if ($session_id) {
-$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE pay_type=1 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=1 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=1 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=1 And user_id !='.$session_id.'
+$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price,cover_img ,verified_product,address from category_reusable_parts WHERE pay_type=1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price,cover_img ,verified_product ,address from category_internships WHERE pay_type=1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_job WHERE pay_type=1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=1 And user_id !='.$session_id.'
 ) as  custam  WHERE address like "%'.$location.'%"';
  }
  else{
-  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type=1
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=1
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=1
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=1
+  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type=1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_internships WHERE pay_type=1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_job WHERE pay_type=1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=1
   ) as  custam  WHERE address like "%'.$location.'%"  ';
  }
 

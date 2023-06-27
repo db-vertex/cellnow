@@ -49,10 +49,22 @@ html,body
 
 #b{
  
- border: 1px solid #78d7b8;
- border-radius: 25px;
- font-size: 12px;
- 
+  box-sizing: border-box;
+  
+    flex-direction: row;
+    align-items: center;
+   
+    gap: 4.71px;
+    width: 80.43px;
+    height: 36.86px;
+   
+    border: 1.57143px solid #78d7b8;
+    border-radius: 25.42857px;
+    flex: none;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+
 }
 #b:visited {
  color: #78d7b8;
@@ -61,7 +73,7 @@ html,body
 }
 
 #b:hover {
- color: white;
+ color: #fff;
  background-color: #78d7b8;
 }
 
@@ -351,10 +363,10 @@ width: 131.9px; border-color:#10B981;">
                                
 
                             </div>
-                            <div class="pt-1 pl-5"><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $pro->category_id?>/<?php echo  $pro->id ?>" class="btn " id="b">Edit</a> &nbsp &nbsp
+                            <div class="pt-1 pl-4"><p><a style="background-color:#10b981; color:#fff" href="<?php echo base_url();?>Welcome/editproduct_view/<?php echo  $pro->category_id?>/<?php echo  $pro->id ?>" class="btn " id="b">Edit</a> &nbsp &nbsp
   
-  <a href="javascript:void(0)" id="b" class="delete_product btn"  data-cid="<?php echo $pro->category_id; ?>" data-pid="<?php echo $pro->id; ?>"><span  style="color:#78d7b8">Delete</span></a>
-
+  <a  href="javascript:void(0)" id="b" class="delete_product btn"  data-cid="<?php echo $pro->category_id; ?>" data-pid="<?php echo $pro->id; ?>"><span  style="color:#78d7b8">Delete</span></a>
+                            </p>
 </div>
                      
                         </div>

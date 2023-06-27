@@ -505,7 +505,7 @@
 
 <div class="container mt-5">
 <div class="row">
-<div class="col p-2" style="border-radius:18px;background-image: linear-gradient(to right, #77d4b5 ,#77d4b5 ,#d5fdfc, #f5f5f5);"><small style="padding-left:20px"><a href="<?php echo base_url(); ?>">Homepage</a> / Chat</small></div>
+<div class="col p-2" style="border-radius:18px;background-image: linear-gradient(to right, #77d4b5 ,#77d4b5 ,#d5fdfc, #f5f5f5);"><small style="padding-left:20px"><a href="<?php echo base_url(); ?>">Home</a> / Chat</small></div>
 </div>
 </div><br>
 <div class="container mt-5" >
@@ -515,7 +515,7 @@
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
-                                    href="<?php echo base_url();?>">Homepage</a></span>/<span
+                                    href="<?php echo base_url();?>">Home</a></span>/<span
                                 class="ms-2 handline">Chat</span>
                         </div>
                     </div>

@@ -341,12 +341,12 @@ foreach ($category as $key => $cat) {
             
             ?>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
-                <div class="card">
+            <a
+                            href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"> 
+                            <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                        <a
-                            href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
-                                src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
-                                class="w-100 va-thumbnail" /></a>
+                        <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                                class="w-100 va-thumbnail" />
                         <p style="margin-left:-90px;"> <img class="img-fluid"
                                 src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
    margin-top: -20%; width:80px; ">
@@ -357,22 +357,17 @@ foreach ($category as $key => $cat) {
 
                             <?php }?>
                         </p>
-                        <a href="#!">
-
-                            <div class="hover-overlay">
-                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                            </div>
-                        </a>
+                      
                     </div>
                     <div class="card-body">
                         <div class="d-flex justify-content-between align-items-center">
                         <?php if($pro->category_id!=4){ ?>
                             <h6 style="color:#10B981" class="mb-3">
-                            <strong class="ms-2 ">₹<?php echo $pro->price; ?></strong>
+                            <strong class=" ">₹<?php echo $pro->price; ?></strong>
                         </h6>
                             <?php } else{?>
                                 <h6 style="color:#fff" class="mb-3">
-                                <strong class="ms-2 ">₹<?php echo $pro->price; ?></strong>
+                                <strong class=" ">₹<?php echo $pro->price; ?></strong>
                             </h6>
                        <?php } ?>
                         </div>
@@ -380,13 +375,13 @@ foreach ($category as $key => $cat) {
 
                             <h6 class="dress-name"><?php
                            $title = $pro->title;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,30) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -397,15 +392,15 @@ foreach ($category as $key => $cat) {
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
 
-                            <h6><?php
+                            <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 20)
+                            if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,20) . '...';
+                                $y = substr($title,0,30) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -414,7 +409,7 @@ foreach ($category as $key => $cat) {
                         </div>
                     </div>
                 </div>
-            </div>
+                </a></div>
 
             <?php $i++;} } else if($j == 1) {?>
 

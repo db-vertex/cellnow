@@ -121,9 +121,9 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
         <p class="ml-3"><?php echo $shop->email;?></p>
             <p class="ml-3  word"><?php echo $shop->description;?></p>
             <p class="ml-3"><?php echo $shop->Address;?></p>
-            <p class="ml-3 mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
            
-            <p class="ml-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
+           
+            <p class="ml-3 mt-5"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
             <p class="ml-3"><b>Type of service: </b><?php echo $shop->service_type;?></p>
           </div>
           

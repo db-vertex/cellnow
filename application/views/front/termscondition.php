@@ -1,4 +1,4 @@
-<div class="container bg-3 divpad" style="margin-top:8%;">  
+<div class="container bg-3 divpad space-top">  
 <center><img  class="img-fluid" src="<?php echo base_url();?>assets/images/terms.png">  </center>
   <h3 class="text-center">Terms & Conditions</h3><br>
   <div class="row" style="margin-bottom: 30px;">

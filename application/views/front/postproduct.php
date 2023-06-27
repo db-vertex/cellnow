@@ -435,7 +435,7 @@
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
-                            <span class="me-2 handline">Homepage</span>/<span class="ms-2 handline">Post Ads </span>
+                            <span class="me-2 handline">Home</span>/<span class="ms-2 handline">Post Ads </span>
                         </div>
                     </div>
                 </div>
@@ -620,7 +620,7 @@
                                 <select class="form-select post_input_fild" id="reusable_parts_Select_Type"
                                     name="reusable_parts_Select_Type">
                                     <option value="">Select Type</option>
-                                    <option value="Product/Desktop">Product/Desktop</option>
+                                    <option value="Product/Desktop">Product</option>
                                     <option value="parts">parts</option>
                                 </select>
                                 <div class="invalid-feedback">

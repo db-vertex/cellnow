@@ -113,7 +113,7 @@ html,body
      <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
 width: 131.9px; border-color:#10B981;">
      <div style="text-align:center"><h5><b ><?php echo ucfirst($profile->name); ?></b></h5>
-     <?php echo ucfirst($profile->Address); ?>
+     <img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php echo ucfirst($profile->Address); ?>
      
     </div>
    

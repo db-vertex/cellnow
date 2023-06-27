@@ -436,7 +436,7 @@ flex-grow: 0;
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
-                            <span class="me-2 handline">Homepage</span>/<span class="ms-2 handline">Edit  Product</span>
+                            <span class="me-2 handline">Home</span>/<span class="ms-2 handline">Edit  Product</span>
                         </div>
                     </div>
                 </div>

@@ -931,7 +931,7 @@ border-radius: 80px 0px 0px 80px;
         display: flex;
         flex-direction: row;
         align-items: center;
-        padding: 12px 16px;
+        padding: 1px 16px;
         gap: 6px;
         margin-top: 25px;
         width: 70px;
@@ -1169,7 +1169,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                    
                         <div class="breadcrumbs">
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
-                                    href="<?php echo base_url();?>">Homepage</a></span>/<span
+                                    href="<?php echo base_url();?>">Home</a></span>/<span
                                 class="ms-2 handline"><?php echo ucfirst($product_detail->title); ?></span>
                         </div>
                     
@@ -1498,7 +1498,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
 
-                    <div class="row  mt-2 margin_left_css">
+                    <div class="row mt-2 margin_left_css">
 
                         <?php   $shoplist = 0;
                         if($product_detail->verified_product){
@@ -1512,7 +1512,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                       <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                   class="btn_Verified_img"
                                                   src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                  alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                                  alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
                                               <?php echo $shop_name;?></span></p></a>
                                   </div>
       
@@ -1535,7 +1535,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
                                         <?php echo $shop_name;?></span></p></a>
                             </div>
 
@@ -1569,7 +1569,7 @@ if($shop->admin_approval==1){
                                                     class="btn_Verified_img"
                                                     src="<?php echo base_url() ?>assets/images/check 1.png"
                                                     alt="check 1.png"></span><span class="btn_Verified_text"
-                                                type="submit" name="submit">Verified</span></button>
+                                                type="submit" name="submit">Verify</span></button>
                                     </div>
                                 </form>
                             </div>
@@ -1589,7 +1589,7 @@ if($shop->admin_approval==1){
                                 <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>" ><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                             class="btn_Verified_img"
                                             src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
                                         <?php echo $shop_name;?></span></p></a>
                             </div>
 
