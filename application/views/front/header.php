@@ -896,6 +896,9 @@ margin-top: 10%;
     }
 
     @media (min-width: 991px) {
+        .padd{
+padding-left: 90px;
+        }
         .body_background {
             background: linear-gradient(130.02deg, #77D4B5 -15.01%, rgba(213, 253, 252, 0) 39.7%);
             background-color: white;
@@ -1139,7 +1142,7 @@ margin-top: 10%;
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="">
-                        <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
+                        <li class="nav-item nav-item_serach" style="padding-right:100px" ;>
                             <div class="search_wrap search_wrap_6 m-0 ">
                                 <div class="search_box mt-3" style="width:130%; margin-right:100px;">
                                 <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
@@ -1162,7 +1165,7 @@ margin-top: 10%;
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item dropdown" style="padding-right:10px" ;>
+                        <li class="nav-item dropdown padd" style="padding-right:10px" ;>
                             <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false" style=" color:#10B981;font-weight:bold;"
                                 id="ab">

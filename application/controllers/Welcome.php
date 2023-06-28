@@ -444,56 +444,34 @@ $sub .= '</h6>
 				//print_r($subcategory);die();
 
 				$sub .= '
-				<div class="col-lg-3 col-md-4 col-sm-6 mb-4 mt-3 post">
-				<a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '">
-				<div class="card">
-                   <img class="va-thumbnail " alt="Card image cap"
-                            src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '">
+					<div class="col-lg-3 col-md-4 col-sm-6 mb-4" id="post_' . $value->id . '">
+					<a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '">
+					<div class="card">
+							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+							
+									<img class="va-thumbnail" alt="Card image cap" src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '">
+								
+							
+							</div>
 							<div class="card-body">
+								<div class="d-flex justify-content-between align-items-center">
+									<h6 class="dress-name">';
+				$sub .= strlen($value->name) <= 20 ? ucfirst($value->name) : ucfirst(substr($value->name, 0, 20) . '...');
+				$sub .= '</h6>
+								</div>
+								<div class="d-flex justify-content-between align-items-center">
+									
+										<h6><img style="max-width:25px;" src="https://dbvertex.com/celnow/assets/images/location .png">';
+				$sub .= strlen($value->Address) <= 20 ? ucfirst($value->Address) : ucfirst(substr($value->Address, 0, 20) . '...');
+				$sub .= '</h6>
+									
+								</div>
+							</div>
+						</div>
+						</a>
+					</div>
+				';
 
-							<div class="d-flex justify-content-between align-items-center">
-	
-								<h6 class="dress-name">';
-				$title = $value->name;
-				if (strlen($title) <= 20) {
-					$sub .= ucfirst($title);
-				} else {
-					$y = substr($title, 0, 20) . '...';
-					$sub .= ucfirst($y);
-				}
-
-				$sub .= ' </h6></div>
-				<div class="d-flex justify-content-between align-items-center">
-                        <p class="card-text">';
-				$title = $value->description;
-				if (strlen($title) <= 30) {
-					$sub .= ucfirst($title);
-				} else {
-					$y = substr($title, 0, 30) . '...';
-					$sub .= ucfirst($y);
-				}
-
-				$sub .= '</p></div>
-				<div class="row">
-				<div class="col-2">
-                        <img src="https://dbvertex.com/celnow/assets/images/location .png" ></div>	
-						<div class="col-10">';
-				$title = $value->Address;
-				if (strlen($title) <= 20) {
-					$sub .= ucfirst($title);
-				} else {
-					$sub .= substr($title, 0, 20) . '...';
-					echo ucfirst($sub);
-				}
-
-				$sub .= '</div></div>
-
-                    </div>
-                </div>
-				</a>
-            </div>
-		  '
-				;
 
 
 			}
