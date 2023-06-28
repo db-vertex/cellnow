@@ -1,5 +1,5 @@
 <div class="container bg-3 divpad space-top">  
-<center><img  src="<?php echo base_url();?>assets/images/terms.png">  </center>
+<center><img class="img-fluid" src="<?php echo base_url();?>assets/images/terms.png">  </center>
   <h3 class="text-center">FAQs</h3><br>
   <div class="row" style="margin-bottom: 30px;">
     

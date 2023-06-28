@@ -373,6 +373,7 @@ img {
         .detalis_option {
             max-width: 620.7px;
             left: 112px;
+            padding:20px;
             top: 1373.5px;
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
@@ -477,10 +478,17 @@ img {
 
     @media (min-width: 359px) and (max-width: 459px){
 
-        
+        .detalis_option {
+            max-width: 620.7px;
+            left: 112px;
+            padding:15px;
+            top: 1373.5px;
+            background: #FFFFFF;
+            box-shadow: 0px 0px 4px #69D3B0;
+        }
         .img-size{
-    max-width: 12px;
-    min-width: 12px;
+    max-width: 13px;
+    min-width: 13px;
     color:#69D3B0;
 }
 
@@ -542,10 +550,10 @@ min-width: 100%;
 }
 
 .details_img_box {
-min-width: 30.69px;
-max-width: 30.69px;
-max-height: 30.31px;
-min-height: 30.31px;
+min-width: 50.69px;
+max-width: 50.69px;
+max-height: 50.31px;
+min-height: 50.31px;
 left: 100px;
 top: 1213.13px;
 filter: drop-shadow(0px 0px 1.07571px #10B981);
@@ -916,7 +924,7 @@ border-radius: 80px 0px 0px 80px;
             font-weight: 400;
             font-size: 10px;
             line-height: 0px;
-            padding-left: 10px;
+            
             color: #898686;
         }
 
@@ -1268,12 +1276,9 @@ border-radius: 80px 0px 0px 80px;
 <div class="container">
                     <div class="row mt-3">
                         <div class="detalis_option">
-                            <div class="row">
-                                <div class="col-3 px-0">
-                                    <div class="row">
-                                        
-                                        <div class="col-12 mt-3 ml-2">
-                                        <img class="img-size" src="<?php echo base_url(); ?>assets/images/calendar.png"> <span class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
+                        <div class="d-flex justify-content-between align-items-center">
+                            
+                                       <p> <img class="img-size" src="<?php echo base_url(); ?>assets/images/calendar.png"> <span class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
                                           {
                                               $now = new DateTime;
                                               $ago = new DateTime($datetime);
@@ -1303,31 +1308,13 @@ border-radius: 80px 0px 0px 80px;
                                                   $string = array_slice($string, 0, 1);
                                               return $string ? implode(', ', $string) . ' ago' : 'just now';
                                           }
-                                          echo time_elapsed_string($product_detail->created_at); ?></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-3 px-0">
-                                    <div class="row">
-                                    
-                                        <div class="col-12 mt-3">
-                                        <img class="img-size" src="<?php echo base_url(); ?>assets/images/eye.png"> <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 px-0">
-
-                                    <div class="row">
+                                          echo time_elapsed_string($product_detail->created_at); ?></span></p>
+                                        
+                                        <p><img class="img-size" src="<?php echo base_url(); ?>assets/images/eye.png"> <span class="detalis_option_text"><?php echo $product_detail->Count ?>views</span></p>
                                        
-                                        <div class="col-12 mt-3">
-                                        <img class="img-size"  src="<?php echo base_url(); ?>assets/images/hearts.png"><span class="detalis_option_text">&nbsp <?php $product_wishlist = get_wishlist_count($product_detail->id, $product_detail->category_id);
-                                          echo $product_wishlist; ?></span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col-2 px-0">
-                                    <div class="row">
-                                        <div class="col-12 mt-3">
+                                       <p> <img class="img-size"  src="<?php echo base_url(); ?>assets/images/hearts.png"><span class="detalis_option_text"> <?php $product_wishlist = get_wishlist_count($product_detail->id, $product_detail->category_id);
+                                          echo $product_wishlist; ?></span></p>
+                                       
                                             <a class="btn-change" style="color:black;text-decoration:unset;" id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
                                                     href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>   id="share_desk"
@@ -1337,26 +1324,18 @@ border-radius: 80px 0px 0px 80px;
                                                <img class="img-size" src="<?php echo base_url(); ?>assets/images/share.png"><span class="detalis_option_text">&nbsp Share</span>
  </a>
 
-                                        </div>
-                                        
-                                    </div>
-                                </div>
-                                <div class="col-2 px-0">
-                                    <div class="row">
-                                        <div class="col-12 mt-3 mb-3">
+                                      
                                             <a class="btn-change" style="color:black;text-decoration:unset; " id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
                                                     href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
                                                     data-toggle="modal" data-target="#report_product" <?php } ?>><img class="img-size" src="<?php echo base_url(); ?>assets/images/report.png"><span  class="detalis_option_text"> Report</span>
 </a>
-                                        </div>
                                       
-                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                                                </div>  <div class="py-3 text-center">
+                                                    </div>
+                  <div class="py-3 text-center">
                         <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png"
                             alt="" width=100%>
                     </div>

@@ -129,7 +129,7 @@ input[type=number] {
     </script>
 <body>
     <main>
-        <div class="container " style="padding-top:8%">
+        <div class="container py-4 space-top" >
 
             <div class="row align-items-md-stretch" style="min-height:90%;">
             <div class="col-md-7 ps-0" >
@@ -138,13 +138,13 @@ input[type=number] {
                             src="<?php echo base_url()?>/assets/images/forgot.png">
                     </div>
                 </div>
-                <div class="col-md-5 ps-4 pe-4" style="padding-top:8%">
+                <div class="col-md-5 ps-4 pe-4">
                 <div class="card  border p-4">
 <article class="card-body">
 
 <h6  class="float-right card-title mb-4 mt-1">Have an account ? <br><a  style="color:#13C571;" href="<?php echo base_url();?>welcome/login"> Sign in</a></h6>
 <p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
-<h2 class="card-title mb-4 mt-1">Forgot Password</h2>
+<h3 class="card-title mb-4 mt-1">Forgot Password</h3>
 	 <form action="<?php echo base_url();?>welcome/forgotpassword" method="post">
      <?php if ($error = $this->session->flashdata('Login_failed')) { ?>
                                     <div class="row">
