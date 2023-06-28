@@ -1133,33 +1133,33 @@ border-radius: 80px 0px 0px 80px;
 
 <body>
     <?php
-  $product_detail = $categories_data;
- 
-  $wishlist = 0;
-  if (!empty($user) && isset($user)) {
-    $wishlit = get_wishlist($product_detail->id, $product_detail->category_id, $user["user_id"]);
+    $product_detail = $categories_data;
 
-    if (empty($wishlit)) {
-
-      $wishlist = 0;
-
-
-    } else {
-
-      $wishlist = 1;
-
-    }
-  } else {
     $wishlist = 0;
-  }
-  $i = $product_detail->Count;
-$data = ++$i; // Increment $i and assign the value to $data
-$product_count_update = update_count_comman_query($product_detail->category_id, $data, $product_detail->id);
-  ?>
+    if (!empty($user) && isset($user)) {
+        $wishlit = get_wishlist($product_detail->id, $product_detail->category_id, $user["user_id"]);
+
+        if (empty($wishlit)) {
+
+            $wishlist = 0;
+
+
+        } else {
+
+            $wishlist = 1;
+
+        }
+    } else {
+        $wishlist = 0;
+    }
+    $i = $product_detail->Count;
+    $data = ++$i; // Increment $i and assign the value to $data
+    $product_count_update = update_count_comman_query($product_detail->category_id, $data, $product_detail->id);
+    ?>
 
 
     <div class=" text-center " style="margin-top:5%">
-        <img class="d-block mx-auto mb-2" src="<?php echo base_url();?>assets/images/product_banner.png" alt=""
+        <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png" alt=""
             width=100%>
     </div>
     <div class="container mt-4" >
@@ -1169,7 +1169,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                    
                         <div class="breadcrumbs">
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
-                                    href="<?php echo base_url();?>">Home</a></span>/<span
+                                    href="<?php echo base_url(); ?>">Home</a></span>/<span
                                 class="ms-2 handline"><?php echo ucfirst($product_detail->title); ?></span>
                         </div>
                     
@@ -1178,68 +1178,53 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 <div class="container">
             <div class="row" >
                 <div class="col-md-6 small">
-           
-  <div class="mySlides">
- 
-    <?php if ($product_detail->cover_img !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%">
-    <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
+                <?php if ($product_detail->cover_img !== NULL) { ?>
+      <div class="mySlides">
+        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%">
+        <?php if ($product_detail->verified_product == 1) { ?>
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
-   <?php }?> <?php } else { ?>
-        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
-
-  <div class="mySlides">
+           <?php } ?></div> <?php } ?>
+       
+       
+        <?php if ($product_detail->images_2 !== NULL) { ?>
+      <div class="mySlides">
    
-    <?php if ($product_detail->images_2 !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%">
-    <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?> <?php } else { ?>
-        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
-
-  <div class="mySlides">
   
-    <?php if ($product_detail->images_3 !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%">
-    <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?>
-   <?php } else { ?>
-        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
-    
-  <div class="mySlides">
+        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%">
+        <?php if ($product_detail->verified_product == 1) { ?>
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
+         >
    
-    <?php if ($product_detail->images_4 !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%">
-    <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?><?php } else { ?>
-        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
-
-  <div class="mySlides">
-   
-    <?php if ($product_detail->images_5 !== NULL) { ?>
-        <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
-    <?php } else { ?>
-        <img  class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
+     <?php } ?> </div><?php } ?>
+        
+   <?php if ($product_detail->images_3 !== NULL) { ?>
+      <div class="mySlides">
+  
     
+        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%">
+        <?php if ($product_detail->verified_product == 1) { ?>
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
+
+     <?php } ?>  </div>
+   <?php } ?>
+     
+   <?php if ($product_detail->images_4 !== NULL) { ?>
+      <div class="mySlides">
+        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%">
+        <?php if ($product_detail->verified_product == 1) { ?>
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
+
+     <?php } ?> </div><?php } ?>
+      
+        <?php if ($product_detail->images_5 !== NULL) { ?>
+      <div class="mySlides">
+         <?php if ($product_detail->verified_product == 1) { ?>
+              <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" >
+
+       <?php } ?><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
+       </div><?php } ?>
+       
  
     
   <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
@@ -1248,74 +1233,38 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
   
 
   <div class="row mt-3">
-    <div class="column">
-    <?php if ($product_detail->cover_img !== NULL) { ?>
-      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-      <?php } else { ?>
-        
-        <?php } ?>
-    </div>
-    <div class="column">
-    <?php if ($product_detail->images_2 !== NULL) { ?>
-      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-      <?php } else { ?>
-        <?php } ?></div>
-    <div class="column">
-    <?php if ($product_detail->images_3 !== NULL) { ?>
-      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-      <?php } else { ?>
-        <?php } ?></div>
-    <div class="column">
-    <?php if ($product_detail->images_4 !== NULL) { ?>
-      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-      <?php } else { ?>
-        <?php } ?></div>
-    <div class="column">
-    <?php if ($product_detail->images_5 !== NULL) { ?>
+  <?php if ($product_detail->cover_img !== NULL) { ?>
+      <div class="column">
    
+        <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+        </div>
+      <?php } ?>
+       <?php if ($product_detail->images_2 !== NULL) { ?>
+        <div class="column">
+            <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+          </div> 
+        <?php } ?>
+        <?php if ($product_detail->images_3 !== NULL) { ?>
+        <div class="column">
+    
+          <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+          </div>
+        <?php } ?>
+        <?php if ($product_detail->images_4 !== NULL) { ?>
+        <div class="column">
+            <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+            </div>
+        <?php } ?>
+   
+    <?php if ($product_detail->images_5 !== NULL) { ?>
+        <div class="column">
         <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-        <?php } else { ?>
-        <?php } ?></div>    
+        </div>    
+        <?php } ?>
     
   </div>
 
-                <!-- <div class="master">
-                
-            <img class="details_img_cover img-fluid" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
-            <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?> <i class="fa-solid fa-chevron-left"></i>
-            <i class="fas fa-chevron-right"></i>
-        </div>
-
-        <div class="thumbnails">
-        <?php if ($product_detail->cover_img !== NULL) { ?>
-            <img class="details_img_box img-fluid active" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
-            <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_2 !== NULL) { ?>
- <img class="details_img_box img-fluid " src="<?php echo base_url() . $product_detail->images_2 . ""; ?>">
- <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_3 !== NULL) { ?>
- <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>">
- <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_4 !== NULL) { ?>
-    <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>">
-    <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_5 !== NULL) { ?>
-    <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>">
-    <?php } else { ?>
-
-<?php } ?>   </div> -->
+  
 <div class="container">
                     <div class="row mt-3">
                         <div class="detalis_option">
@@ -1324,37 +1273,37 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="row">
                                         
                                         <div class="col-12 mt-3 ml-2">
-                                        <img class="img-size" src="<?php echo base_url();?>assets/images/calendar.png"> <span class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
-                  {
-                    $now = new DateTime;
-                    $ago = new DateTime($datetime);
-                    $diff = $now->diff($ago);
+                                        <img class="img-size" src="<?php echo base_url(); ?>assets/images/calendar.png"> <span class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
+                                          {
+                                              $now = new DateTime;
+                                              $ago = new DateTime($datetime);
+                                              $diff = $now->diff($ago);
 
-                    $diff->w = floor($diff->d / 7);
-                    $diff->d -= $diff->w * 7;
+                                              $diff->w = floor($diff->d / 7);
+                                              $diff->d -= $diff->w * 7;
 
-                    $string = array(
-                      'y' => 'year',
-                      'm' => 'month',
-                      'w' => 'week',
-                      'd' => 'day',
-                      'h' => 'hour',
-                      'i' => 'minute',
-                      's' => 'second',
-                    );
-                    foreach ($string as $k => &$v) {
-                      if ($diff->$k) {
-                        $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
-                      } else {
-                        unset($string[$k]);
-                      }
-                    }
+                                              $string = array(
+                                                  'y' => 'year',
+                                                  'm' => 'month',
+                                                  'w' => 'week',
+                                                  'd' => 'day',
+                                                  'h' => 'hour',
+                                                  'i' => 'minute',
+                                                  's' => 'second',
+                                              );
+                                              foreach ($string as $k => &$v) {
+                                                  if ($diff->$k) {
+                                                      $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+                                                  } else {
+                                                      unset($string[$k]);
+                                                  }
+                                              }
 
-                    if (!$full)
-                      $string = array_slice($string, 0, 1);
-                    return $string ? implode(', ', $string) . ' ago' : 'just now';
-                  }
-                  echo time_elapsed_string($product_detail->created_at); ?></span>
+                                              if (!$full)
+                                                  $string = array_slice($string, 0, 1);
+                                              return $string ? implode(', ', $string) . ' ago' : 'just now';
+                                          }
+                                          echo time_elapsed_string($product_detail->created_at); ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -1362,7 +1311,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="row">
                                     
                                         <div class="col-12 mt-3">
-                                        <img class="img-size" src="<?php echo base_url();?>assets/images/eye.png"> <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
+                                        <img class="img-size" src="<?php echo base_url(); ?>assets/images/eye.png"> <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span>
                                         </div>
                                     </div>
                                 </div>
@@ -1371,7 +1320,8 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="row">
                                        
                                         <div class="col-12 mt-3">
-                                        <img class="img-size"  src="<?php echo base_url();?>assets/images/hearts.png"><span class="detalis_option_text">&nbsp <?php $product_wishlist = get_wishlist_count($product_detail->id ,$product_detail->category_id); echo $product_wishlist; ?></span>
+                                        <img class="img-size"  src="<?php echo base_url(); ?>assets/images/hearts.png"><span class="detalis_option_text">&nbsp <?php $product_wishlist = get_wishlist_count($product_detail->id, $product_detail->category_id);
+                                          echo $product_wishlist; ?></span>
                                         </div>
                                     </div>
                                 </div>
@@ -1380,11 +1330,11 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <div class="col-12 mt-3">
                                             <a class="btn-change" style="color:black;text-decoration:unset;" id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
-                                                href="<?php echo base_url();?>welcome/login" <?php } else{?>   id="share_desk"
-                                                onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"
+                                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>   id="share_desk"
+                                                    onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"
                                              <?php } ?>
                                                >
-                                               <img class="img-size" src="<?php echo base_url();?>assets/images/share.png"><span class="detalis_option_text">&nbsp Share</span>
+                                               <img class="img-size" src="<?php echo base_url(); ?>assets/images/share.png"><span class="detalis_option_text">&nbsp Share</span>
  </a>
 
                                         </div>
@@ -1396,8 +1346,8 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <div class="col-12 mt-3 mb-3">
                                             <a class="btn-change" style="color:black;text-decoration:unset; " id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
-                                                href="<?php echo base_url();?>welcome/login" <?php } else { ?>
-                                                data-toggle="modal" data-target="#report_product" <?php } ?>><img class="img-size" src="<?php echo base_url();?>assets/images/report.png"><span  class="detalis_option_text"> Report</span>
+                                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
+                                                    data-toggle="modal" data-target="#report_product" <?php } ?>><img class="img-size" src="<?php echo base_url(); ?>assets/images/report.png"><span  class="detalis_option_text"> Report</span>
 </a>
                                         </div>
                                       
@@ -1407,7 +1357,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                     </div>
                                                 </div>  <div class="py-3 text-center">
-                        <img class="d-block mx-auto mb-2" src="<?php echo base_url();?>assets/images/product_banner.png"
+                        <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png"
                             alt="" width=100%>
                     </div>
 
@@ -1422,19 +1372,20 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         <div class="col-3">
                             <a  style="font-size:18px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
                                 href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
-                                style="font-size:18px; color:#69d3b0; padding: 0px;"
+                                    style="font-size:18px; color:#69d3b0; padding: 0px;"
                                
-                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                    data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
                                 class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product_detail->id; ?>"
                                 data-pid="<?php echo $product_detail->id; ?>"
                                 data-cid="<?php echo $product_detail->category_id; ?>"
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
                         </div>
                         <div class="col-4">
-                            <?php if(isset($product_detail->price)){
-                                if(($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)){ ?>
-                            <p class="details_price"><span>₹<?php echo $product_detail->price; ?></span></p>
-                            <?php  } }?>
+                            <?php if (isset($product_detail->price)) {
+                                if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { ?>
+                                    <p class="details_price"><span>₹<?php echo $product_detail->price; ?></span></p>
+                                <?php }
+                            } ?>
 
                         </div>
                     </div>
@@ -1444,34 +1395,34 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <div class="row  mt-2" style="margin-left: 2.5rem!important;">
                         <hr class="hr " style="width: 200px; border: 1px solid #69D3B0; " />
                     </div>
-                    <?php if($product_detail->category_id==1){?>
-                    <div class="row  ms-4">
-                        <div class="col-3">
-                            <p class="details_text"><b>Brand</b></p>
+                    <?php if ($product_detail->category_id == 1) { ?>
+                        <div class="row  ms-4">
+                            <div class="col-3">
+                                <p class="details_text"><b>Brand</b></p>
+                            </div>
+                            <div class="col-3">
+                                <p class="details_text"><?php echo $product_detail->brand; ?></p>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <p class="details_text"><?php echo $product_detail->brand; ?></p>
-                        </div>
-                    </div>
-                    <?php } else if($product_detail->category_id==2){ ?>
-                    <div class="row   ms-4">
-                        <div class="col-3">
-                            <p class="details_text"><b>Tuition Location</b></p>
-                        </div>
-                        <div class="col-3">
-                            <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
-                        </div>
-                    </div>
-                    <?php } else if($product_detail->category_id==3 && $product_detail->category_id==4){ ?>
-                    <div class="row   ms-4">
-                        <div class="col-3">
-                            <p class="details_text"><b>Job Location </b></p>
-                        </div>
-                        <div class="col-3">
-                            <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
-                        </div>
-                    </div>
-                    <?php } ?>
+                    <?php } else if ($product_detail->category_id == 2) { ?>
+                            <div class="row   ms-4">
+                                <div class="col-3">
+                                    <p class="details_text"><b>Tuition Location</b></p>
+                                </div>
+                                <div class="col-3">
+                                    <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
+                                </div>
+                            </div>
+                        <?php } else if ($product_detail->category_id == 3 && $product_detail->category_id == 4) { ?>
+                                <div class="row   ms-4">
+                                    <div class="col-3">
+                                        <p class="details_text"><b>Job Location </b></p>
+                                    </div>
+                                    <div class="col-3">
+                                        <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
+                                    </div>
+                                </div>
+                            <?php } ?>
                     <div class="row  ms-4">
                         <div class="col-3">
                             <p class="details_text"><b>City</b></p>
@@ -1486,7 +1437,15 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             <p class="details_text"><b>Type</b></p>
                         </div>
                         <div class="col-3">
-                            <p class="details_text"><?php if($product_detail->category_id==1){ echo $product_detail->type;} else if($product_detail->category_id==2 ){  $type_name = get_product_type_name($product_detail->Education_Type); echo $type_name;} else if($product_detail->category_id==4 && $product_detail->category_id==3){ $type_name = get_product_type_name($product_detail->Job_type); echo $type_name;}  ?></p>
+                            <p class="details_text"><?php if ($product_detail->category_id == 1) {
+                                echo $product_detail->type;
+                            } else if ($product_detail->category_id == 2) {
+                                $type_name = get_product_type_name($product_detail->Education_Type);
+                                echo $type_name;
+                            } else if ($product_detail->category_id == 4 && $product_detail->category_id == 3) {
+                                $type_name = get_product_type_name($product_detail->Job_type);
+                                echo $type_name;
+                            } ?></p>
                         </div>
                     </div>
 
@@ -1500,119 +1459,134 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                     <div class="row mt-2 margin_left_css">
 
-                        <?php   $shoplist = 0;
-                        if($product_detail->verified_product){
-                            if(empty($shop)){
-                                $shop_list =check_shoplist_by_productid($product_detail->id);
-                           
-                          if(empty($shop_list)){ echo"";}else{  
-                          $shop_name= get_shop_name($shop_list->shop_id);?>
+                        <?php $shoplist = 0;
+                        if ($product_detail->verified_product) {
+                            if (empty($shop)) {
+                                $shop_list = check_shoplist_by_productid($product_detail->id);
+
+                                if (empty($shop_list)) {
+                                    echo "";
+                                } else {
+                                    $shop_name = get_shop_name($shop_list->shop_id); ?>
+                                    <div class="" style="">
+                                        <div class="col-12" style="text-align:center;">
+                                            <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                        class="btn_Verified_img"
+                                                        src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                        alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
+                                                    <?php echo $shop_name; ?></span></p></a>
+                                        </div>
+      
+      
+                                    </div>
+                                <?php }
+                            }
+                        } else {
+
+                            if (!empty($user) && isset($user)) {
+                                $shop = check_shoplist($user['user_id']);
+
+                                if (empty($shop)) {
+                                    $shop_list = check_shoplist_by_productid($product_detail->id);
+
+                                    if (empty($shop_list)) {
+                                        echo "";
+                                    } else {
+                                        $shop_name = get_shop_name($shop_list->shop_id); ?>
+                                        <div class="" style="">
+                                            <div class="col-12" style="text-align:center;">
+                                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                            class="btn_Verified_img"
+                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
+                                                        <?php echo $shop_name; ?></span></p></a>
+                                            </div>
+
+
+                                        </div>
+                                    <?php }
+                                } else {
+                                    $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id, $user["user_id"]);
+                                    if (empty($wishlit)) {
+                                        if ($shop->admin_approval == 1) {
+
+                                            ?> <div class="" style="">
+
+                                                <div class="">
+                                                    <form class="" action="<?php echo base_url(); ?>welcome/setshoplist" method="POST">
+                                                        <input type="hidden" name="product_id" id="product_id"
+                                                            value="<?php echo $product_detail->id; ?>">
+                                                        <input type="hidden" name="category_id" id="category_id"
+                                                            value="<?php echo $product_detail->category_id; ?>">
+                                                        <input type="hidden" name="user_id" id="sender_id" value="<?php $session_id = $this->session->userdata('id');
+                                                        if ($session_id) {
+                                                            echo $_SESSION['id'];
+                                                        } ?>">
+                                                        <input type="hidden" name="seller_id" id="receiver_id"
+                                                            value="<?php echo $product_detail->user_id; ?>">
+                                                        <input type="hidden" name="shop_id" id="receiver_id"
+                                                            value="<?php echo $shop->id; ?>">
+                                                        <input type="hidden" name="subcategory_id" id="receiver_id"
+                                                            value="<?php echo $product_detail->subcategory_id; ?>">
+
+
+                                                        <div class="col-12" style="text-align:center;">
+                                                            <button class=" btn btn_Verified"><span class="pe-2"><img
+                                                                        class="btn_Verified_img"
+                                                                        src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                                        alt="check 1.png"></span><span class="btn_Verified_text"
+                                                                    type="submit" name="submit">Verify</span></button>
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                            </div>
+
+
+                                        <?php }
+                                    } else {
+                                        $shop_list = check_shoplist_by_productid($product_detail->id);
+                                        if (empty($shop_list)) {
+                                            echo "";
+                                        } else {
+                                            $shop_name = get_shop_name($shop_list->shop_id);
+                                            ?>
+
+                                            <div class="" style="">
+
+                                                <div class="col-12" style="text-align:center;">
+                                                    <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>" ><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                                class="btn_Verified_img"
+                                                                src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
+                                                            <?php echo $shop_name; ?></span></p></a>
+                                                </div>
+
+                                            </div>
+                                        <?php }
+                                    }
+                                }
+                            } else {
+                                $shop_list = check_shoplist_by_productid($product_detail->id);
+                                if (empty($shop_list)) {
+                                    echo "";
+                                } else {
+                                    $shop_name = get_shop_name($shop_list->shop_id);
+                                    ?>
                               <div class="" style="">
+
                                   <div class="col-12" style="text-align:center;">
                                       <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                   class="btn_Verified_img"
                                                   src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                  alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
-                                              <?php echo $shop_name;?></span></p></a>
+                                                  alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                              <?php echo $shop_name; ?></span></p></a>
                                   </div>
-      
-      
+
                               </div>
-                              <?php } }   
-                        }
-                        else{
-                        
-                if (!empty($user) && isset($user)) {
-                    $shop =check_shoplist($user['user_id']); 
-                   
-                    if(empty($shop)){
-                          $shop_list =check_shoplist_by_productid($product_detail->id);
-                     
-                    if(empty($shop_list)){ echo"";}else{  
-                    $shop_name= get_shop_name($shop_list->shop_id);?>
-                        <div class="" style="">
-                            <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
-                                        <?php echo $shop_name;?></span></p></a>
-                            </div>
-
-
-                        </div>
-                        <?php } }else{
-                    $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id ,$user["user_id"]);
-                 if (empty($wishlit)) {
-if($shop->admin_approval==1){
-  
-                    ?> <div class="" style="">
-
-                            <div class="">
-                                <form class="" action="<?php echo base_url();?>welcome/setshoplist" method="POST">
-                                    <input type="hidden" name="product_id" id="product_id"
-                                        value="<?php echo $product_detail->id; ?>">
-                                    <input type="hidden" name="category_id" id="category_id"
-                                        value="<?php echo $product_detail->category_id; ?>">
-                                    <input type="hidden" name="user_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
-                                                            if($session_id){echo $_SESSION['id'];} ?>">
-                                    <input type="hidden" name="seller_id" id="receiver_id"
-                                        value="<?php echo $product_detail->user_id; ?>">
-                                    <input type="hidden" name="shop_id" id="receiver_id"
-                                        value="<?php echo $shop->id; ?>">
-                                    <input type="hidden" name="subcategory_id" id="receiver_id"
-                                        value="<?php echo $product_detail->subcategory_id; ?>">
-
-
-                                    <div class="col-12" style="text-align:center;">
-                                        <button class=" btn btn_Verified"><span class="pe-2"><img
-                                                    class="btn_Verified_img"
-                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                    alt="check 1.png"></span><span class="btn_Verified_text"
-                                                type="submit" name="submit">Verify</span></button>
-                                    </div>
-                                </form>
-                            </div>
-
-                        </div>
-
-
-                        <?php }} else {
-                    $shop_list =check_shoplist_by_productid($product_detail->id);
-                    if(empty($shop_list)) {echo"";}else{
-                    $shop_name= get_shop_name($shop_list->shop_id);
-                    ?>
-
-                        <div class="" style="">
-
-                            <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>" ><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
-                                        <?php echo $shop_name;?></span></p></a>
-                            </div>
-
-                        </div>
-                        <?php } } }
-                } 
-            
-                else { $shop_list =check_shoplist_by_productid($product_detail->id);
-                    if(empty($shop_list)) {echo"";}else{
-                $shop_name= get_shop_name($shop_list->shop_id);
-                ?>
-                        <div class="" style="">
-
-                            <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                            class="btn_Verified_img"
-                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                            alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
-                                        <?php echo $shop_name;?></span></p></a>
-                            </div>
-
-                        </div>
-                        <?php }} }?>
+                          <?php }
+                            }
+                        } ?>
 
                     </div>
 
@@ -1633,36 +1607,36 @@ if($shop->admin_approval==1){
                                             </p>
                                             <p class="deatails_profile_name_time mt-1">Profile Created <span>
                                                     <?php function time_string($datetime, $full = false)
-                      {
-                        $now = new DateTime;
-                        $ago = new DateTime($datetime);
-                        $diff = $now->diff($ago);
+                                                    {
+                                                        $now = new DateTime;
+                                                        $ago = new DateTime($datetime);
+                                                        $diff = $now->diff($ago);
 
-                        $diff->w = floor($diff->d / 7);
-                        $diff->d -= $diff->w * 7;
+                                                        $diff->w = floor($diff->d / 7);
+                                                        $diff->d -= $diff->w * 7;
 
-                        $string = array(
-                          'y' => 'year',
-                          'm' => 'month',
-                          'w' => 'week',
-                          'd' => 'day',
-                          'h' => 'hour',
-                          'i' => 'minute',
-                          's' => 'second',
-                        );
-                        foreach ($string as $k => &$v) {
-                          if ($diff->$k) {
-                            $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
-                          } else {
-                            unset($string[$k]);
-                          }
-                        }
+                                                        $string = array(
+                                                            'y' => 'year',
+                                                            'm' => 'month',
+                                                            'w' => 'week',
+                                                            'd' => 'day',
+                                                            'h' => 'hour',
+                                                            'i' => 'minute',
+                                                            's' => 'second',
+                                                        );
+                                                        foreach ($string as $k => &$v) {
+                                                            if ($diff->$k) {
+                                                                $v = $diff->$k . ' ' . $v . ($diff->$k > 1 ? 's' : '');
+                                                            } else {
+                                                                unset($string[$k]);
+                                                            }
+                                                        }
 
-                        if (!$full)
-                          $string = array_slice($string, 0, 1);
-                        return $string ? implode(', ', $string) . ' ago' : 'just now';
-                      }
-                      echo time_string($userdetail->created); ?>
+                                                        if (!$full)
+                                                            $string = array_slice($string, 0, 1);
+                                                        return $string ? implode(', ', $string) . ' ago' : 'just now';
+                                                    }
+                                                    echo time_string($userdetail->created); ?>
                                                 </span></p>
                                             <p class="deatails_profile_name_ads mt-1">Total 20 Ads</p>
                                             <p class="deatails_profile_name_ads">Active 10 Ads</p>
@@ -1674,21 +1648,23 @@ if($shop->admin_approval==1){
                                       
                                       
                                             <form class="" id="chat_frm"
-                                                action="<?php echo base_url();?>welcome/chat/<?php echo $product_detail->category_id; ?>"
+                                                action="<?php echo base_url(); ?>welcome/chat/<?php echo $product_detail->category_id; ?>"
                                                 method="POST">
                                                 <input type="hidden" name="product_id" id="product_id"
                                                     value="<?php echo $product_detail->id; ?>">
                                                 <input type="hidden" name="category_id" id="category_id"
                                                     value="<?php echo $product_detail->category_id; ?>">
-                                                <input type="hidden" name="sender_id" id="sender_id" value="<?php  $session_id = $this->session->userdata('id');
-                                                 if($session_id){echo $_SESSION['id'];} ?>">
+                                                <input type="hidden" name="sender_id" id="sender_id" value="<?php $session_id = $this->session->userdata('id');
+                                                if ($session_id) {
+                                                    echo $_SESSION['id'];
+                                                } ?>">
                                                 <input type="hidden" name="receiver_id" id="receiver_id"
                                                     value="<?php echo $product_detail->user_id; ?>">
 
                                                 <input class="chat_button pointer" style="border-color:#46760a"
-                                                    value="Chat" <?php if(empty($user) || !isset($user)){ ?>
-                                                        onClick="location.href='<?php echo base_url();?>welcome/login/'"
-                                                    <?php }else{ ?>type="submit" <?php }  ?> readonly>
+                                                    value="Chat" <?php if (empty($user) || !isset($user)) { ?>
+                                                        onClick="location.href='<?php echo base_url(); ?>welcome/login/'"
+                                                    <?php } else { ?>type="submit" <?php } ?> readonly>
                                             </form>
                                           
                                             <a
@@ -1715,92 +1691,90 @@ if($shop->admin_approval==1){
 
                 <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
                     <?php
-              if(!empty($category_data)){
-   foreach($category_data as $relatedproduct){
-   
-   
-    $session_login_id  = $this->session->userdata("id");
-    $product_user_id = $relatedproduct->user_id;
-    if($session_login_id !== $product_user_id){
-       
-           
+                    if (!empty($category_data)) {
+                        foreach ($category_data as $relatedproduct) {
 
-        
 
-        
-   ?>
+                            $session_login_id = $this->session->userdata("id");
+                            $product_user_id = $relatedproduct->user_id;
+                            if ($session_login_id !== $product_user_id) {
 
 
 
-<div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
-<a  href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
-                        <div class="card">
-                            <img class="related_ads_card_img  img-fluid"
-                                src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
-                                alt="related_ads_card_img">
-                            <div class="card-body ">
-                                <div class="row">
+
+
+
+                                ?>
+
+
+
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
+            <a  href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
+                                    <div class="card">
+                                        <img class="related_ads_card_img  img-fluid"
+                                            src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
+                                            alt="related_ads_card_img">
+                                        <div class="card-body ">
+                                            <div class="row">
                                   
                                   
-                                    <div class="col-8">
-                                        <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
-                                     
-                                            ?>
-                                        <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
-                                        <?php  } }?>
-                                    </div>
-                                    <div class="col-2">
-                                        <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-12">
-                                        <small class="card-text"
-                                            style="color: #575757;"> <?php
-                           $title =$relatedproduct->title;
-                            if(strlen($title) <= 30)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,30) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></small><br>
-                                    </div>
-                                </div>
+                                                <div class="col-8">
+                                                    <?php if (isset($product_detail->price)) {
+                                                        if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) {
+
+                                                            ?>
+                                                            <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
+                                                        <?php }
+                                                    } ?>
+                                                </div>
+                                                <div class="col-2">
+                                                    <b style='font-size:18px;'><i class="fa fa-heart-o "
+                                                            style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
+                                                </div>
+                                            </div>
+                                            <div class="row mt-1">
+                                                <div class="col-12">
+                                                    <small class="card-text"
+                                                        style="color: #575757;"> <?php
+                                                        $title = $relatedproduct->title;
+                                                        if (strlen($title) <= 30) {
+                                                            echo ucfirst($title);
+                                                        } else {
+                                                            $y = substr($title, 0, 30) . '...';
+                                                            echo ucfirst($y);
+                                                        }
+
+                                                        ?></small><br>
+                                                </div>
+                                            </div>
                                 
-                                <div class="row mt-1">
-                                    <div class="col-2">
-                                        <i class="bi bi-geo-alt-fill" aria-hidden="true"
-                                            style="font-size:18px; color:#69d3b0"></i>
-                                    </div>
-                                    <div class="col-8">
-                                        <p style="color: #575757;"><?php
-                           $title =$relatedproduct->address;
-                            if(strlen($title) <= 20)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,20) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></p>
-                                    </div>
+                                            <div class="row mt-1">
+                                                <div class="col-2">
+                                                    <i class="bi bi-geo-alt-fill" aria-hidden="true"
+                                                        style="font-size:18px; color:#69d3b0"></i>
+                                                </div>
+                                                <div class="col-8">
+                                                    <p style="color: #575757;"><?php
+                                                    $title = $relatedproduct->address;
+                                                    if (strlen($title) <= 20) {
+                                                        echo ucfirst($title);
+                                                    } else {
+                                                        $y = substr($title, 0, 20) . '...';
+                                                        echo ucfirst($y);
+                                                    }
+
+                                                    ?></p>
+                                                </div>
                                    
+                                            </div>
+                                        </div>
+                                    </div>
+                                    </a>
                                 </div>
-                            </div>
-                        </div>
-                        </a>
-                    </div>
-<?php } } }else{?>
-    <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
+        <?php }
+                        }
+                    } else { ?>
+    <center><img  src="<?php echo base_url(); ?>assets/images/no_product .png"></center>
 
                     <?php } ?>
 
@@ -1828,17 +1802,17 @@ if($shop->admin_approval==1){
                     <h5 class=" mb-0 my-3 fs-5" style="color:#13C571;text-align: center;">Report on Ads</h5>
 
                     <?php if ($error = $this->session->flashdata('Login_fail')) { ?>
-                    <div class="row">
-                        <div class="col-lg-12">
-                            <div class="alert alert-danger ">
-                                <?= $error;
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="alert alert-danger ">
+                                    <?= $error;
 
-                  unset($_SESSION['Login_fail']);
-                  ?>
+                                    unset($_SESSION['Login_fail']);
+                                    ?>
 
+                                </div>
                             </div>
                         </div>
-                    </div>
 
                     <?php } ?>
 
@@ -2000,7 +1974,7 @@ $(document).ready(function() {
 
     function load_country_data(limit, start) {
         $.ajax({
-            url: "<?php echo base_url();?>welcome/fetch/",
+            url: "<?php echo base_url(); ?>welcome/fetch/",
             method: "POST",
             data: {
                 limit: limit,
@@ -2139,7 +2113,7 @@ function showSlides(n) {
                 function(isConfirm) {
                     if (isConfirm) {
 
-                        window.location.href = "<?php echo base_url();?>welcome/logout";
+                        window.location.href = "<?php echo base_url(); ?>welcome/logout";
                     } else {
                         swal("Cancelled", "Something went wrong. Please try again.)", "error");
                     }

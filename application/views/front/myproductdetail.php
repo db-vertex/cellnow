@@ -1178,68 +1178,53 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 <div class="container">
             <div class="row" >
                 <div class="col-md-6 small">
-           
-  <div class="mySlides">
- 
-    <?php if ($product_detail->cover_img !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%">
-    <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
+                <?php if ($product_detail->cover_img !== NULL) { ?>
+      <div class="mySlides">
+        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%">
+        <?php if ($product_detail->verified_product == 1) { ?>
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
-   <?php }?> <?php } else { ?>
-        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
-
-  <div class="mySlides">
+           <?php } ?></div> <?php } ?>
+       
+       
+        <?php if ($product_detail->images_2 !== NULL) { ?>
+      <div class="mySlides">
    
-    <?php if ($product_detail->images_2 !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%">
-    <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?> <?php } else { ?>
-        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
-
-  <div class="mySlides">
   
-    <?php if ($product_detail->images_3 !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%">
-    <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?>
-   <?php } else { ?>
-        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
-    
-  <div class="mySlides">
+        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%">
+        <?php if ($product_detail->verified_product == 1) { ?>
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
+         >
    
-    <?php if ($product_detail->images_4 !== NULL) { ?>
-    <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%">
-    <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?><?php } else { ?>
-        <img class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
-
-  <div class="mySlides">
-   
-    <?php if ($product_detail->images_5 !== NULL) { ?>
-        <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
-    <?php } else { ?>
-        <img  class="details_img_cover" src="<?php echo base_url();?>assets/images/no_product .png">
-        <?php } ?></div>
+     <?php } ?> </div><?php } ?>
+        
+   <?php if ($product_detail->images_3 !== NULL) { ?>
+      <div class="mySlides">
+  
     
+        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%">
+        <?php if ($product_detail->verified_product == 1) { ?>
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
+
+     <?php } ?>  </div>
+   <?php } ?>
+     
+   <?php if ($product_detail->images_4 !== NULL) { ?>
+      <div class="mySlides">
+        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%">
+        <?php if ($product_detail->verified_product == 1) { ?>
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
+
+     <?php } ?> </div><?php } ?>
+      
+        <?php if ($product_detail->images_5 !== NULL) { ?>
+      <div class="mySlides">
+         <?php if ($product_detail->verified_product == 1) { ?>
+              <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" >
+
+       <?php } ?><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
+       </div><?php } ?>
+       
  
     
   <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
@@ -1248,74 +1233,37 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
   
 
   <div class="row mt-3">
-    <div class="column">
-    <?php if ($product_detail->cover_img !== NULL) { ?>
-      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-      <?php } else { ?>
-        
-        <?php } ?>
-    </div>
-    <div class="column">
-    <?php if ($product_detail->images_2 !== NULL) { ?>
-      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-      <?php } else { ?>
-        <?php } ?></div>
-    <div class="column">
-    <?php if ($product_detail->images_3 !== NULL) { ?>
-      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-      <?php } else { ?>
-        <?php } ?></div>
-    <div class="column">
-    <?php if ($product_detail->images_4 !== NULL) { ?>
-      <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-      <?php } else { ?>
-        <?php } ?></div>
-    <div class="column">
-    <?php if ($product_detail->images_5 !== NULL) { ?>
+  <?php if ($product_detail->cover_img !== NULL) { ?>
+      <div class="column">
    
+        <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+        </div>
+      <?php } ?>
+       <?php if ($product_detail->images_2 !== NULL) { ?>
+        <div class="column">
+            <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
+          </div> 
+        <?php } ?>
+        <?php if ($product_detail->images_3 !== NULL) { ?>
+        <div class="column">
+    
+          <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
+          </div>
+        <?php } ?>
+        <?php if ($product_detail->images_4 !== NULL) { ?>
+        <div class="column">
+            <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
+            </div>
+        <?php } ?>
+   
+    <?php if ($product_detail->images_5 !== NULL) { ?>
+        <div class="column">
         <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-        <?php } else { ?>
-        <?php } ?></div>    
+        </div>    
+        <?php } ?>
     
   </div>
 
-                <!-- <div class="master">
-                
-            <img class="details_img_cover img-fluid" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
-            <?php if($product_detail->verified_product ==1){ ?>
-      <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-   >
-
-   <?php }?> <i class="fa-solid fa-chevron-left"></i>
-            <i class="fas fa-chevron-right"></i>
-        </div>
-
-        <div class="thumbnails">
-        <?php if ($product_detail->cover_img !== NULL) { ?>
-            <img class="details_img_box img-fluid active" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>">
-            <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_2 !== NULL) { ?>
- <img class="details_img_box img-fluid " src="<?php echo base_url() . $product_detail->images_2 . ""; ?>">
- <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_3 !== NULL) { ?>
- <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>">
- <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_4 !== NULL) { ?>
-    <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>">
-    <?php } else { ?>
-
-<?php } ?>
-<?php if ($product_detail->images_5 !== NULL) { ?>
-    <img class="details_img_box img-fluid" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>">
-    <?php } else { ?>
-
-<?php } ?>   </div> -->
 <div class="container">
                     <div class="row mt-3">
                         <div class="detalis_option">

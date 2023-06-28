@@ -420,6 +420,21 @@ flex-grow: 0;
 
     <!-- Custom styles for this template -->
     <link href="checkout.css" rel="stylesheet">
+    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> 
+  
+  
+  
+  <script type="text/javascript">
+//<![CDATA[
+bkLib.onDomLoaded(function() {
+   nicEditors.allTextAreas() ;
+   
+       
+  });
+
+
+
+</script>
 </head>
 
 <body class="">
@@ -477,7 +492,13 @@ flex-grow: 0;
 
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2"  onclick="images_2()"></i>
-                                <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>" class="preview2" />
+                                <?php if($get_data->images_2!==NULL){ ?>
+                                    <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>" class="preview2" />
+                                    <?php } else{ ?>
+                                    <img id="ImgPreview2" src="" class="preview2" style="display:none;"/>
+                                    <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
+                                    class="btn" style="display:block;">+</label>
+                                    <?php } ?>
                                 <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
                                     class="btn" >+</label>
 
@@ -487,24 +508,43 @@ flex-grow: 0;
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3" onclick="images_3()"></i>
-                                <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>" class="preview3" />
-                                <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
+                                <?php if($get_data->images_3!==NULL){ ?>
+                                    <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>" class="preview3" />
+                                <?php } else{ ?>
+                                    <img id="ImgPreview3" src="" class="preview3" style="display:none;"/>
+                                    <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
+                                    class="btn" style="display:block;">+</label>
+                                    <?php } ?>
+<label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_3" name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" onclick="images_4()"></i>
-                                <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>" class="preview4" />
-                                <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
+                                <?php if($get_data->images_4!==NULL){ ?>
+                                    <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>" class="preview4" />
+                                    <?php } else{ ?>
+                                    <img id="ImgPreview4" src="" class="preview4" style="display:none;"/>
+                                    <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
+                                    class="btn" style="display:block;">+</label>
+                                    <?php } ?>
+                                    <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_4" name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
                             </div>
                             <div class="col-3 images_small_box m-2">
-                                <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5" onclick="images_5()"></i>
-                                <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>" class="preview5" />
-                                <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
+                                
+                                <?php if($get_data->images_5!==NULL){ ?>
+                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5" onclick="images_5()"></i>
+                                     <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>" class="preview5" />
+                                <?php } else{ ?>
+                                    <img id="ImgPreview5" src="" class="preview5" style="display:none;"/>
+                                    <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
+                                    class="btn" style="display:block;">+</label>
+                                    <?php } ?>
+                                     <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_5" name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
@@ -766,6 +806,19 @@ flex-grow: 0;
 
     <script>
  function images_2() {
+    swal({
+                    title: " Delete!",
+                    text: "Are you sure you want to delete?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
     var thumbnails=  'images_2';
     var product_id=  document.getElementById("product_id").value;
      var category=  document.getElementById("category").value;
@@ -780,9 +833,27 @@ flex-grow: 0;
           
         }
     });
+    window.location.reload();
+} else {
+                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    }
+                });
   }  
   
   function images_3() {
+    swal({
+                    title: " Delete!",
+                    text: "Are you sure you want to delete?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
     var thumbnails=  'images_3';
     var product_id=  document.getElementById("product_id").value;
      var category=  document.getElementById("category").value;
@@ -797,9 +868,27 @@ flex-grow: 0;
           
         }
     });
+    window.location.reload();
+} else {
+                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    }
+                });
   }   
 
   function images_4() {
+    swal({
+                    title: " Delete!",
+                    text: "Are you sure you want to delete?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
     var thumbnails=  'images_4';
     var product_id=  document.getElementById("product_id").value;
      var category=  document.getElementById("category").value;
@@ -814,9 +903,28 @@ flex-grow: 0;
           
         }
     });
+    window.location.reload();
+} else {
+                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    }
+                });
   }   
 
+
   function images_5() {
+    swal({
+                    title: " Delete!",
+                    text: "Are you sure you want to delete?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
     var thumbnails=  'images_5';
     var product_id=  document.getElementById("product_id").value;
      var category=  document.getElementById("category").value;
@@ -831,6 +939,11 @@ flex-grow: 0;
           
         }
     });
+    window.location.reload();
+} else {
+                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    }
+                });
   }   
         </script>
    

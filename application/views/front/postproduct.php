@@ -18,7 +18,22 @@
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete"></script>
-    <style>
+    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> 
+  
+  
+  
+  <script type="text/javascript">
+//<![CDATA[
+bkLib.onDomLoaded(function() {
+   nicEditors.allTextAreas() ;
+   
+       
+  });
+
+
+
+</script>
+<style>
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
