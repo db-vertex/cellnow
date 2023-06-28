@@ -1733,46 +1733,32 @@ if($shop->admin_approval==1){
 
 
 <div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
-                        <div class="card"
-                           >
+<a  href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
+                        <div class="card">
                             <img class="related_ads_card_img  img-fluid"
                                 src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
                                 alt="related_ads_card_img">
                             <div class="card-body ">
                                 <div class="row">
-                                    <div class="col-6">
-                                        <p class="related_ads_card_title"> <?php
-                           $title =$relatedproduct->title;
-                            if(strlen($title) <= 10)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,10) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></p>
-                                    </div>
-                                    <div class="col-2">
-                                        <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
-                                    </div>
-                                    <div class="col-4">
+                                  
+                                  
+                                    <div class="col-8">
                                         <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
                                      
                                             ?>
                                         <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
                                         <?php  } }?>
                                     </div>
-
+                                    <div class="col-2">
+                                        <b style='font-size:18px;'><i class="fa fa-heart-o "
+                                                style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
+                                    </div>
                                 </div>
                                 <div class="row mt-1">
                                     <div class="col-12">
                                         <small class="card-text"
                                             style="color: #575757;"> <?php
-                           $title =$relatedproduct->Description;
+                           $title =$relatedproduct->title;
                             if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
@@ -1786,95 +1772,32 @@ if($shop->admin_approval==1){
                            ?></small><br>
                                     </div>
                                 </div>
-                                <?php if($relatedproduct->category_id==1){
-                  ?>
-                                <div class="row mt-1">
-                                    <div class="col-3">
-                                        <p style="color: #575757;">Type</p>
-                                    </div>
-                                    <div class="col-5">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->type; ?></p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-3">
-                                        <p style="color: #575757;">Brand</p>
-                                    </div>
-                                    <div class="col-5">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->brand; ?></p>
-                                    </div>
-                                </div>
-                                <?php } else if($relatedproduct->category_id==2){
-                   $type_name = get_product_type_name($relatedproduct->Education_Type); 
-                  ?>
-                   <div class="row mt-1">
-                                    <div class="col-5">
-                                        <p style="color: #575757;">Education Type</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-5">
-                                        <p style="color: #575757;">Tuition Location </p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->Tuitions_loction; ?></p>
-                                    </div>
-                                </div>
-                                <?php } else if($relatedproduct->category_id==3 && $relatedproduct->category_id==4){ 
-                  $type_name = get_product_type_name($relatedproduct->Job_type); 
-                 
-                  ?>
-                  <div class="row mt-1">
-                                    <div class="col-5">
-                                        <p style="color: #575757;">Job Type</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-5">
-                                        <p style="color: #575757;">Job Location</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->Job_Location; ?></p>
-                                    </div>
-                                </div>
-                                <?php } ?>
+                                
                                 <div class="row mt-1">
                                     <div class="col-2">
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"
                                             style="font-size:18px; color:#69d3b0"></i>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-8">
                                         <p style="color: #575757;"><?php
                            $title =$relatedproduct->address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
                            
                            ?></p>
                                     </div>
-                                    <div class="col-4 pe-2">
-                                        <a
-                                            href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
-                                            <p class="related_ads_details_button ">
-                                                <spam class="related_ads_details_button_text">Product Detail</spam>
-                                            </p>
-                                        </a>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>
+                        </a>
                     </div>
 <?php } } }else{?>
     <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>

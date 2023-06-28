@@ -1543,6 +1543,42 @@ a:active {
                     </div>
                 </div>
             </div>
+
+            <div class="panel-group mt-4 ">
+                <div class="panel panel-default">
+                    <div class="panel-heading ">
+                        <a data-toggle="collapse" class="under" href="#TYPE">
+                            <h4 class="panel-title common_h ">
+                                Type
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="TYPE" class="panel-collapse collapse">
+                        <div class="list-group mt-2">
+                            <?php 
+				      $v = $select_Type->result_array();
+                     if($v !== Array( )){ ?>
+
+                            <?php
+                     }
+					
+                      
+					foreach($select_Type->result_array() as $row)
+					{
+					 
+					?>
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                                <label class="common_s"><input type="checkbox" class="common_select select_type"
+                                        value="<?php echo $row['Select_Type']; ?>">
+                                    <?php echo ucfirst($row['Select_Type']); ?></label>
+                            </div>
+                            <?php 
+					} 
+					?>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <?php 
 					
                 }
@@ -1850,7 +1886,7 @@ a:active {
             //var page = 1;
             var minimum_price = $('#hidden_minimum_price').val();
             var maximum_price = $('#hidden_maximum_price').val();
-
+            var select_type = get_select_type('select_type');
             var brand = get_brand('brand');
             var type = get_type_filter('sub_category');
 
@@ -1869,6 +1905,7 @@ a:active {
                     maximum_price: maximum_price,
                     sub_category: sub_category,
                     brand: brand,
+                    select_type:select_type,
                     type: type,
                     search:search
                 },
@@ -1924,6 +1961,16 @@ a:active {
         }
 
         function get_brand(class_name) {
+            var filter = [];
+            $('.' + class_name + ':checked').each(function() {
+                filter.push($(this).val());
+
+            });
+            console.log(filter)
+            return filter;
+        }
+
+        function get_select_type(class_name) {
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());

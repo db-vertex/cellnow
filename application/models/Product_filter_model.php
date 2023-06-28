@@ -44,7 +44,7 @@ class Product_filter_model extends CI_Model
 	}
 }
 
-	function make_query($minimum_price, $maximum_price, $brand, $sub_category, $categorys, $type)
+	function make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $categorys, $type)
     {
 	
 	$sql = "";
@@ -202,6 +202,11 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $sub_category,
         $type_filter = implode("','", $type);
         $query .= " AND subcategory_id IN('$type_filter')";
     }
+
+	if (isset($select_Type)) {
+        $selct_type_filter = implode("','", $select_type);
+        $query .= " AND Select_Type IN('$selct_type_filter')";
+    }
     if (isset($sub_category)) {
         $sub_category_filter = implode("','", $sub_category);
 	     if($sub_category_filter <= 12){
@@ -221,10 +226,10 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $sub_category,
     return $query;
 }
 
-function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub_category, $category, $type,$search)
+function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $select_type, $sub_category,$category, $type,$search)
 {
 	
-    $query = $this->make_query($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
+    $query = $this->make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type);
 
     $query .= ' LIMIT '.$start.', '.$limit;
     $data = $this->db->query($query);
@@ -252,7 +257,10 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 		   
 		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
 		   <div class="card">
+		   <a
+		   href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
 			   <img  class="w-100 va-thumbnail image1" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
+			   </a>
 			   <p>';
 			   if($row['pay_type'] ==1){ 
 				 $pro.='<img class="img-fluid image2"
@@ -274,10 +282,14 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub
 		$pro .= '<p class="details_price">₹<span>';		
 		   $pro .= $row['price'];
 	   }
+	   if (( $row['pay_type'] == 2)) {
+		$pro .= '<p class="details_price"><span>Donate';		
+		  
+	   }
 	   $pro .= '</span></p>
-	   <p>   
-	   <i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;" '.(empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
-   </p>
+	   <p>   <a style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"'.(empty($user) || !isset($user) ? ' href="http://localhost:8000/welcome/login"':
+	   '<i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"  data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
+   </a></p>
 					  
 				   </div>
 				   <div class="row mt-1">
@@ -371,49 +383,45 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 		   
 		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
 		   <div class="card">
-			   <img  class="w-100 va-thumbnail image1" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
-			   <p style="margin-left:10px;">';
+		   <a
+		   href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
+		   <img  class="w-100 va-thumbnail image1" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
+			  </a> <p style="margin-left:10px;">';
 			   if($row['pay_type'] ==1){ 
 				 $pro.='<img class="img-fluid image2"
                                 src="https://dbvertex.com/celnow/assets/images/sponsor.png" style="
-   margin-top: -25%; width:80px; ">';
+    width:80px; ">';
 			   }
                              if($row['verified_product'] ==1){ 
                             $pro .='<img class="img-fluid image3" src="https://dbvertex.com/celnow/assets/images/verified.png" style="
-   margin-top: -25%; width:80px; ">
+   width:80px; ">
                         <p>';
 
                              }
                         $pro .='</p>
 			   <div class="card-body ">
-			   <div class="d-flex justify-content-between align-items-center"><p>';
-	   $title = $row['title'];
-	   
-	   if (strlen($title) <= 10) {
-		   $pro .= ucfirst($title);
-	   } else {
-		   $y = substr($title, 0, 10) .'...';
-		   $pro .= ucfirst($y);
-	   }
-	   $pro .= '</p>
-					   
-						   <p>   
-							   <i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;" '.(empty($user) || !isset($user) ? 'data-toggle="modal" data-target="#login"' : 'data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
-						   </p>
-					  ';
+			   <div class="d-flex justify-content-between align-items-center"> ';
 
 			 	   		  
 	   if (($row['pay_type'] == 0 || $row['pay_type'] == 1) && ($row['category_id'] == 1 || $row['category_id'] == 2 || $row['category_id'] == 3)) {
 		$pro .= '<p class="details_price">₹<span>';		
 		   $pro .= $row['price'];
 	   }
+	   if (( $row['pay_type'] == 2)) {
+		$pro .= '<p class="details_price"><span>Donate';		
+		  
+	   }
 	   $pro .= '</span></p>
+	   <p>  <a style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"'.(empty($user) || !isset($user) ? ' href="http://localhost:8000/welcome/login"':
+	   '<i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"  data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
+   </a>
+						   </p>
 					  
 				   </div>
 				   <div class="row mt-1">
 					   <div class="col-12">
 						   <small class="card-text" style="color: #575757;">';
-	   $title = $row['Description'];
+	   $title = $row['title'];
 	   
 	   if (strlen($title) <= 25) {
 		   $pro .= ucfirst($title);
@@ -423,19 +431,8 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 	   }
 	   $pro .= '</small><br>
 					   </div>
-				   </div>';
-				   if ($row['category_id']==1) {
-				  $pro.=' <div class="row">
-				   <div class=col-4>
-					   <p style="color: #575757;">Brand</p>
 				   </div>
-				   <div class=col-8>
-					   <p style="color: #575757;">'.$row['brand'].'</p>
-				   </div>
-			   </div>';
-			    }
-				 
-				$pro .= '  <div class="d-flex justify-content-between align-items-center">
+				    <div class="d-flex justify-content-between align-items-center">
 				<div class="row">
 				<div class="col-3">
 				<img src="https://dbvertex.com/celnow/assets/images/location .png">
@@ -480,9 +477,9 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
     return $pro;
 }
 
-function count_all($minimum_price, $maximum_price, $brand, $sub_category, $category, $type)
+function count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type)
 {
-    $query = $this->make_query($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
+    $query = $this->make_query($minimum_price, $maximum_price, $brand,$select_type, $sub_category, $category, $type);
     $data = $this->db->query($query);
 
     return $data->num_rows();

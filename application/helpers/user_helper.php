@@ -1362,6 +1362,7 @@ function get_subcategory_byid($category_id)
   return $category_data->result(); 
 }
 
+
 function get_producttype_byid($category_id)
 {
   //get main CodeIgniter object

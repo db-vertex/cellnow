@@ -445,12 +445,15 @@ $sub .= '</h6>
 
 				$sub .= '
 				<div class="col-lg-3 col-md-4 col-sm-6 mb-4 mt-3 post">
-                <div class="card" style="max-width: 20rem; border-radius: 28px;margin:auto;">
-                    <a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '"><img
-                            class="va-thumbnail " alt="Card image cap"
-                            src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '"></a>
-                    <div class="card-block" style="padding:8px">
-                        <p class="card-title"><b>';
+				<a href="https://dbvertex.com/celnow/welcome/shopdetail/' . $value->id . '">
+				<div class="card">
+                   <img class="va-thumbnail " alt="Card image cap"
+                            src="https://dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '">
+							<div class="card-body">
+
+							<div class="d-flex justify-content-between align-items-center">
+	
+								<h6 class="dress-name">';
 				$title = $value->name;
 				if (strlen($title) <= 20) {
 					$sub .= ucfirst($title);
@@ -459,20 +462,22 @@ $sub .= '</h6>
 					$sub .= ucfirst($y);
 				}
 
-				$sub .= '</b></p>
+				$sub .= ' </h6></div>
+				<div class="d-flex justify-content-between align-items-center">
                         <p class="card-text">';
 				$title = $value->description;
-				if (strlen($title) <= 50) {
+				if (strlen($title) <= 30) {
 					$sub .= ucfirst($title);
 				} else {
-					$y = substr($title, 0, 50) . '...';
+					$y = substr($title, 0, 30) . '...';
 					$sub .= ucfirst($y);
 				}
 
-				$sub .= '</p><br>';
-				$username = get_user_name($value->user_id);
-				$sub .= ' <p class="card-title">' . $username . '</p>
-                        <img src="https://dbvertex.com/celnow/assets/images/location .png" > <span>';
+				$sub .= '</p></div>
+				<div class="row">
+				<div class="col-2">
+                        <img src="https://dbvertex.com/celnow/assets/images/location .png" ></div>	
+						<div class="col-10">';
 				$title = $value->Address;
 				if (strlen($title) <= 20) {
 					$sub .= ucfirst($title);
@@ -481,10 +486,11 @@ $sub .= '</h6>
 					echo ucfirst($sub);
 				}
 
-				$sub .= '</span><br>
+				$sub .= '</div></div>
 
                     </div>
                 </div>
+				</a>
             </div>
 		  '
 				;
@@ -1216,7 +1222,7 @@ $sub .= '</h6>
 
 		if ($cateory == 1) {
 			//$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
-			//$data['Brand'] = $this->product_filter_model->fetch_filter_type('Model',$cateory);
+			$data['select_Type'] = $this->product_filter_model->fetch_filter_type('Select_Type',$cateory);
 			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
 
 		} else if ($cateory == 2) {
@@ -1265,12 +1271,13 @@ $sub .= '</h6>
 		$brand = $this->input->post('brand');
 		$sub_category = $this->input->post('sub_category');
 		$type = $this->input->post('type');
+		$select_type = $this->input->post('select_type');
 		$search = $this->input->post('search');
 		$category = $this->session->userdata('filter_id');
 
 		$config = array();
 		$config["base_url"] = "";
-		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
+		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type);
 		$config["per_page"] = 6;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
@@ -1297,7 +1304,7 @@ $sub .= '</h6>
 
 		$output = array(
 			'pagination_link' => $this->pagination->create_links(),
-			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category, $category, $type,$search)
+			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$search)
 		);
 		echo json_encode($output);
 	}
