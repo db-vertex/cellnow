@@ -1362,7 +1362,19 @@ function get_subcategory_byid($category_id)
   return $category_data->result(); 
 }
 
-
+function getmeta($id = ""){
+  $ci =& get_instance();
+       
+  //load databse library
+  $ci->load->database();
+  if(!empty($id)){
+      $query = $ci->db->get_where('meta', array('id' => $id));
+      return $query->row_array();
+  }else{
+      $query = $ci->db->get('meta');
+      return $query->row();
+  }
+}
 function get_producttype_byid($category_id)
 {
   //get main CodeIgniter object

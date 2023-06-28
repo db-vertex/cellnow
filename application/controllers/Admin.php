@@ -259,6 +259,28 @@ public function logout()
            
   }
 
+
+  public function meta()
+  {
+
+     $session_id = $this->session->userdata('admin_id');
+     
+       if($session_id)
+       {
+     
+     
+     $admin_detail = $this->admin_model->get_admin_data($session_id);
+     $meta =    $this->admin_model->get_meta_data();
+     $this->load->view('meta',['admin_detail'=>$admin_detail,'meta'=>$meta]);
+     
+       }else{
+           
+             return redirect('admin');
+           
+       }
+           
+  }
+
  
   public function add_about_us()
   {
@@ -300,6 +322,51 @@ public function logout()
                       $session_id = $this->session->userdata('admin_id');
              $admin_detail = $this->admin_model->get_admin_data($session_id);
                    $this->load->view('about_us',['admin_detail'=>$admin_detail]);
+      }
+
+  }
+
+
+  public function add_meta()
+  {
+
+     $session_id = $this->session->userdata('admin_id');
+     
+  //$this->form_validation->set_rules('title','Title','required');
+    $this->form_validation->set_rules('meta_text','About us', 'required');
+    
+    $about_us_text =  $this->input->post('meta_text');
+       // $title =   $this->input->post('title');
+        
+     if($this->form_validation->run())
+      {
+       $meta = $this->admin_model->get_meta_data();
+       
+      if(!empty($meta)){
+           
+            $where = array('id' => $meta->id);
+            //print_r($where);die;
+            $data = array("meta"=>$about_us_text);
+                $admin_detail = $this->admin_model->addEditRecords('meta',$data,$where);
+                $this->session->set_flashdata('msg','Added Successfully');
+                $this->session->set_flashdata('msg_class','alert-success');
+
+       }else{
+           
+            $data = array("meta"=>$about_us_text);
+            //$session_id = $this->session->userdata('admin_id');
+                $admin_detail = $this->admin_model->addEditRecords('meta',$data);
+           
+            $this->session->set_flashdata('msg','Added Successfully');
+                $this->session->set_flashdata('msg_class','alert-success');
+      
+       }
+          return redirect('admin/meta');
+
+      }else{
+                      $session_id = $this->session->userdata('admin_id');
+             $admin_detail = $this->admin_model->get_admin_data($session_id);
+                   $this->load->view('meta',['admin_detail'=>$admin_detail]);
       }
 
   }

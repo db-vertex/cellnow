@@ -496,6 +496,16 @@ public function get_about_us_data()
              return $q->row();
   }
 
+  public function get_meta_data()
+  {
+            
+           $q=$this->db->select('*')
+              ->from('meta')
+              ->get();
+             
+             return $q->row();
+  }
+
 
 public function get_privacy_policy_data()
   {
