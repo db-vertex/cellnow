@@ -1340,10 +1340,16 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                           
                         </div>
                         <div class="col-4">
-                            <?php if(isset($product_detail->price)){
-                                if(($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)){ ?>
-                            <p class="details_price"><span>₹<?php echo $product_detail->price; ?></span></p>
-                            <?php  } }?>
+                        <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
+                                     
+                                     ?>
+                                 <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
+                                 <?php  } }?>
+                                 <?php if ($product_detail->pay_type == 2) { 
+                              
+                              ?>
+                              <p class="details_price"><span>Donate</span></p>
+                              <?php   }?>
 
                         </div>
                     </div>
@@ -1438,7 +1444,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <?php $userdetail = get_users_details($product_detail->user_id); ?>
                     <div class="row">
                         <div class="col-12">
-                            <div class="details_profile ">
+                            <div class="details_profile">
                                 <div class="row">
                                     <div class="col-4">
                                         <img class="details_profile_img img-fluid img-thumbnail"
@@ -1489,11 +1495,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                                     </div>
                                     <div class="col-4">
-                                      
-                                      
-                                           
-                                            <a
-                                                href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><p
+                                        <a href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><p
                                                    style="margin-top:30px;" class="View_Seller_profile" id="">View Seller profile</p></a>
                                                 
                                      
@@ -1541,39 +1543,30 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 alt="related_ads_card_img">
                             <div class="card-body ">
                                 <div class="row">
-                                    <div class="col-6">
-                                        <p class="related_ads_card_title"> <?php
-                           $title =$relatedproduct->title;
-                            if(strlen($title) <= 10)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,10) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></p>
-                                    </div>
-                                    <div class="col-2">
-                                        <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
-                                    </div>
-                                    <div class="col-4">
+                                <div class="col-8">
                                         <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
                                      
                                             ?>
                                         <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
                                         <?php  } }?>
+                                        <?php if ($product_detail->pay_type == 2) { 
+                                     
+                                     ?>
+                                     <p class="details_price"><span>Donate</span></p>
+                                     <?php   }?>
                                     </div>
+                                    <div class="col-2">
+                                        <b style='font-size:18px;'><i class="fa fa-heart-o "
+                                                style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
+                                    </div>
+                                   
 
                                 </div>
                                 <div class="row mt-1">
                                     <div class="col-12">
                                         <small class="card-text"
                                             style="color: #575757;"> <?php
-                           $title =$relatedproduct->Description;
+                           $title =$relatedproduct->title;
                             if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
@@ -1587,64 +1580,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                            ?></small><br>
                                     </div>
                                 </div>
-                                <?php if($relatedproduct->category_id==1){
-                  ?>
-                                <div class="row mt-1">
-                                    <div class="col-3">
-                                        <p style="color: #575757;">Type</p>
-                                    </div>
-                                    <div class="col-5">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->type; ?></p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-3">
-                                        <p style="color: #575757;">Brand</p>
-                                    </div>
-                                    <div class="col-5">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->brand; ?></p>
-                                    </div>
-                                </div>
-                                <?php } else if($relatedproduct->category_id==2){
-                   $type_name = get_product_type_name($relatedproduct->Education_Type); 
-                  ?>
-                   <div class="row mt-1">
-                                    <div class="col-5">
-                                        <p style="color: #575757;">Education Type</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-5">
-                                        <p style="color: #575757;">Tuition Location </p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->Tuitions_loction; ?></p>
-                                    </div>
-                                </div>
-                                <?php } else if($relatedproduct->category_id==3 && $relatedproduct->category_id==4){ 
-                  $type_name = get_product_type_name($relatedproduct->Job_type); 
-                 
-                  ?>
-                  <div class="row mt-1">
-                                    <div class="col-5">
-                                        <p style="color: #575757;">Job Type</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $type_name; ?></p>
-                                    </div>
-                                </div>
-                                <div class="row mt-1">
-                                    <div class="col-5">
-                                        <p style="color: #575757;">Job Location</p>
-                                    </div>
-                                    <div class="col-6">
-                                        <p style="color: #575757;"><?php echo $relatedproduct->Job_Location; ?></p>
-                                    </div>
-                                </div>
-                                <?php } ?>
+                              
                                 <div class="row mt-1">
                                     <div class="col-2">
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"

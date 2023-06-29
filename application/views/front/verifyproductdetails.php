@@ -1360,11 +1360,16 @@ border-radius: 80px 0px 0px 80px;
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
                         </div>
                         <div class="col-4">
-                            <?php if (isset($product_detail->price)) {
-                                if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { ?>
-                                    <p class="details_price"><span>₹<?php echo $product_detail->price; ?></span></p>
-                                <?php }
-                            } ?>
+                        <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
+                                     
+                                     ?>
+                                 <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
+                                 <?php  } }?>
+                                 <?php if ($product_detail->pay_type == 2) { 
+                              
+                              ?>
+                              <p class="details_price"><span>Donate</span></p>
+                              <?php   }?>
 
                         </div>
                     </div>
@@ -1417,7 +1422,8 @@ border-radius: 80px 0px 0px 80px;
                         </div>
                         <div class="col-3">
                             <p class="details_text"><?php if ($product_detail->category_id == 1) {
-                                echo $product_detail->type;
+                                 $type_name = get_product_type_name($product_detail->subcategory_id);
+                                echo $type_name;
                             } else if ($product_detail->category_id == 2) {
                                 $type_name = get_product_type_name($product_detail->Education_Type);
                                 echo $type_name;

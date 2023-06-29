@@ -312,9 +312,9 @@
           <div class="d-flex justify-content-between align-items-center">
           <h6 class="mb-3">
            <?php if($pro->category_id != 4){ ?>
-             <strong style="color:#10B981" class="ms-2 ">₹<?php echo $pro->price; ?></strong>
+             <strong style="color:#10B981" class=" ">₹<?php echo $pro->price; ?></strong>
          <?php  }else{ ?>
-          <strong style="color:#fff" class="ms-2 ">₹<?php echo $pro->price; ?></strong>
+          <strong style="color:#fff" class=" ">₹<?php echo $pro->price; ?></strong>
           <?php } ?>
             </h6>
                   </div>

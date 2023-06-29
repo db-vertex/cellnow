@@ -635,7 +635,7 @@ bkLib.onDomLoaded(function() {
                                 <select class="form-select post_input_fild" id="reusable_parts_Select_Type"
                                     name="reusable_parts_Select_Type">
                                     <option value="">Select Type</option>
-                                    <option value="Product/Desktop">Product</option>
+                                    <option value="Products">Products</option>
                                     <option value="parts">parts</option>
                                 </select>
                                 <div class="invalid-feedback">

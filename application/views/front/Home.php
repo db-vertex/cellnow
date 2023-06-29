@@ -604,7 +604,7 @@ foreach ($category as $key => $cat) {
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                           
-                                <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
+                        <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->Address;
                             if(strlen($title) <= 20)
                               {
