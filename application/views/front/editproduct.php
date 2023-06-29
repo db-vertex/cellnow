@@ -832,6 +832,7 @@ bkLib.onDomLoaded(function() {
         success: function(data) {
           
         }
+        window.location.reload();
     });
   
 } else {
@@ -868,6 +869,7 @@ bkLib.onDomLoaded(function() {
         success: function(data) {
           
         }
+        window.location.reload();
     });
   
 } else {
@@ -905,6 +907,7 @@ bkLib.onDomLoaded(function() {
         success: function(data) {
           
         }
+        window.location.reload();
     });
    
 } else {
@@ -943,6 +946,7 @@ bkLib.onDomLoaded(function() {
         success: function(data) {
           
         }
+        window.location.reload();
     });
     
 } else {

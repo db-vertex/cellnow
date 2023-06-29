@@ -397,6 +397,27 @@ function get_all_search_products($row)
 }
 
 
+function get_user_product_count($user_id)
+{ 
+   
+    //get main CodeIgniter object
+       $ci =& get_instance();
+     
+       //load databse library
+       $ci->load->database();
+      
+    $query= 'SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE user_id ='.$user_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE user_id ='.$user_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE user_id ='.$user_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE user_id ='.$user_id.'';
+   
+     $category_data = $ci->db->query($query);  
+             
+  return $category_data->num_rows(); 
+   
+}
+
+
 function get_all_search_product_count($term)
 { 
    
