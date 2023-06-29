@@ -204,13 +204,13 @@ width: 131.9px; border-color:#10B981;">
 
                                 <p style="color: #575757;"><?php
                            $title = $pro->title;
-                            if(strlen($title) <= 20)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,20) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            

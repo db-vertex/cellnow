@@ -1589,13 +1589,13 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     <div class="col-5">
                                         <p style="color: #575757;"><?php
                            $title =$relatedproduct->address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
                               }
                            
