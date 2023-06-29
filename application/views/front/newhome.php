@@ -745,7 +745,7 @@ else{
   <div class="row">
     <div class="col">
       <p style="color:#1b1c57; text-align:center; font-weight:bolder; font-size:30px;">Subscribe For More Info
-            And Update For Celnow</p>
+            And Update From Celnow</p>
        <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">
         <div class="search_wrap search_wrap_6 m-0 mt-4 ">
 			<div class="search_box">

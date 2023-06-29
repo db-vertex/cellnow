@@ -173,7 +173,7 @@ width: 131.9px;">
                         <h5><b>
                                 <?php echo ucfirst($profile->name); ?>
                             </b></h5>
-                        <?php if(isset($profile->Address)) {echo ucfirst($profile->Address);} ?>
+                            <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png"> <?php if(isset($profile->Address)) {echo ucfirst($profile->Address);} ?>
 
                     </div>
                     <div class="row text-center ">
@@ -203,7 +203,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                             <a data-toggle="modal" data-target="#addshopdetail"
                                 href="<?php echo base_url(); ?>welcome/shop"
                                 style="background-color: #10b981; color:#fff" class="btn" role="button"
-                                aria-disabled="true" id="a">Verfied your shop details</a>
+                                aria-disabled="true" id="a">Take Your Shop/Services online on celnow</a>
                             <p class="text-muted mt-4">Note: Once you will submit the detail of shop then not editable
                             </p>
                         </div>
