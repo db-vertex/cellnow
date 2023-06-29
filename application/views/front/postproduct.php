@@ -1402,7 +1402,7 @@ bkLib.onDomLoaded(function() {
                             <div class="my-4"> </div>
 
                             <div class="col-sm-6 col-6 ">
-                                <button class="w-100 btn product_submit_button " type="submit">Submit</button>
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit</button>
                             </div>
 
                             <div class="col-sm-6 col-6">
