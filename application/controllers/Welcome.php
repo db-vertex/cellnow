@@ -239,10 +239,7 @@ $sub .= '</h6>
 					$sub.='
                     <strong style="color:#10B981" class="ms-2 ">₹' . $value->price . '</strong>';
 				}
-				if($value->pay_type==2){
-					$sub.='
-                    <strong style="color:#10B981" class="ms-2 ">Donate</strong>';
-				}
+				
                $sub.=' </h6>
             </div>
             <div class="d-flex justify-content-between align-items-center">
