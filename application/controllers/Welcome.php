@@ -1,6 +1,8 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
-
+require_once(APPPATH."libraries/vendor/razorpay/razorpay/Razorpay.php");
+use Razorpay\Api\Api;
+use Razorpay\Api\Errors\SignatureVerificationError;
 class Welcome extends CI_Controller
 {
 
@@ -359,6 +361,7 @@ $sub .= '</h6>
 
 	public function getsearchroduct($data = " ")
 	{
+
 		$row = $this->input->post('row');
 		$subcategory_id = $this->input->post('subcategory_id');
 		// echo $this->db->last_query();
@@ -744,28 +747,28 @@ $sub .= '</h6>
 				$alpha_key .= $keys[array_rand($keys)];
 			}
 			$randCode = $alpha_key;
-			// $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-			// $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+			$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+			$messages = "You verification otp for PAHADi UNCLE is " . $randCode;
 
-			// $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+			$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
 
-			// $numbers = array($phone);
-			// $sender = urlencode('UPAHAD');
-			// $message = rawurlencode($messages);
+			$numbers = array($phone);
+			$sender = urlencode('600010');
+			$message = rawurlencode($messages);
 
-			// $numbers = implode(',', $numbers);
+			$numbers = implode(',', $numbers);
 
-			// $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+			$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-			// // Send the POST request with cURL
-			// $ch = curl_init('https://api.textlocal.in/send/');
-			// curl_setopt($ch, CURLOPT_POST, true);
-			// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			// $response = curl_exec($ch);
-			// //print_r($response);
+			// Send the POST request with cURL
+			$ch = curl_init('https://api.textlocal.in/send/');
+			curl_setopt($ch, CURLOPT_POST, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response = curl_exec($ch);
+			//print_r($response);
 
-			// curl_close($ch);
+			curl_close($ch);
 
 			$post_data = array('name' => $name, 'email' => $email, 'password' => md5($password), 'phone' => $phone, 'OTP' => $randCode, 'login_type' => 'normal', 'social_id_token' => $result);
 			$this->db->insert('users', $post_data);
@@ -788,34 +791,35 @@ $sub .= '</h6>
 			$udata = $this->db->get_where("users", ["phone" => $phone])->row();
 			if (is_user_exists($phone)) {
 				$size = 4;
-				$alpha_key = '';
-				$keys = range('0', '9');
-				for ($i = 0; $i < 4; $i++) {
-					$alpha_key .= $keys[array_rand($keys)];
-				}
-				$randCode = $alpha_key;
-				// $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-				// $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+			$alpha_key = '';
+			$keys = range('0', '9');
+			for ($i = 0; $i < 4; $i++) {
+				$alpha_key .= $keys[array_rand($keys)];
+			}
+			$randCode = $alpha_key;
+			$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
+			$messages =  $randCode;
 
-				// $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+			$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
 
-				// $numbers = array($phone);
-				// $sender = urlencode('UPAHAD');
-				// $message = rawurlencode($messages);
+			$numbers = array($phone);
+			$sender = urlencode('600010');
+			$message = rawurlencode($messages);
 
-				// $numbers = implode(',', $numbers);
+			$numbers = implode(',', $numbers);
 
-				// $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
+			$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-				// // Send the POST request with cURL
-				// $ch = curl_init('https://api.textlocal.in/send/');
-				// curl_setopt($ch, CURLOPT_POST, true);
-				// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-				// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				// $response = curl_exec($ch);
-				// //print_r($response);
+			// Send the POST request with cURL
+			$ch = curl_init('https://api.textlocal.in/send/');
+			curl_setopt($ch, CURLOPT_POST, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response = curl_exec($ch);
+			print_r($response);die();
 
-				// curl_close($ch);
+			curl_close($ch);
+
 
 				$userData['phone'] = $phone;
 				$userData['OTP'] = $randCode;
@@ -1717,7 +1721,8 @@ $sub .= '</h6>
 		$cat_id = $this->input->post('category_id');
 		$subcat_id = $this->input->post('subcategory_id');
 		$pro_id = $this->input->post('product_id');
-
+        $redirectUrl = 'welcome/verified_pay/' .$pro_id.'/'.$cat_id.'/'.$subcat_id;
+		return redirect($redirectUrl);
 		return redirect('welcome/productdetail/' . $cat_id . '/' . $pro_id . '/' . $subcat_id);
 	}
 
@@ -2422,6 +2427,8 @@ $sub .= '</h6>
 
 			$insert = $this->product_model->category_reusable_parts($postData);
 			$id = $this->db->insert_id();
+			
+			
 			$table = "category_reusable_parts";
 		} else if ($category == 2) {
 			$postData = array();
@@ -2459,6 +2466,7 @@ $sub .= '</h6>
 
 			$insert = $this->product_model->category_tuitions($postData);
 			$id = $this->db->insert_id();
+		
 			$table = "category_tuitions";
 		} else if ($category == 3) {
 			$postData = array();
@@ -2603,11 +2611,199 @@ $sub .= '</h6>
 
 		$this->session->set_flashdata('saveproduct', 'Product Post Succesfully.');
 		$this->session->set_flashdata('msg_class', 'alert-success');
+		if($sponser==1){
+				
+			$redirectUrl = 'welcome/pay/' . $id;
+			return redirect($redirectUrl);
+		}
 		return redirect('welcome/postproduct');
 
 
 	}
 
+	public function pay($id)
+	{
+		$_SESSION['product_id'] = $id;
+		$result = $this->db->where('id', $id)->get('category_reusable_parts')->result();
+		foreach($result as $dataji)
+		$_SESSION['category_id']=$dataji->category_id;
+		$_SESSION['amount'] ='125';
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  /**
+	   * You can calculate payment amount as per your logic
+	   * Always set the amount from backend for security reasons
+	   */
+	  $razorpayOrder = $api->order->create(array(
+		'receipt'         => rand(),
+		'amount'          => $_SESSION['amount'] * 100, // 2000 rupees in paise
+		'currency'        => 'INR',
+		'payment_capture' => 1 // auto capture
+	  ));
+	  $amount = $razorpayOrder['amount'];
+	  $razorpayOrderId = $razorpayOrder['id'];
+	  $_SESSION['amount'] = isset($_SESSION['amount']);
+	  $_SESSION['razorpay_order_id'] = $razorpayOrderId;
+	  $data = $this->prepareData($amount,$razorpayOrderId);
+	  $this->load->view('front/rezorpay',array('data' => $data));
+	}
+
+	public function verified_pay($id,$cat_id,$sub_id)
+	{
+		
+		$_SESSION['product_id'] = $id;
+		$_SESSION['category_id'] = $cat_id;
+		$_SESSION['subcategory_id'] = $sub_id;
+		$result = $this->db->where('id', $id)->get('category_reusable_parts')->result();
+		foreach($result as $dataji)
+		$_SESSION['amount'] ='50';
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  /**
+	   * You can calculate payment amount as per your logic
+	   * Always set the amount from backend for security reasons
+	   */
+	  $razorpayOrder = $api->order->create(array(
+		'receipt'         => rand(),
+		'amount'          => $_SESSION['amount'] * 100, // 2000 rupees in paise
+		'currency'        => 'INR',
+		'payment_capture' => 1 // auto capture
+	  ));
+	  $amount = $razorpayOrder['amount'];
+	  $razorpayOrderId = $razorpayOrder['id'];
+	  $_SESSION['amount'] = isset($_SESSION['amount']);
+	  $_SESSION['razorpay_order_id'] = $razorpayOrderId;
+	  $data = $this->prepareData($amount,$razorpayOrderId);
+	  $this->load->view('front/verify_razrpay',array('data' => $data));
+	}
+
+	public function verify_rezarpay()
+	{
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $success = true;
+	  $error = "payment_failed";
+	  if (empty($_POST['razorpay_payment_id']) === false) {
+		$api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  try {
+		  $attributes = array(
+			'razorpay_order_id' => $_SESSION['razorpay_order_id'],
+			'razorpay_payment_id' => $_POST['razorpay_payment_id'],
+			'razorpay_signature' => $_POST['razorpay_signature'],
+			'amount' => $_SESSION['amount'],
+			'product_id' => $_SESSION['product_id'],
+			'user_id' => $this->session->userdata('id')
+		  );
+		  $api->utility->verifyPaymentSignature($attributes);
+		  $insert = $this->user->payment($attributes);
+		} catch(SignatureVerificationError $e) {
+		  $success = false;
+		  $error = 'Razorpay_Error : ' . $e->getMessage();
+		}
+	  }
+	  if ($success === true) {
+		/**
+		 * Call this function from where ever you want
+		 * to save save data before of after the payment
+		 */
+		unset($_SESSION['premium_amount']); 
+		unset($_SESSION['razorpay_order_id']);
+		unset($_SESSION['amount']);
+		$this->setRegistrationData();
+		redirect(base_url().'welcome/productdetail/'. $_SESSION['category_id'].'/'. $_SESSION['product_id'].'/'. $_SESSION['subcategory_id']);
+		
+	  }
+	  else {
+		redirect(base_url().'welcome/productdetail/'. $_SESSION['category_id'].'/'. $_SESSION['product_id'].'/'. $_SESSION['subcategory_id']);
+	  }
+	}
+	public function verify()
+	{
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $success = true;
+	  $error = "payment_failed";
+	  if (empty($_POST['razorpay_payment_id']) === false) {
+		$api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  try {
+		  $attributes = array(
+			'razorpay_order_id' => $_SESSION['razorpay_order_id'],
+			'razorpay_payment_id' => $_POST['razorpay_payment_id'],
+			'razorpay_signature' => $_POST['razorpay_signature'],
+			'amount' => $_SESSION['amount'],
+			'product_id' => $_SESSION['product_id'],
+			'user_id' => $this->session->userdata('id')
+		  );
+		  $api->utility->verifyPaymentSignature($attributes);
+		  $insert = $this->user->payment($attributes);
+		} catch(SignatureVerificationError $e) {
+		  $success = false;
+		  $error = 'Razorpay_Error : ' . $e->getMessage();
+		}
+	  }
+	  if ($success === true) {
+		/**
+		 * Call this function from where ever you want
+		 * to save save data before of after the payment
+		 */
+		unset($_SESSION['premium_amount']); 
+		unset($_SESSION['razorpay_order_id']);
+		unset($_SESSION['amount']);
+		$this->setRegistrationData();
+		redirect(base_url().'welcome/postproduct');
+		
+	  }
+	  else {
+		redirect(base_url().'welcome/postproduct/');
+	  }
+	}
+
+	public function setRegistrationData(){
+		$name = $this->input->post('name');
+		$email = $this->input->post('email');
+		$contact = $this->input->post('contact');
+		$amount = $_SESSION['payable_amount'];
+		$registrationData = array(
+		  'order_id' => $_SESSION['razorpay_order_id'],
+		  'name' => $name,
+		  'email' => $email,
+		  'contact' => $contact,
+		  'amount' => $amount,
+		);
+		// save this to database
+	  }
+
+	  public function paymentFailed(){
+		$this->load->view('error');
+	  } 
+
+	public function prepareData($amount,$razorpayOrderId){
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $data = array(
+		"key" => "rzp_test_dfwGYguqxcme16",
+		"amount" => $amount,
+		"name" => "Celnow",
+		"description" => "Learn To Code",
+		"image" => base_url() . "assets/images/CelNow 5 1.png",
+		"prefill" => array(
+		  "name"  => $this->input->post('name'),
+		  "email"  => $this->input->post('email'),
+		  "contact" => $this->input->post('contact'),
+		),
+		"notes"  => array(
+		  "address"  => "Payment Policy",
+		  "merchant_order_id" => rand(),
+		),
+		"theme"  => array(
+		  "color"  => "#10B981"
+		),
+		"order_id" => $razorpayOrderId,
+	  );
+	  return $data;
+	}
 	public function editproduct()
 	{
 

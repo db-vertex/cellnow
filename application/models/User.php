@@ -276,7 +276,10 @@ class User extends CI_Model {
     }
 
    
-
+    function payment($data){
+        $this->db->insert('payment',$data);
+        return true;
+    }
 
 
     /*
@@ -512,9 +515,19 @@ class User extends CI_Model {
        if($data['category_id']==1){
         $this->db->update('category_reusable_parts', $datas, "id = ".$data['product_id']);
        }
+       else if($data['category_id']==2){
+        $this->db->update('category_tuitions', $datas, "id = ".$data['product_id']);
+       }
+       else if($data['category_id']==3){
+        $this->db->update('category_job', $datas, "id = ".$data['product_id']);
+       }
+       else if($data['category_id']==4){
+        $this->db->update('category_internships', $datas, "id = ".$data['product_id']);
+       }
         else{
         $delete = $this->db->query("delete from wishlist where user_id=".$data['user_id']." and product_id=".$data['product_id']);
         }
+        
         if($insert){
             return true;
         }else{

@@ -491,7 +491,7 @@ bkLib.onDomLoaded(function() {
                         <div class="row images_small_box_row ms-1 ">
 
                             <div class="col-3 images_small_box m-2">
-                                <i class="bi bi-x-circle-fill btn-rmv2 me-3"   onclick="images_2()"></i>
+                                <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2"  onclick="images_2()"></i>
                                 <?php if($get_data->images_2!==NULL){ ?>
                                     <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>" class="preview2" />
                                     <?php } else{ ?>
@@ -832,7 +832,7 @@ bkLib.onDomLoaded(function() {
         success: function(data) {
           
         }
-        window.location.reload();
+       
     });
   
 } else {
