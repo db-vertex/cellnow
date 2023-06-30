@@ -320,7 +320,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                                 <div class="form-group">
                                                     <label>Google Address</label>
                                                     <input type="text" class="form-control" name="Address"
-                                                        placeholder="Address" id="Location"
+                                                        placeholder="Address" id="location"
                                                         value="<?php echo $shop->Address; ?>"
                                                         style="border-radius:30px; border-color:#13C571" required>
                                                     <div class="invalid-feedback">
@@ -680,7 +680,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                         </div>
                         <div class="form-group">
                             <label>Google Address</label>
-                            <input name="Address" class="form-control" placeholder="Address" id="Location" type="text"
+                            <input name="Address" class="form-control" placeholder="Address" id="location" type="text"
                                 maxlength="30" value="" style="border-radius:30px; border-color:#13C571" required>
                             <div class="invalid-feedback">
                                 Address is required.

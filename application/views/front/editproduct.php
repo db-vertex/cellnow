@@ -598,7 +598,7 @@ bkLib.onDomLoaded(function() {
 
                             <div class="col-12">
                                 <label for="address" class="form-label post_input_lable">Address</label>
-                                <input type="text" class="form-control post_input_fild" id="Location" name="Address" value=" <?php echo $get_data->address?>"
+                                <input type="text" class="form-control post_input_fild" id="location" name="Address" value=" <?php echo $get_data->address?>"
                                     placeholder="Enter Address" required>
                                 <div class="invalid-feedback">
                                     Please Enter Product Address.

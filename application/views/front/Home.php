@@ -249,8 +249,8 @@ foreach ($category as $key => $cat) {
     <div class="row">
         <div class="va-carrousel-section">
             <div class="va-whitewrap">
-                <div id="va_container_urgent">
-                    <button class="deals-scroll-left_urgent deals-paddle " id="left_sponsor_button">
+                <div id="va_container">
+                    <button class="deals-scroll-left deals-paddle " id="left_sponsor_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                             class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 320 512">
@@ -259,7 +259,7 @@ foreach ($category as $key => $cat) {
                             </path>
                         </svg>
                     </button>
-                    <div class="va-carrousel-flexbox_urgent" id="sub-list">
+                    <div class="va-carrousel-flexbox" id="sub-list">
                         <?php
 					         $cateory =  '';
                
@@ -300,7 +300,7 @@ foreach ($category as $key => $cat) {
 
 
                     </div>
-                    <button class="deals-scroll-right_urgent deals-paddle " id="right_sponsor_button">
+                    <button class="deals-scroll-right deals-paddle " id="right_sponsor_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -505,8 +505,8 @@ foreach ($category as $key => $cat) {
         <div class="va-whitewrap">
 
 
-            <div id="va_container ">
-                <button class="deals-scroll-left deals-paddle" id="left_urgent_button">
+            <div id="va_container_urgent ">
+                <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                         class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512">
@@ -516,7 +516,7 @@ foreach ($category as $key => $cat) {
                     </svg>
                 </button>
 
-                <div class="va-carrousel-flexbox">
+                <div class="va-carrousel-flexbox_urgent">
                     <?php $id = $this->uri->segment(3); 
                 $category = get_all_shopcategory();
              
@@ -536,7 +536,7 @@ foreach ($category as $key => $cat) {
                     <?php } ; ?>
 
 
-                    <button class="deals-scroll-right deals-paddle" id="right_urgent_button">
+                    <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
