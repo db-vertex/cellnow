@@ -171,13 +171,12 @@ input::placeholder {
     </div>
 </div><br>
 
-<div class="container ">
-<div class="row px-0">
+<div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
 
 
-            <div id="va_container ">
+            <div id="va_container">
                 <button class="deals-scroll-left deals-paddle" id="left_sponser_button">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                         class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -206,7 +205,7 @@ input::placeholder {
                     </div>
 
                     <?php } ; ?>
-
+                    </div>
 
                     <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
@@ -218,8 +217,8 @@ input::placeholder {
                         </svg>
                     </button>
 
-                </div>
-            </div>
+               
+           
 
         </div>
     </div>

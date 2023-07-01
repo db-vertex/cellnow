@@ -336,6 +336,7 @@ bkLib.onDomLoaded(function() {
         .images_small_box_row {
             margin-top: 53%;
         }
+        
     }
 
     @media (min-width: 992px) {
@@ -414,13 +415,10 @@ bkLib.onDomLoaded(function() {
         font-family: 'Open Sans';
         font-style: normal;
         font-weight: 400;
-        font-size: 12px;
+        font-size: 15px;
         line-height: 16px;
 
         color: #0C0B0B;
-
-
-        /* Inside auto layout */
 
         flex: none;
         order: 0;

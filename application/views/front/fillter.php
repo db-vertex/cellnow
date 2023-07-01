@@ -803,6 +803,7 @@ input::placeholder {
     order: 0;
     flex-grow: 0;
 }
+}
 </style>
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet" />
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">

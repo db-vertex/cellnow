@@ -535,7 +535,7 @@ foreach ($category as $key => $cat) {
 
                     <?php } ; ?>
 
-
+                    </div>
                     <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
@@ -546,7 +546,7 @@ foreach ($category as $key => $cat) {
                         </svg>
                     </button>
 
-                </div>
+               
             </div>
 
         </div>
