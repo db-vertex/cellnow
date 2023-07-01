@@ -1,25 +1,14 @@
 <?php include('header.php');?>
   <?php include('sidebar.php');?>
-<script>
-    requireScript('jquery', '1.11.2', 'http://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js', function(){
-    // requireScript('examplejs', '0.0.3', 'example.js');
-});
-</script>
+
 <script src="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.js"></script>
 <link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css" />
 
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
 <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
-<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-  <link rel="stylesheet" href="/resources/demos/style.css">
-  <style>
-  #sortable { list-style-type: none; margin: 0; padding: 0; width: 60%; }
-  #sortable li { margin: 0 3px 3px 3px; padding: 0.4em; padding-left: 1.5em; font-size: 1.4em; height: 18px; }
-  #sortable li span { position: absolute; margin-left: -1.3em; }
-  </style>
-  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+  
 
   
 <style type="text/css">
@@ -86,7 +75,7 @@ overflow: hidden;
 	overflow-y: scroll;
     height: 500px;
 }
-}
+
 .review-block-name{
 	font-size:12px;
 	margin:10px 0;
@@ -192,6 +181,8 @@ unset($_SESSION['msg']);?>
     <li class="active"><a data-toggle="tab" href="#home">Normal Products</a></li>
     <li><a data-toggle="tab" href="#menu1">Boost Products</a></li>
     <li><a data-toggle="tab" href="#menu2">Donate Product</a></li>
+    <li><a data-toggle="tab" href="#menu3">Active Product</a></li>
+    <li><a data-toggle="tab" href="#menu4">De-Active Product</a></li>
     
   </ul>
 
@@ -450,7 +441,179 @@ foreach($sponsored as $valuef){
         
 
         </div> 	
+        <div id="menu3" class="tab-pane fade" style="margin-top: 34px;">
 
+
+
+<table id="example6" class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>S.no</th>
+<th>Post</th>
+<th>Image</th>
+<th>Category</th>
+
+<th>Type</th>
+<th>Brand</th>
+
+<th>Price</th>
+
+
+<th>Description</th>        
+
+<th>Action</th> 
+<th>Paytype</th>   
+
+
+</tr>
+</thead>
+<tbody id="sortable">
+
+<?php 
+$active = get_all_active_Product();
+$i=1;
+foreach($active as $valuea){
+// print_r($posts);
+
+?>
+
+
+<tr class="featuredpro" id="<?php echo $valuea->id; ?>">
+     <td><?php echo $i;?></td>  
+<td><a href="<?php echo base_url()."welcome/productdetail/".$valuea->category_id.'/'.$valuea->id."";?>"><?php echo  $valuea->title;?></a></td>
+<td> <?php 
+
+// $image = get_product_image($value->product_id); 
+
+// print_r($image); 
+
+?>
+
+<?php ?>
+
+<img src="<?php echo base_url().$valuea->cover_img."";?>" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
+
+<?php  ?>
+
+
+</td>
+<td><?=$this->db->get_where("category", "id=".($valuea->category_id))->row()->category?></td>
+
+<td><?php echo  $valuea->type;?></td>
+<td><?php echo  $valuea->brand;?></td>
+   <td><?php echo  $valuea->price;?></td>
+<td><?php echo  $valuea->Description;?></td>
+<td> 
+   
+
+   <input type="button" name="active_status" value="Deactive" class="btn btn-info admindeactive"  data-productid ="<?php echo $valuea->id ;?>">
+
+
+
+</td>  
+<td><select id="pay_type" data-product_id="<?php echo $valuea->id?>"  data-category_id="<?php echo $valuea->category_id?>" class="prioritydrop">
+
+<option value="1" <?=(($valuea->pay_type==1)?"selected":"")?>>Boost</option>
+<option  value="2" <?=(($valuea->pay_type==2)?"selected":"")?>>Donate</option>
+<option value="0"<?=(($valuea->pay_type==0)?"selected":"")?>>Normal</option>
+
+</select></td>
+</tr> 
+<?php $i++; } ?>
+</tbody>
+
+</table>
+
+
+
+</div> 	
+<div id="menu4" class="tab-pane fade" style="margin-top: 34px;">
+
+
+
+<table id="example7" class="table table-bordered table-striped">
+<thead>
+<tr>
+<th>S.no</th>
+<th>Post</th>
+<th>Image</th>
+<th>Category</th>
+
+<th>Type</th>
+<th>Brand</th>
+
+<th>Price</th>
+
+
+<th>Description</th>        
+
+
+<th>Paytype</th>   
+<th>Action</th> 
+
+</tr>
+</thead>
+<tbody id="sortable">
+
+<?php 
+$deactive = get_all_deactive_Product();
+$i=1;
+foreach($deactive as $valued){
+// print_r($posts);
+
+?>
+
+
+<tr class="featuredpro" id="<?php echo $valued->id; ?>">
+     <td><?php echo $i;?></td>  
+<td><a href="<?php echo base_url()."welcome/productdetail/".$valued->category_id.'/'.$valued->id."";?>"><?php echo  $valued->title;?></a></td>
+<td> <?php 
+
+// $image = get_product_image($value->product_id); 
+
+// print_r($image); 
+
+?>
+
+<?php ?>
+
+<img src="<?php echo base_url().$valued->cover_img."";?>" class="img-responsive" style="width:100px;height: 100px;" alt="Image">
+
+<?php  ?>
+
+
+</td>
+<td><?=$this->db->get_where("category", "id=".($valued->category_id))->row()->category?></td>
+
+<td><?php echo  $valued->type;?></td>
+<td><?php echo  $valued->brand;?></td>
+   <td><?php echo  $valued->price;?></td>
+<td><?php echo  $valued->Description;?></td>
+<td> 
+   
+
+   <input type="button" name="admin_approved" value="Active" class="btn btn-info" onclick="return adminactive(<?php echo $valued->id ;?>);" data-productid = "<?php echo $valued->id ;?>">
+
+
+
+</td>  
+<td><select id="pay_type" data-product_id="<?php echo $valued->id?>"  data-category_id="<?php echo $valued->category_id?>" class="prioritydrop">
+
+<option value="1" <?=(($valued->pay_type==1)?"selected":"")?>>Boost</option>
+<option  value="2" <?=(($valued->pay_type==2)?"selected":"")?>>Donate</option>
+<option value="0"<?=(($valued->pay_type==0)?"selected":"")?>>Normal</option>
+
+</select></td>
+
+</tr> 
+<?php $i++; } ?>
+</tbody>
+
+</table>
+
+
+
+</div> 	
 
 </div>
 
@@ -600,6 +763,65 @@ foreach($sponsored as $valuef){
           });
 })
  </script> 
+
+<script>
+$(document).on('change', ".admindeactive", function(){
+  
+                 var statusd = 1;
+                 let product_id = $(this).data("product_id");  
+alert(product_id);
+                 $.ajax({
+                   type: "POST",
+                   url: '<?php echo base_url("admin/updateproductactivestatus")?>',
+                   cache:false,
+                  data: {'product_id':product_id,'category_id':category_id'active_status':statusd},
+                   error: function() {
+                      alert('Something is wrong');
+                   },
+             success: function(data) {
+
+              swal({
+                          title: "Post De-active Successfully",
+                          text: "",
+                          type: "success"
+                      }, function() {
+                         location.reload();                      
+                       });
+
+                  
+             } 
+          });
+})
+
+
+function adminactive(productid){
+  
+              
+  var statusd = 0;
+
+  $.ajax({
+    type: "POST",
+    url: '<?php echo base_url("Admin/updateproductactivestatus")?>',
+    cache:false,
+   data: {'productid':productid,'status':statusd},
+    error: function() {
+       alert('Something is wrong');
+    },
+success: function(data) {
+
+swal({
+           title: "Post active Successfully",
+           text: "",
+           type: "success"
+       }, function() {
+          location.reload();                      
+        });
+
+   
+} 
+});
+}
+</script>
  
 <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
 <script src="https://cdn.datatables.net/1.10.23/js/jquery.dataTables.min.js"></script>
@@ -610,7 +832,6 @@ foreach($sponsored as $valuef){
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/pdfmake.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.53/vfs_fonts.js"></script>
 <script src="https://cdn.datatables.net/buttons/1.6.5/js/buttons.html5.min.js"></script>
-<script src="<?php echo base_url() ?>assets/jquery.table2excel.js"></script>
 <script>
 
 //     $('#example30,#example5').DataTable({
@@ -645,6 +866,29 @@ $('#example4').DataTable({
 
     })
 
+    $('#example6').DataTable({
+      
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : true,
+
+    })
+
+    $('#example7').DataTable({
+      
+      'paging'      : true,
+      'lengthChange': true,
+      'searching'   : true,
+      'ordering'    : false,
+      'info'        : true,
+      'autoWidth'   : true,
+
+    })
+
+
     $('#example3, example5').DataTable({
       
       'paging'      : true,
@@ -663,92 +907,8 @@ $('#example4').DataTable({
 
 <script type="text/javascript">
 
- function togglestatus(id,category_id){
-  var id = id;
-  var category_id = category_id;
- alert(category_id);
-  var pay_type = 1;
-  
-  swal({
-        title: "Are you want to sure add product in product ????",
-        text: "",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonClass: "btn-danger",
-        confirmButtonText: "Yes, Add it!",
-        cancelButtonText: "No, cancel please!",
-        closeOnConfirm: true,
-        closeOnCancel: false
-      },
-      function(isConfirm) {
-        if (isConfirm) {
-        $.ajax(
-        {
-      url:"<?php echo base_url('/admin/updateproductfeaturestatus')?>",
-      type:"post",
-      data:{'productid':id,'category_id':category_id, <td><select name="category_id">
-            <?php
-            foreach($category as $value){ 
-                ?>
-            <option value="<?=$value->id?>" <?=(($value->id==$bikes->category_id)?"selected":"")?>><?=$value->category?></option>
-            <?php  } ?>
-        </select></td>'pay_type':pay_type},
-      success :function(data){
-       
-         
-        
-       
-      }
-    }
-  )
-} else {
-          swal("Cancelled", "", "error");
-          location.reload();
-        }
-      });
-}
 
-
-
- function togglepaytype(id){
-  var id = id;
-  var pay_type = 2;
-  swal({
-        title: "Are you want to sure add product in product ????",
-        text: "",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonClass: "btn-danger",
-        confirmButtonText: "Yes, Add it!",
-        cancelButtonText: "No, cancel please!",
-        closeOnConfirm: true,
-        closeOnCancel: false
-      },
-      function(isConfirm) {
-        if (isConfirm) {
-        $.ajax(
-        {
-      url:"<?php echo base_url('/admin/updateproducturgent')?>",
-      type:"post",
-      data:{'productid':id,'pay_type':pay_type},
-      success :function(data){
-       
-          location.reload();  
-        
-       
-      }
-    }
-  )
-} else {
-          swal("Cancelled", "", "error");
-          location.reload();
-        }
-      });
-}
-
-
-
-    $(".delete").click(function(){
+$(".delete").click(function(){
         var id = $(this).parents("tr").attr("id");
        // alert(id);
     

@@ -1624,7 +1624,7 @@ border-radius: 80px 0px 0px 80px;
                                                     echo time_string($userdetail->created); ?>
                                                 </span></p>
                                             <p class="deatails_profile_name_ads mt-1">Total <?php $count=get_user_product_count($userdetail->user_id); echo $count;?> Ads</p>
-                                            <p class="deatails_profile_name_ads">Active 10 Ads</p>
+                                            <p class="deatails_profile_name_ads">Active <?php $count = get_user_active_product_count($userdetail->user_id); echo $count;?> Ads</p>
 
                                         </div>
 

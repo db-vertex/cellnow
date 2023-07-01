@@ -17,8 +17,7 @@
         rel="stylesheet" />
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete"></script>
-
+   
     <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -420,21 +419,7 @@ flex-grow: 0;
 
     <!-- Custom styles for this template -->
     <link href="checkout.css" rel="stylesheet">
-    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> 
-  
-  
-  
-  <script type="text/javascript">
-//<![CDATA[
-bkLib.onDomLoaded(function() {
-   nicEditors.allTextAreas() ;
    
-       
-  });
-
-
-
-</script>
 </head>
 
 <body class="">
@@ -491,7 +476,7 @@ bkLib.onDomLoaded(function() {
                         <div class="row images_small_box_row ms-1 ">
 
                             <div class="col-3 images_small_box m-2">
-                                <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2"  onclick="images_2()"></i>
+                                <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2" onclick="images_2()"></i>
                                 <?php if($get_data->images_2!==NULL){ ?>
                                     <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>" class="preview2" />
                                     <?php } else{ ?>
@@ -507,7 +492,7 @@ bkLib.onDomLoaded(function() {
                                     accept="image/*" style="visibility:hidden;">
                             </div>
                             <div class="col-3 images_small_box m-2">
-                                <i class="bi bi-x-circle-fill btn-rmv3 me-3"  onclick="images_3()"></i>
+                                <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3" onclick="images_3()"></i>
                                 <?php if($get_data->images_3!==NULL){ ?>
                                     <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>" class="preview3" />
                                 <?php } else{ ?>
@@ -521,7 +506,7 @@ bkLib.onDomLoaded(function() {
                                     accept="image/*" style="visibility:hidden;">
                             </div>
                             <div class="col-3 images_small_box m-2">
-                                <i class="bi bi-x-circle-fill btn-rmv4 me-3"  onclick="images_4()"></i>
+                                <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" onclick="images_4()"></i>
                                 <?php if($get_data->images_4!==NULL){ ?>
                                     <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>" class="preview4" />
                                     <?php } else{ ?>
@@ -537,7 +522,7 @@ bkLib.onDomLoaded(function() {
                             <div class="col-3 images_small_box m-2">
                                 
                                 <?php if($get_data->images_5!==NULL){ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3"  onclick="images_5()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5" onclick="images_5()"></i>
                                      <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>" class="preview5" />
                                 <?php } else{ ?>
                                     <img id="ImgPreview5" src="" class="preview5" style="display:none;"/>
@@ -806,19 +791,7 @@ bkLib.onDomLoaded(function() {
 
     <script>
  function images_2() {
-    swal({
-                    title: " Delete!",
-                    text: "Are you sure you want to delete?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
+  
     var thumbnails=  'images_2';
     var product_id=  document.getElementById("product_id").value;
      var category=  document.getElementById("category").value;
@@ -835,11 +808,8 @@ bkLib.onDomLoaded(function() {
        
     });
   
-} else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                    }
-                    window.location.reload();
-                });
+
+               
   }  
   
   function images_3() {
@@ -869,14 +839,14 @@ bkLib.onDomLoaded(function() {
         success: function(data) {
           
         }
-        window.location.reload();
+       
     });
   
 } else {
                         swal("Cancelled", "Something went wrong. Please try again.)", "error");
                         
                     }
-                    window.location.reload();
+                   
                 });
   }   
 
@@ -984,29 +954,38 @@ bkLib.onDomLoaded(function() {
 
     </script>
 
-<script>
-        $(document).ready(function() {
-            $("#latitudeArea").addClass("d-none");
-            $("#longtitudeArea").addClass("d-none");
-        }); 
-        
-        google.maps.event.addDomListener(window, 'load', initialize);
 
-        function initialize() {
-            var input = document.getElementById('Location');
-            var autocomplete = new google.maps.places.Autocomplete(input);
-            
-            autocomplete.addListener('place_changed', function() {
-                var place = autocomplete.getPlace();
-                
-                $('#latitude').val(place.geometry['location'].lat());
-                $('#longitude').val(place.geometry['location'].lng());
-                
-                $("#latitudeArea").removeClass("d-none");
-                $("#longtitudeArea").removeClass("d-none");
-            });
-        } 
-    </script>
 </body>
 
 </html>
+
+<script>
+    "use strict"; /* Start of use strict */
+    (function() {
+        function14();
+    })();
+
+    function function14() {
+        $('.btnSweetalert').on("click", function() {
+            swal({
+                    title: " Logout!",
+                    text: "Are you sure you want to logout?",
+                    type: "warning",
+                    showCancelButton: true,
+                    confirmButtonColor: "#DD6B55",
+                    confirmButtonText: "Yes",
+                    cancelButtonText: "No",
+                    closeOnConfirm: false,
+                    closeOnCancel: false
+                },
+                function(isConfirm) {
+                    if (isConfirm) {
+
+                        window.location.href = "<?php echo base_url();?>welcome/logout";
+                    } else {
+                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    }
+                });
+        });
+    }
+    </script>

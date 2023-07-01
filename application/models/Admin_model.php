@@ -80,7 +80,16 @@ public function updateproductkeyword($table,$data,$where='')
 
   }
 
-
+  public function update_product_status($id,$arr)
+  {
+    if($this->db->where('id',$id)
+             ->update('post',$arr)){
+       return true;
+      } 
+      else{
+       return false;
+      } 
+  }
  
 
 public function addEditRecords($table,$data,$where='') 
