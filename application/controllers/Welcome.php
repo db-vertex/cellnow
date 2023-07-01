@@ -2613,14 +2613,14 @@ $sub .= '</h6>
 			}
 
 		}
-
-		$this->session->set_flashdata('saveproduct', 'Product Post Succesfully.');
-		$this->session->set_flashdata('msg_class', 'alert-success');
 		if($sponser==1){
 				
 			$redirectUrl = 'welcome/pay/' . $id;
 			return redirect($redirectUrl);
 		}
+		$this->session->set_flashdata('saveproduct', 'Product Post Succesfully.');
+		$this->session->set_flashdata('msg_class', 'alert-success');
+		
 		return redirect('welcome/postproduct');
 
 

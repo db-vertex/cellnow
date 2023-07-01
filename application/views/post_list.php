@@ -506,7 +506,7 @@ foreach($active as $valuea){
 <td> 
    
 
-   <input type="button" name="active_status" value="Deactive" class="btn btn-info admindeactive"  data-productid ="<?php echo $valuea->id ;?>">
+   <input type="button" name="active_status" value="Deactive" class="btn btn-info" onclick="return admindeactive(<?php echo $valuea->id ;?>);" data-productid = "<?php echo $valuea->id ;?>">
 
 
 
@@ -765,10 +765,10 @@ foreach($deactive as $valued){
  </script> 
 
 <script>
-$(document).on('change', ".admindeactive", function(){
+function admindeactive(product_id){
   
                  var statusd = 1;
-                 let product_id = $(this).data("product_id");  
+               
 alert(product_id);
                  $.ajax({
                    type: "POST",
@@ -791,7 +791,7 @@ alert(product_id);
                   
              } 
           });
-})
+}
 
 
 function adminactive(productid){

@@ -113,6 +113,11 @@ class Product_filter_model extends CI_Model
         $type_filter = implode("','", $type);
         $query .= " AND subcategory_id IN('$type_filter')";
     }
+	if($categorys=='category_reusable_parts'){
+	if (isset($select_type)) {
+        $selct_type_filter = implode("','", $select_type);
+        $query .= " AND Select_Type IN('$selct_type_filter')";
+    }}
     if (isset($sub_category)) {
         $sub_category_filter = implode("','", $sub_category);
 	     if($sub_category_filter <= 12){

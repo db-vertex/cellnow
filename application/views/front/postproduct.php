@@ -457,10 +457,9 @@ bkLib.onDomLoaded(function() {
             <?php  if($error=$this->session->flashdata('saveproduct')){  ?>
             <div class="row text-center" style="justify-content: center; ">
                 <div class="col-lg-6">
-                    <div class="alert alert-success ">
+                    <div class="alert alert-success">
                         <?= $error; 
-
-                               unset($_SESSION['saveproduct']);
+                        unset($_SESSION['saveproduct']);
                                ?>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
                             style="float:right;"></button>
