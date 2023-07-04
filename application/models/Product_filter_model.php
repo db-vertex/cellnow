@@ -361,7 +361,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$search)
 {
 	
-    $query = $this->donatemake_query($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
+    $query = $this->donatemake_query($minimum_price, $maximum_price, $brand,$select_type, $sub_category, $category, $type);
 
     $query .= ' LIMIT '.$start.', '.$limit;
     $data = $this->db->query($query);
@@ -490,9 +490,9 @@ function count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_cat
 
     return $data->num_rows();
 }
-function donatecount_all($minimum_price, $maximum_price, $brand, $sub_category, $category, $type)
+function donatecount_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type)
 {
-    $query = $this->donatemake_query($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
+    $query = $this->donatemake_query($minimum_price, $maximum_price, $brand, $select_type, $sub_category, $category, $type);
     $data = $this->db->query($query);
 
     return $data->num_rows();
