@@ -1304,12 +1304,13 @@ $sub .= '</h6>
 		$brand = $this->input->post('brand');
 		$sub_category = $this->input->post('sub_category');
 		$type = $this->input->post('type');
+		$select_type = $this->input->post('select_type');
 		$search = $this->input->post('search');
 		$category = $this->session->userdata('filter_id');
 
 		$config = array();
 		$config["base_url"] = "";
-		$config["total_rows"] = $this->product_filter_model->donatecount_all($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);
+		$config["total_rows"] = $this->product_filter_model->donatecount_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type);
 		$config["per_page"] = 6;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
@@ -1336,7 +1337,7 @@ $sub .= '</h6>
 
 		$output = array(
 			'pagination_link' => $this->pagination->create_links(),
-			'product_list' => $this->product_filter_model->donatefetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $sub_category, $category, $type,$search)
+			'product_list' => $this->product_filter_model->donatefetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$search)
 		);
 		echo json_encode($output);
 	}
@@ -2635,7 +2636,7 @@ $sub .= '</h6>
 		$_SESSION['amount'] ='125';
 		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
 		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
-	  $api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  $api = new Api("rzp_test_vy5FaDEGEkHPPp", "2DkXY36cPf4cVd5aGjMKkcZ6");
 	  /**
 	   * You can calculate payment amount as per your logic
 	   * Always set the amount from backend for security reasons
@@ -3369,8 +3370,6 @@ $sub .= '</h6>
 			}
 
 			$message = $this->input->post('message');
-			
-
 			
 
 			$chat_exist = $this->user->checkchatlist($sender_id, $receiver_id, $product_id, $category_id);

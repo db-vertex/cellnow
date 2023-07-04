@@ -110,7 +110,7 @@ bkLib.onDomLoaded(function() {
     .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
-        max-width: 1126px;
+       max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -448,7 +448,7 @@ bkLib.onDomLoaded(function() {
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
-                            <span class="me-2 handline">Home</span>/<span class="ms-2 handline">Post Ads </span>
+                            <span class="me-2 handline"><a class="text-dark link-underline-opacity-0" href="<?php echo base_url(); ?>">Home</a></span>/<span class="ms-2 handline">Post Ads </span>
                         </div>
                     </div>
                 </div>

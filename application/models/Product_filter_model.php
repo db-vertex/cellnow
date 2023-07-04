@@ -138,7 +138,7 @@ class Product_filter_model extends CI_Model
 }
 
 
-function donatemake_query($minimum_price, $maximum_price, $brand, $sub_category, $categorys, $type)
+function donatemake_query($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $categorys, $type)
     {
 	
 	$sql = "";
@@ -208,10 +208,11 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $sub_category,
         $query .= " AND subcategory_id IN('$type_filter')";
     }
 
-	if (isset($select_Type)) {
-        $selct_type_filter = implode("','", $select_type);
-        $query .= " AND Select_Type IN('$selct_type_filter')";
-    }
+	if($categorys=='category_reusable_parts'){
+		if (isset($select_type)) {
+			$selct_type_filter = implode("','", $select_type);
+			$query .= " AND Select_Type IN('$selct_type_filter')";
+		}}
     if (isset($sub_category)) {
         $sub_category_filter = implode("','", $sub_category);
 	     if($sub_category_filter <= 12){
@@ -357,7 +358,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
     return $pro;
 }
 
-function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sub_category, $category, $type,$search)
+function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$search)
 {
 	
     $query = $this->donatemake_query($minimum_price, $maximum_price, $brand, $sub_category, $category, $type);

@@ -374,6 +374,7 @@ img {
             max-width: 620.7px;
             left: 112px;
             top: 1373.5px;
+            padding:20px;
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
         }
