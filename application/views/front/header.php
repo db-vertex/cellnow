@@ -21,6 +21,7 @@
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <link rel="icon" sizes="196x196" href="https://dbvertex.com/celnow/assets/images/CelNow 5 1.png" type="image/png">
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     <title>CelNow</title>
     <style>
     html,

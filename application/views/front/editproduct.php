@@ -419,7 +419,7 @@ flex-grow: 0;
 
     <!-- Custom styles for this template -->
     <link href="checkout.css" rel="stylesheet">
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+   
 </head>
 
 <body class="">
@@ -986,10 +986,4 @@ flex-grow: 0;
         });
     }
     </script>
-    <script>
-        ClassicEditor
-            .create( document.querySelector( '#editor' ) )
-            .catch( error => {
-                console.error( error );
-            } );
-    </script>
+   

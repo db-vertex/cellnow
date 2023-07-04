@@ -18,21 +18,7 @@
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <script src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete"></script>
-    <script type="text/javascript" src="http://js.nicedit.com/nicEdit-latest.js"></script> 
-  
-  
-  
-  <script type="text/javascript">
-//<![CDATA[
-bkLib.onDomLoaded(function() {
-   nicEditors.allTextAreas() ;
-   
-       
-  });
-
-
-
-</script>
+    
 <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -1371,7 +1357,7 @@ bkLib.onDomLoaded(function() {
 
                             <div class="col-12">
                                 <label for="address" class="form-label post_input_lable">Description</label>
-                                <textarea type="text" class="form-control post_input_fild" id="address"
+                                <textarea type="text" class="form-control post_input_fild" id="editor"
                                     name="Description" rows="10" cols="50" placeholder="Enter Description"
                                     required></textarea>
                                 <div class="invalid-feedback">
