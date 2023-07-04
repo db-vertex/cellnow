@@ -12,14 +12,12 @@
     <title>Checkout example · Bootstrap v5.3</title>
 
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
+        rel="stylesheet" />
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script src="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.js"></script>
-<link rel="stylesheet" href="https://lipis.github.io/bootstrap-sweetalert/dist/sweetalert.css" />
-
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.min.css">
-<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/buttons/1.6.5/css/buttons.dataTables.min.css">
+   
     <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -97,7 +95,7 @@
     .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
-        max-width: 1200px;
+        max-width: 1226px;
         margin: 0 auto;
     }
 
@@ -421,7 +419,7 @@ flex-grow: 0;
 
     <!-- Custom styles for this template -->
     <link href="checkout.css" rel="stylesheet">
-   
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
 </head>
 
 <body class="">
@@ -513,7 +511,8 @@ flex-grow: 0;
                                     <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>" class="preview4" />
                                     <?php } else{ ?>
                                     <img id="ImgPreview4" src="" class="preview4" style="display:none;"/>
-                                   
+                                    <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
+                                    class="btn" style="display:block;">+</label>
                                     <?php } ?>
                                     <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
                                     class="btn">+</label>
@@ -561,9 +560,6 @@ flex-grow: 0;
                                     Please Enter Price.
                                 </div>
                             </div>
-
-                       
-
                             <div class="col-sm-6">
                                 <label for="address" class="form-label post_input_lable">Town</label>
                                 <input type="text" class="form-control post_input_fild" id="address" name="Town" value=" <?php echo $get_data->town?>"
@@ -594,7 +590,7 @@ flex-grow: 0;
 
                             <div class="col-12">
                                 <label for="address" class="form-label post_input_lable">Description</label>
-                                <textarea type="text" class="form-control post_input_fild" id="address"
+                                <textarea type="text" class="form-control post_input_fild" id="editor"
                                     name="Description" rows="10" cols="50" placeholder="Enter Description" 
                                     required><?php echo $get_data->Description?></textarea>
                                 <div class="invalid-feedback">
@@ -989,4 +985,11 @@ flex-grow: 0;
                 });
         });
     }
+    </script>
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
     </script>
