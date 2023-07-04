@@ -441,17 +441,15 @@
             </div>
 
             <?php  if($error=$this->session->flashdata('saveproduct')){  ?>
-            <div class="row text-center" style="justify-content: center; ">
-                <div class="col-lg-6">
-                    <div class="alert alert-success">
-                        <?= $error; 
-                        unset($_SESSION['saveproduct']);
-                               ?>
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"
-                            style="float:right;"></button>
-                    </div>
-                </div>
-            </div>
+                <script>
+swal({
+  title: "Success!",
+  text: "Product added Successfully!",
+ 
+  button: false,
+  timer: 5000,
+});
+</script>
 
             <?php } ?>
             <?php  if($error=$this->session->flashdata('saveproductfiled')){  ?>

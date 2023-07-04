@@ -986,4 +986,10 @@ flex-grow: 0;
         });
     }
     </script>
-   
+    <script>
+        ClassicEditor
+            .create( document.querySelector( '#editor' ) )
+            .catch( error => {
+                console.error( error );
+            } );
+    </script>
