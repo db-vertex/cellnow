@@ -1379,7 +1379,7 @@ border-radius: 80px 0px 0px 80px;
                     <div class="row  mt-2" style="margin-left: 2.5rem!important;">
                         <hr class="hr " style="width: 200px; border: 1px solid #69D3B0; " />
                     </div>
-                    <?php if ($product_detail->category_id == 1) { ?>
+                    <?php if ($product_detail->category_id == 1 && $product_detail->subcategory_id!=11) { ?>
                         <div class="row  ms-4">
                             <div class="col-3">
                                 <p class="details_text"><b>Brand</b></p>

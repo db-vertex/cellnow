@@ -803,6 +803,25 @@ function get_product_by_subid($subcategory_id)
        $ci->load->database();
 
        $session_id = $ci->session->userdata("id");
+       $location = $ci->session->userdata("location");
+       if($location){
+        if($session_id){
+          $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE   subcategory_id = $subcategory_id AND user_id != $session_id AND address = '$location' UNION
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  Job_type	 = $subcategory_id AND user_id != $session_id AND address = '$location' UNION
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  Job_type	 = $subcategory_id AND user_id != $session_id AND address = '$location' UNION 
+         
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  Education_type = $subcategory_id AND user_id != $session_id AND address = '$location'";
+               }
+               else{
+                $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE   subcategory_id = $subcategory_id AND address = '$location' UNION
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  Job_type	 = $subcategory_id AND address = '$location' UNION
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  Job_type	 = $subcategory_id AND address = '$location' UNION 
+               
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  Education_type = $subcategory_id AND address = '$location'";
+               }
+       }else{
+
+       
        if($session_id){
   $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE   subcategory_id = $subcategory_id AND user_id != $session_id UNION
   SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  Job_type	 = $subcategory_id AND user_id != $session_id UNION
@@ -816,7 +835,7 @@ function get_product_by_subid($subcategory_id)
         SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  Job_type	 = $subcategory_id UNION 
        
         SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  Education_type = $subcategory_id";
-       }
+       }}
   
   
   $category_data = $ci->db->query($query);        
@@ -1244,6 +1263,7 @@ function get_category_all_store($id)
        //load databse library
        $ci->load->database();
        $session_id = $ci->session->userdata("id");
+       
        if ($session_id) {
   $query="SELECT * FROM shop WHERE user_id=".$id." And user_id!=".$session_id;
        }else{

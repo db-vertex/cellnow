@@ -43,7 +43,7 @@ class Welcome extends CI_Controller
 	public function index()
 	{
 		$session_id = $this->session->userdata('id');
-
+		$this->session->unset_userdata('location');
 		$user_detail = $this->user->loginuser($session_id);
 
 		if (!empty($user_detail)) {
@@ -1071,7 +1071,8 @@ $sub .= '</h6>
 
 
 		$anything = $this->input->post('anything');
-
+		$this->session->unset_userdata('location');
+		$this->session->set_userdata('location', $location);
 		$session_id = $this->session->userdata('id');
 
 		$user_detail = $this->user->loginuser($session_id);

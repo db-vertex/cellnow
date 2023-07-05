@@ -1148,7 +1148,7 @@ padding-left: 90px;
                                 <div class="search_box mt-3" style="width:130%; margin-right:100px;">
                                 <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
          
-         <input type="text" value="<?php echo set_value('location'); ?>" name="location" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+         <input type="text" value="<?php $location= $this->session->userdata("location"); if($this->session->userdata("location")){ echo $location;} ; ?>" name="location" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
        </form>
                                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
