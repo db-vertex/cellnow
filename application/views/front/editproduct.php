@@ -140,13 +140,15 @@
         left: 50%;
         transform: translateX(-50%);
         background: #D1FAE5;
-
+        text-align: center;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 13px;
         text-align: -webkit-center;
     }
 
     .my-box {
+        margin-left: auto;
+        margin-right: auto;
         width: 100px;
         height: 100px;
         margin-top: 24%;
@@ -172,6 +174,7 @@
 
     .images_small_box {
         text-align: -webkit-center;
+        text-align: center;
         width: 78.17px;
         height: 96px;
         background: #DDFBEC;
@@ -191,6 +194,8 @@
     }
 
     .images_small_box__plus {
+        margin-right: auto;
+        margin-left: auto;
         width: 11px;
         height: 36px;
         left: 844px;
@@ -455,7 +460,7 @@ flex-grow: 0;
                                 <div class=" images_col mx-2">
                                     <i class="bi bi-x-circle-fill btn-rmv1 me-3 " id="removeImage1"></i>
                                
-                                    <img id="ImgPreview" src="<?php echo base_url();?><?php echo $get_data->cover_img?>" class="preview1" />
+                                    <img id="ImgPreview" src="<?php echo base_url();?><?php echo $get_data->cover_img?>" class="preview1" style="  width: 400px;height: 300px;" />
                                     <div class="box a">
                                         <div class="my-box" id="cover_images_box">
                                             <label class="pluse" for="cover_images" class="btn">
@@ -478,9 +483,9 @@ flex-grow: 0;
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2" onclick="images_2()"></i>
                                 <?php if($get_data->images_2!==NULL){ ?>
-                                    <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>" class="preview2" />
+                                    <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>" class="preview2"  style="width: 78.17px; height: 96px;"/>
                                     <?php } else{ ?>
-                                    <img id="ImgPreview2" src="" class="preview2" style="display:none;"/>
+                                    <img id="ImgPreview2" src="" class="preview2" style="display:none; width: 78.17px; height: 96px;"/>
                                     <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
                                     class="btn" style="display:block;">+</label>
                                     <?php } ?>
@@ -494,9 +499,9 @@ flex-grow: 0;
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3" onclick="images_3()"></i>
                                 <?php if($get_data->images_3!==NULL){ ?>
-                                    <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>" class="preview3" />
+                                    <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>" class="preview3" style="width: 78.17px; height: 96px;"/>
                                 <?php } else{ ?>
-                                    <img id="ImgPreview3" src="" class="preview3" style="display:none;"/>
+                                    <img id="ImgPreview3" src="" class="preview3" style="display:none; width: 78.17px; height: 96px;"/>
                                     <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
                                     class="btn" style="display:block;">+</label>
                                     <?php } ?>
@@ -508,9 +513,9 @@ flex-grow: 0;
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" onclick="images_4()"></i>
                                 <?php if($get_data->images_4!==NULL){ ?>
-                                    <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>" class="preview4" />
+                                    <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>" class="preview4" style="width: 78.17px; height: 96px;" />
                                     <?php } else{ ?>
-                                    <img id="ImgPreview4" src="" class="preview4" style="display:none;"/>
+                                    <img id="ImgPreview4" src="" class="preview4" style="display:none; width: 78.17px; height: 96px;"/>
                                     <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
                                     class="btn" style="display:block;">+</label>
                                     <?php } ?>
@@ -523,9 +528,9 @@ flex-grow: 0;
                                 
                                 <?php if($get_data->images_5!==NULL){ ?>
                                     <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5" onclick="images_5()"></i>
-                                     <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>" class="preview5" />
+                                     <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>" class="preview5" style="width: 78.17px; height: 96px;"/>
                                 <?php } else{ ?>
-                                    <img id="ImgPreview5" src="" class="preview5" style="display:none;"/>
+                                    <img id="ImgPreview5" src="" class="preview5" style="display:none; width: 78.17px; height: 96px;"/>
                                     <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
                                     class="btn" style="display:block;">+</label>
                                     <?php } ?>

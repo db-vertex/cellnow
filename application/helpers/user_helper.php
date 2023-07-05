@@ -1060,7 +1060,7 @@ function get_all_store()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM shop order by name";
+       $query = "SELECT * FROM shop WHERE admin_approval = 1 ORDER BY name";
 
   $category_data = $ci->db->query($query);        
 
