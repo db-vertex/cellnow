@@ -141,13 +141,15 @@
         left: 50%;
         transform: translateX(-50%);
         background: #D1FAE5;
-
+        text-align: center;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 13px;
         text-align: -webkit-center;
     }
 
     .my-box {
+        margin-left: auto;
+        margin-right: auto;
         width: 100px;
         height: 100px;
         margin-top: 24%;
@@ -173,6 +175,7 @@
 
     .images_small_box {
         text-align: -webkit-center;
+        text-align: center;
         width: 78.17px;
         height: 96px;
         background: #DDFBEC;
@@ -192,6 +195,8 @@
     }
 
     .images_small_box__plus {
+        margin-right: auto;
+        margin-left: auto;
         width: 11px;
         height: 36px;
         left: 844px;
@@ -477,7 +482,7 @@ swal({
                             <div class=" images_row">
                                 <div class=" images_col mx-2">
                                     <i class="bi bi-x-circle-fill btn-rmv1 me-3 " id="removeImage1"></i>
-                                    <img id="ImgPreview" src="" class="preview1" />
+                                    <img id="ImgPreview" src="" class="preview1" style="width: 400px; height: 300px;" />
                                     <div class="box a">
                                         <div class="my-box" id="cover_images_box">
                                             <label class="pluse" for="cover_images" class="btn">
@@ -499,7 +504,7 @@ swal({
 
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2"></i>
-                                <img id="ImgPreview2" src="" class="preview2" />
+                                <img id="ImgPreview2" src="" class="preview2" style="width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_2" name="profile_img[]"
@@ -507,7 +512,7 @@ swal({
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3"></i>
-                                <img id="ImgPreview3" src="" class="preview3" />
+                                <img id="ImgPreview3" src="" class="preview3" style="width: 78.17px; height: 96px;"/>
                                 <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_3" name="profile_img[]"
@@ -515,7 +520,7 @@ swal({
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4"></i>
-                                <img id="ImgPreview4" src="" class="preview4" />
+                                <img id="ImgPreview4" src="" class="preview4" style="width: 78.17px; height: 96px;"/>
                                 <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_4" name="profile_img[]"
@@ -523,7 +528,7 @@ swal({
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5"></i>
-                                <img id="ImgPreview5" src="" class="preview5" />
+                                <img id="ImgPreview5" src="" class="preview5" style="width: 78.17px; height: 96px;"/>
                                 <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_5" name="profile_img[]"
@@ -538,12 +543,12 @@ swal({
                             <div class="col-12">
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1"
-                                        value="0" checked>
+                                        value="0" >
                                     <label class="form-check-label" for="inlineRadio1">Normal</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
-                                        value="1">
+                                        value="1" checked>
                                     <label class="form-check-label" for="inlineRadio2">Bost Ads(Rs. 125)</label>
                                 </div>
                                 <div class="form-check form-check-inline">

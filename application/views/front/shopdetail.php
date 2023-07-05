@@ -255,21 +255,21 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
                                 <p><?php
                            $title = $Categories_all_product->address;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,30) . '...';
                                 echo ucfirst($y);
                               }
                            
                            ?></p>
                                
-                                    <p class="related_ads_details_button ">
+                                    <!-- <p class="related_ads_details_button ">
                                         <spam class="related_ads_details_button_text">Product Detail</spam>
-                                    </p>
+                                    </p> -->
                            
 
                             </div>

@@ -430,7 +430,7 @@
                 $(".dddssaaf" + pid).toggleClass("fa-heart-o fa-heart");
                 if (status == 0) {
                     $(this).data("wishlist", 1);
-                    swal("Product Added in Wishlist Successfully!", "", "success");
+                    swal("Wishlist updated successfully", "", "success");
                 } else {
                    
                     $(this).data("wishlist", 0);
