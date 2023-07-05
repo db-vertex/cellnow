@@ -155,6 +155,16 @@
         </li>
 
         <li class="<?php echo ($this->uri->segment(2) == 'about_us')?'active':''; ?>">
+          <a href="<?=  base_url('admin/about_us'); ?>">
+            <i class="fa fa-group"></i> <span>Product verified content</span>
+            <span class="pull-right-container">
+              <small class="label pull-right bg-green"></small>
+            </span>
+          </a>
+      
+        </li>
+
+        <li class="<?php echo ($this->uri->segment(2) == 'about_us')?'active':''; ?>">
           <a href="<?=  base_url('admin/meta'); ?>">
             <i class="fa fa-group"></i> <span>Meta tag</span>
             <span class="pull-right-container">

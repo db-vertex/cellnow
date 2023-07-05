@@ -186,7 +186,7 @@ $sub .= '</h6>
 			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
 		}
 		 if($all_count >4){
-         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn">See All</a></center>';
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="https://dbvertex.com/celnow/welcome/fillter_product/5" class="btn">See All</a></center>';
             } 
 		echo $sub;
 
@@ -2592,7 +2592,7 @@ $sub .= '</h6>
 			}
 
 		}
-		if($sponser==1){
+		if($sponser==3){
 				
 			$redirectUrl = 'welcome/pay/' . $id;
 			return redirect($redirectUrl);

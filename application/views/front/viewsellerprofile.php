@@ -190,6 +190,7 @@ width: 131.9px; border-color:#10B981;">
                               {
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
+                                
                               }
                            
                            ?></p>

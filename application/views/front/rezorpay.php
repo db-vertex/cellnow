@@ -46,7 +46,7 @@ options.modal = {
 
         console.log("This code runs when the popup is closed");
 
-        window.location = "<?php  echo base_url();?>Fornt/products";
+        window.location = "<?php  echo base_url();?>welcome/postproduct";
 
     },
 
