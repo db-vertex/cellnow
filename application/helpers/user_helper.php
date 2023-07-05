@@ -1037,7 +1037,7 @@ function get_all_count_deactive_Product()
   //get main CodeIgniter object
        $ci =& get_instance();
        
-       //load databse library
+       //load databse libraryedito
        $ci->load->database();
       
   $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE active_status = 1  UNION
@@ -1151,17 +1151,17 @@ function get_all_location_boost($location)
    $ci->load->database();
    $session_id = $ci->session->userdata("id");
  if ($session_id) {
-$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price,cover_img ,verified_product,address from category_reusable_parts WHERE  user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price,cover_img ,verified_product ,address from category_internships WHERE   user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_job WHERE  user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_tuitions WHERE   user_id !='.$session_id.'
+$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price,cover_img ,verified_product,pay_type,address from category_reusable_parts WHERE  user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price,cover_img ,verified_product ,pay_type,address from category_internships WHERE   user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_job WHERE  user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_tuitions WHERE   user_id !='.$session_id.'
 ) as  custam  WHERE address like "%'.$location.'%"';
  }
  else{
-  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_reusable_parts
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_internships 
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_job 
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_tuitions 
+  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_reusable_parts
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_internships 
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_job 
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_tuitions 
   ) as  custam  WHERE address like "%'.$location.'%"  ';
  }
 
