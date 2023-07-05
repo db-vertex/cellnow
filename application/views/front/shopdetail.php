@@ -267,10 +267,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                            
                            ?></p>
                                
-                                    <p class="related_ads_details_button ">
-                                        <spam class="related_ads_details_button_text">Product Detail</spam>
-                                    </p>
-                           
+                                   
 
                             </div>
                         </div>
