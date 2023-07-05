@@ -1586,7 +1586,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                         <i class="bi bi-geo-alt-fill" aria-hidden="true"
                                             style="font-size:18px; color:#69d3b0"></i>
                                     </div>
-                                    <div class="col-5">
+                                    <div class="col-8">
                                         <p style="color: #575757;"><?php
                            $title =$relatedproduct->address;
                             if(strlen($title) <= 15)
@@ -1601,14 +1601,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                            
                            ?></p>
                                     </div>
-                                    <div class="col-4 pe-2">
-                                        <a
-                                            href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
-                                            <p class="related_ads_details_button ">
-                                                <spam class="related_ads_details_button_text">Product Detail</spam>
-                                            </p>
-                                        </a>
-                                    </div>
+                                   
                                 </div>
                             </div>
                         </div>

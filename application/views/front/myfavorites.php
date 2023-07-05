@@ -225,13 +225,7 @@
 
                       ?>
                     </p>
-                    <a
-                      href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
-                      <p class="related_ads_details_button ">
-                        <spam class="related_ads_details_button_text">Product Detail</spam>
-                      </p>
-                    </a>
-
+                   
                   </div>
                 </div>
               </div>
