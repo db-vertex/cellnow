@@ -110,7 +110,7 @@ class Welcome extends CI_Controller
 		$sub = "";
 		if ($subcategory_id) {
 			$product = get_product_by_subid($subcategory_id);
-			$all_count= get_product_by_subid_count($subcategory_id);
+			$all_count = get_product_by_subid_count($subcategory_id);
 
 
 		} else {
@@ -2614,7 +2614,7 @@ $sub .= '</h6>
 		$_SESSION['amount'] ='125';
 		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
 		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
-	  $api = new Api("rzp_test_vy5FaDEGEkHPPp", "2DkXY36cPf4cVd5aGjMKkcZ6");
+	  $api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
 	  /**
 	   * You can calculate payment amount as per your logic
 	   * Always set the amount from backend for security reasons

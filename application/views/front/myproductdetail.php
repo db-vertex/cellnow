@@ -1496,8 +1496,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
 
                                     </div>
                                     <div class="col-4">
-                                        <a href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><p
-                                                   style="margin-top:30px;" class="View_Seller_profile" id="">View Seller profile</p></a>
+                                        
                                                 
                                      
                                     </div>

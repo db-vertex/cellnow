@@ -1416,7 +1416,7 @@ border-radius: 80px 0px 0px 80px;
                         </div>
                     </div>
 
-                    <div class="row   ms-4">
+                    <div class="row ms-4">
                         <div class="col-3">
                             <p class="details_text"><b>Type</b></p>
                         </div>
@@ -1427,10 +1427,16 @@ border-radius: 80px 0px 0px 80px;
                             } else if ($product_detail->category_id == 2) {
                                 $type_name = get_product_type_name($product_detail->Education_Type);
                                 echo $type_name;
-                            } else if ($product_detail->category_id == 4 && $product_detail->category_id == 3) {
+                            } else if ($product_detail->category_id == 3) {
                                 $type_name = get_product_type_name($product_detail->Job_type);
+                               
                                 echo $type_name;
-                            } ?></p>
+                            }
+                         else if ($product_detail->category_id == 4) {
+                            $type_name = get_product_type_name($product_detail->Job_type);
+                           
+                            echo $type_name;
+                        } ?></p>
                         </div>
                     </div>
 

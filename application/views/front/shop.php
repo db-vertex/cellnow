@@ -402,7 +402,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                                 </div>
                                                 <div class="form-group">
                                                     <label> Description</label>
-                                                    <textarea name="description" class="form-control" id="aboutus"
+                                                    <textarea name="description" class="form-control" id="editor"
                                                         placeholder="Description" maxlength="200" rows="4"
                                                         style="border-radius:20px; border-color:#13C571"
                                                         required><?php echo $shop->description; ?></textarea>
@@ -754,7 +754,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea name="description" class="form-control" id="aboutus" placeholder="Description"
+                            <textarea name="description" class="form-control" id="editor" placeholder="Description"
                                 maxlength="200" rows="4" style="border-radius:20px; border-color:#13C571"
                                 required></textarea>
                             <div class="invalid-feedback">
