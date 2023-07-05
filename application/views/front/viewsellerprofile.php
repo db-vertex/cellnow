@@ -99,7 +99,7 @@ html,body
   <body>
   
 
-<div class="container" style="margin-top:12%">
+<div class="container" style="margin-top:160px;">
   
     <div class="shadow p-4 mb-5 bg-body rounded-5" style="margin:25px"><br>
    
@@ -166,8 +166,14 @@ width: 131.9px; border-color:#10B981;">
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
                            
-                          <?php if($pro->category_id != 4 && $pro->pay_type !=2){ ?>
+                            <?php if(isset($pro->price)){  if (($pro->pay_type == 0 || $pro->pay_type == 1) && ($pro->category_id == 1 || $pro->category_id == 2 || $pro->category_id == 3)) { 
+                                     
+                                     ?>
                          <p class="details_price">₹<?php echo $pro->price; ?>
+                                </p>
+<?php } }?>
+<?php if( $pro->pay_type==2){ ?>
+                         <p class="details_price">Donate
                                 </p>
 <?php } ?>
 

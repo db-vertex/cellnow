@@ -204,7 +204,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 href="<?php echo base_url(); ?>welcome/shop"
                                 style="background-color: #10b981; color:#fff" class="btn" role="button"
                                 aria-disabled="true" id="a">Take Your Shop/Services online on celnow</a>
-                            <p class="text-muted mt-4">Note: Once you will submit the detail of shop then not editable
+                            <p class="text-muted mt-4">Note: you can not change
                             </p>
                         </div>
                     </div>
@@ -402,7 +402,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                                 </div>
                                                 <div class="form-group">
                                                     <label> Description</label>
-                                                    <textarea name="description" class="form-control" id="aboutus"
+                                                    <textarea name="description" class="form-control" id="editor"
                                                         placeholder="Description" maxlength="200" rows="4"
                                                         style="border-radius:20px; border-color:#13C571"
                                                         required><?php echo $shop->description; ?></textarea>
@@ -754,7 +754,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                         </div>
                         <div class="form-group">
                             <label>Description</label>
-                            <textarea name="description" class="form-control" id="aboutus" placeholder="Description"
+                            <textarea name="description" class="form-control" id="editor" placeholder="Description"
                                 maxlength="200" rows="4" style="border-radius:20px; border-color:#13C571"
                                 required></textarea>
                             <div class="invalid-feedback">
