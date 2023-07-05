@@ -259,6 +259,27 @@ public function logout()
            
   }
 
+  public function verified_content()
+  {
+
+     $session_id = $this->session->userdata('admin_id');
+     
+       if($session_id)
+       {
+     
+     
+     $admin_detail = $this->admin_model->get_admin_data($session_id);
+     $verified_content =    $this->admin_model->get_verified_content_data();
+     $this->load->view('verified_content',['admin_detail'=>$admin_detail,'verified_content'=>$verified_content]);
+     
+       }else{
+           
+             return redirect('admin');
+           
+       }
+           
+  }
+
 
   public function meta()
   {
@@ -322,6 +343,51 @@ public function logout()
                       $session_id = $this->session->userdata('admin_id');
              $admin_detail = $this->admin_model->get_admin_data($session_id);
                    $this->load->view('about_us',['admin_detail'=>$admin_detail]);
+      }
+
+  }
+
+  public function add_verified_content()
+  {
+    
+     $session_id = $this->session->userdata('admin_id');
+     
+  //$this->form_validation->set_rules('title','Title','required');
+    $this->form_validation->set_rules('verified_content','About us', 'required');
+    
+    $verified_content =  $this->input->post('verified_content');
+       // $title =   $this->input->post('title');
+    
+     if($this->form_validation->run())
+      {
+       $content = $this->admin_model->get_verified_content_data();
+      
+      if(!empty($content)){
+           
+            $where = array('id' => $verified_content->id);
+            //print_r($where);die;
+            $data = array("verified_content"=>$verified_content);
+                $admin_detail = $this->admin_model->addEditRecords('verified_content',$data,$where);
+                $this->session->set_flashdata('msg','Added Successfully');
+                $this->session->set_flashdata('msg_class','alert-success');
+
+       }else{
+           
+            $data = array("verified_content"=>$verified_content);
+          
+            //$session_id = $this->session->userdata('admin_id');
+            $admin_detail = $this->admin_model->addEditRecords('verified_content',$data);
+           
+            $this->session->set_flashdata('msg','Added Successfully');
+                $this->session->set_flashdata('msg_class','alert-success');
+      
+       }
+          return redirect('admin/verified_content');
+
+      }else{
+                      $session_id = $this->session->userdata('admin_id');
+             $admin_detail = $this->admin_model->get_admin_data($session_id);
+                   $this->load->view('verified_content',['admin_detail'=>$admin_detail]);
       }
 
   }

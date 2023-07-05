@@ -505,6 +505,16 @@ public function get_about_us_data()
              return $q->row();
   }
 
+  public function get_verified_content_data()
+  {
+            
+           $q=$this->db->select('*')
+              ->from('verified_content')
+              ->get();
+             
+             return $q->row();
+  }
+
   public function get_meta_data()
   {
             

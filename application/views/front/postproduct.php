@@ -1381,6 +1381,17 @@ swal({
                                     <div class="invalid-feedback">You must agree to the terms and conditions.</div>
                                 </div>
                             </div>
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                        required>
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                    <a style="color:black;" href="<?php echo base_url();?>welcome/verify_content"> How to verified product process</a>
+                                    </label>
+                                </div>
+                            </div>
+
                             <input type="text" class="form-control " name="user_id" id="user_id" placeholder=""
                                 value="<?php echo $user['user_id']; ?>" rows="8" hidden />
                             <input type="text" class="form-control" name="latitude" id="latitude" hidden />

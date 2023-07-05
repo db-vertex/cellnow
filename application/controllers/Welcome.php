@@ -1992,6 +1992,8 @@ $sub .= '</h6>
 		if ($session_id) {
 			$user_detail = $this->user->loginuser($session_id);
 
+			$aboutus = $this->user->getcontent();
+
 			
 
 			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
@@ -1999,12 +2001,12 @@ $sub .= '</h6>
 			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
 			$this->output->set_header('Pragma: no-cache');
 			$this->load->view('front/header', ['user' => $user_detail]);
-			$this->load->view('front/verify_content');
+			$this->load->view('front/verify_content', ['aboutus' => $aboutus]);
 			$this->load->view('front/footer');
 		} else {
 			
 			$this->load->view('front/header');
-			$this->load->view('front/verify_content');
+			$this->load->view('front/verify_content', ['aboutus' => $aboutus]);
 			$this->load->view('front/footer');
 		}
 

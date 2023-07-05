@@ -275,7 +275,16 @@ class User extends CI_Model {
         }
     }
 
-   
+    function getcontent($id = ""){
+        if(!empty($id)){
+            $query = $this->db->get_where('verified_content', array('id' => $id));
+            return $query->row_array();
+        }else{
+            $query = $this->db->get('verified_content');
+            return $query->result_array();
+        }
+    }
+
     function payment($data){
         $this->db->insert('payment',$data);
         return true;
