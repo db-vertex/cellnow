@@ -1059,9 +1059,13 @@ function get_all_store()
        
        //load databse library
        $ci->load->database();
-
-       $query = "SELECT * FROM shop WHERE admin_approval = 1 ORDER BY name";
-
+       $session_id = $ci->session->userdata("id");
+       if ($session_id) {
+       $query = "SELECT * FROM shop WHERE admin_approval = 1 And user_id !='.$session_id.' ORDER BY name";
+       }
+       else{
+        $query = "SELECT * FROM shop WHERE admin_approval = 1  ORDER BY name";
+       }
   $category_data = $ci->db->query($query);        
 
   return $category_data->result(); 

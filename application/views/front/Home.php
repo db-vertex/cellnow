@@ -561,7 +561,7 @@ foreach ($category as $key => $cat) {
         <div class="row" id="shop_list">
             <?php
               
-              $store = get_all_store();
+             $store = get_all_store();
              $shop_count= get_all_store_count();
            
            

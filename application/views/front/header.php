@@ -1143,7 +1143,7 @@ padding-left: 90px;
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
 
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="">
-                        <li class="nav-item nav-item_serach" style="padding-right:100px" ;>
+                        <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
                             <div class="search_wrap search_wrap_6 m-0 ">
                                 <div class="search_box mt-3" style="width:130%; margin-right:100px;">
                                 <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
@@ -1166,7 +1166,7 @@ padding-left: 90px;
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item dropdown padd" style="padding-right:10px" ;>
+                        <li class="nav-item dropdown " style="padding-right:10px" ;>
                             <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false" style=" color:#10B981;font-weight:bold;"
                                 id="ab">
@@ -1263,8 +1263,9 @@ padding-left: 90px;
                             <a class="nav-link fs-5 Signup_header" href="<?php echo base_url();?>welcome/signup"
                                 style="color:#10B981;font-weight:bold;">Signup</a>
                         </li> -->
+                        <?php }?>
                     </ul>
-                    <?php }?>
+                    
                 </div>
             </nav>
         </div>
