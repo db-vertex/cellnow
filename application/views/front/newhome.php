@@ -693,17 +693,17 @@ else{
             <?php
                   
                   if(!empty($location)&& empty($anything)){
-                    $store = get_all_location_donate($location);
+                    $donate = get_all_location_donate($location);
                 
                    $allcount= get_all_location__count_donate($location);
       }
       else{
             
-                  $product = get_all_donate();   
+                  $donate = get_all_donate();   
                   $allcount =get_all_donate_count();
       }
             
-              if(!empty($product)){
+              if(!empty($donate)){
               $i = 1;
               $j = 1;
             foreach($product as $pro){
@@ -718,8 +718,7 @@ else{
             <a href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                       <img
-                                src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                       <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                 class="w-100 va-thumbnail" />
                       
                     </div>
