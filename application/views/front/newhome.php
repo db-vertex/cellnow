@@ -325,14 +325,9 @@ foreach ($category as $key => $cat) {
         <div class="row" id="product_list">
             <?php
                                 
-                                if(empty($location) && !empty($anything)){
-                                  $product =  get_all_search_product($anything); 
-                                  $all_count = get_all_search_product_count($anything);
-                                
-                                  }
-                                  else if(!empty($location) && empty($anything)){
-                                  $product= get_all_location_boost($location);
-                                  $all_count =get_all_location_count_boost($location);
+                 if(!empty($location) && empty($anything)){
+                     $product= get_all_location_boost($location);
+                         $all_count =get_all_location_count_boost($location);
                                
                                   }
              
@@ -425,14 +420,10 @@ foreach ($category as $key => $cat) {
 
             <?php   }  $j++; };  ?>
             <?php }
-              else {?>
+              else { ?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
-            <?php }?>
-            <?php if($all_count >4){ ?>
-            <center class=""><a
-                    style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
-                    href="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger">See All</a></center>
             <?php } ?>
+           
         </div>
 
 
@@ -708,7 +699,7 @@ else{
               if(!empty($donate)){
               $i = 1;
               $j = 1;
-            foreach($product as $pro){
+            foreach($donate as $pro){
              $session_login_id  = $user['user_id'] ?? null;
               $product_user_id = $pro->user_id;
               if($session_login_id !== $product_user_id){

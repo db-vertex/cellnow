@@ -1217,8 +1217,7 @@ UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_
   ) as  custam  WHERE address like "%'.$location.'%"  ';
  }
 
-
-  $category_data = $ci->db->query($query);        
+ $category_data = $ci->db->query($query);        
 
   return $category_data->num_rows(); 
 }
