@@ -588,12 +588,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                               }
                            
                            ?></p>
-                                <a
-                                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
-                                    <p class="related_ads_details_button ">
-                                        <spam class="related_ads_details_button_text">Product Detail</spam>
-                                    </p>
-                                </a>
+                               
 
                             </div>
                         </div>
