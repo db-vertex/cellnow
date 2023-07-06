@@ -1266,17 +1266,17 @@ function get_category_all_store($id)
        $location = $ci->session->userdata("location");
        if($location){
         if ($session_id) {
-          $query='SELECT * FROM shop WHERE Address LIKE "%' . $location . '%" AND shop_category_id='.$id.'  And user_id!='.$session_id;
+          $query='SELECT * FROM shop WHERE admin_approval=1 AND Address LIKE "%' . $location . '%" AND shop_category_id='.$id.'  And user_id!='.$session_id;
                }else{
-                $query = 'SELECT * FROM shop WHERE Address LIKE "%' . $location . '%" AND shop_category_id=' . $id;
+                $query = 'SELECT * FROM shop WHERE admin_approval=1 AND Address LIKE "%' . $location . '%" AND shop_category_id=' . $id;
                }
        }
        else{
 
        if ($session_id) {
-         $query="SELECT * FROM shop WHERE shop_category_id=".$id." And user_id!=".$session_id;
+         $query="SELECT * FROM shop WHERE admin_approval=1 And shop_category_id=".$id." And user_id!=".$session_id;
        }else{
-        $query="SELECT * FROM shop WHERE shop_category_id=".$id;
+        $query="SELECT * FROM shop WHERE admin_approval=1 And shop_category_id=".$id;
        }
       }
   $category_data = $ci->db->query($query);        

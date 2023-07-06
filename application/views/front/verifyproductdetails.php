@@ -1717,6 +1717,13 @@ border-radius: 80px 0px 0px 80px;
                                                             <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
                                                         <?php }
                                                     } ?>
+                                                     <?php if (isset($product_detail->price)) {
+                                                        if (($product_detail->pay_type == 2 )) {
+
+                                                            ?>
+                                                            <p class="details_price">Donate</span></p>
+                                                        <?php }
+                                                    } ?>
                                                 </div>
                                                 <div class="col-2">
                                                     <b style='font-size:18px;'><i class="fa fa-heart-o "

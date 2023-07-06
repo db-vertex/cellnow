@@ -82,7 +82,7 @@ class Product_filter_model extends CI_Model
 					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].'   UNION
 					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].'  UNION 
 				   
-					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].' ) as  custam  WHERE title like "%'.$location.'%" ';
+					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].' ) as  custam  WHERE address like "%'.$location.'%" ';
 				}else{
 					$query = 'SELECT * FROM ' . $sql . ' WHERE pay_type != "3" AND user_id != '.$_SESSION['id'].' AND address LIKE "%' . $location . '%"';
 
@@ -94,7 +94,7 @@ class Product_filter_model extends CI_Model
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1   UNION
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = 1 UNION 
 			   
-				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1) as  custam  WHERE title like "%'.$location.'%" ';
+				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1) as  custam  WHERE address like "%'.$location.'%" ';
 			}else{
 				$query = 'SELECT * FROM ' . $sql . ' WHERE pay_type != "3" AND address LIKE "%' . $location . '%"';
 			
@@ -202,12 +202,41 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $select_type,$
 
     $session_id = $this->session->userdata("id");
 	$location = $this->session->userdata("location");
-	print_r($location);die();
+	if($location){
+		if ($session_id) {
+		
+			if (isset($_SESSION["id"]) !== '') {
+				if($categorys=='All'){
+					$query='SELECT * from (SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type = 2 AND user_id != '.$_SESSION['id'].' UNION
+					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job WHERE pay_type = 2 AND user_id != '.$_SESSION['id'].'   UNION
+					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = 2 AND user_id != '.$_SESSION['id'].'  UNION 
+				   
+					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 2 AND user_id != '.$_SESSION['id'].'  ) as  custam  WHERE address like "%'.$location.'%" ';
+				}else{
+					$query = 'SELECT * FROM ' . $sql . ' WHERE pay_type != "3" AND user_id != '.$_SESSION['id'].' AND address LIKE "%' . $location . '%"';
+	
+				}
+			}
+		} else {
+			if($categorys=='All'){
+				$query='SELECT * from (SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type = 2 UNION
+				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 2 UNION
+				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = 2  UNION 
+			   
+				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 2 ) as  custam  WHERE address like "%'.$location.'%" ';
+			}else{
+			$query = 'SELECT * FROM ' . $sql . ' WHERE pay_type != "3" AND address LIKE "%' . $location . '%"';
+			}
+		}
+	}
+	else{
+
+	
     if ($session_id) {
 		
         if (isset($_SESSION["id"]) !== '') {
 			if($categorys=='All'){
-				$query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type = '2' AND user_id != {$_SESSION['id']} AND address != $location UNION
+				$query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type = '2' AND user_id != {$_SESSION['id']} UNION
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job WHERE pay_type = '2' AND user_id != {$_SESSION['id']}   UNION
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = '2' AND user_id != {$_SESSION['id']}  UNION 
 			   
@@ -219,15 +248,16 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $select_type,$
         }
     } else {
 		if($categorys=='All'){
-			$query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type = '2' AND address != $location UNION
-			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = '2' AND address != $location UNION
-			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = '2'  AND address != $location UNION 
+			$query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type = '2' UNION
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = '2'  UNION
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = '2'   UNION 
 		   
-			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = '2'AND address != $location ";
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = '2' ";
 		}else{
         $query = "SELECT * FROM $sql WHERE pay_type != '3'";
 		}
     }
+}
 	if($categorys!='category_internships'){
     if (isset($minimum_price, $maximum_price) && !empty($minimum_price) && !empty($maximum_price)) {
         $query .= " AND price BETWEEN $minimum_price AND $maximum_price";
