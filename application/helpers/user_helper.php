@@ -1079,7 +1079,8 @@ function get_all_store()
        //load databse library
        $ci->load->database();
        $session_id = $ci->session->userdata("id");
-       if ($session_id) {
+       
+       if($session_id) {
        $query = "SELECT * FROM shop WHERE admin_approval = 1 And user_id !='.$session_id.' ORDER BY name";
        }
        else{
@@ -1098,7 +1099,7 @@ function get_all_location_store($location)
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM shop WHERE Address  like '%$location%' ";
+  $query="SELECT * FROM shop WHERE admin_approval =1 And Address  like '%$location%' ";
 
   $category_data = $ci->db->query($query);        
 
@@ -1262,12 +1263,22 @@ function get_category_all_store($id)
        //load databse library
        $ci->load->database();
        $session_id = $ci->session->userdata("id");
-       
-       if ($session_id) {
-  $query="SELECT * FROM shop WHERE user_id=".$id." And user_id!=".$session_id;
-       }else{
-        $query="SELECT * FROM shop WHERE user_id=".$id;
+       $location = $ci->session->userdata("location");
+       if($location){
+        if ($session_id) {
+          $query="SELECT * FROM shop WHERE shop_category_id=".$id." And Address ='".$location."' And user_id!=".$session_id;
+               }else{
+                $query="SELECT * FROM shop WHERE Address ='".$location."' And shop_category_id=".$id  ;
+               }
        }
+       else{
+
+       if ($session_id) {
+         $query="SELECT * FROM shop WHERE shop_category_id=".$id." And user_id!=".$session_id;
+       }else{
+        $query="SELECT * FROM shop WHERE shop_category_id=".$id;
+       }
+      }
   $category_data = $ci->db->query($query);        
 
   return $category_data->result(); 

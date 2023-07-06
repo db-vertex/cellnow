@@ -5,7 +5,7 @@
     
   <?php
 
-echo $aboutus['0']['verified_content'];
+   echo $aboutus['0']['verified_content'];
 
    ?>
 

@@ -248,19 +248,6 @@ foreach($shop as $value){
                     <div class="card-block" style="padding:8px">
                         <p class="card-title"><b><?php
                            $title = $value->name;
-                            if(strlen($title) <= 10)
-                              {
-                                echo ucfirst($title);
-                              }
-                              else
-                              {
-                                $y = substr($title,0,10) . '...';
-                                echo ucfirst($y);
-                              }
-                           
-                           ?></b></p>
-                        <p class="card-text"> <?php
-                           $title = $value->description;
                             if(strlen($title) <= 30)
                               {
                                 echo ucfirst($title);
@@ -271,18 +258,18 @@ foreach($shop as $value){
                                 echo ucfirst($y);
                               }
                            
-                           ?></p><br>
-                        <?php $username = get_user_name($value->user_id);?>
-                        <p class="card-title"><?php echo $username;?></p>
+                           ?></b></p>
+                       
+                     
                         <img src="<?php echo base_url();?>assets/images/location .png" > <span><?php
                            $title = $value->Address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
                            

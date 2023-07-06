@@ -216,12 +216,18 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                             </a>
                         </div>
               <div class="card-body">
-                            <div class="d-flex justify-content-between align-items-center">
+              <div class="row mt-1">
+                 <div class="col-9">
                             
                              <?php if($Categories_all_product->category_id != 4 && $Categories_all_product->pay_type !=2){ ?>
                          <p class="details_price">₹<?php echo $Categories_all_product->price; ?>
                                 </p>
 <?php } ?>
+<?php if($Categories_all_product->pay_type==2){?>
+  <p class="details_price">Donate</p>
+  <?php } ?>
+</div>
+                                                <div class="col-3">
                             <a  style="font-size:20px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
                                 href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
                                 style="font-size:20px; color:#69d3b0; padding: 0px;"
@@ -232,7 +238,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 data-cid="<?php echo $Categories_all_product->category_id; ?>"
                                 data-wishlist="<?php echo $wishlist; ?>"></i></a>
                               
-
+                                </div>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
 
@@ -251,28 +257,26 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                            ?></p>
 
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
-                                <p><?php
+                            <div class="row mt-1">
+                                                <div class="col-2">
+                                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                                </div>
+                                                <div class="col-8">
+                                                <p style="color: #575757;"><?php
                            $title = $Categories_all_product->address;
-                            if(strlen($title) <= 30)
+                            if(strlen($title) <= 15)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,30) . '...';
+                                $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
                               }
                            
-                           ?></p>
-                               
-                                    <!-- <p class="related_ads_details_button ">
-                                        <spam class="related_ads_details_button_text">Product Detail</spam>
-                                    </p> -->
+                           ?></p></div>
+                           </div>
                            
-
-                            </div>
                         </div>
             </div>
             </a>

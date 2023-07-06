@@ -152,8 +152,10 @@ class Product_filter_model extends CI_Model
     }}
     if (isset($sub_category)) {
         $sub_category_filter = implode("','", $sub_category);
+		
 	     if($sub_category_filter <= 12){
 			$query .= " AND subcategory_id IN('$sub_category_filter')";
+			
 		 }
 		 else if (($sub_category_filter >= 13 && $sub_category_filter <= 20) || $sub_category_filter == 69 ) {
 			$query .= " AND Education_Type IN('$sub_category_filter')";

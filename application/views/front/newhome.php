@@ -350,15 +350,15 @@ foreach ($category as $key => $cat) {
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                         <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                 class="w-100 va-thumbnail" />
-                        <p style="margin-left:-90px;"> 
-                        <?php if($pro->pay_type ==1){ ?>
-                            <img class="img-fluid"
+                                <p style="margin-left:5px;"> 
+                                    <?php if($pro->pay_type ==1){ ?>
+                                      <img class="img-fluid image2"
                                 src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
-   margin-top: -20%; width:80px; "><?php }?>
-                            <?php if($pro->verified_product ==1){ ?>
-                            <img class="img-fluid" src="<?php echo base_url(); ?>assets/images/verified.png" style="
-   margin-top: -20%; width:80px; ">
-                        <p>
+   width:80px; ">
+                            <?php } if($pro->verified_product ==1){ ?>
+                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png" style="
+   width:80px; ">
+                      
 
                             <?php }?>
                         </p>

@@ -87,8 +87,8 @@
       border-radius: 6px;
       border: 0px;
       width: 100%;
-      max-height: 200px;
-      min-height: 200px;
+      max-height: 250px;
+      min-height: 250px;
     }
   </style>
 </head>
@@ -178,21 +178,28 @@
                   </a>
                 </div>
                 <div class="card-body">
-                  <div class="d-flex justify-content-between align-items-center">
+                <div class="row mt-1">
+                 <div class="col-9">
                     <?php if ($pro->category_id != 4 && $pro->pay_type != 2) { ?>
                       <p class="details_price">₹
                         <?php echo $pro->price; ?>
                       </p>
                     <?php } ?>
-                    <a style="font-size:15px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
+                    <?php if ($pro->pay_type == 2) { ?>
+                      <p class="details_price">Donate
+                      </p>
+                    <?php } ?>
+                    </div>
+                                                <div class="col-3">
+                    <a style="font-size:20px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
                       href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart"
-                          aria-hidden="true" style="font-size:15px; color:#69d3b0; padding: 0px;"
+                          aria-hidden="true" style="font-size:20px; color:#69d3b0; padding: 0px;"
                           data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
                         class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $pro->id; ?>"
                         data-pid="<?php echo $pro->id; ?>" data-cid="<?php echo $pro->category_id; ?>"
                         data-wishlist="<?php echo $wishlist; ?>"></i></a>
 
-
+                      </div>
                   </div>
                   <div class="d-flex justify-content-between align-items-center">
 
@@ -211,22 +218,26 @@
 
                   </div>
 
-                  <div class="d-flex justify-content-between align-items-center">
-                    <p> <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png"></p>
-                    <p style="color: #575757;">
-                      <?php
-                      $title = $pro->address;
-                      if (strlen($title) <= 12) {
-                        echo ucfirst($title);
-                      } else {
-                        $y = substr($title, 0, 12) . '...';
-                        echo ucfirst($y);
-                      }
-
-                      ?>
-                    </p>
-                   
-                  </div>
+                  <div class="row mt-1">
+                                                <div class="col-2">
+                                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                                </div>
+                                                <div class="col-8">
+                                                <p style="color: #575757;"><?php
+                           $title = $pro->address;
+                            if(strlen($title) <= 15)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,15) . '...';
+                                echo ucfirst($y);
+                              }
+                           
+                           ?></p> 
+                           </div>
+                           </div>
                 </div>
               </div>
               </a>

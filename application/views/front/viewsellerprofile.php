@@ -197,9 +197,12 @@ width: 131.9px; border-color:#10B981;">
 
                             </div>
                           
-                                <div class="d-flex justify-content-between align-items-center">
-                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
-                                <p style="color: #575757;"><?php
+                            <div class="row mt-1">
+                                                <div class="col-2">
+                                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                                </div>
+                                                <div class="col-8">
+                                                <p style="color: #575757;"><?php
                            $title = $pro->address;
                             if(strlen($title) <= 15)
                               {
@@ -212,8 +215,10 @@ width: 131.9px; border-color:#10B981;">
                               }
                            
                            ?></p>
-                               
-                            </div>
+                                                </div>
+                                   
+                                            </div>
+                             
                            
                      
                         </div>
