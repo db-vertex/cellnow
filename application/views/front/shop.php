@@ -204,7 +204,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 href="<?php echo base_url(); ?>welcome/shop"
                                 style="background-color: #10b981; color:#fff" class="btn" role="button"
                                 aria-disabled="true" id="a">Take Your Shop/Services online on celnow</a>
-                            <p class="text-muted mt-4">Note: you can not change
+                            <p class="text-muted mt-4">Note: Once you will submit the details of shop then you can not change
                             </p>
                         </div>
                     </div>

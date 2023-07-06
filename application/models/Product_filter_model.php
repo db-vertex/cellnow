@@ -404,12 +404,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 										   </div>
 										   </div>
 									  
-										   <a
-											   href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
-											   <p class="related_ads_details_button ">
-												   <spam class="related_ads_details_button_text">Product Detail</spam>
-											   </p>
-										   </a>
+										 
 									   </div>
 								   </div>
 							   </div>

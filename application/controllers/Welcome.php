@@ -545,9 +545,7 @@ $sub .= '</h6>
 	} else {
 			$sub .= '<center><img  src="https://dbvertex.com/celnow/assets/images/no_product .png"></center>';
 		}
-		if($shop_count >4){
-			$sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn">See All</a></center>';
-			   } 
+		
 		echo $sub;
 
 	}
@@ -753,7 +751,7 @@ $sub .= '</h6>
 			}
 			$randCode = $alpha_key;
 			$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-			$messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+			$messages = "You verification otp for CELNOW is " . $randCode;
 
 			$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
 
