@@ -1266,9 +1266,9 @@ function get_category_all_store($id)
        $location = $ci->session->userdata("location");
        if($location){
         if ($session_id) {
-          $query="SELECT * FROM shop WHERE shop_category_id=".$id." And Address ='".$location."' And user_id!=".$session_id;
+          $query='SELECT * FROM shop WHERE Address LIKE "%' . $location . '%" AND shop_category_id='.$id.'  And user_id!='.$session_id;
                }else{
-                $query="SELECT * FROM shop WHERE Address ='".$location."' And shop_category_id=".$id  ;
+                $query = 'SELECT * FROM shop WHERE Address LIKE "%' . $location . '%" AND shop_category_id=' . $id;
                }
        }
        else{
