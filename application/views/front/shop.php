@@ -127,6 +127,22 @@
         order: 0;
         flex-grow: 0;
     }
+
+    @media (min-width: 350px) and (max-width: 459px){
+
+        #a {
+        margin-right: 10px;
+        border-color: #78d7b8;
+        border-radius: 60px;
+        font-family: open sans;
+        font-weight: 550;
+        font-size: 10px;
+        padding: 4px 10px;
+        max-width: 100%;
+
+    }
+    }
+
     </style>
 </head>
 
@@ -612,8 +628,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
     </div>
 
 
-    <div class="container-fluid mt-5">
-        <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
+    <div class="container-fluid px-0 mt-5">
+        <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
     </div>
 
 

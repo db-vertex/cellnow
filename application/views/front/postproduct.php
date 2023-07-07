@@ -246,6 +246,11 @@
         letter-spacing: 0em;
         text-align: center;
         color: #F5F5F5;
+        
+    }
+
+    .none{
+        display: none;
     }
 
     .product_submit_button:hover {
@@ -541,15 +546,16 @@ swal({
                         <div class="row g-3">
 
                             <div class="col-12">
+                               
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
+                                        value="3"checked>
+                                    <label class="form-check-label" for="inlineRadio2">Bost Ads</label>
+                                </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1"
                                         value="0" >
                                     <label class="form-check-label" for="inlineRadio1">Normal</label>
-                                </div>
-                                <div class="form-check form-check-inline">
-                                    <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
-                                        value="3"checked>
-                                    <label class="form-check-label" for="inlineRadio2">Bost Ads(Rs. 125)</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio3"
@@ -1383,23 +1389,81 @@ swal({
                             </div>
 
                             <div class="col-12">
+                                <label for="address" class="form-label post_input_lable">Get your product verified now:
+
+At CelNow, we value trust, transparency, and authenticity. We understand the importance of ensuring a safe and secure marketplace for our users. That's why we offer a product verification process that allows you to showcase your items as verified on our platform. In this guide, we'll walk you through the steps to get your products verified and explain the numerous benefits it brings. Let's get started!
+
+ 
+
+Steps to get Verification tag:
+
+Step 1: Create an Account on Celnow
+
+If you haven't already, visit our website (www.celnow.com) and sign up for an account. It only takes a few minutes, and you'll gain access to a wide range of features and opportunities.
+
+ 
+
+Step 2: Prepare Your Product Information
+
+Gather all the necessary information about the product you want to get verified. This includes details like the brand, model, condition, and any additional features or accessories it may come with. Necessary bills or latest job sheets if any related to the product you want to get verified.
+
+Fill out the required fields while posting product on CelNow with accurate information about your product. You may also need to upload clear and high-quality images showcasing the item's condition and any unique aspects.
+
+ 
+
+Step 3: Choose the Verification Method (Charges may be applicable)
+
+Celnow provides both online and offline verification methods to cater to different needs. Select the option that suits you best:
+
+   a) Online Verification: If your product qualifies for online verification, our team will guide you through the necessary steps. This may involve answering additional questions or providing supporting documents to establish authenticity. For online verification talk with our executive on 8377935333 and follow the guided steps. 1st verification free of cost. Every other verification will be charged fixed cost. (Rupees 20).
+
+ 
+
+   b) Offline Verification: In some cases, CelNow offers offline verification through our network of authorized service points. These service points are registered professionals or shops specialized in specific fields. Visit the nearest service point relevant to your product category, where they will verify the item's authenticity. (Search the nearest registered on our website in the nearby by service professionals or service points section)- Charges will be applicable.
+
+ 
+
+Step 4: Enjoy the Benefits of Verified Products
+
+Once your product is successfully verified, it will receive a special verified badge on its listing. Here are the benefits you can enjoy as a verified product seller:
+
+ 
+
+   - Enhanced Trust: Verified products instill confidence in potential buyers, showcasing your commitment to providing genuine and reliable items.
+
+ 
+
+   - Increased Visibility: Verified products often receive higher visibility and prominence in search results, attracting more interested buyers.
+
+ 
+
+   - Faster Transactions: Buyers tend to prioritize verified products due to the added trust and assurance, leading to quicker and smoother transactions.</label>
+                               
+                            </div>
+
+                            <div class="col-12" id="verified_option">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
-                                        required>
+                                    <input class="form-check-input " name="verified_admin" type="checkbox" value="yes" onchange="valChange(this)">
                                     <label class="form-check-label" for="flexCheckChecked">
-                                    <a style="color:black;" href="<?php echo base_url();?>welcome/verify_content"> How to verified product process</a>
+                                       Rs.10 (pay for product verified)
                                     </label>
                                 </div>
                             </div>
 
-                            <input type="text" class="form-control " name="user_id" id="user_id" placeholder=""
+                            <input type="text" class="form-control" name="user_id" id="user_id" placeholder=""
                                 value="<?php echo $user['user_id']; ?>" rows="8" hidden />
                             <input type="text" class="form-control" name="latitude" id="latitude" hidden />
                             <input type="text" class="form-control" name="longitude" id="longitude" hidden />
                             <div class="my-4"> </div>
 
-                            <div class="col-sm-6 col-6 ">
+                            <div class="col-sm-6 col-6 none" id="sub">
                                 <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit</button>
+                            </div>
+                            <div class="col-sm-6 col-6 " id="submit">
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit (Rs.125)</button>
+                            </div>
+                            <div class="col-sm-6 col-6 none" id="visible">
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit (Rs.135)</button>
                             </div>
 
                             <div class="col-sm-6 col-6">
@@ -1606,6 +1670,7 @@ swal({
         }
     });
 
+   
 
 
     $('#Job_Location').change(function() {
@@ -1618,6 +1683,45 @@ swal({
         }
     });
     </script>
+
+    <script>
+$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+        var inputValue = $(this).attr("value");
+       if(inputValue!=3){
+        document.getElementById("verified_option").style.display = "none";
+        document.getElementById("submit").style.display = "none";
+        document.getElementById("sub").style.display = 'block';
+        document.getElementById("visible").style.display = 'none';
+       }
+       else{
+        document.getElementById("verified_option").style.display = "block";
+        document.getElementById("submit").style.display = "block";
+        document.getElementById("sub").style.display = 'none';
+       }
+      
+     
+      
+    });
+});
+
+
+    function valChange(element)
+{
+   if (element.checked)
+  {
+    document.getElementById("sub").style.display = "none";
+        document.getElementById("submit").style.display = "none";
+        document.getElementById("visible").style.display = 'block';
+  } else
+  {
+    document.getElementById("visible").style.display = "none";
+        document.getElementById("submit").style.display = "block";
+        document.getElementById("sub").style.display = 'none';
+  }
+   }
+
+</script>
     <script type="text/javascript">
     $(document).ready(function() {
 

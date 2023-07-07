@@ -2361,12 +2361,13 @@ $sub .= '</h6>
 
 	public function saveproduct()
 	{
-
+      
 		$category = $this->input->post('category');
 
 		if ($category == 1) {
 			$postData = array();
 			$postData['title'] = $this->input->post('Title');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
 			$postData['user_id'] = $this->input->post('user_id');
 			$postData['category_id'] = $this->input->post('category');
 			$postData['subcategory_id'] = $this->input->post('subcategory');
@@ -2414,8 +2415,10 @@ $sub .= '</h6>
 			
 			$table = "category_reusable_parts";
 		} else if ($category == 2) {
+			
 			$postData = array();
 			$postData['title'] = $this->input->post('Title');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
 			$postData['user_id'] = $this->input->post('user_id');
 			$postData['category_id'] = $this->input->post('category');
 			$postData['subcategory_id'] = $this->input->post('subcategory');
@@ -2454,6 +2457,7 @@ $sub .= '</h6>
 		} else if ($category == 3) {
 			$postData = array();
 			$postData['title'] = $this->input->post('Title');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
 			$postData['user_id'] = $this->input->post('user_id');
 			$postData['category_id'] = $this->input->post('category');
 			$postData['subcategory_id'] = $this->input->post('subcategory');
@@ -2485,6 +2489,7 @@ $sub .= '</h6>
 		} else if ($category == 4) {
 			$postData = array();
 			$postData['title'] = $this->input->post('Title');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
 			$postData['user_id'] = $this->input->post('user_id');
 			$postData['category_id'] = $this->input->post('category');
 			$postData['subcategory_id'] = $this->input->post('subcategory');
@@ -2592,8 +2597,7 @@ $sub .= '</h6>
 
 		}
 		if($sponser==3){
-				
-			$redirectUrl = 'welcome/pay/' . $id;
+			$redirectUrl = 'welcome/pay/' .$id.'/'.$category;
 			return redirect($redirectUrl);
 		}
 		$this->session->set_flashdata('saveproduct', 'Product Post Succesfully.');
@@ -2604,14 +2608,36 @@ $sub .= '</h6>
 
 	}
 
-	public function pay($id)
+	public function pay($id,$category)
 	{
 		$_SESSION['product_id'] = $id;
-		$result = $this->db->where('id', $id)->get('category_reusable_parts')->result();
+		$_SESSION['category_id'] = $category;
+		
+		if($_SESSION['category_id']==1){
+			$result = $this->db->where('id', $id)->get('category_reusable_parts')->result();
+
+		}
+		if($_SESSION['category_id']==2){
+			$result = $this->db->where('id', $id)->get('category_tuitions')->result();
+
+		}
+		if($_SESSION['category_id']==3){
+			$result = $this->db->where('id', $id)->get('category_job')->result();
+
+		}
+		if($_SESSION['category_id']==4){
+			$result = $this->db->where('id', $id)->get('category_internships')->result();
+
+		}
 		foreach($result as $dataji)
-		$_SESSION['category_id']=$dataji->category_id;
-		$_SESSION['amount'] ='125';
-		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		if($dataji->verified_admin=='yes'){
+			$_SESSION['amount'] ='135';
+		}
+        else{
+	       $_SESSION['amount'] ='125';
+        }
+		
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');                                                                                                                
 		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
 	  $api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
 	  /**
@@ -2706,8 +2732,9 @@ $sub .= '</h6>
 	{
 		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
 		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
-	  $success = true;
-	  $error = "payment_failed";
+	    $success = true;
+	 
+	   $error = "payment_failed";
 	  if (empty($_POST['razorpay_payment_id']) === false) {
 		$api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
 	  try {
@@ -2720,8 +2747,28 @@ $sub .= '</h6>
 			'user_id' => $this->session->userdata('id')
 		  );
 		  $api->utility->verifyPaymentSignature($attributes);
+		  if($_SESSION['category_id']==1){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_reusable_parts', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==2){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==3){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==4){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
+
+		  }
+		  
 		  $insert = $this->user->payment($attributes);
 		} catch(SignatureVerificationError $e) {
+			if($_SESSION['category_id']==1){
+				$this->db->query("delete from category_reusable_parts where category_id=".$_SESSION['category_id']." and id=".$_SESSION['product_id']);
+			}
 		  $success = false;
 		  $error = 'Razorpay_Error : ' . $e->getMessage();
 		}
@@ -2768,7 +2815,7 @@ $sub .= '</h6>
 	  $data = array(
 		"key" => "rzp_test_dfwGYguqxcme16",
 		"amount" => $amount,
-		"name" => "Celnow",
+		"name" => "CelNow",
 		"description" => "Learn To Code",
 		"image" => base_url() . "assets/images/CelNow 5 1.png",
 		"prefill" => array(

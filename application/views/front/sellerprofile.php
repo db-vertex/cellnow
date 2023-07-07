@@ -83,8 +83,11 @@ html,body
 
   <body>
   
+  <div class="container-fluid px-0" style=" margin-top: 110px;">
+    <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
+  </div>
 
-<div class="container" style=" margin-top: 180px;">
+<div class="container">
   
 <?php  if($error=$this->session->flashdata('Editproduct')){  ?>
             <div class="row text-center" style="justify-content: center; ">
@@ -255,9 +258,7 @@ width: 131.9px; border-color:#10B981;">
 </div>
 
 
-<div class="container-fluid mt-5">
-<img src="<?php echo base_url();?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
-</div>
+
 
 
 
