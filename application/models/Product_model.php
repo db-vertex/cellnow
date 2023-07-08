@@ -1043,15 +1043,7 @@ function paytype_update_comman_query($category_id,$product_id,$pay_type){
 }
 
       public function generateThumbnailProduct($product_id=0){
-//  $value=$this->db->query("SELECT product.*, product_image.product_image, product_image.product_id FROM product inner JOIN `product_image` on product.id=product_image.product_id where product_id=$product_id GROUP by product_id")->row();
-    // $img=$value->product_image;
-    // // echo $img;
-    // $source="./uploads/product/$img";
-    // $destImagePath="./uploads/product/thumbnails/$img";
-    // $destImagdePath="https://dbvertex.com/amazonclone/uploads/product/thumbnails/$img";
-    // $thumbWidth=300;
-//   $this->generateThumbnail($source, $destImagePath, $thumbWidth);
-//   $this->db->update("product", ["thumb_image"=>$destImagdePath], "id=".($value->id));
+
  
 }
 

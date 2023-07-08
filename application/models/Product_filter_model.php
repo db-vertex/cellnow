@@ -331,17 +331,17 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
 		   <div class="card">
 		   <a
-		   href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
+		   href="'.base_url("welcome/productdetail/").''.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
 			   <img  class="w-100 va-thumbnail image1" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
 			   </a>
 			   <p>';
 			   if($row['pay_type'] ==1){ 
 				 $pro.='<img class="img-fluid image2"
-                                src="https://dbvertex.com/celnow/assets/images/sponsor.png" style="
+                                src="'.base_url("assets/images/sponsor.png").'" style="
     width:80px; ">';
 			   }
                              if($row['verified_product'] ==1){ 
-                            $pro .='<img class="img-fluid image3" src="https://dbvertex.com/celnow/assets/images/verified.png" style="
+                            $pro .='<img class="img-fluid image3" src="'.base_url("assets/images/verified.png").'" style="
     width:80px; ">
                         <p>';
 
@@ -383,7 +383,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 				$pro .= '  <div class="d-flex justify-content-between align-items-center">
 				<div class="row">
 				<div class="col-3">
-				<img src="https://dbvertex.com/celnow/assets/images/location .png">
+				<img src="'.base_url("assets/images/location .png").'">
 				</div>
 				<div class="col-9 mt-1">
 					<p tyle="color: #575757;">';
@@ -452,16 +452,16 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
 		   <div class="card">
 		   <a
-		   href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
+		   href="'.base_url("welcome/productdetail/").''.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
 		   <img  class="w-100 va-thumbnail image1" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
 			  </a> <p style="margin-left:10px;">';
 			   if($row['pay_type'] ==1){ 
 				 $pro.='<img class="img-fluid image2"
-                                src="https://dbvertex.com/celnow/assets/images/sponsor.png" style="
+                                src="'.base_url("assets/images/sponsor.png").'" style="
     width:80px; ">';
 			   }
                              if($row['verified_product'] ==1){ 
-                            $pro .='<img class="img-fluid image3" src="https://dbvertex.com/celnow/assets/images/verified.png" style="
+                            $pro .='<img class="img-fluid image3" src="'.base_url("assets/images/verified.png").'" style="
    width:80px; ">
                         <p>';
 
@@ -503,7 +503,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 				    <div class="d-flex justify-content-between align-items-center">
 				<div class="row">
 				<div class="col-3">
-				<img src="https://dbvertex.com/celnow/assets/images/location .png">
+				<img src=""'.base_url("assets/images/location .png").'">
 				</div>
 				<div class="col-9 mt-1">
 					<p tyle="color: #575757;">';
@@ -524,12 +524,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 										   </div>
 										   </div>
 									  
-										   <a
-											   href="https://dbvertex.com/celnow/welcome/productdetail/'.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
-											   <p class="related_ads_details_button ">
-												   <spam class="related_ads_details_button_text">Product Detail</spam>
-											   </p>
-										   </a>
+										  
 									   </div>
 								   </div>
 							   </div>

@@ -71,10 +71,7 @@
 <?php  echo form_open('admin/login');  ?>
 
     
-        <!--<div style="height:110px; width:100%; padding:10px">-->
-            
-        <!--    <img src="https://dbvertex.com/classified/assets/images/Logo.png" style="margin-left:25%;" width="50%" height="100%">-->
-        <!--</div>-->
+       
       <div class="form-group has-feedback">
       <div>
           <?php echo form_input(['class'=>'form-control form-control-user span12','placeholder'=>'Email','name'=>'email','value'=>set_value('email')]);  ?>

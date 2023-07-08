@@ -284,7 +284,7 @@ foreach ($category as $key => $cat) {
 
                                 <img class="btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
                                     data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
-                                    src="https://dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>"
+                                    src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>"
                                     alt="">
                                     <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo $sub->product_type; ?>
