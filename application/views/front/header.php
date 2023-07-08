@@ -1145,7 +1145,7 @@ padding-left: 90px;
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="">
                         <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
                             <div class="search_wrap search_wrap_6 m-0 ">
-                                <div class="search_box mt-3" style="width:130%; margin-right:100px;">
+                                <div class="search_box mt-3" style="width:130%; margin-right:170px;">
                                 <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
          
          <input type="text" value="<?php $location= $this->session->userdata("location"); if($this->session->userdata("location")){ echo $location;} ; ?>" name="location" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />

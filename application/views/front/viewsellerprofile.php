@@ -98,8 +98,10 @@ html,body
 
   <body>
   
-
-<div class="container" style="margin-top:160px;">
+  <div class="container-fluid px-0" style=" margin-top: 110px;">
+    <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
+  </div>
+<div class="container" >
   
     <div class="shadow p-4 mb-5 bg-body rounded-5" style="margin:25px"><br>
    
