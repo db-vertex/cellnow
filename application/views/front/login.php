@@ -17,6 +17,18 @@
             -moz-user-select: none;
             user-select: none;
         }
+.eyes{
+    position: absolute;
+    top: 255px;
+    right: 32px;
+}
+@media (min-width: 308px) and (max-width:400px) {
+    .eyes{
+    position: absolute;
+    top: 275px;
+    right: 32px;
+} 
+}
 
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
@@ -197,7 +209,7 @@
                                     <label>Enter Your Password</label>
                                     <input name="password" class="form-control" placeholder="Password" id="password" type="password"
                                         maxlength="20" style="border-radius:30px; border-color:#13C571">
-                                        <p id="showPasswordToggle" class="btn " style="margin-top: -70px; margin-left:80%;">
+                                        <p id="showPasswordToggle" class="btn eyes">
                                 <i id="passwordIcon" class="fa fa-eye"></i>
                                 </p>
                                     <span style="color:red;">
