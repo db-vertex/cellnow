@@ -325,7 +325,7 @@ foreach ($category as $key => $cat) {
         <div class="row" id="product_list">
             <?php
                                 
-                  $product = get_all_boost();   
+            $product = get_all_boost();   
               $all_count =get_all_boost_count();
              
             
@@ -528,7 +528,7 @@ foreach ($category as $key => $cat) {
 
                     <div class="va-card va-card_category mt-2"> 
                             <p  style="text-align:center;" class="my-auto pouler_Categories" onclick="return getshop(<?php echo $cat->id; ?>)">
-                                <img  class="btn-change new<?php echo $cat->id; ?>"
+                                <img  class="btn-change newshop<?php echo $cat->id; ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
                                 <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo ucfirst($cat->shop_category); ?></center>
@@ -949,7 +949,7 @@ function getshop(category_id){
  
 //var res = "";
  $("img").removeClass("select");
- $(".new"+category_id).addClass("select");
+ $(".newshop"+category_id).addClass("select");
 
     // var allch =  $("#").val();
 
