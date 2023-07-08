@@ -663,7 +663,7 @@ function get_all_product_type()
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM product_type WHERE category_id=1";
+  $query="SELECT * FROM product_type WHERE category_id=1 order by product_type asc";
 
   $category_data = $ci->db->query($query);        
 

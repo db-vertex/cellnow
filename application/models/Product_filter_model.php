@@ -449,7 +449,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 			   $wishlist = 0;
 		   }
 		   
-		   $pro .= '    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
+		   $pro .= '<div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
 		   <div class="card">
 		   <a
 		   href="'.base_url("welcome/productdetail/").''.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">

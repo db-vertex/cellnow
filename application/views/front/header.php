@@ -20,7 +20,7 @@
     </script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <link rel="icon" sizes="196x196" href="https://work.dbvertex.com/celnow/assets/images/CelNow 5 1.png" type="image/png">
+    <link rel="icon" sizes="196x196" href="<?php echo base_url();?>assets/images/CelNow 5 1.png" type="image/png">
     <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     <title>CelNow</title>
     <style>
@@ -462,6 +462,11 @@ margin-top: 25%;
         transform: scale(1.0);
     }
 
+    .pouler_Category:hover {
+        -webkit-transform: scale(1.0);
+        transform: scale(1.0);
+    }
+
     .link-plain-f,
     .link-plain-f:hover,
     .link-plain-f:active,
@@ -775,11 +780,11 @@ margin-top: 10%;
     .deals-scroll-right {
         top: -35px;
         bottom: 0;
-        right: -30px;
+        right: 0px;
     }
 
     .deals-scroll-left_urgent {
-        top: 0;
+        top: -35px;
         left: 5px;
         bottom: 0;
     }

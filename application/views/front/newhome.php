@@ -249,8 +249,8 @@ foreach ($category as $key => $cat) {
     <div class="row">
         <div class="va-carrousel-section">
             <div class="va-whitewrap">
-                <div id="va_container_urgent">
-                    <button class="deals-scroll-left_urgent deals-paddle " id="left_sponsor_button">
+                <div id="va_container">
+                    <button class="deals-scroll-left deals-paddle " id="left_sponsor_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                             class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 320 512">
@@ -259,7 +259,7 @@ foreach ($category as $key => $cat) {
                             </path>
                         </svg>
                     </button>
-                    <div class="va-carrousel-flexbox_urgent" id="sub-list">
+                    <div class="va-carrousel-flexbox" id="sub-list">
                         <?php
 					         $cateory =  '';
                
@@ -300,7 +300,7 @@ foreach ($category as $key => $cat) {
 
 
                     </div>
-                    <button class="deals-scroll-right_urgent deals-paddle " id="right_sponsor_button">
+                    <button class="deals-scroll-right deals-paddle " id="right_sponsor_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -480,16 +480,7 @@ foreach ($category as $key => $cat) {
          <input type="search"  name="location" class="form-control rounded-5"  placeholder="Search for the store" id="location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" id="shopsubmit" style="padding:6px 10px">Search </button>
       
-                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
-                        <div class="searchbox-wrap">
-                            <input type="text" value="" id="Location" name="anything" aria-label="Search"
-                                aria-describedby="search-addon" class="search_input form-input"
-                                placeholder="Search for the Product you want!">
-                            <input type="text" class="form-control" name="latitude" id="latitude" hidden />
-                            <input type="text" class="form-control" name="longitude" id="longitude" hidden />
-                            <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
-                        </div>
-                    </form> -->
+                
 
 
                 </div>
@@ -506,8 +497,8 @@ foreach ($category as $key => $cat) {
         <div class="va-whitewrap">
 
 
-            <div id="va_container ">
-                <button class="deals-scroll-left deals-paddle" id="left_urgent_button">
+            <div id="va_container_urgent ">
+                <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                         class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                         viewBox="0 0 320 512">
@@ -517,7 +508,7 @@ foreach ($category as $key => $cat) {
                     </svg>
                 </button>
 
-                <div class="va-carrousel-flexbox">
+                <div class="va-carrousel-flexbox_urgent">
                     <?php $id = $this->uri->segment(3); 
                 $category = get_all_shopcategory();
              
@@ -526,7 +517,7 @@ foreach ($category as $key => $cat) {
 
                     <div class="va-card va-card_category mt-2"> 
                             <p  style="text-align:center;" class="my-auto pouler_Categories" onclick="return getshop(<?php echo $cat->id; ?>)">
-                                <img  class="btn-change new<?php echo $cat->id; ?>"
+                                <img  class="btn-change newshop<?php echo $cat->id; ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
                                 <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo ucfirst($cat->shop_category); ?></center>
@@ -537,7 +528,7 @@ foreach ($category as $key => $cat) {
                     <?php } ; ?>
 
 
-                    <button class="deals-scroll-right deals-paddle" id="right_urgent_button">
+                    <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -961,7 +952,7 @@ function getshop(category_id){
  
 //var res = "";
  $("img").removeClass("select");
- $(".new"+category_id).addClass("select");
+ $(".newshop"+category_id).addClass("select");
 
     // var allch =  $("#").val();
 

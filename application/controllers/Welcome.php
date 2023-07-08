@@ -274,7 +274,7 @@ $sub .= '</h6>
 				}
 			}
 		} else {
-			$sub .= '<center><img  src="https://work.dbvertex.com/celnow/assets/images/no_product .png"></center>';
+			$sub .= '<center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>';
 		}
 		 if($all_count >4){
          $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn">See All</a></center>';
@@ -357,7 +357,7 @@ $sub .= '</h6>
 				}
 			}
 		} else {
-			$sub .= '<center><img  src="https://work.dbvertex.com/celnow/assets/images/no_product .png"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
 		}
 		echo $sub;
 
@@ -433,7 +433,7 @@ $sub .= '</h6>
 				}
 			}
 		} else {
-			$sub .= '<center><img  src="https://work.dbvertex.com/celnow/assets/images/no_product .png"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
 		}
 		echo $sub;
 
@@ -457,7 +457,7 @@ $sub .= '</h6>
 					<div class="card">
 							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
 							
-									<img class="va-thumbnail" alt="Card image cap" src="https://work.dbvertex.com/celnow/uploads/shop/' . $value->shop_images . '">
+									<img class="va-thumbnail" alt="Card image cap" src="'.base_url("uploads/shop/") . $value->shop_images . '">
 								
 							
 							</div>
@@ -469,7 +469,7 @@ $sub .= '</h6>
 								</div>
 								<div class="d-flex justify-content-between align-items-center">
 									
-										<h6><img style="max-width:25px;" src="https://work.dbvertex.com/celnow/assets/images/location .png">';
+										<h6><img style="max-width:25px;" src="'.base_url("assets/images/location .png").'">';
 				$sub .= strlen($value->Address) <= 20 ? ucfirst($value->Address) : ucfirst(substr($value->Address, 0, 20) . '...');
 				$sub .= '</h6>
 									
@@ -484,7 +484,7 @@ $sub .= '</h6>
 
 			}
 		} else {
-			$sub .= '<center><img  src="https://work.dbvertex.com/celnow/assets/images/no_product .png"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
 		}
 
 		echo $sub;
@@ -3456,7 +3456,7 @@ $sub .= '</h6>
 					$pro .= '<li class="left">
                                             
                                             <span class="avatar available tooltips" data-toggle="tooltip " data-placement="right" data-original-title="Yanique Robinson">
-                                                <img src="https://work.dbvertex.com/celnow/uploads/profile/Asset_1@2x-8.png" alt="avatar" class="img-circle ">
+                                                <img src="'.base_url("assets/images/Asset_1@2x-8.png").'" alt="avatar" class="img-circle ">
                                             </span>
                                             <div class="body">   
                                                 <div class="message well well-sm">

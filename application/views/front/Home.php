@@ -246,11 +246,12 @@ foreach ($category as $key => $cat) {
 </div>
 
 <div class="container">
+
     <div class="row">
         <div class="va-carrousel-section">
             <div class="va-whitewrap">
                 <div id="va_container">
-                    <button class="deals-scroll-left deals-paddle " id="left_sponsor_button">
+                    <button class="deals-scroll-left deals-paddle " id="left_sponser_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                             class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
                             viewBox="0 0 320 512">
@@ -300,7 +301,7 @@ foreach ($category as $key => $cat) {
 
 
                     </div>
-                    <button class="deals-scroll-right deals-paddle " id="right_sponsor_button">
+                    <button class="deals-scroll-right deals-paddle " id="right_sponser_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
                             xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
@@ -341,7 +342,7 @@ foreach ($category as $key => $cat) {
             
             ?>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
-            <a
+            <a class="link-plain link-plains"
                             href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"> 
                             <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
@@ -503,23 +504,21 @@ foreach ($category as $key => $cat) {
 
 
 <div class="container ">
-<div class="row px-0">
+
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
+        <div id="va_container_urgent">
+        <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                    class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512">
+                    <path fill="currentColor"
+                        d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                    </path>
+                </svg>
+            </button>
 
-
-            <div id="va_container_urgent ">
-                <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                        class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512">
-                        <path fill="currentColor"
-                            d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                        </path>
-                    </svg>
-                </button>
-
-                <div class="va-carrousel-flexbox_urgent">
+            <div class="va-carrousel-flexbox_urgent">
                     <?php $id = $this->uri->segment(3); 
                 $category = get_all_shopcategory();
              
@@ -527,7 +526,7 @@ foreach ($category as $key => $cat) {
                   ?>
 
                     <div class="va-card va-card_category mt-2"> 
-                            <p  style="text-align:center;" class="my-auto pouler_Categories" onclick="return getshop(<?php echo $cat->id; ?>)">
+                            <p  style="text-align:center;" class="my-auto pouler_Category" onclick="return getshop(<?php echo $cat->id; ?>)">
                                 <img  class="btn-change newshop<?php echo $cat->id; ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
                                 <center style="color:black; font-size:12px; font-weight:500">
@@ -536,24 +535,22 @@ foreach ($category as $key => $cat) {
                        
                     </div>
 
-                    <?php } ; ?>
-                    </div>
-                    <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                            class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                            <path fill="currentColor"
-                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                            </path>
-                        </svg>
-                    </button>
-
-               
-            </div>
+                    <?php } ?>
+                   </div>
+                   <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
+                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                    class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 320 512">
+                    <path fill="currentColor"
+                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                    </path>
+                </svg>
+            </button>
+                </div>
 
         </div>
     </div>
-    </div>
+  
                 </div>
 
 <section>
@@ -575,7 +572,7 @@ foreach ($category as $key => $cat) {
              ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="" >
-            <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>">
+            <a class="link-plain link-plains" href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                        <img
@@ -597,11 +594,10 @@ foreach ($category as $key => $cat) {
                               {
                                 $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
+                                
                               }
                            
                            ?></h6>
-
-
 
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
@@ -695,7 +691,7 @@ foreach ($category as $key => $cat) {
             ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 postdonate">
-            <a href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
+            <a class="link-plain link-plains" href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                        <img
