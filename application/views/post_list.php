@@ -289,6 +289,7 @@ unset($_SESSION['msg']);?>
                  <th>Category</th>
                 
                   <th>Type</th>
+                  <th>verified option</th>
                   <th>Brand</th>
                   
                    <th>Price</th>
@@ -297,6 +298,7 @@ unset($_SESSION['msg']);?>
                  <th>Description</th>        
                   
                   <th>Pay Type</th>
+                  <th>verify</th>
                  
                   
                   
@@ -340,7 +342,8 @@ foreach($urgent as $valueu){
                </td>
                <td><?=$this->db->get_where("category", "id=".($valueu->category_id))->row()->category?></td>
                
-               <td><?php echo  $value->type;?></td>
+               <td><?php echo  $valueu->type;?></td>
+               <td><?php if(isset($valueu->verified_admin)) { echo  $valueu->verified_admin ; } ?></td>
                  <td><?php echo  $valueu->brand;?></td>
                        <td><?php echo  $valueu->price;?></td>
                <td><?php echo  $valueu->Description;?></td>
@@ -351,6 +354,11 @@ foreach($urgent as $valueu){
             <option value="0"<?=(($valueu->pay_type==0)?"selected":"")?>>Normal</option>
            
         </select></td>
+        <td> 
+   
+   <input type="button" name="active_status" value="verify" class="btn btn-info" data-productid = "">
+
+</td>  
                 </tr> 
                 <?php $i++; } ?>
             </tbody>

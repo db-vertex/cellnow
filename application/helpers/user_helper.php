@@ -325,17 +325,17 @@ function get_all_search_product($term)
        $ci->load->database();
        $session_id = $ci->session->userdata("id");
      if ($session_id) {
-    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price,cover_img ,verified_product,address from category_reusable_parts WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_internships WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id , price, cover_img ,verified_product ,address from category_job WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_tuitions WHERE user_id !='.$session_id.'
+    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price,cover_img ,verified_product,pay_type address from category_reusable_parts  WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_internships WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id , price, cover_img ,verified_product ,pay_type,address from category_job WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_tuitions WHERE pay_type!=3 AND user_id !='.$session_id.'
     ) as  custam  WHERE title like "%'.$term.'%" LIMIT 0,4';
      }
      else{
-      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_reusable_parts 
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_internships 
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_job
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,address from category_tuitions
+      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_reusable_parts WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_internships WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_job WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_tuitions WHERE pay_type!=3
       ) as  custam  WHERE title like "%'.$term.'%" LIMIT 0,4 ';
      }
     
@@ -376,17 +376,17 @@ function get_all_search_products($row)
        $ci->load->database();
        $session_id = $ci->session->userdata("id");
      if ($session_id) {
-    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE user_id !='.$session_id.'
+    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE  pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type!=3 AND user_id !='.$session_id.'
     ) s LIMIT '.$row.','.$rowperpage.'';
      }
      else{
-      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts 
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships 
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions
+      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type!=3 
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type!=3 
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type!=3 
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type!=3 
       ) s LIMIT '.$row.','.$rowperpage.'';
      }
     
@@ -478,17 +478,17 @@ function get_all_locationsearch_product($location)
        $ci->load->database();
        $session_id = $ci->session->userdata("id");
      if ($session_id) {
-    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE user_id !='.$session_id.'
-    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE user_id !='.$session_id.'
+    $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product,address from category_reusable_parts WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type!=3 AND user_id !='.$session_id.'
     ) as  custam  WHERE address like "%'.$location.'%"';
      }
      else{
-      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts 
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships 
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job
-      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions
+      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type!=3
       ) as  custam  WHERE address like "%'.$location.'%"  ';
      }
     
@@ -823,18 +823,18 @@ function get_product_by_subid($subcategory_id)
 
        
        if($session_id){
-  $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE   subcategory_id = $subcategory_id AND user_id != $session_id UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  Job_type	 = $subcategory_id AND user_id != $session_id UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  Job_type	 = $subcategory_id AND user_id != $session_id UNION 
+  $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND user_id != $session_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND user_id != $session_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND user_id != $session_id UNION 
  
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  Education_type = $subcategory_id AND user_id != $session_id";
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type!=3 AND Education_type = $subcategory_id AND user_id != $session_id";
        }
        else{
-        $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE   subcategory_id = $subcategory_id UNION
-        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  Job_type	 = $subcategory_id UNION
-        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  Job_type	 = $subcategory_id UNION 
+        $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE  pay_type!=3 AND subcategory_id = $subcategory_id UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type!=3 AND Job_type	 = $subcategory_id UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type!=3 AND Job_type	 = $subcategory_id UNION 
        
-        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  Education_type = $subcategory_id";
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type!=3 AND Education_type = $subcategory_id";
        }}
   
   
