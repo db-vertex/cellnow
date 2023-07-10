@@ -154,7 +154,7 @@
       
         </li>
 
-        <li class="<?php echo ($this->uri->segment(2) == 'about_us')?'active':''; ?>">
+        <!-- <li class="<?php echo ($this->uri->segment(2) == 'about_us')?'active':''; ?>">
           <a href="<?=  base_url('admin/verified_content'); ?>">
             <i class="fa fa-group"></i> <span>Product verified content</span>
             <span class="pull-right-container">
@@ -162,7 +162,7 @@
             </span>
           </a>
       
-        </li>
+        </li> -->
 
         <li class="<?php echo ($this->uri->segment(2) == 'about_us')?'active':''; ?>">
           <a href="<?=  base_url('admin/meta'); ?>">

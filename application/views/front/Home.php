@@ -379,13 +379,13 @@ foreach ($category as $key => $cat) {
 
                             <h6 class="dress-name"><?php
                            $title = $pro->title;
-                            if(strlen($title) <= 30)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,30) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -398,13 +398,13 @@ foreach ($category as $key => $cat) {
 
                             <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 25)
+                            if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,25) . '...';
+                                $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -516,7 +516,7 @@ foreach ($category as $key => $cat) {
                         d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
                     </path>
                 </svg>
-            </button>
+        </button>
 
             <div class="va-carrousel-flexbox_urgent">
                     <?php $id = $this->uri->segment(3); 

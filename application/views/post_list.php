@@ -470,7 +470,7 @@ foreach($sponsored as $valuef){
 <th>Description</th>        
 
 <th>Action</th> 
-<th>Paytype</th>   
+
 
 
 </tr>
@@ -519,13 +519,7 @@ foreach($active as $valuea){
 
 
 </td>  
-<td><select id="pay_type" data-product_id="<?php echo $valuea->id?>"  data-category_id="<?php echo $valuea->category_id?>" class="prioritydrop">
 
-<option value="1" <?=(($valuea->pay_type==1)?"selected":"")?>>Boost</option>
-<option  value="2" <?=(($valuea->pay_type==2)?"selected":"")?>>Donate</option>
-<option value="0"<?=(($valuea->pay_type==0)?"selected":"")?>>Normal</option>
-
-</select></td>
 </tr> 
 <?php $i++; } ?>
 </tbody>
@@ -556,7 +550,7 @@ foreach($active as $valuea){
 <th>Description</th>        
 
 
-<th>Paytype</th>   
+   
 <th>Action</th> 
 
 </tr>
@@ -605,13 +599,7 @@ foreach($deactive as $valued){
 
 
 </td>  
-<td><select id="pay_type" data-product_id="<?php echo $valued->id?>"  data-category_id="<?php echo $valued->category_id?>" class="prioritydrop">
 
-<option value="1" <?=(($valued->pay_type==1)?"selected":"")?>>Boost</option>
-<option  value="2" <?=(($valued->pay_type==2)?"selected":"")?>>Donate</option>
-<option value="0"<?=(($valued->pay_type==0)?"selected":"")?>>Normal</option>
-
-</select></td>
 
 </tr> 
 <?php $i++; } ?>

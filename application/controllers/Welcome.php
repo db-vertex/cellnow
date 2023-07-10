@@ -155,22 +155,23 @@ class Welcome extends CI_Controller
                 <h6 class="dress-name">';
 $title = $value->title;
 
-if (strlen($title) <= 30) {
+if (strlen($title) <= 25) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 30) . '...';
+    $y = substr($title, 0, 25) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>
             </div>
             <div class="d-flex justify-content-between align-items-center">
-                <h6>';
+			
+                <h6><img  src="'.base_url("assets/images/location .png").'"> ';
 $title = $value->address;
 
-if (strlen($title) <= 25) {
+if (strlen($title) <= 20) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 25) . '...';
+    $y = substr($title, 0, 20) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>
@@ -1693,18 +1694,15 @@ $sub .= '</h6>
 	public function setshoplist()
 	{
 
-		$data["product_id"] = $this->input->post("product_id");
-		$data["category_id"] = $this->input->post("category_id");
-		$data["sub_id"] = $this->input->post("subcategory_id");
-		$data["shop_owner_user_id"] = $this->input->post("user_id");
-		$data["seller_user_id"] = $this->input->post("seller_id");
-		$data["shop_id"] = $this->input->post("shop_id");
-
-		$this->user->saveshoplist($data);
+		
 		$cat_id = $this->input->post('category_id');
 		$subcat_id = $this->input->post('subcategory_id');
 		$pro_id = $this->input->post('product_id');
-        $redirectUrl = 'welcome/verified_pay/' .$pro_id.'/'.$cat_id.'/'.$subcat_id;
+		$user_id = $this->input->post("user_id");
+	    $seller_id = $this->input->post("seller_id");
+	    $shop_id = $this->input->post("shop_id");
+
+        $redirectUrl = 'welcome/verified_pay/' .$pro_id.'/'.$cat_id.'/'.$subcat_id.'/'.$user_id.'/'.$seller_id.'/'.$shop_id;
 		return redirect($redirectUrl);
 		return redirect('welcome/productdetail/' . $cat_id . '/' . $pro_id . '/' . $subcat_id);
 	}
@@ -1990,19 +1988,19 @@ $sub .= '</h6>
 		if ($session_id) {
 			$user_detail = $this->user->loginuser($session_id);
 
-			$aboutus = $this->user->getcontent();
+			
 
 			$this->output->set_header('Last-Modified:' . gmdate('D, d M Y H:i:s') . 'GMT');
 			$this->output->set_header('Cache-Control: no-cache, no-cache, must-revalidate');
 			$this->output->set_header('Cache-Control: post-check=0, pre-check=0', false);
 			$this->output->set_header('Pragma: no-cache');
 			$this->load->view('front/header', ['user' => $user_detail]);
-			$this->load->view('front/verify_content', ['aboutus' => $aboutus]);
+			$this->load->view('front/verify_content');
 			$this->load->view('front/footer');
 		} else {
 			
 			$this->load->view('front/header');
-			$this->load->view('front/verify_content', ['aboutus' => $aboutus]);
+			$this->load->view('front/verify_content');
 			$this->load->view('front/footer');
 		}
 
@@ -2658,12 +2656,15 @@ $sub .= '</h6>
 	  $this->load->view('front/rezorpay',array('data' => $data));
 	}
 
-	public function verified_pay($id,$cat_id,$sub_id)
+	public function verified_pay($id,$cat_id,$sub_id,$user_id,$seller_id,$shop_id)
 	{
 		
 		$_SESSION['product_id'] = $id;
 		$_SESSION['category_id'] = $cat_id;
 		$_SESSION['subcategory_id'] = $sub_id;
+		$_SESSION['user_id'] = $user_id;
+		$_SESSION['seller_id'] = $seller_id;
+		$_SESSION['shop_id'] = $shop_id;
 		$result = $this->db->where('id', $id)->get('category_reusable_parts')->result();
 		foreach($result as $dataji)
 		$_SESSION['amount'] ='50';
@@ -2706,6 +2707,14 @@ $sub .= '</h6>
 			'user_id' => $this->session->userdata('id')
 		  );
 		  $api->utility->verifyPaymentSignature($attributes);
+		  $data["product_id"] = $_SESSION['product_id'];
+		$data["category_id"] = $_SESSION['category_id'];
+		$data["sub_id"] = $_SESSION['subcategory_id'];
+		$data["shop_owner_user_id"] = $_SESSION['user_id'];
+		$data["seller_user_id"] = $_SESSION['seller_id'];
+		$data["shop_id"] = $_SESSION['shop_id'];
+
+		$this->user->saveshoplist($data);
 		  $insert = $this->user->payment($attributes);
 		} catch(SignatureVerificationError $e) {
 		  $success = false;

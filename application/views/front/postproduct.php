@@ -240,7 +240,7 @@
         background: #10B981;
         border-radius: 30px;
         font-family: 'Open Sans';
-        font-size: 23px;
+        font-size: 18px;
         font-weight: 700;
         line-height: 32px;
         letter-spacing: 0em;

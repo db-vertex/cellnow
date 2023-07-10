@@ -1171,14 +1171,14 @@ padding-left: 90px;
                                 </div>
                             </div>
                         </li>
-                        <li class="nav-item dropdown " style="padding-right:10px" ;>
+                        <li class="nav-item dropdown" style="padding-right:10px" ;>
                             <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false" style=" color:#10B981;font-weight:bold;"
                                 id="ab">
                                 Categories
                             </a>
                             <ul class="dropdown-menu category_show " style="margin-bottom:10px;min-width:80px;">
-
+ 
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/1">Reusable Parts and
                                         Products</a>
@@ -1201,6 +1201,7 @@ padding-left: 90px;
                                 id="ab">
                                 Services
                             </a>
+                            <a></a>
                             <ul class="dropdown-menu" style="margin-bottom:0px; width: max-content;">
                                 <?php
                   $shopcategory = get_all_shopcategory();
@@ -1260,7 +1261,7 @@ padding-left: 90px;
 
 
                         <li class="nav-item" style="padding-right:10px" ;>
-                            <a class="nav-link  login_header" href="<?php echo base_url();?>welcome/login"
+                            <a class="nav-link login_header" href="<?php echo base_url();?>welcome/login"
                                 style="color:#10B981;font-weight:bold;"> Login
                             </a>
                         </li>
@@ -1385,4 +1386,6 @@ function initialize() {
         $("#longtitudeArea").removeClass("d-none");
     });
 }
+
+
 </script>

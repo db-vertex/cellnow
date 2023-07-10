@@ -127,10 +127,20 @@
         order: 0;
         flex-grow: 0;
     }
+    #c {
+        margin-right: 10px;
+        border-color: #78d7b8;
+        border-radius: 60px;
+        font-family: open sans;
+        font-weight: 550;
+        font-size: 22px;
+        padding: 4px 32px;
+
+    }
 
     @media (min-width: 350px) and (max-width: 459px){
 
-        #a {
+        #c {
         margin-right: 10px;
         border-color: #78d7b8;
         border-radius: 60px;
@@ -219,7 +229,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                             <a data-toggle="modal" data-target="#addshopdetail"
                                 href="<?php echo base_url(); ?>welcome/shop"
                                 style="background-color: #10b981; color:#fff" class="btn" role="button"
-                                aria-disabled="true" id="a">Take Your Shop/Services online on celnow</a>
+                                aria-disabled="true" id="c">Take Your Shop/Services online on celnow</a>
                             <p class="text-muted mt-4">Note: Once you will submit the details of shop then you can not change
                             </p>
                         </div>
@@ -233,7 +243,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                 </div>
                                 <div class="col"><?php if($shop->admin_approval==2){?>
                                     <div>
-                                        <a class="btn " id="b"
+                                        <a class="btn" id="b"
                                             style="align-self:center; background-color:#FF7474; color:#540C07">Rejected
                                             by admin </a>
                                     </div><?php }else if($shop->admin_approval==1){?> <div>

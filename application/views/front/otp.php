@@ -148,14 +148,14 @@
                         <article class="card-body">
                             <div class="row">
                                 <div class="col">
-                                    <p>Welcome to <a href="" style="color:#13C571;">Celnow </a></p>
+                                    <p>Welcome to <a href="<?php echo base_url()?>" style="color:#13C571;">Celnow </a></p>
                                     <h2 class="card-title mb-3 ">Otp</h2>
 
                                 </div>
 
                                 <div class="col ml-4">
                                     <a href="" style="color:lightgrey;">Have an Account?</a><br>
-                                    <a href="" style="color:#13C571;" class="">Sign in</a>
+                                    <a href="<?php echo base_url(); ?>welcome/signup" style="color:#13C571;" class="">Sign in</a>
                                 </div>
                             </div>
                             <form action="<?php echo base_url();?>welcome/otp" method="post">
