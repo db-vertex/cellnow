@@ -833,13 +833,13 @@
                                     
                                     <div class="row">
                                       <?php if(empty($blocked)){ ?>
-                                       <div class="col-9 mg-btm-10">
-                                           <textarea id="message" style="backgound-color:#77d4b5 " class="form-control input-sm" name="message" placeholder="Type your message here..." onkeyup="return checkchatmessage();"></textarea>
+                                       <div class="col-10 mg-btm-10">
+                                           <textarea id="message" style="backgound-color:#77d4b5 " class="form-control " name="message" placeholder="Type your message here..." onkeyup="return checkchatmessage();"></textarea>
                                         </div>
 
                                          
                                      
-                                        <div class="col-3 mg-btm-10 "> 
+                                        <div class="col-2 mg-btm-10 "> 
                                             <button type="button" id="btn-send" class="btn btn-green  btn-sm">
 <img style="padding:5px;" src="<?php echo base_url();?>assets/images/arrow.png">                                            </button>
 
