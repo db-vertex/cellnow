@@ -967,14 +967,6 @@ padding-left: 90px;
         border-left: 0.3em solid transparent;
     }
 
-    .dropdown:hover>.dropdown-menu {
-        display: block;
-    }
-
-    .dropdown>.dropdown-toggle:active {
-        /*Without this, clicking will make it sticky*/
-        pointer-events: none;
-    }
 
     .click.form-select .bg-img {
         transform: rotate(180deg);
@@ -1090,8 +1082,16 @@ padding-left: 90px;
     margin-right: auto;
 }
 
+
 }
 @media (min-width: 1200px){
+    .dropdown:hover>.dropdown-menu {
+        display: block;
+    }
+
+    .dropdown>.dropdown-toggle:active {
+        pointer-events: none;
+    }
 .profile_name{
     margin-left: 10px;
 }
@@ -1203,13 +1203,12 @@ padding-left: 90px;
                             </a>
                             <ul class="dropdown-menu" style="margin-bottom:0px; width: max-content;">
                                 <?php
-                  $shopcategory = get_all_shopcategory();
-                foreach ($shopcategory as $key => $shopcat) {
-                  ?>
+                                $shopcategory = get_all_shopcategory();
+                                foreach ($shopcategory as $key => $shopcat) {
+                                ?>
                                 <li><a class="dropdown-item" style="color:#10B981;font-weight:bold;"
                                         href="<?php echo base_url();?>welcome/store/<?php echo $shopcat->id; ?>"><?php echo $shopcat->shop_category; ?></a>
                                 </li>
-
                                 <?php }?>
 
                             </ul>
