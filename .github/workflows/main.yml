@@ -12,5 +12,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: 68.178.145.103
-        username: celnow_git@work.dbvertex.com
+        username: celnow_git@dbvertex.com
         password: ${{ secrets.ftp_password }}
