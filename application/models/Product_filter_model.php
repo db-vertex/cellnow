@@ -389,7 +389,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 					<p tyle="color: #575757;">';
 										   $title = $row['address'];
 					   
-										   if(strlen($title) <= 12)
+										   if(strlen($title) <= 20)
 										   {
 										   $pro .= ucfirst($title);
 										  
@@ -397,7 +397,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 										   }
 										   else
 										   {
-										   $y = substr($title, 0, 12) .'...';
+										   $y = substr($title, 0, 20) .'...';
 										   $pro .= ucfirst($y);
 										   }
 										   $pro.='</p>
