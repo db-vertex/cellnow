@@ -882,6 +882,20 @@ function adminapproved(){
 }  
 
 
+public function setshoplist()
+	{
+
+		 $data["category_id"] = $this->input->post('category_id');
+    $data["sub_id"] = $this->input->post('subcategory_id');
+    $data["product_id"] = $this->input->post('product_id');
+    $data["seller_user_id"] = $this->input->post("seller_id");
+    $data["shop_owner_user_id"] = $this->input->post("shop_owner_user_id");
+    $data["shop_id"]= $this->input->post("shop_id");
+    
+    $this->admin_model->saveshoplist($data);
+      
+		return redirect('admin/products');
+	}
 
 
 

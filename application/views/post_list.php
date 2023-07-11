@@ -319,7 +319,7 @@ foreach($urgent as $valueu){
 
                 <tr class="featuredpro" id="<?php echo $valueu->id; ?>">
                            <td><?php echo $i;?></td>
-                <td><a href="<?php echo base_url()."welcome/productdetail/".$valueu->category_id.'/'.$valueu->id."";?>"><?php echo  $valueu->title;?></a></td>
+                <td><a href="<?php echo base_url()."welcome/productdetail/".$valueu->category_id.'/'.$valueu->id.'/'.$valueu->subcategory_id."";?>"><?php echo  $valueu->title;?></a></td>
                 <td> <?php 
 
                 // $image = get_product_image($value->product_id); 
@@ -355,8 +355,31 @@ foreach($urgent as $valueu){
            
         </select></td>
         <td> 
-   
-   <input type="button" name="active_status" value="verify" class="btn btn-info" data-productid = "">
+          <?php if($valueu->verified_product == 1){?>
+            <div class="col-12" style="text-align:center;">
+                                                            <button class=" btn btn-info"><span class="pe-2"></span><span class="btn_Verified_text"
+                                                                    type="submit" name="submit">Verified</span></button>
+                                                        </div>
+                                                        <?php }else{ ?>
+        <form class="" action="<?php echo base_url(); ?>admin/setshoplist" method="POST">
+                                                        <input type="hidden" name="product_id" id="product_id"
+                                                            value="<?php echo $valueu->id; ?>">
+                                                        <input type="hidden" name="category_id" id="category_id"
+                                                            value="<?php echo $valueu->category_id; ?>">
+                                                        <input type="hidden" name="shop_id" id="sender_id" value="0">
+                                                        <input type="hidden" name="seller_id" id="receiver_id"
+                                                            value="<?php echo $valueu->user_id; ?>">
+                                                            <input type="hidden" name="shop_owner_user_id" id="sender_id" value="0">
+                                                        <input type="hidden" name="subcategory_id" id="receiver_id"
+                                                            value="<?php echo $valueu->subcategory_id; ?>">
+
+
+                                                        <div class="col-12" style="text-align:center;">
+                                                            <button class=" btn btn-info"><span class="pe-2"></span><span class="btn_Verified_text"
+                                                                    type="submit" name="submit">Verify</span></button>
+                                                        </div>
+                                                    </form>
+                                                    <?php } ?>
 
 </td>  
                 </tr> 
@@ -410,7 +433,7 @@ foreach($sponsored as $valuef){
 
                 <tr class="featuredpro" id="<?php echo $valuef->id; ?>">
                          <td><?php echo $i;?></td>  
-                <td><a href="<?php echo base_url()."welcome/productdetail/".$valuef->category_id.'/'.$valuef->id."";?>"><?php echo  $valuef->title;?></a></td>
+                <td><a href="<?php echo base_url()."welcome/productdetail/".$valuef->category_id.'/'.$valuef->id.'/'.$valuef->subcategory_id."";?>"><?php echo  $valuef->title;?></a></td>
                 <td> <?php 
 
                 // $image = get_product_image($value->product_id); 
@@ -488,7 +511,7 @@ foreach($active as $valuea){
 
 <tr class="featuredpro" id="<?php echo $valuea->id; ?>">
      <td><?php echo $i;?></td>  
-<td><a href="<?php echo base_url()."welcome/productdetail/".$valuea->category_id.'/'.$valuea->id."";?>"><?php echo  $valuea->title;?></a></td>
+<td><a href="<?php echo base_url()."welcome/productdetail/".$valuea->category_id.'/'.$valuea->id.'/'.$valuea->subcategory_id."";?>"><?php echo  $valuea->title;?></a></td>
 <td> <?php 
 
 // $image = get_product_image($value->product_id); 
@@ -568,7 +591,7 @@ foreach($deactive as $valued){
 
 <tr class="featuredpro" id="<?php echo $valued->id; ?>">
      <td><?php echo $i;?></td>  
-<td><a href="<?php echo base_url()."welcome/productdetail/".$valued->category_id.'/'.$valued->id."";?>"><?php echo  $valued->title;?></a></td>
+<td><a href="<?php echo base_url()."welcome/productdetail/".$valued->category_id.'/'.$valued->id.'/'.$valued->subcategory_id."";?>"><?php echo  $valued->title;?></a></td>
 <td> <?php 
 
 // $image = get_product_image($value->product_id); 

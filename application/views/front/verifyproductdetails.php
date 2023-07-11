@@ -1458,14 +1458,22 @@ border-radius: 80px 0px 0px 80px;
                                 if (empty($shop_list)) {
                                     echo "";
                                 } else {
-                                    $shop_name = get_shop_name($shop_list->shop_id); ?>
+                                    if($shop_list->shop_id!=0){
+                                      
+                                    $shop_name = get_shop_name($shop_list->shop_id);
+                                    
+                                    }
+                                    else{
+                                     
+                                        $shop_name='admin';
+                                    } ?>
                                     <div class="" style="">
                                         <div class="col-12" style="text-align:center;">
                                             <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                         class="btn_Verified_img"
                                                         src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                        alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
-                                                    <?php echo $shop_name; ?></span></p></a>
+                                                        alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                                    <?php  echo $shop_name; ?></span></p></a>
                                         </div>
       
       
@@ -1483,13 +1491,20 @@ border-radius: 80px 0px 0px 80px;
                                     if (empty($shop_list)) {
                                         echo "";
                                     } else {
-                                        $shop_name = get_shop_name($shop_list->shop_id); ?>
+                                        if($shop_list->shop_id!=0){
+                                      
+                                            $shop_name = get_shop_name($shop_list->shop_id);
+                                            }
+                                            else{
+                                             
+                                                $shop_name='admin';
+                                            } ?>
                                         <div class="" style="">
                                             <div class="col-12" style="text-align:center;">
                                                 <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                             class="btn_Verified_img"
                                                             src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
+                                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by :
                                                         <?php echo $shop_name; ?></span></p></a>
                                             </div>
 
@@ -1499,7 +1514,7 @@ border-radius: 80px 0px 0px 80px;
                                 } else {
                                     $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id, $user["user_id"]);
                                     if (empty($wishlit)) {
-                                        if ($shop->admin_approval == 1) {
+                                        if ($shop->admin_approval == 1 && $product_detail->verified_admin!='yes') {
 
                                             ?> <div class="" style="">
 
@@ -1540,7 +1555,14 @@ border-radius: 80px 0px 0px 80px;
                                         if (empty($shop_list)) {
                                             echo "";
                                         } else {
-                                            $shop_name = get_shop_name($shop_list->shop_id);
+                                            if($shop_list->shop_id!=0){
+                                      
+                                                $shop_name = get_shop_name($shop_list->shop_id);
+                                                }
+                                                else{
+                                                 
+                                                    $shop_name='admin';
+                                                }
                                             ?>
 
                                             <div class="" style="">
@@ -1549,7 +1571,7 @@ border-radius: 80px 0px 0px 80px;
                                                     <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>" ><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                                 class="btn_Verified_img"
                                                                 src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by Shop:
+                                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
                                                             <?php echo $shop_name; ?></span></p></a>
                                                 </div>
 
@@ -1559,10 +1581,18 @@ border-radius: 80px 0px 0px 80px;
                                 }
                             } else {
                                 $shop_list = check_shoplist_by_productid($product_detail->id);
+                              
                                 if (empty($shop_list)) {
                                     echo "";
                                 } else {
+                                    if($shop_list->shop_id!=0){
+                                  
                                     $shop_name = get_shop_name($shop_list->shop_id);
+                                    }
+                                    else{
+                                   
+                                        $shop_name='admin';
+                                    }
                                     ?>
                               <div class="" style="">
 
@@ -1570,7 +1600,7 @@ border-radius: 80px 0px 0px 80px;
                                       <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                   class="btn_Verified_img"
                                                   src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                  alt="check 1.png"></span><span class="btn_Verified_text">verifed by Shop:
+                                                  alt="check 1.png"></span><span class="btn_Verified_text">verifed by :
                                               <?php echo $shop_name; ?></span></p></a>
                                   </div>
 

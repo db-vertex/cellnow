@@ -119,8 +119,7 @@ $msg_class=$this->session->flashdata('msg_class')
                   
                   <th>Address</th>
                   <th>Email</th>
-                  <th>GST</th>
-                  <th>Document</th>
+                
                   <th>Timeing</th>
                   <th>Service Type</th>
                   <th>Description</th>
@@ -149,8 +148,8 @@ $i++;
                 <td><?php echo  $valued->mobile;?></td>
                 <td><?php echo  $valued->Address;?></td>
                 <td><?php echo  $valued->email;?></td>
-                <td><?php echo  $valued->GST;?></td>
-                <td><a href="<?php echo base_url();?>uploads/shop/<?php echo $valued->document; ?> " target="_blank"><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->document; ?>"></a></td>
+                <!-- <td><?php echo  $valued->GST;?></td>
+                <td><a href="<?php echo base_url();?>uploads/shop/<?php echo $valued->document; ?> " target="_blank"><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->document; ?>"></a></td> -->
                 <td><?php echo  $valued->open_close_time;?></td>
 
                 <td><?php echo  $valued->service_type;?></td>

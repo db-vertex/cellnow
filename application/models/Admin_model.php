@@ -50,6 +50,37 @@ public function get_admin_data($id)
   }
 
 
+  public function saveshoplist($data = array()) {
+    if(!array_key_exists('created_at', $data)){
+        $data['created_at'] = date("Y-m-d H:i:s");
+    }
+
+    if(!get_shoplist($data['product_id'],$data['category_id'],$data['shop_id'],$data['seller_user_id'], $data['shop_owner_user_id']))
+
+    $insert = $this->db->insert('verify_product', $data);
+    $datas['verified_product'] = '1';
+   if($data['category_id']==1){
+    $this->db->update('category_reusable_parts', $datas, "id = ".$data['product_id']);
+   }
+   else if($data['category_id']==2){
+    $this->db->update('category_tuitions', $datas, "id = ".$data['product_id']);
+   }
+   else if($data['category_id']==3){
+    $this->db->update('category_job', $datas, "id = ".$data['product_id']);
+   }
+   else if($data['category_id']==4){
+    $this->db->update('category_internships', $datas, "id = ".$data['product_id']);
+   }
+    else{
+    $delete = $this->db->query("delete from wishlist where user_id=".$data['user_id']." and product_id=".$data['product_id']);
+    }
+    
+    if($insert){
+        return true;
+    }else{
+        return false;
+    }
+}
 
      
 public function update_password($id,$pwd)
