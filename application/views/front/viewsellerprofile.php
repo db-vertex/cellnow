@@ -123,10 +123,10 @@ width: 131.9px; border-color:#10B981;">
    
     </div>
     <!-- <div class="vr" style="color:#78d7b8"></div> -->
-    <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8"> 
+    <div class="col-sm-6 text-center" style=" border-left:solid; border-color: #78d7b8"> 
       
-      <h2 class="pl-5"><b>About us</b></h2>
-      <p class="pl-5 pr-5 word"><?php echo $profile->aboutus; ?></p>
+      <h2 class=""><b>About us</b></h2>
+      <p class="word"><?php echo $profile->aboutus; ?></p>
 
     
     </div> 
@@ -237,7 +237,7 @@ width: 131.9px; border-color:#10B981;">
 
 
 <div class="container-fluid mt-5">
-<img src="<?php echo base_url();?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
+<img src="<?php echo base_url();?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
 </div>
 
 

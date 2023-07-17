@@ -223,7 +223,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                     <?php 
        
            if(empty($shop)){?>
-                    <div class="row text-center mt-5">
+                    <div class="row text-center mt-2">
 
                         <div>
                             <a data-toggle="modal" data-target="#addshopdetail"

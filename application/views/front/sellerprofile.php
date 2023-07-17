@@ -139,9 +139,9 @@ width: 131.9px; border-color:#10B981;">
    
     </div>
     <!-- <div class="vr" style="color:#78d7b8"></div> -->
-    <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8"> 
+    <div class="col-sm-6 text-center" style=" border-left:solid; border-color: #78d7b8"> 
       
-      <h2 class="pl-5"><b>About us</b></h2>
+      <h2 class=""><b>About us</b></h2>
       <p class="pl-5 pr-5 word"><?php echo $profile->aboutus; ?></p>
 
     

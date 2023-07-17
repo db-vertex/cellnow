@@ -1133,10 +1133,12 @@ padding-left: 90px;
 
 
 <body>
+
     <!-- <h1 >Hello, world!</h1> -->
     <div class="container-fluid body_background " id="body_background">
 
         <div class="container">
+            
             <nav class="navbar navbar-expand-xl bg-body-">
 
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
@@ -1278,6 +1280,7 @@ padding-left: 90px;
             </nav>
         </div>
     </div>
+    
     <!-- </nav> -->
 
 
@@ -1324,6 +1327,8 @@ function function14() {
 }
 
 $(document).ready(function() {
+    
+    
     $("#search").autocomplete({
 
         source: function(request, response) {

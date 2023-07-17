@@ -128,10 +128,10 @@ width: 131.9px;">
 
                 </div>
                 <!-- <div class="vr" style="color:#78d7b8"></div> -->
-                <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
+                <div class="col-sm-6 text-center" style=" border-left:solid; border-color: #78d7b8">
 
-                    <h2 class="pl-5"><b>About us</b></h2>
-                    <p class="pl-5 pr-5 word"><?php echo ucfirst($profile->aboutus); ?></p>
+                    <h2 class=""><b>About us</b></h2>
+                    <p class="word"><?php echo ucfirst($profile->aboutus); ?></p>
 
                     <div class="row text-center p-5">
                         <div>
@@ -145,7 +145,7 @@ width: 131.9px;">
     </div>
 
     <div class="container-fluid" style="padding:0px">
-        <img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">';
+        <img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
     </div>
 
 

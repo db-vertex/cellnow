@@ -82,10 +82,11 @@ class Welcome extends CI_Controller
 				$sub .= '	onclick="return getproduct( ' . $value->subcategory_id . ')"';
 
 			} else {
+				
 				$sub .= '	onclick="return getproduct( ' . $value->id . ')"';
 			}
 			$sub .= '>
-		<img class="btn-change common_selector sub_category sub_new' . $value->id . '"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
+		<img class="';if ($value->id== 13) { $sub .='select ';} $sub .='btn-change common_selector sub_category sub_new' . $value->id . '"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
 		 <center style="color:black; font-size:12px; font-weight:500">' . $value->product_type . '</center>
 		</p>
 		

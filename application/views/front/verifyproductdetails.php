@@ -1179,7 +1179,16 @@ border-radius: 80px 0px 0px 80px;
                         <div class="breadcrumbs">
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
                                     href="<?php echo base_url(); ?>">Home</a></span>/<span
-                                class="ms-2 handline"><?php echo ucfirst($product_detail->title); ?></span>
+                                class="ms-2 handline"><?php echo  $title = $product_detail->title;
+                            if(strlen($title) <= 35)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,35) . '...';
+                                echo ucfirst($y);
+                              } ?></span>
                         </div>
                     
                 </div>
