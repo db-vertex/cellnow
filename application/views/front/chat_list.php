@@ -499,7 +499,16 @@
 }
 
 </style>
-
+<script>
+    function redirectDiv(){
+        // Scroll to the target div
+        var targetElement = document.getElementById("targetDiv");
+        targetElement.scrollIntoView({
+            behavior: 'smooth'
+        });
+    }
+    
+    </script>
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 <!-- <script src="http://91.234.35.26/iwiki-admin/v1.0.0/admin/js/jquery.nicescroll.min.js"></script> -->
 
@@ -618,7 +627,7 @@
                                        
                                         ?>
                                       
-                                      <li class="new<?php echo ($username->user_id).($profile->id); ?>" onclick="return getchat(<?php echo $username->user_id; ?>, <?php echo $_SESSION['id']; ?>,<?=$profile->id?>,<?=$profile->category_id?>);"  style="">
+                                      <li class="new<?php echo ($username->user_id).($profile->id); ?>" onclick="redirectDiv(); getchat(<?php echo $username->user_id; ?>, <?php echo $_SESSION['id']; ?>,<?=$profile->id?>,<?=$profile->category_id?>);"  style="">
                                             <span class="avatar available">
                                                    <img src="<?php echo base_url().$profile->cover_img."";?>"  class="img-circle rounded-5">
                                             </span>
@@ -728,7 +737,7 @@
                            
                         </div>
                         
-                        <div class="col-md-8">
+                        <div class="col-md-8" id="targetDiv">
                            
                  
                                                      
@@ -837,17 +846,11 @@
                                            <textarea id="message" style="backgound-color:#77d4b5 " class="form-control " name="message" placeholder="Type your message here..." onkeyup="return checkchatmessage();"></textarea>
                                         </div>
 
-                                         
-                                     
-                                        <div class="col-2 mg-btm-10 "> 
+                                          <div class="col-2 mg-btm-10 "> 
                                             <button type="button" id="btn-send" class="btn btn-green  btn-sm">
-<img style="padding:5px;" src="<?php echo base_url();?>assets/images/arrow.png">                                            </button>
-
-                                            
-                                          
-                                        
-
-                                          <?php } ?>
+<img style="padding:5px;" src="<?php echo base_url();?>assets/images/arrow.png">                             </button>
+                                         
+ <?php } ?>
                                             
                                             <?php 
 

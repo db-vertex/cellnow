@@ -62,8 +62,8 @@ img {
 
 .btn_Verified {
         margin-right:90px;
-        width: 192px;
-        height: 54px;
+        width: 170px;
+        height: 35px;
         left: 988px;
         top: 941px;
         background: #D1FAE5;
@@ -1180,13 +1180,13 @@ border-radius: 80px 0px 0px 80px;
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
                                     href="<?php echo base_url(); ?>">Home</a></span>/<span
                                 class="ms-2 handline"><?php echo  $title = $product_detail->title;
-                            if(strlen($title) <= 35)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,35) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               } ?></span>
                         </div>
