@@ -438,6 +438,7 @@ flex-grow: 0;
         <main>
           
             <div class="breadcrumb_container container mb-5">
+
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
@@ -448,10 +449,10 @@ flex-grow: 0;
             </div>
 
 
-
             <?php foreach($product_data as $get_data){?>
             <form class="needs-validation" action="<?php echo base_url();?>welcome/editproduct" method="post"
                 enctype="multipart/form-data" id="data_input"  novalidate>
+                
                 <div class="row g-5 justify-content-center">
 
                     <div class=" offset-lg-1 col-lg-5">
@@ -545,7 +546,8 @@ flex-grow: 0;
 
                         <div class="row g-3">
 
-                          
+                       <b> Note: Please Repost the ad freshly to edit the product details completely. To get the product verified online, To boost the product.</b>
+
 
                             <div class="col-12">
                                 <label for="firstName" class="form-label post_input_lable">Title</label>
@@ -725,6 +727,9 @@ flex-grow: 0;
         $("#ImgPreview2").attr("src", "");
         $('.preview2').removeClass('it');
         $('.btn-rmv2').removeClass('rmv');
+
+        
+
     });
     $("#removeImage3").click(function(e) {
         e.preventDefault();
@@ -792,11 +797,11 @@ flex-grow: 0;
     </script>
 
     <script>
- function images_2() {
+    function images_2() {
   
-    var thumbnails=  'images_2';
+    var thumbnails =  'images_2';
     var product_id=  document.getElementById("product_id").value;
-     var category=  document.getElementById("category").value;
+    var category=  document.getElementById("category").value;
     $.ajax({
         url: '<?php echo site_url('Welcome/deleteimage'); ?>',
         type: 'POST',
@@ -809,10 +814,7 @@ flex-grow: 0;
         }
        
     });
-  
-
-               
-  }  
+   }  
   
   function images_3() {
     swal({
@@ -845,7 +847,7 @@ flex-grow: 0;
     });
   
 } else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+            swal("Cancelled", "Something went wrong. Please try again.)", "error");
                         
                     }
                    
@@ -882,8 +884,8 @@ flex-grow: 0;
         window.location.reload();
     });
    
-} else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
+    } else {
+            swal("Cancelled", "Something went wrong. Please try again.)", "error");
                        
                     }
                     window.location.reload();

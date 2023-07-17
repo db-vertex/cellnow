@@ -103,7 +103,7 @@ html,body
 
             <?php } ?>
   
-    <div class="shadow p-4 mb-5 bg-body rounded-5" style="margin:25px"><br>
+    <div class="shadow p-4 mb-5 bg-body rounded-5"><br>
     <div class="row text-center" >
    
     <div class="col-sm-5 mb-1">
@@ -154,8 +154,8 @@ width: 131.9px; border-color:#10B981;">
 
 
 <div class="container" >
-<h3 class="ml-5 mb-3"><b>Seller Ads</b></h3>
-<div class="row ml-4">
+<h3 class=" mb-3"><b>Seller Ads</b></h3>
+<div class="row ">
 
 <?php $sellerproduct = get_seller_product($user['user_id']); 
 

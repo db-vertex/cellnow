@@ -1120,6 +1120,12 @@ padding-left: 90px;
 }
 
 }
+.overflow{
+  
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis; 
+ }
 
     </style>
 
@@ -1136,9 +1142,6 @@ padding-left: 90px;
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
                         class="img-fluid" style="width:180px;">
                 </a>
-
-
-
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="myelement"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation" style="border: none;color: #10B981;">
@@ -1149,11 +1152,11 @@ padding-left: 90px;
 
                     <ul class="navbar-nav  mb-2 mb-lg-0" style="">
                         <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
-                            <div class="search_wrap search_wrap_6 m-0 ">
+                            <div class="search_wrap search_wrap_6 m-0">
                                 <div class="search_box mt-3" style="width:130%; margin-right:170px;">
                                 <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
          
-         <input type="text" value="<?php $location= $this->session->userdata("location"); if($this->session->userdata("location")){ echo $location;} ; ?>" name="location" class="form-control rounded-5"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+         <input type="text" value="<?php $location= $this->session->userdata("location"); if($this->session->userdata("location")){ echo $location;} ; ?>" name="location" class="form-control rounded-5 overflow"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
        </form>
                                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">

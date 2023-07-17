@@ -229,8 +229,8 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                             <a data-toggle="modal" data-target="#addshopdetail"
                                 href="<?php echo base_url(); ?>welcome/shop"
                                 style="background-color: #10b981; color:#fff" class="btn" role="button"
-                                aria-disabled="true" id="c">Take Your Shop/Services online on celnow</a>
-                            <p class="text-muted mt-4">Note: Once you will submit the details of shop then you can not change
+                                aria-disabled="true" id="c">Take Your Shop/Services online on CelNow </a>
+                            <p class="text-muted mt-4">Note: Once the shop details are submitted for verification they can be changed
                             </p>
                         </div>
                     </div>
@@ -247,9 +247,9 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                             style="align-self:center; background-color:#FF7474; color:#540C07">Rejected
                                             by admin </a>
                                     </div><?php }else if($shop->admin_approval==1){?> <div>
-                                        <a class="btn " id="b"
+                                        <p class="btn " id="b"
                                             style="align-self:center; background-color:#d1fae5; color:#13C571">Verified
-                                            by admin </a>
+                                            by admin </p>
                                     </div><?php }else if($shop->admin_approval==0){?>
                                     <div>
                                         <a class="btn " id="b"
@@ -416,7 +416,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
 
 
                                                 <div class="form-group">
-                                                    <label> GST/PAN Number/Adhar Number</label>
+                                                    <label> GST/PAN Number/Aadhar Number</label>
                                                     <input name="GST" class="form-control" placeholder="GST Number"
                                                         type="text" maxlength="20" value="<?php echo $shop->GST; ?>"
                                                         style="border-radius:30px; border-color:#13C571" required>
@@ -771,7 +771,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                         </div>
 
                         <div class="form-group">
-                            <label> GST/PAN Number/Adhar Number</label>
+                            <label> GST/PAN Number/Aadhar Number</label>
                             <input name="GST" class="form-control" placeholder="GST Number" type="text" maxlength="20"
                                 value="<?php echo set_value('name'); ?>"
                                 style="border-radius:30px; border-color:#13C571" required>

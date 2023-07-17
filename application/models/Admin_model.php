@@ -689,8 +689,8 @@ public function reportedposts()
 
     
             $this->db->select('*');    
-            $this->db->from('product');
-            $this->db->join('report_abuse', 'product.id = report_abuse.product_id', 'inner');
+            $this->db->from('report_abuse');
+        
             /* $this->db->where(array('product.id' => $id,'status'=> 0));*/
              $query = $this->db->get();
 

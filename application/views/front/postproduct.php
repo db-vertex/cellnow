@@ -1445,7 +1445,7 @@ Once your product is successfully verified, it will receive a special verified b
                                 <div class="form-check">
                                     <input class="form-check-input " name="verified_admin" type="checkbox" value="yes" onchange="valChange(this)">
                                     <label class="form-check-label" for="flexCheckChecked">
-                                       Rs.10 (pay for product verified)
+                                       Rs.10 (Payment for online post verification by CelNow executive over phone/WhatsApp. and default check it)
                                     </label>
                                 </div>
                             </div>

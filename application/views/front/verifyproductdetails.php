@@ -1135,6 +1135,7 @@ border-radius: 80px 0px 0px 80px;
     max-width: 30%;
     max-height: 15%;
 }
+.pointer {cursor: pointer;}
 
     </style>
 </head>
@@ -1315,7 +1316,7 @@ border-radius: 80px 0px 0px 80px;
                                        <p> <img class="img-size"  src="<?php echo base_url(); ?>assets/images/hearts.png"><span class="detalis_option_text"> <?php $product_wishlist = get_wishlist_count($product_detail->id, $product_detail->category_id);
                                           echo $product_wishlist; ?></span></p>
                                        
-                                            <a class="btn-change" style="color:black;text-decoration:unset;" id="GFG"
+                                            <a class="btn-change pointer" style="color:black;text-decoration:unset;" id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
                                                     href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>   id="share_desk"
                                                     onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"
@@ -1325,7 +1326,7 @@ border-radius: 80px 0px 0px 80px;
  </a>
 
                                       
-                                            <a class="btn-change" style="color:black;text-decoration:unset; " id="GFG"
+<a class="btn-change pointer" style="color:black;text-decoration:unset; " id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
                                                     href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
                                                     data-toggle="modal" data-target="#report_product" <?php } ?>><img class="img-size" src="<?php echo base_url(); ?>assets/images/report.png"><span  class="detalis_option_text"> Report</span>
@@ -1369,7 +1370,7 @@ border-radius: 80px 0px 0px 80px;
                               
                               ?>
                               <p class="details_price"><span>Donate</span></p>
-                              <?php   }?>
+                              <?php }?>
 
                         </div>
                     </div>
@@ -1460,24 +1461,34 @@ border-radius: 80px 0px 0px 80px;
                                 } else {
                                     if($shop_list->shop_id!=0){
                                       
-                                    $shop_name = get_shop_name($shop_list->shop_id);
-                                    
-                                    }
-                                    else{
-                                     
-                                        $shop_name='admin';
-                                    } ?>
+                                    $shop_name = get_shop_name($shop_list->shop_id); ?>
                                     <div class="" style="">
+                                    <div class="col-12" style="text-align:center;">
+                                        <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                    class="btn_Verified_img"
+                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                    alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                                <?php  echo $shop_name; ?></span></p></a>
+                                    </div>
+  
+  
+                                </div>
+                                 <?php   }
+                                    else{ ?>
+                                     
+                                        <div class="" style="">
                                         <div class="col-12" style="text-align:center;">
-                                            <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                            <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                         class="btn_Verified_img"
                                                         src="<?php echo base_url() ?>assets/images/check 1.png"
                                                         alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                    <?php  echo $shop_name; ?></span></p></a>
+                                                    Admin</span></p>
                                         </div>
       
       
                                     </div>
+                                 <?php   } ?>
+                                   
                                 <?php }
                             }
                         } else {
@@ -1493,13 +1504,8 @@ border-radius: 80px 0px 0px 80px;
                                     } else {
                                         if($shop_list->shop_id!=0){
                                       
-                                            $shop_name = get_shop_name($shop_list->shop_id);
-                                            }
-                                            else{
-                                             
-                                                $shop_name='admin';
-                                            } ?>
-                                        <div class="" style="">
+                                            $shop_name = get_shop_name($shop_list->shop_id); ?>
+                                            <div class="" style="">
                                             <div class="col-12" style="text-align:center;">
                                                 <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                             class="btn_Verified_img"
@@ -1510,6 +1516,22 @@ border-radius: 80px 0px 0px 80px;
 
 
                                         </div>
+                                          <?php  }
+                                            else{ ?>
+                                             
+                                             <div class="" style="">
+                                            <div class="col-12" style="text-align:center;">
+<p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                            class="btn_Verified_img"
+                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                                        Admin</span></p></a>
+                                            </div>
+
+
+                                        </div>
+                                           <?php } ?>
+                                       
                                     <?php }
                                 } else {
                                     $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id, $user["user_id"]);
@@ -1557,15 +1579,8 @@ border-radius: 80px 0px 0px 80px;
                                         } else {
                                             if($shop_list->shop_id!=0){
                                       
-                                                $shop_name = get_shop_name($shop_list->shop_id);
-                                                }
-                                                else{
-                                                 
-                                                    $shop_name='admin';
-                                                }
-                                            ?>
-
-                                            <div class="" style="">
+                                                $shop_name = get_shop_name($shop_list->shop_id); ?>
+                                                <div class="" style="">
 
                                                 <div class="col-12" style="text-align:center;">
                                                     <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>" ><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
@@ -1576,6 +1591,24 @@ border-radius: 80px 0px 0px 80px;
                                                 </div>
 
                                             </div>
+                                              <?php  }
+                                                else{ ?>
+                                                 
+                                                 <div class="" style="">
+
+<div class="col-12" style="text-align:center;">
+   <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                class="btn_Verified_img"
+                src="<?php echo base_url() ?>assets/images/check 1.png"
+                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+            Admin</span></p>
+</div>
+
+</div>
+                                              <?php  }
+                                            ?>
+
+                                           
                                         <?php }
                                     }
                                 }
@@ -1587,24 +1620,36 @@ border-radius: 80px 0px 0px 80px;
                                 } else {
                                     if($shop_list->shop_id!=0){
                                   
-                                    $shop_name = get_shop_name($shop_list->shop_id);
+                                    $shop_name = get_shop_name($shop_list->shop_id); ?>
+                                     <div class="" style="">
+
+<div class="col-12" style="text-align:center;">
+    <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                class="btn_Verified_img"
+                src="<?php echo base_url() ?>assets/images/check 1.png"
+                alt="check 1.png"></span><span class="btn_Verified_text">verifed by :
+            <?php echo $shop_name; ?></span></p></a>
+</div>
+
+</div>
+<?php
                                     }
-                                    else{
+                                    else{ ?>
                                    
-                                        $shop_name='admin';
-                                    }
-                                    ?>
-                              <div class="" style="">
+                                        <div class="" style="">
 
                                   <div class="col-12" style="text-align:center;">
-                                      <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                      <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                   class="btn_Verified_img"
                                                   src="<?php echo base_url() ?>assets/images/check 1.png"
                                                   alt="check 1.png"></span><span class="btn_Verified_text">verifed by :
-                                              <?php echo $shop_name; ?></span></p></a>
+                                             Admin</span></p>
                                   </div>
 
                               </div>
+                                <?php    }
+                                    ?>
+                             
                           <?php }
                             }
                         } ?>

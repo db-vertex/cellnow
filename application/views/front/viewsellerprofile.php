@@ -139,7 +139,7 @@ width: 131.9px; border-color:#10B981;">
 
 <div class="container" >
 <h3 class="ml-5 mb-3"><b>Seller Ads</b></h3>
-<div class="row ml-3">
+<div class="row ml-3 mr-3">
 
 <?php if(isset($user_id)){
   $sellerproduct =get_seller_product($user_id); 

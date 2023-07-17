@@ -1563,6 +1563,63 @@ function get_subcategoryname_byid($sub_id)
   return $category_data->row(); 
 }
 
+function get_reusableproductname_byid($product_id,$category_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_reusable_parts WHERE id=".$product_id." And category_id=".$category_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+function get_tuitionproductname_byid($product_id,$category_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_tuitions WHERE id=".$product_id." And category_id=".$category_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+function get_jobproductname_byid($product_id,$category_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_job WHERE id=".$product_id." And category_id=".$category_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+function get_internshipproductname_byid($product_id,$category_id)
+{
+    //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_internships WHERE id=".$product_id." And category_id=".$category_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
 function get_product_video($product_id)
 {
   //get main CodeIgniter object
@@ -1577,16 +1634,6 @@ function get_product_video($product_id)
 
   return $category_data->row(); 
 }
-
-
-
-
-
-
-
-
-
-
 
 
 

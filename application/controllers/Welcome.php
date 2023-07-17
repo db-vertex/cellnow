@@ -3295,7 +3295,7 @@ $sub .= '</h6>
 					$pro .= '<li id="default-page" style="text-align: center;padding-top:30%;">
                                            
                                             <img src="' . base_url('assets/images/CelNow 5 1.png') . '" style="opacity:0.2;">
-                                            <h2 style="color: black; opacity:0.2;">Welcome to celnow</h2>
+                                            <h2 style="color: black; opacity:0.2;">Welcome to CelNow</h2>
 
 
                                           </li>';

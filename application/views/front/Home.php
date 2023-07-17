@@ -351,11 +351,9 @@ foreach ($category as $key => $cat) {
                                 <p style="margin-left:5px;"> 
                                     <?php if($pro->pay_type ==1){ ?>
                                       <img class="img-fluid image2"
-                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
-   width:80px; ">
+                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style=" width:80px; ">
                             <?php } if($pro->verified_product ==1){ ?>
-                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png" style="
-   width:80px; ">
+                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png" style="width:80px; ">
                       
 
                             <?php }?>
@@ -835,7 +833,7 @@ foreach ($category as $key => $cat) {
     <div class="row">
         <div class="col">
             <p style="color:#1b1c57; text-align:center; font-weight:bolder; font-size:30px;">Subscribe For More Info
-                And Update From Celnow</p>
+                And Update From CelNow</p>
             <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">
             <div class="search_wrap search_wrap_6 m-0 mt-4 ">
                 <div class="search_box">

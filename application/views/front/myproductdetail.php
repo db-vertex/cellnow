@@ -1129,6 +1129,8 @@ border-radius: 80px 0px 0px 80px;
     max-height: 15%;
 }
 
+.pointer {cursor: pointer;}
+
     </style>
 </head>
 
@@ -1307,16 +1309,17 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                        <p> <img class="img-size"  src="<?php echo base_url(); ?>assets/images/hearts.png"><span class="detalis_option_text"> <?php $product_wishlist = get_wishlist_count($product_detail->id, $product_detail->category_id);
                                           echo $product_wishlist; ?></span></p>
                                        
-                                            <a class="btn-change" style="color:black;text-decoration:unset;" id="GFG"
+                                       <a class="btn-change pointer" style="color:black;text-decoration:unset;" id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
                                                     href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>   id="share_desk"
                                                     onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"
                                              <?php } ?>
                                                >
-                                               <img class="img-size" src="<?php echo base_url(); ?>assets/images/share.png"><span class="detalis_option_text">&nbsp Share</span></a>
+                                        <img class="img-size" src="<?php echo base_url(); ?>assets/images/share.png"><span class="detalis_option_text">&nbsp Share</span>
+ </a>
 
                                       
-                                            <a class="btn-change" style="color:black;text-decoration:unset; " id="GFG"
+                                            <a class="btn-change pointer" style="color:black;text-decoration:unset; " id="GFG"
                                                 <?php if (empty($user) || !isset($user)) { ?>
                                                     href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
                                                     data-toggle="modal" data-target="#report_product" <?php } ?>><img class="img-size" src="<?php echo base_url(); ?>assets/images/report.png"><span  class="detalis_option_text"> Report</span></a>

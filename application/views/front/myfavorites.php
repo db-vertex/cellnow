@@ -98,14 +98,15 @@
 
 
 
-  <div class="container-fluid " style=" margin-top: 110px;">
+  <div class="container-fluid px-0" style=" margin-top: 110px;">
     <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
   </div>
 
 
   <div class="container">
-    <h3 class="m-5 mb-3"><b>My Favorites Ads</b></h3>
-    <div class="row" style="margin-left:30px; margin-right:30px;">
+    
+    <div class="row">
+    <h3 class="mb-4 mt-4"><b>My Favorites Ads</b></h3>
       <?php $favroite = get_all_favroite($user["user_id"]);
 
       if (!empty($favroite)) {

@@ -62,7 +62,7 @@
       <a href="<?php echo base_url();?>welcome/privacypolicy" style="text-decoration:none;color:#888b97" id="bc">Privacy policy</a> <br>
       <a href="<?php echo base_url();?>welcome/help_support" style="text-decoration:none;color:#888b97" id="bc">Help and Support</a> <br>
       <a href="<?php echo base_url();?>welcome/FAQs" style="text-decoration:none;color:#888b97" id="bc">FAQs</a> <br>
-      <a href="<?php echo base_url();?>welcome/verify_content" style="text-decoration:none;color:#888b97" id="bc">How to Verified Product</a> <br>
+      <a href="<?php echo base_url();?>welcome/verify_content" style="text-decoration:none;color:#888b97" id="bc">How to get your product verified on CelNow</a> <br>
 
     </div>
     <div class="col-sm-3 col-6" style="color:#888b97">
