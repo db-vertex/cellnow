@@ -1414,7 +1414,7 @@ a:active {
                             onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
                             onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
 
-                            <img class="btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
+                            <img class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
                                 data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                 src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
                             <center style="color:black; font-size:12px; font-weight:500">

@@ -1150,9 +1150,9 @@ padding-left: 90px;
 
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <div class="collapse navbar-collapse  nav-icon" id="navbarSupportedContent">
 
-                    <ul class="navbar-nav  mb-2 mb-lg-0" style="">
+                    <ul class="navbar-nav  mb-2 mb-lg-0  " style="" id="">
                         <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
                             <div class="search_wrap search_wrap_6 m-0">
                                 <div class="search_box mt-3" style="width:130%; margin-right:170px;">
@@ -1394,5 +1394,18 @@ function initialize() {
     });
 }
 
+$(window).scroll(function() {
+
+  if ($(this).scrollTop() >= 20) {
+
+      $('.nav-icon').fadeOut(200);
+
+  }else {
+
+      $('.nav-icon').fadeIn(200);
+
+  }
+
+});
 
 </script>
