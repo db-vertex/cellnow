@@ -208,10 +208,14 @@ width: 131.9px;">
                             <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
                         </p>
                         <?php  if(!empty($shop)){?>
-                        <p class="pt-3"><?php if(!empty($shop->shop_images)){?>
+                        <p class="pt-3"><?php  $product_image =   get_shop_image($shop->id);
+
+$count = count($product_image);
+if(!empty($product_image)){
+ foreach ($product_image as $key => $shopimg) {?>
                             <img class="rounded-4 " style="height: 161.9px;
-width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
-                            <?php }else{?><img src="<?php echo base_url()?>assets/images/shop1.png">
+width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shopimg->shop_image; ?>">
+                            <?php }}else{?><img src="<?php echo base_url()?>assets/images/shop1.png">
                             <?php } }?>
                         </p>
                     </div><br>
@@ -364,9 +368,9 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                                                         class="form-select" required id="category" required>
                                                         <option value="">Choose</option>
                                                         <?php
-                $category = get_all_shopcategory();
-                foreach ($category as $key => $cat) {
-                  ?>
+                                        $category = get_all_shopcategory();
+                                         foreach ($category as $key => $cat) {
+                                            ?>
                                                         <option id="" value="<?php echo $cat->id; ?>"
                                                             <?php if($cat->id == $shop->shop_category_id ){echo "Selected" ;}?>>
                                                             <?php echo $cat->shop_category; ?></option>
@@ -775,7 +779,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                             <input name="GST" class="form-control" placeholder="GST Number" type="text" maxlength="20"
                                 value="<?php echo set_value('name'); ?>"
                                 style="border-radius:30px; border-color:#13C571" required>
-                                <input type="file" class="form-control mt-3"  name="shop_images[]"
+                                <input type="file" class="form-control mt-3"  name="shop_images"
                                 style="border-radius:30px; border-color:#13C571">
                             <div class="invalid-feedback">
                                 Valid GST is required.
@@ -797,8 +801,41 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
                         <div class="form-group">
 
                             <label>Shop document photo Upload size(180 x 190) px</label>
-                            <input type="file" class="form-control" id="cover_image" name="shop_images[]"
-                                style="border-radius:30px; border-color:#13C571" accept="image/*">
+                            <label for="filebtn10" class="filebtn" id="btn10lbl">
+         
+  		  <i class="fa fa-plus" aria-hidden="true" id="fabtn10" style="margin-top: 24px;color: #13C571;"></i>
+  			<input type="file" id="filebtn10" class="profile_img" id="cover_image" style="display: none" name="shop_img[]" accept="image/*">
+  			<img src="#" style="display: none;" class="upl_img" id="upl_img10">
+  		
+  		</label>
+
+  		<label for="filebtn2" class="filebtn" id="btn2lbl">
+         
+  		  <i class="fa fa-plus" aria-hidden="true" id="fabtn2" style="margin-top: 24px;color: #13C571;"></i>
+  			<input type="file" id="filebtn2" class="profile_img" style="display: none" name="shop_img[]" accept="image/*">
+  			<img src="#" style="display: none;" class="upl_img" id="upl_img2">
+  		
+  		</label>
+
+  		<label for="filebtn3" class="filebtn" id="btn3lbl">
+         
+
+  		  <i class="fa fa-plus" aria-hidden="true" id="fabtn3" style="margin-top: 24px;color:#13C571;"></i>
+  			<input type="file" id="filebtn3" class="profile_img"  style="display: none" name="shop_img[]" accept="image/*">
+  			<img src="#" style="display: none;" class="upl_img" id="upl_img3">
+  		
+  		</label>
+
+  		<label for="filebtn4" class="filebtn" id="btn4lbl">
+         
+
+  		<i class="fa fa-plus" aria-hidden="true" id="fabtn4" style="margin-top: 24px;color: #13C571;"></i>
+  			<input type="file" id="filebtn4" class="profile_img"  style="display: none" name="shop_img[]" accept="image/*">
+  			<img src="#" style="display: none;" class="upl_img" id="upl_img4">
+  		
+  		</label>
+                            <!-- <input type="file" class="form-control" id="cover_image" name="shop_images[]"
+                                style="border-radius:30px; border-color:#13C571" accept="image/*"> -->
                             <span id="cover_err" style="color:red;"></span>
                         </div>
 
@@ -948,4 +985,89 @@ function checkcoverimage() {
                 });
         });
     }
+    function readURL10(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#upl_img10').attr('src', e.target.result);
+
+            $('#fabtn10').hide();
+            $('#upl_img10').show();
+            $( "#upl_img10" ).addClass( "filebtn" );
+
+            $( "#btn10lbl" ).removeClass( "filebtn" )
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function readURL2(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#upl_img2').attr('src', e.target.result);
+
+            $('#fabtn2').hide();
+            $('#upl_img2').show();
+            $( "#upl_img2" ).addClass( "filebtn" );
+
+            $( "#btn2lbl" ).removeClass( "filebtn" )
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+function readURL3(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#upl_img3').attr('src', e.target.result);
+
+            $('#fabtn3').hide();
+            $('#upl_img3').show();
+            $( "#upl_img3" ).addClass( "filebtn" );
+
+            $( "#btn3lbl" ).removeClass( "filebtn" )
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+
+    function readURL4(input) {
+    if (input.files && input.files[0]) {
+        var reader = new FileReader();
+
+        reader.onload = function (e) {
+            $('#upl_img4').attr('src', e.target.result);
+
+            $('#fabtn4').hide();
+            $('#upl_img4').show();
+            $( "#upl_img4" ).addClass( "filebtn" );
+
+            $( "#btn4lbl" ).removeClass( "filebtn" )
+        }
+
+        reader.readAsDataURL(input.files[0]);
+    }
+}
+$("#filebtn10").change(function(){
+    readURL10(this);
+});
+$("#filebtn2").change(function(){
+    readURL2(this);
+});
+
+$("#filebtn3").change(function(){
+    readURL3(this);
+});
+
+$("#filebtn4").change(function(){
+    readURL4(this);
+});
     </script>

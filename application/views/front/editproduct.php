@@ -19,6 +19,9 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
    
     <style>
+         .none{
+        display: none;
+    }
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -419,6 +422,14 @@ flex-grow: 0;
     #images_small_box__plus_4,#images_small_box__plus_5{
         display:none;
     }
+
+    input[type="radio"].readonly {
+    pointer-events: none;
+}
+
+input[type="checkbox"].readonly {
+    pointer-events: none;
+}
     </style>
 
 
@@ -449,7 +460,8 @@ flex-grow: 0;
             </div>
 
 
-            <?php foreach($product_data as $get_data){?>
+            <?php foreach($product_data as $get_data){
+               ?>
             <form class="needs-validation" action="<?php echo base_url();?>welcome/editproduct" method="post"
                 enctype="multipart/form-data" id="data_input"  novalidate>
                 
@@ -548,7 +560,41 @@ flex-grow: 0;
 
                        <b> Note: Please Repost the ad freshly to edit the product details completely. To get the product verified online, To boost the product.</b>
 
-
+                       <div class="col-12">
+                               <?php if($get_data->pay_type=='1'){?>
+                                <div class="form-check form-check-inline">
+                                   <input class="form-check-input readonly" type="radio" name="Sponsor" id="inlineRadio2"
+                                       value="1" <?php if($get_data->pay_type =='1'){?>checked <?php } ?> readonly>
+                                   <label class="form-check-label" for="inlineRadio2">Bost Ads</label>
+                               </div>
+                               <div class="form-check form-check-inline">
+                                   <input class="form-check-input readonly" type="radio" name="Sponsor" id="inlineRadio1"
+                                       value="0" <?php if($get_data->pay_type =='0'){?>checked <?php } ?> readonly>
+                                   <label class="form-check-label" for="inlineRadio1">Normal</label>
+                               </div>
+                               <div class="form-check form-check-inline">
+                                   <input class="form-check-input readonly" type="radio" name="Sponsor" id="inlineRadio3"
+                                       value="2" <?php if($get_data->pay_type =='2'){?>checked <?php } ?> readonly>
+                                   <label class="form-check-label" for="inlineRadio3">Donate</label>
+                               </div>
+                               <?php } else{ ?>
+                               <div class="form-check form-check-inline">
+                                   <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
+                                       value="3" <?php if($get_data->pay_type =='1'){?>checked <?php } ?>>
+                                   <label class="form-check-label" for="inlineRadio2">Bost Ads</label>
+                               </div>
+                               <div class="form-check form-check-inline">
+                                   <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1"
+                                       value="0" <?php if($get_data->pay_type =='0'){?>checked <?php } ?> >
+                                   <label class="form-check-label" for="inlineRadio1">Normal</label>
+                               </div>
+                               <div class="form-check form-check-inline">
+                                   <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio3"
+                                       value="2" <?php if($get_data->pay_type =='2'){?>checked <?php } ?>>
+                                   <label class="form-check-label" for="inlineRadio3">Donate</label>
+                               </div>
+                               <?php } ?>
+                           </div>
                             <div class="col-12">
                                 <label for="firstName" class="form-label post_input_lable">Title</label>
                                 <input type="text" class="form-control post_input_fild" id="Title" name="Title"
@@ -614,6 +660,78 @@ flex-grow: 0;
                                     <div class="invalid-feedback">You must agree to the terms and conditions.</div>
                                 </div>
                             </div>
+
+                            <div class="col-12">
+                                <label for="address" class="form-label post_input_lable">Get your product verified now:
+
+At CelNow, we value trust, transparency, and authenticity. We understand the importance of ensuring a safe and secure marketplace for our users. That's why we offer a product verification process that allows you to showcase your items as verified on our platform. In this guide, we'll walk you through the steps to get your products verified and explain the numerous benefits it brings. Let's get started!
+
+ 
+
+Steps to get Verification tag:
+
+Step 1: Create an Account on Celnow
+
+If you haven't already, visit our website (www.celnow.com) and sign up for an account. It only takes a few minutes, and you'll gain access to a wide range of features and opportunities.
+
+ 
+
+Step 2: Prepare Your Product Information
+
+Gather all the necessary information about the product you want to get verified. This includes details like the brand, model, condition, and any additional features or accessories it may come with. Necessary bills or latest job sheets if any related to the product you want to get verified.
+
+Fill out the required fields while posting product on CelNow with accurate information about your product. You may also need to upload clear and high-quality images showcasing the item's condition and any unique aspects.
+
+ 
+
+Step 3: Choose the Verification Method (Charges may be applicable)
+
+Celnow provides both online and offline verification methods to cater to different needs. Select the option that suits you best:
+
+   a) Online Verification: If your product qualifies for online verification, our team will guide you through the necessary steps. This may involve answering additional questions or providing supporting documents to establish authenticity. For online verification talk with our executive on 8377935333 and follow the guided steps. 1st verification free of cost. Every other verification will be charged fixed cost. (Rupees 20).
+
+ 
+
+   b) Offline Verification: In some cases, CelNow offers offline verification through our network of authorized service points. These service points are registered professionals or shops specialized in specific fields. Visit the nearest service point relevant to your product category, where they will verify the item's authenticity. (Search the nearest registered on our website in the nearby by service professionals or service points section)- Charges will be applicable.
+
+ 
+
+Step 4: Enjoy the Benefits of Verified Products
+
+Once your product is successfully verified, it will receive a special verified badge on its listing. Here are the benefits you can enjoy as a verified product seller:
+
+ 
+
+   - Enhanced Trust: Verified products instill confidence in potential buyers, showcasing your commitment to providing genuine and reliable items.
+
+ 
+
+   - Increased Visibility: Verified products often receive higher visibility and prominence in search results, attracting more interested buyers.
+
+ 
+
+   - Faster Transactions: Buyers tend to prioritize verified products due to the added trust and assurance, leading to quicker and smoother transactions.</label>
+                               
+                            </div>
+<?php if($get_data->pay_type=='1'){?>
+    <div class="col-12" id="verified_option">
+                                <div class="form-check">
+                                    <input class="form-check-input readonly" name="verified_admin" type="checkbox" value="yes" <?php if($get_data->verified_admin=='yes'){ ?> checked <?php } ?> readonly onchange="valChange(this)">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                       Rs.10 (Payment for online post verification by CelNow executive over phone/WhatsApp. and default check it)
+                                    </label>
+                                </div>
+                            </div>
+                            <?php } else{ ?>
+                            <div class="col-12 none" id="verified_option">
+                                <div class="form-check">
+                                    <input class="form-check-input " name="verified_admin" type="checkbox" value="yes" <?php if($get_data->verified_admin=='yes'){ ?> checked <?php } ?> onchange="valChange(this)">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                       Rs.10 (Payment for online post verification by CelNow executive over phone/WhatsApp. and default check it)
+                                    </label>
+                                </div>
+                            </div>
+<?php } ?>
                             <input type="text" class="form-control " name="product_id" id="product_id" placeholder=""
                                 value="<?php  echo $get_data->id; ?>" rows="8" hidden />
 
@@ -627,8 +745,15 @@ flex-grow: 0;
                             <input type="text" class="form-control" name="longitude" id="longitude" hidden />
                             <div class="my-4"> </div>
 
-                            <div class="col-sm-6 col-6 ">
+                            <div class="col-sm-6 col-6 " id="sub">
                                 <button class="w-100 btn product_submit_button"  type="submit">Submit</button>
+                            </div>
+                           
+                            <div class="col-sm-6 col-6 none" id="submit">
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit (Rs.125)</button>
+                            </div>
+                            <div class="col-sm-6 col-6 none" id="visible">
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit (Rs.135)</button>
                             </div>
 
                             <div class="col-sm-6 col-6">
@@ -644,7 +769,44 @@ flex-grow: 0;
             <?php } ?>
         </main>
     </div>
+    <script>
+$(document).ready(function(){
+    $('input[type="radio"]').click(function(){
+        var inputValue = $(this).attr("value");
+       if(inputValue!=3){
+        document.getElementById("verified_option").style.display = "none";
+        document.getElementById("submit").style.display = "none";
+        document.getElementById("sub").style.display = 'block';
+        document.getElementById("visible").style.display = 'none';
+       }
+       else{
+        document.getElementById("verified_option").style.display = "block";
+        document.getElementById("submit").style.display = "block";
+        document.getElementById("sub").style.display = 'none';
+       }
+      
+     
+      
+    });
+});
 
+
+function valChange(element)
+{
+   if (element.checked)
+  {
+    document.getElementById("sub").style.display = "none";
+    document.getElementById("submit").style.display = "none";
+    document.getElementById("visible").style.display = 'block';
+  } else
+  {
+    document.getElementById("visible").style.display = "none";
+    document.getElementById("submit").style.display = "block";
+    document.getElementById("sub").style.display = 'none';
+  }
+   }
+
+</script>
     <script>
        function readURL(input, imgControlName) {
         if (input.files && input.files[0]) {

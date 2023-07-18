@@ -1440,58 +1440,56 @@ $sub .= '</h6>
 				$id = $this->db->insert_id();
 
 				$this->load->library('upload');
-		$dataInfo = array();
+		
 		if (!empty($_FILES['shop_images']['name'])) {
+			$config['upload_path'] = './uploads/shop/';
+			// $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
+			$config['allowed_types'] = '*';
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('shop_images')) {
+			   
+			}else{
 
-			$filesCount = count($_FILES['shop_images']['name']);
-			
-			for ($i = 0; $i < $filesCount; $i++) {
-				$_FILES['file']['name'] = $_FILES['shop_images']['name'][$i];
-				$_FILES['file']['type'] = $_FILES['shop_images']['type'][$i];
-				$_FILES['file']['tmp_name'] = $_FILES['shop_images']['tmp_name'][$i];
-				$_FILES['file']['error'] = $_FILES['shop_images']['error'][$i];
-				$_FILES['file']['size'] = $_FILES['shop_images']['size'][$i];
-
-
-				$config['upload_path'] = './uploads/shop';
-				$config['allowed_types'] = '*';
-
-				// Load and initialize upload library
-				$this->load->library('upload', $config);
-				$this->upload->initialize($config);
-				/*$id = $this->post('product_id');*/
-				// Upload file to server
-				if ($this->upload->do_upload('file')) {
-					// Uploaded file data
-					$fileData = $this->upload->data();
-					$uploadData[$i]['file_name'] = $fileData['file_name'];
-					$uploadData[$i]['created'] = date("Y-m-d H:i:s");
-					$pimage = $uploadData[$i]['file_name'];
+				//---- Successfully upload than add member-----
+				$image_data = $this->upload->data();
+				$filename = $image_data['file_name'];
 
 
-					if ($i == 0) {
-						$img = $pimage;
-						$source = "./uploads/document/$img";
-						$destImagePath = $img;
-						$destImagdePath = $destImagePath;
-						$thumbWidth = 300;
-						$this->db->update('shop', ["document" => $destImagdePath], "id=$id");
-
-					} else if ($i == 1) {
-						$img = $pimage;
-						$source = "./uploads/shop/$img";
-						$destImagePath = $img;
-						$destImagdePath = $destImagePath;
-						$thumbWidth = 300;
-
-						$this->db->update('shop', ["shop_images" => $destImagdePath], "id=$id");
-
-
-				}
+			 $userData['document'] = $filename;
+			 $this->db->update("shop", ["document"=>$filename], "id=$id");
 			}
+		  }
 
-		}
-	}
+		
+
+	if (!empty($_FILES['shop_img']['name'])) {
+		                          
+		$filesCount = count($_FILES['shop_img']['name']);
+		for($i = 0; $i < $filesCount; $i++){
+			$_FILES['file']['name']     = $_FILES['shop_img']['name'][$i];
+			$_FILES['file']['type']     = $_FILES['shop_img']['type'][$i];
+			$_FILES['file']['tmp_name'] = $_FILES['shop_img']['tmp_name'][$i];
+			$_FILES['file']['error']     = $_FILES['shop_img']['error'][$i];
+			$_FILES['file']['size']     = $_FILES['shop_img']['size'][$i];
+			
+			
+			$config['upload_path'] = './uploads/shop/';
+			$config['allowed_types'] = '*';
+			
+			// Load and initialize upload library
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+			/*$id = $this->post('product_id');*/
+			// Upload file to server
+			if($this->upload->do_upload('file')){
+				// Uploaded file data
+				$fileData = $this->upload->data();
+				$uploadData[$i]['file_name'] = $fileData['file_name'];
+				$uploadData[$i]['created'] = date("Y-m-d H:i:s");
+				$product_image = array("shop_id"=>$id,"shop_image"=>$uploadData[$i]['file_name'] );
+					  $this->db->insert('shop_image', $product_image);
+					   $pimage=$uploadData[$i]['file_name'];
+			}}}
 
 				return redirect('welcome/shop');
 		
@@ -2800,6 +2798,68 @@ $sub .= '</h6>
 	  }
 	}
 
+	public function editverify()
+	{
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	    $success = true;
+	 
+	   $error = "payment_failed";
+	  if (empty($_POST['razorpay_payment_id']) === false) {
+		$api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  try {
+		  $attributes = array(
+			'razorpay_order_id' => $_SESSION['razorpay_order_id'],
+			'razorpay_payment_id' => $_POST['razorpay_payment_id'],
+			'razorpay_signature' => $_POST['razorpay_signature'],
+			'amount' => $_SESSION['amount'],
+			'product_id' => $_SESSION['product_id'],
+			'user_id' => $this->session->userdata('id')
+		  );
+		  $api->utility->verifyPaymentSignature($attributes);
+		  if($_SESSION['category_id']==1){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_reusable_parts', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==2){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==3){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==4){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
+
+		  }
+		  
+		  $insert = $this->user->payment($attributes);
+		} catch(SignatureVerificationError $e) {
+			if($_SESSION['category_id']==1){
+				$this->db->query("delete from category_reusable_parts where category_id=".$_SESSION['category_id']." and id=".$_SESSION['product_id']);
+			}
+		  $success = false;
+		  $error = 'Razorpay_Error : ' . $e->getMessage();
+		}
+	  }
+	  if ($success === true) {
+		/**
+		 * Call this function from where ever you want
+		 * to save save data before of after the payment
+		 */
+		unset($_SESSION['premium_amount']); 
+		unset($_SESSION['razorpay_order_id']);
+		unset($_SESSION['amount']);
+		$this->setRegistrationData();
+		redirect(base_url().'welcome/editproduct_view/'. $_SESSION['category_id'].'/'. $_SESSION['product_id']);
+		
+	  }
+	  else {
+		redirect(base_url().'welcome/editproduct_view/'. $_SESSION['category_id'].'/'. $_SESSION['product_id']);
+	  }
+	}
+
 	public function setRegistrationData(){
 		$name = $this->input->post('name');
 		$email = $this->input->post('email');
@@ -2856,7 +2916,8 @@ $sub .= '</h6>
 			$postData['user_id'] = $this->input->post('user_id');
 			$postData['category_id'] = $this->input->post('category');
 			$postData['subcategory_id'] = $this->input->post('subcategory');
-
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
 			$postData['address'] = $this->input->post('Address');
 			$postData['Description'] = $this->input->post('Description');
 			$postData['price'] = $this->input->post('Price');
@@ -2864,6 +2925,7 @@ $sub .= '</h6>
 			$postData['town'] = $this->input->post('Town');
 			$postData['lat'] = $this->input->post('latitude');
 			$postData['long'] = $this->input->post('longitude');
+			$sponser= $this->input->post('Sponsor');
 			$insert = $this->product_model->edit_category_reusable_parts($postData);
 			$id = $this->input->post('product_id');
 			$table = "category_reusable_parts";
@@ -2874,7 +2936,8 @@ $sub .= '</h6>
 			$postData['user_id'] = $this->input->post('user_id');
 			$postData['category_id'] = $this->input->post('category');
 			$postData['subcategory_id'] = $this->input->post('subcategory');
-
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
 			$postData['address'] = $this->input->post('Address');
 			$postData['Description'] = $this->input->post('Description');
 			$postData['price'] = $this->input->post('Price');
@@ -2882,6 +2945,7 @@ $sub .= '</h6>
 			$postData['town'] = $this->input->post('Town');
 			$postData['lat'] = $this->input->post('latitude');
 			$postData['long'] = $this->input->post('longitude');
+			$sponser= $this->input->post('Sponsor');
 			$insert = $this->product_model->edit_category_tuitions($postData);
 			$id = $this->input->post('product_id');
 			$table = "category_tuitions";
@@ -2892,7 +2956,8 @@ $sub .= '</h6>
 			$postData['user_id'] = $this->input->post('user_id');
 			$postData['category_id'] = $this->input->post('category');
 			$postData['subcategory_id'] = $this->input->post('subcategory');
-
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
 			$postData['address'] = $this->input->post('Address');
 			$postData['Description'] = $this->input->post('Description');
 			$postData['price'] = $this->input->post('Price');
@@ -2910,7 +2975,8 @@ $sub .= '</h6>
 			$postData['user_id'] = $this->input->post('user_id');
 			$postData['category_id'] = $this->input->post('category');
 			$postData['subcategory_id'] = $this->input->post('subcategory');
-
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
 			$postData['address'] = $this->input->post('Address');
 			$postData['Description'] = $this->input->post('Description');
 			$postData['price'] = $this->input->post('Price');
@@ -2918,6 +2984,7 @@ $sub .= '</h6>
 			$postData['town'] = $this->input->post('Town');
 			$postData['lat'] = $this->input->post('latitude');
 			$postData['long'] = $this->input->post('longitude');
+			$sponser= $this->input->post('Sponsor');
 			$insert = $this->product_model->edit_category_internships($postData);
 			$id = $this->input->post('product_id');
 			$table = "category_internships";
@@ -3002,13 +3069,66 @@ $sub .= '</h6>
 			}
 
 		}
-
+		if($sponser==3){
+			$redirectUrl = 'welcome/editpay/' .$id.'/'.$category;
+			return redirect($redirectUrl);
+		}
 		$this->session->set_flashdata('Editproduct', 'Product Edit Succesfully.');
 		$this->session->set_flashdata('msg_class', 'alert-success');
 
 		return redirect('welcome/myprofile');
 
 
+	}
+
+	public function editpay($id,$category)
+	{
+		$_SESSION['product_id'] = $id;
+		$_SESSION['category_id'] = $category;
+		
+		if($_SESSION['category_id']==1){
+			$result = $this->db->where('id', $id)->get('category_reusable_parts')->result();
+
+		}
+		if($_SESSION['category_id']==2){
+			$result = $this->db->where('id', $id)->get('category_tuitions')->result();
+
+		}
+		if($_SESSION['category_id']==3){
+			$result = $this->db->where('id', $id)->get('category_job')->result();
+
+		}
+		if($_SESSION['category_id']==4){
+			$result = $this->db->where('id', $id)->get('category_internships')->result();
+
+		}
+		foreach($result as $dataji)
+		if($dataji->verified_admin=='yes'){
+			$_SESSION['amount'] ='135';
+		}
+        else{
+	       $_SESSION['amount'] ='125';
+        }
+		
+		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');                                                                                                                
+		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
+	  $api = new Api("rzp_test_dfwGYguqxcme16", "d9WQOxajFVqojtWZzVPKgsRE");
+	  /**
+	   * You can calculate payment amount as per your logic
+	   * Always set the amount from backend for security reasons
+	   */
+	  $razorpayOrder = $api->order->create(array(
+		'receipt'         => rand(),
+		'amount'          => $_SESSION['amount'] * 100, // 2000 rupees in paise
+		'currency'        => 'INR',
+		'payment_capture' => 1 // auto capture
+	  ));
+	  $amount = $razorpayOrder['amount'];
+	  $razorpayOrderId = $razorpayOrder['id'];
+	  $_SESSION['amount'] = isset($_SESSION['amount']);
+	  $_SESSION['razorpay_order_id'] = $razorpayOrderId;
+	  $data = $this->prepareData($amount,$razorpayOrderId);
+	  $this->load->view('front/editrezorpay',array('data' => $data));
 	}
 
 

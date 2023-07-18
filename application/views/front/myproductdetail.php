@@ -1183,7 +1183,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                 <div class="col-md-6 small">
                 <?php if ($product_detail->cover_img !== NULL) { ?>
       <div class="mySlides">
-        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%">
+      <a href="<?php echo base_url() . $product_detail->cover_img . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%"></a>
         <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
@@ -1194,7 +1194,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
       <div class="mySlides">
    
   
-        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%">
+      <a href="<?php echo base_url() . $product_detail->images_2 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%"></a>
         <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
          >
@@ -1205,7 +1205,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
       <div class="mySlides">
   
     
-        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%">
+      <a href="<?php echo base_url() . $product_detail->images_3 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%"></a>
         <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
@@ -1214,7 +1214,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
      
    <?php if ($product_detail->images_4 !== NULL) { ?>
       <div class="mySlides">
-        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%">
+      <a href="<?php echo base_url() . $product_detail->images_4 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%"></a>
         <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
@@ -1225,7 +1225,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
          <?php if ($product_detail->verified_product == 1) { ?>
               <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" >
 
-       <?php } ?><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
+       <?php } ?><a href="<?php echo base_url() . $product_detail->images_5 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%"></a>
        </div><?php } ?>
        
  

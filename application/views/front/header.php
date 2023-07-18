@@ -1126,6 +1126,19 @@ padding-left: 90px;
   overflow: hidden;
   text-overflow: ellipsis; 
  }
+ .filebtn {
+
+/* padding-left: 90px;*/
+ border: 1px solid #13C571;
+/* padding-bottom: 60px;
+ padding-right: 90px;
+ padding-top: 60px;*/
+ margin-top: 25px;
+ height: 100px;
+ width: 121px;
+ text-align: center;
+ margin-left: 10px;
+}
 
     </style>
 

@@ -1198,7 +1198,7 @@ border-radius: 80px 0px 0px 80px;
                 <div class="col-md-6 small">
                 <?php if ($product_detail->cover_img !== NULL) { ?>
       <div class="mySlides">
-        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%">
+        <a href="<?php echo base_url() . $product_detail->cover_img . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%"></a>
         <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
@@ -1209,7 +1209,7 @@ border-radius: 80px 0px 0px 80px;
       <div class="mySlides">
    
   
-        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%">
+      <a href="<?php echo base_url() . $product_detail->images_2 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%"></a>
         <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
          >
@@ -1220,7 +1220,7 @@ border-radius: 80px 0px 0px 80px;
       <div class="mySlides">
   
     
-        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%">
+      <a href="<?php echo base_url() . $product_detail->images_3 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%"></a>
         <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
@@ -1229,7 +1229,7 @@ border-radius: 80px 0px 0px 80px;
      
    <?php if ($product_detail->images_4 !== NULL) { ?>
       <div class="mySlides">
-        <img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%">
+      <a href="<?php echo base_url() . $product_detail->images_4 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%"></a>
         <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
@@ -1238,9 +1238,9 @@ border-radius: 80px 0px 0px 80px;
         <?php if ($product_detail->images_5 !== NULL) { ?>
       <div class="mySlides">
          <?php if ($product_detail->verified_product == 1) { ?>
-              <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" >
+            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" >
 
-       <?php } ?><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%">
+       <?php } ?><a href="<?php echo base_url() . $product_detail->images_5 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%"></a>
        </div><?php } ?>
        
  

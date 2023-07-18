@@ -655,6 +655,22 @@ function get_all_subcategory()
   return $category_data->result(); 
 }
 
+function get_shop_image($shop_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM shop_image WHERE shop_id=".$shop_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->result(); 
+}
+
+
 function get_all_product_type()
 {
   //get main CodeIgniter object

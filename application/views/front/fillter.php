@@ -1514,12 +1514,16 @@ a:active {
                     <div class="panel-heading ">
                         <a data-toggle="collapse" class="under" href="#TYPEs">
                             <h4 class="panel-title common_h ">
-                                Brand
+                                BRAND
                             </h4>
                         </a>
                     </div>
                     <div id="TYPEs" class="panel-collapse collapse">
                         <div class="list-group mt-2">
+                       
+                    <input type="text" style="border-left:none; border-top:none; border-right:none;" class="common_select brand"placeholder="Search Brand"
+                                        value="">
+                 
                             <?php 
 				      $v = $brand->result_array();
                      if($v !== Array( )){ ?>
@@ -1532,6 +1536,7 @@ a:active {
 					{
 					 
 					?>
+                   
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select brand"
                                         value="<?php echo $row['brand']; ?>">
