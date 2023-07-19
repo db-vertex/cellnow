@@ -69,7 +69,7 @@ unset($_SESSION['msg']);?>
                 <td><?php echo  $value->mobile;?></td>
                 <td><?php echo  $value->report;?></td>
                 
-                 <td style="text-align: center;"><a href="<?php echo base_url(); ?>admin/products">
+                 <td style="text-align: center;"><a href="<?php echo base_url()."admin/productdetail/".$value->category_id.'/'.$value->product_id."";?>">
                         <?php if($value->category_id==1){
                            $name= get_reusableproductname_byid($value->product_id,$value->category_id);
                         }

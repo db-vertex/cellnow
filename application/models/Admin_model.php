@@ -193,7 +193,7 @@ public function all_category()
   {
         $this->db->select("*");
       $this->db->from("shop");
-      $this->db->order_by('id',"DESC");
+      $this->db->order_by('id',"ASC");
       $query = $this->db->get();
       $result=$query->result();
       return $result;

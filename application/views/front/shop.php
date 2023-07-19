@@ -29,6 +29,95 @@
         background-color: #13C571;
         border-color: #13C571;
     }
+    .details_img_cover {
+
+max-height: 177px;
+min-height: 177px;
+left: 114px;
+top: 588px;
+background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+
+border-radius: 15px;
+min-width: 60%;
+max-width: 60%;
+}
+.column {
+  float: left;
+  width: 16.66%;
+}
+.caption-container {
+  text-align: center;
+  background-color: #222;
+  padding: 2px 16px;
+  color: white;
+}
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+/* Add a transparency effect for thumnbail images */
+
+
+
+.details_img_box {
+        min-width: 50.69px;
+    max-width: 50.69px;
+    max-height: 50.31px;
+    min-height: 50.31px;
+        left: 114px;
+        top: 1213.13px;
+       
+        border-radius: 11.8328px;
+    }
+    .mySlides {
+  display: none;
+}
+
+
+
+/* Next & previous buttons */
+.prev,
+.next {
+  cursor: pointer;
+ 
+  top: 30%;
+  width: 49%;
+  padding: 16px;
+  margin-top: -100px;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+  -webkit-user-select: none;
+}
+    .deletebtn{
+           left: 10px;
+   
+   position: absolute;
+    }
+
+    .editebtn{
+       
+   
+   position: absolute;
+    }
+    .image-uploade{
+    background:url('https://www.freeiconspng.com/uploads/no-image-icon-11.PNG'); 
+    border: 2px solid grey;
+    border-radius: 10px;
+    height: 100px; 
+    width:  100%;
+    
+    object-fit: cover; 
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding:10px;
+    }
+    .image-upload>input, .image-uploade>input {
+  display: none;
+    }
 
     img.rounded-corners {
         border-radius: 50%;
@@ -208,16 +297,69 @@ width: 131.9px;">
                             <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
                         </p>
                         <?php  if(!empty($shop)){?>
-                        <p class="pt-3"><?php  $product_image =   get_shop_image($shop->id);
+                            <?php $i=1;
 
-$count = count($product_image);
-if(!empty($product_image)){
- foreach ($product_image as $key => $shopimg) {?>
-                            <img class="rounded-4 " style="height: 161.9px;
-width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shopimg->shop_image; ?>">
-                            <?php }}else{?><img src="<?php echo base_url()?>assets/images/shop1.png">
-                            <?php } }?>
-                        </p>
+  $product_image =   get_shop_image($shop->id);
+
+     $count = count($product_image);
+
+     if(!empty($product_image)){
+      foreach ($product_image as $key => $pro_img) {
+
+        $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
+
+        ?>
+      <div class="mySlides">
+        <a href="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"><img class="details_img_cover" src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"></a>
+        </div>
+        <?php
+
+$i++;
+
+     }
+
+   }
+
+
+ ?>
+
+                    <?php } ?>
+        <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
+  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
+  <div class="row mt-3" style="padding-left:25%;">
+  <?php  if(!empty($shop)){?>
+                            <?php $i=1;
+
+  $product_image =   get_shop_image($shop->id);
+
+     $count = count($product_image);
+
+     if(!empty($product_image)){
+      foreach ($product_image as $key => $pro_img) {
+
+        $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
+
+        ?>
+      <div class="column">
+   
+        <img class="demo cursor details_img_box" src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+        </div>
+    
+    
+ 
+ <?php
+
+ $i++;
+
+      }
+
+    }
+
+
+  ?>
+ 
+                     <?php } ?>
+                     </div>
                     </div><br>
 
 
@@ -226,7 +368,7 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shopimg->s
                 <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
                     <?php 
        
-           if(empty($shop)){?>
+           if(empty($shop)){ ?>
                     <div class="row text-center mt-2">
 
                         <div>
@@ -443,16 +585,57 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shopimg->s
                                                 </div>
 
                                                 <div class="form-group">
-
+<div class="row">
                                                     <label>Shop document photo Upload size(180 x 190) px</label>
-                                                    <input type="file" class="form-control" id="cover_image"
-                                                        name="shop_images[]"
-                                                        style="border-radius:30px; border-color:#13C571"
-                                                        accept="image/*" required>
+                                                    <?php 
+
+/* echo $product['id'];*/
+
+$i=1;
+
+  $product_image =   get_shop_image($shop->id);
+
+     $count = count($product_image);
+
+     if(!empty($product_image)){
+      foreach ($product_image as $key => $pro_img) {
+
+        $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
+
+        ?>
+        <div class="col-sm-4" id="productimage<?=$pro_img->id?>">
+         <p class="deletebtn"  data-productid="<?=$shop->id; ?>" data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash" aria-hidden="true" style="font-size:20px;color:red"></i></p>
+         <a href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="width: 100%;"><img src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="border: 2px solid grey;
+  border-radius: 10px; height: 100px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
+</div>
+
+  
+ <?php
+
+ $i++;
+
+      }
+
+    }
+
+for($i=0; $i<(4-count($product_image)); $i++){
+  ?>
+  <div class="col-sm-4">
+         <p class="editebtn" onclick="fileinputimg<?=$i?>.click();" for="fileinputimg<?=$i?>"><i class="fa fa-edit" aria-hidden="true" style="font-size:20px;color:#78d7b8"></i></p>
+         <a  style="width: 100%;"><div  style=" height: 150px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; ">  
+         <div for="fileinputimg<?=$i?>" class="image-uploade">
+<input id="fileinputimg<?=$i?>" class="fileinputimg" name="backimg[]" type="file" accept="image/*" />
+</div></div></a>
+</div>
+  <?php
+}
+      ?>
+                    
                                                     <span id="cover_err" style="color:red;"></span>
                                                     <div class="invalid-feedback">
                                                         Image is required.
                                                     </div>
+</div>
                                                 </div>
 
                                                 <div class="form-group">
@@ -489,7 +672,148 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shopimg->s
                         </div>
                         <?php } } ?>
 
+                        <?php if($shop->admin_approval!=2 && $shop->admin_approval!=0){?>
+                        <div class="row text-center p-5">
+                            <div>
+                                <a href="#" data-toggle="modal" data-target="#editshopdetail" class="btn btn-change"
+                                    id="a" style="align-self:center; background-color:#13C571; color:#fff">Edit </a>
+                            </div>
+                        </div>
 
+                        <div id="editshopdetail" class="modal fade" role="dialog">
+
+                            <div class="modal modal-signin position-static d-block  py-5" tabindex="-1" role="dialog"
+                                id="modalSignin">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content rounded-4 shadow">
+                                        <button data-dismiss="modal" type="button" class="close" aria-label="Close"
+                                            style="margin-left: 90%; margin-top:10px;">&times;</button>
+                                        <?php  $shop = get_id_by_shop($user['user_id']); ?>
+
+                                        <div class="modal-body px-5 pt-0">
+                                            <h3 class=" mb-0 my-3 fs-5" style="text-align: center;color:#13C571">Edit
+                                                Shop Detail</h3>
+
+                                            <?php if ($error = $this->session->flashdata('Login_fail')) { ?>
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="alert alert-danger ">
+                                                        <?= $error;
+
+                  unset($_SESSION['Login_fail']);
+                  ?>
+
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                            <?php } ?>
+                                            <form class="needs-validation" novalidate
+                                                action="<?php echo base_url(); ?>welcome/editverifiedshop" method="post"
+                                                enctype="multipart/form-data">
+                                                <input type="hidden" name="user_id"
+                                                    value="<?php echo $user['user_id'] ?>">
+                                                <input type="hidden" name="id" value="<?php echo $shop->id; ?>">
+                                              
+                                                <div class="form-group">
+                                                    <label> Description</label>
+                                                    <textarea name="description" class="form-control" id="editor"
+                                                        placeholder="Description" maxlength="200" rows="4"
+                                                        style="border-radius:20px; border-color:#13C571"
+                                                        required><?php echo $shop->description; ?></textarea>
+                                                    <div class="invalid-feedback">
+                                                        Valid message is required.
+                                                    </div>
+
+                                                </div>
+
+                                                <div class="form-group">
+<div class="row">
+                                                    <label>Shop document photo Upload size(180 x 190) px</label>
+                                                    <?php 
+
+/* echo $product['id'];*/
+
+$i=1;
+
+  $product_image =   get_shop_image($shop->id);
+
+     $count = count($product_image);
+
+     if(!empty($product_image)){
+      foreach ($product_image as $key => $pro_img) {
+
+        $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
+
+        ?>
+        <div class="col-sm-4" id="productimage<?=$pro_img->id?>">
+         <p class="deletebtn"  data-productid="<?=$shop->id; ?>" data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash" aria-hidden="true" style="font-size:20px;color:red"></i></p>
+         <a href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="width: 100%;"><img src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="border: 2px solid grey;
+  border-radius: 10px; height: 100px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
+</div>
+
+  
+ <?php
+
+ $i++;
+
+      }
+
+    }
+
+for($i=0; $i<(4-count($product_image)); $i++){
+  ?>
+  <div class="col-sm-4">
+         <p class="editebtn" onclick="fileinputimg<?=$i?>.click();" for="fileinputimg<?=$i?>"><i class="fa fa-edit" aria-hidden="true" style="font-size:20px;color:#78d7b8"></i></p>
+         <a  style="width: 100%;"><div  style=" height: 150px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; ">  
+         <div for="fileinputimg<?=$i?>" class="image-uploade">
+<input id="fileinputimg<?=$i?>" class="fileinputimg" name="backimg[]" type="file" accept="image/*" />
+</div></div></a>
+</div>
+  <?php
+}
+      ?>
+                    
+                                                    <span id="cover_err" style="color:red;"></span>
+                                                    <div class="invalid-feedback">
+                                                        Image is required.
+                                                    </div>
+</div>
+                                                </div>
+
+                                                <div class="form-group">
+                                                    <div class="form-check form-check-inline">
+                                                        <input class="form-check-input" type="checkbox" value=""
+                                                            id="flexCheckChecked" required>
+
+                                                        <label>
+                                                            Terms and Conditions
+                                                        </label>
+                                                        <div class="invalid-feedback">
+                                                            Terms & condition is required.
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="text" class="form-control" name="latitude" id="latitude"
+                                                    hidden />
+                                                <input type="text" class="form-control" name="longitude" id="longitude"
+                                                    hidden />
+
+                                                <center><button class=" mb-2 btn btn-lg  text-white mt-2"
+                                                        style="background-color:#13C571;border-radius:30px;width:40%;"
+                                                        type="submit" name="submit">Save</button>
+
+                                                </center>
+                                            </form>
+
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <?php } ?>
                     </div>
 
 
@@ -866,7 +1190,36 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shopimg->s
     </div>
 
 </div>
+<script>
+let slideIndex = 1;
+showSlides(slideIndex);
 
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  let dots = document.getElementsByClassName("demo");
+  let captionText = document.getElementById("caption");
+  if (n > slides.length) {slideIndex = 1}
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  for (i = 0; i < dots.length; i++) {
+    dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block";
+  dots[slideIndex-1].className += " active";
+  captionText.innerHTML = dots[slideIndex-1].alt;
+}
+</script>
 <script>
     $(function () {
         var input = document.getElementById("Location");
@@ -985,89 +1338,69 @@ function checkcoverimage() {
                 });
         });
     }
-    function readURL10(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
+</script>
 
-        reader.onload = function (e) {
-            $('#upl_img10').attr('src', e.target.result);
-
-            $('#fabtn10').hide();
-            $('#upl_img10').show();
-            $( "#upl_img10" ).addClass( "filebtn" );
-
-            $( "#btn10lbl" ).removeClass( "filebtn" )
+<script type="text/javascript">
+ $(".deletebtn").click(function(){
+     var imageid=$(this).data("imageid");
+     var sid = $(this).data("productid");
+    
+     swal({
+        title: "Are you sure?",
+        text: "You will not be able to recover!",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes, delete it!",
+        cancelButtonText: "No, cancel plx!",
+        closeOnConfirm: true,
+        closeOnCancel: true 
+    },
+    function(isConfirm) {
+        if (isConfirm) {
+             $.ajax({
+      url: '<?php echo base_url();?>welcome/deleteshopimage/'+imageid+'/'+sid,
+      type: 'post',
+      data: {},
+      contentType: false,
+      processData: false,
+      error:function(err){
+         console.log(err);
+      },
+      beforeSend:function(){
+      
+    },
+      success: function(response){
+          console.log(response);
+          $("#productimage"+imageid).replaceWith('<div class="col-sm-4"><button type="button" class="editebtn" onclick="fileinputimg'+imageid+'.click();" for="fileinputimg'+imageid+'"><i class="fa fa-edit" aria-hidden="true"></i></button><a  style="width: 100%;"><div  style=" height: 150px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "><div for="fileinputimg'+imageid+'" class="image-uploade"><input id="fileinputimg'+imageid+'" class="fileinputimg" name="backimg[]" type="file" accept="image/*"  /></div></div></a></div>');     
+         swal("Deleted!", "Poses has been deleted.", "success");
+      }
+    });
+        } else {
+            
         }
-
-        reader.readAsDataURL(input.files[0]);
     }
-}
+);
+ })   
+</script>
 
-function readURL2(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#upl_img2').attr('src', e.target.result);
-
-            $('#fabtn2').hide();
-            $('#upl_img2').show();
-            $( "#upl_img2" ).addClass( "filebtn" );
-
-            $( "#btn2lbl" ).removeClass( "filebtn" )
+<script>
+ $(document).on("change",".fileinputimg", function()
+    {
+        console.log("fff");
+        var parent = $(this).closest("div");
+        var files = !!this.files ? this.files : [];
+        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+ 
+        if (/^image/.test( files[0].type)){ // only image file
+            var reader = new FileReader(); // instance of the FileReader
+            reader.readAsDataURL(files[0]); // read the local file
+ 
+            reader.onloadend = function(){ // set image data as background of div
+                //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+        parent.css("background-image", "url("+this.result+")");
+            }
         }
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-function readURL3(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#upl_img3').attr('src', e.target.result);
-
-            $('#fabtn3').hide();
-            $('#upl_img3').show();
-            $( "#upl_img3" ).addClass( "filebtn" );
-
-            $( "#btn3lbl" ).removeClass( "filebtn" )
-        }
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-
-    function readURL4(input) {
-    if (input.files && input.files[0]) {
-        var reader = new FileReader();
-
-        reader.onload = function (e) {
-            $('#upl_img4').attr('src', e.target.result);
-
-            $('#fabtn4').hide();
-            $('#upl_img4').show();
-            $( "#upl_img4" ).addClass( "filebtn" );
-
-            $( "#btn4lbl" ).removeClass( "filebtn" )
-        }
-
-        reader.readAsDataURL(input.files[0]);
-    }
-}
-$("#filebtn10").change(function(){
-    readURL10(this);
-});
-$("#filebtn2").change(function(){
-    readURL2(this);
-});
-
-$("#filebtn3").change(function(){
-    readURL3(this);
-});
-
-$("#filebtn4").change(function(){
-    readURL4(this);
-});
-    </script>
+      
+    });
+</script>  

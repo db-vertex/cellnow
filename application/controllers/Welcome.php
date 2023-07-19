@@ -1508,7 +1508,7 @@ $sub .= '</h6>
 		$service_type = $this->input->post('service_type');
 		$description = $this->input->post('description');
 		$id = $this->input->post('id');
-
+		$pid=$this->input->post("pid");
 				$post_data = array('name' => $name, 'email' => $email, 'user_id' => $user_id, 'mobile' => $mobile, 'shop_category_id' => $shop_category, 'Address' => $Address, 'GST' => $GST, 'description' => $description, 'service_type' => $service_type, 'open_close_time' => $open_close_time, 'admin_approval' => 0);
 
 
@@ -1517,62 +1517,94 @@ $sub .= '</h6>
 		
 
 		$this->load->library('upload');
-		$dataInfo = array();
 		if (!empty($_FILES['shop_images']['name'])) {
+			$config['upload_path'] = './uploads/shop/';
+			// $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
+			$config['allowed_types'] = '*';
+			$this->load->library('upload', $config);
+			if (!$this->upload->do_upload('shop_images')) {
+			   
+			}else{
 
-			$filesCount = count($_FILES['shop_images']['name']);
-			
-			for ($i = 0; $i < $filesCount; $i++) {
-				$_FILES['file']['name'] = $_FILES['shop_images']['name'][$i];
-				$_FILES['file']['type'] = $_FILES['shop_images']['type'][$i];
-				$_FILES['file']['tmp_name'] = $_FILES['shop_images']['tmp_name'][$i];
-				$_FILES['file']['error'] = $_FILES['shop_images']['error'][$i];
-				$_FILES['file']['size'] = $_FILES['shop_images']['size'][$i];
-
-
-				$config['upload_path'] = './uploads/shop';
-				$config['allowed_types'] = '*';
-
-				// Load and initialize upload library
-				$this->load->library('upload', $config);
-				$this->upload->initialize($config);
-				/*$id = $this->post('product_id');*/
-				// Upload file to server
-				if ($this->upload->do_upload('file')) {
-					// Uploaded file data
-					$fileData = $this->upload->data();
-					$uploadData[$i]['file_name'] = $fileData['file_name'];
-					$uploadData[$i]['created'] = date("Y-m-d H:i:s");
-					$pimage = $uploadData[$i]['file_name'];
+				//---- Successfully upload than add member-----
+				$image_data = $this->upload->data();
+				$filename = $image_data['file_name'];
 
 
-					if ($i == 0) {
-						$img = $pimage;
-						$source = "./uploads/document/$img";
-						$destImagePath = $img;
-						$destImagdePath = $destImagePath;
-						$thumbWidth = 300;
-						$this->db->update('shop', ["document" => $destImagdePath], "id=$id");
-
-					} else if ($i == 1) {
-						$img = $pimage;
-						$source = "./uploads/shop/$img";
-						$destImagePath = $img;
-						$destImagdePath = $destImagePath;
-						$thumbWidth = 300;
-
-						$this->db->update('shop', ["shop_images" => $destImagdePath], "id=$id");
-
-
-				}
+			 $userData['document'] = $filename;
+			 $this->db->update("shop", ["document"=>$filename], "id=$id");
 			}
-
-		}
-	}
+		  }
+		if (!empty($_FILES['backimg']['name'])) {
+			$filesCount = count($_FILES['backimg']['name']);
+			for($i = 0; $i < $filesCount; $i++){
+				$_FILES['file']['name']     = $_FILES['backimg']['name'][$i];
+				$_FILES['file']['type']     = $_FILES['backimg']['type'][$i];
+				$_FILES['file']['tmp_name'] = $_FILES['backimg']['tmp_name'][$i];
+				$_FILES['file']['error']     = $_FILES['backimg']['error'][$i];
+				$_FILES['file']['size']     = $_FILES['backimg']['size'][$i];
+							  
+							  
+							  $config['upload_path'] = './uploads/shop/';
+							  $config['allowed_types'] = '*';
+							  $this->load->library('upload', $config);
+							  $this->upload->initialize($config);
+							  if($this->upload->do_upload('file')){
+								  $fileData = $this->upload->data();
+								  $uploadData[$i]['file_name'] = $fileData['file_name'];
+								  $uploadData[$i]['created'] = date("Y-m-d H:i:s");
+								  $shop_image = array("shop_id"=>$id,"shop_image"=>$uploadData[$i]['file_name'] );
+										$this->db->insert('shop_image', $shop_image);
+										 $pimage=$uploadData[$i]['file_name'];
+							  }
+						  }
+					  }
 	return redirect('welcome/shop');
 			}
 
-
+			public function editverifiedshop()
+			{
+				
+				$user_id = $this->input->post('user_id');
+			
+				$description = $this->input->post('description');
+				$id = $this->input->post('id');
+				$pid=$this->input->post("pid");
+						$post_data = array( 'description' => $description);
+		
+		
+						$this->db->update("shop", $post_data, "id=$id");
+		
+				
+		
+				$this->load->library('upload');
+				
+				if (!empty($_FILES['backimg']['name'])) {
+					$filesCount = count($_FILES['backimg']['name']);
+					for($i = 0; $i < $filesCount; $i++){
+						$_FILES['file']['name']     = $_FILES['backimg']['name'][$i];
+						$_FILES['file']['type']     = $_FILES['backimg']['type'][$i];
+						$_FILES['file']['tmp_name'] = $_FILES['backimg']['tmp_name'][$i];
+						$_FILES['file']['error']     = $_FILES['backimg']['error'][$i];
+						$_FILES['file']['size']     = $_FILES['backimg']['size'][$i];
+									  
+									  
+									  $config['upload_path'] = './uploads/shop/';
+									  $config['allowed_types'] = '*';
+									  $this->load->library('upload', $config);
+									  $this->upload->initialize($config);
+									  if($this->upload->do_upload('file')){
+										  $fileData = $this->upload->data();
+										  $uploadData[$i]['file_name'] = $fileData['file_name'];
+										  $uploadData[$i]['created'] = date("Y-m-d H:i:s");
+										  $shop_image = array("shop_id"=>$id,"shop_image"=>$uploadData[$i]['file_name'] );
+												$this->db->insert('shop_image', $shop_image);
+												 $pimage=$uploadData[$i]['file_name'];
+									  }
+								  }
+							  }
+			return redirect('welcome/shop');
+					}
 	public function buyerprofile()
 	{
 		$session_id = $this->session->userdata('id');
@@ -2090,7 +2122,14 @@ $sub .= '</h6>
 		}
 	}
 
-
+	public function deleteshopimage($image_id=0, $product_id=0){
+		if($image_id!=0){
+		   $image=$this->db->get_where("shop_image", "id=$image_id")->row()->shop_image;
+		   unlink("/uploads/shop/".$image);
+		   $this->db->delete("shop_image", "id=$image_id");
+		 
+		}
+	}
 	public function myproductdetail()
 	{
 

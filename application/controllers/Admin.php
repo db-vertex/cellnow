@@ -2078,7 +2078,54 @@ public function deletecomment()
 }
 
 
+public function productdetail()
+	{
 
+		$id = $this->uri->segment(4);
+		$cateory = $this->uri->segment(3);
+		$subcategory_id = $this->uri->segment(5);
+
+		if ($cateory == 1) {
+			$Categories_all_product = get_all_category_reusable_parts($id);
+
+
+		} else if ($cateory == 2) {
+			$Categories_all_product = get_all_category_tuitions($id);
+
+
+		} else if ($cateory == 3) {
+			$Categories_all_product = get_all_category_job($id);
+
+
+		} else if ($cateory == 4) {
+			$Categories_all_product = get_all_category_internships($id);
+
+
+		}
+
+
+		//$product = $this->product_model->getproductall($id);
+
+
+    $session_id = $this->session->userdata('admin_id');
+
+    if($session_id)
+
+    {
+
+         
+
+    $admin_detail = $this->admin_model->get_admin_data($session_id);
+
+
+		
+		
+			$this->load->view('productdetail', ['admin_detail' => $admin_detail, 'categories_data' => $Categories_all_product]);
+		
+
+	
+		}
+	}
 
 public function reportedposts()
 {

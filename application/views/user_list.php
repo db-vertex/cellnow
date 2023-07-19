@@ -134,6 +134,7 @@ $msg_class=$this->session->flashdata('msg_class')
         <tbody>
 
         <?php $i=0; foreach ($shop as $valued) {
+          
 
 $i++;
 
@@ -233,7 +234,7 @@ $i++;
                alert('Something is wrong');
             },
             success: function(data) {
-              location.reload();
+             
                  
             } 
          });
