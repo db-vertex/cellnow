@@ -14,7 +14,9 @@
     min-width: 100%;
 }
 
-
+ul {
+  list-style-type: none;
+}
 .cover_img_div {
     text-align: center;
 }
@@ -1519,32 +1521,39 @@ a:active {
                         </a>
                     </div>
                     <div id="TYPEs" class="panel-collapse collapse">
-                        <div class="list-group mt-2">
-                       
-                    <input type="text" style="border-left:none; border-top:none; border-right:none;" class="common_select brand"placeholder="Search Brand"
-                                        value="">
-                 
-                            <?php 
-				      $v = $brand->result_array();
-                     if($v !== Array( )){ ?>
+                        <div   class="list-group mt-2">
+                        <input type="text" style="border-left:none; border-top:none; border-right:none;" id="myInput" onkeyup="filterFunction()" class="common_select brand" placeholder="Search Brand" value="">
 
-                            <?php
-                     }
-					
-                      
-					foreach($brand->result_array() as $row)
-					{
-					 
-					?>
-                   
-                            <div class="checkbox" style="padding:3px; border-top: none;">
-                                <label class="common_s"><input type="checkbox" class="common_select brand"
-                                        value="<?php echo $row['brand']; ?>">
-                                    <?php echo ucfirst($row['brand']); ?></label>
-                            </div>
-                            <?php 
-					} 
-					?>
+<?php
+// Sample array of brands for demonstration purposes
+$brands = array(
+    "Acer", "Alcatel", "Allview", "Amazon", "Amoi", "Apple", "Archos", "Asus", "AT&T", "Benefon", "BenQ",
+    "BenQ-Siemens", "Bird", "BlackBerry", "Blackview", "BLU", "Bosch", "BQ", "Casio", "Cat", "Celkon", "Chea",
+    "Coolpad", "Dell", "Doogee", "Emporia", "Energizer", "Ericsson", "Eten", "Fairphone", "Fujitsu Siemens",
+    "Garmin-Asus", "Gigabyte", "Gionee", "Google", "Haier", "Honor", "HP", "HTC", "Huawei", "mate", "mobile",
+    "Icemobile", "Infinix", "Innostream", "iNQ", "Intex", "Jolla", "Karbonn", "Kyocera", "Lava", "LeEco", "Lenovo",
+    "LG", "Maxon", "Maxwest", "Meizu", "Micromax", "Microsoft", "Mitac", "Mitsubishi", "Modu", "Motorola", "MWg",
+    "NEC", "Neonode", "NIU", "Nokia", "Nothing", "Nvidia", "O2", "OnePlus", "Oppo", "Orange", "Palm", "Panasonic",
+    "Pantech", "Parla", "Philips", "Plum", "Posh", "Prestigio", "QMobile", "Qtek", "Razer", "Realme", "Sagem",
+    "Samsung", "Sendo", "Sewon", "Sharp", "Siemens", "Sonim", "Sony", "Sony Ericsson", "Spice", "T-Mobile", "TCL",
+    "Tecno", "Tel.Me.", "Telit", "Thuraya", "Toshiba", "Ulefone", "Unnecto", "Vertu", "verykool", "Vivo", "VK Mobile",
+    "Vodafone", "Wiko", "WND", "XCute", "Xiaomi", "XOLO", "Yezz", "Yota", "YU", "ZTE"
+);
+?>
+
+<!-- Loop through the brands array and generate checkboxes with labels -->
+<div id="myDropdown">
+    <ul>
+        <?php foreach ($brands as $brand) : ?>
+            <li>
+                <label>
+                    <input type="checkbox" class="common_select brand" value="<?php echo $brand; ?>">
+                    <?php echo ucfirst($brand); ?>
+                </label>
+            </li>
+        <?php endforeach; ?>
+    </ul>
+</div>
                         </div>
                     </div>
                 </div>
@@ -2111,3 +2120,20 @@ return filter;
 
     }
     </script>
+   <script>
+    function filterFunction() {
+        var input, filter, div, li, i;
+        input = document.getElementById("myInput");
+        filter = input.value.toUpperCase();
+        div = document.getElementById("myDropdown");
+        li = div.getElementsByTagName("li");
+        for (i = 0; i < li.length; i++) {
+            var txtValue = li[i].textContent || li[i].innerText;
+            if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                li[i].style.display = "";
+            } else {
+                li[i].style.display = "none";
+            }
+        }
+    }
+</script>
