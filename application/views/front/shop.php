@@ -670,7 +670,7 @@ for($i=0; $i<(4-count($product_image)); $i++){
                             </div>
 
                         </div>
-                        <?php } } ?>
+                        <?php }  ?>
 
                         <?php if($shop->admin_approval!=2 && $shop->admin_approval!=0){?>
                         <div class="row text-center p-5">
@@ -813,7 +813,7 @@ for($i=0; $i<(4-count($product_image)); $i++){
                             </div>
 
                         </div>
-                        <?php } ?>
+                        <?php } } ?>
                     </div>
 
 
