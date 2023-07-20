@@ -28,7 +28,7 @@
     body {
         overflow-x: hidden;
     }
-
+   
     .space-top{
 margin-top: 10%;
     }
@@ -198,7 +198,13 @@ margin-top: 30%;
    ;
  
 }
-  
+
+.scrolled-down{
+   transform:translateY(-100%); transition: all 0.3s ease-in-out;
+}
+.scrolled-up{
+   transform:translateY(0); transition: all 0.3s ease-in-out;
+} 
 }
     @media (min-width: 576px) {
         .space-top{
@@ -1151,12 +1157,12 @@ padding-left: 90px;
 
         <div class="container">
             
-            <nav class="navbar navbar-expand-xl bg-body-">
+            <nav class="navbar navbar-expand-xl bg-body- smart-scroll">
 
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
                         class="img-fluid" style="width:180px;">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="myelement"
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="myelement" 
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation" style="border: none;color: #10B981;">
 
@@ -1232,7 +1238,7 @@ padding-left: 90px;
                             </ul>
                         </li>
 
-                        <li class="nav-item" style="padding-right:10px; min-width: fit-content;">
+                        <li class="nav-item" style="padding-right:10px; min-width: fit-content;  width: fit-content;">
                             <a class="nav-link  Post_header" href="<?php echo base_url();?>welcome/postproduct"
                                 style="color:#10B981;font-weight:bold;" id="ab">Post Ad</a>
                         </li>
@@ -1406,18 +1412,20 @@ function initialize() {
     });
 }
 
-$(window).scroll(function() {
 
-  if ($(this).scrollTop() >= 20) {
 
-      $('.nav-icon').fadeOut(200);
+</script>
 
-  }else {
+<script>
+  // Custom scroll event handler
+  $(window).on('scroll', function() {
+    var scroll_top = $(this).scrollTop();
+    var navbar_height = $('.navbar').outerHeight();
 
-      $('.nav-icon').fadeIn(200);
-
-  }
-
-});
-
+    if (scroll_top > navbar_height) {
+      $('#navbarSupportedContent').collapse('hide');
+    } else {
+      $('#navbarSupportedContent').collapse('show');
+    }
+  });
 </script>

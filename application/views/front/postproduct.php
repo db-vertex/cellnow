@@ -135,7 +135,7 @@
     }
 
     .images_col {
-        width: 400px;
+        width: 320px;
         height: 300px;
         position: absolute;
         left: 50%;
@@ -314,6 +314,7 @@
         .images_small_box_row {
             margin-top: 106%;
         }
+        
     }
 
     @media (min-width: 400px) {
@@ -729,6 +730,60 @@ swal({
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Product Brand.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 hiddens" id="Rent_sale_div">
+                                <label for="Rent_sale" class="form-label post_input_lable">Filter</label>
+                               
+                                    <select class="form-select post_input_fild" id="Rent_sale"
+                                    name="Rent_sale">
+                                    <option value="">Select Type</option>
+                                    <option value="Rent">Rent</option>
+                                    <option value="Sale">Sale</option>
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid rent.
+                                </div>
+                            </div>
+
+                          
+                            <div class="col-sm-12 hiddens" id="BHK_type_div">
+                                <label for="BHK_type" class="form-label post_input_lable"> Type</label>
+                               
+                                    <select class="form-select post_input_fild" id="BHK_type"
+                                    name="type">
+                                    <option value="">Select Type</option>
+                                    <option value="1BHK">1BHK</option>
+                                    <option value="2BHK">2BHK</option>
+                                    <option value="3BHK">3BHK</option>
+                                    <option value="Others">Others</option>
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid rent.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 hiddens" id="Floor_div">
+                                <label for="Floor" class="form-label post_input_lable">Floor Type</label>
+                               
+                                    <select class="form-select post_input_fild" id="Floor"
+                                    name="Floor">
+                                    <option value="">Select Floor</option>
+                                    <option value="Ground">Ground</option>
+                                    <option value="1st">1st</option>
+                                    <option value="2nd">2nd</option>
+                                    <option value="3rd">3rd</option>
+                                    <option value="4th">4th</option>
+                                    <option value="5th">5th</option>
+                                    <option value="5th">6th</option>
+                                    <option value="5th">7th</option>
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid rent.
                                 </div>
                             </div>
 
@@ -1412,6 +1467,32 @@ swal({
                                     Please provide a valid Have Bill.
                                 </div>
                             </div>
+
+                            <div class="col-sm-6 hiddens" id="Food_div">
+                                <label for="Food" class="form-label post_input_lable">Food</label>
+                                <select class="form-select post_input_fild" id="Food" name="Food">
+                                    <option value="">Select Food</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Food.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="Furniture_div">
+                                <label for="Furniture" class="form-label post_input_lable">Furniture Type</label>
+                                <select class="form-select post_input_fild" id="Furniture" name="Furniture">
+                                    <option value="">Select Furniture Type</option>
+                                    <option value="Not">Not</option>
+                                    <option value="Semi">Semi</option>
+                                    <option value="Full">Full</option>
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Furniture.
+                                </div>
+                            </div>
+                            
 
                             <div class="col-sm-6 hiddens" id="Warrenty_div">
                                 <label for="Warrenty" class="form-label post_input_lable">Warrenty</label>
