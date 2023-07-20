@@ -347,8 +347,7 @@ margin-top: 25%;
 
     .cut-list>li {
         margin-left: 10px;
-        margin-right: 25px;
-
+       
         padding-bottom: 2px;
     }
 

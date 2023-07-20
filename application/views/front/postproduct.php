@@ -581,6 +581,9 @@ swal({
                                     <option value="2">Tuitions / Classes</option>
                                     <option value="3">Part-time Jobs</option>
                                     <option value="4">Internships</option>
+                                    <option value="5">Commericial  Places</option>
+                                    <option value="6">Residential Places</option>
+                                    <option value="7">Land/Plot</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Category.
