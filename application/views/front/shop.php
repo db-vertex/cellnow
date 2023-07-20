@@ -29,6 +29,9 @@
         background-color: #13C571;
         border-color: #13C571;
     }
+    .left-space{
+padding-left: 25%;
+    }
     .details_img_cover {
 
 max-height: 177px;
@@ -240,6 +243,25 @@ max-width: 60%;
         max-width: 100%;
 
     }
+    .left-space{
+padding-left: 20px;
+    }
+    .details_img_cover {
+
+max-height: 177px;
+min-height: 177px;
+left: 114px;
+top: 588px;
+background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+
+border-radius: 15px;
+min-width: 100%;
+max-width: 100%;
+}
+.column {
+  float: left;
+  width: 22.66%;
+}
     }
 
     </style>
@@ -326,7 +348,7 @@ $i++;
                     <?php } ?>
         <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
   <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
-  <div class="row mt-3" style="padding-left:25%;">
+  <div class="row mt-3 left-space" >
   <?php  if(!empty($shop)){?>
                             <?php $i=1;
 
@@ -385,7 +407,7 @@ $i++;
                         <div class="col">
                             <div class="row">
                                 <div class="col">
-                                    <h5 class="ml-3"><b><?php echo ucfirst($shop->name);?> </b></h5>
+                                    <h5><b><?php echo ucfirst($shop->name);?> </b></h5>
                                 </div>
                                 <div class="col"><?php if($shop->admin_approval==2){?>
                                     <div>
@@ -406,12 +428,12 @@ $i++;
                             </div>
 
                             <p class="mt-3 ml-3 word"><?php echo $shop->description;?></p>
-                            <p class="ml-3"><?php echo $shop->Address;?></p>
-                            <p class="ml-3"><?php echo $shop->mobile;?></p>
-                            <p class="ml-3 mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
+                            <p ><?php echo $shop->Address;?></p>
+                            <p ><?php echo $shop->mobile;?></p>
+                            <p class=" mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
 
-                            <p class="mt-3 ml-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
-                            <p class="ml-3"><b>Type of service: </b><?php echo $shop->service_type;?></p>
+                            <p class="mt-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
+                            <p class=""><b>Type of service: </b><?php echo $shop->service_type;?></p>
                         </div>
                         <?php if($shop->admin_approval!=1 && $shop->admin_approval!=0){?>
                         <div class="row text-center p-5">
@@ -746,10 +768,10 @@ $i=1;
         $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
 
         ?>
-        <div class="col-sm-4" id="productimage<?=$pro_img->id?>">
+        <div class="col-6" id="productimage<?=$pro_img->id?>">
          <p class="deletebtn"  data-productid="<?=$shop->id; ?>" data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash" aria-hidden="true" style="font-size:20px;color:red"></i></p>
-         <a href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="width: 100%;"><img src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="border: 2px solid grey;
-  border-radius: 10px; height: 100px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
+         <a href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"><img src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="border: 2px solid grey;
+  border-radius: 10px; height: 100px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
 </div>
 
   
@@ -763,9 +785,9 @@ $i=1;
 
 for($i=0; $i<(4-count($product_image)); $i++){
   ?>
-  <div class="col-sm-4">
+  <div class="col-6">
          <p class="editebtn" onclick="fileinputimg<?=$i?>.click();" for="fileinputimg<?=$i?>"><i class="fa fa-edit" aria-hidden="true" style="font-size:20px;color:#78d7b8"></i></p>
-         <a  style="width: 100%;"><div  style=" height: 150px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; ">  
+         <a  style="width: 100%;"><div  style=" height: 150px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; ">  
          <div for="fileinputimg<?=$i?>" class="image-uploade">
 <input id="fileinputimg<?=$i?>" class="fileinputimg" name="backimg[]" type="file" accept="image/*" />
 </div></div></a>
@@ -1128,7 +1150,7 @@ for($i=0; $i<(4-count($product_image)); $i++){
                             <label for="filebtn10" class="filebtn" id="btn10lbl">
          
   		  <i class="fa fa-plus" aria-hidden="true" id="fabtn10" style="margin-top: 24px;color: #13C571;"></i>
-  			<input type="file" id="filebtn10" class="profile_img" id="cover_image" style="display: none" name="shop_img[]" accept="image/*">
+  			<input type="file" id="filebtn10" class="profile_img"  style="display: none" name="shop_img[]" accept="image/*">
   			<img src="#" style="display: none;" class="upl_img" id="upl_img10">
   		
   		</label>
@@ -1372,7 +1394,7 @@ function checkcoverimage() {
     },
       success: function(response){
           console.log(response);
-          $("#productimage"+imageid).replaceWith('<div class="col-sm-4"><button type="button" class="editebtn" onclick="fileinputimg'+imageid+'.click();" for="fileinputimg'+imageid+'"><i class="fa fa-edit" aria-hidden="true"></i></button><a  style="width: 100%;"><div  style=" height: 150px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "><div for="fileinputimg'+imageid+'" class="image-uploade"><input id="fileinputimg'+imageid+'" class="fileinputimg" name="backimg[]" type="file" accept="image/*"  /></div></div></a></div>');     
+          $("#productimage"+imageid).replaceWith('<div class="col-6"><p  class="editebtn" onclick="fileinputimg'+imageid+'.click();" for="fileinputimg'+imageid+'"><i class="fa fa-edit" aria-hidden="true"></i></p><a><div  style=" height: 150px; max-width:160%; min-width:160%; margin: 8px 8px 8px 8px; object-fit: cover; "><div for="fileinputimg'+imageid+'" class="image-uploade"><input id="fileinputimg'+imageid+'" class="fileinputimg" name="backimg[]" type="file" accept="image/*"  /></div></div></a></div>');     
          swal("Deleted!", "Poses has been deleted.", "success");
       }
     });

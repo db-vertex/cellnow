@@ -16,6 +16,7 @@
 
 ul {
   list-style-type: none;
+  padding: 0px;;
 }
 .cover_img_div {
     text-align: center;
