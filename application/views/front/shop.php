@@ -29,6 +29,9 @@
         background-color: #13C571;
         border-color: #13C571;
     }
+    .spacetop{
+        margin-top: 50px;
+    }
     .left-space{
 padding-left: 25%;
     }
@@ -243,6 +246,9 @@ max-width: 60%;
         max-width: 100%;
 
     }
+    .spacetop{
+        margin: 0px;
+    }
     .left-space{
 padding-left: 20px;
     }
@@ -346,10 +352,11 @@ $i++;
  ?>
 
                     <?php } ?>
-        <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
-  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
-  <div class="row mt-3 left-space" >
+      
+  <div class="row mt-3 left-space">
   <?php  if(!empty($shop)){?>
+    <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
+  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
                             <?php $i=1;
 
   $product_image =   get_shop_image($shop->id);
@@ -382,7 +389,7 @@ $i++;
  
                      <?php } ?>
                      </div>
-                    </div><br>
+                    </div>
 
 
                 </div>
@@ -396,7 +403,7 @@ $i++;
                         <div>
                             <a data-toggle="modal" data-target="#addshopdetail"
                                 href="<?php echo base_url(); ?>welcome/shop"
-                                style="background-color: #10b981; color:#fff" class="btn" role="button"
+                                style="background-color: #10b981; color:#fff" class="btn spacetop" role="button"
                                 aria-disabled="true" id="c">Take Your Shop/Services online on CelNow </a>
                             <p class="text-muted mt-4">Note: Once the shop details are submitted for verification they can be changed
                             </p>
@@ -1330,6 +1337,8 @@ function checkcoverimage() {
         }, false)
     })
 })()
+
+
 </script>
 <script>
     "use strict"; /* Start of use strict */
