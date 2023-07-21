@@ -379,6 +379,14 @@
   width: 100%;
   margin-bottom: 0;
 }
+@media (min-width:360px){
+  .col-10 {
+    flex: 0 0 auto;
+    width: 73.33333333%;
+  }
+   
+
+}
 @media (max-width: 767px) {
   .chat .chat-wrapper .chat-list-wrapper {
     border: 1px solid #ddd;
@@ -840,15 +848,15 @@
 
                                <div class="compose-box" style="display: none;">
                                     
-                                    <div class="row">
+                                    <div class="row p-2">
                                       <?php if(empty($blocked)){ ?>
-                                       <div class="col-10 mg-btm-10">
+                                       <div class="col-10 ">
                                            <textarea id="message" style="backgound-color:#77d4b5 " class="form-control " name="message" placeholder="Type your message here..." onkeyup="return checkchatmessage();"></textarea>
                                         </div>
 
-                                          <div class="col-2 mg-btm-10 "> 
+                                          <div class="col-2 px-0"> 
                                             <button type="button" id="btn-send" class="btn btn-green  btn-sm">
-<img style="padding:5px;" src="<?php echo base_url();?>assets/images/arrow.png">                             </button>
+<img style="padding:8px;" src="<?php echo base_url();?>assets/images/arrow.png">                             </button>
                                          
  <?php } ?>
                                             
