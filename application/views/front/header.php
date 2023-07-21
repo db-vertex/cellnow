@@ -738,7 +738,7 @@ margin-top: 25%;
         height: 38px;
         width: 38px;
         color: white;
-        background-color: #0000004d;
+        background-color: #b6adad4d;
         border-radius: 50%;
         border: 0px solid;
         margin: auto;
@@ -1425,7 +1425,7 @@ function initialize() {
     if (scroll_top > navbar_height) {
       $('#navbarSupportedContent').collapse('hide');
     } else {
-      $('#navbarSupportedContent').collapse('show');
+      //$('#navbarSupportedContent').collapse('show');
     }
   });
 </script>

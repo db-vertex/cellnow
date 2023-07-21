@@ -3,6 +3,10 @@
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <style>
+    .cursor-center {
+  margin-left:30px;
+}
+
 .details_img_cover {
 
     max-height: 367px;
@@ -1523,7 +1527,10 @@ a:active {
                     </div>
                     <div id="TYPEs" class="panel-collapse collapse">
                         <div   class="list-group mt-2">
-                        <input type="text" style="border-left:none; border-top:none; border-right:none;" id="myInput" onkeyup="filterFunction()" class="common_select brand" placeholder="Search Brand" value="">
+                      
+                        <input type="text" style="border-left:none; border-top:none; border-right:none;" id="myInput" onkeyup="filterFunction()" class="cursor-center " placeholder="Search Brand" value="">
+                        <i class="fa fa-search" aria-hidden="true" style="margin-top: -45px; font-size:20px; margin-left: -20px;
+"></i> 
 
 <?php
 // Sample array of brands for demonstration purposes

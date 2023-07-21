@@ -733,7 +733,7 @@ swal({
                                 </div>
                             </div>
 
-                            <div class="col-sm-12 hiddens" id="Rent_sale_div">
+                            <div class="col-sm-6 hiddens" id="Rent_sale_div">
                                 <label for="Rent_sale" class="form-label post_input_lable">Filter</label>
                                
                                     <select class="form-select post_input_fild" id="Rent_sale"
@@ -744,12 +744,12 @@ swal({
   
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid rent.
+                                    Please provide a valid Filter.
                                 </div>
                             </div>
 
                           
-                            <div class="col-sm-12 hiddens" id="BHK_type_div">
+                            <div class="col-sm-6 hiddens" id="BHK_type_div">
                                 <label for="BHK_type" class="form-label post_input_lable"> Type</label>
                                
                                     <select class="form-select post_input_fild" id="BHK_type"
@@ -762,11 +762,11 @@ swal({
   
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid rent.
+                                    Please provide a valid Type.
                                 </div>
                             </div>
 
-                            <div class="col-sm-12 hiddens" id="Floor_div">
+                            <div class="col-sm-6 hiddens" id="Floor_div">
                                 <label for="Floor" class="form-label post_input_lable">Floor Type</label>
                                
                                     <select class="form-select post_input_fild" id="Floor"
@@ -783,7 +783,143 @@ swal({
   
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid rent.
+                                    Please provide a valid Floor.
+                                </div>
+                            </div>
+
+                            
+                            <div class="col-sm-6 hiddens" id="Parking_div">
+                                <label for="Parking" class="form-label post_input_lable">Parking Type</label>
+                               
+                                    <select class="form-select post_input_fild" id="Parking"
+                                    name="Parking">
+                                    <option value="">Select Parking</option>
+                                    <option value="None">None</option>
+                                    <option value="2 Wheeler">2 Wheeler</option>
+                                    <option value="4 Wheeler">4 Wheeler</option>
+                                  
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Parking.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-12 hiddens" id="Facing_div">
+                                <label for="Facing" class="form-label post_input_lable">Facing</label>
+                               
+                                    <select class="form-select post_input_fild" id="Facing"
+                                    name="Facing">
+                                    <option value="">Select Facing</option>
+                                    <option value="North">North</option>
+                                    <option value="South">South</option>
+                                    <option value="East">East</option>
+                                    <option value="West">West</option>
+                                  
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Facing.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="Room_div">
+                                <label for="Room" class="form-label post_input_lable">Rooms</label>
+                               
+                                    <select class="form-select post_input_fild" id="Room"
+                                    name="Room">
+                                    <option value="">Select Rooms</option>
+                                    <option value="Sharing">Sharing</option>
+                                    <option value="Independent">Independent</option>
+                                    
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Bathrooms.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="Bathroom_div">
+                                <label for="Bathroom" class="form-label post_input_lable">Bathrooms</label>
+                               
+                                    <select class="form-select post_input_fild" id="Bathroom"
+                                    name="Bathroom">
+                                    <option value="">Select Bathrooms</option>
+                                    <option value="Sharing">Sharing</option>
+                                    <option value="Independent">Independent</option>
+                                    
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Bathrooms.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="Bathrooms_div">
+                                <label for="Bathrooms" class="form-label post_input_lable">Bathrooms</label>
+                               
+                                    <select class="form-select post_input_fild" id="Bathrooms"
+                                    name="Bathrooms">
+                                    <option value="">Select Bathrooms</option>
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="Others">Others</option>
+                                    
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Bathrooms.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="Preferred_div">
+                                <label for="Preferred" class="form-label post_input_lable">Preferred Tenant</label>
+                               
+                                    <select class="form-select post_input_fild" id="Preferred"
+                                    name="Preferred">
+                                    <option value="">Select Preferred Tenant</option>
+                                    <option value="Girl">Girl</option>
+                                    <option value="Boy">Boy</option>
+                                    <option value="Any">Any</option>
+                                  </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Preferred.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="Preferred_tenant_div">
+                                <label for="Preferred_tenant" class="form-label post_input_lable">Preferred Tenant</label>
+                               
+                                    <select class="form-select post_input_fild" id="Preferred_tenant"
+                                    name="Preferred_tenant">
+                                    <option value="">Select Preferred Tenant</option>
+                                    <option value="Bachelor">Bachelor</option>
+                                    <option value="Family">Family</option>
+                                    <option value="Any">Any</option>
+                                  </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Preferred.
+                                </div>
+                            </div>
+
+                         
+
+                            <div class="col-sm-6 hiddens" id="salePrice_div">
+                                <label for="Price" class="form-label post_input_lable">Sale / Rent Price</label>
+                                <input type="text" class="form-control post_input_fild" id="Price" name="Price"
+                                    placeholder="Please Enter Price">
+                                <div class="invalid-feedback">
+                                    Please Enter Price.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="Area_div">
+                                <label for="Area" class="form-label post_input_lable">Area(square feet)</label>
+                                <input type="text" class="form-control post_input_fild" id="Area" name="Area"
+                                    placeholder="Please Enter Area">
+                                <div class="invalid-feedback">
+                                    Please Enter Area.
                                 </div>
                             </div>
 
@@ -910,7 +1046,7 @@ swal({
                                 </div>
                             </div>
 
-
+                          
 
                             <div class="col-sm-6 hiddens" id="reusable_parts_Home_Appliances_product_Type_div">
                                 <label for="reusable_parts_Home_Appliances_product_Type"
@@ -2185,8 +2321,58 @@ $(document).ready(function(){
                     }
                 }).trigger('change.intership_Skills_Qualifications,intership_Post_Vacant');
 
+            $('#subcategory').on('change.Furniture,Area,Floor,Parking,Facing,Rent_sale',
+                function() {
+                    $("#Furniture_div,#Area_div,#Floor_div,#Parking_div,#Facing,#Rent_sale_div").toggle($(
+                        this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32) ;
+                    if ($(this).val() == 19) {
+                        Furniture.required = true;
+                        Area.required = true;
+                        Floor.required = true;
+                        Parking.required = true;
+                        Facing.required = true;
+                        Rent_sale.required = true;
+                    }
+                }).trigger('change.Furniture,Area,Floor,Parking,Facing,Rent_sale');
+
+              
+
+                $('#subcategory').on('change.Food,Room,Preferred,Bathroom',
+                function() {
+                    $("#Food_div,#Room_div,#Preferred_div,#Bathroom_div").toggle($(
+                        this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 32) ;
+                    if ($(this).val() == 26) {
+                       
+                        Food.required = true;
+                        Room.required = true;
+                    }
+                }).trigger('change.Food,Room,Bathroom,Preferred');
 
 
+                  $('#subcategory').on('change.BHK_type',
+                function() {
+                    $("#BHK_type_div").toggle($(
+                        this).val() == 30 ||$( this).val() == 29 || $( this).val() == 31 || $( this).val() == 28 || $( this).val() == 32) ;
+                    if ($(this).val() == 28) {
+                       
+                        BHK_type.required = true;
+                      
+                    }
+                }).trigger('change.BHK_type');
+
+                $('#subcategory').on('change.Bathrooms,Preferred_tenant',
+                function() {
+                    $(",#Bathrooms_div,#Preferred_tenant_div").toggle($(
+                        this).val() == 30 ||$( this).val() == 29 || $( this).val() == 31) ;
+                    if ($(this).val() == 29) {
+                       
+                        Preferred_tenant.required = true;
+                      
+                    }
+                }).trigger('change.Bathrooms,Preferred_tenant');
+
+
+                
         });
 
 
