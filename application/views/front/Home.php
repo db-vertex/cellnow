@@ -278,7 +278,7 @@ foreach ($category as $key => $cat) {
 
                         <div class="va-card va-card_category mt-2" style="">
                             <p style="text-align:center;" class="my-auto pouler_Categories "
-                                <?php if ($category == 1) { ?>
+                                <?php if ($category == 1 && $category==5) { ?>
                                 onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
                                 onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
 

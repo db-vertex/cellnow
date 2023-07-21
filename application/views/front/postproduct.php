@@ -805,7 +805,7 @@ swal({
                                 </div>
                             </div>
 
-                            <div class="col-sm-12 hiddens" id="Facing_div">
+                            <div class="col-sm-6 hiddens" id="Facing_div">
                                 <label for="Facing" class="form-label post_input_lable">Facing</label>
                                
                                     <select class="form-select post_input_fild" id="Facing"
@@ -847,6 +847,22 @@ swal({
                                     <option value="">Select Bathrooms</option>
                                     <option value="Sharing">Sharing</option>
                                     <option value="Independent">Independent</option>
+                                    
+  
+                                </select>
+                                <div class="invalid-feedback">
+                                    Please provide a valid Bathrooms.
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 hiddens" id="land_Bathroom_div">
+                                <label for="land_Bathroom" class="form-label post_input_lable">Bathrooms</label>
+                               
+                                    <select class="form-select post_input_fild" id="land_Bathroom"
+                                    name="Bathroom">
+                                    <option value="">Select Bathrooms</option>
+                                    <option value="Yes">Yes</option>
+                                    <option value="No">No</option>
                                     
   
                                 </select>
@@ -899,15 +915,15 @@ swal({
                                     <option value="Any">Any</option>
                                   </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid Preferred.
+                                    Please provide a valid Preferred Tenant.
                                 </div>
                             </div>
 
                          
 
-                            <div class="col-sm-6 hiddens" id="salePrice_div">
-                                <label for="Price" class="form-label post_input_lable">Sale / Rent Price</label>
-                                <input type="text" class="form-control post_input_fild" id="Price" name="Price"
+                            <div class="col-sm-6 hiddens" id="Sale_Price_div">
+                                <label for="Sale_Price" class="form-label post_input_lable">Sale / Rent Price</label>
+                                <input type="text" class="form-control post_input_fild" id="Sale_Price" name="Sale_Price"
                                     placeholder="Please Enter Price">
                                 <div class="invalid-feedback">
                                     Please Enter Price.
@@ -2321,11 +2337,11 @@ $(document).ready(function(){
                     }
                 }).trigger('change.intership_Skills_Qualifications,intership_Post_Vacant');
 
-            $('#subcategory').on('change.Furniture,Area,Floor,Parking,Facing,Rent_sale',
+            $('#subcategory').on('change.Floor,Parking',
                 function() {
-                    $("#Furniture_div,#Area_div,#Floor_div,#Parking_div,#Facing,#Rent_sale_div").toggle($(
+                    $("#Floor_div,#Parking_div").toggle($(
                         this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32) ;
-                    if ($(this).val() == 19) {
+                    if ($(this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32) {
                         Furniture.required = true;
                         Area.required = true;
                         Floor.required = true;
@@ -2333,26 +2349,52 @@ $(document).ready(function(){
                         Facing.required = true;
                         Rent_sale.required = true;
                     }
-                }).trigger('change.Furniture,Area,Floor,Parking,Facing,Rent_sale');
+                }).trigger('change.Floor,Parking');
 
-              
+                $('#subcategory').on('change.Sale_Price',
+                function() {
+                    $("#Sale_Price_div").toggle($(
+                        this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 25 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 29 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32 ||  $( this).val() == 33 ||  $( this).val() == 34 ||  $( this).val() == 35) ;
+                    if ($(this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 25 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 29 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32 ||  $( this).val() == 33 ||  $( this).val() == 34 ||  $( this).val() == 35) {
+                        Sale_Price.required = true;
+                    }
+                }).trigger('change.Sale_Price');
+
+
+                $('#subcategory').on('change.Furniture,Area,Rent_sale',
+                function() {
+                    $("#Furniture_div,#Area_div,#Rent_sale_div").toggle(
+                        $(
+                        this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 29 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32 || $( this).val() == 25) ;
+                    if ($(this).val() == 25) {
+                        Furniture.required = true;
+                        Area.required = true;
+                      
+                        Rent_sale.required = true;
+                    }
+                }).trigger('change.Furniture,Area,Rent_sale');
+
+               
+               
 
                 $('#subcategory').on('change.Food,Room,Preferred,Bathroom',
                 function() {
                     $("#Food_div,#Room_div,#Preferred_div,#Bathroom_div").toggle($(
                         this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 32) ;
-                    if ($(this).val() == 26) {
+                    if ($(this).val() == 26 || $( this).val() == 27 || $( this).val() == 28) {
                        
                         Food.required = true;
                         Room.required = true;
+                        Preferred.required = true;
+                        Bathroom.required = true;
                     }
-                }).trigger('change.Food,Room,Bathroom,Preferred');
+                }).trigger('change.Food,Room,Preferred,Bathroom');
 
 
                   $('#subcategory').on('change.BHK_type',
                 function() {
                     $("#BHK_type_div").toggle($(
-                        this).val() == 30 ||$( this).val() == 29 || $( this).val() == 31 || $( this).val() == 28 || $( this).val() == 32) ;
+                        this).val() == 30 || $( this).val() == 29 || $( this).val() == 31 || $( this).val() == 28 || $( this).val() == 32) ;
                     if ($(this).val() == 28) {
                        
                         BHK_type.required = true;
@@ -2362,16 +2404,28 @@ $(document).ready(function(){
 
                 $('#subcategory').on('change.Bathrooms,Preferred_tenant',
                 function() {
-                    $(",#Bathrooms_div,#Preferred_tenant_div").toggle($(
-                        this).val() == 30 ||$( this).val() == 29 || $( this).val() == 31) ;
+                    $("#Bathrooms_div,#Preferred_tenant_div").toggle($(
+                        this).val() == 29 || $( this).val() == 30 || $( this).val() == 31) ;
                     if ($(this).val() == 29) {
-                       
+                        Bathrooms.required = true;
                         Preferred_tenant.required = true;
                       
                     }
                 }).trigger('change.Bathrooms,Preferred_tenant');
 
-
+                $('#subcategory').on('change.Facing,Area,Rent_sale',
+                function() {
+                    $("#Facing_div,#Area_div,#Rent_sale_div").toggle(
+                        $(
+                        this).val() == 33 ||$( this).val() == 34 || $( this).val() == 35 || $(
+                        this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 29 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32) ;
+                    if ($(this).val() == 35) {
+                        Facing.required = true;
+                        Area.required = true;
+                      
+                        Rent_sale.required = true;
+                    }
+                }).trigger('change.Facing,Area,Rent_sale');
                 
         });
 

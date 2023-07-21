@@ -2397,7 +2397,7 @@ $sub .= '</h6>
 
 	public function saveproduct()
 	{
-      
+  
 		$category = $this->input->post('category');
 
 		if ($category == 1) {
@@ -2551,6 +2551,36 @@ $sub .= '</h6>
 			$insert = $this->product_model->category_internships($postData);
 			$id = $this->db->insert_id();
 			$table = "category_internships";
+		}
+		if ($category == 5) {
+			$postData = array();
+			$postData['title'] = $this->input->post('Title');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
+			$postData['user_id'] = $this->input->post('user_id');
+			$postData['category_id'] = $this->input->post('category');
+			$postData['subcategory_id'] = $this->input->post('subcategory');
+			$postData['filter'] = $this->input->post('Rent_sale');
+			$postData['furniture_type'] = $this->input->post('Furniture');
+			$postData['floor'] = $this->input->post('Floor');
+			$postData['parking'] = $this->input->post('Parking');
+			$postData['facing'] = $this->input->post('Facing');
+			$postData['area'] = $this->input->post('Area');
+			$postData['address'] = $this->input->post('Address');
+			$postData['Description'] = $this->input->post('Description');
+			
+			$postData['price'] = $this->input->post('Sale_Price');
+			$postData['postal_code'] = $this->input->post('Postal_code');
+			$postData['town'] = $this->input->post('Town');
+			$postData['lat'] = $this->input->post('latitude');
+			$postData['long'] = $this->input->post('longitude');
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$sponser = $this->input->post('Sponsor');
+print_r($postData);die();
+			$insert = $this->product_model->category_commericial_places($postData);
+			$id = $this->db->insert_id();
+			
+			
+			$table = "category_commericial_places";
 		}
 
 		$id = $this->db->insert_id();
