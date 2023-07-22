@@ -533,6 +533,15 @@ class User extends CI_Model {
        else if($data['category_id']==4){
         $this->db->update('category_internships', $datas, "id = ".$data['product_id']);
        }
+       else if($data['category_id']==5){
+        $this->db->update('category_commericial_places', $datas, "id = ".$data['product_id']);
+       }
+       else if($data['category_id']==6){
+        $this->db->update('category_residential_places', $datas, "id = ".$data['product_id']);
+       }
+       else if($data['category_id']==7){
+        $this->db->update('category_land_plot', $datas, "id = ".$data['product_id']);
+       }
         else{
         $delete = $this->db->query("delete from wishlist where user_id=".$data['user_id']." and product_id=".$data['product_id']);
         }

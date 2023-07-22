@@ -166,6 +166,18 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
           $Categories_all_product = get_shopall_category_internships($product_id);
          
          }
+         else if($category_id == 5){
+          $Categories_all_product = get_shopall_category_commericial_places($product_id);
+         
+         }
+         else if($category_id == 6){
+          $Categories_all_product = get_shopall_category_residential_places($product_id);
+         
+         }
+         else if($category_id == 7){
+          $Categories_all_product = get_shopall_category_land_plot($product_id);
+         
+         }
          
         
          if(!empty($Categories_all_product)){

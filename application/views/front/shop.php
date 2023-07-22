@@ -873,6 +873,30 @@ for($i=0; $i<(4-count($product_image)); $i++){
       $Categories_all_product = get_all_category_reusable_parts($product);
      
     }
+    else if($category== 2){
+        $Categories_all_product = get_shopall_category_tuitions($product);  
+        
+    }
+    else if($category == 3 ){
+        $Categories_all_product = get_shopall_category_job($product); 
+        
+    }
+    else if($category == 4){
+     $Categories_all_product = get_shopall_category_internships($product);
+    
+    }
+    else if($category== 5){
+        $Categories_all_product = get_shopall_category_commericial_places($product);
+       
+       }
+       else if($category == 6){
+        $Categories_all_product = get_shopall_category_residential_places($product);
+       
+       }
+       else if($category == 7){
+        $Categories_all_product = get_shopall_category_land_plot($product);
+       
+       }
 
     $wishlist = 0;
     if (!empty($user) && isset($user)) {
