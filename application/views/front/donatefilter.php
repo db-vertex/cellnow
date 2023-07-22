@@ -1400,7 +1400,7 @@ a:active {
                
                  
                      $sub_ = '';
-                     if($cateory==5){
+                     if($cateory==8){
                         $subcategory = get_all_product_type();  
                         
                      }
@@ -1413,7 +1413,7 @@ a:active {
 					?>
 
                     <div class="va-card va-card_category mt-2 px-0" style="">
-                        <p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
+                        <p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1 || $category == 5 || $category == 6 || $category == 7) { ?>
                             onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
                             onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
 

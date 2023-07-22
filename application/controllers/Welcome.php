@@ -1206,11 +1206,11 @@ $sub .= '</h6>
 		}
 		else if ($cateory == 6) {
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
-			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('filter', $cateory);
 		}
 		else if ($cateory == 7) {
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
-			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('filter', $cateory);
 		}
 		else if ($cateory == 8) {
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
@@ -1336,29 +1336,7 @@ $sub .= '</h6>
 		$cateory = $this->uri->segment(3);
 		$session_id = $this->session->userdata('id');
 
-		// if($cateory == 5){
-
-		// 	$data['products']= get_all_products();
-			
-
-		// 	if ($session_id) {
-		// 		//$myproduct = $this->product_model->myproduct($session_id);
-	
-		// 		$user_detail = $this->user->loginuser($session_id);
-	
-		// 		$this->load->view('front/header', ['user' => $user_detail]);
-		// 		$this->load->view('front/fillter', $data, ['user' => $user_detail]);
-		// 		$this->load->view('front/footer');
-	
-		// 	} else {
-		// 		$this->load->view('front/header');
-		// 		$this->load->view('front/fillter', $data);
-		// 		$this->load->view('front/footer');
-		// 	}
-
-		// }
-		// else{
-
+		
 		if ($cateory == 1) {
 			//$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
 			$data['select_Type'] = $this->product_filter_model->fetch_filter_type('Select_Type',$cateory);
@@ -1376,6 +1354,18 @@ $sub .= '</h6>
 			$data['brand'] = $this->product_filter_model->fetch_filter_type('Job_type', $cateory);
 		}
 		else if ($cateory == 5) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('filter', $cateory);
+		}
+		else if ($cateory == 6) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('filter', $cateory);
+		}
+		else if ($cateory == 7) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('filter', $cateory);
+		}
+		else if ($cateory == 8) {
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
 			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
 		}
