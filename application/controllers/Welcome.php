@@ -65,12 +65,8 @@ class Welcome extends CI_Controller
 		// echo $this->db->last_query();
 		$sub = "";
 
-		if($category_id ==5){
-			$subcategory = get_all_product_type();  
-		 }
-		 else{
-			$subcategory = get_producttype_byid($category_id);  
-		 }
+		$subcategory = get_producttype_byid($category_id);  
+		 
 	
 		foreach ($subcategory as $value) {
 			//print_r($subcategory);die();
@@ -78,12 +74,13 @@ class Welcome extends CI_Controller
 			$sub .= '
 	<div class="va-card va-card_category mt-2 px-0"> <a class=" border-0"   
 		<p style="text-align:center;" class="my-auto pouler_Categories " ';
-			if ($category_id == 1 && $category==5) {
+			if ($category_id == 1 || $category_id == 5 || $category_id == 6 || $category_id == 7) {
 				$sub .= '	onclick="return getproduct( ' . $value->subcategory_id . ')"';
 
 			} else {
 				
 				$sub .= '	onclick="return getproduct( ' . $value->id . ')"';
+				
 			}
 			$sub .= '>
 		<img class="';if ($value->id== 7 || $value->id== 13 || $value->id== 43 || $value->id== 53) { $sub .='select ';} $sub .='btn-change common_selector sub_category sub_new' . $value->id . '"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
@@ -107,6 +104,7 @@ class Welcome extends CI_Controller
 	{
 		$row = $this->input->post('row');
 		$subcategory_id = $this->input->post('subcategory_id');
+
 		// echo $this->db->last_query();
 		$sub = "";
 		if ($subcategory_id) {
@@ -1204,9 +1202,20 @@ $sub .= '</h6>
 		}
 		else if ($cateory == 5) {
 			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('filter', $cateory);
+		}
+		else if ($cateory == 6) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
 			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
 		}
-	 
+		else if ($cateory == 7) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
+		}
+		else if ($cateory == 8) {
+			$data['sub_category'] = $this->product_filter_model->fetch_filter_type('subcategory_id', $cateory);
+			$data['brand'] = $this->product_filter_model->fetch_filter_type('brand', $cateory);
+		}
 
 
 		if ($session_id) {
@@ -2092,6 +2101,21 @@ $sub .= '</h6>
 
 
 		}
+	 else if ($cateory == 5) {
+		$Categories_all_product = get_all_category_commericial($id);
+		$Category_product = $this->db->query("SELECT * FROM category_commericial_places  WHERE pay_type!=3 And subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+
+
+	}
+    else if ($cateory == 6) {
+	$Categories_all_product = get_all_category_residensial($id);
+	$Category_product = $this->db->query("SELECT * FROM category_residential_places  WHERE pay_type!=3 And subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+
+
+    } else if ($cateory == 7) {
+	$Categories_all_product = get_all_category_land_plot($id);
+	$Category_product = $this->db->query("SELECT * FROM category_land_plot  WHERE pay_type!=3 And subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+    }
 
 
 		//$product = $this->product_model->getproductall($id);
@@ -2582,6 +2606,74 @@ print_r($postData);die();
 			
 			$table = "category_commericial_places";
 		}
+
+		if ($category == 6) {
+			$postData = array();
+			$postData['title'] = $this->input->post('Title');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
+			$postData['user_id'] = $this->input->post('user_id');
+			$postData['category_id'] = $this->input->post('category');
+			$postData['subcategory_id'] = $this->input->post('subcategory');
+			$postData['filter'] = $this->input->post('Rent_sale');
+			$postData['room'] = $this->input->post('Room');
+			$postData['food'] = $this->input->post('Food');
+			$postData['type'] = $this->input->post('Type');
+			$postData['furniture_type'] = $this->input->post('Furniture');
+			$postData['floor'] = $this->input->post('Floor');
+			$postData['parking'] = $this->input->post('Parking');
+			$postData['facing'] = $this->input->post('Facing');
+			$postData['bathroom'] = $this->input->post('Bathroom');
+			$postData['preferred_tenant'] = $this->input->post('Preferred');
+			$postData['area'] = $this->input->post('Area');
+			$postData['address'] = $this->input->post('Address');
+			$postData['Description'] = $this->input->post('Description');
+			
+			$postData['price'] = $this->input->post('Sale_Price');
+			$postData['postal_code'] = $this->input->post('Postal_code');
+			$postData['town'] = $this->input->post('Town');
+			$postData['lat'] = $this->input->post('latitude');
+			$postData['long'] = $this->input->post('longitude');
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$sponser = $this->input->post('Sponsor');
+
+			$insert = $this->product_model->category_residential_places($postData);
+			$id = $this->db->insert_id();
+			
+			
+			$table = "category_residential_places";
+		}
+
+		if ($category == 7) {
+			$postData = array();
+			$postData['title'] = $this->input->post('Title');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
+			$postData['user_id'] = $this->input->post('user_id');
+			$postData['category_id'] = $this->input->post('category');
+			$postData['subcategory_id'] = $this->input->post('subcategory');
+			$postData['filter'] = $this->input->post('Rent_sale');
+			
+			$postData['facing'] = $this->input->post('Facing');
+			$postData['bathroom'] = $this->input->post('Bathroom');
+			
+			$postData['area'] = $this->input->post('Area');
+			$postData['address'] = $this->input->post('Address');
+			$postData['Description'] = $this->input->post('Description');
+			
+			$postData['price'] = $this->input->post('Sale_Price');
+			$postData['postal_code'] = $this->input->post('Postal_code');
+			$postData['town'] = $this->input->post('Town');
+			$postData['lat'] = $this->input->post('latitude');
+			$postData['long'] = $this->input->post('longitude');
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$sponser = $this->input->post('Sponsor');
+
+			$insert = $this->product_model->category_commericial_places($postData);
+			$id = $this->db->insert_id();
+			
+			
+			$table = "category_land_plot";
+		}
+
 
 		$id = $this->db->insert_id();
 		print_r($_FILES['profile_img']);

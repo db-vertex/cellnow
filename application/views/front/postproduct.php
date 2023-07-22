@@ -855,7 +855,7 @@ swal({
                                 </div>
                             </div>
 
-                            <div class="col-sm-6 hiddens" id="land_Bathroom_div">
+                            <!-- <div class="col-sm-6 hiddens" id="land_Bathroom_div">
                                 <label for="land_Bathroom" class="form-label post_input_lable">Bathrooms</label>
                                
                                     <select class="form-select post_input_fild" id="land_Bathroom"
@@ -869,7 +869,7 @@ swal({
                                 <div class="invalid-feedback">
                                     Please provide a valid Bathrooms.
                                 </div>
-                            </div>
+                            </div> -->
 
                             <div class="col-sm-6 hiddens" id="Bathrooms_div">
                                 <label for="Bathrooms" class="form-label post_input_lable">Bathrooms</label>
@@ -1259,7 +1259,7 @@ swal({
                                     name="Tuitions_Education_Type">
                                     <option value="">Select Education Type</option>
                                     <option value="13">Academic based</option>
-                                    <option value="69">Dance Classes</option>
+                                   
                                     <option value="14">Music Classes</option>
                                     <option value="15">Self-defence Classes</option>
                                     <option value="16">Sports</option>
@@ -1267,7 +1267,8 @@ swal({
                                     <option value="18">Typing</option>
                                     <option value="19">Computer Classes</option>
                                     <option value="20">Special abled Teachers</option>
-                                    <option value="70">Others</option>
+                                    <option value="21">Dance Classes</option>
+                                    <option value="22">Others</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Education Type.
@@ -1437,8 +1438,8 @@ swal({
                                 <label for="Job_type" class="form-label post_input_lable">Job Type</label>
                                 <select class="form-select post_input_fild" id="Job_type" name="Job_type">
                                     <option value="">Select Job Type</option>
-                                    <option value="21">Photographer</option>
-                                    <option value="71">Videographer</option>
+                                  
+                                 
                                     <option value="23">Event planers</option>
                                     <option value="24">Event execution helpers</option>
                                     <option value="25">Painters</option>
@@ -1460,8 +1461,8 @@ swal({
                                     <option value="40">SCO</option>
                                     <option value="41">Copywriter</option>
                                     <option value="42">Graphic Designer</option>
-                                    <option value="43">Animator/Video game designers</option>
-                                    <option value="44">Designers</option>
+                                    <option value="43">Photographer</option>
+                                    <option value="44">Videographer</option>
                                     <option value="45">Logo Designers</option>
                                     <option value="46">Other jobs</option>
                                 </select>
@@ -1502,8 +1503,8 @@ swal({
                                     <option value="72">Brand manager</option>
                                     <option value="73">Graphic designer</option>
                                     <option value="74">Animator/video game designer</option>
-                                    <option value="22">Photographer</option>
-                                    <option value="">Others</option>
+                                    <option value="69">Photographer</option>
+                                    <option value="70">Others</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Job Type.

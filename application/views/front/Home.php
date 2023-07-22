@@ -422,7 +422,7 @@ foreach ($category as $key => $cat) {
             <?php if($all_count >4){ ?>
             <center class=""><a
                     style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
-                    href="<?php echo base_url();?>welcome/fillter_product/5" class="btn btn-danger">See All</a></center>
+                    href="<?php echo base_url();?>welcome/fillter_product/8" class="btn btn-danger">See All</a></center>
             <?php } ?>
         </div>
 

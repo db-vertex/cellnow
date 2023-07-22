@@ -1404,7 +1404,7 @@ a:active {
                
                  
                      $sub_ = '';
-                     if($cateory==5){
+                     if($cateory==8){
                         $subcategory = get_all_product_type();  
                         
                      }
@@ -1417,7 +1417,7 @@ a:active {
 					?>
 
                     <div class="va-card va-card_category mt-2 px-0" style="">
-                        <p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1) { ?>
+                        <p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1 || $category==5 || $category==6 || $category==7) { ?>
                             onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
                             onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
 
@@ -1732,7 +1732,49 @@ $brands = array(
 			
 			?>
 
+   <?php if($cateory == 4 )
+                { ?>
+            <div class="panel-group mt-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" href="#test">
+                            <h4 class="panel-title common_h">
+                                Sub Category
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="test" class="panel-collapse collapse">
+                        <div class="list-group mt-2">
 
+                            <?php
+					  $cateory =  $this->uri->segment(3);
+               
+              
+                     $sub_ = '';
+                      $subcategory = get_subcategory_byid($cateory);  
+					  
+					  foreach($subcategory as $sub){
+					?>
+
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                                <label class="common_s"><input type="checkbox" class="common_select sub_category"
+                                        value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
+                            </div>
+                            <?php 
+					
+					 }
+					?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php 
+		    	} 
+		    	
+		  
+			
+			?>
 
 
 

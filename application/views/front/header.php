@@ -1216,6 +1216,9 @@ padding-left: 90px;
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/4">Internships</a>
                                 </li>
+                                <li><a id="" class="dropdown-item"
+                                        href="<?php echo base_url();?>welcome/fillter_product/5">Commericial Places</a>
+                                </li>
                             </ul>
                         </li>
                         <li class="nav-item dropdown" style="padding-right:10px" ;>

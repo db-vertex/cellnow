@@ -31,6 +31,15 @@ class Product_model extends CI_Model {
         }
     }
 
+    public function category_residential_places($data = array()) {
+        $insert = $this->db->insert(' category_residential_places', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
     public function category_tuitions($data = array()) {
         $insert = $this->db->insert(' category_tuitions', $data);
         if($insert){
