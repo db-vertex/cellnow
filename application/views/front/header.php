@@ -578,7 +578,7 @@ margin-top: 25%;
 
     .va-carrousel-flexbox_most .va-card {
         flex: 0 0 auto;
-        padding-left: 20px;
+        padding-left: 40px;
     }
 
     .va-carrousel-flexbox_most .va-card:last-child {
