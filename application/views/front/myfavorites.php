@@ -127,7 +127,17 @@
           } else if ($value->category_id == 4) {
             $pro = get_all_category_internships($product_id);
 
-          }
+          
+        } else if ($value->category_id == 5) {
+          $pro = get_all_category_commericial($product_id);
+
+        } else if ($value->category_id == 6) {
+          $pro = get_all_category_residensial($product_id);
+
+        } else if ($value->category_id == 7) {
+          $pro = get_all_category_land_plot($product_id);
+
+        }
 
           $wishlist = 0;
           if (!empty($user) && isset($user)) {
