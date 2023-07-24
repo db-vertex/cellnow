@@ -1342,13 +1342,19 @@ $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cov
 UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=2 And user_id !='.$session_id.'
 UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=2 And user_id !='.$session_id.'
 UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=2 And user_id !='.$session_id.'
-) as  custam  WHERE address like "%'.$location.'%"';
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_commericial_places WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_residential_places WHERE pay_type=2 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_land_plot WHERE pay_type=2 And user_id !='.$session_id.') as  custam  WHERE address like "%'.$location.'%"';
+
  }
  else{
   $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_reusable_parts WHERE pay_type=2
   UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_internships WHERE pay_type=2
   UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_job WHERE pay_type=2
   UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_tuitions WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_commericial_places WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_residential_places WHERE pay_type=2
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,cover_img ,verified_product ,address from category_land_plot WHERE pay_type=2
   ) as  custam  WHERE address like "%'.$location.'%"  ';
  }
 
@@ -1397,23 +1403,23 @@ function get_all_location_boost($location)
    $ci->load->database();
    $session_id = $ci->session->userdata("id");
  if ($session_id) {
-$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price,cover_img ,verified_product,pay_type,address from category_reusable_parts WHERE pay_type!=3 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price,cover_img ,verified_product ,pay_type,address from category_internships WHERE  pay_type!=3 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_job WHERE pay_type!=3 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_tuitions WHERE  pay_type!=3 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_commericial_places WHERE  pay_type!=3 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_residential_places WHERE  pay_type!=3 And user_id !='.$session_id.'
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_land_plot WHERE  pay_type!=3 And user_id !='.$session_id.'
+$query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price,cover_img ,verified_product,pay_type,address from category_reusable_parts WHERE pay_type!=3 And pay_type =1 Anduser_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price,cover_img ,verified_product ,pay_type,address from category_internships WHERE  pay_type!=3 And pay_type =1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_job WHERE pay_type!=3 And pay_type =1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_tuitions WHERE  pay_type!=3 And pay_type =1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_commericial_places WHERE  pay_type!=3 And pay_type =1 And user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_residential_places WHERE  pay_type!=3 And And pay_type =1 user_id !='.$session_id.'
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_land_plot WHERE  pay_type!=3 And And pay_type =1 user_id !='.$session_id.'
 ) as  custam  WHERE address like "%'.$location.'%"';
  }
  else{
-  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_reusable_parts WHERE pay_type!=3 
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_internships WHERE pay_type!=3 
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_job WHERE pay_type!=3 
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_tuitions WHERE pay_type!=3 
-  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_commericial_places WHERE  pay_type!=3 
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_residential_places WHERE  pay_type!=3 
-UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_land_plot WHERE  pay_type!=3 
+  $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_reusable_parts WHERE pay_type!=3 And pay_type =1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_internships WHERE pay_type!=3 And pay_type =1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_job WHERE pay_type!=3 And pay_type =1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_tuitions WHERE pay_type!=3 And pay_type =1
+  UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_commericial_places WHERE  pay_type!=3 And pay_type =1
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_residential_places WHERE  pay_type!=3 And pay_type =1
+UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_land_plot WHERE  pay_type!=3 And pay_type =1
   ) as  custam  WHERE address like "%'.$location.'%"  ';
  }
 
