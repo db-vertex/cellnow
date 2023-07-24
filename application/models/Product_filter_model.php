@@ -415,7 +415,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 			   <div class="d-flex justify-content-between align-items-center"> ';
 
 			 	   		  
-	   if (($row['pay_type'] == 0 || $row['pay_type'] == 1) && ($row['category_id'] == 1 || $row['category_id'] == 2 || $row['category_id'] == 3)) {
+	   if (($row['pay_type'] == 0 || $row['pay_type'] == 1) && ($row['category_id'] == 1 || $row['category_id'] == 2 || $row['category_id'] == 3|| $row['category_id'] == 5 || $row['category_id'] == 6 || $row['category_id'] == 7)) {
 		$pro .= '<p class="details_price">₹<span>';		
 		   $pro .= $row['price'];
 	   }
