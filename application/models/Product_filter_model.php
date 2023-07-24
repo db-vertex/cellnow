@@ -53,7 +53,7 @@ class Product_filter_model extends CI_Model
 	}
 }
 
-	function make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $categorys, $type)
+	function make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $categorys, $type,$rent_filter)
     {
 	
 	$sql = "";
@@ -83,11 +83,11 @@ class Product_filter_model extends CI_Model
 
 			$sql = "category_commericial_places";
 		 }
-		 else if(($sub_category_filter >= 82 && $sub_category_filter <= 68) ){
+		 else if(($sub_category_filter >= 82 && $sub_category_filter <= 88) ){
 
 			$sql = "category_residential_places";
 		 }
-		 else if(($sub_category_filter >= 47 && $sub_category_filter <= 68)){
+		 else if(($sub_category_filter >= 89 && $sub_category_filter <= 91)){
 
 			$sql = "category_land_plot";
 		 }
@@ -106,9 +106,9 @@ class Product_filter_model extends CI_Model
 					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].'  UNION 
 				   
 					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].' UNION
-					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].' UNION
-					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].' UNION
-					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].') as  custam  WHERE address like "%'.$location.'%" ';
+					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].' UNION
+					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].' UNION
+					SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = 1 AND user_id != '.$_SESSION['id'].') as  custam  WHERE address like "%'.$location.'%" ';
 				}else{
 					$query = 'SELECT * FROM ' . $sql . ' WHERE pay_type != "3" AND user_id != '.$_SESSION['id'].' AND address LIKE "%' . $location . '%"';
 
@@ -121,9 +121,9 @@ class Product_filter_model extends CI_Model
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = 1 UNION 
 			   
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1 UNION
-				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = 1 UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = 1 UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = 1 ) as  custam  WHERE address like "%'.$location.'%" ';
+				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = 1 UNION
+				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = 1 UNION
+				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = 1 ) as  custam  WHERE address like "%'.$location.'%" ';
 			}else{
 				$query = 'SELECT * FROM ' . $sql . ' WHERE pay_type != "3" AND address LIKE "%' . $location . '%"';
 			
@@ -140,9 +140,9 @@ class Product_filter_model extends CI_Model
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = '1' AND user_id != {$_SESSION['id']}   UNION
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = '1' AND user_id != {$_SESSION['id']}   UNION 
 			    SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = '1' AND user_id != {$_SESSION['id']} UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = '1' AND user_id != {$_SESSION['id']} UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '1' AND user_id != {$_SESSION['id']} UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '1' AND user_id != {$_SESSION['id']} ";
+				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = '1' AND user_id != {$_SESSION['id']} UNION
+				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '1' AND user_id != {$_SESSION['id']} UNION
+				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '1' AND user_id != {$_SESSION['id']} ";
 			}else{
 				$query = "SELECT * FROM $sql WHERE pay_type != '3' AND user_id != {$_SESSION['id']}";
 
@@ -155,9 +155,9 @@ class Product_filter_model extends CI_Model
 			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships  WHERE pay_type = '1'   UNION 
 		   
 			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = '1' UNION
-			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = '1' UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '1' UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '1' ";
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,filter,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = '1' UNION
+				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '1' UNION
+				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '1' ";
 		}else{
         $query = "SELECT * FROM $sql WHERE pay_type != '3'";
 		
@@ -175,6 +175,10 @@ class Product_filter_model extends CI_Model
         $brand_filter = implode("','", $brand);
         $query .= " AND brand IN('$brand_filter')";
     }
+	if (isset($rent_filter)) {
+        $rent_filter = implode("','", $rent_filter);
+        $query .= " AND filter IN('$rent_filter')";
+    }
     if (isset($type)) {
         $type_filter = implode("','", $type);
         $query .= " AND subcategory_id IN('$type_filter')";
@@ -187,16 +191,17 @@ class Product_filter_model extends CI_Model
     if (isset($sub_category)) {
         $sub_category_filter = implode("','", $sub_category);
 		
-	     if($sub_category_filter <= 12){
+	     if($sub_category_filter <= 12 || $sub_category_filter >= 75){
 			$query .= " AND subcategory_id IN('$sub_category_filter')";
 			
 		 }
-		 else if (($sub_category_filter >= 13 && $sub_category_filter <= 20) || $sub_category_filter == 69 ) {
+		 else if (($sub_category_filter >= 13 && $sub_category_filter <= 22)) {
 			$query .= " AND Education_Type IN('$sub_category_filter')";
 		 }
-		 else if($sub_category_filter >= 21 && $sub_category_filter <= 68){
+		 else if($sub_category_filter >= 23 && $sub_category_filter <= 74){
 			$query .= " AND Job_type IN('$sub_category_filter')";
 		 }
+		
        
 
        
@@ -358,10 +363,10 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $select_type,$
     return $query;
 }
 
-function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $select_type, $sub_category,$category, $type,$search)
+function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $select_type, $sub_category,$category, $type,$search,$rent_filter)
 {
 	
-    $query = $this->make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type);
+    $query = $this->make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$rent_filter);
 
     $query .= ' LIMIT '.$start.', '.$limit;
     $data = $this->db->query($query);
@@ -599,9 +604,9 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
     return $pro;
 }
 
-function count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type)
+function count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter)
 {
-    $query = $this->make_query($minimum_price, $maximum_price, $brand,$select_type, $sub_category, $category, $type);
+    $query = $this->make_query($minimum_price, $maximum_price, $brand,$select_type, $sub_category, $category, $type,$rent_filter);
     $data = $this->db->query($query);
 
     return $data->num_rows();

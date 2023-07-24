@@ -31,6 +31,15 @@ class Product_model extends CI_Model {
         }
     }
 
+    public function category_land_plot($data = array()) {
+        $insert = $this->db->insert(' category_land_plot', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
     public function category_residential_places($data = array()) {
         $insert = $this->db->insert(' category_residential_places', $data);
         if($insert){
@@ -70,6 +79,36 @@ class Product_model extends CI_Model {
     public function edit_category_reusable_parts($data = array()) {
         $this->db->where('id', $data['id']);   
         $insert = $this->db->update('category_reusable_parts', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
+    public function edit_category_commericial_places($data = array()) {
+        $this->db->where('id', $data['id']);   
+        $insert = $this->db->update('category_commericial_places', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
+    public function edit_category_residential_places($data = array()) {
+        $this->db->where('id', $data['id']);   
+        $insert = $this->db->update('category_residential_places', $data);
+        if($insert){
+            return $this->db->insert_id();
+        }else{
+            return false;
+        }
+    }
+
+    public function edit_category_land_plot($data = array()) {
+        $this->db->where('id', $data['id']);   
+        $insert = $this->db->update('category_land_plot', $data);
         if($insert){
             return $this->db->insert_id();
         }else{
@@ -274,6 +313,18 @@ function delete_product($category_id,$product_id){
         $sql = "category_internships";  
           $query = $this->db->get_where($sql, array('id' => $product_id));
     }
+    else if($category_id == 5){
+        $sql = "category_commericial_places";  
+          $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    else if($category_id == 6){
+        $sql = "category_residential_places";  
+          $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    else if($category_id == 7){
+        $sql = "category_land_plot";  
+          $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
     
          $pro = $query->result();
         foreach($pro as $images){
@@ -321,6 +372,18 @@ function edit_product_get($category_id,$product_id){
     }
     else if($category_id == 4){
         $sql = "category_internships";  
+          $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    else if($category_id == 5){
+        $sql = "category_commericial_places";  
+          $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    else if($category_id == 6){
+        $sql = "category_residential_places";  
+          $query = $this->db->get_where($sql, array('id' => $product_id));
+    }
+    else if($category_id == 7){
+        $sql = "category_land_plot";  
           $query = $this->db->get_where($sql, array('id' => $product_id));
     }
     

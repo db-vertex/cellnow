@@ -325,15 +325,16 @@ foreach ($category as $key => $cat) {
         <div class="row" id="product_list">
             <?php
                                 
-            $product = get_all_boost();   
-              $all_count =get_all_boost_count();
+            $product = get_all_boost();  
+          
+            $all_count =get_all_boost_count();
              
             
               if(!empty($product)){
               $i = 1;
               $j = 1;
             foreach($product as $pro){
-            
+             
              $session_login_id  = $user['user_id'] ?? null;
               $product_user_id = $pro->user_id;
               if($session_login_id !== $product_user_id){
@@ -954,14 +955,6 @@ function getshop(category_id){
   {
 
     
-   
-
-
-  
-
-    
-       
-  
     $("#shop_list").html(res);
     
     // $('#load_cound').val("10");
@@ -972,7 +965,7 @@ function getshop(category_id){
 }
 
 
-function getproduct(subcategory_id) {
+function getproduct(subcategory_id,category_id) {
 
 
     //var res = "";
@@ -985,7 +978,8 @@ function getproduct(subcategory_id) {
         type: "POST",
         url: "<?php echo base_url('/welcome/getproduct'); ?>",
         data: {
-            subcategory_id: subcategory_id
+            subcategory_id: subcategory_id,
+            category_id: category_id
         },
         success: function(res) {
 

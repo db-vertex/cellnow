@@ -79,6 +79,51 @@ function get_internship_data($product_id)
   return $category_data->row(); 
 }
 
+function get_residential_data($product_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_residential_places WHERE id=".$product_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
+function get_commericial_data($product_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_commericial_places WHERE id=".$product_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
+function get_land_plot_data($product_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+
+  $query="SELECT * FROM category_land_plot WHERE id=".$product_id;
+
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+}
+
 
 function get_all_favroite($user_id)
 {
@@ -845,14 +890,14 @@ if($session_id){
   SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = 1 AND active_status = 0 AND user_id != $session_id )s ORDER BY id DESC LIMIT 0,4 ";
 }
 else{
-  $query="select * from (SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE pay_type = 1 AND active_status = 0 UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = 1 AND active_status = 0 UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type = 1  AND active_status = 0 UNION 
+  $query="select * from (SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type ,created_at FROM category_reusable_parts WHERE pay_type = 1 AND active_status = 0 UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type ,created_at FROM category_job  WHERE pay_type = 1 AND active_status = 0 UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type ,created_at FROM category_internships WHERE pay_type = 1  AND active_status = 0 UNION 
  
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = 1 AND active_status = 0 UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = 1 AND active_status = 0 UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = 1 AND active_status = 0  UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = 1 AND active_status = 0) s ORDER BY id DESC LIMIT 0,4   ";
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type,created_at FROM category_tuitions WHERE pay_type = 1 AND active_status = 0 UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type,created_at FROM category_commericial_places WHERE pay_type = 1 AND active_status = 0 UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type ,created_at FROM category_residential_places WHERE pay_type = 1 AND active_status = 0  UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type ,created_at FROM category_land_plot WHERE pay_type = 1 AND active_status = 0)s ORDER BY created_at DESC LIMIT 0,4 ";
  }
   $category_data = $ci->db->query($query);        
 
@@ -940,7 +985,7 @@ function get_pay_type($id,$category_id)
   return $category_data->row(); 
 }
 
-function get_product_by_subid($subcategory_id)
+function get_product_by_subid($subcategory_id,$category_id)
 {
   //get main CodeIgniter object
        $ci =& get_instance();
@@ -952,45 +997,48 @@ function get_product_by_subid($subcategory_id)
        $location = $ci->session->userdata("location");
        if($location){
         if($session_id){
-          $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE   pay_type!=3 AND subcategory_id = $subcategory_id AND user_id != $session_id AND address = '$location' UNION
-          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND user_id != $session_id AND address = '$location' UNION
-          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND user_id != $session_id AND address = '$location' UNION 
-         
-          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  pay_type!=3 AND Education_type = $subcategory_id AND user_id != $session_id AND address = '$location' UNION
-          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND user_id != $session_id AND address = '$location' UNION
-SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND user_id != $session_id AND address = '$location'";
+          $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE   pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND user_id != $session_id AND address = '$location' UNION
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND category_id = $category_id AND user_id != $session_id AND address = '$location' UNION
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND category_id = $category_id AND user_id != $session_id AND address = '$location' UNION 
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  pay_type!=3 AND Education_type = $subcategory_id AND category_id = $category_id AND user_id != $session_id AND address = '$location' UNION
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND user_id != $session_id AND address = '$location' UNION
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND user_id != $session_id AND address = '$location' UNION
+          SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND user_id != $session_id AND address = '$location'";
                }
                else{
-                $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND address = '$location' UNION
-                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND address = '$location' UNION
-                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND address = '$location' UNION 
+                $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND address = '$location' UNION
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND category_id = $category_id AND address = '$location' UNION
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND category_id = $category_id AND address = '$location' UNION 
                
-                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  pay_type!=3 AND Education_type = $subcategory_id AND address = '$location' UNION
-                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND address = '$location' UNION
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  pay_type!=3 AND Education_type = $subcategory_id AND category_id = $category_id AND address = '$location' UNION
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND address = '$location' UNION
 
-                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND address = '$location'";
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND address = '$location' UNION
+                SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND address = '$location'";
 
                }
        }else{
 
        
        if($session_id){
-  $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND user_id != $session_id UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND user_id != $session_id UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND user_id != $session_id UNION 
+  $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE  pay_type!=3 AND subcategory_id = $subcategory_id  AND category_id = $category_id AND user_id != $session_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE  pay_type!=3 AND Job_type	 = $subcategory_id  AND category_id = $category_id AND user_id != $session_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  pay_type!=3 AND Job_type	 = $subcategory_id  AND category_id = $category_id AND user_id != $session_id UNION 
  
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type!=3 AND Education_type = $subcategory_id AND user_id != $session_id UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND user_id != $session_id UNION
-  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND user_id != $session_id ";
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type!=3 AND Education_type = $subcategory_id  AND category_id = $category_id AND user_id != $session_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id  AND category_id = $category_id AND user_id != $session_id UNION
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id  AND category_id = $category_id AND user_id != $session_id 
+  SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE  pay_type!=3 AND subcategory_id = $subcategory_id  AND category_id = $category_id AND user_id != $session_id";
        }
        else{
-        $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE  pay_type!=3 AND subcategory_id = $subcategory_id UNION
-        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type!=3 AND Job_type	 = $subcategory_id UNION
-        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type!=3 AND Job_type	 = $subcategory_id UNION 
+        $query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type!=3 AND Job_type	 = $subcategory_id AND category_id = $category_id UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,NULL,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE pay_type!=3 AND Job_type	 = $subcategory_id AND category_id = $category_id UNION 
        
-        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type!=3 AND Education_type = $subcategory_id UNION
-        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id UNION
-        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id";
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type!=3 AND Education_type = $subcategory_id AND category_id = $category_id UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id UNION
+        SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id";
 
        }}
   

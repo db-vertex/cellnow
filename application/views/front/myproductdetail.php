@@ -1405,7 +1405,34 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             <p class="details_text"><b>Type</b></p>
                         </div>
                         <div class="col-3">
-                            <p class="details_text"><?php if($product_detail->category_id==1){ echo $product_detail->type;} else if($product_detail->category_id==2 ){  $type_name = get_product_type_name($product_detail->Education_Type); echo $type_name;} else if($product_detail->category_id==4 && $product_detail->category_id==3){ $type_name = get_product_type_name($product_detail->Job_type); echo $type_name;}  ?></p>
+                            <p class="details_text"><?php if ($product_detail->category_id == 1) {
+                                 $type_name = get_product_sub_name($product_detail->subcategory_id);
+                                echo $type_name;
+                            } else if ($product_detail->category_id == 2) {
+                                $type_name = get_product_type_name($product_detail->Education_Type);
+                                echo $type_name;
+                            } else if ($product_detail->category_id == 3) {
+                                $type_name = get_product_type_name($product_detail->Job_type);
+                               
+                                echo $type_name;
+                            }
+                         else if ($product_detail->category_id == 4) {
+                            $type_name = get_product_type_name($product_detail->Job_type);
+                           
+                            echo $type_name;
+                        }
+                        else if ($product_detail->category_id == 5) {
+                            $type_name = get_product_sub_name($product_detail->subcategory_id);
+                           echo $type_name;
+                       } 
+                       else if ($product_detail->category_id == 6) {
+                        $type_name = get_product_sub_name($product_detail->subcategory_id);
+                       echo $type_name;
+                   } 
+                   else if ($product_detail->category_id == 7) {
+                    $type_name = get_product_sub_name($product_detail->subcategory_id);
+                   echo $type_name;
+               } ?></p>
                         </div>
                     </div>
 

@@ -572,55 +572,31 @@
                                           }
                                           
                                         else if($chat_per["category_id"]==2) {
-                                              $profile = get_electronic_data($chat_per["product_id"]); 
+                                              $profile = get_tution_data($chat_per["product_id"]); 
                                               
                                               
                                           }
                                             else if($chat_per["category_id"]==3) {
-                                              $profile = get_furniture_data($chat_per["product_id"]);
+                                              $profile = get_job_data($chat_per["product_id"]);
                                           }
                                            else if($chat_per["category_id"]==4) {
-                                              $profile = get_fashion_data($chat_per["product_id"]);
+                                              $profile = get_internship_data($chat_per["product_id"]);
                                           }
                                       
                                            else if($chat_per["category_id"]==5) {
-                                              $profile = get_bike_data($chat_per["product_id"]);
+                                              $profile = get_commericial_data($chat_per["product_id"]);
                                              
                                       
                                              
                                           }
                                             else if($chat_per["category_id"]==6) {
-                                              $profile = get_car_data($chat_per["product_id"]);
+                                              $profile = get_residential_data($chat_per["product_id"]);
                                           }
                                           
                                            else if($chat_per["category_id"]==7) {
-                                              $profile = get_book_data($chat_per["product_id"]);
+                                              $profile = get_land_plot_data($chat_per["product_id"]);
                                           }
-                                          else if($chat_per["category_id"]==8) {
-                                              $profile = get_jobs_data($chat_per["product_id"]);
-                                          }
-                                          else if($chat_per["category_id"]==9) {
-                                              $profile = get_services_data($chat_per["product_id"]);
-                                          }
-                                          else if($chat_per["category_id"]==10) {
-                                              $profile = get_Pets_data($chat_per["product_id"]);
-                                          }
-                                          else if($chat_per["category_id"]==11) {
-                                              $profile = get_properties_sale_data($chat_per["product_id"]);
-                                          }
-                                          else if($chat_per["category_id"]==12) {
-                                              $profile = get_properties_rent_data($chat_per["product_id"]);
-                                             
-                                          }
-                                          else if($chat_per["category_id"]==13) {
-                                              $profile = get_kids_data($chat_per["product_id"]);
-                                          }
-                                          else if($chat_per["category_id"]==14) {
-                                              $profile = get_bussiness_data($chat_per["product_id"]);
-                                          }
-                                          else if($chat_per["category_id"]==15) {
-                                              $profile = get_other_data($chat_per["product_id"]);
-                                          }
+                                         
                                         if($chat_per['sender_id'] != $_SESSION['id']){
 
                                           $username = get_user_phone($chat_per['sender_id']);
@@ -683,14 +659,7 @@
                                         <li class="new<?php echo ($username->user_id).($profile->id); ?>" onclick="return getchat(<?php echo $username->user_id; ?>,<?php echo $_SESSION['id']; ?>);"  style="padding: 45px 20px;">
                                             <span class="avatar available">
 
-                                                   
-
-
-                                                   <img src="<?php echo $profile->thumbnails;?>" alt="avatar" class="img-circle">
-
-
-
-                                            
+                                              
                                                <!--  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" class="img-circle">
  -->                                            </span>
                                             <div class="body">
@@ -709,9 +678,6 @@
                                                       }
 
 
-                                                      
-
-
                                                      ?></span>
                                                    <!--  <small class="timestamp text-muted">
                                                         <i class="fa fa-clock-o"></i><?php echo date('Y-m-d') ?>
@@ -722,21 +688,13 @@
                                                 </p> -->
                                             </div>
                                         </li>  
-
-
-                                        <?php
-
-                                         //print_r($sender_id);
-                                         //print_r($receiver_id);
-
+                                      <?php
 
                                       }else{
+                                        
 
                                         echo "<h4 style='padding-top:30px;text-align: center;' >No Chat Found</4>";
                                       }
-
-
-
                                       ?>
                                    
                                     </ul>

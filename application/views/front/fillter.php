@@ -1418,10 +1418,10 @@ a:active {
 
                     <div class="va-card va-card_category mt-2 px-0" style="">
                         <p style="text-align:center;" class="my-auto pouler_Categories " <?php if ($category == 1 || $category==5 || $category==6 || $category==7) { ?>
-                            onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
-                            onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
+                            onclick="return getproduct( <?php echo $sub->subcategory_id; ?>',' <?php echo $cateory; ?>)" <?php } else { ?>
+                            onclick="return getproduct( <?php echo $sub->id; ?>',' <?php echo $cateory; ?>)" <?php } ?>>
 
-                            <img class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
+                            <img class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
                                 data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                 src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
                             <center style="color:black; font-size:12px; font-weight:500">
@@ -1479,41 +1479,8 @@ a:active {
 <?php } ?>
 
 
-            <!-- 
-            <div class="panel-group mt-4">
-                <div class="panel panel-default">
-                    <div class="panel-heading">
-                        <a data-toggle="collapse" href="#test">
-                            <h4 class="panel-title common_h">
-                              Sub Category
-                            </h4>
-                        </a>
-                    </div>
-                    <div id="test" class="panel-collapse collapse">
-                        <div class="list-group mt-2">
+         
 
-                            <?php
-					  $cateory =  $this->uri->segment(3);
-               
-                  
-                     $sub_ = '';
-                      $subcategory = get_subcategory_byid($cateory);  
-					  
-					  foreach($subcategory as $sub){
-					?>
-
-                            <div class="checkbox" style="padding:3px; border-top: none;">
-                                <label class="common_s"><input type="checkbox" class="common_select sub_category"
-                                        value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
-                            </div>
-                            <?php 
-					
-					 }
-					?>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
             <?php if($cateory == 1 )
                 { ?>
             <div class="panel-group mt-4 ">
@@ -1732,38 +1699,31 @@ $brands = array(
 			
 			?>
 
-   <?php if($cateory == 4 )
+<?php if($cateory == 5 )
                 { ?>
             <div class="panel-group mt-4">
                 <div class="panel panel-default">
                     <div class="panel-heading">
                         <a data-toggle="collapse" href="#test">
                             <h4 class="panel-title common_h">
-                                Sub Category
+                                Filter
                             </h4>
                         </a>
                     </div>
                     <div id="test" class="panel-collapse collapse">
                         <div class="list-group mt-2">
 
-                            <?php
-					  $cateory =  $this->uri->segment(3);
-               
-              
-                     $sub_ = '';
-                      $subcategory = get_subcategory_byid($cateory);  
-					  
-					  foreach($subcategory as $sub){
-					?>
+                         
 
                             <div class="checkbox" style="padding:3px; border-top: none;">
-                                <label class="common_s"><input type="checkbox" class="common_select sub_category"
-                                        value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
+                                <label class="common_s"><input type="checkbox" class="common_select filter"
+                                        value="Rent"> Rent</label>
+                                       
                             </div>
-                            <?php 
-					
-					 }
-					?>
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                            <label class="common_s"><input type="checkbox" class="common_select filter"
+                                        value="Sale"> Sale</label>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -1775,7 +1735,75 @@ $brands = array(
 		  
 			
 			?>
+<?php if($cateory == 6 )
+                { ?>
+            <div class="panel-group mt-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" href="#test">
+                            <h4 class="panel-title common_h">
+                                Filter
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="test" class="panel-collapse collapse">
+                        <div class="list-group mt-2">
 
+                         
+
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                                <label class="common_s"><input type="checkbox" class="common_select filter"
+                                        value="Rent"> Rent</label>
+                                       
+                            </div>
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                            <label class="common_s"><input type="checkbox" class="common_select filter"
+                                        value="Sale"> Sale</label>
+                        </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php 
+		    	} 
+		    	
+		  
+			
+			?>
+<?php if($cateory == 7 )
+                { ?>
+            <div class="panel-group mt-4">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <a data-toggle="collapse" href="#test">
+                            <h4 class="panel-title common_h">
+                                Filter
+                            </h4>
+                        </a>
+                    </div>
+                    <div id="test" class="panel-collapse collapse">
+                        <div class="list-group mt-2">
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                                <label class="common_s"><input type="checkbox" class="common_select filter"
+                                        value="Rent">Rent</label>
+                                       
+                            </div>
+                            <div class="checkbox" style="padding:3px; border-top: none;">
+                                <label class="common_s"><input type="checkbox" class="common_select filter"
+                                        value="Sale">Sale</label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <?php 
+		    	} 
+		    	
+		  
+			
+			?>
 
 
         </div>
@@ -1954,6 +1982,7 @@ $brands = array(
             var select_type = get_select_type('select_type');
             var brand = get_brand('brand');
             var type = get_type_filter('sub_category');
+            var rent_filter = get_rent_filter('filter');
 
           var search = get_search('search');
 
@@ -1972,7 +2001,8 @@ $brands = array(
                     brand: brand,
                     select_type:select_type,
                     type: type,
-                    search:search
+                    search:search,
+                    rent_filter:rent_filter
                 },
                 success: function(data) {
                     document.getElementById("pagination_link").style.display = "block";
@@ -2016,6 +2046,16 @@ $brands = array(
 
 
         function get_type_filter(class_name) {
+            var filter = [];
+            $('.' + class_name + ':checked').each(function() {
+                filter.push($(this).val());
+
+            });
+            console.log(filter)
+            return filter;
+        }
+
+        function get_rent_filter(class_name) {
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
@@ -2141,7 +2181,7 @@ return filter;
    
 
 
-    function getproduct(subcategory_id) {
+    function getproduct(subcategory_id,category) {
 
 
         //var res = "";
@@ -2154,7 +2194,8 @@ return filter;
             type: "POST",
             url: "<?php echo base_url('/welcome/getproduct'); ?>",
             data: {
-                subcategory_id: subcategory_id
+                subcategory_id: subcategory_id,
+                category_id:category
             },
             success: function(res) {
 

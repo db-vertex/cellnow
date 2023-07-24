@@ -75,15 +75,15 @@ class Welcome extends CI_Controller
 	<div class="va-card va-card_category mt-2 px-0"> <a class=" border-0"   
 		<p style="text-align:center;" class="my-auto pouler_Categories " ';
 			if ($category_id == 1 || $category_id == 5 || $category_id == 6 || $category_id == 7) {
-				$sub .= '	onclick="return getproduct( ' . $value->subcategory_id . ')"';
+				$sub .= '	onclick="return getproduct( ' . $value->subcategory_id . ',' . $category_id . ')"';
 
 			} else {
 				
-				$sub .= '	onclick="return getproduct( ' . $value->id . ')"';
+				$sub .= '	onclick="return getproduct( ' . $value->id . ',' . $category_id . ')"';
 				
 			}
 			$sub .= '>
-		<img class="';if ($value->id== 7 || $value->id== 13 || $value->id== 43 || $value->id== 53) { $sub .='select ';} $sub .='btn-change common_selector sub_category sub_new' . $value->id . '"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
+		<img class="';if ($value->id == 7 || $value->id == 13 || $value->id == 43 || $value->id== 53 || $value->id== 77 || $value->id== 87 || $value->id==90) { $sub .='select ';} $sub .='btn-change common_selector sub_category sub_new' . $value->id . '"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
 		 <center style="color:black; font-size:12px; font-weight:500">' . $value->product_type . '</center>
 		</p>
 		
@@ -104,11 +104,12 @@ class Welcome extends CI_Controller
 	{
 		$row = $this->input->post('row');
 		$subcategory_id = $this->input->post('subcategory_id');
+		$category_id = $this->input->post('category_id');
 
 		// echo $this->db->last_query();
 		$sub = "";
 		if ($subcategory_id) {
-			$product = get_product_by_subid($subcategory_id);
+			$product = get_product_by_subid($subcategory_id,$category_id);
 			$all_count = get_product_by_subid_count($subcategory_id);
 
 
@@ -1245,6 +1246,7 @@ $sub .= '</h6>
 		$maximum_price = $this->input->post('maximum_price');
 		$brand = $this->input->post('brand');
 		$sub_category = $this->input->post('sub_category');
+		$rent_filter = $this->input->post('rent_filter');
 		$type = $this->input->post('type');
 		$select_type = $this->input->post('select_type');
 		$search = $this->input->post('search');
@@ -1252,7 +1254,7 @@ $sub .= '</h6>
 
 		$config = array();
 		$config["base_url"] = "";
-		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type);
+		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter);
 		$config["per_page"] = 6;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
@@ -1279,7 +1281,7 @@ $sub .= '</h6>
 
 		$output = array(
 			'pagination_link' => $this->pagination->create_links(),
-			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$search)
+			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$search,$rent_filter)
 		);
 		echo json_encode($output);
 	}
@@ -2172,7 +2174,21 @@ $sub .= '</h6>
 
 
 		}
-
+		else if ($cateory == 5) {
+			$Categories_all_product = get_all_category_commericial($id);
+			$Category_product = $this->db->query("SELECT * FROM category_commericial_places  WHERE pay_type!=3 And subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+	
+	
+		}
+		else if ($cateory == 6) {
+		$Categories_all_product = get_all_category_residensial($id);
+		$Category_product = $this->db->query("SELECT * FROM category_residential_places  WHERE pay_type!=3 And subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+	
+	
+		} else if ($cateory == 7) {
+		$Categories_all_product = get_all_category_land_plot($id);
+		$Category_product = $this->db->query("SELECT * FROM category_land_plot  WHERE pay_type!=3 And subcategory_id = $subcategory_id And id!= $id ORDER BY id DESC")->result();
+		}
 
 		//$product = $this->product_model->getproductall($id);
 
@@ -2589,7 +2605,7 @@ $sub .= '</h6>
 			$postData['long'] = $this->input->post('longitude');
 			$postData['pay_type'] = $this->input->post('Sponsor');
 			$sponser = $this->input->post('Sponsor');
-print_r($postData);die();
+
 			$insert = $this->product_model->category_commericial_places($postData);
 			$id = $this->db->insert_id();
 			
@@ -2643,7 +2659,7 @@ print_r($postData);die();
 			$postData['filter'] = $this->input->post('Rent_sale');
 			
 			$postData['facing'] = $this->input->post('Facing');
-			$postData['bathroom'] = $this->input->post('Bathroom');
+			
 			
 			$postData['area'] = $this->input->post('Area');
 			$postData['address'] = $this->input->post('Address');
@@ -2657,7 +2673,7 @@ print_r($postData);die();
 			$postData['pay_type'] = $this->input->post('Sponsor');
 			$sponser = $this->input->post('Sponsor');
 
-			$insert = $this->product_model->category_commericial_places($postData);
+			$insert = $this->product_model->category_land_plot($postData);
 			$id = $this->db->insert_id();
 			
 			
@@ -2775,6 +2791,18 @@ print_r($postData);die();
 		}
 		if($_SESSION['category_id']==4){
 			$result = $this->db->where('id', $id)->get('category_internships')->result();
+
+		}
+		if($_SESSION['category_id']==5){
+			$result = $this->db->where('id', $id)->get('category_commericial_places')->result();
+
+		}
+		if($_SESSION['category_id']==6){
+			$result = $this->db->where('id', $id)->get('category_residential_places')->result();
+
+		}
+		if($_SESSION['category_id']==7){
+			$result = $this->db->where('id', $id)->get('category_land_plot')->result();
 
 		}
 		foreach($result as $dataji)
@@ -2922,6 +2950,18 @@ print_r($postData);die();
 			$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
 
 		  }
+		  else if($_SESSION['category_id']==5){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==6){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==7){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['pay_type' => 1]);
+
+		  }
 		  
 		  $insert = $this->user->payment($attributes);
 		} catch(SignatureVerificationError $e) {
@@ -2982,6 +3022,18 @@ print_r($postData);die();
 		  }
 		  else if($_SESSION['category_id']==4){
 			$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==5){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==6){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['pay_type' => 1]);
+
+		  }
+		  else if($_SESSION['category_id']==7){
+			$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['pay_type' => 1]);
 
 		  }
 		  
@@ -3139,6 +3191,68 @@ print_r($postData);die();
 			$insert = $this->product_model->edit_category_internships($postData);
 			$id = $this->input->post('product_id');
 			$table = "category_internships";
+		}else if ($category == 5) {
+			$postData = array();
+			$postData['id'] = $this->input->post('product_id');
+			$postData['title'] = $this->input->post('Title');
+			$postData['user_id'] = $this->input->post('user_id');
+			$postData['category_id'] = $this->input->post('category');
+			$postData['subcategory_id'] = $this->input->post('subcategory');
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
+			$postData['address'] = $this->input->post('Address');
+			$postData['Description'] = $this->input->post('Description');
+			$postData['price'] = $this->input->post('Price');
+			$postData['postal_code'] = $this->input->post('Postal_code');
+			$postData['town'] = $this->input->post('Town');
+			$postData['lat'] = $this->input->post('latitude');
+			$postData['long'] = $this->input->post('longitude');
+			$sponser= $this->input->post('Sponsor');
+			$insert = $this->product_model->edit_category_commericial_places($postData);
+			$id = $this->input->post('product_id');
+			$table = "category_commericial_places";
+		}
+		else if ($category == 6) {
+			$postData = array();
+			$postData['id'] = $this->input->post('product_id');
+			$postData['title'] = $this->input->post('Title');
+			$postData['user_id'] = $this->input->post('user_id');
+			$postData['category_id'] = $this->input->post('category');
+			$postData['subcategory_id'] = $this->input->post('subcategory');
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
+			$postData['address'] = $this->input->post('Address');
+			$postData['Description'] = $this->input->post('Description');
+			$postData['price'] = $this->input->post('Price');
+			$postData['postal_code'] = $this->input->post('Postal_code');
+			$postData['town'] = $this->input->post('Town');
+			$postData['lat'] = $this->input->post('latitude');
+			$postData['long'] = $this->input->post('longitude');
+			$sponser= $this->input->post('Sponsor');
+			$insert = $this->product_model->edit_category_residential_places($postData);
+			$id = $this->input->post('product_id');
+			$table = "category_residential_places";
+		}
+		else if ($category == 7) {
+			$postData = array();
+			$postData['id'] = $this->input->post('product_id');
+			$postData['title'] = $this->input->post('Title');
+			$postData['user_id'] = $this->input->post('user_id');
+			$postData['category_id'] = $this->input->post('category');
+			$postData['subcategory_id'] = $this->input->post('subcategory');
+			$postData['pay_type'] = $this->input->post('Sponsor');
+			$postData['verified_admin'] = $this->input->post('verified_admin');
+			$postData['address'] = $this->input->post('Address');
+			$postData['Description'] = $this->input->post('Description');
+			$postData['price'] = $this->input->post('Price');
+			$postData['postal_code'] = $this->input->post('Postal_code');
+			$postData['town'] = $this->input->post('Town');
+			$postData['lat'] = $this->input->post('latitude');
+			$postData['long'] = $this->input->post('longitude');
+			$sponser= $this->input->post('Sponsor');
+			$insert = $this->product_model->edit_category_land_plot($postData);
+			$id = $this->input->post('product_id');
+			$table = "category_land_plot";
 		}
 
 
@@ -3251,6 +3365,18 @@ print_r($postData);die();
 		}
 		if($_SESSION['category_id']==4){
 			$result = $this->db->where('id', $id)->get('category_internships')->result();
+
+		}
+		if($_SESSION['category_id']==5){
+			$result = $this->db->where('id', $id)->get('category_commericial_places')->result();
+
+		}
+		if($_SESSION['category_id']==6){
+			$result = $this->db->where('id', $id)->get('category_residential_places')->result();
+
+		}
+		if($_SESSION['category_id']==7){
+			$result = $this->db->where('id', $id)->get('category_land_plot')->result();
 
 		}
 		foreach($result as $dataji)
@@ -3478,17 +3604,17 @@ print_r($postData);die();
 						if ($category_id == 1) {
 							$profile = get_mobile_data($chatmessages["product_id"]);
 						} else if ($category_id == 2) {
-							$profile = get_electronic_data($chatmessages["product_id"]);
+							$profile = get_tution_data($chatmessages["product_id"]);
 						} else if ($category_id == 3) {
-							$profile = get_furniture_data($chatmessages["product_id"]);
+							$profile = get_job_data($chatmessages["product_id"]);
 						} else if ($category_id == 4) {
-							$profile = get_fashion_data($chatmessages["product_id"]);
+							$profile = get_internship_data($chatmessages["product_id"]);
 						} else if ($category_id == 5) {
-							$profile = get_bike_data($chatmessages["product_id"]);
+							$profile = get_commericial_data($chatmessages["product_id"]);
 						} else if ($category_id == 6) {
-							$profile = get_car_data($chatmessages["product_id"]);
+							$profile = get_residential_data($chatmessages["product_id"]);
 						} else if ($category_id == 7) {
-							$profile = get_book_data($chatmessages["product_id"]);
+							$profile = get_land_plot_data($chatmessages["product_id"]);
 						}
 
 						if ($chatmessages['sender_id'] != $_SESSION['id']) {
@@ -3814,11 +3940,17 @@ print_r($postData);die();
 			if ($category_id == 1) {
 				$profile = get_mobile_data($product_id);
 			} else if ($category_id == 2) {
-				$profile = get_electronic_data($product_id);
+				$profile = get_tution_data($product_id);
 			} else if ($category_id == 3) {
-				$profile = get_furniture_data($product_id);
+				$profile = get_job_data($product_id);
 			} else if ($category_id == 4) {
-				$profile = get_fashion_data($product_id);
+				$profile = get_internship_data($product_id);
+			}else if ($category_id == 5) {
+				$profile = get_commericial_data($product_id);
+			}else if ($category_id == 6) {
+				$profile = get_residential_data($product_id);
+			}else if ($category_id == 7) {
+				$profile = get_land_plot_data($product_id);
 			}
 
 
