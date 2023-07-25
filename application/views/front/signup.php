@@ -161,7 +161,7 @@
                                 <div class="row ">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label> Fullname</label>
+                                            <label> Full Name</label>
                                             <input name="name" class="form-control" placeholder="Name" type="text" maxlength="30" value="<?php echo set_value('name'); ?>"
                                                 style="border-radius:30px; border-color:#13C571">
                                                 <span style="color:red;"> <?php echo form_error('name'); ?></span>

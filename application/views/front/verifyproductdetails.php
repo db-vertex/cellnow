@@ -1422,7 +1422,7 @@ border-radius: 80px 0px 0px 80px;
                             <p class="details_text"><b>City</b></p>
                         </div>
                         <div class="col-3">
-                            <p class="details_text"><?php echo $product_detail->town; ?></p>
+                            <p class="details_text"><?php echo ucfirst($product_detail->town); ?></p>
                         </div>
                     </div>
 

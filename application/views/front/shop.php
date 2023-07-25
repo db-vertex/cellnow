@@ -302,7 +302,7 @@ max-width: 100%;
                     </div>
                 </div>
             </div><br>
-            <div class="row ">
+            <div class="row">
                 <?php
         $profile = get_seller_profile($user['user_id']);
 
@@ -340,6 +340,8 @@ width: 131.9px;">
       <div class="mySlides mt-3">
         <a href="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"><img class="details_img_cover" src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"></a>
         </div>
+        <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
+  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
         <?php
 
 $i++;
@@ -350,8 +352,7 @@ $i++;
 
 
  ?>
-  <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
-  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
+ 
 
                     <?php } ?>
       
@@ -1316,6 +1317,8 @@ function initialize() {
 
 
 <script>
+
+    
 function checkcoverimage() {
 
     var image = $('#cover_image').val();

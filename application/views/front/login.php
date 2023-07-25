@@ -30,6 +30,14 @@
 } 
 }
 
+@media (min-width: 400) and (max-width:500px) {
+    .eyes{
+    position: absolute;
+    top: 243px;
+    right: 32px;
+} 
+}
+
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
                 font-size: 3.5rem;

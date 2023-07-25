@@ -243,7 +243,7 @@ width: 131.9px;">
                             </div>
                         </div>
                         <div class=" input-container my-3 px-3 ">
-                            <p>Only 150 character are allowed</p>
+                            <p>Only 150 characters are allowed</p>
                             <textarea name="aboutus" class="form-control" id="aboutus" placeholder="About Us"
                                 maxlength="150" rows="4" style="border-radius:20px; border-color:#13C571"
                                 required><?php echo $profile->aboutus; ?></textarea>
