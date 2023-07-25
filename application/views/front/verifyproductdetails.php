@@ -232,7 +232,7 @@ img {
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
-        font-size: 16px;
+        font-size: 15px;
         line-height: 24px;
 
         color: #000000;
@@ -501,7 +501,7 @@ img {
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 600;
-        font-size: 8px;
+        font-size: 6px;
         line-height: 14px;
 
         color: #000000;
@@ -605,7 +605,7 @@ border-radius: 80px 0px 0px 80px;
         font-style: normal;
         font-weight: 400;
         font-size: 10px;
-        line-height: 20px;
+        line-height: 15px;
 
         color: #000000;
     }
@@ -1756,7 +1756,7 @@ border-radius: 80px 0px 0px 80px;
                                           
                                             <a
                                                 href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><b
-                                                    class="View_Seller_profile" id="">View Seller profile</b></a>
+                                                    class="View_Seller_profile" id="">View Seller Profile</b></a>
                                                 
                                      
                                     </div>
