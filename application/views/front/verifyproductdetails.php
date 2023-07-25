@@ -1489,7 +1489,16 @@ border-radius: 80px 0px 0px 80px;
                                                     class="btn_Verified_img"
                                                     src="<?php echo base_url() ?>assets/images/check 1.png"
                                                     alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                <?php  echo $shop_name; ?></span></p>
+                                               <?php  $title = $shop_name;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              } ?></span></p>
                                     </div>
   
   
@@ -1532,7 +1541,16 @@ border-radius: 80px 0px 0px 80px;
                                                             class="btn_Verified_img"
                                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                                             alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                        <?php echo $shop_name; ?></span></p>
+                                                                <?php  $title = $shop_name;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              } ?></span></p>
                                             </div>
 
 
@@ -1608,7 +1626,16 @@ border-radius: 80px 0px 0px 80px;
                                                                 class="btn_Verified_img"
                                                                 src="<?php echo base_url() ?>assets/images/check 1.png"
                                                                 alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                            <?php echo $shop_name; ?></span></p>
+                                                                    <?php  $title = $shop_name;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              } ?></span></p>
                                                 </div>
 
                                             </div>
@@ -1649,7 +1676,16 @@ border-radius: 80px 0px 0px 80px;
                 class="btn_Verified_img"
                 src="<?php echo base_url() ?>assets/images/check 1.png"
                 alt="check 1.png"></span><span class="btn_Verified_text">verifed by :
-            <?php echo $shop_name; ?></span></p></a>
+                    <?php  $title = $shop_name;
+                            if(strlen($title) <= 20)
+                              {
+                                echo ucfirst($title);
+                              }
+                              else
+                              {
+                                $y = substr($title,0,20) . '...';
+                                echo ucfirst($y);
+                              } ?></span></p></a>
 </div>
 
 </div>
