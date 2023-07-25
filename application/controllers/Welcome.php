@@ -1560,7 +1560,7 @@ $sub .= '</h6>
 							  }
 						  }
 					  }
-	return redirect('welcome/shop');
+	         return redirect('welcome/shop');
 			}
 
 			public function editverifiedshop()
@@ -1726,7 +1726,6 @@ $sub .= '</h6>
 	public function setshoplist()
 	{
 
-		
 		$cat_id = $this->input->post('category_id');
 		$subcat_id = $this->input->post('subcategory_id');
 		$pro_id = $this->input->post('product_id');
@@ -1742,7 +1741,7 @@ $sub .= '</h6>
 	public function fav_list()
 	{
 		$session_id = $this->session->userdata('id');
-
+        
 		$user_detail = $this->user->loginuser($session_id);
 		if (!empty($user_detail)) {
 			$this->load->view('front/header', ['user' => $user_detail]);

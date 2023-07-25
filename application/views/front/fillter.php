@@ -1383,7 +1383,7 @@ a:active {
             <a href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id;?>"
                 <?php if($id== $cat->id){ ?>style="background:#d1fae5;" <?php }else{ echo""; } ?>
                 class="new<?php echo $cat->id; ?> btn border  rounded-pill" role="button"><img class="me-1"
-                    src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp
+                style="height:30px; width:30px;" src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""> &nbsp
                 <?php echo $cat->category; ?> </a>
 
         </li>
