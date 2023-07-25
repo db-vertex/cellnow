@@ -10,6 +10,20 @@
 
 <head>
     <style>
+        .field-icon {
+  float: right;
+  margin-left: -25px;
+  margin-top: -25px;
+  position: relative;
+  top:-55px;
+  right:10px;
+  z-index: 2;
+}
+
+.container{
+  padding-top:50px;
+  margin: auto;
+}
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
@@ -17,26 +31,8 @@
             -moz-user-select: none;
             user-select: none;
         }
-.eyes{
-    position: absolute;
-    top: 255px;
-    right: 32px;
-}
-@media (min-width: 308px) and (max-width:400px) {
-    .eyes{
-    position: absolute;
-    top: 275px;
-    right: 32px;
-} 
-}
 
-@media (min-width: 400) and (max-width:500px) {
-    .eyes{
-    position: absolute;
-    top: 243px;
-    right: 32px;
-} 
-}
+
 
         @media (min-width: 768px) {
             .bd-placeholder-img-lg {
@@ -215,11 +211,9 @@
                                 </div>
                                 <div class="form-group">
                                     <label>Enter Your Password</label>
-                                    <input name="password" class="form-control" placeholder="Password" id="password" type="password"
+                                    <input name="password" class="form-control" placeholder="Password" id="password-field" type="password"
                                         maxlength="20" style="border-radius:30px; border-color:#13C571">
-                                        <p id="showPasswordToggle" class="btn eyes">
-                                <i id="passwordIcon" class="fa fa-eye"></i>
-                                </p>
+                                        <span toggle="#password-field" class="fa fa-fw fa-eye field-icon toggle-password"></span>
                                     <span style="color:red;">
                                         <?php echo form_error('password'); ?>
                                     </span>
@@ -252,18 +246,14 @@
 
 </html>
 <script>
-    document.getElementById('showPasswordToggle').addEventListener('click', function() {
-        var passwordInput = document.getElementById('password');
-        var passwordIcon = document.getElementById('passwordIcon');
+   $(".toggle-password").click(function() {
 
-        if (passwordInput.type === 'password') {
-            passwordInput.type = 'text';
-            passwordIcon.classList.remove('fa-eye');
-            passwordIcon.classList.add('fa-eye-slash');
-        } else {
-            passwordInput.type = 'password';
-            passwordIcon.classList.remove('fa-eye-slash');
-            passwordIcon.classList.add('fa-eye');
-        }
-    });
+$(this).toggleClass("fa-eye fa-eye-slash");
+var input = $($(this).attr("toggle"));
+if (input.attr("type") == "password") {
+  input.attr("type", "text");
+} else {
+  input.attr("type", "password");
+}
+});
     </script>
