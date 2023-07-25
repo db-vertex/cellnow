@@ -591,7 +591,7 @@ border-radius: 11.8328px;
 }
 .details_profile {
 width: 256px;
-height: 100px;
+height: 110px;
 left: 826px;
 margin-top: 30px;
 float: right;
@@ -943,7 +943,7 @@ border-radius: 80px 0px 0px 80px;
         gap: 6px;
         margin-top: 25px;
         width: 70px;
-        height: 44px;
+        height: 38px;
         left: 1218px;
         bottom: 1737px;
         background: #FFFFFF;
@@ -1688,11 +1688,11 @@ border-radius: 80px 0px 0px 80px;
                                             src="<?php echo base_url() . "uploads/profile/" . $userdetail->profile_img . ""; ?>"
                                             alt="img_cover">
                                     </div>
-                                    <div class="col-4">
+                                    <div class="col-4 mt-1">
                                         <div class="">
                                             <p class="deatails_profile_name"> <?php echo ucfirst($userdetail->name); ?>
                                             </p>
-                                            <p class="deatails_profile_name_time mt-1">Profile Created <span>
+                                            <p class="deatails_profile_name_time">Profile Created <span>
                                                     <?php function time_string($datetime, $full = false)
                                                     {
                                                         $now = new DateTime;
@@ -1725,7 +1725,7 @@ border-radius: 80px 0px 0px 80px;
                                                     }
                                                     echo time_string($userdetail->created); ?>
                                                 </span></p>
-                                            <p class="deatails_profile_name_ads mt-1">Total <?php $count=get_user_product_count($userdetail->user_id); echo $count;?> Ads</p>
+                                            <p class="deatails_profile_name_ads">Total <?php $count=get_user_product_count($userdetail->user_id); echo $count;?> Ads</p>
                                             <p class="deatails_profile_name_ads">Active <?php $count = get_user_active_product_count($userdetail->user_id); echo $count;?> Ads</p>
 
                                         </div>
@@ -1764,7 +1764,7 @@ border-radius: 80px 0px 0px 80px;
                             </div>
                         </div>
                     </div>
-                    <div class="col-10  margin_top_css ms-4">
+                    <div class="col-10  margin_top_css ms-4 mb-3">
                         <p class="details_handing_Description">Description</p>
                         <p class="details_Description"> <?php echo $product_detail->Description; ?></p>
                     </div>

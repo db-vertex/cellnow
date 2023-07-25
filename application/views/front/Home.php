@@ -332,11 +332,11 @@ foreach ($category as $key => $cat) {
                             <p style="text-align:center;" class="my-auto pouler_Categories "
                                 <?php if ($category == 1 || $category==5) { ?>
                                 onclick="return getproduct( <?php echo $sub->subcategory_id; ?> <?php echo $sub->category_id; ?>)" <?php } else { ?>
-                                onclick="return getproduct( <?php echo $sub->id; ?><?php echo $sub->category_id; ?>)" <?php } ?>>
+                                onclick="return getproduct( <?php echo $sub->id; ?> <?php echo $sub->category_id; ?>)" <?php } ?>>
 
-                                <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php echo $sub->id; ?> "
+                                <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if($category==1) echo $sub->subcategory_id; ?> "
                                     data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
-                                    src="https://work.dbvertex.com/celnow/uploads/shopcategory/<?php echo $sub->icon;?>"
+                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
                                     alt="">
                                     <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo $sub->product_type; ?>
