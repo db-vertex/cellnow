@@ -1756,7 +1756,7 @@ border-radius: 80px 0px 0px 80px;
                                           
                                             <a
                                                 href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><b
-                                                    class="View_Seller_profile" id="">View Seller Profile</b></a>
+                                                    class="View_Seller_profile" id=""> Seller Profile</b></a>
                                                 
                                      
                                     </div>
