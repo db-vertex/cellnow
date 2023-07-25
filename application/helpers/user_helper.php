@@ -1321,7 +1321,7 @@ function get_all_location_store($location)
        //load databse library
        $ci->load->database();
 
-  $query="SELECT * FROM shop WHERE admin_approval =1 And Address  like '%$location%' ";
+  $query="SELECT * FROM shop WHERE admin_approval =1 AND Address  like '%$location%' ";
 
   $category_data = $ci->db->query($query);        
 

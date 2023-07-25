@@ -203,7 +203,7 @@ width: 131.9px; border-color:#10B981;">
                                                 <div class="col-2">
                                                 <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
                                                 </div>
-                                                <div class="col-8">
+                                                <div class="col-8 mt-1">
                                                 <p style="color: #575757;"><?php
                            $title = $pro->address;
                             if(strlen($title) <= 15)

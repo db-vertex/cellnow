@@ -152,7 +152,7 @@ input::placeholder {
 
                
   
-         <input type="search"  name="location" class="form-control rounded-5" id="location" placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
+         <input type="search"  name="location" class="form-control rounded-5" id="location" placeholder="Search shop by the loction" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
         <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search </button>
 
 
@@ -297,23 +297,16 @@ foreach($shop as $value){
 $(document).ready(function(){
     // Get value on button click and show alert
     $("#myBtn").click(function(){
-        var str = $("#location").val();
-alert(str);
+        var location = $("#location").val();
+
         jQuery.ajax({
   type: "POST",
   url: "<?php echo base_url('/welcome/getsearchshop'); ?>",
-  data: { str:str},
+  data: { location:location},
   success: function(res) 
   {
 
     
-   
-
-
-  
-
-    
-       
   
     $("#sub-list").html(res);
     

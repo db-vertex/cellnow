@@ -501,6 +501,7 @@ $sub .= '</h6>
 		
 
 		$shop = get_all_location_store($location);
+	
 		$shop_count= get_all_location_store_count($location);
 		
 		$sub = "";

@@ -1179,7 +1179,7 @@ border-radius: 80px 0px 0px 80px;
                         <div class="breadcrumbs">
                             <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
                                     href="<?php echo base_url(); ?>">Home</a></span>/<span
-                                class="ms-2 handline"><?php echo  $title = $product_detail->title;
+                                class="ms-2 handline"><?php  $title = $product_detail->title;
                             if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
@@ -1237,11 +1237,11 @@ border-radius: 80px 0px 0px 80px;
       
         <?php if ($product_detail->images_5 !== NULL) { ?>
       <div class="mySlides">
-         <?php if ($product_detail->verified_product == 1) { ?>
+        <a href="<?php echo base_url() . $product_detail->images_5 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%"></a>
+        <?php if ($product_detail->verified_product == 1) { ?>
             <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" >
 
-       <?php } ?><a href="<?php echo base_url() . $product_detail->images_5 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%"></a>
-       </div><?php } ?>
+       <?php } ?></div><?php } ?>
        
  
     
@@ -1485,11 +1485,11 @@ border-radius: 80px 0px 0px 80px;
                                     $shop_name = get_shop_name($shop_list->shop_id); ?>
                                     <div class="" style="">
                                     <div class="col-12" style="text-align:center;">
-                                        <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                        <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                     class="btn_Verified_img"
                                                     src="<?php echo base_url() ?>assets/images/check 1.png"
                                                     alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                <?php  echo $shop_name; ?></span></p></a>
+                                                <?php  echo $shop_name; ?></span></p>
                                     </div>
   
   
@@ -1528,11 +1528,11 @@ border-radius: 80px 0px 0px 80px;
                                             $shop_name = get_shop_name($shop_list->shop_id); ?>
                                             <div class="" style="">
                                             <div class="col-12" style="text-align:center;">
-                                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                             class="btn_Verified_img"
                                                             src="<?php echo base_url() ?>assets/images/check 1.png"
                                                             alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                        <?php echo $shop_name; ?></span></p></a>
+                                                        <?php echo $shop_name; ?></span></p>
                                             </div>
 
 
@@ -1604,11 +1604,11 @@ border-radius: 80px 0px 0px 80px;
                                                 <div class="" style="">
 
                                                 <div class="col-12" style="text-align:center;">
-                                                    <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>" ><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                                 class="btn_Verified_img"
                                                                 src="<?php echo base_url() ?>assets/images/check 1.png"
                                                                 alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                            <?php echo $shop_name; ?></span></p></a>
+                                                            <?php echo $shop_name; ?></span></p>
                                                 </div>
 
                                             </div>
@@ -1942,7 +1942,7 @@ border-radius: 80px 0px 0px 80px;
                             <input name="mobile" type="number" class="form-control  text-dark mobile" type="number"
                                 id="mobile"
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
-                                maxlength="10" minlength="10" value="" placeholder="phone"
+                                maxlength="10" minlength="10" value="" placeholder="Mobile"
                                 style="border-radius:30px; border-color:#13C571" required>
 
                             <p id="mobile_error"></p>
@@ -1952,7 +1952,7 @@ border-radius: 80px 0px 0px 80px;
                         </div>
 
                         <div class=" input-container my-3 px-3 ">
-                            <label>Report Reason (Only 150 character are allowed)</label>
+                            <label>Report Reason (Only 150 characters are allowed)</label>
 
                             <textarea name="report" class="form-control" id="aboutus" placeholder="Report"
                                 maxlength="150" rows="4" style="border-radius:20px; border-color:#13C571"
