@@ -20,10 +20,7 @@
   z-index: 2;
 }
 
-.container{
-  padding-top:50px;
-  margin: auto;
-}
+
         .bd-placeholder-img {
             font-size: 1.125rem;
             text-anchor: middle;
