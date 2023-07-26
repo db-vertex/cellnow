@@ -146,6 +146,9 @@ margin-top: 10%;
     .space-top{
 margin-top: 30%;
     }
+    .col-lg-3{
+        min-width: 20%;
+    }
 
 .search_input {
         flex: 1;

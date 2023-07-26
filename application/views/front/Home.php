@@ -393,7 +393,7 @@ foreach ($category as $key => $cat) {
                   if($i > 0){
             
             ?>
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
+            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
             <a class="link-plain link-plains"
                             href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"> 
                             <div class="card">
@@ -472,7 +472,7 @@ foreach ($category as $key => $cat) {
               else {?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-            <?php if($all_count >4){ ?>
+            <?php if($all_count >5){ ?>
             <center class=""><a
                     style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
                     href="<?php echo base_url();?>welcome/fillter_product/8" class="btn btn-danger">See All</a></center>
