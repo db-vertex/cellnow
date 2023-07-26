@@ -331,10 +331,10 @@ foreach ($category as $key => $cat) {
                         <div class="va-card va-card_category mt-2" style="">
                             <p style="text-align:center;" class="my-auto pouler_Categories "
                                 <?php if ($category == 1 || $category==5) { ?>
-                                onclick="return getproduct( <?php echo $sub->subcategory_id; ?> <?php echo $sub->category_id; ?>)" <?php } else { ?>
-                                onclick="return getproduct( <?php echo $sub->id; ?> <?php echo $sub->category_id; ?>)" <?php } ?>>
+                                onclick="return getproduct( <?php echo $sub->subcategory_id; ?>,<?php echo $sub->category_id; ?>)" <?php } else { ?>
+                                onclick="return getproduct( <?php echo $sub->id; ?> ,<?php echo $sub->category_id; ?>)" <?php } ?>>
 
-                                <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if($category==1) echo $sub->subcategory_id; ?> "
+                                <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?> "
                                     data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
                                     alt="">
