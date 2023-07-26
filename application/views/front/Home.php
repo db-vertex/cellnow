@@ -393,11 +393,11 @@ foreach ($category as $key => $cat) {
                   if($i > 0){
             
             ?>
-            <div class="col-6 col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
+            <div class=" col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
             <a class="link-plain link-plains"
                             href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"> 
                             <div class="card">
-                    <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                    <div class="img-fluid bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                         <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                 class="w-100 va-thumbnail" />
                                 <p style="margin-left:5px;"> 
