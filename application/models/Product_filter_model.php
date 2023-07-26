@@ -424,7 +424,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 		  
 	   }
 	   $pro .= '</span></p>
-	   <p>   <a style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"'.(empty($user) || !isset($user) ? ' href="http://localhost:8000/welcome/login"':
+	   <p>   <a style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"'.(empty($user) || !isset($user) ? ' href="'.base_url('welcome/login').'"':
 	   '<i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"  data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
    </a></p>
 					  
@@ -544,7 +544,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 		  
 	   }
 	   $pro .= '</span></p>
-	   <p>  <a style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"'.(empty($user) || !isset($user) ? ' href="http://localhost:8000/welcome/login"':
+	   <p>  <a style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"'.(empty($user) || !isset($user) ? ' href="'.base_url('welcome/login').'"':
 	   '<i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"  data-uid="'.$session_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$row["id"].'" data-pid="'.$row["id"].'" data-cid="'.$row["category_id"].'" data-wishlist="'.$wishlist.'"></i>
    </a>
 						   </p>
