@@ -999,6 +999,7 @@ function get_pay_type($id,$category_id)
 
 function get_product_by_subid($subcategory_id,$category_id)
 {
+
   //get main CodeIgniter object
        $ci =& get_instance();
        
@@ -1023,7 +1024,6 @@ function get_product_by_subid($subcategory_id,$category_id)
                 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_internships WHERE  pay_type!=3 AND Job_type	 = $subcategory_id AND category_id = $category_id AND address = '$location' UNION 
                 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE  pay_type!=3 AND Education_type = $subcategory_id AND category_id = $category_id AND address = '$location' UNION
                 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND address = '$location' UNION
-
                 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND address = '$location' UNION
                 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE  pay_type!=3 AND subcategory_id = $subcategory_id AND category_id = $category_id AND address = '$location'";
 

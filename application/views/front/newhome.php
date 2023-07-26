@@ -279,8 +279,8 @@ foreach ($category as $key => $cat) {
                         <div class="va-card va-card_category mt-2" style="">
                             <p style="text-align:center;" class="my-auto pouler_Categories "
                                 <?php if ($category == 1 || $category == 5 || $category == 6 ||$category == 7) { ?>
-                                onclick="return getproduct( <?php echo $sub->subcategory_id; ?>)" <?php } else { ?>
-                                onclick="return getproduct( <?php echo $sub->id; ?>)" <?php } ?>>
+                                onclick="return getproduct( <?php echo $sub->subcategory_id; ?>,<?php echo $sub->category_id; ?>)" <?php } else { ?>
+                                onclick="return getproduct( <?php echo $sub->id; ?>,<?php echo $sub->category_id; ?>)" <?php } ?>>
 
                                 <img class="btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
                                     data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
@@ -982,7 +982,7 @@ function getshop(category_id){
 }
 
 
-function getproduct(subcategory_id) {
+function getproduct(subcategory_id,category_id) {
 
 
     //var res = "";
@@ -995,7 +995,8 @@ function getproduct(subcategory_id) {
         type: "POST",
         url: "<?php echo base_url('/welcome/getproduct'); ?>",
         data: {
-            subcategory_id: subcategory_id
+            subcategory_id: subcategory_id,
+            category_id:category_id
         },
         success: function(res) {
 
