@@ -6,7 +6,25 @@
     .cursor-center {
   margin-left:30px;
 }
+/* width */
+.scrollbar::-webkit-scrollbar {
+  width: 10px;
+}
 
+/* Track */
+.scrollbar::-webkit-scrollbar-track {
+  background: #f1f1f1; 
+}
+ 
+/* Handle */
+.scrollbar::-webkit-scrollbar-thumb {
+  background: #888; 
+}
+
+/* Handle on hover */
+.scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #555; 
+}
 .details_img_cover {
 
     max-height: 367px;
@@ -1544,7 +1562,7 @@ $brands = array(
 
 <!-- Loop through the brands array and generate checkboxes with labels -->
 <div id="myDropdown">
-    <ul>
+    <ul class="scrollbar">
         <?php foreach ($brands as $brand) : ?>
             <li>
                 <label>
