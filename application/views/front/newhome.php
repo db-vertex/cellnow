@@ -344,7 +344,7 @@ foreach ($category as $key => $cat) {
             
             ?>
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
-            <a
+            <a class="link-plain link-plains"
                             href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"> 
                             <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
@@ -380,13 +380,13 @@ foreach ($category as $key => $cat) {
 
                             <h6 class="dress-name"><?php
                            $title = $pro->title;
-                            if(strlen($title) <= 30)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,30) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -399,13 +399,13 @@ foreach ($category as $key => $cat) {
 
                             <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 25)
+                            if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,25) . '...';
+                                $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -572,7 +572,7 @@ else{
              ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="" >
-            <a href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>">
+            <a class="link-plain link-plains" href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                        <img
@@ -699,7 +699,7 @@ else{
             ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 postdonate">
-            <a href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
+            <a class="link-plain link-plains" href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
                 <div class="card">
                     <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                        <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"

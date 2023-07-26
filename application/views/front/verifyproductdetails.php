@@ -233,7 +233,7 @@ img {
         font-style: normal;
         font-weight: 400;
         font-size: 15px;
-        line-height: 24px;
+        line-height: 20px;
 
         color: #000000;
     }
@@ -345,7 +345,7 @@ img {
             font-style: normal;
             font-weight: 400;
             font-size: 12px;
-            line-height: 24px;
+            line-height: 20px;
 
             color: #000000;
         }
@@ -421,7 +421,7 @@ img {
 
         .btn_Verified_shop_name {
             width: 250px;
-            height: 34px;
+            height: 37px;
             left: 988px;
             top: 941px;
             background: #D1FAE5;
@@ -562,7 +562,7 @@ border-radius: 11.8328px;
 
 .btn_Verified_shop_name {
     width: 250px;
-    height: 34px;
+    height: 37px;
     left: 988px;
     top: 941px;
     background: #D1FAE5;
@@ -740,7 +740,7 @@ border-radius: 80px 0px 0px 80px;
     @media (min-width: 1199.98px) {
         .btn_Verified_shop_name {
             width: 300px;
-            height: 34px;
+            height: 37px;
             left: 988px;
             top: 941px;
             background: #D1FAE5;
@@ -1320,7 +1320,7 @@ border-radius: 80px 0px 0px 80px;
                                           }
                                           echo time_elapsed_string($product_detail->created_at); ?></span></p>
                                         
-                                        <p><img class="img-size" src="<?php echo base_url(); ?>assets/images/eye.png"> <span class="detalis_option_text"><?php echo $product_detail->Count ?>views</span></p>
+                                        <p><img class="img-size" src="<?php echo base_url(); ?>assets/images/eye.png"> <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span></p>
                                        
                                        <p> <img class="img-size"  src="<?php echo base_url(); ?>assets/images/hearts.png"><span class="detalis_option_text"> <?php $product_wishlist = get_wishlist_count($product_detail->id, $product_detail->category_id);
                                           echo $product_wishlist; ?></span></p>
@@ -1886,10 +1886,10 @@ border-radius: 80px 0px 0px 80px;
                                                 <div class="col-8">
                                                     <p style="color: #575757;"><?php
                                                     $title = $relatedproduct->address;
-                                                    if (strlen($title) <= 20) {
+                                                    if (strlen($title) <= 15) {
                                                         echo ucfirst($title);
                                                     } else {
-                                                        $y = substr($title, 0, 20) . '...';
+                                                        $y = substr($title, 0, 15) . '...';
                                                         echo ucfirst($y);
                                                     }
 

@@ -1534,7 +1534,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             </div>
                         </div>
                     </div>
-                    <div class="col-10  margin_top_css ms-4">
+                    <div class="col-10  margin_top_css ms-4 mb-3">
                         <p class="details_handing_Description">Description</p>
                         <p class="details_Description"> <?php echo $product_detail->Description; ?></p>
                     </div>
