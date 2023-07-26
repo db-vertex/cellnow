@@ -2128,7 +2128,17 @@ $(document).ready(function(){
             $('#intership_Post_Vacant').prop('required', false);
             $('#Tuitions_Available_Timings_post').prop('required', false);
             $('#Tuitions_Available_Timings_intership').prop('required', false);
-
+            $('#Floor').prop('required', false);
+            $('#Parking').prop('required', false);
+            $('#Facing').prop('required', false);
+            $('#Furniture').prop('required', false);
+            $('#Area').prop('required', false);
+            $('#Bathrooms').prop('required', false);
+            $('#Bathroom').prop('required', false);
+            $('#Room').prop('required', false);
+            $('#Food').prop('required', false);
+            $('#Preferred').prop('required', false);
+            
 
 
             document.getElementById("school_eduction_div").style.display = "none";
@@ -2194,6 +2204,14 @@ $(document).ready(function(){
             $('#intership_Post_Vacant').prop('required', false); 
             $('#Tuitions_Available_Timings_post').prop('required', false);
             $('#Tuitions_Available_Timings_intership').prop('required', false);
+            $('#Floor').prop('required', false);
+            $('#Parking').prop('required', false);
+            $('#Facing').prop('required', false);
+            $('#Furniture').prop('required', false);
+            $('#Area').prop('required', false);
+            $('#Bathrooms').prop('required', false);
+            $('#Room').prop('required', false);
+            $('#Food').prop('required', false);
 
             document.getElementById("school_eduction_div").style.display = "none";
 
@@ -2337,6 +2355,8 @@ $(document).ready(function(){
                         intership_Post_Vacant.required = true;
                     }
                 }).trigger('change.intership_Skills_Qualifications,intership_Post_Vacant');
+
+
 
             $('#subcategory').on('change.Floor,Parking',
                 function() {

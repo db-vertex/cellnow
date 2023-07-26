@@ -209,8 +209,6 @@ input::placeholder {
                     <div id="display"></div>
 
 
-
-
                 </div>
             </div>
         </div>
@@ -219,7 +217,7 @@ input::placeholder {
 
 <!-- new -->
 
-<div class="container ">
+<div class="container">
 
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
@@ -248,7 +246,7 @@ foreach ($category as $key => $cat) {
            
             <div class="va-card cut-list mt-2" onclick="return getsubcategory(<?php echo $cat->id; ?>)">
                 <p class="new<?php echo $cat->id; ?> btn border  rounded-pill <?php if($cat->id==1){ ?>selected <?php } ?>" role="button">
-                <img  style="height:30px; width:30px;" class="me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""><?php echo $cat->category; ?> </p>
+                <img  style="height:40px; width:40px;" class="me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""><?php echo $cat->category; ?> </p>
 </div>
          
 
