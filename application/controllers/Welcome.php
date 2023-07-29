@@ -2682,7 +2682,7 @@ $sub .= '</h6>
 
 
 		$id = $this->db->insert_id();
-		print_r($_FILES['profile_img']);
+	
 		$this->load->library('upload');
 		$dataInfo = array();
 		if (!empty($_FILES['profile_img']['name'])) {
@@ -2760,10 +2760,18 @@ $sub .= '</h6>
 			}
 
 		}
-		if($sponser==3){
+		$postData['verified_admin'] = $this->input->post('verified_admin');
+
+		if (empty($postData['verified_admin'])) {
+			$postData['verified_admin'] = null;
+		}
+
+		if($sponser==3 || $postData['verified_admin'] == "yes"){
 			$redirectUrl = 'welcome/pay/' .$id.'/'.$category;
 			return redirect($redirectUrl);
 		}
+
+		
 		$this->session->set_flashdata('saveproduct', 'Product Post Succesfully.');
 		$this->session->set_flashdata('msg_class', 'alert-success');
 		
@@ -2806,9 +2814,13 @@ $sub .= '</h6>
 
 		}
 		foreach($result as $dataji)
-		if($dataji->verified_admin=='yes'){
+		if($dataji->verified_admin=='yes' && $dataji->pay_type == 3){
 			$_SESSION['amount'] ='135';
 		}
+		elseif($dataji->pay_type== 0 || $dataji->pay_type== 2){
+			$_SESSION['amount'] ='10';
+		}
+	
         else{
 	       $_SESSION['amount'] ='125';
         }
@@ -3334,6 +3346,9 @@ $sub .= '</h6>
 			}
 
 		}
+	
+			// यदि डेटा खाली है तो उसे नल (null) में सेट करें
+		
 		if($sponser==3){
 			$redirectUrl = 'welcome/editpay/' .$id.'/'.$category;
 			return redirect($redirectUrl);

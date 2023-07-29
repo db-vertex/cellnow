@@ -17,9 +17,11 @@
         rel="stylesheet" />
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete"></script>
-    
-<style>
+    <script
+        src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete">
+    </script>
+
+    <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -96,7 +98,7 @@
     .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
-       max-width: 1200px;
+        max-width: 1200px;
         margin: 0 auto;
     }
 
@@ -246,10 +248,10 @@
         letter-spacing: 0em;
         text-align: center;
         color: #F5F5F5;
-        
+
     }
 
-    .none{
+    .none {
         display: none;
     }
 
@@ -314,7 +316,7 @@
         .images_small_box_row {
             margin-top: 106%;
         }
-        
+
     }
 
     @media (min-width: 400px) {
@@ -333,7 +335,7 @@
         .images_small_box_row {
             margin-top: 53%;
         }
-        
+
     }
 
     @media (min-width: 992px) {
@@ -421,9 +423,13 @@
         order: 0;
         flex-grow: 0;
     }
-    .Post_header{
+
+    .Post_header {
         padding-bottom: 0px;
-          border-bottom: 6px solid #10B981;
+        border-bottom: 6px solid #10B981;
+    }
+    #verified_option_normal{
+        display:none;
     }
     </style>
 
@@ -445,22 +451,24 @@
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
-                            <span class="me-2 handline"><a class="text-dark link-underline-opacity-0" href="<?php echo base_url(); ?>">Home</a></span>/<span class="ms-2 handline">Post Ads </span>
+                            <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
+                                    href="<?php echo base_url(); ?>">Home</a></span>/<span class="ms-2 handline">Post
+                                Ads </span>
                         </div>
                     </div>
                 </div>
             </div>
 
             <?php  if($error=$this->session->flashdata('saveproduct')){  ?>
-                <script>
-swal({
-  title: "Success!",
-  text: "Product added Successfully!",
- 
-  button: false,
-  timer: 5000,
-});
-</script>
+            <script>
+            swal({
+                title: "Success!",
+                text: "Product added Successfully!",
+
+                button: false,
+                timer: 5000,
+            });
+            </script>
 
             <?php } ?>
             <?php  if($error=$this->session->flashdata('saveproductfiled')){  ?>
@@ -518,7 +526,7 @@ swal({
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3"></i>
-                                <img id="ImgPreview3" src="" class="preview3" style="width: 78.17px; height: 96px;"/>
+                                <img id="ImgPreview3" src="" class="preview3" style="width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_3" name="profile_img[]"
@@ -526,7 +534,7 @@ swal({
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4"></i>
-                                <img id="ImgPreview4" src="" class="preview4" style="width: 78.17px; height: 96px;"/>
+                                <img id="ImgPreview4" src="" class="preview4" style="width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_4" name="profile_img[]"
@@ -534,7 +542,7 @@ swal({
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5"></i>
-                                <img id="ImgPreview5" src="" class="preview5" style="width: 78.17px; height: 96px;"/>
+                                <img id="ImgPreview5" src="" class="preview5" style="width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_5" name="profile_img[]"
@@ -547,15 +555,15 @@ swal({
                         <div class="row g-3">
 
                             <div class="col-12">
-                               
+
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
-                                        value="3"checked>
+                                        value="3" checked>
                                     <label class="form-check-label" for="inlineRadio2">Bost Ads</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1"
-                                        value="0" >
+                                        value="0">
                                     <label class="form-check-label" for="inlineRadio1">Normal</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -582,7 +590,7 @@ swal({
                                     <option value="2">Tuitions / Classes</option>
                                     <option value="3">Part-time Jobs</option>
                                     <option value="4">Internships</option>
-                                    <option value="5">Commericial  Places</option>
+                                    <option value="5">Commericial Places</option>
                                     <option value="6">Residential Places</option>
                                     <option value="7">Land/Plot</option>
                                 </select>
@@ -604,129 +612,128 @@ swal({
 
                             <div class="col-sm-12 hiddens" id="reusable_parts_Product_Brand_div">
                                 <label for="Product_Brand" class="form-label post_input_lable">Product Brand</label>
-                               
-                                    <select class="form-select post_input_fild" id="Product_Brand"
-                                    name="Product_Brand">
+
+                                <select class="form-select post_input_fild" id="Product_Brand" name="Product_Brand">
                                     <option value="">Select Brand</option>
                                     <option value="Acer">Acer</option>
-  <option value="Alcatel">Alcatel</option>
-  <option value="Allview">Allview</option>
-  <option value="Amazon">Amazon</option>
-  <option value="Amoi">Amoi</option>
-  <option value="Apple">Apple</option>
-  <option value="Archos">Archos</option>
-  <option value="Asus">Asus</option>
-  <option value="AT&T">AT&T</option>
-  <option value="Benefon">Benefon</option>
-  <option value="BenQ">BenQ</option>
-  <option value="BenQ-Siemens">BenQ-Siemens</option>
-  <option value="Bird">Bird</option>
-  <option value="BlackBerry">BlackBerry</option>
-  <option value="Blackview">Blackview</option>
-  <option value="BLU">BLU</option>
-  <option value="Bosch">Bosch</option>
-  <option value="BQ">BQ</option>
-  <option value="Casio">Casio</option>
-  <option value="Cat">Cat</option>
-  <option value="Celkon">Celkon</option>
-  <option value="Chea">Chea</option>
-  <option value="Coolpad">Coolpad</option>
-  <option value="Dell">Dell</option>
-  <option value="Doogee">Doogee</option>
-  <option value="Emporia">Emporia</option>
-  <option value="Energizer">Energizer</option>
-  <option value="Ericsson">Ericsson</option>
-  <option value="Eten">Eten</option>
-  <option value="Fairphone">Fairphone</option>
-  <option value="Fujitsu Siemens">Fujitsu Siemens</option>
-  <option value="Garmin-Asus">Garmin-Asus</option>
-  <option value="Gigabyte">Gigabyte</option>
-  <option value="Gionee">Gionee</option>
-  <option value="Google">Google</option>
-  <option value="Haier">Haier</option>
-  <option value="Honor">Honor</option>
-  <option value="HP">HP</option>
-  <option value="HTC">HTC</option>
-  <option value="Huawei">Huawei</option>
-  <option value="mate">mate</option>
-  <option value="mobile">mobile</option>
-  <option value="Icemobile">Icemobile</option>
-  <option value="Infinix">Infinix</option>
-  <option value="Innostream">Innostream</option>
-  <option value="iNQ">iNQ</option>
-  <option value="Intex">Intex</option>
-  <option value="Jolla">Jolla</option>
-  <option value="Karbonn">Karbonn</option>
-  <option value="Kyocera">Kyocera</option>
-  <option value="Lava">Lava</option>
-  <option value="LeEco">LeEco</option>
-  <option value="Lenovo">Lenovo</option>
-  <option value="LG">LG</option>
-  <option value="Maxon">Maxon</option>
-  <option value="Maxwest">Maxwest</option>
-  <option value="Meizu">Meizu</option>
-  <option value="Micromax">Micromax</option>
-  <option value="Microsoft">Microsoft</option>
-  <option value="Mitac">Mitac</option>
-  <option value="Mitsubishi">Mitsubishi</option>
-  <option value="Modu">Modu</option>
-  <option value="Motorola">Motorola</option>
-  <option value="MWg">MWg</option>
-  <option value="NEC">NEC</option>
-  <option value="Neonode">Neonode</option>
-  <option value="NIU">NIU</option>
-  <option value="Nokia">Nokia</option>
-  <option value="Nothing">Nothing</option>
-  <option value="Nvidia">Nvidia</option>
-  <option value="O2">O2</option>
-  <option value="OnePlus">OnePlus</option>
-  <option value="Oppo">Oppo</option>
-  <option value="Orange">Orange</option>
-  <option value="Palm">Palm</option>
-  <option value="Panasonic">Panasonic</option>
-  <option value="Pantech">Pantech</option>
-  <option value="Parla">Parla</option>
-  <option value="Philips">Philips</option>
-  <option value="Plum">Plum</option>
-  <option value="Posh">Posh</option>
-  <option value="Prestigio">Prestigio</option>
-  <option value="QMobile">QMobile</option>
-  <option value="Qtek">Qtek</option>
-  <option value="Razer">Razer</option>
-  <option value="Realme">Realme</option>
-  <option value="Sagem">Sagem</option>
-  <option value="Samsung">Samsung</option>
-  <option value="Sendo">Sendo</option>
-  <option value="Sewon">Sewon</option>
-  <option value="Sharp">Sharp</option>
-  <option value="Siemens">Siemens</option>
-  <option value="Sonim">Sonim</option>
-  <option value="Sony">Sony</option>
-  <option value="Sony Ericsson">Sony Ericsson</option>
-  <option value="Spice">Spice</option>
-  <option value="T-Mobile">T-Mobile</option>
-  <option value="TCL">TCL</option>
-  <option value="Tecno">Tecno</option>
-  <option value="Tel.Me.">Tel.Me.</option>
-  <option value="Telit">Telit</option>
-  <option value="Thuraya">Thuraya</option>
-  <option value="Toshiba">Toshiba</option>
-  <option value="Ulefone">Ulefone</option>
-  <option value="Unnecto">Unnecto</option>
-  <option value="Vertu">Vertu</option>
-  <option value="verykool">verykool</option>
-  <option value="Vivo">Vivo</option>
-  <option value="VK Mobile">VK Mobile</option>
-  <option value="Vodafone">Vodafone</option>
-  <option value="Wiko">Wiko</option>
-  <option value="WND">WND</option>
-  <option value="XCute">XCute</option>
-  <option value="Xiaomi">Xiaomi</option>
-  <option value="XOLO">XOLO</option>
-  <option value="Yezz">Yezz</option>
-  <option value="Yota">Yota</option>
-  <option value="YU">YU</option>
-  <option value="ZTE">ZTE</option>
+                                    <option value="Alcatel">Alcatel</option>
+                                    <option value="Allview">Allview</option>
+                                    <option value="Amazon">Amazon</option>
+                                    <option value="Amoi">Amoi</option>
+                                    <option value="Apple">Apple</option>
+                                    <option value="Archos">Archos</option>
+                                    <option value="Asus">Asus</option>
+                                    <option value="AT&T">AT&T</option>
+                                    <option value="Benefon">Benefon</option>
+                                    <option value="BenQ">BenQ</option>
+                                    <option value="BenQ-Siemens">BenQ-Siemens</option>
+                                    <option value="Bird">Bird</option>
+                                    <option value="BlackBerry">BlackBerry</option>
+                                    <option value="Blackview">Blackview</option>
+                                    <option value="BLU">BLU</option>
+                                    <option value="Bosch">Bosch</option>
+                                    <option value="BQ">BQ</option>
+                                    <option value="Casio">Casio</option>
+                                    <option value="Cat">Cat</option>
+                                    <option value="Celkon">Celkon</option>
+                                    <option value="Chea">Chea</option>
+                                    <option value="Coolpad">Coolpad</option>
+                                    <option value="Dell">Dell</option>
+                                    <option value="Doogee">Doogee</option>
+                                    <option value="Emporia">Emporia</option>
+                                    <option value="Energizer">Energizer</option>
+                                    <option value="Ericsson">Ericsson</option>
+                                    <option value="Eten">Eten</option>
+                                    <option value="Fairphone">Fairphone</option>
+                                    <option value="Fujitsu Siemens">Fujitsu Siemens</option>
+                                    <option value="Garmin-Asus">Garmin-Asus</option>
+                                    <option value="Gigabyte">Gigabyte</option>
+                                    <option value="Gionee">Gionee</option>
+                                    <option value="Google">Google</option>
+                                    <option value="Haier">Haier</option>
+                                    <option value="Honor">Honor</option>
+                                    <option value="HP">HP</option>
+                                    <option value="HTC">HTC</option>
+                                    <option value="Huawei">Huawei</option>
+                                    <option value="mate">mate</option>
+                                    <option value="mobile">mobile</option>
+                                    <option value="Icemobile">Icemobile</option>
+                                    <option value="Infinix">Infinix</option>
+                                    <option value="Innostream">Innostream</option>
+                                    <option value="iNQ">iNQ</option>
+                                    <option value="Intex">Intex</option>
+                                    <option value="Jolla">Jolla</option>
+                                    <option value="Karbonn">Karbonn</option>
+                                    <option value="Kyocera">Kyocera</option>
+                                    <option value="Lava">Lava</option>
+                                    <option value="LeEco">LeEco</option>
+                                    <option value="Lenovo">Lenovo</option>
+                                    <option value="LG">LG</option>
+                                    <option value="Maxon">Maxon</option>
+                                    <option value="Maxwest">Maxwest</option>
+                                    <option value="Meizu">Meizu</option>
+                                    <option value="Micromax">Micromax</option>
+                                    <option value="Microsoft">Microsoft</option>
+                                    <option value="Mitac">Mitac</option>
+                                    <option value="Mitsubishi">Mitsubishi</option>
+                                    <option value="Modu">Modu</option>
+                                    <option value="Motorola">Motorola</option>
+                                    <option value="MWg">MWg</option>
+                                    <option value="NEC">NEC</option>
+                                    <option value="Neonode">Neonode</option>
+                                    <option value="NIU">NIU</option>
+                                    <option value="Nokia">Nokia</option>
+                                    <option value="Nothing">Nothing</option>
+                                    <option value="Nvidia">Nvidia</option>
+                                    <option value="O2">O2</option>
+                                    <option value="OnePlus">OnePlus</option>
+                                    <option value="Oppo">Oppo</option>
+                                    <option value="Orange">Orange</option>
+                                    <option value="Palm">Palm</option>
+                                    <option value="Panasonic">Panasonic</option>
+                                    <option value="Pantech">Pantech</option>
+                                    <option value="Parla">Parla</option>
+                                    <option value="Philips">Philips</option>
+                                    <option value="Plum">Plum</option>
+                                    <option value="Posh">Posh</option>
+                                    <option value="Prestigio">Prestigio</option>
+                                    <option value="QMobile">QMobile</option>
+                                    <option value="Qtek">Qtek</option>
+                                    <option value="Razer">Razer</option>
+                                    <option value="Realme">Realme</option>
+                                    <option value="Sagem">Sagem</option>
+                                    <option value="Samsung">Samsung</option>
+                                    <option value="Sendo">Sendo</option>
+                                    <option value="Sewon">Sewon</option>
+                                    <option value="Sharp">Sharp</option>
+                                    <option value="Siemens">Siemens</option>
+                                    <option value="Sonim">Sonim</option>
+                                    <option value="Sony">Sony</option>
+                                    <option value="Sony Ericsson">Sony Ericsson</option>
+                                    <option value="Spice">Spice</option>
+                                    <option value="T-Mobile">T-Mobile</option>
+                                    <option value="TCL">TCL</option>
+                                    <option value="Tecno">Tecno</option>
+                                    <option value="Tel.Me.">Tel.Me.</option>
+                                    <option value="Telit">Telit</option>
+                                    <option value="Thuraya">Thuraya</option>
+                                    <option value="Toshiba">Toshiba</option>
+                                    <option value="Ulefone">Ulefone</option>
+                                    <option value="Unnecto">Unnecto</option>
+                                    <option value="Vertu">Vertu</option>
+                                    <option value="verykool">verykool</option>
+                                    <option value="Vivo">Vivo</option>
+                                    <option value="VK Mobile">VK Mobile</option>
+                                    <option value="Vodafone">Vodafone</option>
+                                    <option value="Wiko">Wiko</option>
+                                    <option value="WND">WND</option>
+                                    <option value="XCute">XCute</option>
+                                    <option value="Xiaomi">Xiaomi</option>
+                                    <option value="XOLO">XOLO</option>
+                                    <option value="Yezz">Yezz</option>
+                                    <option value="Yota">Yota</option>
+                                    <option value="YU">YU</option>
+                                    <option value="ZTE">ZTE</option>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Product Brand.
@@ -735,31 +742,29 @@ swal({
 
                             <div class="col-sm-6 hiddens" id="Rent_sale_div">
                                 <label for="Rent_sale" class="form-label post_input_lable">Filter</label>
-                               
-                                    <select class="form-select post_input_fild" id="Rent_sale"
-                                    name="Rent_sale">
+
+                                <select class="form-select post_input_fild" id="Rent_sale" name="Rent_sale">
                                     <option value="">Select Type</option>
                                     <option value="Rent">Rent</option>
                                     <option value="Sale">Sale</option>
-  
+
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Filter.
                                 </div>
                             </div>
 
-                          
+
                             <div class="col-sm-6 hiddens" id="BHK_type_div">
                                 <label for="BHK_type" class="form-label post_input_lable"> Type</label>
-                               
-                                    <select class="form-select post_input_fild" id="BHK_type"
-                                    name="type">
+
+                                <select class="form-select post_input_fild" id="BHK_type" name="type">
                                     <option value="">Select Type</option>
                                     <option value="1BHK">1BHK</option>
                                     <option value="2BHK">2BHK</option>
                                     <option value="3BHK">3BHK</option>
                                     <option value="Others">Others</option>
-  
+
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Type.
@@ -768,9 +773,8 @@ swal({
 
                             <div class="col-sm-6 hiddens" id="Floor_div">
                                 <label for="Floor" class="form-label post_input_lable">Floor Type</label>
-                               
-                                    <select class="form-select post_input_fild" id="Floor"
-                                    name="Floor">
+
+                                <select class="form-select post_input_fild" id="Floor" name="Floor">
                                     <option value="">Select Floor</option>
                                     <option value="Ground">Ground</option>
                                     <option value="1st">1st</option>
@@ -780,25 +784,24 @@ swal({
                                     <option value="5th">5th</option>
                                     <option value="5th">6th</option>
                                     <option value="5th">7th</option>
-  
+
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Floor.
                                 </div>
                             </div>
 
-                            
+
                             <div class="col-sm-6 hiddens" id="Parking_div">
                                 <label for="Parking" class="form-label post_input_lable">Parking Type</label>
-                               
-                                    <select class="form-select post_input_fild" id="Parking"
-                                    name="Parking">
+
+                                <select class="form-select post_input_fild" id="Parking" name="Parking">
                                     <option value="">Select Parking</option>
                                     <option value="None">None</option>
                                     <option value="2 Wheeler">2 Wheeler</option>
                                     <option value="4 Wheeler">4 Wheeler</option>
-                                  
-  
+
+
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Parking.
@@ -807,16 +810,15 @@ swal({
 
                             <div class="col-sm-6 hiddens" id="Facing_div">
                                 <label for="Facing" class="form-label post_input_lable">Facing</label>
-                               
-                                    <select class="form-select post_input_fild" id="Facing"
-                                    name="Facing">
+
+                                <select class="form-select post_input_fild" id="Facing" name="Facing">
                                     <option value="">Select Facing</option>
                                     <option value="North">North</option>
                                     <option value="South">South</option>
                                     <option value="East">East</option>
                                     <option value="West">West</option>
-                                  
-  
+
+
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Facing.
@@ -825,14 +827,13 @@ swal({
 
                             <div class="col-sm-6 hiddens" id="Room_div">
                                 <label for="Room" class="form-label post_input_lable">Rooms</label>
-                               
-                                    <select class="form-select post_input_fild" id="Room"
-                                    name="Room">
+
+                                <select class="form-select post_input_fild" id="Room" name="Room">
                                     <option value="">Select Rooms</option>
                                     <option value="Sharing">Sharing</option>
                                     <option value="Independent">Independent</option>
-                                    
-  
+
+
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Bathrooms.
@@ -841,14 +842,13 @@ swal({
 
                             <div class="col-sm-6 hiddens" id="Bathroom_div">
                                 <label for="Bathroom" class="form-label post_input_lable">Bathrooms</label>
-                               
-                                    <select class="form-select post_input_fild" id="Bathroom"
-                                    name="Bathroom">
+
+                                <select class="form-select post_input_fild" id="Bathroom" name="Bathroom">
                                     <option value="">Select Bathrooms</option>
                                     <option value="Sharing">Sharing</option>
                                     <option value="Independent">Independent</option>
-                                    
-  
+
+
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Bathrooms.
@@ -873,16 +873,15 @@ swal({
 
                             <div class="col-sm-6 hiddens" id="Bathrooms_div">
                                 <label for="Bathrooms" class="form-label post_input_lable">Bathrooms</label>
-                               
-                                    <select class="form-select post_input_fild" id="Bathrooms"
-                                    name="Bathrooms">
+
+                                <select class="form-select post_input_fild" id="Bathrooms" name="Bathrooms">
                                     <option value="">Select Bathrooms</option>
                                     <option value="1">1</option>
                                     <option value="2">2</option>
                                     <option value="3">3</option>
                                     <option value="Others">Others</option>
-                                    
-  
+
+
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Bathrooms.
@@ -891,40 +890,40 @@ swal({
 
                             <div class="col-sm-6 hiddens" id="Preferred_div">
                                 <label for="Preferred" class="form-label post_input_lable">Preferred Tenant</label>
-                               
-                                    <select class="form-select post_input_fild" id="Preferred"
-                                    name="Preferred">
+
+                                <select class="form-select post_input_fild" id="Preferred" name="Preferred">
                                     <option value="">Select Preferred Tenant</option>
                                     <option value="Girl">Girl</option>
                                     <option value="Boy">Boy</option>
                                     <option value="Any">Any</option>
-                                  </select>
+                                </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Preferred.
                                 </div>
                             </div>
 
                             <div class="col-sm-6 hiddens" id="Preferred_tenant_div">
-                                <label for="Preferred_tenant" class="form-label post_input_lable">Preferred Tenant</label>
-                               
-                                    <select class="form-select post_input_fild" id="Preferred_tenant"
+                                <label for="Preferred_tenant" class="form-label post_input_lable">Preferred
+                                    Tenant</label>
+
+                                <select class="form-select post_input_fild" id="Preferred_tenant"
                                     name="Preferred_tenant">
                                     <option value="">Select Preferred Tenant</option>
                                     <option value="Bachelor">Bachelor</option>
                                     <option value="Family">Family</option>
                                     <option value="Any">Any</option>
-                                  </select>
+                                </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Preferred Tenant.
                                 </div>
                             </div>
 
-                         
+
 
                             <div class="col-sm-6 hiddens" id="Sale_Price_div">
                                 <label for="Sale_Price" class="form-label post_input_lable">Sale / Rent Price</label>
-                                <input type="text" class="form-control post_input_fild" id="Sale_Price" name="Sale_Price"
-                                    placeholder="Please Enter Price">
+                                <input type="text" class="form-control post_input_fild" id="Sale_Price"
+                                    name="Sale_Price" placeholder="Please Enter Price">
                                 <div class="invalid-feedback">
                                     Please Enter Price.
                                 </div>
@@ -1062,7 +1061,7 @@ swal({
                                 </div>
                             </div>
 
-                          
+
 
                             <div class="col-sm-6 hiddens" id="reusable_parts_Home_Appliances_product_Type_div">
                                 <label for="reusable_parts_Home_Appliances_product_Type"
@@ -1259,7 +1258,7 @@ swal({
                                     name="Tuitions_Education_Type">
                                     <option value="">Select Education Type</option>
                                     <option value="13">Academic based</option>
-                                   
+
                                     <option value="14">Music Classes</option>
                                     <option value="15">Self-defence Classes</option>
                                     <option value="16">Sports</option>
@@ -1307,7 +1306,8 @@ swal({
                             </div>
 
                             <div class="col-sm-6 hiddens" id="Tuitions_Teachers_Experience_div">
-                                <label for="Tuitions_Teachers_Experience" class="form-label post_input_lable">Experience</label>
+                                <label for="Tuitions_Teachers_Experience"
+                                    class="form-label post_input_lable">Experience</label>
                                 <select class="form-select post_input_fild" id="Tuitions_Teachers_Experience"
                                     name="Tuitions_Teachers_Experience">
                                     <option value="">Select Experience</option>
@@ -1356,27 +1356,32 @@ swal({
                             </div>
 
                             <div class="col-sm-6 hiddens" id="Tuitions_Available_Timings_post_div">
-                                <label for="Tuitions_Available_Timings_post" class="form-label post_input_lable">Available
+                                <label for="Tuitions_Available_Timings_post"
+                                    class="form-label post_input_lable">Available
                                     Timings</label>
-                                <input type="text" class="form-control post_input_fild" id="Tuitions_Available_Timings_post"
-                                    name="Tuitions_Available_Timings_post" placeholder="Please select Available_Timings">
+                                <input type="text" class="form-control post_input_fild"
+                                    id="Tuitions_Available_Timings_post" name="Tuitions_Available_Timings_post"
+                                    placeholder="Please select Available_Timings">
                                 <div class="invalid-feedback">
                                     Please select Available Timings.
                                 </div>
                             </div>
 
                             <div class="col-sm-6 hiddens" id="Tuitions_Available_Timings_intership_div">
-                                <label for="Tuitions_Available_Timings_intership" class="form-label post_input_lable">Available
+                                <label for="Tuitions_Available_Timings_intership"
+                                    class="form-label post_input_lable">Available
                                     Timings</label>
-                                <input type="text" class="form-control post_input_fild" id="Tuitions_Available_Timings_intership"
-                                    name="Tuitions_Available_Timings_intership" placeholder="Please select Available_Timings">
+                                <input type="text" class="form-control post_input_fild"
+                                    id="Tuitions_Available_Timings_intership"
+                                    name="Tuitions_Available_Timings_intership"
+                                    placeholder="Please select Available_Timings">
                                 <div class="invalid-feedback">
                                     Please select Available Timings.
                                 </div>
                             </div>
 
 
-                         
+
 
 
                             <div class="col-sm-6 hiddens" id="Tuitions_person_Fees_div">
@@ -1438,8 +1443,8 @@ swal({
                                 <label for="Job_type" class="form-label post_input_lable">Job Type</label>
                                 <select class="form-select post_input_fild" id="Job_type" name="Job_type">
                                     <option value="">Select Job Type</option>
-                                  
-                                 
+
+
                                     <option value="23">Event planers</option>
                                     <option value="24">Event execution helpers</option>
                                     <option value="25">Painters</option>
@@ -1645,7 +1650,7 @@ swal({
                                     Please provide a valid Furniture.
                                 </div>
                             </div>
-                            
+
 
                             <div class="col-sm-6 hiddens" id="Warrenty_div">
                                 <label for="Warrenty" class="form-label post_input_lable">Warrenty</label>
@@ -1749,64 +1754,105 @@ swal({
                             <div class="col-12">
                                 <label for="address" class="form-label post_input_lable">Get your product verified now:
 
-At CelNow, we value trust, transparency, and authenticity. We understand the importance of ensuring a safe and secure marketplace for our users. That's why we offer a product verification process that allows you to showcase your items as verified on our platform. In this guide, we'll walk you through the steps to get your products verified and explain the numerous benefits it brings. Let's get started!
+                                    At CelNow, we value trust, transparency, and authenticity. We understand the
+                                    importance of ensuring a safe and secure marketplace for our users. That's why we
+                                    offer a product verification process that allows you to showcase your items as
+                                    verified on our platform. In this guide, we'll walk you through the steps to get
+                                    your products verified and explain the numerous benefits it brings. Let's get
+                                    started!
 
- 
 
-Steps to get Verification tag:
 
-Step 1: Create an Account on Celnow
+                                    Steps to get Verification tag:
 
-If you haven't already, visit our website (www.celnow.com) and sign up for an account. It only takes a few minutes, and you'll gain access to a wide range of features and opportunities.
+                                    Step 1: Create an Account on Celnow
 
- 
+                                    If you haven't already, visit our website (www.celnow.com) and sign up for an
+                                    account. It only takes a few minutes, and you'll gain access to a wide range of
+                                    features and opportunities.
 
-Step 2: Prepare Your Product Information
 
-Gather all the necessary information about the product you want to get verified. This includes details like the brand, model, condition, and any additional features or accessories it may come with. Necessary bills or latest job sheets if any related to the product you want to get verified.
 
-Fill out the required fields while posting product on CelNow with accurate information about your product. You may also need to upload clear and high-quality images showcasing the item's condition and any unique aspects.
+                                    Step 2: Prepare Your Product Information
 
- 
+                                    Gather all the necessary information about the product you want to get verified.
+                                    This includes details like the brand, model, condition, and any additional features
+                                    or accessories it may come with. Necessary bills or latest job sheets if any related
+                                    to the product you want to get verified.
 
-Step 3: Choose the Verification Method (Charges may be applicable)
+                                    Fill out the required fields while posting product on CelNow with accurate
+                                    information about your product. You may also need to upload clear and high-quality
+                                    images showcasing the item's condition and any unique aspects.
 
-Celnow provides both online and offline verification methods to cater to different needs. Select the option that suits you best:
 
-   a) Online Verification: If your product qualifies for online verification, our team will guide you through the necessary steps. This may involve answering additional questions or providing supporting documents to establish authenticity. For online verification talk with our executive on 8377935333 and follow the guided steps. 1st verification free of cost. Every other verification will be charged fixed cost. (Rupees 20).
 
- 
+                                    Step 3: Choose the Verification Method (Charges may be applicable)
 
-   b) Offline Verification: In some cases, CelNow offers offline verification through our network of authorized service points. These service points are registered professionals or shops specialized in specific fields. Visit the nearest service point relevant to your product category, where they will verify the item's authenticity. (Search the nearest registered on our website in the nearby by service professionals or service points section)- Charges will be applicable.
+                                    Celnow provides both online and offline verification methods to cater to different
+                                    needs. Select the option that suits you best:
 
- 
+                                    a) Online Verification: If your product qualifies for online verification, our team
+                                    will guide you through the necessary steps. This may involve answering additional
+                                    questions or providing supporting documents to establish authenticity. For online
+                                    verification talk with our executive on 8377935333 and follow the guided steps. 1st
+                                    verification free of cost. Every other verification will be charged fixed cost.
+                                    (Rupees 20).
 
-Step 4: Enjoy the Benefits of Verified Products
 
-Once your product is successfully verified, it will receive a special verified badge on its listing. Here are the benefits you can enjoy as a verified product seller:
 
- 
+                                    b) Offline Verification: In some cases, CelNow offers offline verification through
+                                    our network of authorized service points. These service points are registered
+                                    professionals or shops specialized in specific fields. Visit the nearest service
+                                    point relevant to your product category, where they will verify the item's
+                                    authenticity. (Search the nearest registered on our website in the nearby by service
+                                    professionals or service points section)- Charges will be applicable.
 
-   - Enhanced Trust: Verified products instill confidence in potential buyers, showcasing your commitment to providing genuine and reliable items.
 
- 
 
-   - Increased Visibility: Verified products often receive higher visibility and prominence in search results, attracting more interested buyers.
+                                    Step 4: Enjoy the Benefits of Verified Products
 
- 
+                                    Once your product is successfully verified, it will receive a special verified badge
+                                    on its listing. Here are the benefits you can enjoy as a verified product seller:
 
-   - Faster Transactions: Buyers tend to prioritize verified products due to the added trust and assurance, leading to quicker and smoother transactions.</label>
-                               
+
+
+                                    - Enhanced Trust: Verified products instill confidence in potential buyers,
+                                    showcasing your commitment to providing genuine and reliable items.
+
+
+
+                                    - Increased Visibility: Verified products often receive higher visibility and
+                                    prominence in search results, attracting more interested buyers.
+
+
+
+                                    - Faster Transactions: Buyers tend to prioritize verified products due to the added
+                                    trust and assurance, leading to quicker and smoother transactions.</label>
+
                             </div>
 
                             <div class="col-12" id="verified_option">
                                 <div class="form-check">
-                                    <input class="form-check-input " name="verified_admin" type="checkbox" value="yes" onchange="valChange(this)">
+                                    <input class="form-check-input " name="verified_admin" type="checkbox" value="yes"
+                                        onchange="valChange(this)">
                                     <label class="form-check-label" for="flexCheckChecked">
-                                       Rs.10 (Payment for online post verification by CelNow executive over phone/WhatsApp. and default check it)
+                                        Rs.10 (Payment for online post verification by CelNow executive over
+                                        phone/WhatsApp. and default check it)
                                     </label>
                                 </div>
                             </div>
+
+                            <div class="col-12" id="verified_option_normal">
+                                <div class="form-check">
+                                    <input class="form-check-input " name="verified_admin" type="checkbox" value="yes"
+                                        onchange="verified_option_normal(this)">
+                                    <label class="form-check-label" for="flexCheckChecked">
+                                        Rs.10 (Payment for online post verification by CelNow executive over
+                                        phone/WhatsApp. and default check it)
+                                    </label>
+                                </div>
+                            </div>
+
 
                             <input type="text" class="form-control" name="user_id" id="user_id" placeholder=""
                                 value="<?php echo $user['user_id']; ?>" rows="8" hidden />
@@ -1815,13 +1861,16 @@ Once your product is successfully verified, it will receive a special verified b
                             <div class="my-4"> </div>
 
                             <div class="col-sm-6 col-6 none" id="sub">
-                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit</button>
+                                <button class="w-100 btn product_submit_button " onclick=""
+                                    type="submit">Submit</button>
                             </div>
                             <div class="col-sm-6 col-6 " id="submit">
-                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit (Rs.125)</button>
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit
+                                    (Rs.125)</button>
                             </div>
                             <div class="col-sm-6 col-6 none" id="visible">
-                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit (Rs.135)</button>
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit
+                                    (Rs.135)</button>
                             </div>
 
                             <div class="col-sm-6 col-6">
@@ -2028,7 +2077,7 @@ Once your product is successfully verified, it will receive a special verified b
         }
     });
 
-   
+
 
 
     $('#Job_Location').change(function() {
@@ -2043,43 +2092,58 @@ Once your product is successfully verified, it will receive a special verified b
     </script>
 
     <script>
-$(document).ready(function(){
-    $('input[type="radio"]').click(function(){
-        var inputValue = $(this).attr("value");
-       if(inputValue!=3){
-        document.getElementById("verified_option").style.display = "none";
-        document.getElementById("submit").style.display = "none";
-        document.getElementById("sub").style.display = 'block';
-        document.getElementById("visible").style.display = 'none';
-       }
-       else{
-        document.getElementById("verified_option").style.display = "block";
-        document.getElementById("submit").style.display = "block";
-        document.getElementById("sub").style.display = 'none';
-       }
-      
-     
-      
+    $(document).ready(function() {
+        $('input[type="radio"]').click(function() {
+            var inputValue = $(this).attr("value");
+
+            if (inputValue != 3) {
+            
+                document.getElementById("verified_option_normal").style.display = "block"; 
+                document.getElementById("verified_option").style.display = "none"; 
+                document.getElementById("submit").style.display = "none";
+                document.getElementById("sub").style.display = 'block';
+                document.getElementById("visible").style.display = 'none';
+            } else {
+                document.getElementById("verified_option_normal").style.display = "none";
+                document.getElementById("verified_option").style.display = "block"; 
+                document.getElementById("submit").style.display = "block";
+                document.getElementById("sub").style.display = 'none';
+            }
+
+
+
+        });
     });
-});
+    
+    function valChange(element) {
+      
+        if (element.checked) {
+         //   document.getElementById("sub").style.display = "none";
+            document.getElementById("submit").style.display = "none";
+            document.getElementById("visible").style.display = 'block';
+        } else {
+            document.getElementById("visible").style.display = "none";
+            document.getElementById("submit").style.display = "block";
+           // document.getElementById("sub").style.display = 'none';
+        }
+    }
 
 
-    function valChange(element)
-{
-   if (element.checked)
-  {
-    document.getElementById("sub").style.display = "none";
-        document.getElementById("submit").style.display = "none";
-        document.getElementById("visible").style.display = 'block';
-  } else
-  {
-    document.getElementById("visible").style.display = "none";
-        document.getElementById("submit").style.display = "block";
-        document.getElementById("sub").style.display = 'none';
-  }
-   }
+//     function verified_option_normal(element) {
+//       if (element.checked) {
+//           document.getElementById("sub").style.display = "block";
+//           document.getElementById("submit").style.display = "none";
+//           document.getElementById("visible").style.display = 'none';
+//       } else {
+//           document.getElementById("visible").style.display = "none";
+//           document.getElementById("submit").style.display = "block";
+//           document.getElementById("sub").style.display = 'none';
+//       }
+//   }
 
-</script>
+
+
+    </script>
     <script type="text/javascript">
     $(document).ready(function() {
 
@@ -2138,7 +2202,7 @@ $(document).ready(function(){
             $('#Room').prop('required', false);
             $('#Food').prop('required', false);
             $('#Preferred').prop('required', false);
-            
+
 
 
             document.getElementById("school_eduction_div").style.display = "none";
@@ -2201,7 +2265,7 @@ $(document).ready(function(){
             $('#intership_qustions').prop('required', false);
             $('#intership_Skills_Qualifications').prop('required', false);
             $('#intership_Need_Stipend').prop('required', false);
-            $('#intership_Post_Vacant').prop('required', false); 
+            $('#intership_Post_Vacant').prop('required', false);
             $('#Tuitions_Available_Timings_post').prop('required', false);
             $('#Tuitions_Available_Timings_intership').prop('required', false);
             $('#Floor').prop('required', false);
@@ -2246,17 +2310,18 @@ $(document).ready(function(){
 
 
 
-                $('#subcategory').on('change.Tuitions_loction,Tuitions_Education_Type,Tuitions_gender',
+            $('#subcategory').on('change.Tuitions_loction,Tuitions_Education_Type,Tuitions_gender',
                 function() {
-                    $("#Tuitions_loction_div,#Tuitions_Education_Type_div,#Tuitions_gender_div").toggle($(this).val() == 12 || $(this).val() == 13);
+                    $("#Tuitions_loction_div,#Tuitions_Education_Type_div,#Tuitions_gender_div")
+                        .toggle($(this).val() == 12 || $(this).val() == 13);
                     if ($(this).val() == 12 || $(this).val() == 13) {
                         Tuitions_loction.required = true;
-                        Tuitions_Education_Type.required = true; 
+                        Tuitions_Education_Type.required = true;
                         Tuitions_gender.required = true;
                     }
                 }).trigger('change.Tuitions_loction,Tuitions_Education_Type,Tuitions_gender');
 
-                
+
             $('#subcategory').on(
                 'change.Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications,Tuitions_Positives_Outcomes,Tuitions_Joining_criteria',
                 function() {
@@ -2291,7 +2356,7 @@ $(document).ready(function(){
                 'change.Tuitions_Available_Timings_post,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers,Tuitions_Teachers_Experience'
             );
 
-          
+
             $('#subcategory').on('change.Job_type', function() {
                 $("#Job_type_div").toggle($(this).val() == 14 || $(this).val() == 15);
                 if ($(this).val() == 14 || $(this).val() == 15) {
@@ -2301,8 +2366,10 @@ $(document).ready(function(){
             }).trigger('change.Job_type');
 
             $('#subcategory').on('change.Job_Location', function() {
-                $("#Job_Location_div").toggle($(this).val() == 14 || $(this).val() == 15||$(this).val() == 17 || $(this).val() == 18);
-                if ($(this).val() == 14 || $(this).val() == 15||$(this).val() == 17 || $(this).val() == 18) {
+                $("#Job_Location_div").toggle($(this).val() == 14 || $(this).val() == 15 || $(
+                    this).val() == 17 || $(this).val() == 18);
+                if ($(this).val() == 14 || $(this).val() == 15 || $(this).val() == 17 || $(this)
+                    .val() == 18) {
                     Job_Location.required = true;
                 }
             }).trigger('change.Job_Location');
@@ -2361,8 +2428,14 @@ $(document).ready(function(){
             $('#subcategory').on('change.Floor,Parking',
                 function() {
                     $("#Floor_div,#Parking_div").toggle($(
-                        this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32) ;
-                    if ($(this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32) {
+                            this).val() == 19 || $(this).val() == 20 || $(this).val() == 21 ||
+                        $(this).val() == 22 || $(this).val() == 23 || $(this).val() == 24 || $(
+                            this).val() == 26 || $(this).val() == 27 || $(this).val() == 28 ||
+                        $(this).val() == 30 || $(this).val() == 31 || $(this).val() == 32);
+                    if ($(this).val() == 19 || $(this).val() == 20 || $(this).val() == 21 || $(this)
+                        .val() == 22 || $(this).val() == 23 || $(this).val() == 24 || $(this)
+                    .val() == 26 || $(this).val() == 27 || $(this).val() == 28 || $(this).val() ==
+                        30 || $(this).val() == 31 || $(this).val() == 32) {
                         Furniture.required = true;
                         Area.required = true;
                         Floor.required = true;
@@ -2372,38 +2445,53 @@ $(document).ready(function(){
                     }
                 }).trigger('change.Floor,Parking');
 
-                $('#subcategory').on('change.Sale_Price',
+            $('#subcategory').on('change.Sale_Price',
                 function() {
                     $("#Sale_Price_div").toggle($(
-                        this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 25 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 29 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32 ||  $( this).val() == 33 ||  $( this).val() == 34 ||  $( this).val() == 35) ;
-                    if ($(this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 25 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 29 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32 ||  $( this).val() == 33 ||  $( this).val() == 34 ||  $( this).val() == 35) {
+                            this).val() == 19 || $(this).val() == 20 || $(this).val() == 21 ||
+                        $(this).val() == 22 || $(this).val() == 23 || $(this).val() == 24 || $(
+                            this).val() == 25 || $(this).val() == 26 || $(this).val() == 27 ||
+                        $(this).val() == 28 || $(this).val() == 29 || $(this).val() == 30 || $(
+                            this).val() == 31 || $(this).val() == 32 || $(this).val() == 33 ||
+                        $(this).val() == 34 || $(this).val() == 35);
+                    if ($(this).val() == 19 || $(this).val() == 20 || $(this).val() == 21 || $(this)
+                        .val() == 22 || $(this).val() == 23 || $(this).val() == 24 || $(this)
+                    .val() == 25 || $(this).val() == 26 || $(this).val() == 27 || $(this).val() ==
+                        28 || $(this).val() == 29 || $(this).val() == 30 || $(this).val() == 31 ||
+                        $(this).val() == 32 || $(this).val() == 33 || $(this).val() == 34 || $(this)
+                        .val() == 35) {
                         Sale_Price.required = true;
                     }
                 }).trigger('change.Sale_Price');
 
 
-                $('#subcategory').on('change.Furniture,Area,Rent_sale',
+            $('#subcategory').on('change.Furniture,Area,Rent_sale',
                 function() {
                     $("#Furniture_div,#Area_div,#Rent_sale_div").toggle(
                         $(
-                        this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 29 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32 || $( this).val() == 25) ;
+                            this).val() == 19 || $(this).val() == 20 || $(this).val() == 21 ||
+                        $(this).val() == 22 || $(this).val() == 23 || $(this).val() == 24 || $(
+                            this).val() == 26 || $(this).val() == 27 || $(this).val() == 28 ||
+                        $(this).val() == 29 || $(this).val() == 30 || $(this).val() == 31 || $(
+                            this).val() == 32 || $(this).val() == 25);
                     if ($(this).val() == 25) {
                         Furniture.required = true;
                         Area.required = true;
-                      
+
                         Rent_sale.required = true;
                     }
                 }).trigger('change.Furniture,Area,Rent_sale');
 
-               
-               
 
-                $('#subcategory').on('change.Food,Room,Preferred,Bathroom',
+
+
+            $('#subcategory').on('change.Food,Room,Preferred,Bathroom',
                 function() {
                     $("#Food_div,#Room_div,#Preferred_div,#Bathroom_div").toggle($(
-                        this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 32) ;
-                    if ($(this).val() == 26 || $( this).val() == 27 || $( this).val() == 28) {
-                       
+                            this).val() == 26 || $(this).val() == 27 || $(this).val() == 28 ||
+                        $(this).val() == 32);
+                    if ($(this).val() == 26 || $(this).val() == 27 || $(this).val() == 28) {
+
                         Food.required = true;
                         Room.required = true;
                         Preferred.required = true;
@@ -2412,42 +2500,48 @@ $(document).ready(function(){
                 }).trigger('change.Food,Room,Preferred,Bathroom');
 
 
-                  $('#subcategory').on('change.BHK_type',
+            $('#subcategory').on('change.BHK_type',
                 function() {
                     $("#BHK_type_div").toggle($(
-                        this).val() == 30 || $( this).val() == 29 || $( this).val() == 31 || $( this).val() == 28 || $( this).val() == 32) ;
+                            this).val() == 30 || $(this).val() == 29 || $(this).val() == 31 ||
+                        $(this).val() == 28 || $(this).val() == 32);
                     if ($(this).val() == 28) {
-                       
+
                         BHK_type.required = true;
-                      
+
                     }
                 }).trigger('change.BHK_type');
 
-                $('#subcategory').on('change.Bathrooms,Preferred_tenant',
+            $('#subcategory').on('change.Bathrooms,Preferred_tenant',
                 function() {
                     $("#Bathrooms_div,#Preferred_tenant_div").toggle($(
-                        this).val() == 29 || $( this).val() == 30 || $( this).val() == 31) ;
+                        this).val() == 29 || $(this).val() == 30 || $(this).val() == 31);
                     if ($(this).val() == 29) {
                         Bathrooms.required = true;
                         Preferred_tenant.required = true;
-                      
+
                     }
                 }).trigger('change.Bathrooms,Preferred_tenant');
 
-                $('#subcategory').on('change.Facing,Area,Rent_sale',
+            $('#subcategory').on('change.Facing,Area,Rent_sale',
                 function() {
                     $("#Facing_div,#Area_div,#Rent_sale_div").toggle(
                         $(
-                        this).val() == 33 ||$( this).val() == 34 || $( this).val() == 35 || $(
-                        this).val() == 19 ||$( this).val() == 20 || $( this).val() == 21 || $( this).val() == 22 || $( this).val() == 23 || $( this).val() == 24 || $( this).val() == 26 || $( this).val() == 27 || $( this).val() == 28 || $( this).val() == 29 || $( this).val() == 30 || $( this).val() == 31 || $( this).val() == 32) ;
+                            this).val() == 33 || $(this).val() == 34 || $(this).val() == 35 ||
+                        $(
+                            this).val() == 19 || $(this).val() == 20 || $(this).val() == 21 ||
+                        $(this).val() == 22 || $(this).val() == 23 || $(this).val() == 24 || $(
+                            this).val() == 26 || $(this).val() == 27 || $(this).val() == 28 ||
+                        $(this).val() == 29 || $(this).val() == 30 || $(this).val() == 31 || $(
+                            this).val() == 32);
                     if ($(this).val() == 35) {
                         Facing.required = true;
                         Area.required = true;
-                      
+
                         Rent_sale.required = true;
                     }
                 }).trigger('change.Facing,Area,Rent_sale');
-                
+
         });
 
 
@@ -2497,7 +2591,7 @@ $(document).ready(function(){
             $('#intership_Post_Vacant').prop('required', false);
             $('#Tuitions_Available_Timings_post').prop('required', false);
             $('#Tuitions_Available_Timings_intership').prop('required', false);
-            
+
 
             $('#reusable_parts_Select_Type,#subcategory').on('change.reusable_parts_product_Type',
                 function() {
@@ -2655,59 +2749,59 @@ $(document).ready(function(){
 </html>
 
 <script>
-        $(document).ready(function() {
-            $("#latitudeArea").addClass("d-none");
-            $("#longtitudeArea").addClass("d-none");
-        }); 
-        
-        google.maps.event.addDomListener(window, 'load', initialize);
+$(document).ready(function() {
+    $("#latitudeArea").addClass("d-none");
+    $("#longtitudeArea").addClass("d-none");
+});
 
-        function initialize() {
-            var input = document.getElementById('Location');
-            var autocomplete = new google.maps.places.Autocomplete(input);
+google.maps.event.addDomListener(window, 'load', initialize);
 
-            var job_Office_Address = document.getElementById('job_Office_Address');
-            var autocomplete = new google.maps.places.Autocomplete(job_Office_Address);
-            
-            autocomplete.addListener('place_changed', function() {
-                var place = autocomplete.getPlace();
-                
-                $('#latitude').val(place.geometry['location'].lat());
-                $('#longitude').val(place.geometry['location'].lng());
-                
-                $("#latitudeArea").removeClass("d-none");
-                $("#longtitudeArea").removeClass("d-none");
-            });
-        } 
-    </script>
-    
+function initialize() {
+    var input = document.getElementById('Location');
+    var autocomplete = new google.maps.places.Autocomplete(input);
+
+    var job_Office_Address = document.getElementById('job_Office_Address');
+    var autocomplete = new google.maps.places.Autocomplete(job_Office_Address);
+
+    autocomplete.addListener('place_changed', function() {
+        var place = autocomplete.getPlace();
+
+        $('#latitude').val(place.geometry['location'].lat());
+        $('#longitude').val(place.geometry['location'].lng());
+
+        $("#latitudeArea").removeClass("d-none");
+        $("#longtitudeArea").removeClass("d-none");
+    });
+}
+</script>
+
 <script>
-    "use strict"; /* Start of use strict */
-    (function() {
-        function14();
-    })();
+"use strict"; /* Start of use strict */
+(function() {
+    function14();
+})();
 
-    function function14() {
-        $('.btnSweetalert').on("click", function() {
-            swal({
-                    title: " Logout!",
-                    text: "Are you sure you want to logout?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
+function function14() {
+    $('.btnSweetalert').on("click", function() {
+        swal({
+                title: " Logout!",
+                text: "Are you sure you want to logout?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-                        window.location.href = "<?php echo base_url();?>welcome/logout";
-                    } else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                    }
-                });
-        });
-    }
-    </script>
+                    window.location.href = "<?php echo base_url();?>welcome/logout";
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                }
+            });
+    });
+}
+</script>
