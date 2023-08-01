@@ -17,11 +17,12 @@
         rel="stylesheet" />
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-   
+
     <style>
-         .none{
+    .none {
         display: none;
     }
+
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -404,38 +405,46 @@
         /* display: none; */
         margin-left: 55px;
     }
-    .handline{
-      font-family: 'Open Sans';
-font-style: normal;
-font-weight: 400;
-font-size: 12px;
-line-height: 16px;
-color: #0C0B0B;
-flex: none;
-order: 0;
-flex-grow: 0;
+
+    .handline {
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 12px;
+        line-height: 16px;
+        color: #0C0B0B;
+        flex: none;
+        order: 0;
+        flex-grow: 0;
     }
-    #cover_images_box{
-        display:none;
+
+    #cover_images_box {
+        display: none;
     }
-    #images_small_box__plus_2,#images_small_box__plus_3,
-    #images_small_box__plus_4,#images_small_box__plus_5{
-        display:none;
+
+    #images_small_box__plus_2,
+    #images_small_box__plus_3,
+    #images_small_box__plus_4,
+    #images_small_box__plus_5 {
+        display: none;
     }
 
     input[type="radio"].readonly {
-    pointer-events: none;
-}
+        pointer-events: none;
+    }
 
-input[type="checkbox"].readonly {
-    pointer-events: none;
-}
+    input[type="checkbox"].readonly {
+        pointer-events: none;
+    }
+    #verified_option_normal{
+        display:none;
+    }
     </style>
 
 
     <!-- Custom styles for this template -->
     <link href="checkout.css" rel="stylesheet">
-   
+
 </head>
 
 <body class="">
@@ -447,13 +456,13 @@ input[type="checkbox"].readonly {
     </div>
     <div class="container">
         <main>
-          
+
             <div class="breadcrumb_container container mb-5">
 
                 <div class="row breadcrumb_row">
                     <div class="breadcrumb_col col">
                         <div class="breadcrumbs">
-                            <span class="me-2 handline">Home</span>/<span class="ms-2 handline">Edit  Product</span>
+                            <span class="me-2 handline">Home</span>/<span class="ms-2 handline">Edit Product</span>
                         </div>
                     </div>
                 </div>
@@ -463,8 +472,8 @@ input[type="checkbox"].readonly {
             <?php foreach($product_data as $get_data){
                ?>
             <form class="needs-validation" action="<?php echo base_url();?>welcome/editproduct" method="post"
-                enctype="multipart/form-data" id="data_input"  novalidate>
-                
+                enctype="multipart/form-data" id="data_input" novalidate>
+
                 <div class="row g-5 justify-content-center">
 
                     <div class=" offset-lg-1 col-lg-5">
@@ -472,19 +481,19 @@ input[type="checkbox"].readonly {
                             <div class=" images_row">
                                 <div class=" images_col mx-2">
                                     <i class="bi bi-x-circle-fill btn-rmv1 me-3 " id="removeImage1"></i>
-                               
-                                    <img id="ImgPreview" src="<?php echo base_url();?><?php echo $get_data->cover_img?>" class="preview1" style="  width: 400px;height: 300px;" />
+
+                                    <img id="ImgPreview" src="<?php echo base_url();?><?php echo $get_data->cover_img?>"
+                                        class="preview1" style="  width:inherit;height: 300px;" />
                                     <div class="box a">
                                         <div class="my-box" id="cover_images_box">
                                             <label class="pluse" for="cover_images" class="btn">
                                                 +
                                             </label>
                                             <input type="file" class="form-control-file" id="cover_images"
-                                                name="profile_img[]" style="visibility:hidden;" accept="image/*"
-                                                >
-                                                <div class="invalid-feedback">
-                                           Please Select Cover Images.
-                                           </div>  
+                                                name="profile_img[]" style="visibility:hidden;" accept="image/*">
+                                            <div class="invalid-feedback">
+                                                Please Select Cover Images.
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -496,29 +505,33 @@ input[type="checkbox"].readonly {
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2" onclick="images_2()"></i>
                                 <?php if($get_data->images_2!==NULL){ ?>
-                                    <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>" class="preview2"  style="width: 78.17px; height: 96px;"/>
-                                    <?php } else{ ?>
-                                    <img id="ImgPreview2" src="" class="preview2" style="display:none; width: 78.17px; height: 96px;"/>
-                                    <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
-                                    class="btn" style="display:block;">+</label>
-                                    <?php } ?>
+                                <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>"
+                                    class="preview2" style="width: 78.17px; height: 96px;" />
+                                <?php } else{ ?>
+                                <img id="ImgPreview2" src="" class="preview2"
+                                    style="display:none; width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
-                                    class="btn" >+</label>
+                                    class="btn" style="display:block;">+</label>
+                                <?php } ?>
+                                <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
+                                    class="btn">+</label>
 
-                                    
+
                                 <input type="file" class="form-control-file" id="images_2" name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3" onclick="images_3()"></i>
                                 <?php if($get_data->images_3!==NULL){ ?>
-                                    <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>" class="preview3" style="width: 78.17px; height: 96px;"/>
+                                <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>"
+                                    class="preview3" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
-                                    <img id="ImgPreview3" src="" class="preview3" style="display:none; width: 78.17px; height: 96px;"/>
-                                    <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
+                                <img id="ImgPreview3" src="" class="preview3"
+                                    style="display:none; width: 78.17px; height: 96px;" />
+                                <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
                                     class="btn" style="display:block;">+</label>
-                                    <?php } ?>
-<label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
+                                <?php } ?>
+                                <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_3" name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
@@ -526,28 +539,32 @@ input[type="checkbox"].readonly {
                             <div class="col-3 images_small_box m-2">
                                 <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" onclick="images_4()"></i>
                                 <?php if($get_data->images_4!==NULL){ ?>
-                                    <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>" class="preview4" style="width: 78.17px; height: 96px;" />
-                                    <?php } else{ ?>
-                                    <img id="ImgPreview4" src="" class="preview4" style="display:none; width: 78.17px; height: 96px;"/>
-                                    <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
+                                <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>"
+                                    class="preview4" style="width: 78.17px; height: 96px;" />
+                                <?php } else{ ?>
+                                <img id="ImgPreview4" src="" class="preview4"
+                                    style="display:none; width: 78.17px; height: 96px;" />
+                                <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
                                     class="btn" style="display:block;">+</label>
-                                    <?php } ?>
-                                    <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
+                                <?php } ?>
+                                <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_4" name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
                             </div>
                             <div class="col-3 images_small_box m-2">
-                                
+
                                 <?php if($get_data->images_5!==NULL){ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5" onclick="images_5()"></i>
-                                     <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>" class="preview5" style="width: 78.17px; height: 96px;"/>
+                                <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5" onclick="images_5()"></i>
+                                <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>"
+                                    class="preview5" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
-                                    <img id="ImgPreview5" src="" class="preview5" style="display:none; width: 78.17px; height: 96px;"/>
-                                    <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
+                                <img id="ImgPreview5" src="" class="preview5"
+                                    style="display:none; width: 78.17px; height: 96px;" />
+                                <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
                                     class="btn" style="display:block;">+</label>
-                                    <?php } ?>
-                                     <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
+                                <?php } ?>
+                                <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
                                     class="btn">+</label>
                                 <input type="file" class="form-control-file" id="images_5" name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
@@ -558,43 +575,28 @@ input[type="checkbox"].readonly {
 
                         <div class="row g-3">
 
-                       <b> Note: Please Repost the ad freshly to edit the product details completely. To get the product verified online, To boost the product.</b>
+                            <b> Note: Please Repost the ad freshly to edit the product details completely. To get the
+                                product verified online, To boost the product.</b>
 
-                       <div class="col-12">
-                               <?php if($get_data->pay_type=='1'){?>
+                            <div class="col-12">
+                             
                                 <div class="form-check form-check-inline">
-                                   <input class="form-check-input readonly" type="radio" name="Sponsor" id="inlineRadio2"
-                                       value="1" <?php if($get_data->pay_type =='1'){?>checked <?php } ?> readonly>
-                                   <label class="form-check-label" for="inlineRadio2">Bost Ads</label>
-                               </div>
-                               <div class="form-check form-check-inline">
-                                   <input class="form-check-input readonly" type="radio" name="Sponsor" id="inlineRadio1"
-                                       value="0" <?php if($get_data->pay_type =='0'){?>checked <?php } ?> readonly>
-                                   <label class="form-check-label" for="inlineRadio1">Normal</label>
-                               </div>
-                               <div class="form-check form-check-inline">
-                                   <input class="form-check-input readonly" type="radio" name="Sponsor" id="inlineRadio3"
-                                       value="2" <?php if($get_data->pay_type =='2'){?>checked <?php } ?> readonly>
-                                   <label class="form-check-label" for="inlineRadio3">Donate</label>
-                               </div>
-                               <?php } else{ ?>
-                               <div class="form-check form-check-inline">
-                                   <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
-                                       value="3" <?php if($get_data->pay_type =='1'){?>checked <?php } ?>>
-                                   <label class="form-check-label" for="inlineRadio2">Bost Ads</label>
-                               </div>
-                               <div class="form-check form-check-inline">
-                                   <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1"
-                                       value="0" <?php if($get_data->pay_type =='0'){?>checked <?php } ?> >
-                                   <label class="form-check-label" for="inlineRadio1">Normal</label>
-                               </div>
-                               <div class="form-check form-check-inline">
-                                   <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio3"
-                                       value="2" <?php if($get_data->pay_type =='2'){?>checked <?php } ?>>
-                                   <label class="form-check-label" for="inlineRadio3">Donate</label>
-                               </div>
-                               <?php } ?>
-                           </div>
+                                    <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
+                                        value="3" <?php if($get_data->pay_type =='1'){?>checked <?php } ?>>
+                                    <label class="form-check-label" for="inlineRadio2">Bost Ads</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1"
+                                        value="0" <?php if($get_data->pay_type =='0'){?>checked <?php } ?>>
+                                    <label class="form-check-label" for="inlineRadio1">Normal</label>
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio3"
+                                        value="2" <?php if($get_data->pay_type =='2'){?>checked <?php } ?>>
+                                    <label class="form-check-label" for="inlineRadio3">Donate</label>
+                                </div>
+                               
+                            </div>
                             <div class="col-12">
                                 <label for="firstName" class="form-label post_input_lable">Title</label>
                                 <input type="text" class="form-control post_input_fild" id="Title" name="Title"
@@ -604,19 +606,19 @@ input[type="checkbox"].readonly {
                                 </div>
                             </div>
 
-                        
-                            <div class="col-sm-6 " id="Price_div"> 
-                                <label for="Price" class="form-label post_input_lable">Price</label> 
-                                <input type="text" class="form-control post_input_fild" id="Price" name="Price"  value=" <?php echo $get_data->price?>"
-                                    placeholder="Please Enter Price">
+
+                            <div class="col-sm-6 " id="Price_div">
+                                <label for="Price" class="form-label post_input_lable">Price</label>
+                                <input type="text" class="form-control post_input_fild" id="Price" name="Price"
+                                    value=" <?php echo $get_data->price?>" placeholder="Please Enter Price">
                                 <div class="invalid-feedback">
                                     Please Enter Price.
                                 </div>
                             </div>
                             <div class="col-sm-6">
                                 <label for="address" class="form-label post_input_lable">Town</label>
-                                <input type="text" class="form-control post_input_fild" id="address" name="Town" value=" <?php echo $get_data->town?>"
-                                    placeholder="Enter Town" required>
+                                <input type="text" class="form-control post_input_fild" id="address" name="Town"
+                                    value=" <?php echo $get_data->town?>" placeholder="Enter Town" required>
                                 <div class="invalid-feedback">
                                     Please Enter Town.
                                 </div>
@@ -624,8 +626,9 @@ input[type="checkbox"].readonly {
 
                             <div class="col-sm-6">
                                 <label for="address" class="form-label post_input_lable">Postal code</label>
-                                <input type="text" class="form-control post_input_fild" id="address" name="Postal_code" value=" <?php echo $get_data->postal_code?>"
-                                    placeholder="Enter Postal code" required>
+                                <input type="text" class="form-control post_input_fild" id="address" name="Postal_code"
+                                    value=" <?php echo $get_data->postal_code?>" placeholder="Enter Postal code"
+                                    required>
                                 <div class="invalid-feedback">
                                     Please Enter Postal code.
                                 </div>
@@ -633,8 +636,8 @@ input[type="checkbox"].readonly {
 
                             <div class="col-12">
                                 <label for="address" class="form-label post_input_lable">Address</label>
-                                <input type="text" class="form-control post_input_fild" id="location" name="Address" value=" <?php echo $get_data->address?>"
-                                    placeholder="Enter Address" required>
+                                <input type="text" class="form-control post_input_fild" id="location" name="Address"
+                                    value=" <?php echo $get_data->address?>" placeholder="Enter Address" required>
                                 <div class="invalid-feedback">
                                     Please Enter Product Address.
                                 </div>
@@ -644,7 +647,7 @@ input[type="checkbox"].readonly {
                             <div class="col-12">
                                 <label for="address" class="form-label post_input_lable">Description</label>
                                 <textarea type="text" class="form-control post_input_fild" id="editor"
-                                    name="Description" rows="10" cols="50" placeholder="Enter Description" 
+                                    name="Description" rows="10" cols="50" placeholder="Enter Description"
                                     required><?php echo $get_data->Description?></textarea>
                                 <div class="invalid-feedback">
                                     Please Enter Product Description.
@@ -653,10 +656,14 @@ input[type="checkbox"].readonly {
 
                             <div class="col-12">
                                 <div class="form-check">
-                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
+                                        required>
                                     <label class="form-check-label" for="flexCheckChecked">
-                                         Terms and Conditions
-                                    </label><a href="<?php echo base_url();?>welcome/termscondition" style=" text-decoration: none; color:black;"><span><i class="fa fa-question-circle-o" aria-hidden="true" style="font-size: 22px; padding: 0px; width: 25px;"></i></span></a>
+                                        Terms and Conditions
+                                    </label><a href="<?php echo base_url();?>welcome/termscondition"
+                                        style=" text-decoration: none; color:black;"><span><i
+                                                class="fa fa-question-circle-o" aria-hidden="true"
+                                                style="font-size: 22px; padding: 0px; width: 25px;"></i></span></a>
                                     <div class="invalid-feedback">You must agree to the terms and conditions.</div>
                                 </div>
                             </div>
@@ -664,97 +671,131 @@ input[type="checkbox"].readonly {
                             <div class="col-12">
                                 <label for="address" class="form-label post_input_lable">Get your product verified now:
 
-At CelNow, we value trust, transparency, and authenticity. We understand the importance of ensuring a safe and secure marketplace for our users. That's why we offer a product verification process that allows you to showcase your items as verified on our platform. In this guide, we'll walk you through the steps to get your products verified and explain the numerous benefits it brings. Let's get started!
+                                    At CelNow, we value trust, transparency, and authenticity. We understand the
+                                    importance of ensuring a safe and secure marketplace for our users. That's why we
+                                    offer a product verification process that allows you to showcase your items as
+                                    verified on our platform. In this guide, we'll walk you through the steps to get
+                                    your products verified and explain the numerous benefits it brings. Let's get
+                                    started!
 
- 
 
-Steps to get Verification tag:
 
-Step 1: Create an Account on Celnow
+                                    Steps to get Verification tag:
 
-If you haven't already, visit our website (www.celnow.com) and sign up for an account. It only takes a few minutes, and you'll gain access to a wide range of features and opportunities.
+                                    Step 1: Create an Account on Celnow
 
- 
+                                    If you haven't already, visit our website (www.celnow.com) and sign up for an
+                                    account. It only takes a few minutes, and you'll gain access to a wide range of
+                                    features and opportunities.
 
-Step 2: Prepare Your Product Information
 
-Gather all the necessary information about the product you want to get verified. This includes details like the brand, model, condition, and any additional features or accessories it may come with. Necessary bills or latest job sheets if any related to the product you want to get verified.
 
-Fill out the required fields while posting product on CelNow with accurate information about your product. You may also need to upload clear and high-quality images showcasing the item's condition and any unique aspects.
+                                    Step 2: Prepare Your Product Information
 
- 
+                                    Gather all the necessary information about the product you want to get verified.
+                                    This includes details like the brand, model, condition, and any additional features
+                                    or accessories it may come with. Necessary bills or latest job sheets if any related
+                                    to the product you want to get verified.
 
-Step 3: Choose the Verification Method (Charges may be applicable)
+                                    Fill out the required fields while posting product on CelNow with accurate
+                                    information about your product. You may also need to upload clear and high-quality
+                                    images showcasing the item's condition and any unique aspects.
 
-Celnow provides both online and offline verification methods to cater to different needs. Select the option that suits you best:
 
-   a) Online Verification: If your product qualifies for online verification, our team will guide you through the necessary steps. This may involve answering additional questions or providing supporting documents to establish authenticity. For online verification talk with our executive on 8377935333 and follow the guided steps. 1st verification free of cost. Every other verification will be charged fixed cost. (Rupees 20).
 
- 
+                                    Step 3: Choose the Verification Method (Charges may be applicable)
 
-   b) Offline Verification: In some cases, CelNow offers offline verification through our network of authorized service points. These service points are registered professionals or shops specialized in specific fields. Visit the nearest service point relevant to your product category, where they will verify the item's authenticity. (Search the nearest registered on our website in the nearby by service professionals or service points section)- Charges will be applicable.
+                                    Celnow provides both online and offline verification methods to cater to different
+                                    needs. Select the option that suits you best:
 
- 
+                                    a) Online Verification: If your product qualifies for online verification, our team
+                                    will guide you through the necessary steps. This may involve answering additional
+                                    questions or providing supporting documents to establish authenticity. For online
+                                    verification talk with our executive on 8377935333 and follow the guided steps. 1st
+                                    verification free of cost. Every other verification will be charged fixed cost.
+                                    (Rupees 20).
 
-Step 4: Enjoy the Benefits of Verified Products
 
-Once your product is successfully verified, it will receive a special verified badge on its listing. Here are the benefits you can enjoy as a verified product seller:
 
- 
+                                    b) Offline Verification: In some cases, CelNow offers offline verification through
+                                    our network of authorized service points. These service points are registered
+                                    professionals or shops specialized in specific fields. Visit the nearest service
+                                    point relevant to your product category, where they will verify the item's
+                                    authenticity. (Search the nearest registered on our website in the nearby by service
+                                    professionals or service points section)- Charges will be applicable.
 
-   - Enhanced Trust: Verified products instill confidence in potential buyers, showcasing your commitment to providing genuine and reliable items.
 
- 
 
-   - Increased Visibility: Verified products often receive higher visibility and prominence in search results, attracting more interested buyers.
+                                    Step 4: Enjoy the Benefits of Verified Products
 
- 
+                                    Once your product is successfully verified, it will receive a special verified badge
+                                    on its listing. Here are the benefits you can enjoy as a verified product seller:
 
-   - Faster Transactions: Buyers tend to prioritize verified products due to the added trust and assurance, leading to quicker and smoother transactions.</label>
-                               
+
+
+                                    - Enhanced Trust: Verified products instill confidence in potential buyers,
+                                    showcasing your commitment to providing genuine and reliable items.
+
+
+
+                                    - Increased Visibility: Verified products often receive higher visibility and
+                                    prominence in search results, attracting more interested buyers.
+
+
+
+                                    - Faster Transactions: Buyers tend to prioritize verified products due to the added
+                                    trust and assurance, leading to quicker and smoother transactions.</label>
+
                             </div>
-<?php if($get_data->pay_type=='1'){?>
-    <div class="col-12" id="verified_option">
+                          
+                            <div class="col-12 " id="verified_option">
                                 <div class="form-check">
-                                    <input class="form-check-input readonly" name="verified_admin" type="checkbox" value="yes" <?php if($get_data->verified_admin=='yes'){ ?> checked <?php } ?> readonly onchange="valChange(this)">
+                                    <input class="form-check-input " name="verified_admin" type="checkbox" value="yes"
+                                        <?php if($get_data->verified_admin=='yes'){ ?> checked <?php } ?>
+                                        onchange="valChange(this)">
                                     <label class="form-check-label" for="flexCheckChecked">
-                                       Rs.10 (Payment for online post verification by CelNow executive over phone/WhatsApp. and default check it)
+                                        Rs.10 (Payment for online post verification by CelNow executive over
+                                        phone/WhatsApp. and default check it)
                                     </label>
                                 </div>
                             </div>
-                            <?php } else{ ?>
-                            <div class="col-12 none" id="verified_option">
+
+                            <div class="col-12" id="verified_option_normal">
                                 <div class="form-check">
-                                    <input class="form-check-input " name="verified_admin" type="checkbox" value="yes" <?php if($get_data->verified_admin=='yes'){ ?> checked <?php } ?> onchange="valChange(this)">
+                                    <input class="form-check-input " name="verified_admin" type="checkbox" value="yes"
+                                        onchange="verified_option_normal(this)">
                                     <label class="form-check-label" for="flexCheckChecked">
-                                       Rs.10 (Payment for online post verification by CelNow executive over phone/WhatsApp. and default check it)
+                                        Rs.10 (Payment for online post verification by CelNow executive over
+                                        phone/WhatsApp. and default check it)
                                     </label>
                                 </div>
                             </div>
-<?php } ?>
+                           
                             <input type="text" class="form-control " name="product_id" id="product_id" placeholder=""
                                 value="<?php  echo $get_data->id; ?>" rows="8" hidden />
 
                             <input type="text" class="form-control " name="user_id" id="user_id" placeholder=""
                                 value="<?php echo $user['user_id']; ?>" rows="8" hidden />
-                                <input type="text" class="form-control " name="category" id="category" placeholder=""
+                            <input type="text" class="form-control " name="category" id="category" placeholder=""
                                 value="<?php  echo $get_data->category_id; ?>" rows="8" hidden />
-                                <input type="text" class="form-control " name="subcategory" id="subcategory" placeholder=""
+                            <input type="text" class="form-control " name="subcategory" id="subcategory" placeholder=""
                                 value="<?php echo $get_data->subcategory_id; ?>" rows="8" hidden />
                             <input type="text" class="form-control" name="latitude" id="latitude" hidden />
                             <input type="text" class="form-control" name="longitude" id="longitude" hidden />
                             <div class="my-4"> </div>
 
                             <div class="col-sm-6 col-6 " id="sub">
-                                <button class="w-100 btn product_submit_button"  type="submit">Submit</button>
+                                <button class="w-100 btn product_submit_button" type="submit">Submit</button>
                             </div>
-                           
-                            <div class="col-sm-6 col-6 none" id="submit">
-                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit (Rs.125)</button>
+
+                            <!-- <div class="col-sm-6 col-6 none" id="submit">
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit
+                                    (Rs.125)</button>
                             </div>
                             <div class="col-sm-6 col-6 none" id="visible">
-                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit (Rs.135)</button>
-                            </div>
+                                <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit
+                                    (Rs.135)</button>
+                            </div> -->
 
                             <div class="col-sm-6 col-6">
                                 <button class="w-100 btn  product_reset_button" id="submit_form" type="">Reset</button>
@@ -770,45 +811,41 @@ Once your product is successfully verified, it will receive a special verified b
         </main>
     </div>
     <script>
-$(document).ready(function(){
-    $('input[type="radio"]').click(function(){
-        var inputValue = $(this).attr("value");
-       if(inputValue!=3){
-        document.getElementById("verified_option").style.display = "none";
-        document.getElementById("submit").style.display = "none";
-        document.getElementById("sub").style.display = 'block';
-        document.getElementById("visible").style.display = 'none';
-       }
-       else{
-        document.getElementById("verified_option").style.display = "block";
-        document.getElementById("submit").style.display = "block";
-        document.getElementById("sub").style.display = 'none';
-       }
-      
-     
-      
+
+$(document).ready(function() {
+        $('input[type="radio"]').click(function() {
+            var inputValue = $(this).attr("value");
+            if (inputValue != 3) {
+                document.getElementById("verified_option_normal").style.display = "block"; 
+                document.getElementById("verified_option").style.display = "none"; 
+              //  document.getElementById("submit").style.display = "none";
+                //document.getElementById("sub").style.display = 'block';
+             //   document.getElementById("visible").style.display = 'none';
+            } else {
+                document.getElementById("verified_option_normal").style.display = "none";
+                document.getElementById("verified_option").style.display = "block"; 
+             //   document.getElementById("submit").style.display = "block";
+               // document.getElementById("sub").style.display = 'none';
+            }
+
+        });
     });
-});
+    
+    // function valChange(element) {   
+    //     if (element.checked) {
+    //      //   document.getElementById("sub").style.display = "none";
+    //         document.getElementById("submit").style.display = "none";
+    //         document.getElementById("visible").style.display = 'block';
+    //     } else {
+    //         document.getElementById("visible").style.display = "none";
+    //         document.getElementById("submit").style.display = "block";
+    //        // document.getElementById("sub").style.display = 'none';
+    //     }
+    // }
 
-
-function valChange(element)
-{
-   if (element.checked)
-  {
-    document.getElementById("sub").style.display = "none";
-    document.getElementById("submit").style.display = "none";
-    document.getElementById("visible").style.display = 'block';
-  } else
-  {
-    document.getElementById("visible").style.display = "none";
-    document.getElementById("submit").style.display = "block";
-    document.getElementById("sub").style.display = 'none';
-  }
-   }
-
-</script>
+    </script>
     <script>
-       function readURL(input, imgControlName) {
+    function readURL(input, imgControlName) {
         if (input.files && input.files[0]) {
             var reader = new FileReader();
             reader.onload = function(e) {
@@ -890,7 +927,7 @@ function valChange(element)
         $('.preview2').removeClass('it');
         $('.btn-rmv2').removeClass('rmv');
 
-        
+
 
     });
     $("#removeImage3").click(function(e) {
@@ -952,151 +989,159 @@ function valChange(element)
     </script>
 
     <script>
-        $("#submit_form").on("click", function(e) {
+    $("#submit_form").on("click", function(e) {
         e.preventDefault();
         $('#data_input').trigger("reset");
-        });
+    });
     </script>
 
     <script>
     function images_2() {
-  
-    var thumbnails =  'images_2';
-    var product_id=  document.getElementById("product_id").value;
-    var category=  document.getElementById("category").value;
-    $.ajax({
-        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
-        type: 'POST',
-        data: {
-            thumbnails: thumbnails,product_id:product_id,category:category
-        },
-        dataType: 'json',
-        success: function(data) {
-          
-        }
-       
-    });
-   }  
-  
-  function images_3() {
-    swal({
-                    title: " Delete!",
-                    text: "Are you sure you want to delete?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
-    var thumbnails=  'images_3';
-    var product_id=  document.getElementById("product_id").value;
-     var category=  document.getElementById("category").value;
-    $.ajax({
-        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
-        type: 'POST',
-        data: {
-            thumbnails: thumbnails,product_id:product_id,category:category
-        },
-        dataType: 'json',
-        success: function(data) {
-          
-        }
-       
-    });
-  
-} else {
-            swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                        
-                    }
-                   
-                });
-  }   
 
-  function images_4() {
-    swal({
-                    title: " Delete!",
-                    text: "Are you sure you want to delete?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
-    var thumbnails=  'images_4';
-    var product_id=  document.getElementById("product_id").value;
-     var category=  document.getElementById("category").value;
-    $.ajax({
-        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
-        type: 'POST',
-        data: {
-            thumbnails: thumbnails,product_id:product_id,category:category
-        },
-        dataType: 'json',
-        success: function(data) {
-          
-        }
-        window.location.reload();
-    });
-   
-    } else {
-            swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                       
-                    }
-                    window.location.reload();
-                });
-  }   
+        var thumbnails = 'images_2';
+        var product_id = document.getElementById("product_id").value;
+        var category = document.getElementById("category").value;
+        $.ajax({
+            url: '<?php echo site_url('Welcome/deleteimage'); ?>',
+            type: 'POST',
+            data: {
+                thumbnails: thumbnails,
+                product_id: product_id,
+                category: category
+            },
+            dataType: 'json',
+            success: function(data) {
+
+            }
+
+        });
+    }
+
+    function images_3() {
+        swal({
+                title: " Delete!",
+                text: "Are you sure you want to delete?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                    var thumbnails = 'images_3';
+                    var product_id = document.getElementById("product_id").value;
+                    var category = document.getElementById("category").value;
+                    $.ajax({
+                        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
+                        type: 'POST',
+                        data: {
+                            thumbnails: thumbnails,
+                            product_id: product_id,
+                            category: category
+                        },
+                        dataType: 'json',
+                        success: function(data) {
+
+                        }
+
+                    });
+
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+
+                }
+
+            });
+    }
+
+    function images_4() {
+        swal({
+                title: " Delete!",
+                text: "Are you sure you want to delete?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                    var thumbnails = 'images_4';
+                    var product_id = document.getElementById("product_id").value;
+                    var category = document.getElementById("category").value;
+                    $.ajax({
+                        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
+                        type: 'POST',
+                        data: {
+                            thumbnails: thumbnails,
+                            product_id: product_id,
+                            category: category
+                        },
+                        dataType: 'json',
+                        success: function(data) {
+
+                        }
+                        window.location.reload();
+                    });
+
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+
+                }
+                window.location.reload();
+            });
+    }
 
 
-  function images_5() {
-    swal({
-                    title: " Delete!",
-                    text: "Are you sure you want to delete?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
-    var thumbnails=  'images_5';
-    var product_id=  document.getElementById("product_id").value;
-     var category=  document.getElementById("category").value;
-    $.ajax({
-        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
-        type: 'POST',
-        data: {
-            thumbnails: thumbnails,product_id:product_id,category:category
-        },
-        dataType: 'json',
-        success: function(data) {
-          
-        }
-        window.location.reload();
-    });
-    
-} else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                       
-                    }
-                    window.location.reload();
-                });
-  }   
-        </script>
-   
+    function images_5() {
+        swal({
+                title: " Delete!",
+                text: "Are you sure you want to delete?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
+                    var thumbnails = 'images_5';
+                    var product_id = document.getElementById("product_id").value;
+                    var category = document.getElementById("category").value;
+                    $.ajax({
+                        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
+                        type: 'POST',
+                        data: {
+                            thumbnails: thumbnails,
+                            product_id: product_id,
+                            category: category
+                        },
+                        dataType: 'json',
+                        success: function(data) {
 
-  
-   
+                        }
+                        window.location.reload();
+                    });
+
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+
+                }
+                window.location.reload();
+            });
+    }
+    </script>
+
+
+
+
     <script>
     // hello #6528e0 Example starter JavaScript for disabling form submissions if there are invalid fields
     (() => {
@@ -1117,7 +1162,6 @@ function valChange(element)
             }, false)
         })
     })()
-
     </script>
 
 
@@ -1126,33 +1170,32 @@ function valChange(element)
 </html>
 
 <script>
-    "use strict"; /* Start of use strict */
-    (function() {
-        function14();
-    })();
+"use strict"; /* Start of use strict */
+(function() {
+    function14();
+})();
 
-    function function14() {
-        $('.btnSweetalert').on("click", function() {
-            swal({
-                    title: " Logout!",
-                    text: "Are you sure you want to logout?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
+function function14() {
+    $('.btnSweetalert').on("click", function() {
+        swal({
+                title: " Logout!",
+                text: "Are you sure you want to logout?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-                        window.location.href = "<?php echo base_url();?>welcome/logout";
-                    } else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                    }
-                });
-        });
-    }
-    </script>
-    
+                    window.location.href = "<?php echo base_url();?>welcome/logout";
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                }
+            });
+    });
+}
+</script>

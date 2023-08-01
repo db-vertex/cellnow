@@ -496,7 +496,7 @@
                             <div class=" images_row">
                                 <div class=" images_col mx-2">
                                     <i class="bi bi-x-circle-fill btn-rmv1 me-3 " id="removeImage1"></i>
-                                    <img id="ImgPreview" src="" class="preview1" style="width: 400px; height: 300px;" />
+                                    <img id="ImgPreview" src="" class="preview1" style="width: inherit; height: 300px;" />
                                     <div class="box a">
                                         <div class="my-box" id="cover_images_box">
                                             <label class="pluse" for="cover_images" class="btn">

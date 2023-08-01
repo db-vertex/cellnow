@@ -2813,16 +2813,20 @@ $sub .= '</h6>
 			$result = $this->db->where('id', $id)->get('category_land_plot')->result();
 
 		}
+		
 		foreach($result as $dataji)
 		if($dataji->verified_admin=='yes' && $dataji->pay_type == 3){
 			$_SESSION['amount'] ='135';
+			$_SESSION['normal_bost_donot'] ='bost';
 		}
 		elseif($dataji->pay_type== 0 || $dataji->pay_type== 2){
 			$_SESSION['amount'] ='10';
+			$_SESSION['normal_bost_donot'] ='Normal_Donate';
 		}
 	
         else{
 	       $_SESSION['amount'] ='125';
+		   $_SESSION['normal_bost_donot'] ='bost';
         }
 		
 		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');                                                                                                                
@@ -2947,32 +2951,187 @@ $sub .= '</h6>
 		  );
 		  $api->utility->verifyPaymentSignature($attributes);
 		  if($_SESSION['category_id']==1){
+			if($_SESSION['normal_bost_donot'] == 'bost'){
 			$this->db->where('id', $_SESSION['product_id'])->update('category_reusable_parts', ['pay_type' => 1]);
+			}else{
+				$this->db->where('id', $_SESSION['product_id'])->update('category_reusable_parts', ['verified_admin' => "yes"]);
+			}
+			$result = $this->db->where('id', $_SESSION['product_id'])->get('category_reusable_parts')->result();
+
+					// Iterate through the results
+					foreach ($result as $dataji) {
+						// Retrieve the values from the current row and assign them to variables
+						$id = $dataji->id;
+						$cat_id = $dataji->category_id;
+						$sub_id = $dataji->subcategory_id;
+						$user_id = $dataji->user_id; // Assuming 'user_id' should be used here, as '0' doesn't seem appropriate.
+
+						// Insert data into the 'verify_product' table with the mapped columns
+						$this->db->insert('verify_product', array(
+							'product_id' => $id,
+							'category_id' => $cat_id,
+							'sub_id' => $sub_id,
+							'shop_id' => 0, // Assuming you have a variable named '$shop_id' with the correct value.
+							'shop_owner_user_id' => 0,
+							'seller_user_id' => $user_id,
+						));
+					}
 
 		  }
 		  else if($_SESSION['category_id']==2){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['verified_admin' => "yes"]);
+				}	
+
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_tuitions')->result();
+
+					// Iterate through the results
+					foreach ($result as $dataji) {
+						// Retrieve the values from the current row and assign them to variables
+						$id = $dataji->id;
+						$cat_id = $dataji->category_id;
+						$sub_id = $dataji->subcategory_id;
+						$user_id = $dataji->user_id; // Assuming 'user_id' should be used here, as '0' doesn't seem appropriate.
+
+						// Insert data into the 'verify_product' table with the mapped columns
+						$this->db->insert('verify_product', array(
+							'product_id' => $id,
+							'category_id' => $cat_id,
+							'sub_id' => $sub_id,
+							'shop_id' => 0, // Assuming you have a variable named '$shop_id' with the correct value.
+							'shop_owner_user_id' => 0,
+							'seller_user_id' => $user_id,
+						));
+					}
 
 		  }
 		  else if($_SESSION['category_id']==3){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['verified_admin' => "yes"]);
+				}
+
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_job')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
+
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
 
 		  }
 		  else if($_SESSION['category_id']==4){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['verified_admin' => "yes"]);
+				}
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_internships')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
 
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
+
+	
 		  }
 		  else if($_SESSION['category_id']==5){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['verified_admin' => "yes"]);
+				}
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_commericial_places')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
+
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
+
+			
 
 		  }
 		  else if($_SESSION['category_id']==6){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['verified_admin' => "yes"]);
+				}
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_residential_places')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
+
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
+			
 
 		  }
 		  else if($_SESSION['category_id']==7){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['verified_admin' => "yes"]);
+				}
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_land_plot')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
 
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
+
+			
 		  }
 		  
 		  $insert = $this->user->payment($attributes);
@@ -3021,34 +3180,188 @@ $sub .= '</h6>
 		  );
 		  $api->utility->verifyPaymentSignature($attributes);
 		  if($_SESSION['category_id']==1){
+			if($_SESSION['normal_bost_donot'] == 'bost'){
 			$this->db->where('id', $_SESSION['product_id'])->update('category_reusable_parts', ['pay_type' => 1]);
+			}else{
+				$this->db->where('id', $_SESSION['product_id'])->update('category_reusable_parts', ['verified_admin' => "yes"]);
+			}
+			$result = $this->db->where('id', $_SESSION['product_id'])->get('category_reusable_parts')->result();
+
+					// Iterate through the results
+					foreach ($result as $dataji) {
+						// Retrieve the values from the current row and assign them to variables
+						$id = $dataji->id;
+						$cat_id = $dataji->category_id;
+						$sub_id = $dataji->subcategory_id;
+						$user_id = $dataji->user_id; // Assuming 'user_id' should be used here, as '0' doesn't seem appropriate.
+
+						// Insert data into the 'verify_product' table with the mapped columns
+						$this->db->insert('verify_product', array(
+							'product_id' => $id,
+							'category_id' => $cat_id,
+							'sub_id' => $sub_id,
+							'shop_id' => 0, // Assuming you have a variable named '$shop_id' with the correct value.
+							'shop_owner_user_id' => 0,
+							'seller_user_id' => $user_id,
+						));
+					}
 
 		  }
 		  else if($_SESSION['category_id']==2){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['verified_admin' => "yes"]);
+				}	
+
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_tuitions')->result();
+
+					// Iterate through the results
+					foreach ($result as $dataji) {
+						// Retrieve the values from the current row and assign them to variables
+						$id = $dataji->id;
+						$cat_id = $dataji->category_id;
+						$sub_id = $dataji->subcategory_id;
+						$user_id = $dataji->user_id; // Assuming 'user_id' should be used here, as '0' doesn't seem appropriate.
+
+						// Insert data into the 'verify_product' table with the mapped columns
+						$this->db->insert('verify_product', array(
+							'product_id' => $id,
+							'category_id' => $cat_id,
+							'sub_id' => $sub_id,
+							'shop_id' => 0, // Assuming you have a variable named '$shop_id' with the correct value.
+							'shop_owner_user_id' => 0,
+							'seller_user_id' => $user_id,
+						));
+					}
 
 		  }
 		  else if($_SESSION['category_id']==3){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['verified_admin' => "yes"]);
+				}
+
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_job')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
+
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
 
 		  }
 		  else if($_SESSION['category_id']==4){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['verified_admin' => "yes"]);
+				}
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_internships')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
 
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
+
+	
 		  }
 		  else if($_SESSION['category_id']==5){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['verified_admin' => "yes"]);
+				}
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_commericial_places')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
+
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
+
+			
 
 		  }
 		  else if($_SESSION['category_id']==6){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['verified_admin' => "yes"]);
+				}
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_residential_places')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
+
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
+			
 
 		  }
 		  else if($_SESSION['category_id']==7){
-			$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['pay_type' => 1]);
+			if($_SESSION['normal_bost_donot'] == 'bost'){
+				$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['pay_type' => 1]);
+				}else{
+					$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['verified_admin' => "yes"]);
+				}
+				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_land_plot')->result();
+				foreach ($result as $dataji) {
+					$id = $dataji->id;
+					$cat_id = $dataji->category_id;
+					$sub_id = $dataji->subcategory_id;
+					$user_id = $dataji->user_id; 
 
+					$this->db->insert('verify_product', array(
+						'product_id' => $id,
+						'category_id' => $cat_id,
+						'sub_id' => $sub_id,
+						'shop_id' => 0,
+						'shop_owner_user_id' => 0,
+						'seller_user_id' => $user_id,
+					));
+				}
+
+			
 		  }
-		  
 		  $insert = $this->user->payment($attributes);
 		} catch(SignatureVerificationError $e) {
 			if($_SESSION['category_id']==1){
@@ -3346,19 +3659,21 @@ $sub .= '</h6>
 			}
 
 		}
+
+		$postData['verified_admin'] = $this->input->post('verified_admin');
+
+		if (empty($postData['verified_admin'])) {
+			$postData['verified_admin'] = null;
+		}
+
 	
-			// यदि डेटा खाली है तो उसे नल (null) में सेट करें
-		
-		if($sponser==3){
+		if($sponser==3 || $postData['verified_admin'] == "yes"){
 			$redirectUrl = 'welcome/editpay/' .$id.'/'.$category;
 			return redirect($redirectUrl);
 		}
 		$this->session->set_flashdata('Editproduct', 'Product Edit Succesfully.');
 		$this->session->set_flashdata('msg_class', 'alert-success');
-
 		return redirect('welcome/myprofile');
-
-
 	}
 
 	public function editpay($id,$category)
@@ -3395,12 +3710,17 @@ $sub .= '</h6>
 
 		}
 		foreach($result as $dataji)
-		if($dataji->verified_admin=='yes'){
+		if($dataji->verified_admin=='yes' && $dataji->pay_type == 3){
 			$_SESSION['amount'] ='135';
 		}
+		elseif($dataji->pay_type== 0 || $dataji->pay_type== 2){
+			$_SESSION['amount'] ='10';
+		}
+	
         else{
 	       $_SESSION['amount'] ='125';
         }
+
 		
 		$RAZOR_KEY_ID = $this->config->item('RAZOR_KEY_ID');                                                                                                                
 		$RAZOR_KEY_SECRET = $this->config->item('RAZOR_KEY_SECRET');
@@ -3429,14 +3749,11 @@ $sub .= '</h6>
 		$thumbnails = $this->input->post('thumbnails');
 		$product_id = $this->input->post('product_id');
 		$category_id = $this->input->post('category');
-
 		$this->product_model->delete_img_comman_query($category_id, $product_id, $thumbnails);
-
 	}
 
 	public function deleteproduct()
 	{
-
 		$product_id = $this->input->post('pid');
 		$category_id = $this->input->post('cid');
 
@@ -3444,10 +3761,6 @@ $sub .= '</h6>
 
 
 	}
-
-
-
-
 
 
 

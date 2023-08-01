@@ -29,100 +29,112 @@
         background-color: #13C571;
         border-color: #13C571;
     }
-    .spacetop{
+
+    .spacetop {
         margin-top: 50px;
     }
-    .left-space{
-padding-left: 25%;
+
+    .left-space {
+        padding-left: 25%;
     }
+
     .details_img_cover {
 
-max-height: 177px;
-min-height: 177px;
-left: 114px;
-top: 588px;
-background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+        max-height: 177px;
+        min-height: 177px;
+        left: 114px;
+        top: 588px;
+        background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
 
-border-radius: 15px;
-min-width: 60%;
-max-width: 60%;
-}
-.column {
-  float: left;
-  width: 16.66%;
-}
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
-/* Add a transparency effect for thumnbail images */
+        border-radius: 15px;
+        min-width: 60%;
+        max-width: 60%;
+    }
+
+    .column {
+        float: left;
+        width: 16.66%;
+    }
+
+    .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
+
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
+
+    /* Add a transparency effect for thumnbail images */
 
 
 
-.details_img_box {
+    .details_img_box {
         min-width: 50.69px;
-    max-width: 50.69px;
-    max-height: 50.31px;
-    min-height: 50.31px;
+        max-width: 50.69px;
+        max-height: 50.31px;
+        min-height: 50.31px;
         left: 114px;
         top: 1213.13px;
-       
+
         border-radius: 11.8328px;
     }
+
     .mySlides {
-  display: none;
-}
-
-
-
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
- 
-  top: 30%;
-  width: 49%;
-  padding: 16px;
-  margin-top: -100px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
-    .deletebtn{
-           left: 10px;
-   
-   position: absolute;
+        display: none;
     }
 
-    .editebtn{
-       
-   
-   position: absolute;
+
+
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+
+        top: 30%;
+        width: 49%;
+        padding: 16px;
+        margin-top: -100px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
     }
-    .image-uploade{
-    background:url('https://www.freeiconspng.com/uploads/no-image-icon-11.PNG'); 
-    border: 2px solid grey;
-    border-radius: 10px;
-    height: 100px; 
-    width:  100%;
-    
-    object-fit: cover; 
-    background-size: cover;
-    background-repeat: no-repeat;
-    padding:10px;
+
+    .deletebtn {
+        left: 10px;
+
+        position: absolute;
     }
-    .image-upload>input, .image-uploade>input {
-  display: none;
+
+    .editebtn {
+
+
+        position: absolute;
+    }
+
+    .image-uploade {
+        background: url('https://www.freeiconspng.com/uploads/no-image-icon-11.PNG');
+        border: 2px solid grey;
+        border-radius: 10px;
+        height: 100px;
+        width: 100%;
+
+        object-fit: cover;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 10px;
+    }
+
+    .image-upload>input,
+    .image-uploade>input {
+        display: none;
     }
 
     img.rounded-corners {
@@ -139,6 +151,7 @@ max-width: 60%;
         padding: 4px 32px;
 
     }
+
     .details_price {
         font-family: 'Roboto';
         font-style: normal;
@@ -222,6 +235,7 @@ max-width: 60%;
         order: 0;
         flex-grow: 0;
     }
+
     #c {
         margin-right: 10px;
         border-color: #78d7b8;
@@ -233,43 +247,46 @@ max-width: 60%;
 
     }
 
-    @media (min-width: 350px) and (max-width: 459px){
+    @media (min-width: 350px) and (max-width: 459px) {
 
         #c {
-        margin-right: 10px;
-        border-color: #78d7b8;
-        border-radius: 60px;
-        font-family: open sans;
-        font-weight: 550;
-        font-size: 10px;
-        padding: 4px 10px;
-        max-width: 100%;
+            margin-right: 10px;
+            border-color: #78d7b8;
+            border-radius: 60px;
+            font-family: open sans;
+            font-weight: 550;
+            font-size: 10px;
+            padding: 4px 10px;
+            max-width: 100%;
 
-    }
-    .spacetop{
-        margin: 0px;
-    }
-    .left-space{
-padding-left: 20px;
-    }
-    .details_img_cover {
+        }
 
-max-height: 177px;
-min-height: 177px;
-left: 114px;
-top: 588px;
-background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+        .spacetop {
+            margin: 0px;
+        }
 
-border-radius: 15px;
-min-width: 100%;
-max-width: 100%;
-}
-.column {
-  float: left;
-  width: 22.66%;
-}
+        .left-space {
+            padding-left: 20px;
+        }
+
+        .details_img_cover {
+
+            max-height: 177px;
+            min-height: 177px;
+            left: 114px;
+            top: 588px;
+            background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+
+            border-radius: 15px;
+            min-width: 100%;
+            max-width: 100%;
+        }
+
+        .column {
+            float: left;
+            width: 22.66%;
+        }
     }
-
     </style>
 </head>
 
@@ -316,7 +333,8 @@ width: 131.9px;">
                         <h5><b>
                                 <?php echo ucfirst($profile->name); ?>
                             </b></h5>
-                            <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png"> <?php if(isset($profile->Address)) {echo ucfirst($profile->Address);} ?>
+                        <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png">
+                        <?php if(isset($profile->Address)) {echo ucfirst($profile->Address);} ?>
 
                     </div>
                     <div class="row text-center ">
@@ -325,7 +343,7 @@ width: 131.9px;">
                             <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
                         </p>
                         <?php  if(!empty($shop)){?>
-                            <?php $i=1;
+                        <?php $i=1;
 
   $product_image =   get_shop_image($shop->id);
 
@@ -337,12 +355,14 @@ width: 131.9px;">
         $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
 
         ?>
-      <div class="mySlides mt-3">
-        <a href="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"><img class="details_img_cover" src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"></a>
-        </div>
-        <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
-  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
-        <?php
+                        <div class="mySlides mt-3">
+                            <a href="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"><img
+                                    class="details_img_cover"
+                                    src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"></a>
+                        </div>
+                        <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
+                        <?php
 
 $i++;
 
@@ -352,13 +372,13 @@ $i++;
 
 
  ?>
- 
 
-                    <?php } ?>
-      
-  <div class="row mt-3 left-space">
-  <?php  if(!empty($shop)){?>
-   
+
+                        <?php } ?>
+
+                        <div class="row mt-3 left-space">
+                            <?php  if(!empty($shop)){?>
+
                             <?php $i=1;
 
   $product_image =   get_shop_image($shop->id);
@@ -371,14 +391,16 @@ $i++;
         $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
 
         ?>
-      <div class="column">
-   
-        <img class="demo cursor details_img_box" src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-        </div>
-    
-    
- 
- <?php
+                            <div class="column">
+
+                                <img class="demo cursor details_img_box"
+                                    src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"
+                                    style="width:100%" onclick="currentSlide(1)" alt="The Woods">
+                            </div>
+
+
+
+                            <?php
 
  $i++;
 
@@ -388,9 +410,9 @@ $i++;
 
 
   ?>
- 
-                     <?php } ?>
-                     </div>
+
+                            <?php } ?>
+                        </div>
                     </div>
 
 
@@ -407,7 +429,8 @@ $i++;
                                 href="<?php echo base_url(); ?>welcome/shop"
                                 style="background-color: #10b981; color:#fff" class="btn spacetop" role="button"
                                 aria-disabled="true" id="c">Take Your Shop/Services online on CelNow </a>
-                            <p class="text-muted mt-4">Note: Once the shop details are submitted for verification they can be changed
+                            <p class="text-muted mt-4">Note: Once the shop details are submitted for verification they
+                                can be changed
                             </p>
                         </div>
                     </div>
@@ -437,8 +460,8 @@ $i++;
                             </div>
 
                             <p class="mt-3 ml-3 word"><?php echo $shop->description;?></p>
-                            <p ><?php echo $shop->Address;?></p>
-                            <p ><?php echo $shop->mobile;?></p>
+                            <p><?php echo $shop->Address;?></p>
+                            <p><?php echo $shop->mobile;?></p>
                             <p class=" mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
 
                             <p class="mt-3"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
@@ -597,8 +620,9 @@ $i++;
                                                     <input name="GST" class="form-control" placeholder="GST Number"
                                                         type="text" maxlength="20" value="<?php echo $shop->GST; ?>"
                                                         style="border-radius:30px; border-color:#13C571" required>
-                                                        <input type="file" class="form-control mt-3"  name="shop_images[]"
-                                style="border-radius:30px; border-color:#13C571" ><div class="invalid-feedback">
+                                                    <input type="file" class="form-control mt-3" name="shop_images[]"
+                                                        style="border-radius:30px; border-color:#13C571">
+                                                    <div class="invalid-feedback">
                                                         Valid GST is required.
                                                     </div>
 
@@ -616,9 +640,9 @@ $i++;
                                                 </div>
 
                                                 <div class="form-group">
-<div class="row">
-                                                    <label>Shop document photo Upload size(180 x 190) px</label>
-                                                    <?php 
+                                                    <div class="row">
+                                                        <label>Shop document photo Upload size(180 x 190) px</label>
+                                                        <?php 
 
 /* echo $product['id'];*/
 
@@ -634,14 +658,20 @@ $i=1;
         $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
 
         ?>
-        <div class="col-6" id="productimage<?=$pro_img->id?>">
-         <p class="deletebtn"  data-productid="<?=$shop->id; ?>" data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash" aria-hidden="true" style="font-size:20px;color:red"></i></p>
-         <a href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="width: 100%;"><img src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="border: 2px solid grey;
+                                                        <div class="col-6" id="productimage<?=$pro_img->id?>">
+                                                            <p class="deletebtn" data-productid="<?=$shop->id; ?>"
+                                                                data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash"
+                                                                    aria-hidden="true"
+                                                                    style="font-size:20px;color:red"></i></p>
+                                                            <a href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"
+                                                                style="width: 100%;"><img
+                                                                    src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"
+                                                                    style="border: 2px solid grey;
   border-radius: 10px; height: 100px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
-</div>
+                                                        </div>
 
-  
- <?php
+
+                                                        <?php
 
  $i++;
 
@@ -651,22 +681,32 @@ $i=1;
 
 for($i=0; $i<(4-count($product_image)); $i++){
   ?>
-  <div class="col-6">
-         <p class="editebtn" onclick="fileinputimg<?=$i?>.click();" for="fileinputimg<?=$i?>"><i class="fa fa-edit" aria-hidden="true" style="font-size:20px;color:#78d7b8"></i></p>
-         <a  style="width: 100%;"><div  style=" height: 150px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; ">  
-         <div for="fileinputimg<?=$i?>" class="image-uploade">
-<input id="fileinputimg<?=$i?>" class="fileinputimg" name="backimg[]" type="file" accept="image/*" />
-</div></div></a>
-</div>
-  <?php
+                                                        <div class="col-6">
+                                                            <p class="editebtn" onclick="fileinputimg<?=$i?>.click();"
+                                                                for="fileinputimg<?=$i?>"><i class="fa fa-edit"
+                                                                    aria-hidden="true"
+                                                                    style="font-size:20px;color:#78d7b8"></i></p>
+                                                            <a style="width: 100%;">
+                                                                <div
+                                                                    style=" height: 150px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; ">
+                                                                    <div for="fileinputimg<?=$i?>"
+                                                                        class="image-uploade">
+                                                                        <input id="fileinputimg<?=$i?>"
+                                                                            class="fileinputimg" name="backimg[]"
+                                                                            type="file" accept="image/*" />
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <?php
 }
       ?>
-                    
-                                                    <span id="cover_err" style="color:red;"></span>
-                                                    <div class="invalid-feedback">
-                                                        Image is required.
+
+                                                        <span id="cover_err" style="color:red;"></span>
+                                                        <div class="invalid-feedback">
+                                                            Image is required.
+                                                        </div>
                                                     </div>
-</div>
                                                 </div>
 
                                                 <div class="form-group">
@@ -745,7 +785,7 @@ for($i=0; $i<(4-count($product_image)); $i++){
                                                 <input type="hidden" name="user_id"
                                                     value="<?php echo $user['user_id'] ?>">
                                                 <input type="hidden" name="id" value="<?php echo $shop->id; ?>">
-                                              
+
                                                 <div class="form-group">
                                                     <label> Description</label>
                                                     <textarea name="description" class="form-control" id="editor"
@@ -759,9 +799,9 @@ for($i=0; $i<(4-count($product_image)); $i++){
                                                 </div>
 
                                                 <div class="form-group">
-<div class="row">
-                                                    <label>Shop document photo Upload size(180 x 190) px</label>
-                                                    <?php 
+                                                    <div class="row">
+                                                        <label>Shop document photo Upload size(180 x 190) px</label>
+                                                        <?php 
 
 /* echo $product['id'];*/
 
@@ -777,14 +817,20 @@ $i=1;
         $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
 
         ?>
-        <div class="col-6" id="productimage<?=$pro_img->id?>">
-         <p class="deletebtn"  data-productid="<?=$shop->id; ?>" data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash" aria-hidden="true" style="font-size:20px;color:red"></i></p>
-         <a href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"><img src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>" style="border: 2px solid grey;
-  border-radius: 10px; height: 100px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
-</div>
+                                                        <div class="col-6" id="productimage<?=$pro_img->id?>">
+                                                            <p class="deletebtn" data-productid="<?=$shop->id; ?>"
+                                                                data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash"
+                                                                    aria-hidden="true"
+                                                                    style="font-size:20px;color:red"></i></p>
+                                                            <a
+                                                                href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"><img
+                                                                    src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"
+                                                                    style="border: 2px solid grey;
+                                                                     border-radius: 10px; height: 100px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
+                                                        </div>
 
-  
- <?php
+
+                                                        <?php
 
  $i++;
 
@@ -794,22 +840,32 @@ $i=1;
 
 for($i=0; $i<(4-count($product_image)); $i++){
   ?>
-  <div class="col-6">
-         <p class="editebtn" onclick="fileinputimg<?=$i?>.click();" for="fileinputimg<?=$i?>"><i class="fa fa-edit" aria-hidden="true" style="font-size:20px;color:#78d7b8"></i></p>
-         <a  style="width: 100%;"><div  style=" height: 150px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; ">  
-         <div for="fileinputimg<?=$i?>" class="image-uploade">
-<input id="fileinputimg<?=$i?>" class="fileinputimg" name="backimg[]" type="file" accept="image/*" />
-</div></div></a>
-</div>
-  <?php
+                                                        <div class="col-6">
+                                                            <p class="editebtn" onclick="fileinputimg<?=$i?>.click();"
+                                                                for="fileinputimg<?=$i?>"><i class="fa fa-edit"
+                                                                    aria-hidden="true"
+                                                                    style="font-size:20px;color:#78d7b8"></i></p>
+                                                            <a style="width: 100%;">
+                                                                <div
+                                                                    style=" height: 150px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; ">
+                                                                    <div for="fileinputimg<?=$i?>"
+                                                                        class="image-uploade">
+                                                                        <input id="fileinputimg<?=$i?>"
+                                                                            class="fileinputimg" name="backimg[]"
+                                                                            type="file" accept="image/*" />
+                                                                    </div>
+                                                                </div>
+                                                            </a>
+                                                        </div>
+                                                        <?php
 }
       ?>
-                    
-                                                    <span id="cover_err" style="color:red;"></span>
-                                                    <div class="invalid-feedback">
-                                                        Image is required.
+
+                                                        <span id="cover_err" style="color:red;"></span>
+                                                        <div class="invalid-feedback">
+                                                            Image is required.
+                                                        </div>
                                                     </div>
-</div>
                                                 </div>
 
                                                 <div class="form-group">
@@ -920,26 +976,26 @@ for($i=0; $i<(4-count($product_image)); $i++){
 
 
 
-<div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
-<a
-                                href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
-            <div class="card">
-            <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                          <img
-                                    src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img ?>"
-                                    class="w-100 va-thumbnail" />
-                                    <p style="margin-left:5px;"> 
-                                    <?php if($Categories_all_product->pay_type ==1){ ?>
-                                      <img class="img-fluid image2"
-                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+                <a
+                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
+                    <div class="card">
+                        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <img src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img ?>"
+                                class="w-100 va-thumbnail" />
+                            <p style="margin-left:5px;">
+                                <?php if($Categories_all_product->pay_type ==1){ ?>
+                                <img class="img-fluid image2" src="<?php echo base_url(); ?>assets/images/sponsor.png"
+                                    style="
    width:80px; ">
-                            <?php } if($Categories_all_product->verified_product ==1){ ?>
-                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png" style="
+                                <?php } if($Categories_all_product->verified_product ==1){ ?>
+                                <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png"
+                                    style="
    width:80px; ">
-                      
 
-                            <?php }?>
-                        </p>
+
+                                <?php }?>
+                            </p>
                             <a href="#!">
 
                                 <div class="hover-overlay">
@@ -947,30 +1003,32 @@ for($i=0; $i<(4-count($product_image)); $i++){
                                 </div>
                             </a>
                         </div>
-              <div class="card-body">
-              <div class="row mt-1">
-                 <div class="col-9">
-                            
-                             <?php if($Categories_all_product->category_id != 4 && $Categories_all_product->pay_type !=2){ ?>
-                         <p class="details_price">₹<?php echo $Categories_all_product->price; ?>
-                                </p>
-<?php } ?>
-<?php if($Categories_all_product->pay_type==2){?>
-  <p class="details_price">Donate</p>
-  <?php } ?>
-</div>
-                                                <div class="col-3">
+                        <div class="card-body">
+                            <div class="row mt-1">
+                                <div class="col-9">
 
-                            <a  style="font-size:20px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
-                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
-                                style="font-size:20px; color:#69d3b0; padding: 0px;"
-                               
-                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
-                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
-                                data-pid="<?php echo $Categories_all_product->id; ?>"
-                                data-cid="<?php echo $Categories_all_product->category_id; ?>"
-                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
-                                </div>      </div>
+                                    <?php if($Categories_all_product->category_id != 4 && $Categories_all_product->pay_type !=2){ ?>
+                                    <p class="details_price">₹<?php echo $Categories_all_product->price; ?>
+                                    </p>
+                                    <?php } ?>
+                                    <?php if($Categories_all_product->pay_type==2){?>
+                                    <p class="details_price">Donate</p>
+                                    <?php } ?>
+                                </div>
+                                <div class="col-3">
+
+                                    <a style="font-size:20px; color:#69d3b0; padding: 0px;"
+                                        <?php if (empty($user) || !isset($user)) { ?>
+                                        href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
+                                            lass="bi bi-suit-heart" aria-hidden="true"
+                                            style="font-size:20px; color:#69d3b0; padding: 0px;"
+                                            data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                            class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
+                                            data-pid="<?php echo $Categories_all_product->id; ?>"
+                                            data-cid="<?php echo $Categories_all_product->category_id; ?>"
+                                            data-wishlist="<?php echo $wishlist; ?>"></i></a>
+                                </div>
+                            </div>
                             <div class="d-flex justify-content-between align-items-center">
 
                                 <p><?php
@@ -989,11 +1047,11 @@ for($i=0; $i<(4-count($product_image)); $i++){
 
                             </div>
                             <div class="row mt-1">
-                                                <div class="col-2">
-                                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
-                                                </div>
-                                                <div class="col-8">
-                                                <p style="color: #575757;"><?php
+                                <div class="col-2">
+                                    <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                </div>
+                                <div class="col-8">
+                                    <p style="color: #575757;"><?php
                            $title = $Categories_all_product->address;
                             if(strlen($title) <= 15)
                               {
@@ -1006,13 +1064,13 @@ for($i=0; $i<(4-count($product_image)); $i++){
                               }
                            
                            ?></p>
-                                                </div>
-                                   
-                                            </div>
+                                </div>
+
+                            </div>
                         </div>
+                    </div>
+                </a>
             </div>
-            </a>
-          </div> 
 
             <?php } }else{?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
@@ -1158,7 +1216,7 @@ for($i=0; $i<(4-count($product_image)); $i++){
                             <input name="GST" class="form-control" placeholder="GST Number" type="text" maxlength="20"
                                 value="<?php echo set_value('name'); ?>"
                                 style="border-radius:30px; border-color:#13C571" required>
-                                <input type="file" class="form-control mt-3"  name="shop_images"
+                            <input type="file" class="form-control mt-3" name="shop_images"
                                 style="border-radius:30px; border-color:#13C571">
                             <div class="invalid-feedback">
                                 Valid GST is required.
@@ -1181,38 +1239,46 @@ for($i=0; $i<(4-count($product_image)); $i++){
 
                             <label>Shop document photo Upload size(180 x 190) px</label>
                             <label for="filebtn10" class="filebtn" id="btn10lbl">
-         
-  		  <i class="fa fa-plus" aria-hidden="true" id="fabtn10" style="margin-top: 24px;color: #13C571;"></i>
-  			<input type="file" id="filebtn10" class="profile_img"  style="display: none" name="shop_img[]" accept="image/*">
-  			<img src="#" style="display: none;" class="upl_img" id="upl_img10">
-  		
-  		</label>
 
-  		<label for="filebtn2" class="filebtn" id="btn2lbl">
-         
-  		  <i class="fa fa-plus" aria-hidden="true" id="fabtn2" style="margin-top: 24px;color: #13C571;"></i>
-  			<input type="file" id="filebtn2" class="profile_img" style="display: none" name="shop_img[]" accept="image/*">
-  			<img src="#" style="display: none;" class="upl_img" id="upl_img2">
-  		
-  		</label>
+                                <i class="fa fa-plus" aria-hidden="true" id="fabtn10"
+                                    style="margin-top: 24px;color: #13C571;"></i>
+                                <input type="file" id="filebtn10" class="profile_img" style="display: none"
+                                    name="shop_img[]" accept="image/*">
+                                <img src="#" style="display: none;" class="upl_img" id="upl_img10">
 
-  		<label for="filebtn3" class="filebtn" id="btn3lbl">
-         
+                            </label>
 
-  		  <i class="fa fa-plus" aria-hidden="true" id="fabtn3" style="margin-top: 24px;color:#13C571;"></i>
-  			<input type="file" id="filebtn3" class="profile_img"  style="display: none" name="shop_img[]" accept="image/*">
-  			<img src="#" style="display: none;" class="upl_img" id="upl_img3">
-  		
-  		</label>
+                            <label for="filebtn2" class="filebtn" id="btn2lbl">
 
-  		<label for="filebtn4" class="filebtn" id="btn4lbl">
-         
+                                <i class="fa fa-plus" aria-hidden="true" id="fabtn2"
+                                    style="margin-top: 24px;color: #13C571;"></i>
+                                <input type="file" id="filebtn2" class="profile_img" style="display: none"
+                                    name="shop_img[]" accept="image/*">
+                                <img src="#" style="display: none;" class="upl_img" id="upl_img2">
 
-  		<i class="fa fa-plus" aria-hidden="true" id="fabtn4" style="margin-top: 24px;color: #13C571;"></i>
-  			<input type="file" id="filebtn4" class="profile_img"  style="display: none" name="shop_img[]" accept="image/*">
-  			<img src="#" style="display: none;" class="upl_img" id="upl_img4">
-  		
-  		</label>
+                            </label>
+
+                            <label for="filebtn3" class="filebtn" id="btn3lbl">
+
+
+                                <i class="fa fa-plus" aria-hidden="true" id="fabtn3"
+                                    style="margin-top: 24px;color:#13C571;"></i>
+                                <input type="file" id="filebtn3" class="profile_img" style="display: none"
+                                    name="shop_img[]" accept="image/*">
+                                <img src="#" style="display: none;" class="upl_img" id="upl_img3">
+
+                            </label>
+
+                            <label for="filebtn4" class="filebtn" id="btn4lbl">
+
+
+                                <i class="fa fa-plus" aria-hidden="true" id="fabtn4"
+                                    style="margin-top: 24px;color: #13C571;"></i>
+                                <input type="file" id="filebtn4" class="profile_img" style="display: none"
+                                    name="shop_img[]" accept="image/*">
+                                <img src="#" style="display: none;" class="upl_img" id="upl_img4">
+
+                            </label>
                             <!-- <input type="file" class="form-control" id="cover_image" name="shop_images[]"
                                 style="border-radius:30px; border-color:#13C571" accept="image/*"> -->
                             <span id="cover_err" style="color:red;"></span>
@@ -1250,45 +1316,48 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 </script>
 <script>
-    $(function () {
-        var input = document.getElementById("Location");
-        var autocomplete = new google.maps.places.Autocomplete(input);
+$(function() {
+    var input = document.getElementById("Location");
+    var autocomplete = new google.maps.places.Autocomplete(input);
 
-      
 
-    });
 
+});
 </script>
 <style>
-    .pac-container {
-        z-index: 10000 !important;
-    }
+.pac-container {
+    z-index: 10000 !important;
+}
 </style>
 
 <script>
@@ -1317,8 +1386,6 @@ function initialize() {
 
 
 <script>
-
-    
 function checkcoverimage() {
 
     var image = $('#cover_image').val();
@@ -1365,101 +1432,105 @@ function checkcoverimage() {
         }, false)
     })
 })()
-
-
 </script>
 <script>
-    "use strict"; /* Start of use strict */
-    (function() {
-        function14();
-    })();
+"use strict"; /* Start of use strict */
+(function() {
+    function14();
+})();
 
-    function function14() {
-        $('.btnSweetalert').on("click", function() {
-            swal({
-                    title: " Logout!",
-                    text: "Are you sure you want to logout?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
+function function14() {
+    $('.btnSweetalert').on("click", function() {
+        swal({
+                title: " Logout!",
+                text: "Are you sure you want to logout?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-                        window.location.href = "<?php echo base_url();?>welcome/logout";
-                    } else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                    }
-                });
-        });
-    }
+                    window.location.href = "<?php echo base_url();?>welcome/logout";
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                }
+            });
+    });
+}
 </script>
 
 <script type="text/javascript">
- $(".deletebtn").click(function(){
-     var imageid=$(this).data("imageid");
-     var sid = $(this).data("productid");
-    
-     swal({
-        title: "Are you sure?",
-        text: "You will not be able to recover!",
-        type: "warning",
-        showCancelButton: true,
-        confirmButtonColor: "#DD6B55",
-        confirmButtonText: "Yes, delete it!",
-        cancelButtonText: "No, cancel plx!",
-        closeOnConfirm: true,
-        closeOnCancel: true 
-    },
-    function(isConfirm) {
-        if (isConfirm) {
-             $.ajax({
-      url: '<?php echo base_url();?>welcome/deleteshopimage/'+imageid+'/'+sid,
-      type: 'post',
-      data: {},
-      contentType: false,
-      processData: false,
-      error:function(err){
-         console.log(err);
-      },
-      beforeSend:function(){
-      
-    },
-      success: function(response){
-          console.log(response);
-          $("#productimage"+imageid).replaceWith('<div class="col-6"><p  class="editebtn" onclick="fileinputimg'+imageid+'.click();" for="fileinputimg'+imageid+'"><i class="fa fa-edit" aria-hidden="true"></i></p><a><div  style=" height: 150px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; "><div for="fileinputimg'+imageid+'" class="image-uploade"><input id="fileinputimg'+imageid+'" class="fileinputimg" name="backimg[]" type="file" accept="image/*"  /></div></div></a></div>');     
-         swal("Deleted!", "Poses has been deleted.", "success");
-      }
-    });
-        } else {
-            
+$(".deletebtn").click(function() {
+    var imageid = $(this).data("imageid");
+    var sid = $(this).data("productid");
+
+    swal({
+            title: "Are you sure?",
+            text: "You will not be able to recover!",
+            type: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#DD6B55",
+            confirmButtonText: "Yes, delete it!",
+            cancelButtonText: "No, cancel plx!",
+            closeOnConfirm: true,
+            closeOnCancel: true
+        },
+        function(isConfirm) {
+            if (isConfirm) {
+                $.ajax({
+                    url: '<?php echo base_url();?>welcome/deleteshopimage/' + imageid + '/' + sid,
+                    type: 'post',
+                    data: {},
+                    contentType: false,
+                    processData: false,
+                    error: function(err) {
+                        console.log(err);
+                    },
+                    beforeSend: function() {
+
+                    },
+                    success: function(response) {
+                        console.log(response);
+                        $("#productimage" + imageid).replaceWith(
+                            '<div class="col-6"><p  class="editebtn" onclick="fileinputimg' +
+                            imageid + '.click();" for="fileinputimg' + imageid +
+                            '"><i class="fa fa-edit" aria-hidden="true"></i></p><a><div  style=" height: 150px; max-width:100%; min-width:100%; margin: 8px 8px 8px 8px; object-fit: cover; "><div for="fileinputimg' +
+                            imageid + '" class="image-uploade"><input id="fileinputimg' +
+                            imageid +
+                            '" class="fileinputimg" name="backimg[]" type="file" accept="image/*"  /></div></div></a></div>'
+                            );
+                        swal("Deleted!", "Poses has been deleted.", "success");
+                    }
+                });
+            } else {
+
+            }
         }
-    }
-);
- })   
+    );
+})
 </script>
 
 <script>
- $(document).on("change",".fileinputimg", function()
-    {
-        console.log("fff");
-        var parent = $(this).closest("div");
-        var files = !!this.files ? this.files : [];
-        if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
- 
-        if (/^image/.test( files[0].type)){ // only image file
-            var reader = new FileReader(); // instance of the FileReader
-            reader.readAsDataURL(files[0]); // read the local file
- 
-            reader.onloadend = function(){ // set image data as background of div
-                //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
-        parent.css("background-image", "url("+this.result+")");
-            }
+$(document).on("change", ".fileinputimg", function() {
+    console.log("fff");
+    var parent = $(this).closest("div");
+    var files = !!this.files ? this.files : [];
+    if (!files.length || !window.FileReader) return; // no file selected, or no FileReader support
+
+    if (/^image/.test(files[0].type)) { // only image file
+        var reader = new FileReader(); // instance of the FileReader
+        reader.readAsDataURL(files[0]); // read the local file
+
+        reader.onloadend = function() { // set image data as background of div
+            //alert(uploadFile.closest(".upimage").find('.imagePreview').length);
+            parent.css("background-image", "url(" + this.result + ")");
         }
-      
-    });
-</script>  
+    }
+
+});
+</script>

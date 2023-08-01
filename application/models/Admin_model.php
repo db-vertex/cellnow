@@ -86,8 +86,7 @@ public function get_admin_data($id)
 public function update_password($id,$pwd)
   {
 
-        return $this->db->where('id',$id)
-           ->update('admin',array('password'=>$pwd));
+        return $this->db->where('id',$id)->update('admin',array('password'=>$pwd));
 
   }
     
