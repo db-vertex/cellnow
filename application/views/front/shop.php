@@ -14,6 +14,8 @@
 
     <!-- link for map -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
 
 
@@ -40,15 +42,12 @@
 
     .details_img_cover {
 
-        max-height: 177px;
-        min-height: 177px;
-        left: 114px;
-        top: 588px;
         background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
-
         border-radius: 15px;
-        min-width: 60%;
-        max-width: 60%;
+        max-width: 150px;
+        min-width: 150px;
+        max-height: 100px;
+
     }
 
     .column {
@@ -141,17 +140,29 @@
         border-radius: 50%;
     }
 
-    #a {
-        margin-right: 10px;
-        border-color: #78d7b8;
-        border-radius: 60px;
-        font-family: open sans;
-        font-weight: 550;
-        font-size: 22px;
-        padding: 4px 32px;
-
-    }
-
+    @media screen and (min-width: 560px) {
+  #a{
+  margin-right: 10px;
+  border-color: #78d7b8;
+  border-radius: 60px;
+  font-family:open sans;
+  font-weight:550;
+  font-size:22px;
+  padding: 4px 32px;
+  
+}
+}
+@media screen and (max-width: 560px) {
+  #a{
+    margin-right: 10px;
+  border-color: #78d7b8;
+  border-radius: 60px;
+  font-family:open sans;
+  font-weight:550;
+  font-size:15px;
+  padding: 4px 18px;
+}
+}
     .details_price {
         font-family: 'Roboto';
         font-style: normal;
@@ -270,16 +281,9 @@
         }
 
         .details_img_cover {
-
-            max-height: 177px;
-            min-height: 177px;
-            left: 114px;
-            top: 588px;
             background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
-
             border-radius: 15px;
-            min-width: 100%;
-            max-width: 100%;
+
         }
 
         .column {
@@ -298,27 +302,26 @@
     <div class="container" style=" margin-top: 180px;">
 
         <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
-            <div class="row text-center">
-
-                <div class="col-sm-5 mb-1">
-                    <a href="<?php echo base_url(); ?>welcome/buyerprofile" class="btn" role="button"
-                        aria-disabled="true" id="a">Buyer</a>
+            <div class="row text-center justify-content-around">
+                <div class="col-3 mb-1">
+                    <a href="<?php echo base_url();?>welcome/buyerprofile" 
+                        class="btn" role="button" aria-disabled="true" id="a">Buyer</a>
                 </div>
-                <div class="col-sm-7 mb-1">
-                    <div class="row">
-                        <div class="col-sm-6  mb-1">
-                            <a href="<?php echo base_url(); ?>welcome/myprofile" class="btn" role="button"
-                                aria-disabled="true" id="a">Seller</a>
 
-                        </div>
-                        <div class="col-sm-6 mb-1">
-                            <a href="<?php echo base_url(); ?>welcome/shop"
-                                style="background-color: #78d7b8; color:#fff" class="btn" role="button"
-                                aria-disabled="true" id="a">Shop</a>
-                        </div>
-                    </div>
+                <div class="col-3 mb-1">
+                    <a href="<?php echo base_url();?>welcome/myprofile" class="btn" role="button" aria-disabled="true"
+                        id="a">Seller</a>
                 </div>
-            </div><br>
+
+
+                <div class="col-3 mb-1">
+                    <a href="<?php echo base_url();?>welcome/shop"  style="background-color: #78d7b8; color:#fff"
+                    class="btn" role="button" aria-disabled="true"
+                        id="a">Shop</a>
+                </div>
+            </div>
+
+            <br>
             <div class="row">
                 <?php
         $profile = get_seller_profile($user['user_id']);
@@ -342,77 +345,8 @@ width: 131.9px;">
                             <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
                             <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
                         </p>
-                        <?php  if(!empty($shop)){?>
-                        <?php $i=1;
-
-  $product_image =   get_shop_image($shop->id);
-
-     $count = count($product_image);
-
-     if(!empty($product_image)){
-      foreach ($product_image as $key => $pro_img) {
-
-        $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
-
-        ?>
-                        <div class="mySlides mt-3">
-                            <a href="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"><img
-                                    class="details_img_cover"
-                                    src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"></a>
-                        </div>
-                        <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
-                        <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
-                        <?php
-
-$i++;
-
-     }
-
-   }
 
 
- ?>
-
-
-                        <?php } ?>
-
-                        <div class="row mt-3 left-space">
-                            <?php  if(!empty($shop)){?>
-
-                            <?php $i=1;
-
-  $product_image =   get_shop_image($shop->id);
-
-     $count = count($product_image);
-
-     if(!empty($product_image)){
-      foreach ($product_image as $key => $pro_img) {
-
-        $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
-
-        ?>
-                            <div class="column">
-
-                                <img class="demo cursor details_img_box"
-                                    src="<?php echo base_url()."uploads/shop/" . $pro_img->shop_image . ""; ?>"
-                                    style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-                            </div>
-
-
-
-                            <?php
-
- $i++;
-
-      }
-
-    }
-
-
-  ?>
-
-                            <?php } ?>
-                        </div>
                     </div>
 
 
@@ -908,6 +842,26 @@ for($i=0; $i<(4-count($product_image)); $i++){
             </div><br>
         </div>
     </div>
+    <div class="container">
+        <div class="row ml-5">
+
+            <?php if(!empty($shop)){?>
+            <h5 class=""><b>Shop Images</b></h5>
+            <?php $i=1;
+        $product_image = get_shop_image($shop->id);
+        foreach($product_image as $product_images){ ?>
+            <div class="col-md-2 col-sm-4 col-6 mb-3">
+                <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
+                    data-lightbox="shop-images">
+                    <img class="details_img_cover img-fluid"
+                        src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
+                </a>
+            </div>
+            <?php } ?>
+            <?php } ?>
+        </div>
+    </div>
+
 
 
     <div class="container">
@@ -1503,7 +1457,7 @@ $(".deletebtn").click(function() {
                             imageid + '" class="image-uploade"><input id="fileinputimg' +
                             imageid +
                             '" class="fileinputimg" name="backimg[]" type="file" accept="image/*"  /></div></div></a></div>'
-                            );
+                        );
                         swal("Deleted!", "Poses has been deleted.", "success");
                     }
                 });

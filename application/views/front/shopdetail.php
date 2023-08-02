@@ -1,3 +1,6 @@
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+
 <style>
    .details_price {
         font-family: 'Roboto';
@@ -56,6 +59,13 @@
         order: 0;
         flex-grow: 0;
     }
+    .details_img_cover {
+border-radius: 15px;
+max-width: 150px;
+min-width: 150px;
+max-height: 100px;
+
+}
 </style><div class="container" style=" margin-top: 180px;">
 
 <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
@@ -82,17 +92,12 @@ width: 131.9px;">
   <p>
   <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
   <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
-  </p>
-  <?php  if(!empty($shop)){?>
-  <p class="pt-3"><?php if(!empty($shop->shop_images)){?>
-    <img class="rounded-4 " style="height: 161.9px;
-width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop_images; ?>">
-  <?php }else{?><img  src="<?php echo base_url()?>assets/images/shop1.png">
-    <?php } }?></p>
+  
 </div><br>
 
 
 </div>
+
     <!-- <div class="vr" style="color:#78d7b8"></div> -->
     <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
     <?php 
@@ -136,6 +141,28 @@ width: 220.9px;" src="<?php echo base_url()?>uploads/shop/<?php echo $shop->shop
     </div>
   </div><br>
 </div>
+</div>
+<div class="container">
+    <div class="row ml-5" style="">
+      <h5 class=""><b>Shop Images</b></h5>
+        <?php 
+        $product_image = get_shop_image($shop->id);
+        
+        if(!empty($product_image)){?>
+        
+        <?php $i=1;
+       
+        foreach($product_image as $product_images){ ?>
+            <div class="col-md-2 col-sm-4 col-6 mb-3">
+                <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>" data-lightbox="shop-images">
+                    <img class="details_img_cover img-fluid" src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
+                </a>
+            </div>
+        <?php } ?>
+        <?php } else{ ?>
+          <img class="details_img_cover img-fluid"  style="max-width:200px; max-height:auto;"src="<?php echo base_url();?>uploads/shop/No_Image_Available-removebg-preview.png">
+     <?php  } ?>
+    </div>
 </div>
 
 <div class="container">

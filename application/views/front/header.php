@@ -28,11 +28,12 @@
     body {
         overflow-x: hidden;
     }
-   
-    .space-top{
-margin-top: 10%;
+
+    .space-top {
+        margin-top: 10%;
     }
-    .a:hover{
+
+    .a:hover {
         text-decoration: none;
     }
 
@@ -40,72 +41,90 @@ margin-top: 10%;
         position: relative;
         top: 0;
         left: 0;
-       
-      }
-      .image2 {
+
+    }
+
+    .image2 {
         position: absolute;
         top: 10px;
         left: 10px;
-       
-      }
-      .image3 {
+
+    }
+
+    .image3 {
         position: absolute;
         top: 10px;
         left: 100px;
-       
-      }
+
+    }
 
     .nav ul li a:hover {
         color: #555;
     }
 
     .search_wrap {
-    width: 100%;
+        width: 100%;
 
-}
-
-
-
-.search_wrap .search_box {
-    position: relative;
-
-    height: 64px;
-}
+    }
 
 
 
-.search_wrap .search_box .btn {
-    position: absolute;
+    .search_wrap .search_box {
+        position: relative;
 
-    height: 80%;
-    background: #10B981;
-    color: white;
+        height: 64px;
+    }
 
-}
+    .search_wrap .search_box_header {
+        position: relative;
 
-.search_wrap .search_box .btn.btn_common .fas {
+        height: 64px;
+    }
 
-    /* top: 50%;
+
+
+    .search_wrap .search_box .btn {
+        position: absolute;
+
+        height: 80%;
+        background: #10B981;
+        color: white;
+
+    }
+
+    .search_wrap .search_box_header .btn {
+        position: absolute;
+
+        height: 80%;
+        background: #10B981;
+        color: white;
+
+    }
+
+    .search_wrap .search_box .btn.btn_common .fas {
+
+        /* top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%); */
-    /* color: #fff; */
+        /* color: #fff; */
 
-}
+    }
 
-.search_wrap.search_wrap_6 .search_box .btn {
-    max-width: 100%;
-    height: 60%;
-    top: 8%;
-    right: 1.3%;
-    padding: 6px 0px;
+    .search_wrap.search_wrap_6 .search_box .btn {
+        max-width: 100%;
+        height: 60%;
+        top: 8%;
+        right: 1.3%;
+        padding: 6px 0px;
 
 
-    /* color: #fff; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
+        /* color: #fff; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 
+   
 
     .details_price {
         font-family: 'Roboto';
@@ -119,6 +138,7 @@ margin-top: 10%;
 
         color: #10B981;
     }
+
     .fa {
         /* padding: 20px; */
         font-size: 30px;
@@ -141,78 +161,84 @@ margin-top: 10%;
     /* .carousel-by-item [class*="cloneditem-"] {
   display: none;
 } */
-@media screen and (min-width: 375px) {
+    @media screen and (min-width: 375px) {
 
-    .space-top{
-margin-top: 30%;
+        .space-top {
+            margin-top: 30%;
+        }
+
+        .col-lg-3 {
+            min-width: 20%;
+        }
+
+        .search_input {
+            flex: 1;
+            padding: 10px 10px;
+            font-size: 1.1em;
+            -webkit-border-top-left-radius: 25px;
+            -webkit-border-bottom-left-radius: 25px;
+            -moz-border-radius-topleft: 25px;
+            -moz-border-radius-bottomleft: 25px;
+            border-top-left-radius: 25px;
+            border-bottom-left-radius: 25px;
+            box-shadow: none;
+            border: none;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.19);
+
+        }
+
+
+        .search_b {
+            padding-right: 10px;
+            background-color: #fff;
+            -webkit-border-top-right-radius: 25px;
+            -webkit-border-bottom-right-radius: 25px;
+            -moz-border-radius-topright: 25px;
+            -moz-border-radius-bottomright: 25px;
+            border-top-right-radius: 25px;
+            border-bottom-right-radius: 25px;
+            box-shadow: 5px 4px 6px rgba(0, 0, 0, 0.19);
+            border: none;
+            cursor: pointer;
+            cursor: hand;
+        }
+
+        .Search_text {
+
+            padding: 13px 35px;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            font-weight: 300;
+            color: #fff;
+            background-color: #10B981;
+            border-radius: 20px;
+            box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.19);
+            font-weight: 500;
+
+        }
+
+        .hide-button {
+
+            display: block;
+
+        }
+
+        .scrolled-down {
+            transform: translateY(-100%);
+            transition: all 0.3s ease-in-out;
+        }
+
+        .scrolled-up {
+            transform: translateY(0);
+            transition: all 0.3s ease-in-out;
+        }
     }
-    .col-lg-3{
-        min-width: 20%;
-    }
 
-.search_input {
-        flex: 1;
-        padding: 10px 10px;
-        font-size: 1.1em;
-        -webkit-border-top-left-radius: 25px;
-        -webkit-border-bottom-left-radius: 25px;
-        -moz-border-radius-topleft: 25px;
-        -moz-border-radius-bottomleft: 25px;
-        border-top-left-radius: 25px;
-        border-bottom-left-radius: 25px;
-        box-shadow: none;
-        border: none;
-        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.19);
-
-    }
-    
-
-    .search_b {
-        padding-right: 10px;
-        background-color: #fff;
-        -webkit-border-top-right-radius: 25px;
-        -webkit-border-bottom-right-radius: 25px;
-        -moz-border-radius-topright: 25px;
-        -moz-border-radius-bottomright: 25px;
-        border-top-right-radius: 25px;
-        border-bottom-right-radius: 25px;
-        box-shadow: 5px 4px 6px rgba(0, 0, 0, 0.19);
-        border: none;
-        cursor: pointer;
-        cursor: hand;
-    }
-   
-    .Search_text{
-       
-        padding: 13px 35px;
-        font-size: 0.9em;
-        text-transform: uppercase;
-        font-weight: 300;
-        color: #fff;
-        background-color: #10B981;
-        border-radius: 20px;
-        box-shadow: 2px 4px 6px rgba(0, 0, 0, 0.19);
-        font-weight: 500;
-
-    }
-    .hide-button {
-   
-   display: block
-   ;
- 
-}
-
-.scrolled-down{
-   transform:translateY(-100%); transition: all 0.3s ease-in-out;
-}
-.scrolled-up{
-   transform:translateY(0); transition: all 0.3s ease-in-out;
-} 
-}
     @media (min-width: 576px) {
-        .space-top{
-margin-top: 25%;
-    }
+        .space-top {
+            margin-top: 25%;
+        }
+
         .nav-scroller {
             position: relative;
             z-index: 2;
@@ -220,10 +246,11 @@ margin-top: 25%;
 
         }
     }
-    button.hide-button{
-   display: none;
-}
-   
+
+    button.hide-button {
+        display: none;
+    }
+
     .search_wrap {
         width: 100%;
 
@@ -356,7 +383,7 @@ margin-top: 25%;
 
     .cut-list>li {
         margin-left: 10px;
-       
+
         padding-bottom: 2px;
     }
 
@@ -769,15 +796,16 @@ margin-top: 25%;
     }
 
     @media (min-width: 768px) {
-        .space-top{
-margin-top: 10%;
-    }
+        .space-top {
+            margin-top: 10%;
+        }
+
         .other-game-button {
             width: 300px;
         }
     }
 
-   
+
 
     .deals-scroll-left {
         top: -35px;
@@ -910,9 +938,10 @@ margin-top: 10%;
     }
 
     @media (min-width: 991px) {
-        .padd{
-padding-left: 90px;
+        .padd {
+            padding-left: 90px;
         }
+
         .body_background {
             background: linear-gradient(130.02deg, #77D4B5 -15.01%, rgba(213, 253, 252, 0) 39.7%);
             background-color: white;
@@ -1031,6 +1060,7 @@ padding-left: 90px;
         margin-left: auto;
         margin-right: auto;
     }
+
     .search_input {
         flex: 1;
         padding: 14px 20px;
@@ -1062,7 +1092,7 @@ padding-left: 90px;
         cursor: hand;
     }
 
-    .Search_text{
+    .Search_text {
         margin-left: 50px;
         padding: 13px 35px;
         font-size: 0.9em;
@@ -1080,72 +1110,186 @@ padding-left: 90px;
         background-color: #10B981;
         box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.19);
     }
-    @media (min-width: 1200px){
-.navbar-nav{
-    align-items: center;
-}
-}
-@media (max-width: 1200px){
-.nav-item_serach{
-    margin-right: auto;
-}
 
-
-}
-@media (min-width: 1200px){
-    .dropdown:hover>.dropdown-menu {
-        display: block;
+    @media (min-width: 1200px) {
+        .navbar-nav {
+            align-items: center;
+        }
     }
 
-    .dropdown>.dropdown-toggle:active {
-        pointer-events: none;
+    @media (max-width: 1200px) {
+        .nav-item_serach {
+            margin-right: auto;
+        }
+
+
     }
-.profile_name{
-    margin-left: 10px;
-}
-.space{
-    margin-left:85%;  
-    width: max-content;
-}
-.search_box {
-    margin-left:40px;
-}
-}
-.space{
-    width: max-content;
-}
-.category_show{
-    width: max-content;
-}
+
+    @media (min-width: 1200px) {
+        .dropdown:hover>.dropdown-menu {
+            display: block;
+        }
+
+        .dropdown>.dropdown-toggle:active {
+            pointer-events: none;
+        }
+
+        .profile_name {
+            margin-left: 10px;
+        }
+
+        .space {
+            margin-left: 85%;
+            width: max-content;
+        }
+
+        .search_box {
+            margin-left: 40px;
+        }
+    }
+
+    .space {
+        width: max-content;
+    }
+
+    .category_show {
+        width: max-content;
+    }
 
 
-@media (max-width: 400px){
-.deals-paddle{
-  display: none;  
-}
-#left_sponser_button{
-    display: none;     
-}
+    @media (max-width: 400px) {
+        .deals-paddle {
+            display: none;
+        }
 
-}
-.overflow{
-  
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis; 
- }
- .filebtn {
+        #left_sponser_button {
+            display: none;
+        }
 
-/* padding-left: 90px;*/
- border: 1px solid #13C571;
-/* padding-bottom: 60px;
+    }
+
+    .overflow {
+
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .filebtn {
+
+        /* padding-left: 90px;*/
+        border: 1px solid #13C571;
+        /* padding-bottom: 60px;
  padding-right: 90px;
  padding-top: 60px;*/
- margin-top: 25px;
- height: 100px;
- width: 121px;
- text-align: center;
- margin-left: 10px;
+        margin-top: 25px;
+        height: 100px;
+        width: 121px;
+        text-align: center;
+        margin-left: 10px;
+    }
+
+    /* Styles for screen width greater than or equal to 1200px */
+@media (min-width: 1200px) {
+    .logo_header {
+        width: 180px;
+    }
+}
+
+/* Styles for screen width between 550px and 1199px */
+@media (min-width: 550px) and (max-width: 1199px) {
+    .logo_header {
+        width: 120px;
+    }
+}
+
+/* Styles for screen width less than or equal to 550px */
+@media (min-width: 250px) and  (max-width: 550px) {
+    .logo_header {
+        width: 70px;
+    }
+    #Location {
+        padding: 4px 9px;
+}
+.search_wrap.search_wrap_6 .search_box_header .btn {
+    max-width: 100%;
+    height: 37%;
+    top: 7%;
+    right: 1.3%;
+    padding: 6px 0px;
+    /* color: #fff; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding:6px 2px;
+    font-size: 14px;
+}
+
+}
+
+@media (max-width: 551px){
+    .nav-item_serach {
+        padding-right: 0px;
+    }
+    .search_box_header {
+        width: 100%;
+       margin-right: 0px;
+    }
+}
+
+    /* Styles for screen width less than or equal to 770px */
+@media (min-width: 551px) and (max-width: 770px) {
+    .nav-item_serach {
+        padding-right: 32px;
+    }
+    .search_box_header {
+        width: 91%;
+       margin-right: 77px;
+    }
+}
+
+/* Styles for screen width between 771px and 992px */
+@media (min-width: 771px) and (max-width: 992px) {
+    .nav-item_serach {
+        padding-right: 150px;
+    }
+    .search_box_header {
+        width: 107%;
+        margin-right: 136px;
+    }
+}
+
+/* Styles for screen width greater than or equal to 992px */
+@media (min-width: 992px) {
+    .nav-item_serach {
+        padding-right: 200px;
+    }
+    .search_box_header {
+        width: 130%;
+        margin-right: 170px;
+    }
+}
+
+
+
+@media (min-width: 551px){
+   #Location{
+    padding:12px 22px
+   }
+   .search_wrap.search_wrap_6 .search_box_header .btn {
+        max-width: 100%;
+        height: 60%;
+        top: 8%;
+        right: 1.3%;
+        padding: 6px 0px;
+        padding:6px 10px;
+         font-size: 14px;
+        /* color: #fff; */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
 }
 
     </style>
@@ -1159,13 +1303,33 @@ padding-left: 90px;
     <div class="container-fluid body_background " id="body_background">
 
         <div class="container">
-            
+
             <nav class="navbar navbar-expand-xl bg-body- smart-scroll">
 
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
-                        class="img-fluid" style="width:180px;">
+                        class="img-fluid logo_header" style="">
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="myelement" 
+                <ul class="navbar-nav mb-lg-0  " style="" id="">
+                        <li class="nav-item nav-item_serach" style="" ;>
+                            <div class="search_wrap search_wrap_6 m-0">
+                                <div class="search_box_header mt-3" style="">
+                                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+
+                                        <input type="text"
+                                            value="<?php $location= $this->session->userdata("location"); if($this->session->userdata("location")){ echo $location;} ; ?>"
+                                            name="location" class="form-control rounded-5 overflow"
+                                            placeholder="Search for location" id="Location" aria-label="Search"
+                                            aria-describedby="search-addon" style="" />
+                                        <button type="submit" class="btn btn-success rounded-5"
+                                            style="">Search </button>
+                                    </form>
+                                 
+                                </div>
+                            </div>
+                        </li>
+                       </ul>
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="myelement"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
                     aria-expanded="false" aria-label="Toggle navigation" style="border: none;color: #10B981;">
 
@@ -1174,29 +1338,7 @@ padding-left: 90px;
                 <div class="collapse navbar-collapse  nav-icon" id="navbarSupportedContent">
 
                     <ul class="navbar-nav  mb-2 mb-lg-0  " style="" id="">
-                        <li class="nav-item nav-item_serach" style="padding-right:200px" ;>
-                            <div class="search_wrap search_wrap_6 m-0">
-                                <div class="search_box mt-3" style="width:130%; margin-right:170px;">
-                                <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-         
-         <input type="text" value="<?php $location= $this->session->userdata("location"); if($this->session->userdata("location")){ echo $location;} ; ?>" name="location" class="form-control rounded-5 overflow"  placeholder="Search for location" id="Location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-        <button type="submit" class="btn btn-success rounded-5" style="padding:6px 10px">Search </button>
-       </form>
-                                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-                                    <div class="searchbox-wrap">
-                                        <input type="text" value="<?php echo set_value('location'); ?>" id="locate" name="location"  class="search_input form-input" placeholder="Search for location...">
-                                        <input type="text" class="form-control" name="latitude" id="latitude" hidden />
-                                        <input type="text" class="form-control" name="longitude" id="longitude"
-                                            hidden />
-                                        <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
-                                    </div>
-                                    </form> -->
-
-
-
-                                </div>
-                            </div>
-                        </li>
+                     
                         <li class="nav-item dropdown" style="padding-right:10px" ;>
                             <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false" style=" color:#10B981;font-weight:bold;"
@@ -1204,7 +1346,7 @@ padding-left: 90px;
                                 Categories
                             </a>
                             <ul class="dropdown-menu category_show " style="margin-bottom:10px;min-width:80px;">
- 
+
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/1">Reusable Parts and
                                         Products</a>
@@ -1219,7 +1361,7 @@ padding-left: 90px;
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/4">Internships</a>
                                 </li>
-                               
+
                                 <li><a id="" class="dropdown-item"
                                         href="<?php echo base_url();?>welcome/fillter_product/5">Commericial Places</a>
                                 </li>
@@ -1270,10 +1412,10 @@ padding-left: 90px;
                                       width: 30.9px; margin-top: 5px;"
                             src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>">
 
-                        <a class="nav-link dropdown dropdown-toggle profile_name " href="#" role="button" data-bs-toggle="dropdown"
-                            aria-expanded="false"
+                        <a class="nav-link dropdown dropdown-toggle profile_name " href="#" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false"
                             style="font-size:15px;color:#10B981;font-weight:bold; padding-left: 0px;">
-                             <?php echo ucfirst($profile->name);?>
+                            <?php echo ucfirst($profile->name);?>
                         </a>
                         <ul class="dropdown-menu space" style="margin-top:-30px;">
 
@@ -1306,12 +1448,12 @@ padding-left: 90px;
                         </li> -->
                         <?php }?>
                     </ul>
-                    
+
                 </div>
             </nav>
         </div>
     </div>
-    
+
     <!-- </nav> -->
 
 
@@ -1358,8 +1500,8 @@ function function14() {
 }
 
 $(document).ready(function() {
-    
-    
+
+
     $("#search").autocomplete({
 
         source: function(request, response) {
@@ -1424,21 +1566,18 @@ function initialize() {
         $("#longtitudeArea").removeClass("d-none");
     });
 }
-
-
-
 </script>
 
 <script>
-  // Custom scroll event handler
-  $(window).on('scroll', function() {
+// Custom scroll event handler
+$(window).on('scroll', function() {
     var scroll_top = $(this).scrollTop();
     var navbar_height = $('.navbar').outerHeight();
 
     if (scroll_top > navbar_height) {
-      $('#navbarSupportedContent').collapse('hide');
+        $('#navbarSupportedContent').collapse('hide');
     } else {
-      //$('#navbarSupportedContent').collapse('show');
+        //$('#navbarSupportedContent').collapse('show');
     }
-  });
+});
 </script>

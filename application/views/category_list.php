@@ -21,7 +21,7 @@
 
 <section class="content">
 <div class="row">
- <a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Category</a> 
+ <!-- <a href="<?=  base_url('Admin/add_category'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Category</a>  -->
 
 <?php  if($msg=$this->session->flashdata('msg')): 
 

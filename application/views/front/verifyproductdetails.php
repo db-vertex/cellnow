@@ -1416,7 +1416,66 @@ border-radius: 80px 0px 0px 80px;
                                         <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
                                     </div>
                                 </div>
-                            <?php } ?>
+                            <?php } else if ($product_detail->category_id == 5 || $product_detail->category_id == 6) { ?>
+                            <div class="row   ms-4">
+                                <div class="col-3"> 
+                                    <p class="details_text"><b>Area</b></p>
+                                </div>
+                                <div class="col-3">
+                                <p class="details_text"><?php echo $product_detail->area . " Feet" ?></p>
+                                </div>
+                                </div>
+                                <div class="row   ms-4">
+                                <div class="col-3">
+                                    <p class="details_text"><b>Facing</b></p>
+                                </div>
+                                <div class="col-3">
+                                    <p class="details_text"><?php echo $product_detail->facing; ?></p>
+                                </div>
+                            </div> 
+                            <div class="row   ms-4">
+                                <div class="col-3">
+                                    <p class="details_text"><b>Floor</b></p>
+                                </div>
+                                <div class="col-3">
+                                    <p class="details_text"><?php echo $product_detail->floor; ?></p>
+                                </div>
+                            </div>
+                            <div class="row   ms-4">
+                                <div class="col-3">
+                                <p class="details_text"><b> Rent/Shell</b></p>
+                                </div>
+                                <div class="col-3">
+                                    <p class="details_text"><?php echo $product_detail->filter; ?></p>
+                                </div>
+                            </div>
+                        <?php } 
+                            else if ($product_detail->category_id == 7) { ?>
+                            <div class="row   ms-4">
+                                <div class="col-3">
+                                    <p class="details_text"><b>Area</b></p>
+                                </div>
+                                <div class="col-3">
+                                <p class="details_text"><?php echo $product_detail->area . " Feet" ?></p>
+                                </div>
+                                </div>
+                                <div class="row   ms-4">
+                                <div class="col-3">
+                                    <p class="details_text"><b>Facing</b></p>
+                                </div>
+                                <div class="col-3">
+                                    <p class="details_text"><?php echo $product_detail->facing; ?></p>
+                                </div>
+                            </div>
+                            <div class="row   ms-4">
+                                <div class="col-3">
+                                    <p class="details_text"><b> Rent/Shell</b></p>
+                                </div>
+                                <div class="col-3">
+                                    <p class="details_text"><?php echo $product_detail->filter; ?></p>
+                                </div>
+                            </div>
+                        <?php } ?>
                     <div class="row  ms-4">
                         <div class="col-3">
                             <p class="details_text"><b>City</b></p>
@@ -2254,3 +2313,10 @@ function showSlides(n) {
 
     
     </script>
+
+Today celnow point 
+
+1. Header search bar bahar kar diya 
+2. Shop images click and view 
+3. fillter page banner comment
+4. fillter

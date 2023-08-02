@@ -90,10 +90,8 @@ echo $name->title;
                 
 
                   <td>  
-   
-                       <a href="javascript:void(0)" class="delete btn btn-info" title="Delete" style="margin-left: 10px;">Delete Report
-                      </a>
-
+                 <?php ?>
+                  <input type="button" name="active_status" value="Deactive" class="btn btn-info admindeactive"  data-productid = "<?php echo $value->product_id ;?>" data-categoryid = "<?php echo $value->category_id ;?>">
                   </td>
 
                 </tr> 
@@ -152,7 +150,33 @@ var productid = $(this).data("productid");
         });
 
 
+        $(".admindeactive").click(function(){
+   
+   var statusd = 1;
+  let product_id = $(this).data("productid");
 
+  let category_id = $(this).data("categoryid");
+ 
+
+   $.ajax({
+       url: '<?php echo base_url("admin/updateproductactivestatus/")?>',
+           type: 'POST',
+           data: {'active_status':statusd, "product_id":product_id,"category_id":category_id},
+           error: function() {
+              alert('Something is wrong');
+           },
+           success: function(data) {
+             
+             swal({
+                         title: "Post De-active Successfully",
+                         text: "",
+                         type: "success"
+                     }, function() {
+                        location.reload();                      
+                      });
+           } 
+        });
+})
 
 
 

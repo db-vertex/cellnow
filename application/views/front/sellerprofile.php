@@ -22,19 +22,6 @@ html,body
 }
 
 
-
-    #a{
-  margin-right: 10px;
-  border-color: #78d7b8;
-  border-radius: 60px;
-  font-family:open sans;
-  font-weight:550;
-  font-size:22px;
-  padding: 4px 32px;
-  
-}
-
-
 #a:visited {
   color: #78d7b8;
  
@@ -77,6 +64,32 @@ html,body
  background-color: #78d7b8;
 }
 
+
+@media screen and (min-width: 560px) {
+  #a{
+  margin-right: 10px;
+  border-color: #78d7b8;
+  border-radius: 60px;
+  font-family:open sans;
+  font-weight:550;
+  font-size:22px;
+  padding: 4px 32px;
+  
+}
+}
+@media screen and (max-width: 560px) {
+  #a{
+    margin-right: 10px;
+  border-color: #78d7b8;
+  border-radius: 60px;
+  font-family:open sans;
+  font-weight:550;
+  font-size:15px;
+  padding: 4px 18px;
+}
+}
+
+
     </style>
   </head>
 
@@ -104,23 +117,25 @@ html,body
             <?php } ?>
   
     <div class="shadow p-4 mb-5 bg-body rounded-5"><br>
-    <div class="row text-center" >
-   
-    <div class="col-sm-5 mb-1">
-    <a href="<?php echo base_url();?>welcome/buyerprofile" class="btn" role="button" aria-disabled="true" id="a">Buyer</a>
-    </div>
-    <div class="col-sm-7 mb-1">
-    <div class="row">
-    <div class="col-sm-6  mb-1">
-    <a href="<?php echo base_url();?>welcome/myprofile"  style="background-color: #78d7b8; color:#fff" class="btn" role="button" aria-disabled="true" id="a">Seller</a>
-   
-    </div>
-    <div class="col-sm-6 mb-1" >
-    <a href="<?php echo base_url();?>welcome/shop" class="btn" role="button" aria-disabled="true" id="a">Shop</a>
-    </div>
-</div>
-</div>
-  </div><br>
+    <div class="row text-center justify-content-around">
+                    <div class="col-3 mb-1 ">
+                    <a href="<?php echo base_url();?>welcome/buyerprofile" 
+                        class="btn" role="button" aria-disabled="true" id="a">Buyer</a>
+                    </div>
+
+                    <div class="col-3 mb-1">
+                    <a href="<?php echo base_url();?>welcome/myprofile" style="background-color: #78d7b8; color:#fff" class="btn" role="button"
+                                aria-disabled="true" id="a">Seller</a>
+                    </div>
+
+
+                    <div class="col-3 mb-1">
+                    <a href="<?php echo base_url();?>welcome/shop" class="btn" role="button"
+                                aria-disabled="true" id="a">Shop</a>
+              </div>
+            </div>
+            
+<br>
   <div class="row ">
   <?php
                 $profile = get_seller_profile($user['user_id']);

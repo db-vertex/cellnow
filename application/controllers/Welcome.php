@@ -1256,7 +1256,7 @@ $sub .= '</h6>
 		$config = array();
 		$config["base_url"] = "";
 		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter);
-		$config["per_page"] = 6;
+		$config["per_page"] = 15;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
 		$config["full_tag_open"] = '<ul class="pagination">';
@@ -1302,7 +1302,7 @@ $sub .= '</h6>
 		$config = array();
 		$config["base_url"] = "";
 		$config["total_rows"] = $this->product_filter_model->donatecount_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type);
-		$config["per_page"] = 6;
+		$config["per_page"] = 15;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
 		$config["full_tag_open"] = '<ul class="pagination">';
@@ -2985,26 +2985,6 @@ $sub .= '</h6>
 					$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['verified_admin' => "yes"]);
 				}	
 
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_tuitions')->result();
-
-					// Iterate through the results
-					foreach ($result as $dataji) {
-						// Retrieve the values from the current row and assign them to variables
-						$id = $dataji->id;
-						$cat_id = $dataji->category_id;
-						$sub_id = $dataji->subcategory_id;
-						$user_id = $dataji->user_id; // Assuming 'user_id' should be used here, as '0' doesn't seem appropriate.
-
-						// Insert data into the 'verify_product' table with the mapped columns
-						$this->db->insert('verify_product', array(
-							'product_id' => $id,
-							'category_id' => $cat_id,
-							'sub_id' => $sub_id,
-							'shop_id' => 0, // Assuming you have a variable named '$shop_id' with the correct value.
-							'shop_owner_user_id' => 0,
-							'seller_user_id' => $user_id,
-						));
-					}
 
 		  }
 		  else if($_SESSION['category_id']==3){
@@ -3013,24 +2993,6 @@ $sub .= '</h6>
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['verified_admin' => "yes"]);
 				}
-
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_job')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-
 		  }
 		  else if($_SESSION['category_id']==4){
 			if($_SESSION['normal_bost_donot'] == 'bost'){
@@ -3038,23 +3000,7 @@ $sub .= '</h6>
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['verified_admin' => "yes"]);
 				}
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_internships')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-
+		
 	
 		  }
 		  else if($_SESSION['category_id']==5){
@@ -3063,25 +3009,7 @@ $sub .= '</h6>
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['verified_admin' => "yes"]);
 				}
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_commericial_places')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-
 			
-
 		  }
 		  else if($_SESSION['category_id']==6){
 			if($_SESSION['normal_bost_donot'] == 'bost'){
@@ -3089,24 +3017,7 @@ $sub .= '</h6>
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['verified_admin' => "yes"]);
 				}
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_residential_places')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-			
-
+				
 		  }
 		  else if($_SESSION['category_id']==7){
 			if($_SESSION['normal_bost_donot'] == 'bost'){
@@ -3114,23 +3025,7 @@ $sub .= '</h6>
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['verified_admin' => "yes"]);
 				}
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_land_plot')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-
+				
 			
 		  }
 		  
@@ -3185,26 +3080,6 @@ $sub .= '</h6>
 			}else{
 				$this->db->where('id', $_SESSION['product_id'])->update('category_reusable_parts', ['verified_admin' => "yes"]);
 			}
-			$result = $this->db->where('id', $_SESSION['product_id'])->get('category_reusable_parts')->result();
-
-					// Iterate through the results
-					foreach ($result as $dataji) {
-						// Retrieve the values from the current row and assign them to variables
-						$id = $dataji->id;
-						$cat_id = $dataji->category_id;
-						$sub_id = $dataji->subcategory_id;
-						$user_id = $dataji->user_id; // Assuming 'user_id' should be used here, as '0' doesn't seem appropriate.
-
-						// Insert data into the 'verify_product' table with the mapped columns
-						$this->db->insert('verify_product', array(
-							'product_id' => $id,
-							'category_id' => $cat_id,
-							'sub_id' => $sub_id,
-							'shop_id' => 0, // Assuming you have a variable named '$shop_id' with the correct value.
-							'shop_owner_user_id' => 0,
-							'seller_user_id' => $user_id,
-						));
-					}
 
 		  }
 		  else if($_SESSION['category_id']==2){
@@ -3214,27 +3089,6 @@ $sub .= '</h6>
 					$this->db->where('id', $_SESSION['product_id'])->update('category_tuitions', ['verified_admin' => "yes"]);
 				}	
 
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_tuitions')->result();
-
-					// Iterate through the results
-					foreach ($result as $dataji) {
-						// Retrieve the values from the current row and assign them to variables
-						$id = $dataji->id;
-						$cat_id = $dataji->category_id;
-						$sub_id = $dataji->subcategory_id;
-						$user_id = $dataji->user_id; // Assuming 'user_id' should be used here, as '0' doesn't seem appropriate.
-
-						// Insert data into the 'verify_product' table with the mapped columns
-						$this->db->insert('verify_product', array(
-							'product_id' => $id,
-							'category_id' => $cat_id,
-							'sub_id' => $sub_id,
-							'shop_id' => 0, // Assuming you have a variable named '$shop_id' with the correct value.
-							'shop_owner_user_id' => 0,
-							'seller_user_id' => $user_id,
-						));
-					}
-
 		  }
 		  else if($_SESSION['category_id']==3){
 			if($_SESSION['normal_bost_donot'] == 'bost'){
@@ -3242,49 +3096,15 @@ $sub .= '</h6>
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_job', ['verified_admin' => "yes"]);
 				}
-
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_job')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-
 		  }
+
 		  else if($_SESSION['category_id']==4){
 			if($_SESSION['normal_bost_donot'] == 'bost'){
 				$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['pay_type' => 1]);
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_internships', ['verified_admin' => "yes"]);
 				}
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_internships')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-
-	
+				
 		  }
 		  else if($_SESSION['category_id']==5){
 			if($_SESSION['normal_bost_donot'] == 'bost'){
@@ -3292,49 +3112,14 @@ $sub .= '</h6>
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_commericial_places', ['verified_admin' => "yes"]);
 				}
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_commericial_places')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-
 			
-
 		  }
 		  else if($_SESSION['category_id']==6){
 			if($_SESSION['normal_bost_donot'] == 'bost'){
 				$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['pay_type' => 1]);
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_residential_places', ['verified_admin' => "yes"]);
-				}
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_residential_places')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-			
+				}		
 
 		  }
 		  else if($_SESSION['category_id']==7){
@@ -3343,23 +3128,7 @@ $sub .= '</h6>
 				}else{
 					$this->db->where('id', $_SESSION['product_id'])->update('category_land_plot', ['verified_admin' => "yes"]);
 				}
-				$result = $this->db->where('id', $_SESSION['product_id'])->get('category_land_plot')->result();
-				foreach ($result as $dataji) {
-					$id = $dataji->id;
-					$cat_id = $dataji->category_id;
-					$sub_id = $dataji->subcategory_id;
-					$user_id = $dataji->user_id; 
-
-					$this->db->insert('verify_product', array(
-						'product_id' => $id,
-						'category_id' => $cat_id,
-						'sub_id' => $sub_id,
-						'shop_id' => 0,
-						'shop_owner_user_id' => 0,
-						'seller_user_id' => $user_id,
-					));
-				}
-
+			
 			
 		  }
 		  $insert = $this->user->payment($attributes);

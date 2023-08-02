@@ -1,6 +1,3 @@
-
-
-
 <style>
 .selected {
     background: #d1fae5;
@@ -30,7 +27,7 @@
 .img-size {
     max-height: 500px;
     min-height: 500px;
-    
+
 
 }
 
@@ -93,7 +90,7 @@ input::placeholder {
     .img-size {
         max-height: 300px;
         min-height: 300px;
-        
+
 
     }
 
@@ -109,7 +106,7 @@ input::placeholder {
     .img-size {
         max-height: 200px;
         min-height: 200px;
-        
+
 
     }
 }
@@ -127,6 +124,31 @@ input::placeholder {
     /* margin-left: 25px; */
     margin-right: 50px;
     padding-bottom: 2px;
+}
+
+.shopCategory {
+    width: 40px;
+    height: 40px;
+}
+
+.va-carrousel-flexbox_most .va-card {
+    flex: 0 0 auto;
+    padding-left: 32px;
+}
+
+.icon_slider {
+    flex: 0 0 auto;
+    width: 3.333333%;
+}
+
+.icon_cetgory {
+    flex: 0 0 auto;
+    width: 91.333333%;
+}
+.deals-scroll-left {
+    top: -35px;
+    left: 0px;
+    bottom: 0;
 }
 </style>
 
@@ -187,11 +209,14 @@ input::placeholder {
         <div class="col-lg-6 col-md-7 col-sm-6 ">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
-                  
-         
-		       <input type="search"  name="anything" id="anything" class="form-control rounded-5"  placeholder="Search for the Product you want!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-          <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search </button>
-         
+
+
+                    <input type="search" name="anything" id="anything" class="form-control rounded-5"
+                        placeholder="Search for the Product you want!" aria-label="Search"
+                        aria-describedby="search-addon" style="padding:12px 22px" />
+                    <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search
+                    </button>
+
 
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                         <div class="searchbox-wrap">
@@ -218,88 +243,64 @@ input::placeholder {
 <!-- new -->
 
 <div class="container">
-
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
-        <div id="va_container_most_view">
-        <button class="deals-scroll-left_most_view deals-paddle" id="left_view_button">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                    class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512">
-                    <path fill="currentColor"
-                        d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                    </path>
-                </svg>
-        </button>
+            <div id="va_container_most_view">
+                <div class="row">
+                    <div class="col-1 pe-0 icon_slider">
+                        <button class="deals-scroll-left_most_view deals-paddle" id="left_view_button">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                                class="svg-inline--fa fa-chevron-left fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                    d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="col-10 ps-0 icon_cetgory">
+                        <div class="va-carrousel-flexbox_most">
+                            <?php
+            $category = get_all_category();
+            foreach ($category as $key => $cat) {
+                            ?>
 
-            <div class="va-carrousel-flexbox_most">
-       
+                            <div class="va-card cut-list mt-2" onclick="return getsubcategory(<?php echo $cat->id; ?>)">
+                                <p class="new<?php echo $cat->id; ?> btn border  rounded-pill <?php if($cat->id==1){ ?>selected <?php } ?>"
+                                    role="button">
+                                    <img style="height:40px; width:40px;" class="me-1"
+                                        src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
+                                        alt=""><?php echo $cat->category; ?>
+                                </p>
+                            </div>
+                            <?php  }?>
+                        </div>
+                    </div>
+                    <div class="col-1 icon_slider">
+                        <button class="deals-scroll-right_most_view deals-paddle" id="right_view_button">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                                class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
 
-            <?php
+        </div>
+    </div>
 
-$category = get_all_category();
-
-foreach ($category as $key => $cat) {
-
-
-                ?>
-           
-            <div class="va-card cut-list mt-2" onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                <p class="new<?php echo $cat->id; ?> btn border  rounded-pill <?php if($cat->id==1){ ?>selected <?php } ?>" role="button">
-                <img  style="height:40px; width:40px;" class="me-1"  src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""><?php echo $cat->category; ?> </p>
 </div>
-         
-
-            <?php  }?>
-            
-       
-        </div>
-                   <button class="deals-scroll-right_most_view deals-paddle" id="right_view_button">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                    class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512">
-                    <path fill="currentColor"
-                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                    </path>
-                </svg>
-            </button>
-                </div>
-
-        </div>
-    </div>
-  
-                </div>
-
-<!-- <div class="container">
-    <div class="row px-0">
-        <ul class="pt-0 pb-0 mb-0 cut-list hide-scroll">
-
-            <?php
-
-$category = get_all_category();
-
-foreach ($category as $key => $cat) {
-
-
-                ?>
-            <li class="" id="" onclick="return getsubcategory(<?php echo $cat->id; ?>)">
-                <p class="new<?php echo $cat->id; ?> btn border  rounded-pill <?php if($cat->id==1){ ?>selected <?php } ?>" role="button"><img class="me-1"
-                        src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt=""><?php echo $cat->category; ?> </p>
-
-            </li>
-
-            <?php  }?>
-            
-        </ul>
-    </div>
-</div> -->
 
 <div class="container">
-
-    <div class="row">
         <div class="va-carrousel-section">
             <div class="va-whitewrap">
                 <div id="va_container">
+                <div class="row">
+                    <div class="col-1 pe-0 icon_slider">
                     <button class="deals-scroll-left deals-paddle " id="left_sponser_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
                             class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
@@ -309,11 +310,12 @@ foreach ($category as $key => $cat) {
                             </path>
                         </svg>
                     </button>
+                    </div>
+                    <div class="col-10 pe-0 icon_cetgory">
                     <div class="va-carrousel-flexbox" id="sub-list">
                         <?php
 					         $cateory =  '';
                
-                 
                      $sub_ = '';
                      if($cateory==''){
                         $subcategory = get_all_product_type();  
@@ -329,27 +331,26 @@ foreach ($category as $key => $cat) {
                         <div class="va-card va-card_category mt-2" style="">
                             <p style="text-align:center;" class="my-auto pouler_Categories "
                                 <?php if ($category == 1 || $category==5) { ?>
-                                onclick="return getproduct( <?php echo $sub->subcategory_id; ?>,<?php echo $sub->category_id; ?>)" <?php } else { ?>
-                                onclick="return getproduct( <?php echo $sub->id; ?> ,<?php echo $sub->category_id; ?>)" <?php } ?>>
+                                onclick="return getproduct( <?php echo $sub->subcategory_id; ?>,<?php echo $sub->category_id; ?>)"
+                                <?php } else { ?>
+                                onclick="return getproduct( <?php echo $sub->id; ?> ,<?php echo $sub->category_id; ?>)"
+                                <?php } ?>>
 
                                 <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?> "
                                     data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
-                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
-                                    alt="">
-                                    <center style="color:black; font-size:12px; font-weight:500">
+                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
+                                <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo $sub->product_type; ?>
                                 </center>
                             </p>
 
                         </div>
-
-                        <?php 
-					
+                        <?php 	
                 }
                ?>
-
-
                     </div>
+                    </div>
+                    <div class="col-1 pe-0 icon_slider">
                     <button class="deals-scroll-right deals-paddle " id="right_sponser_button">
                         <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
                             class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
@@ -359,14 +360,13 @@ foreach ($category as $key => $cat) {
                             </path>
                         </svg>
                     </button>
+                       </div>
+
                 </div>
             </div>
         </div>
-    </div>
 </div>
-
-
-
+</div>
 
 <section>
     <div class="text-center container py-5">
@@ -392,40 +392,41 @@ foreach ($category as $key => $cat) {
             
             ?>
             <div class=" col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
-            <a class="link-plain link-plains"
-                            href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"> 
-                            <div class="card">
-                    <div class="img-fluid bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                        <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                <a class="link-plain link-plains"
+                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
+                    <div class="card">
+                        <div class="img-fluid bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                 class="w-100 va-thumbnail" />
-                                <p style="margin-left:5px;"> 
-                                    <?php if($pro->pay_type ==1){ ?>
-                                      <img class="img-fluid image2"
-                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style=" width:80px; ">
-                            <?php } if($pro->verified_product ==1){ ?>
-                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png" style="width:80px; ">
-                      
-
-                            <?php }?>
-                        </p>
+                            <p style="margin-left:5px;">
+                                <?php if($pro->pay_type ==1){ ?>
+                                <img class="img-fluid image2" src="<?php echo base_url(); ?>assets/images/sponsor.png"
+                                    style=" width:80px; ">
+                                <?php } if($pro->verified_product ==1){ ?>
+                                <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png"
+                                    style="width:80px; ">
 
 
-                    </div>
-                    <div class="card-body">
-                        <div class="d-flex justify-content-between align-items-center">
-                        <?php if($pro->category_id!=4){ ?>
-                            <p class="details_price mb-3">
-                            <span class=" ">₹<?php echo $pro->price; ?></span>
-                        </p>
-                            <?php } else{?>
-                                <p style="color:#fff" class="details_price mb-3">
-                                <strong class="">₹<?php echo $pro->price; ?></strong>
+                                <?php }?>
                             </p>
-                       <?php } ?>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
 
-                            <h6 class="dress-name"><?php
+
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center">
+                                <?php if($pro->category_id!=4){ ?>
+                                <p class="details_price mb-3">
+                                    <span class=" ">₹<?php echo $pro->price; ?></span>
+                                </p>
+                                <?php } else{?>
+                                <p style="color:#fff" class="details_price mb-3">
+                                    <strong class="">₹<?php echo $pro->price; ?></strong>
+                                </p>
+                                <?php } ?>
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <h6 class="dress-name"><?php
                            $title = $pro->title;
                             if(strlen($title) <= 25)
                               {
@@ -441,10 +442,11 @@ foreach ($category as $key => $cat) {
 
 
 
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
 
-                            <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
+                                <h6><img style="max-width:25px;"
+                                        src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
                             if(strlen($title) <= 20)
                               {
@@ -458,10 +460,11 @@ foreach ($category as $key => $cat) {
                            
                            ?></h6>
 
+                            </div>
                         </div>
                     </div>
-                </div>
-                </a></div>
+                </a>
+            </div>
 
             <?php $i++;} } else if($j == 1) {?>
 
@@ -526,11 +529,14 @@ foreach ($category as $key => $cat) {
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
 
-                   
-         
-         <input type="search"  name="location" class="form-control rounded-5"  placeholder="Search for the store" id="location" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-        <button type="submit" class="btn btn-success rounded-5" id="shopsubmit" style="padding:6px 10px">Search </button>
-      
+
+
+                    <input type="search" name="location" class="form-control rounded-5"
+                        placeholder="Search for the store" id="location" aria-label="Search"
+                        aria-describedby="search-addon" style="padding:12px 22px" />
+                    <button type="submit" class="btn btn-success rounded-5" id="shopsubmit"
+                        style="padding:6px 10px">Search </button>
+
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
                         <div class="searchbox-wrap">
                             <input type="text" value="" id="Location" name="anything" aria-label="Search"
@@ -544,7 +550,7 @@ foreach ($category as $key => $cat) {
 
 
                 </div>
-               
+
             </div>
         </div>
     </div>
@@ -552,54 +558,57 @@ foreach ($category as $key => $cat) {
 
 
 <div class="container ">
-
-    <div class="va-carrousel-section">
-        <div class="va-whitewrap">
-        <div id="va_container_urgent">
-        <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                    class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512">
-                    <path fill="currentColor"
-                        d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                    </path>
-                </svg>
-        </button>
-
-            <div class="va-carrousel-flexbox_urgent">
-                    <?php $id = $this->uri->segment(3); 
-                $category = get_all_shopcategory();
-             
-                foreach ($category as $key => $cat) {
-                  ?>
-
-                    <div class="va-card va-card_category mt-2"> 
-                            <p  style="text-align:center;" class="my-auto pouler_Category" onclick="return getshop(<?php echo $cat->id; ?>)">
-                                <img  class="btn-change newshop<?php echo $cat->id; ?>"
-                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
-                                <center style="color:black; font-size:12px; font-weight:500">
-                                    <?php echo ucfirst($cat->shop_category); ?></center>
-                            </p>
-                       
-                    </div>
-
-                    <?php } ?>
-                   </div>
-                   <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
-                <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                    class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                    viewBox="0 0 320 512">
-                    <path fill="currentColor"
+   <div class="va-carrousel-section">
+      <div class="va-whitewrap">
+         <div id="va_container_urgent">
+            <div class="row">
+               <div class="col-1 pe-0 icon_slider">
+                  <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
+                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                        class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 320 512">
+                        <path fill="currentColor"
+                           d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                        </path>
+                     </svg>
+                  </button>
+               </div>
+               <div class="col-10 ps-0 icon_cetgory">
+                  <div class="va-carrousel-flexbox_urgent">
+                     <?php $id = $this->uri->segment(3); 
+                        $category = get_all_shopcategory();
+                        
+                        foreach ($category as $key => $cat) {
+                          ?>
+                     <div class="va-card va-card_category mt-2">
+                        <p style="text-align:center;" class="my-auto pouler_Category"
+                           onclick="return getshop(<?php echo $cat->id; ?>)">
+                           <img class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
+                              src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
+                        <center style="color:black; font-size:12px; font-weight:500">
+                           <?php echo ucfirst($cat->shop_category); ?>
+                        </center>
+                        </p>
+                  </div>
+                  <?php } ?>
+               </div>
+            </div>
+            <div class="col-1 pe-0 icon_slider">
+               <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
+                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                     class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 320 512">
+                     <path fill="currentColor"
                         d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                    </path>
-                </svg>
-            </button>
-                </div>
-
-        </div>
-    </div>
-  
-                </div>
+                     </path>
+                  </svg>
+               </button>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+</div>
 
 <section>
 
@@ -619,20 +628,20 @@ foreach ($category as $key => $cat) {
          
              ?>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="" >
-            <a class="link-plain link-plains" href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>">
-                <div class="card">
-                    <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                       <img
-                                src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
+            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="">
+                <a class="link-plain link-plains"
+                    href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>">
+                    <div class="card">
+                        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <img src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
                                 class="w-100 va-thumbnail" />
-                        
-                    </div>
-                    <div class="card-body">
 
-                        <div class="d-flex justify-content-between align-items-center">
+                        </div>
+                        <div class="card-body">
 
-                            <h6 class="dress-name"><?php
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <h6 class="dress-name"><?php
                            $title = $pro->name;
                             if(strlen($title) <= 15)
                               {
@@ -647,10 +656,11 @@ foreach ($category as $key => $cat) {
                            
                            ?></h6>
 
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                          
-                        <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <h6><img style="max-width:25px;"
+                                        src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->Address;
                             if(strlen($title) <= 20)
                               {
@@ -663,25 +673,25 @@ foreach ($category as $key => $cat) {
                               }
                            
                            ?></h6>
-                         
+
+                            </div>
                         </div>
                     </div>
-                </div>
                 </a>
             </div>
 
-           
+
             <?php }}
               else {?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-       
-        <?php if($shop_count > 4){ ?>
-        <center class=""><a href="<?php echo base_url();?>welcome/store/16" class="btn btn-danger "
-                style="width:100px; border-radius:20px; background-color: #10B981; color:white; border-color:#10B981; ">See
-                All</a></center>
-        <?php } ?>
-    </div>
+
+            <?php if($shop_count > 4){ ?>
+            <center class=""><a href="<?php echo base_url();?>welcome/store/16" class="btn btn-danger "
+                    style="width:100px; border-radius:20px; background-color: #10B981; color:white; border-color:#10B981; ">See
+                    All</a></center>
+            <?php } ?>
+        </div>
     </div>
 </section>
 
@@ -739,19 +749,19 @@ foreach ($category as $key => $cat) {
             ?>
 
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 postdonate">
-            <a class="link-plain link-plains" href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
-                <div class="card">
-                    <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                       <img
-                                src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
+                <a class="link-plain link-plains"
+                    href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
+                    <div class="card">
+                        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                            <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                 class="w-100 va-thumbnail" />
-                      
-                    </div>
-                    <div class="card-body">
 
-                        <div class="d-flex justify-content-between align-items-center">
+                        </div>
+                        <div class="card-body">
 
-                            <h6 class="dress-name"><?php
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <h6 class="dress-name"><?php
                            $title = $pro->title;
                             if(strlen($title) <= 15)
                               {
@@ -767,10 +777,11 @@ foreach ($category as $key => $cat) {
 
 
 
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                           
-                                <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
+                            </div>
+                            <div class="d-flex justify-content-between align-items-center">
+
+                                <h6><img style="max-width:25px;"
+                                        src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
                             if(strlen($title) <= 20)
                               {
@@ -783,10 +794,10 @@ foreach ($category as $key => $cat) {
                               }
                            
                            ?></h6>
-                          
+
+                            </div>
                         </div>
                     </div>
-                </div>
                 </a>
             </div>
 
@@ -797,13 +808,14 @@ foreach ($category as $key => $cat) {
               else {?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-       
-        <?php if($allcount > 4){ ?>
+
+            <?php if($allcount > 4){ ?>
             <center class=""><a
                     style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
-                    href="<?php echo base_url();?>welcome/donatefillter_product/8" class="btn btn-danger">See All</a></center>
+                    href="<?php echo base_url();?>welcome/donatefillter_product/8" class="btn btn-danger">See All</a>
+            </center>
             <?php } ?>
-            </div>
+        </div>
     </div>
 </section>
 
@@ -890,10 +902,13 @@ foreach ($category as $key => $cat) {
 
 
                     <form method="post" action="<?php echo base_url();?>welcome/subscribe">
-		       <input type="search"  name="email_newsletter" id="email_newsletter" class="form-control rounded-5"  placeholder="Your Email Here!" aria-label="Search" aria-describedby="search-addon"  style="padding:12px 22px" />
-            <button type="button" name="submit" class="btn btn-success rounded-5" style="padding:6px 10px" onclick="return checkemail();">Subscribe </button>
-            <span id="email_er" style="color: red; font-size:12px;"></span>
-           </form>
+                        <input type="search" name="email_newsletter" id="email_newsletter"
+                            class="form-control rounded-5" placeholder="Your Email Here!" aria-label="Search"
+                            aria-describedby="search-addon" style="padding:12px 22px" />
+                        <button type="button" name="submit" class="btn btn-success rounded-5" style="padding:6px 10px"
+                            onclick="return checkemail();">Subscribe </button>
+                        <span id="email_er" style="color: red; font-size:12px;"></span>
+                    </form>
 
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/subscribe">
                         <div class="searchbox-wrap">
@@ -920,35 +935,35 @@ foreach ($category as $key => $cat) {
 
 
 <script>
-    "use strict"; /* Start of use strict */
-    (function() {
-        function14();
-    })();
+"use strict"; /* Start of use strict */
+(function() {
+    function14();
+})();
 
-    function function14() {
-        $('.btnSweetalert').on("click", function() {
-            swal({
-                    title: " Logout!",
-                    text: "Are you sure you want to logout?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
+function function14() {
+    $('.btnSweetalert').on("click", function() {
+        swal({
+                title: " Logout!",
+                text: "Are you sure you want to logout?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-                        window.location.href = "<?php echo base_url();?>welcome/logout";
-                    } else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                    }
-                });
-        });
-    }
-    </script>
+                    window.location.href = "<?php echo base_url();?>welcome/logout";
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                }
+            });
+    });
+}
+</script>
 
 
 <script>
@@ -988,34 +1003,35 @@ function getsubcategory(category_id) {
 }
 
 
-function getshop(category_id){
+function getshop(category_id) {
 
- 
-//var res = "";
- $("img").removeClass("select");
- $(".newshop"+category_id).addClass("select");
+
+    //var res = "";
+    $("img").removeClass("select");
+    $(".newshop" + category_id).addClass("select");
 
     // var allch =  $("#").val();
 
-  jQuery.ajax({
-  type: "POST",
-  url: "<?php echo base_url('/welcome/getshop'); ?>",
-  data: { category_id:category_id},
-  success: function(res) 
-  {
+    jQuery.ajax({
+        type: "POST",
+        url: "<?php echo base_url('/welcome/getshop'); ?>",
+        data: {
+            category_id: category_id
+        },
+        success: function(res) {
 
-    
-    $("#shop_list").html(res);
-    
-    // $('#load_cound').val("10");
-    
-  }
-  });
+
+            $("#shop_list").html(res);
+
+            // $('#load_cound').val("10");
+
+        }
+    });
 
 }
 
 
-function getproduct(subcategory_id,category_id) {
+function getproduct(subcategory_id, category_id) {
 
 
     //var res = "";
@@ -1036,7 +1052,7 @@ function getproduct(subcategory_id,category_id) {
 
             $("#product_list").html(res);
 
-     
+
             // $('#load_cound').val("10");
 
         }
@@ -1045,48 +1061,50 @@ function getproduct(subcategory_id,category_id) {
 }
 </script>
 <script>
-$(document).ready(function(){
+$(document).ready(function() {
     // Get value on button click and show alert
-    $("#myBtn").click(function(){
+    $("#myBtn").click(function() {
         var anything = $("#anything").val();
-        
+
 
         jQuery.ajax({
-  type: "POST",
-  url: "<?php echo base_url('/welcome/getsearchproduct'); ?>",
-  data: { anything:anything},
-  success: function(res) 
-  {
+            type: "POST",
+            url: "<?php echo base_url('/welcome/getsearchproduct'); ?>",
+            data: {
+                anything: anything
+            },
+            success: function(res) {
 
-  
-   
-  
-    $("#product_list").html(res);
-    
-  }
-  });
+
+
+
+                $("#product_list").html(res);
+
+            }
+        });
     });
 });
 </script>
 
 <script>
-$(document).ready(function(){
+$(document).ready(function() {
     // Get value on button click and show alert
-    $("#shopsubmit").click(function(){
+    $("#shopsubmit").click(function() {
         var location = $("#location").val();
-        
+
 
         $.ajax({
-  type: "POST",
-  url: "<?php echo base_url('/welcome/getsearchshop'); ?>",
-  data: { location:location},
-  success: function(res) 
-  {
-    
-    $("#shop_list").html(res);
-    
-  }
-  });
+            type: "POST",
+            url: "<?php echo base_url('/welcome/getsearchshop'); ?>",
+            data: {
+                location: location
+            },
+            success: function(res) {
+
+                $("#shop_list").html(res);
+
+            }
+        });
     });
 });
 </script>

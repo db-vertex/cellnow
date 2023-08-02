@@ -462,7 +462,19 @@ public function logout()
          $arr=array('active_status'=>$status,'created_at'=>date("Y-m-d H:i:s"));
        $res=$this->admin_model->update_internship_status($userid,$arr);
      }
-     
+      else if($category_id==5){
+      $arr=array('active_status'=>$status,'created_at'=>date("Y-m-d H:i:s"));
+    $res=$this->admin_model->update_category_commericial_places($userid,$arr);
+  }
+  else if($category_id==6){
+    $arr=array('active_status'=>$status,'created_at'=>date("Y-m-d H:i:s"));
+  $res=$this->admin_model->update_category_residential_places($userid,$arr);
+  }
+  else if($category_id==7){
+  $arr=array('active_status'=>$status,'created_at'=>date("Y-m-d H:i:s"));
+  $res=$this->admin_model->update_category_land_plot($userid,$arr);
+  }
+      
 
     
         if($res==1)
@@ -476,7 +488,7 @@ public function logout()
               $this->session->set_flashdata('msg_class','alert-danger');
             }
   
-            return redirect('admin/products');
+        //    return redirect('admin/products');
      }
      
 

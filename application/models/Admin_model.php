@@ -220,6 +220,39 @@ public function all_category()
       } 
   }
 
+  public function update_category_commericial_places($id,$arr)
+  {
+    if($this->db->where('id',$id)
+             ->update('category_commericial_places',$arr)){
+       return true;
+      } 
+      else{
+       return false;
+      } 
+  }
+
+  public function update_category_residential_places($id,$arr)
+  {
+    if($this->db->where('id',$id)
+             ->update('category_residential_places',$arr)){
+       return true;
+      } 
+      else{
+       return false;
+      } 
+  }
+
+  public function update_category_land_plot($id,$arr)
+  {
+    if($this->db->where('id',$id)
+             ->update('category_land_plot',$arr)){
+       return true;
+      } 
+      else{
+       return false;
+      } 
+  }
+
 
   public function update_tuition_status($id,$arr)
   {
@@ -683,19 +716,33 @@ public function delete_comment($id)
     return $this->db->delete('comment',['comment_id'=>$id]);
   }
 
-public function reportedposts()
-  {
-
+  public function reportedposts()
+{
+    $this->db->select('report_abuse.*');
+    $this->db->from('report_abuse');
     
-            $this->db->select('*');    
-            $this->db->from('report_abuse');
-        
-            /* $this->db->where(array('product.id' => $id,'status'=> 0));*/
-             $query = $this->db->get();
+    $this->db->join('category_reusable_parts', 'report_abuse.product_id = category_reusable_parts.id', 'left');
+  
+    $this->db->join('category_tuitions', 'report_abuse.product_id = category_tuitions.id', 'left');
 
-   return  $query->result();
+    $this->db->join('category_commericial_places', 'report_abuse.product_id = category_commericial_places.id', 'left');
 
-  }
+    $this->db->join('category_internships', 'report_abuse.product_id = category_internships.id', 'left');
+
+    $this->db->join('category_job', 'report_abuse.product_id = category_job.id', 'left');
+
+    $this->db->join('category_land_plot', 'report_abuse.product_id = category_land_plot.id', 'left');
+
+    $this->db->join('category_residential_places', 'report_abuse.product_id = category_residential_places.id', 'left');
+
+
+    $this->db->where('(category_reusable_parts.active_status = 0 OR category_tuitions.active_status = 0 OR category_commericial_places.active_status = 0
+    
+    OR category_internships.active_status = 0 OR category_job.active_status = 0 OR category_land_plot.active_status = 0 OR category_residential_places.active_status = 0)');
+
+    $query = $this->db->get();
+    return $query->result();
+}
 
 public function delete_report($id)
 
