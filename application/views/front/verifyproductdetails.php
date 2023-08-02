@@ -2314,9 +2314,4 @@ function showSlides(n) {
     
     </script>
 
-Today celnow point 
 
-1. Header search bar bahar kar diya 
-2. Shop images click and view 
-3. fillter page banner comment
-4. fillter
