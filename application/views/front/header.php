@@ -77,8 +77,6 @@
 
     .search_wrap .search_box_header {
         position: relative;
-
-        height: 64px;
     }
 
 
@@ -124,7 +122,7 @@
         justify-content: center;
     }
 
-   
+
 
     .details_price {
         font-family: 'Roboto';
@@ -1190,108 +1188,114 @@
     }
 
     /* Styles for screen width greater than or equal to 1200px */
-@media (min-width: 1200px) {
-    .logo_header {
-        width: 180px;
+    @media (min-width: 1200px) {
+        .logo_header {
+            width: 180px;
+        }
     }
-}
 
-/* Styles for screen width between 550px and 1199px */
-@media (min-width: 550px) and (max-width: 1199px) {
-    .logo_header {
-        width: 120px;
+    /* Styles for screen width between 550px and 1199px */
+    @media (min-width: 550px) and (max-width: 1199px) {
+        .logo_header {
+            width: 120px;
+        }
     }
-}
 
-/* Styles for screen width less than or equal to 550px */
-@media (min-width: 250px) and  (max-width: 550px) {
-    .logo_header {
-        width: 70px;
-    }
-    #Location {
-        padding: 4px 9px;
-}
-.search_wrap.search_wrap_6 .search_box_header .btn {
-    max-width: 100%;
-    height: 37%;
-    top: 7%;
-    right: 1.3%;
-    padding: 6px 0px;
-    /* color: #fff; */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding:6px 2px;
-    font-size: 14px;
-}
+    /* Styles for screen width less than or equal to 550px */
+    @media (min-width: 250px) and (max-width: 550px) {
+        .logo_header {
+            width: 70px;
+        }
 
-}
+        #Location {
+            padding: 4px 9px;
+        }
 
-@media (max-width: 551px){
-    .nav-item_serach {
-        padding-right: 0px;
+        .search_wrap.search_wrap_6 .search_box_header .btn {
+            max-width: 100%;
+            height: 37%;
+            top: 7%;
+            right: 1.3%;
+            padding: 6px 0px;
+            /* color: #fff; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 6px 2px;
+            font-size: 14px;
+        }
+
     }
-    .search_box_header {
-        width: 100%;
-       margin-right: 0px;
+
+    @media (max-width: 551px) {
+        .nav-item_serach {
+            padding-right: 0px;
+        }
+
+        .search_box_header {
+            width: 100%;
+            margin-right: 0px;
+        }
     }
-}
 
     /* Styles for screen width less than or equal to 770px */
-@media (min-width: 551px) and (max-width: 770px) {
-    .nav-item_serach {
-        padding-right: 32px;
-    }
-    .search_box_header {
-        width: 91%;
-       margin-right: 77px;
-    }
-}
+    @media (min-width: 551px) and (max-width: 770px) {
+        .nav-item_serach {
+            padding-right: 0px;
+        }
 
-/* Styles for screen width between 771px and 992px */
-@media (min-width: 771px) and (max-width: 992px) {
-    .nav-item_serach {
-        padding-right: 150px;
-    }
-    .search_box_header {
-        width: 107%;
-        margin-right: 136px;
-    }
-}
-
-/* Styles for screen width greater than or equal to 992px */
-@media (min-width: 992px) {
-    .nav-item_serach {
-        padding-right: 200px;
-    }
-    .search_box_header {
-        width: 130%;
-        margin-right: 170px;
-    }
-}
-
-
-
-@media (min-width: 551px){
-   #Location{
-    padding:12px 22px
-   }
-   .search_wrap.search_wrap_6 .search_box_header .btn {
-        max-width: 100%;
-        height: 60%;
-        top: 8%;
-        right: 1.3%;
-        padding: 6px 0px;
-        padding:6px 10px;
-         font-size: 14px;
-        /* color: #fff; */
-        display: flex;
-        align-items: center;
-        justify-content: center;
+        .search_box_header {
+            width: 91%;
+            margin-right: 77px;
+        }
     }
 
-}
+    /* Styles for screen width between 771px and 992px */
+    @media (min-width: 771px) and (max-width: 992px) {
+        .nav-item_serach {
+            padding-right: 150px;
+        }
 
+        .search_box_header {
+            width: 107%;
+            margin-right: 136px;
+        }
+    }
+
+    /* Styles for screen width greater than or equal to 992px */
+    @media (min-width: 992px) {
+        .nav-item_serach {
+            padding-right: 200px;
+        }
+
+        .search_box_header {
+            width: 130%;
+            margin-right: 170px;
+        }
+    }
+
+
+
+    @media (min-width: 551px) {
+        #Location {
+            padding: 9px 22px
+        }
+
+        .search_wrap.search_wrap_6 .search_box_header .btn {
+            max-width: 100%;
+            height: 60%;
+            top: 8%;
+            right: 1.3%;
+            padding: 6px 0px;
+            padding: 6px 10px;
+            font-size: 14px;
+            /* color: #fff; */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+    }
     </style>
 
 </head>
@@ -1310,35 +1314,49 @@
                         class="img-fluid logo_header" style="">
                 </a>
                 <ul class="navbar-nav mb-lg-0  " style="" id="">
-                        <li class="nav-item nav-item_serach" style="" ;>
-                            <div class="search_wrap search_wrap_6 m-0">
-                                <div class="search_box_header mt-3" style="">
-                                    <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
+                    <li class="nav-item nav-item_serach" style="" ;>
+                        <div class="search_wrap search_wrap_6 m-0">
+                            <div class="search_box_header" style="">
+                                <form method="post" action="<?php echo base_url();?>welcome/searchproduct/"
+                                    id="header_google" style="position: relative;">
 
-                                        <input type="text"
-                                            value="<?php $location= $this->session->userdata("location"); if($this->session->userdata("location")){ echo $location;} ; ?>"
-                                            name="location" class="form-control rounded-5 overflow"
-                                            placeholder="Search for location" id="Location" aria-label="Search"
-                                            aria-describedby="search-addon" style="" />
-                                        <button type="submit" class="btn btn-success rounded-5"
-                                            style="">Search </button>
-                                    </form>
-                                 
-                                </div>
+                                    <input type="text"
+                                        value="<?php $location= $this->session->userdata("location"); if($this->session->userdata("location")){ echo $location;} ; ?>"
+                                        name="location" class="form-control rounded-5 overflow"
+                                        placeholder="Search for location" id="Location" aria-label="Search"
+                                        aria-describedby="search-addon"
+                                        style="padding-right: 40px; background-color: #10B981; color: #fff;" />
+
+                                    <!-- Add search icon -->
+                                    <span
+                                        style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);">
+                                        <svg xmlns="http://www.w3.org/2000/svg"
+                                            class="icon icon-tabler icon-tabler-search search-icon" width="24"
+                                            height="24" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" fill="none"
+                                            stroke-linecap="round" stroke-linejoin="round">
+                                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                                            <circle cx="10" cy="10" r="7" />
+                                            <line x1="21" y1="21" x2="15" y2="15" />
+                                        </svg>
+                                    </span>
+
+                                </form>
+
                             </div>
-                        </li>
-                       </ul>
+                        </div>
+                    </li>
+                </ul>
 
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" id="myelement"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation" style="border: none;color: #10B981;">
+                    aria-expanded="false" aria-label="Toggle navigation" style="border: none;color: #dcdddd00;">
 
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse  nav-icon" id="navbarSupportedContent">
 
                     <ul class="navbar-nav  mb-2 mb-lg-0  " style="" id="">
-                     
+
                         <li class="nav-item dropdown" style="padding-right:10px" ;>
                             <a class="nav-link dropdown-toggle  Categories_header" href="#" role="button"
                                 data-bs-toggle="dropdown" aria-expanded="false" style=" color:#10B981;font-weight:bold;"
@@ -1544,6 +1562,7 @@ $(document).ready(function() {
 
 });
 </script>
+
 <script>
 $(document).ready(function() {
     $("#latitudeArea").addClass("d-none");
@@ -1553,7 +1572,7 @@ $(document).ready(function() {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
-    var input = document.getElementById('location');
+    var input = document.getElementById('Location');
     var autocomplete = new google.maps.places.Autocomplete(input);
 
     autocomplete.addListener('place_changed', function() {
@@ -1564,6 +1583,25 @@ function initialize() {
 
         $("#latitudeArea").removeClass("d-none");
         $("#longtitudeArea").removeClass("d-none");
+        $("#header_google").submit();
+        // Do not submit the form here to avoid duplicate form submission
+    });
+
+    // Add event listener for Enter key press
+    input.addEventListener("keypress", function(event) {
+        if (event.key === "Enter") {
+            event.preventDefault();
+            // Submit the form when Enter key is pressed
+            $("#header_google").submit();
+        }
+    });
+
+    // Add click event listener to the search icon
+    var searchIcon = document.querySelector('.search-icon');
+    searchIcon.addEventListener('click', function(event) {
+        event.preventDefault();
+        // Submit the form when the search icon is clicked
+        $("#header_google").submit();
     });
 }
 </script>

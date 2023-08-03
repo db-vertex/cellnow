@@ -490,50 +490,42 @@ public function logout()
   
         //    return redirect('admin/products');
      }
+
+
+     public function update_product_deactive_report()
+     {
+      $product_id = $this->input->post('product_id');
+      $status = $this->input->post('active_status');
+      $res = $this->admin_model->update_deactive_status_report($product_id, $status);
+    
+     }
      
 
 
   public function privacy_policy()
   {
-
      $session_id = $this->session->userdata('admin_id');
-     
        if($session_id)
        {
-     
-     
         $admin_detail = $this->admin_model->get_admin_data($session_id);
         $privacy =    $this->admin_model->get_privacy_policy_data();
-        $this->load->view('privacy_policy',['admin_detail'=>$admin_detail,'privacy'=>$privacy]);
-     
-       }else{
-           
-             return redirect('admin');
-           
-       }
-           
+        $this->load->view('privacy_policy',['admin_detail'=>$admin_detail,'privacy'=>$privacy]);  
+       }else{    
+             return redirect('admin');    
+       }         
   }
 
 
   public function add_privacy()
   {
-
      $session_id = $this->session->userdata('admin_id');
-     
-
     $this->form_validation->set_rules('privacy_text','Privacy', 'required');
-    
-    $privacy_text =  $this->input->post('privacy_text');
- 
-        
+    $privacy_text =  $this->input->post('privacy_text');  
      if($this->form_validation->run())
       {
        $privacy = $this->admin_model->get_privacy_policy_data();
-       
       if(!empty($privacy)){
-           
             $where = array('id' => $privacy->id);
-
             $data = array("privacy_policy"=>$privacy_text);
                 $admin_detail = $this->admin_model->addEditRecords('privacy_policy',$data,$where);
                 $this->session->set_flashdata('msg','Added Successfully');

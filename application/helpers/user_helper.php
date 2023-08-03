@@ -2308,4 +2308,5 @@ else if($category_id == 7){
 $update = $ci->db->where(array('id'=>$product_id,))->update($sql, ['Count'=>$count]);
 $erorr =  $ci->db->error();
 }
+
 ?>

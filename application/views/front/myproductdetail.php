@@ -1363,36 +1363,256 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     <div class="row  mt-2" style="margin-left: 2.5rem!important;">
                         <hr class="hr " style="width: 200px; border: 1px solid #69D3B0; " />
                     </div>
-                    <?php if($product_detail->category_id==1){?>
+                    <?php if ($product_detail->category_id == 1 && $product_detail->subcategory_id!=11) { ?>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Brand</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->brand; ?></p>
+                            </div>
+                        </div>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Bill</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->bill; ?></p>
+                            </div>
+                        </div>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Warrenty</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Warrenty; ?></p>
+                            </div>
+                        </div>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Use year</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->use_year; ?></p>
+                            </div>
+                        </div>
+                        <?php }  else if ($product_detail->subcategory_id==11) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Book Publisher</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->book_publisher; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Publisher Type</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->book_publisher_type; ?></p>
+                            </div>
+                        </div>
+
+                        <?php }
+                         else if ($product_detail->category_id == 2) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Tuition Location</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Gender</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->gender; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Education Type</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Education_Type; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Available Timings</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Available_Timings; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Years Experience</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Years_Experience; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Teachers Qualifications</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Teachers_Qualifications; ?></p>
+                            </div>
+                        </div> 
+                         <?php } else if ($product_detail->category_id == 3) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Job Experience</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->job_Experience; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Amount/Salery</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->price; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Job Location </b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
+                            </div>
+                        </div>
+                        <div class="row ms-4">
+                            <?php if (!empty($product_detail->job_Office_Address)): ?>
+                            <div class="col-4">
+                                <p class="details_text"><b>job Office Address</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->job_Office_Address; ?></p>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                      
+                       
+                        <?php } else if ($product_detail->category_id == 4) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Job Location </b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Available Timings</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Available_Timings; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Intership Post Vacant</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->intership_Post_Vacant; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4"> 
+                            <div class="col-4">
+                                <p class="details_text"><b>Intership Need Stipend</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->intership_Need_Stipend; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row ms-4">
+                            <?php if (!empty($product_detail->job_Office_Address)): ?>
+                            <div class="col-4">
+                                <p class="details_text"><b>job Office Address</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->job_Office_Address; ?></p>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                   
+                        <?php } else if ($product_detail->category_id == 5 || $product_detail->category_id == 6) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Area</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->area . " Feet" ?></p>
+                            </div>
+                        </div>
+                         <div class="row   ms-4">
+                             <div class="col-4">
+                                 <p class="details_text"><b>Facing</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->facing; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b>Floor</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->floor; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b> Rent/Shell</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->filter; ?></p>
+                            </div>
+                        </div>
+                        <?php } 
+                            else if ($product_detail->category_id == 7) { ?>
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b>Area</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->area . " Feet" ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b>Facing</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->facing; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b> Rent/Shell</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->filter; ?></p>
+                            </div>
+                        </div>
+                        <?php } ?>
                     <div class="row  ms-4">
-                        <div class="col-3">
-                            <p class="details_text"><b>Brand</b></p>
-                        </div>
-                        <div class="col-3">
-                            <p class="details_text"><?php echo $product_detail->brand; ?></p>
-                        </div>
-                    </div>
-                    <?php } else if($product_detail->category_id==2){ ?>
-                    <div class="row   ms-4">
-                        <div class="col-3">
-                            <p class="details_text"><b>Tuition Location</b></p>
-                        </div>
-                        <div class="col-3">
-                            <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
-                        </div>
-                    </div>
-                    <?php } else if($product_detail->category_id==3 && $product_detail->category_id==4){ ?>
-                    <div class="row   ms-4">
-                        <div class="col-3">
-                            <p class="details_text"><b>Job Location </b></p>
-                        </div>
-                        <div class="col-3">
-                            <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
-                        </div>
-                    </div>
-                    <?php } ?>
-                    <div class="row  ms-4">
-                        <div class="col-3">
+                        <div class="col-4">
                             <p class="details_text"><b>City</b></p>
                         </div>
                         <div class="col-3">
@@ -1401,7 +1621,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                     </div>
 
                     <div class="row   ms-4">
-                        <div class="col-3">
+                        <div class="col-4">
                             <p class="details_text"><b>Type</b></p>
                         </div>
                         <div class="col-3">

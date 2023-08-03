@@ -12,56 +12,57 @@
         href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.5/font/bootstrap-icons.min.css"
         integrity="sha512-ZnR2wlLbSbr8/c9AgLg3jQPAattCUImNsae6NHYnS9KrIwRdcY9DxFotXhNAKIKbAXlRnujIqUWoXXwqyFOeIQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-        
+
     <title>Verify product details</title>
     <style>
+    img {
+        vertical-align: middle;
+    }
 
-img {
-  vertical-align: middle;
-}
+    .pointer {
+        cursor: pointer;
+    }
 
-.pointer {cursor: pointer;}
+    /* Position the image container (needed to position the left and right arrows) */
+    .container {
+        position: relative;
+    }
 
-/* Position the image container (needed to position the left and right arrows) */
-.container {
-  position: relative;
-}
+    /* Hide the images by default */
+    .mySlides {
+        display: none;
+    }
 
-/* Hide the images by default */
-.mySlides {
-  display: none;
-}
+    /* Add a pointer when hovering over the thumbnail images */
+    .cursor {
+        cursor: pointer;
+    }
 
-/* Add a pointer when hovering over the thumbnail images */
-.cursor {
-  cursor: pointer;
-}
+    /* Next & previous buttons */
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        top: 30%;
+        width: auto;
+        padding: 16px;
+        margin-top: -50px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
 
-/* Next & previous buttons */
-.prev,
-.next {
-  cursor: pointer;
-  position: absolute;
-  top: 30%;
-  width: auto;
-  padding: 16px;
-  margin-top: -50px;
-  color: white;
-  font-weight: bold;
-  font-size: 20px;
-  border-radius: 0 3px 3px 0;
-  user-select: none;
-  -webkit-user-select: none;
-}
+    /* Position the "next button" to the right */
+    .next {
+        right: 0;
+        border-radius: 3px 0 0 3px;
+    }
 
-/* Position the "next button" to the right */
-.next {
-  right: 0;
-  border-radius: 3px 0 0 3px;
-}
-
-.btn_Verified {
-        margin-right:90px;
+    .btn_Verified {
+        margin-right: 90px;
         width: 170px;
         height: 35px;
         left: 988px;
@@ -71,43 +72,45 @@ img {
         border-radius: 32px;
     }
 
-/* Number text (1/3 etc) */
-.numbertext {
-  color: #f2f2f2;
-  font-size: 12px;
-  padding: 8px 12px;
-  position: absolute;
-  top: 0;
-}
+    /* Number text (1/3 etc) */
+    .numbertext {
+        color: #f2f2f2;
+        font-size: 12px;
+        padding: 8px 12px;
+        position: absolute;
+        top: 0;
+    }
 
-/* Container for image text */
-.caption-container {
-  text-align: center;
-  background-color: #222;
-  padding: 2px 16px;
-  color: white;
-}
-.row:after {
-  content: "";
-  display: table;
-  clear: both;
-}
+    /* Container for image text */
+    .caption-container {
+        text-align: center;
+        background-color: #222;
+        padding: 2px 16px;
+        color: white;
+    }
 
-/* Six columns side by side */
-.column {
-  float: left;
-  width: 16.66%;
-}
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }
 
-/* Add a transparency effect for thumnbail images */
-.demo {
-  opacity: 0.6;
-}
+    /* Six columns side by side */
+    .column {
+        float: left;
+        width: 16.66%;
+    }
 
-.active,
-.demo:hover {
-  opacity: 1;
-}
+    /* Add a transparency effect for thumnbail images */
+    .demo {
+        opacity: 0.6;
+    }
+
+    .active,
+    .demo:hover {
+        opacity: 1;
+    }
+
     .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
@@ -115,7 +118,7 @@ img {
         margin: 0 auto;
     }
 
-    
+
 
     .breadcrumb_col {
         box-sizing: border-box;
@@ -164,7 +167,7 @@ img {
         border-radius: 15px;
         min-width: 100%;
     }
-    
+
 
     .cover_img_div {
         text-align: center;
@@ -172,9 +175,9 @@ img {
 
     .details_img_box {
         min-width: 70.69px;
-    max-width: 70.69px;
-    max-height: 70.31px;
-    min-height: 70.31px;
+        max-width: 70.69px;
+        max-height: 70.31px;
+        min-height: 70.31px;
         left: 114px;
         top: 1213.13px;
         filter: drop-shadow(0px 0px 1.07571px #10B981);
@@ -336,9 +339,9 @@ img {
         }
 
         .col-xl-4 {
-    flex: 0 0 auto;
-    width: 29.33333333%;
-}
+            flex: 0 0 auto;
+            width: 29.33333333%;
+        }
 
         .deatails_profile_name_ads {
             font-family: 'Poppins';
@@ -373,14 +376,14 @@ img {
         .detalis_option {
             max-width: 620.7px;
             left: 112px;
-            padding:20px;
+            padding: 20px;
             top: 1373.5px;
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
         }
 
         .detalis_option_text {
-          
+
             font-family: 'Roboto';
             font-style: normal;
             font-weight: 400;
@@ -398,26 +401,26 @@ img {
     @media (max-width: 499px) {
 
         .details_img_cover {
-    max-height: 257px;
-    min-height: 257px;
-    left: 114px;
-    top: 588px;
-    background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
-    filter: drop-shadow(0px 0px 4.79774px #10B981);
-    border-radius: 21px;
-    min-width: 100%;
-}
+            max-height: 257px;
+            min-height: 257px;
+            left: 114px;
+            top: 588px;
+            background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+            filter: drop-shadow(0px 0px 4.79774px #10B981);
+            border-radius: 21px;
+            min-width: 100%;
+        }
 
         .details_img_box {
-        min-width: 40.69px;
-    max-width: 40.69px;
-    max-height: 40.31px;
-    min-height: 40.31px;
-        left: 114px;
-        top: 1213.13px;
-        filter: drop-shadow(0px 0px 1.07571px #10B981);
-        border-radius: 11.8328px;
-    }
+            min-width: 40.69px;
+            max-width: 40.69px;
+            max-height: 40.31px;
+            min-height: 40.31px;
+            left: 114px;
+            top: 1213.13px;
+            filter: drop-shadow(0px 0px 1.07571px #10B981);
+            border-radius: 11.8328px;
+        }
 
         .btn_Verified_shop_name {
             width: 250px;
@@ -444,173 +447,177 @@ img {
             left: 33px;
             top: 10px;
         }
-        
+
 
         .margin_left_css {
             margin-left: 1rem !important;
         }
+
         .details_profile {
-    width: 436px;
-    height: 100px;
-    left: 826px;
-    margin-top: 30px;
-    float: right;
-    background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-    border-radius: 80px 0px 0px 80px;
-}
-.small{
-    padding-right: 0!important;
-    padding-left: 0!important;
-}
+            width: 436px;
+            height: 100px;
+            left: 826px;
+            margin-top: 30px;
+            float: right;
+            background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 80px 0px 0px 80px;
+        }
 
-.View_Seller_profile {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 8px;
-        line-height: 14px;
+        .small {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
 
-        color: #000000;
-        margin-top: 10px;
+        .View_Seller_profile {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 8px;
+            line-height: 14px;
+
+            color: #000000;
+            margin-top: 10px;
+        }
     }
-    }
 
-    @media (min-width: 359px) and (max-width: 459px){
+    @media (min-width: 359px) and (max-width: 459px) {
 
         .detalis_option {
             max-width: 620.7px;
             left: 112px;
-            padding:15px;
+            padding: 15px;
             top: 1373.5px;
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
         }
-        .img-size{
-    max-width: 13px;
-    min-width: 13px;
-    color:#69D3B0;
-}
 
-.small{
-    padding-right: 0!important;
-    padding-left: 0!important;
-}
+        .img-size {
+            max-width: 13px;
+            min-width: 13px;
+            color: #69D3B0;
+        }
 
-.View_Seller_profile {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 600;
-        font-size: 6px;
-        line-height: 14px;
+        .small {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
 
-        color: #000000;
-        margin-top: 10px;
+        .View_Seller_profile {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 600;
+            font-size: 6px;
+            line-height: 14px;
+
+            color: #000000;
+            margin-top: 10px;
+        }
+
+
+
+        .handline {
+            font-family: 'Open Sans';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 12px;
+            line-height: 16px;
+
+            color: #0C0B0B;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+
+        .detalis_option_text {
+            font-family: 'Roboto';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 5px;
+            line-height: 0px;
+
+            color: #898686;
+        }
+
+        .details_img_cover {
+            max-height: 200px;
+            min-height: 200px;
+            left: 114px;
+            top: 588px;
+            background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
+            filter: drop-shadow(0px 0px 4.79774px #10B981);
+            border-radius: 21px;
+            min-width: 100%;
+        }
+
+        .details_img_box {
+            min-width: 50.69px;
+            max-width: 50.69px;
+            max-height: 50.31px;
+            min-height: 50.31px;
+            left: 100px;
+            top: 1213.13px;
+            filter: drop-shadow(0px 0px 1.07571px #10B981);
+            border-radius: 11.8328px;
+        }
+
+        .btn_Verified_shop_name {
+            width: 250px;
+            height: 37px;
+            left: 988px;
+            top: 941px;
+            background: #D1FAE5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 32px;
+        }
+
+        .btn_Verified_text {
+            font-family: 'Lexend';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 13px;
+            text-transform: capitalize;
+            color: #047857;
+        }
+
+        .btn_Verified_img {
+            width: 30px;
+            height: 30px;
+            left: 33px;
+            top: 10px;
+        }
+
+        .margin_left_css {
+            margin-left: 1rem !important;
+        }
+
+        .details_profile {
+            width: 256px;
+            height: 110px;
+            left: 826px;
+            margin-top: 30px;
+            float: right;
+            background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
+            filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+            border-radius: 80px 0px 0px 80px;
+        }
+
+        .deatails_profile_name_ads {
+            font-family: 'Poppins';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 10px;
+            line-height: 15px;
+
+            color: #000000;
+        }
+
     }
-
-    
-
-.handline {
-        font-family: 'Open Sans';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 12px;
-        line-height: 16px;
-
-        color: #0C0B0B;
-
-
-        /* Inside auto layout */
-
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
-
-
-    .detalis_option_text {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 400;
-    font-size: 5px;
-    line-height: 0px;
-   
-    color: #898686;
-}
-
-.details_img_cover {
-max-height: 200px;
-min-height: 200px;
-left: 114px;
-top: 588px;
-background: url(suzuki-gixxer-sf-150cc-bike-500x500.png);
-filter: drop-shadow(0px 0px 4.79774px #10B981);
-border-radius: 21px;
-min-width: 100%;
-}
-
-.details_img_box {
-min-width: 50.69px;
-max-width: 50.69px;
-max-height: 50.31px;
-min-height: 50.31px;
-left: 100px;
-top: 1213.13px;
-filter: drop-shadow(0px 0px 1.07571px #10B981);
-border-radius: 11.8328px;
-}
-
-.btn_Verified_shop_name {
-    width: 250px;
-    height: 37px;
-    left: 988px;
-    top: 941px;
-    background: #D1FAE5;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-    border-radius: 32px;
-}
-
-.btn_Verified_text {
-    font-family: 'Lexend';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 13px;
-    text-transform: capitalize;
-    color: #047857;
-}
-
-.btn_Verified_img {
-    width: 30px;
-    height: 30px;
-    left: 33px;
-    top: 10px;
-}
-
-.margin_left_css {
-    margin-left: 1rem !important;
-}
-.details_profile {
-width: 256px;
-height: 110px;
-left: 826px;
-margin-top: 30px;
-float: right;
-background: linear-gradient(91.25deg, #A3E9D2 5.31%, rgba(145, 188, 174, 0.32) 63.47%, rgba(105, 211, 176, 0) 115.15%);
-filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
-border-radius: 80px 0px 0px 80px;
-}
-
-.deatails_profile_name_ads {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 400;
-        font-size: 10px;
-        line-height: 15px;
-
-        color: #000000;
-    }
-
-}
 
     @media (min-width: 500px) and (max-width: 768px) {
         .btn_Verified_shop_name {
@@ -643,11 +650,12 @@ border-radius: 80px 0px 0px 80px;
             margin-left: 1rem !important;
         }
 
-        .small{
-    padding-right: 0!important;
-    padding-left: 0!important;
-}
-.details_profile {
+        .small {
+            padding-right: 0 !important;
+            padding-left: 0 !important;
+        }
+
+        .details_profile {
             width: 334px;
             height: 140px;
             left: 426px;
@@ -767,6 +775,7 @@ border-radius: 80px 0px 0px 80px;
         .margin_left_css {
             margin-left: 8rem !important;
         }
+
         .detalis_option {
             max-width: 620.7px;
             left: 90px;
@@ -776,16 +785,16 @@ border-radius: 80px 0px 0px 80px;
         }
 
         .btn_Verified {
-        margin-right:90px;
-        width: 192px;
-        height: 54px;
-        left: 988px;
-        top: 941px;
-        background: #D1FAE5;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-        border-radius: 32px;
-    }
-        
+            margin-right: 90px;
+            width: 192px;
+            height: 54px;
+            left: 988px;
+            top: 941px;
+            background: #D1FAE5;
+            box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+            border-radius: 32px;
+        }
+
 
     }
 
@@ -924,7 +933,7 @@ border-radius: 80px 0px 0px 80px;
             font-weight: 400;
             font-size: 10px;
             line-height: 0px;
-            
+
             color: #898686;
         }
 
@@ -1047,7 +1056,7 @@ border-radius: 80px 0px 0px 80px;
     }
 
     .btn_Verified {
-        margin-right:90px;
+        margin-right: 90px;
         width: 192px;
         height: 54px;
         left: 988px;
@@ -1065,78 +1074,81 @@ border-radius: 80px 0px 0px 80px;
         border-radius: 32px;
 
     }
+
     .container .master,
-.container .thumbnails {
-    margin: auto;
-    width: 100%;
-  margin-top: 20px;
-    padding: 5px;
-}
+    .container .thumbnails {
+        margin: auto;
+        width: 100%;
+        margin-top: 20px;
+        padding: 5px;
+    }
 
-.container .master {
-    padding-bottom: 0;
-    position: relative;
-}
+    .container .master {
+        padding-bottom: 0;
+        position: relative;
+    }
 
-.container .master img {
-    z-index: 1;
-    width: 100%;
-    height: 99%;
-    border-radius: 20px;
-}
+    .container .master img {
+        z-index: 1;
+        width: 100%;
+        height: 99%;
+        border-radius: 20px;
+    }
 
-.container .master .fa-chevron-left,
-.container .master .fa-chevron-right {
-    position: absolute;
-    left: 5px;
-    top: 50%;
-    background-color: rgb(0,0,0, .7);
-    color: #fff;
-    padding: 10px 15px;
-    z-index: 2;
-    cursor: pointer;
-}
+    .container .master .fa-chevron-left,
+    .container .master .fa-chevron-right {
+        position: absolute;
+        left: 5px;
+        top: 50%;
+        background-color: rgb(0, 0, 0, .7);
+        color: #fff;
+        padding: 10px 15px;
+        z-index: 2;
+        cursor: pointer;
+    }
 
-.container .master .fa-chevron-right {
-    right: 5px;
-    left: auto;
-}
+    .container .master .fa-chevron-right {
+        right: 5px;
+        left: auto;
+    }
 
-.container .thumbnails {
-    overflow: hidden;
-}
+    .container .thumbnails {
+        overflow: hidden;
+    }
 
-.container .thumbnails img {
-    float: left;
-    width: 19.2%;
-   
-    cursor: pointer;
-    transition: all .6s ease-in-out;
-}
+    .container .thumbnails img {
+        float: left;
+        width: 19.2%;
 
-.container .thumbnails img:last-child {
-    margin-right: 0!important;
-}
+        cursor: pointer;
+        transition: all .6s ease-in-out;
+    }
 
-.container .thumbnails img.active {
-    outline: 2px solid #e63946;
-   
-}
+    .container .thumbnails img:last-child {
+        margin-right: 0 !important;
+    }
+
+    .container .thumbnails img.active {
+        outline: 2px solid #e63946;
+
+    }
 
 
-.verifid-right {
-    position: absolute;
-    right: 2px;
-   
-    color: #fff;
-    padding: 10px 15px;
-   
-    cursor: pointer;
-    max-width: 30%;
-    max-height: 15%;
-}
-.pointer {cursor: pointer;}
+    .verifid-right {
+        position: absolute;
+        right: 2px;
 
+        color: #fff;
+        padding: 10px 15px;
+
+        cursor: pointer;
+        max-width: 30%;
+        max-height: 15%;
+    }
+
+    .pointer {
+        cursor: pointer;
+    }
     </style>
 </head>
 
@@ -1171,15 +1183,14 @@ border-radius: 80px 0px 0px 80px;
         <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png" alt=""
             width=100%>
     </div>
-    <div class="container mt-4" >
+    <div class="container mt-4">
         <main>
             <div class=" container mb-4 ">
                 <div class="row ">
-                   
-                        <div class="breadcrumbs">
-                            <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
-                                    href="<?php echo base_url(); ?>">Home</a></span>/<span
-                                class="ms-2 handline"><?php  $title = $product_detail->title;
+
+                    <div class="breadcrumbs">
+                        <span class="me-2 handline"><a class="text-dark link-underline-opacity-0"
+                                href="<?php echo base_url(); ?>">Home</a></span>/<span class="ms-2 handline"><?php  $title = $product_detail->title;
                             if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
@@ -1189,106 +1200,142 @@ border-radius: 80px 0px 0px 80px;
                                 $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               } ?></span>
-                        </div>
-                    
+                    </div>
+
                 </div>
             </div>
-<div class="container">
-            <div class="row" >
-                <div class="col-md-6 small">
-                <?php if ($product_detail->cover_img !== NULL) { ?>
-      <div class="mySlides">
-        <a href="<?php echo base_url() . $product_detail->cover_img . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%"></a>
-        <?php if ($product_detail->verified_product == 1) { ?>
-            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-6 small">
+                        <?php if ($product_detail->cover_img !== NULL) { ?>
+                        <div class="mySlides">
+                            <a href="<?php echo base_url() . $product_detail->cover_img . ""; ?>"><img
+                                    class="details_img_cover"
+                                    src="<?php echo base_url() . $product_detail->cover_img . ""; ?>"
+                                    style="width:100%"></a>
+                            <?php if ($product_detail->verified_product == 1) { ?>
+                            <img class="verifid-right img-fluid"
+                                src="<?php echo base_url(); ?>assets/images/verified.png">
 
-           <?php } ?></div> <?php } ?>
-       
-       
-        <?php if ($product_detail->images_2 !== NULL) { ?>
-      <div class="mySlides">
-   
-  
-      <a href="<?php echo base_url() . $product_detail->images_2 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%"></a>
-        <?php if ($product_detail->verified_product == 1) { ?>
-            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" 
-         >
-   
-     <?php } ?> </div><?php } ?>
-        
-   <?php if ($product_detail->images_3 !== NULL) { ?>
-      <div class="mySlides">
-  
-    
-      <a href="<?php echo base_url() . $product_detail->images_3 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%"></a>
-        <?php if ($product_detail->verified_product == 1) { ?>
-            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
+                            <?php } ?>
+                        </div> <?php } ?>
 
-     <?php } ?>  </div>
-   <?php } ?>
-     
-   <?php if ($product_detail->images_4 !== NULL) { ?>
-      <div class="mySlides">
-      <a href="<?php echo base_url() . $product_detail->images_4 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%"></a>
-        <?php if ($product_detail->verified_product == 1) { ?>
-            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png">
 
-     <?php } ?> </div><?php } ?>
-      
-        <?php if ($product_detail->images_5 !== NULL) { ?>
-      <div class="mySlides">
-        <a href="<?php echo base_url() . $product_detail->images_5 . ""; ?>"><img class="details_img_cover" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%"></a>
-        <?php if ($product_detail->verified_product == 1) { ?>
-            <img class="verifid-right img-fluid"  src="<?php echo base_url(); ?>assets/images/verified.png" >
+                        <?php if ($product_detail->images_2 !== NULL) { ?>
+                        <div class="mySlides">
 
-       <?php } ?></div><?php } ?>
-       
- 
-    
-  <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
-  <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
 
-  
+                            <a href="<?php echo base_url() . $product_detail->images_2 . ""; ?>"><img
+                                    class="details_img_cover"
+                                    src="<?php echo base_url() . $product_detail->images_2 . ""; ?>"
+                                    style="width:100%"></a>
+                            <?php if ($product_detail->verified_product == 1) { ?>
+                            <img class="verifid-right img-fluid"
+                                src="<?php echo base_url(); ?>assets/images/verified.png">
 
-  <div class="row mt-3">
-  <?php if ($product_detail->cover_img !== NULL) { ?>
-      <div class="column">
-   
-        <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%" onclick="currentSlide(1)" alt="The Woods">
-        </div>
-      <?php } ?>
-       <?php if ($product_detail->images_2 !== NULL) { ?>
-        <div class="column">
-            <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%" onclick="currentSlide(2)" alt="Cinque Terre">
-          </div> 
-        <?php } ?>
-        <?php if ($product_detail->images_3 !== NULL) { ?>
-        <div class="column">
-    
-          <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%" onclick="currentSlide(3)" alt="Mountains and fjords">
-          </div>
-        <?php } ?>
-        <?php if ($product_detail->images_4 !== NULL) { ?>
-        <div class="column">
-            <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%" onclick="currentSlide(4)" alt="Northern Lights">
-            </div>
-        <?php } ?>
-   
-    <?php if ($product_detail->images_5 !== NULL) { ?>
-        <div class="column">
-        <img class="demo cursor details_img_box" src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%" onclick="currentSlide(5)" alt="Nature and sunrise">
-        </div>    
-        <?php } ?>
-    
-  </div>
+                            <?php } ?>
+                        </div><?php } ?>
 
-  
-<div class="container">
-                    <div class="row mt-3">
-                        <div class="detalis_option">
-                        <div class="d-flex justify-content-between align-items-center">
-                            
-                                       <p> <img class="img-size" src="<?php echo base_url(); ?>assets/images/calendar.png"> <span class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
+                        <?php if ($product_detail->images_3 !== NULL) { ?>
+                        <div class="mySlides">
+
+
+                            <a href="<?php echo base_url() . $product_detail->images_3 . ""; ?>"><img
+                                    class="details_img_cover"
+                                    src="<?php echo base_url() . $product_detail->images_3 . ""; ?>"
+                                    style="width:100%"></a>
+                            <?php if ($product_detail->verified_product == 1) { ?>
+                            <img class="verifid-right img-fluid"
+                                src="<?php echo base_url(); ?>assets/images/verified.png">
+
+                            <?php } ?>
+                        </div>
+                        <?php } ?>
+
+                        <?php if ($product_detail->images_4 !== NULL) { ?>
+                        <div class="mySlides">
+                            <a href="<?php echo base_url() . $product_detail->images_4 . ""; ?>"><img
+                                    class="details_img_cover"
+                                    src="<?php echo base_url() . $product_detail->images_4 . ""; ?>"
+                                    style="width:100%"></a>
+                            <?php if ($product_detail->verified_product == 1) { ?>
+                            <img class="verifid-right img-fluid"
+                                src="<?php echo base_url(); ?>assets/images/verified.png">
+
+                            <?php } ?>
+                        </div><?php } ?>
+
+                        <?php if ($product_detail->images_5 !== NULL) { ?>
+                        <div class="mySlides">
+                            <a href="<?php echo base_url() . $product_detail->images_5 . ""; ?>"><img
+                                    class="details_img_cover"
+                                    src="<?php echo base_url() . $product_detail->images_5 . ""; ?>"
+                                    style="width:100%"></a>
+                            <?php if ($product_detail->verified_product == 1) { ?>
+                            <img class="verifid-right img-fluid"
+                                src="<?php echo base_url(); ?>assets/images/verified.png">
+
+                            <?php } ?>
+                        </div><?php } ?>
+
+
+
+                        <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
+
+
+
+                        <div class="row mt-3">
+                            <?php if ($product_detail->cover_img !== NULL) { ?>
+                            <div class="column">
+
+                                <img class="demo cursor details_img_box"
+                                    src="<?php echo base_url() . $product_detail->cover_img . ""; ?>" style="width:100%"
+                                    onclick="currentSlide(1)" alt="The Woods">
+                            </div>
+                            <?php } ?>
+                            <?php if ($product_detail->images_2 !== NULL) { ?>
+                            <div class="column">
+                                <img class="demo cursor details_img_box"
+                                    src="<?php echo base_url() . $product_detail->images_2 . ""; ?>" style="width:100%"
+                                    onclick="currentSlide(2)" alt="Cinque Terre">
+                            </div>
+                            <?php } ?>
+                            <?php if ($product_detail->images_3 !== NULL) { ?>
+                            <div class="column">
+
+                                <img class="demo cursor details_img_box"
+                                    src="<?php echo base_url() . $product_detail->images_3 . ""; ?>" style="width:100%"
+                                    onclick="currentSlide(3)" alt="Mountains and fjords">
+                            </div>
+                            <?php } ?>
+                            <?php if ($product_detail->images_4 !== NULL) { ?>
+                            <div class="column">
+                                <img class="demo cursor details_img_box"
+                                    src="<?php echo base_url() . $product_detail->images_4 . ""; ?>" style="width:100%"
+                                    onclick="currentSlide(4)" alt="Northern Lights">
+                            </div>
+                            <?php } ?>
+
+                            <?php if ($product_detail->images_5 !== NULL) { ?>
+                            <div class="column">
+                                <img class="demo cursor details_img_box"
+                                    src="<?php echo base_url() . $product_detail->images_5 . ""; ?>" style="width:100%"
+                                    onclick="currentSlide(5)" alt="Nature and sunrise">
+                            </div>
+                            <?php } ?>
+
+                        </div>
+
+
+                        <div class="container">
+                            <div class="row mt-3">
+                                <div class="detalis_option">
+                                    <div class="d-flex justify-content-between align-items-center">
+
+                                        <p> <img class="img-size"
+                                                src="<?php echo base_url(); ?>assets/images/calendar.png"> <span
+                                                class="detalis_option_text"> <?php function time_elapsed_string($datetime, $full = false)
                                           {
                                               $now = new DateTime;
                                               $ago = new DateTime($datetime);
@@ -1319,178 +1366,350 @@ border-radius: 80px 0px 0px 80px;
                                               return $string ? implode(', ', $string) . ' ago' : 'just now';
                                           }
                                           echo time_elapsed_string($product_detail->created_at); ?></span></p>
-                                        
-                                        <p><img class="img-size" src="<?php echo base_url(); ?>assets/images/eye.png"> <span class="detalis_option_text"><?php echo $product_detail->Count ?> views</span></p>
-                                       
-                                       <p> <img class="img-size"  src="<?php echo base_url(); ?>assets/images/hearts.png"><span class="detalis_option_text"> <?php $product_wishlist = get_wishlist_count($product_detail->id, $product_detail->category_id);
-                                          echo $product_wishlist; ?></span></p>
-                                       
-                                            <a class="btn-change pointer" style="color:black;text-decoration:unset;" id="GFG"
-                                                <?php if (empty($user) || !isset($user)) { ?>
-                                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>   id="share_desk"
-                                                    onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"
-                                             <?php } ?>
-                                               >
-                                               <img class="img-size" src="<?php echo base_url(); ?>assets/images/share.png"><span class="detalis_option_text">&nbsp Share</span>
- </a>
 
-                                      
-<a class="btn-change pointer" style="color:black;text-decoration:unset; " id="GFG"
-                                                <?php if (empty($user) || !isset($user)) { ?>
-                                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
-                                                    data-toggle="modal" data-target="#report_product" <?php } ?>><img class="img-size" src="<?php echo base_url(); ?>assets/images/report.png"><span  class="detalis_option_text"> Report</span>
-</a>
-                                      
+                                        <p><img class="img-size" src="<?php echo base_url(); ?>assets/images/eye.png">
+                                            <span class="detalis_option_text"><?php echo $product_detail->Count ?>
+                                                views</span>
+                                        </p>
+
+                                        <p> <img class="img-size"
+                                                src="<?php echo base_url(); ?>assets/images/hearts.png"><span
+                                                class="detalis_option_text"> <?php $product_wishlist = get_wishlist_count($product_detail->id, $product_detail->category_id);
+                                          echo $product_wishlist; ?></span></p>
+
+                                        <a class="btn-change pointer" style="color:black;text-decoration:unset;"
+                                            id="GFG" <?php if (empty($user) || !isset($user)) { ?>
+                                            href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
+                                            id="share_desk"
+                                            onclick="window.open('mailto:?subject=<?php echo base_url() . 'welcome/productdetail/' . $product_detail->category_id . '/' . $product_detail->id; ?>');"
+                                            <?php } ?>>
+                                            <img class="img-size"
+                                                src="<?php echo base_url(); ?>assets/images/share.png"><span
+                                                class="detalis_option_text">&nbsp Share</span>
+                                        </a>
+
+
+                                        <a class="btn-change pointer" style="color:black;text-decoration:unset; "
+                                            id="GFG" <?php if (empty($user) || !isset($user)) { ?>
+                                            href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>
+                                            data-toggle="modal" data-target="#report_product" <?php } ?>><img
+                                                class="img-size"
+                                                src="<?php echo base_url(); ?>assets/images/report.png"><span
+                                                class="detalis_option_text"> Report</span>
+                                        </a>
+
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                                                    </div>
-                  <div class="py-3 text-center">
-                        <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png"
-                            alt="" width=100%>
-                    </div>
-
-
-                </div>
-
-                <div class="col-md-6 mb-4 details_box_content">
-                    <div class="row margin_top_css ms-4">
-                        <div class="col-5">
-                            <p class="details_title"> <?php echo ucfirst($product_detail->title); ?></p>
+                        <div class="py-3 text-center">
+                            <img class="d-block mx-auto mb-2"
+                                src="<?php echo base_url(); ?>assets/images/product_banner.png" alt="" width=100%>
                         </div>
-                        <div class="col-3">
-                            <a  style="font-size:18px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
-                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
-                                    style="font-size:18px; color:#69d3b0; padding: 0px;"
-                               
-                                    data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
-                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product_detail->id; ?>"
-                                data-pid="<?php echo $product_detail->id; ?>"
-                                data-cid="<?php echo $product_detail->category_id; ?>"
-                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
-                        </div>
-                        <div class="col-4">
-                        <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
-                                     
-                                     ?>
-                                 <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
-                                 <?php  } }?>
-                                 <?php if ($product_detail->pay_type == 2) { 
-                              
-                              ?>
-                              <p class="details_price"><span>Donate</span></p>
-                              <?php }?>
 
-                        </div>
+
                     </div>
-                    <div class="row  mt-3 ms-4">
-                        <p class="details_handing">General Details</p>
-                    </div>
-                    <div class="row  mt-2" style="margin-left: 2.5rem!important;">
-                        <hr class="hr " style="width: 200px; border: 1px solid #69D3B0; " />
-                    </div>
-                    <?php if ($product_detail->category_id == 1 && $product_detail->subcategory_id!=11) { ?>
-                        <div class="row  ms-4">
-                            <div class="col-3">
-                                <p class="details_text"><b>Brand</b></p>
+
+                    <div class="col-md-6 mb-4 details_box_content">
+                        <div class="row margin_top_css ms-4">
+                            <div class="col-5">
+                                <p class="details_title"> <?php echo ucfirst($product_detail->title); ?></p>
                             </div>
                             <div class="col-3">
+                                <a style="font-size:18px; color:#69d3b0; padding: 0px;"
+                                    <?php if (empty($user) || !isset($user)) { ?>
+                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
+                                        lass="bi bi-suit-heart" aria-hidden="true"
+                                        style="font-size:18px; color:#69d3b0; padding: 0px;"
+                                        data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $product_detail->id; ?>"
+                                        data-pid="<?php echo $product_detail->id; ?>"
+                                        data-cid="<?php echo $product_detail->category_id; ?>"
+                                        data-wishlist="<?php echo $wishlist; ?>"></i></a>
+                            </div>
+                            <div class="col-4">
+                                <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
+                                     
+                                     ?>
+                                <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
+                                <?php  } }?>
+                                <?php if ($product_detail->pay_type == 2) { 
+                              
+                              ?>
+                                <p class="details_price"><span>Donate</span></p>
+                                <?php }?>
+
+                            </div>
+                        </div>
+                        <div class="row  mt-3 ms-4">
+                            <p class="details_handing">General Details</p>
+                        </div>
+                        <div class="row  mt-2" style="margin-left: 2.5rem!important;">
+                            <hr class="hr " style="width: 200px; border: 1px solid #69D3B0; " />
+                        </div>
+                        <?php if ($product_detail->category_id == 1 && $product_detail->subcategory_id!=11) { ?>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Brand</b></p>
+                            </div>
+                           <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->brand; ?></p>
                             </div>
                         </div>
-                    <?php } else if ($product_detail->category_id == 2) { ?>
-                            <div class="row   ms-4">
-                                <div class="col-3">
-                                    <p class="details_text"><b>Tuition Location</b></p>
-                                </div>
-                                <div class="col-3">
-                                    <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
-                                </div>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Bill</b></p>
                             </div>
-                        <?php } else if ($product_detail->category_id == 3 && $product_detail->category_id == 4) { ?>
-                                <div class="row   ms-4">
-                                    <div class="col-3">
-                                        <p class="details_text"><b>Job Location </b></p>
-                                    </div>
-                                    <div class="col-3">
-                                        <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
-                                    </div>
-                                </div>
-                            <?php } else if ($product_detail->category_id == 5 || $product_detail->category_id == 6) { ?>
-                            <div class="row   ms-4">
-                                <div class="col-3"> 
-                                    <p class="details_text"><b>Area</b></p>
-                                </div>
-                                <div class="col-3">
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->bill; ?></p>
+                            </div>
+                        </div>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Warrenty</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Warrenty; ?></p>
+                            </div>
+                        </div>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Use year</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->use_year; ?></p>
+                            </div>
+                        </div>
+                        <?php }  else if ($product_detail->subcategory_id==11) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Book Publisher</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->book_publisher; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Publisher Type</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->book_publisher_type; ?></p>
+                            </div>
+                        </div>
+
+                        <?php }
+                         else if ($product_detail->category_id == 2) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Tuition Location</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Gender</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->gender; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Education Type</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Education_Type; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Available Timings</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Available_Timings; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Years Experience</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Years_Experience; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Teachers Qualifications</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Teachers_Qualifications; ?></p>
+                            </div>
+                        </div> 
+                         <?php } else if ($product_detail->category_id == 3) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Job Experience</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->job_Experience; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Amount/Salery</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->price; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Job Location </b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
+                            </div>
+                        </div>
+                        <div class="row ms-4">
+                            <?php if (!empty($product_detail->job_Office_Address)): ?>
+                            <div class="col-4">
+                                <p class="details_text"><b>job Office Address</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->job_Office_Address; ?></p>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                      
+                       
+                        <?php } else if ($product_detail->category_id == 4) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Job Location </b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Job_Location; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Available Timings</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->Available_Timings; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Intership Post Vacant</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->intership_Post_Vacant; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row   ms-4"> 
+                            <div class="col-4">
+                                <p class="details_text"><b>Intership Need Stipend</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->intership_Need_Stipend; ?></p>
+                            </div>
+                        </div>
+
+                        <div class="row ms-4">
+                            <?php if (!empty($product_detail->job_Office_Address)): ?>
+                            <div class="col-4">
+                                <p class="details_text"><b>job Office Address</b></p>
+                            </div>
+                            <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->job_Office_Address; ?></p>
+                            </div>
+                            <?php endif; ?>
+                        </div>
+                   
+                        <?php } else if ($product_detail->category_id == 5 || $product_detail->category_id == 6) { ?>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Area</b></p>
+                            </div>
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->area . " Feet" ?></p>
-                                </div>
-                                </div>
-                                <div class="row   ms-4">
-                                <div class="col-3">
-                                    <p class="details_text"><b>Facing</b></p>
-                                </div>
-                                <div class="col-3">
-                                    <p class="details_text"><?php echo $product_detail->facing; ?></p>
-                                </div>
-                            </div> 
-                            <div class="row   ms-4">
-                                <div class="col-3">
-                                    <p class="details_text"><b>Floor</b></p>
-                                </div>
-                                <div class="col-3">
-                                    <p class="details_text"><?php echo $product_detail->floor; ?></p>
-                                </div>
                             </div>
-                            <div class="row   ms-4">
-                                <div class="col-3">
+                        </div>
+                         <div class="row   ms-4">
+                             <div class="col-4">
+                                 <p class="details_text"><b>Facing</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->facing; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b>Floor</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->floor; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                           <div class="col-4">
                                 <p class="details_text"><b> Rent/Shell</b></p>
-                                </div>
-                                <div class="col-3">
-                                    <p class="details_text"><?php echo $product_detail->filter; ?></p>
-                                </div>
                             </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->filter; ?></p>
+                            </div>
+                        </div>
                         <?php } 
                             else if ($product_detail->category_id == 7) { ?>
-                            <div class="row   ms-4">
-                                <div class="col-3">
-                                    <p class="details_text"><b>Area</b></p>
-                                </div>
-                                <div class="col-3">
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b>Area</b></p>
+                            </div>
+                           <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->area . " Feet" ?></p>
-                                </div>
-                                </div>
-                                <div class="row   ms-4">
-                                <div class="col-3">
-                                    <p class="details_text"><b>Facing</b></p>
-                                </div>
-                                <div class="col-3">
-                                    <p class="details_text"><?php echo $product_detail->facing; ?></p>
-                                </div>
                             </div>
-                            <div class="row   ms-4">
-                                <div class="col-3">
-                                    <p class="details_text"><b> Rent/Shell</b></p>
-                                </div>
-                                <div class="col-3">
-                                    <p class="details_text"><?php echo $product_detail->filter; ?></p>
-                                </div>
+                        </div>
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b>Facing</b></p>
                             </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->facing; ?></p>
+                            </div>
+                        </div>
+                        <div class="row   ms-4">
+                           <div class="col-4">
+                                <p class="details_text"><b> Rent/Shell</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo $product_detail->filter; ?></p>
+                            </div>
+                        </div>
                         <?php } ?>
-                    <div class="row  ms-4">
-                        <div class="col-3">
-                            <p class="details_text"><b>City</b></p>
+                        <div class="row  ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>City</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php echo ucfirst($product_detail->town); ?></p>
+                            </div>
                         </div>
-                        <div class="col-3">
-                            <p class="details_text"><?php echo ucfirst($product_detail->town); ?></p>
-                        </div>
-                    </div>
 
-                    <div class="row ms-4">
-                        <div class="col-3">
-                            <p class="details_text"><b>Type</b></p>
-                        </div>
-                        <div class="col-3">
-                            <p class="details_text"><?php if ($product_detail->category_id == 1) {
+                        <div class="row ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Type</b></p>
+                            </div>
+                           <div class="col-4">
+                                <p class="details_text"><?php if ($product_detail->category_id == 1) {
                                  $type_name = get_product_sub_name($product_detail->subcategory_id);
                                 echo $type_name;
                             } else if ($product_detail->category_id == 2) {
@@ -1518,20 +1737,21 @@ border-radius: 80px 0px 0px 80px;
                     $type_name = get_product_sub_name($product_detail->subcategory_id);
                    echo $type_name;
                } ?></p>
+                            </div>
                         </div>
-                    </div>
 
 
-                    <div class="row  mt-3 ms-4">
-                        <div class="col-12">
-                            <i class="bi bi-geo-alt-fill" aria-hidden="true" style="font-size:18px; color:#69d3b0"></i>
-                            <span class="ms-2 details_text"> <?php echo $product_detail->address; ?></span>
+                        <div class="row  mt-3 ms-4">
+                            <div class="col-12">
+                                <i class="bi bi-geo-alt-fill" aria-hidden="true"
+                                    style="font-size:18px; color:#69d3b0"></i>
+                                <span class="ms-2 details_text"> <?php echo $product_detail->address; ?></span>
+                            </div>
                         </div>
-                    </div>
 
-                    <div class="row mt-2 margin_left_css">
+                        <div class="row mt-2 margin_left_css">
 
-                        <?php $shoplist = 0;
+                            <?php $shoplist = 0;
                         if ($product_detail->verified_product) {
                             if (empty($shop)) {
                                 $shop_list = check_shoplist_by_productid($product_detail->id);
@@ -1542,13 +1762,13 @@ border-radius: 80px 0px 0px 80px;
                                     if($shop_list->shop_id!=0){
                                       
                                     $shop_name = get_shop_name($shop_list->shop_id); ?>
-                                    <div class="" style="">
-                                    <div class="col-12" style="text-align:center;">
-                                        <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                    class="btn_Verified_img"
-                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                    alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                               <?php  $title = $shop_name;
+                            <div class="" style="">
+                                <div class="col-12" style="text-align:center;">
+                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                class="btn_Verified_img"
+                                                src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                            <?php  $title = $shop_name;
                             if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
@@ -1558,27 +1778,27 @@ border-radius: 80px 0px 0px 80px;
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
-                                    </div>
-  
-  
                                 </div>
-                                 <?php   }
+
+
+                            </div>
+                            <?php   }
                                     else{ ?>
-                                     
-                                        <div class="" style="">
-                                        <div class="col-12" style="text-align:center;">
-                                            <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                        class="btn_Verified_img"
-                                                        src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                        alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                    Admin</span></p>
-                                        </div>
-      
-      
-                                    </div>
-                                 <?php   } ?>
-                                   
-                                <?php }
+
+                            <div class="" style="">
+                                <div class="col-12" style="text-align:center;">
+                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                class="btn_Verified_img"
+                                                src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                            Admin</span></p>
+                                </div>
+
+
+                            </div>
+                            <?php   } ?>
+
+                            <?php }
                             }
                         } else {
 
@@ -1594,13 +1814,13 @@ border-radius: 80px 0px 0px 80px;
                                         if($shop_list->shop_id!=0){
                                       
                                             $shop_name = get_shop_name($shop_list->shop_id); ?>
-                                            <div class="" style="">
-                                            <div class="col-12" style="text-align:center;">
-                                                <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                            class="btn_Verified_img"
-                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                                <?php  $title = $shop_name;
+                            <div class="" style="">
+                                <div class="col-12" style="text-align:center;">
+                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                class="btn_Verified_img"
+                                                src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                            <?php  $title = $shop_name;
                             if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
@@ -1610,27 +1830,27 @@ border-radius: 80px 0px 0px 80px;
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
-                                            </div>
+                                </div>
 
 
-                                        </div>
-                                          <?php  }
+                            </div>
+                            <?php  }
                                             else{ ?>
-                                             
-                                             <div class="" style="">
-                                            <div class="col-12" style="text-align:center;">
-<p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                            class="btn_Verified_img"
-                                                            src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                            alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                        Admin</span></p></a>
-                                            </div>
+
+                            <div class="" style="">
+                                <div class="col-12" style="text-align:center;">
+                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                class="btn_Verified_img"
+                                                src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                            Admin</span></p></a>
+                                </div>
 
 
-                                        </div>
-                                           <?php } ?>
-                                       
-                                    <?php }
+                            </div>
+                            <?php } ?>
+
+                            <?php }
                                 } else {
                                     $wishlit = get_shoplist($product_detail->id, $product_detail->category_id, $shop->id, $product_detail->user_id, $user["user_id"]);
                                     if (empty($wishlit)) {
@@ -1638,38 +1858,38 @@ border-radius: 80px 0px 0px 80px;
 
                                             ?> <div class="" style="">
 
-                                                <div class="">
-                                                    <form class="" action="<?php echo base_url(); ?>welcome/setshoplist" method="POST">
-                                                        <input type="hidden" name="product_id" id="product_id"
-                                                            value="<?php echo $product_detail->id; ?>">
-                                                        <input type="hidden" name="category_id" id="category_id"
-                                                            value="<?php echo $product_detail->category_id; ?>">
-                                                        <input type="hidden" name="user_id" id="sender_id" value="<?php $session_id = $this->session->userdata('id');
+                                <div class="">
+                                    <form class="" action="<?php echo base_url(); ?>welcome/setshoplist" method="POST">
+                                        <input type="hidden" name="product_id" id="product_id"
+                                            value="<?php echo $product_detail->id; ?>">
+                                        <input type="hidden" name="category_id" id="category_id"
+                                            value="<?php echo $product_detail->category_id; ?>">
+                                        <input type="hidden" name="user_id" id="sender_id" value="<?php $session_id = $this->session->userdata('id');
                                                         if ($session_id) {
                                                             echo $_SESSION['id'];
                                                         } ?>">
-                                                        <input type="hidden" name="seller_id" id="receiver_id"
-                                                            value="<?php echo $product_detail->user_id; ?>">
-                                                        <input type="hidden" name="shop_id" id="receiver_id"
-                                                            value="<?php echo $shop->id; ?>">
-                                                        <input type="hidden" name="subcategory_id" id="receiver_id"
-                                                            value="<?php echo $product_detail->subcategory_id; ?>">
+                                        <input type="hidden" name="seller_id" id="receiver_id"
+                                            value="<?php echo $product_detail->user_id; ?>">
+                                        <input type="hidden" name="shop_id" id="receiver_id"
+                                            value="<?php echo $shop->id; ?>">
+                                        <input type="hidden" name="subcategory_id" id="receiver_id"
+                                            value="<?php echo $product_detail->subcategory_id; ?>">
 
 
-                                                        <div class="col-12" style="text-align:center;">
-                                                            <button class=" btn btn_Verified"><span class="pe-2"><img
-                                                                        class="btn_Verified_img"
-                                                                        src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                                        alt="check 1.png"></span><span class="btn_Verified_text"
-                                                                    type="submit" name="submit">Verify</span></button>
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                        <div class="col-12" style="text-align:center;">
+                                            <button class=" btn btn_Verified"><span class="pe-2"><img
+                                                        class="btn_Verified_img"
+                                                        src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                        alt="check 1.png"></span><span class="btn_Verified_text"
+                                                    type="submit" name="submit">Verify</span></button>
+                                        </div>
+                                    </form>
+                                </div>
 
-                                            </div>
+                            </div>
 
 
-                                        <?php }
+                            <?php }
                                     } else {
                                         $shop_list = check_shoplist_by_productid($product_detail->id);
                                         if (empty($shop_list)) {
@@ -1678,14 +1898,14 @@ border-radius: 80px 0px 0px 80px;
                                             if($shop_list->shop_id!=0){
                                       
                                                 $shop_name = get_shop_name($shop_list->shop_id); ?>
-                                                <div class="" style="">
+                            <div class="" style="">
 
-                                                <div class="col-12" style="text-align:center;">
-                                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                                class="btn_Verified_img"
-                                                                src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                                                    <?php  $title = $shop_name;
+                                <div class="col-12" style="text-align:center;">
+                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                class="btn_Verified_img"
+                                                src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                            <?php  $title = $shop_name;
                             if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
@@ -1695,28 +1915,28 @@ border-radius: 80px 0px 0px 80px;
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
-                                                </div>
+                                </div>
 
-                                            </div>
-                                              <?php  }
+                            </div>
+                            <?php  }
                                                 else{ ?>
-                                                 
-                                                 <div class="" style="">
 
-<div class="col-12" style="text-align:center;">
-   <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                class="btn_Verified_img"
-                src="<?php echo base_url() ?>assets/images/check 1.png"
-                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-            Admin</span></p>
-</div>
+                            <div class="" style="">
 
-</div>
-                                              <?php  }
+                                <div class="col-12" style="text-align:center;">
+                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                class="btn_Verified_img"
+                                                src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
+                                            Admin</span></p>
+                                </div>
+
+                            </div>
+                            <?php  }
                                             ?>
 
-                                           
-                                        <?php }
+
+                            <?php }
                                     }
                                 }
                             } else {
@@ -1728,14 +1948,17 @@ border-radius: 80px 0px 0px 80px;
                                     if($shop_list->shop_id!=0){
                                   
                                     $shop_name = get_shop_name($shop_list->shop_id); ?>
-                                     <div class="" style="">
+                            <div class="" style="">
 
-<div class="col-12" style="text-align:center;">
-    <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>"><p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                class="btn_Verified_img"
-                src="<?php echo base_url() ?>assets/images/check 1.png"
-                alt="check 1.png"></span><span class="btn_Verified_text">verifed by :
-                    <?php  $title = $shop_name;
+                                <div class="col-12" style="text-align:center;">
+                                    <a
+                                        href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
+                                        <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                    class="btn_Verified_img"
+                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                    alt="check 1.png"></span><span class="btn_Verified_text">verifed by
+                                                :
+                                                <?php  $title = $shop_name;
                             if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
@@ -1744,51 +1967,53 @@ border-radius: 80px 0px 0px 80px;
                               {
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
-                              } ?></span></p></a>
-</div>
+                              } ?></span></p>
+                                    </a>
+                                </div>
 
-</div>
-<?php
+                            </div>
+                            <?php
                                     }
                                     else{ ?>
-                                   
-                                        <div class="" style="">
 
-                                  <div class="col-12" style="text-align:center;">
-                                      <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                  class="btn_Verified_img"
-                                                  src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                  alt="check 1.png"></span><span class="btn_Verified_text">verifed by :
-                                             Admin</span></p>
-                                  </div>
+                            <div class="" style="">
 
-                              </div>
-                                <?php    }
+                                <div class="col-12" style="text-align:center;">
+                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                class="btn_Verified_img"
+                                                src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                alt="check 1.png"></span><span class="btn_Verified_text">verifed by :
+                                            Admin</span></p>
+                                </div>
+
+                            </div>
+                            <?php    }
                                     ?>
-                             
-                          <?php }
+
+                            <?php }
                             }
                         } ?>
 
-                    </div>
+                        </div>
 
 
-                    <?php $userdetail = get_users_details($product_detail->user_id); ?>
-                    <div class="row">
-                        <div class="col-12">
-                            <div class="details_profile ">
-                                <div class="row">
-                                    <div class="col-4">
-                                        <img class="details_profile_img img-fluid img-thumbnail"
-                                            src="<?php echo base_url() . "uploads/profile/" . $userdetail->profile_img . ""; ?>"
-                                            alt="img_cover">
-                                    </div>
-                                    <div class="col-4 mt-1">
-                                        <div class="">
-                                            <p class="deatails_profile_name"> <?php echo ucfirst($userdetail->name); ?>
-                                            </p>
-                                            <p class="deatails_profile_name_time">Profile Created <span>
-                                                    <?php function time_string($datetime, $full = false)
+                        <?php $userdetail = get_users_details($product_detail->user_id); ?>
+                        <div class="row">
+                            <div class="col-12">
+                                <div class="details_profile ">
+                                    <div class="row">
+                                        <div class="col-4">
+                                            <img class="details_profile_img img-fluid img-thumbnail"
+                                                src="<?php echo base_url() . "uploads/profile/" . $userdetail->profile_img . ""; ?>"
+                                                alt="img_cover">
+                                        </div>
+                                        <div class="col-4 mt-1">
+                                            <div class="">
+                                                <p class="deatails_profile_name">
+                                                    <?php echo ucfirst($userdetail->name); ?>
+                                                </p>
+                                                <p class="deatails_profile_name_time">Profile Created <span>
+                                                        <?php function time_string($datetime, $full = false)
                                                     {
                                                         $now = new DateTime;
                                                         $ago = new DateTime($datetime);
@@ -1819,16 +2044,20 @@ border-radius: 80px 0px 0px 80px;
                                                         return $string ? implode(', ', $string) . ' ago' : 'just now';
                                                     }
                                                     echo time_string($userdetail->created); ?>
-                                                </span></p>
-                                            <p class="deatails_profile_name_ads">Total <?php $count=get_user_product_count($userdetail->user_id); echo $count;?> Ads</p>
-                                            <p class="deatails_profile_name_ads">Active <?php $count = get_user_active_product_count($userdetail->user_id); echo $count;?> Ads</p>
+                                                    </span></p>
+                                                <p class="deatails_profile_name_ads">Total
+                                                    <?php $count=get_user_product_count($userdetail->user_id); echo $count;?>
+                                                    Ads</p>
+                                                <p class="deatails_profile_name_ads">Active
+                                                    <?php $count = get_user_active_product_count($userdetail->user_id); echo $count;?>
+                                                    Ads</p>
+
+                                            </div>
 
                                         </div>
+                                        <div class="col-4">
 
-                                    </div>
-                                    <div class="col-4">
-                                      
-                                      
+
                                             <form class="" id="chat_frm"
                                                 action="<?php echo base_url(); ?>welcome/chat/<?php echo $product_detail->category_id; ?>"
                                                 method="POST">
@@ -1845,34 +2074,34 @@ border-radius: 80px 0px 0px 80px;
 
                                                 <input class="chat_button pointer" style="border-color:#46760a"
                                                     value="Chat" <?php if (empty($user) || !isset($user)) { ?>
-                                                        onClick="location.href='<?php echo base_url(); ?>welcome/login/'"
+                                                    onClick="location.href='<?php echo base_url(); ?>welcome/login/'"
                                                     <?php } else { ?>type="submit" <?php } ?> readonly>
                                             </form>
-                                          
+
                                             <a
                                                 href="<?php echo base_url(); ?>welcome/viewsellerprofile/<?php echo $product_detail->user_id; ?>"><b
                                                     class="View_Seller_profile" id=""> Seller Profile</b></a>
-                                                
-                                     
+
+
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-10  margin_top_css ms-4 mb-3">
-                        <p class="details_handing_Description">Description</p>
-                        <p class="details_Description"> <?php echo $product_detail->Description; ?></p>
+                        <div class="col-10  margin_top_css ms-4 mb-3">
+                            <p class="details_handing_Description">Description</p>
+                            <p class="details_Description"> <?php echo $product_detail->Description; ?></p>
+                        </div>
                     </div>
                 </div>
             </div>
-                                                    </div>
 
-                                                    <div class="container">
-            <div class="row mt-5 justify-content-center" >
-                <p class="Related_Ads">Related Ads</p>
+            <div class="container">
+                <div class="row mt-5 justify-content-center">
+                    <p class="Related_Ads">Related Ads</p>
 
-                <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
-                    <?php
+                    <div class="row mt-3  row-cols-1 row-cols-sm-2 row-cols-md-3 g-3">
+                        <?php
                     if (!empty($category_data)) {
                         foreach ($category_data as $relatedproduct) {
 
@@ -1890,41 +2119,42 @@ border-radius: 80px 0px 0px 80px;
 
 
 
-            <div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
-            <a  href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
-                                    <div class="card">
-                                        <img class="related_ads_card_img  img-fluid"
-                                            src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
-                                            alt="related_ads_card_img">
-                                        <div class="card-body ">
-                                            <div class="row">
-                                  
-                                  
-                                                <div class="col-8">
-                                                    <?php if (isset($product_detail->price)) {
+                        <div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
+                            <a
+                                href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
+                                <div class="card">
+                                    <img class="related_ads_card_img  img-fluid"
+                                        src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
+                                        alt="related_ads_card_img">
+                                    <div class="card-body ">
+                                        <div class="row">
+
+
+                                            <div class="col-8">
+                                                <?php if (isset($product_detail->price)) {
                                                         if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) {
 
                                                             ?>
-                                                            <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>
-                                                        <?php }
+                                                <p class="details_price">
+                                                    ₹<span><?php echo $product_detail->price; ?></span></p>
+                                                <?php }
                                                     } ?>
-                                                     <?php if (isset($product_detail->price)) {
+                                                <?php if (isset($product_detail->price)) {
                                                         if (($product_detail->pay_type == 2 )) {
 
                                                             ?>
-                                                            <p class="details_price">Donate</span></p>
-                                                        <?php }
+                                                <p class="details_price">Donate</span></p>
+                                                <?php }
                                                     } ?>
-                                                </div>
-                                                <div class="col-2">
-                                                    <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                            style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
-                                                </div>
                                             </div>
-                                            <div class="row mt-1">
-                                                <div class="col-12">
-                                                    <small class="card-text"
-                                                        style="color: #575757;"> <?php
+                                            <div class="col-2">
+                                                <b style='font-size:18px;'><i class="fa fa-heart-o "
+                                                        style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
+                                            </div>
+                                        </div>
+                                        <div class="row mt-1">
+                                            <div class="col-12">
+                                                <small class="card-text" style="color: #575757;"> <?php
                                                         $title = $relatedproduct->title;
                                                         if (strlen($title) <= 30) {
                                                             echo ucfirst($title);
@@ -1934,16 +2164,16 @@ border-radius: 80px 0px 0px 80px;
                                                         }
 
                                                         ?></small><br>
-                                                </div>
                                             </div>
-                                
-                                            <div class="row mt-1">
-                                                <div class="col-2">
-                                                    <i class="bi bi-geo-alt-fill" aria-hidden="true"
-                                                        style="font-size:18px; color:#69d3b0"></i>
-                                                </div>
-                                                <div class="col-8">
-                                                    <p style="color: #575757;"><?php
+                                        </div>
+
+                                        <div class="row mt-1">
+                                            <div class="col-2">
+                                                <i class="bi bi-geo-alt-fill" aria-hidden="true"
+                                                    style="font-size:18px; color:#69d3b0"></i>
+                                            </div>
+                                            <div class="col-8">
+                                                <p style="color: #575757;"><?php
                                                     $title = $relatedproduct->address;
                                                     if (strlen($title) <= 15) {
                                                         echo ucfirst($title);
@@ -1953,25 +2183,25 @@ border-radius: 80px 0px 0px 80px;
                                                     }
 
                                                     ?></p>
-                                                </div>
-                                   
                                             </div>
+
                                         </div>
                                     </div>
-                                    </a>
                                 </div>
-        <?php }
+                            </a>
+                        </div>
+                        <?php }
                         }
                     } else { ?>
-    <center><img  src="<?php echo base_url(); ?>assets/images/no_product .png"></center>
+                        <center><img src="<?php echo base_url(); ?>assets/images/no_product .png"></center>
 
-                    <?php } ?>
+                        <?php } ?>
+
+                    </div>
 
                 </div>
 
             </div>
-
-                            </div>
         </main>
     </div>
 </body>
@@ -1991,17 +2221,17 @@ border-radius: 80px 0px 0px 80px;
                     <h5 class=" mb-0 my-3 fs-5" style="color:#13C571;text-align: center;">Report on Ads</h5>
 
                     <?php if ($error = $this->session->flashdata('Login_fail')) { ?>
-                        <div class="row">
-                            <div class="col-lg-12">
-                                <div class="alert alert-danger ">
-                                    <?= $error;
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="alert alert-danger ">
+                                <?= $error;
 
                                     unset($_SESSION['Login_fail']);
                                     ?>
 
-                                </div>
                             </div>
                         </div>
+                    </div>
 
                     <?php } ?>
 
@@ -2012,7 +2242,8 @@ border-radius: 80px 0px 0px 80px;
                         <input type="hidden" name="reported_by" value="<?php echo $user['user_id'] ?>">
                         <input type="hidden" name="category_id" value="<?php echo $product_detail->category_id; ?>">
                         <input type="hidden" name="product_id" value="<?php echo $product_detail->id; ?>">
-                        <input type="hidden" name="subcategory_id" value="<?php echo $product_detail->subcategory_id; ?>">
+                        <input type="hidden" name="subcategory_id"
+                            value="<?php echo $product_detail->subcategory_id; ?>">
                         <div class=" input-container my-3 px-3">
                             <label>Name</label>
                             <input name="name" type="text" class="form-control   text-dark Name" id="firstName" value=""
@@ -2211,14 +2442,14 @@ $(function() {
     this step is important if you use a fadeIn duration for the master img more than 1s, but if you use a duration less than 1s
     you don't need to make the height of the master div is static, and it is preferred to make the duration less than 1s to prevent the
     user to choose 2 images at the same time, so the implementation of the code will be faster than the user selection*/
-   
+
 
     //make the width of the thumbnails images is dynamic
-    var imagesNumber        = $(".thumbnails").children().length,
-        marginBetweenImages =  6,
-        totalMargins        = marginBetweenImages * (imagesNumber - 1),
-        imageWidth          = (100 - totalMargins) / (imagesNumber);
-        
+    var imagesNumber = $(".thumbnails").children().length,
+        marginBetweenImages = 6,
+        totalMargins = marginBetweenImages * (imagesNumber - 1),
+        imageWidth = (100 - totalMargins) / (imagesNumber);
+
     $(".thumbnails img").css({
         width: imageWidth + "%",
         marginRight: marginBetweenImages + "%"
@@ -2234,14 +2465,14 @@ $(function() {
 
     //use the chevron left and right to select images and translate between them
     $(".master .fas").on("click", function() {
-        if($(this).hasClass("fa-chevron-left")) {
-            if($(".thumbnails img.active").is(":first-child")) {
+        if ($(this).hasClass("fa-chevron-left")) {
+            if ($(".thumbnails img.active").is(":first-child")) {
                 $(".thumbnails img:last-child").click();
             } else {
                 $(".thumbnails img.active").prev().click();
             }
         } else {
-            if($(".thumbnails img.active").is(":last-child")) {
+            if ($(".thumbnails img.active").is(":last-child")) {
                 $(".thumbnails img:first-child").click();
             } else {
                 $(".thumbnails img.active").next().click();
@@ -2255,63 +2486,62 @@ let slideIndex = 1;
 showSlides(slideIndex);
 
 function plusSlides(n) {
-  showSlides(slideIndex += n);
+    showSlides(slideIndex += n);
 }
 
 function currentSlide(n) {
-  showSlides(slideIndex = n);
+    showSlides(slideIndex = n);
 }
 
 function showSlides(n) {
-  let i;
-  let slides = document.getElementsByClassName("mySlides");
-  let dots = document.getElementsByClassName("demo");
-  let captionText = document.getElementById("caption");
-  if (n > slides.length) {slideIndex = 1}
-  if (n < 1) {slideIndex = slides.length}
-  for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";
-  }
-  for (i = 0; i < dots.length; i++) {
-    dots[i].className = dots[i].className.replace(" active", "");
-  }
-  slides[slideIndex-1].style.display = "block";
-  dots[slideIndex-1].className += " active";
-  captionText.innerHTML = dots[slideIndex-1].alt;
+    let i;
+    let slides = document.getElementsByClassName("mySlides");
+    let dots = document.getElementsByClassName("demo");
+    let captionText = document.getElementById("caption");
+    if (n > slides.length) {
+        slideIndex = 1
+    }
+    if (n < 1) {
+        slideIndex = slides.length
+    }
+    for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex - 1].style.display = "block";
+    dots[slideIndex - 1].className += " active";
+    captionText.innerHTML = dots[slideIndex - 1].alt;
 }
 </script>
 <script>
-    "use strict"; /* Start of use strict */
-    (function() {
-        function14();
-    })();
+"use strict"; /* Start of use strict */
+(function() {
+    function14();
+})();
 
-    function function14() {
-        $('.btnSweetalert').on("click", function() {
-            swal({
-                    title: " Logout!",
-                    text: "Are you sure you want to logout?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
+function function14() {
+    $('.btnSweetalert').on("click", function() {
+        swal({
+                title: " Logout!",
+                text: "Are you sure you want to logout?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-                        window.location.href = "<?php echo base_url(); ?>welcome/logout";
-                    } else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                    }
-                });
-        });
-    }
-
-
-    
-    </script>
-
-
+                    window.location.href = "<?php echo base_url(); ?>welcome/logout";
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                }
+            });
+    });
+}
+</script>

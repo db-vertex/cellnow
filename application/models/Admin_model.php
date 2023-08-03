@@ -720,37 +720,35 @@ public function delete_comment($id)
 {
     $this->db->select('report_abuse.*');
     $this->db->from('report_abuse');
-    
-    $this->db->join('category_reusable_parts', 'report_abuse.product_id = category_reusable_parts.id', 'left');
-  
-    $this->db->join('category_tuitions', 'report_abuse.product_id = category_tuitions.id', 'left');
-
-    $this->db->join('category_commericial_places', 'report_abuse.product_id = category_commericial_places.id', 'left');
-
-    $this->db->join('category_internships', 'report_abuse.product_id = category_internships.id', 'left');
-
-    $this->db->join('category_job', 'report_abuse.product_id = category_job.id', 'left');
-
-    $this->db->join('category_land_plot', 'report_abuse.product_id = category_land_plot.id', 'left');
-
-    $this->db->join('category_residential_places', 'report_abuse.product_id = category_residential_places.id', 'left');
-
-
-    $this->db->where('(category_reusable_parts.active_status = 0 OR category_tuitions.active_status = 0 OR category_commericial_places.active_status = 0
-    
-    OR category_internships.active_status = 0 OR category_job.active_status = 0 OR category_land_plot.active_status = 0 OR category_residential_places.active_status = 0)');
-
     $query = $this->db->get();
-    return $query->result();
+    $result = $query->result();
+    return $result;
 }
 
 public function delete_report($id)
 
   {
-
     return $this->db->delete('report_abuse',['report_id'=>$id]);
 
   }
 
+
+  public function update_deactive_status_report($product_id, $active_status)
+{
+    // Check if the $product_id is an array or single value
+    if (is_array($product_id)) {
+        // If it's an array, update multiple rows with the corresponding product IDs
+        $this->db->where_in('product_id', $product_id);
+    } else {
+        // If it's a single value, update only the row with the specific product_id
+        $this->db->where('product_id', $product_id);
+    }
+
+    // Update the 'active_status' column in the 'report_abuse' table
+    $data = array('active_status' => $active_status);
+    $this->db->update('report_abuse', $data);
+
+    return $this->db->affected_rows() > 0;
+}
 
 }
