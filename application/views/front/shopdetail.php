@@ -185,7 +185,7 @@ width: 131.9px;">
 </div>
 
 <div class="container">
-<h4 class="shop_images_view mt-4" style="padding-left: 2rem!important;"><b>Verified Ads</b></h4>
+<h4 class="shop_images_view mt-4" style="padding-left: 2.3rem!important;"><b>Verified Ads</b></h4>
     <div class="row ml-4 mr-4">
 
         <?php $product = get_productid_by_shop($id); 
