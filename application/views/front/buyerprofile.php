@@ -166,7 +166,7 @@
         </div>
     </div>
 
-    <div class="container-fluid" style="padding:0px">
+    <div class="container-fluid mt-5" style="padding:0px">
         <img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
     </div>
 

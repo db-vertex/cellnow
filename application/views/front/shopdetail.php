@@ -1,174 +1,193 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
 
 <style>
-   .details_price {
-        font-family: 'Roboto';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 20px;
-        line-height: 25px;
-        display: flex;
-        align-items: flex-end;
-        text-align: right;
+.details_price {
+    font-family: 'Roboto';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 20px;
+    line-height: 25px;
+    display: flex;
+    align-items: flex-end;
+    text-align: right;
 
-        color: #10B981;
-    }
-   .va-thumbnail {
-        border-radius: 6px;
-        border: 0px;
-        width: 100%;
-        max-height: 250px;
-        min-height: 250px;
-    }
-    .related_ads_details_button {
-        box-sizing: border-box;
+    color: #10B981;
+}
 
-        /* Auto layout */
+.va-thumbnail {
+    border-radius: 6px;
+    border: 0px;
+    width: 100%;
+    max-height: 250px;
+    min-height: 250px;
+}
 
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        padding: 9.42857px 12.5714px;
-        gap: 4.71px;
+.related_ads_details_button {
+    box-sizing: border-box;
 
-        width: 88.43px;
-        height: 30.86px;
+    /* Auto layout */
 
-        background: #10B981;
-        /* C2/B */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 9.42857px 12.5714px;
+    gap: 4.71px;
 
-        border: 1.57143px solid #46760A;
-        border-radius: 25.42857px;
+    width: 88.43px;
+    height: 30.86px;
 
-        /* Inside auto layout */
+    background: #10B981;
+    /* C2/B */
 
-        flex: none;
-        order: 0;
-        align-self: center;
-        flex-grow: 0;
-    }
-    .related_ads_details_button_text {
-        font-family: 'Poppins';
-        font-style: normal;
-        font-weight: 700;
-        font-size: 9.7857px;
-        line-height: 15px;
-        color: #FFFFFF;
-        flex: none;
-        order: 0;
-        flex-grow: 0;
-    }
-    .details_img_cover {
-border-radius: 15px;
-max-width: 150px;
-min-width: 150px;
-max-height: 100px;
+    border: 1.57143px solid #46760A;
+    border-radius: 25.42857px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: center;
+    flex-grow: 0;
+}
+
+.related_ads_details_button_text {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 9.7857px;
+    line-height: 15px;
+    color: #FFFFFF;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.details_img_cover {
+    border-radius: 15px;
+    max-width: 150px;
+    min-width: 150px;
+    max-height: 100px;
 
 }
-</style><div class="container" style=" margin-top: 180px;">
+.shop_images_view {
+            font-family: open sans;
+            font-weight: 550;
+        }
 
-<div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
- 
-  <div class="row ">
-    <?php
+        @media (min-width: 575px){
+        .shop_details_border{
+            border-left:solid; 
+            border-color: #78d7b8;
+        }
+        }
+</style>
+<div class="container" style=" margin-top: 130px;">
+
+    <div class="shadow p-3  bg-body rounded-5" style=""><br>
+
+        <div class="row ">
+            <?php
      $id = $this->uri->segment(3);
      $shop = get_id_by_shopdetail($id);
     $profile = get_seller_profile($shop->user_id);
 
     ?>
-     <div class="col-sm-6">
+            <div class="col-sm-6">
 
-<img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>" class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
+                <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"
+                    class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
 width: 131.9px;">
-<div style="text-align:center">
-  <h5><b>
-      <?php echo ucfirst($profile->name); ?>
-    </b></h5>
-  <?php echo ucfirst($profile->Address); ?>
+                <div style="text-align:center">
+                    <h5><b>
+                            <?php echo ucfirst($profile->name); ?>
+                        </b></h5>
+                    <?php echo ucfirst($profile->Address); ?>
 
-</div>
-<div class="row text-center ">
-  <p>
-  <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
-  <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
-  
-</div><br>
+                </div>
+                <div class="row text-center ">
+                    <p>
+                        <img src="<?php echo base_url()?>assets/images/email.png"> <?php echo $profile->email; ?>
+                        <img src="<?php echo base_url()?>assets/images/mobile.png"> <?php echo $profile->phone; ?>
+
+                </div><br>
 
 
-</div>
+            </div>
 
-    <!-- <div class="vr" style="color:#78d7b8"></div> -->
-    <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
-    <?php 
+            <!-- <div class="vr" style="color:#78d7b8"></div> -->
+            <div class="col-sm-6 shop_details_border" style="">
+                <?php 
    
        if(empty($shop)){?>
-      <div class="row text-center mt-5">
-       
-        <div>
-          <a data-toggle="modal" data-target="#addshopdetail" href="<?php echo base_url(); ?>welcome/shop"
-            style="background-color: #10b981; color:#fff" class="btn" role="button" aria-disabled="true"
-            id="a">Verfied your shop details</a>
-          <p class="text-muted mt-4">Note: Once you will submit the detail of shop then not editable</p>
-        </div>
-        </div>
-        <div class="row mt-5 ">
-        <?php }else{ ?>
-          <div class="col" >
-         <div class="row">
-         <div class="col">
-            <h4 class="ml-3"><?php echo $shop->name;?> </h4> </div><div class="col"><?php if($shop->admin_approval==2){?><div>
-<a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#FF7474; color:#540C07" >Rejected by admin </a>
-</div><?php }else if($shop->admin_approval==1){?> <div>
-<a href="#" data-toggle="modal"  data-target="#editshopdetail" class="btn "id="b" style="align-self:center; background-color:#d1fae5; color:#13C571" >Verified by admin </a>
-</div><?php }?>
-        </div> </div>
-        <p class="ml-3"><?php echo $shop->email;?></p>
-            <p class="ml-3  word"><?php echo $shop->description;?></p>
-            <p class="ml-3"><?php echo $shop->Address;?></p>
-           
-           
-            <p class="ml-3 mt-5"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
-            <p class="ml-3"><b>Type of service: </b><?php echo $shop->service_type;?></p>
-          </div>
-          
-            <?php  } ?>
+                <div class="row text-center mt-5">
 
-            
-      </div>
+                    <div>
+                        <a data-toggle="modal" data-target="#addshopdetail" href="<?php echo base_url(); ?>welcome/shop"
+                            style="background-color: #10b981; color:#fff" class="btn" role="button" aria-disabled="true"
+                            id="a">Verfied your shop details</a>
+                        <p class="text-muted mt-4">Note: Once you will submit the detail of shop then not editable</p>
+                    </div>
+                </div>
+                <div class="row mt-5 ">
+                    <?php }else{ ?>
+                    <div class="col">
+                        <div class="row">
+                            <div class="col">
+                                <h4 class=" shop_images_view"><?php echo $shop->name;?> </h4>
+                            </div>
+                            <div class="col"><?php if($shop->admin_approval==2){?><div>
+                                    <a href="#" data-toggle="modal" data-target="#editshopdetail" class="btn " id="b"
+                                        style="align-self:center; background-color:#FF7474; color:#540C07">Rejected by
+                                        admin </a>
+                                </div><?php }else if($shop->admin_approval==1){?> <div>
+                                    <a href="#" data-toggle="modal" data-target="#editshopdetail" class="btn " id="b"
+                                        style="align-self:center; background-color:#d1fae5; color:#13C571">Verified by
+                                        admin </a>
+                                </div><?php }?>
+                            </div>
+                        </div>
+                        <p class=" word mt-2"><?php echo $shop->description;?></p>
+                        <p class=""><?php echo $shop->Address;?></p>
 
-      
-    </div>
-  </div><br>
-</div>
-</div>
-<div class="container">
-    <div class="row ml-5" style="">
-      <h5 class=""><b>Shop Images</b></h5>
-        <?php 
-        $product_image = get_shop_image($shop->id);
-        
-        if(!empty($product_image)){?>
-        
-        <?php $i=1;
-       
-        foreach($product_image as $product_images){ ?>
-            <div class="col-md-2 col-sm-4 col-6 mb-3">
-                <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>" data-lightbox="shop-images">
-                    <img class="details_img_cover img-fluid" src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
-                </a>
+                        <p class="mt-2"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
+                        <p class=""><b>Type of service: </b><?php echo $shop->service_type;?></p>
+                    </div>
+
+                    <?php  } ?>
+
+
+                </div>
+
+
             </div>
-        <?php } ?>
-        <?php } else{ ?>
-          <img class="details_img_cover img-fluid"  style="max-width:200px; max-height:auto;"src="<?php echo base_url();?>uploads/shop/No_Image_Available-removebg-preview.png">
-     <?php  } ?>
+
+            <div class="row" style="margin-left: 0.2rem!important;">
+                    <?php if(!empty($shop)){?>
+                    <h5 class="shop_images_view">Shop Images</h5>
+                    <?php $i=1;
+                $product_image = get_shop_image($shop->id);
+                foreach($product_image as $product_images){ ?>`
+                    <div class=" col-lg-3 col-sm-4 col-auto mb-3">
+                        <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
+                            data-lightbox="shop-images">
+                            <img class="details_img_cover img-fluid"
+                                src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
+                        </a>
+                    </div>
+                    <?php } ?>
+                    <?php } ?>
+                </div>
+
+
+        </div><br>
     </div>
 </div>
 
 <div class="container">
-    <h3 class="ml-5 mb-3"><b>Verified by shop </b></h3>
+<h4 class="shop_images_view mt-4" style="padding-left: 2rem!important;"><b>Verified Ads</b></h4>
     <div class="row ml-4 mr-4">
-        
+
         <?php $product = get_productid_by_shop($id); 
          if(!empty($product)){
         
@@ -228,60 +247,62 @@ width: 131.9px;">
        }  
      ?>
 
-<div class="col-lg-3 col-md-4 col-sm-6 mb-4" >
-<a href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
-            <div class="card">
-            <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                           <img
-                                    src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img ?>"
-                                    class="w-100 va-thumbnail" />
-                                    <p style="margin-left:5px;"> 
-                                    <?php if($Categories_all_product->pay_type ==1){ ?>
-                                      <img class="img-fluid image2"
-                                src="<?php echo base_url(); ?>assets/images/sponsor.png" style="
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4">
+            <a
+                href="<?php echo base_url();?>welcome/productdetail/<?php echo $Categories_all_product->category_id; ?>/<?php echo $Categories_all_product->id; ?>/<?php echo $Categories_all_product->subcategory_id; ?>">
+                <div class="card">
+                    <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                        <img src="<?php echo base_url(); ?><?php echo $Categories_all_product->cover_img ?>"
+                            class="w-100 va-thumbnail" />
+                        <p style="margin-left:5px;">
+                            <?php if($Categories_all_product->pay_type ==1){ ?>
+                            <img class="img-fluid image2" src="<?php echo base_url(); ?>assets/images/sponsor.png"
+                                style="
    width:80px; ">
                             <?php } if($Categories_all_product->verified_product ==1){ ?>
-                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png" style="
+                            <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png"
+                                style="
    width:80px; ">
-                      
+
 
                             <?php }?>
                         </p>
-                            <a href="#!">
+                        <a href="#!">
 
-                                <div class="hover-overlay">
-                                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                                </div>
-                            </a>
-                        </div>
-              <div class="card-body">
-              <div class="row mt-1">
-                 <div class="col-9">
-                            
-                             <?php if($Categories_all_product->category_id != 4 && $Categories_all_product->pay_type !=2){ ?>
-                         <p class="details_price">₹<?php echo $Categories_all_product->price; ?>
-                                </p>
-<?php } ?>
-<?php if($Categories_all_product->pay_type==2){?>
-  <p class="details_price">Donate</p>
-  <?php } ?>
-</div>
-                                                <div class="col-3">
-                            <a  style="font-size:20px; color:#69d3b0; padding: 0px;" <?php if (empty($user) || !isset($user)) { ?>
-                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i lass="bi bi-suit-heart" aria-hidden="true"
-                                style="font-size:20px; color:#69d3b0; padding: 0px;"
-                               
-                                data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
-                                class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
-                                data-pid="<?php echo $Categories_all_product->id; ?>"
-                                data-cid="<?php echo $Categories_all_product->category_id; ?>"
-                                data-wishlist="<?php echo $wishlist; ?>"></i></a>
-                              
-                                </div>
+                            <div class="hover-overlay">
+                                <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                             </div>
-                            <div class="d-flex justify-content-between align-items-center">
+                        </a>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mt-1">
+                            <div class="col-9">
 
-                                <p><?php
+                                <?php if($Categories_all_product->category_id != 4 && $Categories_all_product->pay_type !=2){ ?>
+                                <p class="details_price">₹<?php echo $Categories_all_product->price; ?>
+                                </p>
+                                <?php } ?>
+                                <?php if($Categories_all_product->pay_type==2){?>
+                                <p class="details_price">Donate</p>
+                                <?php } ?>
+                            </div>
+                            <div class="col-3">
+                                <a style="font-size:20px; color:#69d3b0; padding: 0px;"
+                                    <?php if (empty($user) || !isset($user)) { ?>
+                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
+                                        lass="bi bi-suit-heart" aria-hidden="true"
+                                        style="font-size:20px; color:#69d3b0; padding: 0px;"
+                                        data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                        class="<?php echo ($wishlist == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $Categories_all_product->id; ?>"
+                                        data-pid="<?php echo $Categories_all_product->id; ?>"
+                                        data-cid="<?php echo $Categories_all_product->category_id; ?>"
+                                        data-wishlist="<?php echo $wishlist; ?>"></i></a>
+
+                            </div>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+
+                            <p><?php
                            $title = $Categories_all_product->title;
                             if(strlen($title) <= 20)
                               {
@@ -295,13 +316,13 @@ width: 131.9px;">
                            
                            ?></p>
 
+                        </div>
+                        <div class="row mt-1">
+                            <div class="col-2">
+                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
                             </div>
-                            <div class="row mt-1">
-                                                <div class="col-2">
-                                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
-                                                </div>
-                                                <div class="col-8">
-                                                <p style="color: #575757;"><?php
+                            <div class="col-8">
+                                <p style="color: #575757;"><?php
                            $title = $Categories_all_product->address;
                             if(strlen($title) <= 15)
                               {
@@ -313,48 +334,49 @@ width: 131.9px;">
                                 echo ucfirst($y);
                               }
                            
-                           ?></p></div>
-                           </div>
-                           
+                           ?></p>
+                            </div>
                         </div>
-            </div>
+
+                    </div>
+                </div>
             </a>
-          </div> 
+        </div>
 
-<?php } }}else{?>
-         <center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>
-   <?php }?>
+        <?php } }}else{?>
+        <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
+        <?php }?>
 
 
-</div>
+    </div>
 </div>
 <script>
-    "use strict"; /* Start of use strict */
-    (function() {
-        function14();
-    })();
+"use strict"; /* Start of use strict */
+(function() {
+    function14();
+})();
 
-    function function14() {
-        $('.btnSweetalert').on("click", function() {
-            swal({
-                    title: " Logout!",
-                    text: "Are you sure you want to logout?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
+function function14() {
+    $('.btnSweetalert').on("click", function() {
+        swal({
+                title: " Logout!",
+                text: "Are you sure you want to logout?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-                        window.location.href = "<?php echo base_url();?>welcome/logout";
-                    } else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                    }
-                });
-        });
-    }
-    </script>
+                    window.location.href = "<?php echo base_url();?>welcome/logout";
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                }
+            });
+    });
+}
+</script>

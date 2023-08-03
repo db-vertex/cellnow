@@ -179,7 +179,7 @@ width: 131.9px; border-color:#10B981;">
 
 
 <div class="container">
-        <h4 class="shop_images_view ps-2" style=""><b>Verified Ads</b></h4>
+<h4 class="shop_images_view mt-3 ps-3" style=""><b>Verified Ads</b></h4>
 <div class="row ">
 
 <?php $sellerproduct = get_seller_product($user['user_id']); 

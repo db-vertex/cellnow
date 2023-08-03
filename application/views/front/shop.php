@@ -314,7 +314,7 @@
    $shop = get_id_by_shop($user['user_id']);?>
     <div class="container" style=" margin-top: 130px;">
 
-        <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
+        <div class="shadow p-3  bg-body rounded-5" style=""><br>
             <div class="row text-center justify-content-around">
                 <div class="col-3 mb-1">
                     <a href="<?php echo base_url();?>welcome/buyerprofile" class="btn" role="button"
@@ -336,9 +336,9 @@
             <br>
             <div class="row">
                 <?php
-        $profile = get_seller_profile($user['user_id']);
+            $profile = get_seller_profile($user['user_id']);
 
-        ?>
+              ?>
                 <div class="col-sm-6">
 
                     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"
@@ -860,7 +860,7 @@ for($i=0; $i<(4-count($product_image)); $i++){
                     <?php $i=1;
         $product_image = get_shop_image($shop->id);
         foreach($product_image as $product_images){ ?>
-                    <div class=" col-lg-3 col-sm-4 col-6 mb-3">
+                    <div class=" col-lg-3 col-sm-4 col-auto mb-3">
                         <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
                             data-lightbox="shop-images">
                             <img class="details_img_cover img-fluid"
@@ -876,7 +876,7 @@ for($i=0; $i<(4-count($product_image)); $i++){
 
 
     <div class="container">
-        <h4 class="shop_images_view" style="padding-left: 2.5rem!important;"><b>Verified Ads</b></h4>
+        <h4 class="shop_images_view mt-4 ps-3" style=""><b>Verified Ads</b></h4>
     </div>
 
     <div class="container">
