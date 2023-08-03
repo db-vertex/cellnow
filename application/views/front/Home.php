@@ -3,144 +3,105 @@
     background: #d1fae5;
     color: black;
 }
-
 .select {
     background: #d1fae5;
     color: black;
     border-radius: 50%;
 }
-
-
-
 /* search btn line 11 to 89 */
 .search_wrap {
     width: 100%;
-
 }
-
 .search_wrap .search_box {
     position: relative;
-
     height: 64px;
 }
-
 .img-size {
     max-height: 500px;
     min-height: 500px;
-
-
 }
-
 .search_wrap .search_box .btn {
     position: absolute;
-
     height: 80%;
     background: #10B981;
     color: white;
-
 }
-
 .search_wrap .search_box .btn.btn_common .fas {
-
     /* top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%); */
     /* color: #fff; */
-
 }
-
 .search_wrap.search_wrap_6 .search_box .btn {
     max-width: 100%;
     height: 60%;
     top: 8%;
     right: 1.3%;
     padding: 6px 0px;
-
-
     /* color: #fff; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 input::placeholder {
     font-size: 16px;
     font-weight: bold;
 }
-
 @media screen and (max-width: 992px) {
     input::placeholder {
         font-size: 12px;
         font-weight: bold;
     }
-
     img.fix {
         position: absolute;
         margin-top: 19%;
         height: 25px;
     }
 }
-
 @media screen and (max-width: 776px) {
     input::placeholder {
         font-size: 10px;
         font-weight: bold;
     }
-
     .img-size {
         max-height: 300px;
         min-height: 300px;
-
-
     }
-
-
 }
-
 @media screen and (max-width: 560px) {
     input::placeholder {
         font-size: 12px;
         font-weight: bold;
     }
-
     .img-size {
         max-height: 200px;
         min-height: 200px;
-
-
     }
 }
-
 .mores {
     display: none;
 }
-
 .va-carrousel-section {
     padding-left: 0px;
     padding-right: 0px;
 }
-
 .cut-list>li {
     /* margin-left: 25px; */
     margin-right: 50px;
     padding-bottom: 2px;
 }
-
 .shopCategory {
     width: 40px;
     height: 40px;
 }
-
 .va-carrousel-flexbox_most .va-card {
     flex: 0 0 auto;
     padding-left: 32px;
 }
-
 .icon_slider {
     flex: 0 0 auto;
     width: 3.333333%;
 }
-
 .icon_cetgory {
     flex: 0 0 auto;
     width: 91.333333%;
@@ -151,12 +112,7 @@ input::placeholder {
     bottom: 0;
 }
 </style>
-
-
-
-
 <div class="container home_background" style=" margin-top: 125px;">
-
     <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -172,12 +128,9 @@ input::placeholder {
                             alt="First slide"></a>
                 </div>
                 <?php
-
         $j++;
-
       }
       ?>
-
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss"
                 data-bs-slide="prev">
@@ -192,32 +145,24 @@ input::placeholder {
         </div>
     </div>
 </div><br>
-
 <div class="container">
     <div class="row pl-4">
         <p style="color: #F59E0B;"></p>
     </div>
 </div><br>
-
-
 <!-- search bar -->
 <div class="container">
     <div class="row px-0">
         <div class="col-lg-6 col-md-5 col-sm-4 ">
-
         </div>
         <div class="col-lg-6 col-md-7 col-sm-6 ">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
-
-
                     <input type="search" name="anything" id="anything" class="form-control rounded-5"
                         placeholder="Search for the Product you want!" aria-label="Search"
                         aria-describedby="search-addon" style="padding:12px 22px" />
                     <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search
                     </button>
-
-
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
                         <div class="searchbox-wrap">
                             <input type="text" value="" name="anything" aria-label="Search"
@@ -229,19 +174,14 @@ input::placeholder {
                         </div>
                     </form> -->
                 </div>
-
                 <div class="row">
                     <div id="display"></div>
-
-
                 </div>
             </div>
         </div>
     </div>
 </div><br>
-
 <!-- new -->
-
 <div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
@@ -264,7 +204,6 @@ input::placeholder {
             $category = get_all_category();
             foreach ($category as $key => $cat) {
                             ?>
-
                             <div class="va-card cut-list mt-2" onclick="return getsubcategory(<?php echo $cat->id; ?>)">
                                 <p class="new<?php echo $cat->id; ?> btn border  rounded-pill <?php if($cat->id==1){ ?>selected <?php } ?>"
                                     role="button">
@@ -289,12 +228,9 @@ input::placeholder {
                     </div>
                 </div>
             </div>
-
         </div>
     </div>
-
 </div>
-
 <div class="container">
         <div class="va-carrousel-section">
             <div class="va-whitewrap">
@@ -315,7 +251,6 @@ input::placeholder {
                     <div class="va-carrousel-flexbox" id="sub-list">
                         <?php
 					         $cateory =  '';
-               
                      $sub_ = '';
                      if($cateory==''){
                         $subcategory = get_all_product_type();  
@@ -323,11 +258,8 @@ input::placeholder {
                      else{
                         $subcategory = get_producttype_byid($cateory);  
                      }
-                      
-					  
 					  foreach($subcategory as $sub){
 					?>
-
                         <div class="va-card va-card_category mt-2" style="">
                             <p style="text-align:center;" class="my-auto pouler_Categories "
                                 <?php if ($category == 1 || $category==5) { ?>
@@ -335,7 +267,6 @@ input::placeholder {
                                 <?php } else { ?>
                                 onclick="return getproduct( <?php echo $sub->id; ?> ,<?php echo $sub->category_id; ?>)"
                                 <?php } ?>>
-
                                 <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?> "
                                     data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                     src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
@@ -343,7 +274,6 @@ input::placeholder {
                                     <?php echo $sub->product_type; ?>
                                 </center>
                             </p>
-
                         </div>
                         <?php 	
                 }
@@ -361,35 +291,25 @@ input::placeholder {
                         </svg>
                     </button>
                        </div>
-
                 </div>
             </div>
         </div>
 </div>
 </div>
-
 <section>
     <div class="text-center container py-5">
-
-
         <div class="row" id="product_list">
             <?php
-                                
             $product = get_all_boost();  
-          
             $all_count =get_all_boost_count();
-             
-            
               if(!empty($product)){
               $i = 1;
               $j = 1;
             foreach($product as $pro){
-             
              $session_login_id  = $user['user_id'] ?? null;
               $product_user_id = $pro->user_id;
               if($session_login_id !== $product_user_id){
                   if($i > 0){
-            
             ?>
             <div class=" col-lg-3 col-md-4 col-sm-6 mb-4 post" id="post_<?php echo $pro->id; ?>">
                 <a class="link-plain link-plains"
@@ -405,12 +325,8 @@ input::placeholder {
                                 <?php } if($pro->verified_product ==1){ ?>
                                 <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png"
                                     style="width:80px; ">
-
-
                                 <?php }?>
                             </p>
-
-
                         </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -425,7 +341,6 @@ input::placeholder {
                                 <?php } ?>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
-
                                 <h6 class="dress-name"><?php
                            $title = $pro->title;
                             if(strlen($title) <= 25)
@@ -437,14 +352,9 @@ input::placeholder {
                                 $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></h6>
-
-
-
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
-
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
@@ -457,17 +367,13 @@ input::placeholder {
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></h6>
-
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-
             <?php $i++;} } else if($j == 1) {?>
-
             <?php   }  $j++; };  ?>
             <?php }
               else {?>
@@ -479,14 +385,8 @@ input::placeholder {
                     href="<?php echo base_url();?>welcome/fillter_product/8" class="btn btn-danger">See All</a></center>
             <?php } ?>
         </div>
-
-
-
     </div>
 </section>
-
-
-
 <!-- new  -->
 <div class="container">
     <div class="row align-items-center pt-2">
@@ -496,29 +396,20 @@ input::placeholder {
                     src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
             </div>
         </div>
-
         <div class="col-md-6 ">
             <h1>Customer flow</h1><br>
-
             <p style="color: #565656;">Our Business Plan is a written document describing a company's core business
                 activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high
                 quality Product with modern idea accordingly their budgets and according thir reuirements.</p>
         </div>
     </div>
 </div><br>
-
 <!-- new  -->
 <div class="container">
     <div class="row ">
         <p style="color: #F59E0B;">Search Near By Store</p>
     </div>
 </div>
-
-
-
-
-
-
 <!-- new  -->
 <div class="container  mt-3">
     <div class="row">
@@ -528,15 +419,11 @@ input::placeholder {
         <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
-
-
-
                     <input type="search" name="location" class="form-control rounded-5"
                         placeholder="Search for the store" id="location" aria-label="Search"
                         aria-describedby="search-addon" style="padding:12px 22px" />
                     <button type="submit" class="btn btn-success rounded-5" id="shopsubmit"
                         style="padding:6px 10px">Search </button>
-
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
                         <div class="searchbox-wrap">
                             <input type="text" value="" id="Location" name="anything" aria-label="Search"
@@ -547,16 +434,11 @@ input::placeholder {
                             <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
                         </div>
                     </form> -->
-
-
                 </div>
-
             </div>
         </div>
     </div>
 </div><br>
-
-
 <div class="container ">
    <div class="va-carrousel-section">
       <div class="va-whitewrap">
@@ -577,7 +459,6 @@ input::placeholder {
                   <div class="va-carrousel-flexbox_urgent">
                      <?php $id = $this->uri->segment(3); 
                         $category = get_all_shopcategory();
-                        
                         foreach ($category as $key => $cat) {
                           ?>
                      <div class="va-card va-card_category mt-2">
@@ -609,25 +490,15 @@ input::placeholder {
    </div>
 </div>
 </div>
-
 <section>
-
     <div class="text-center container py-4">
-
-
         <div class="row" id="shop_list">
             <?php
-              
              $store = get_all_store();
              $shop_count= get_all_store_count();
-           
-           
             if(!empty($store)){
-          
           foreach($store as $pro){
-         
              ?>
-
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 mores" id="">
                 <a class="link-plain link-plains"
                     href="<?php echo base_url();?>welcome/shopdetail/<?php echo $pro->id; ?>">
@@ -635,12 +506,9 @@ input::placeholder {
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <img src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
                                 class="w-100 va-thumbnail" />
-
                         </div>
                         <div class="card-body">
-
                             <div class="d-flex justify-content-between align-items-center">
-
                                 <h6 class="dress-name"><?php
                            $title = $pro->name;
                             if(strlen($title) <= 15)
@@ -651,14 +519,10 @@ input::placeholder {
                               {
                                 $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
-                                
                               }
-                           
                            ?></h6>
-
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
-
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->Address;
@@ -671,21 +535,16 @@ input::placeholder {
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></h6>
-
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-
-
             <?php }}
               else {?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-
             <?php if($shop_count > 4){ ?>
             <center class=""><a href="<?php echo base_url();?>welcome/store/16" class="btn btn-danger "
                     style="width:100px; border-radius:20px; background-color: #10B981; color:white; border-color:#10B981; ">See
@@ -694,10 +553,6 @@ input::placeholder {
         </div>
     </div>
 </section>
-
-
-
-
 <!-- new  -->
 <div class="container">
     <div class="row align-items-center pt-4">
@@ -707,36 +562,26 @@ input::placeholder {
                     src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
             </div>
         </div>
-
         <div class="col-md-6  ">
             <h1>How the store works?</h1><br>
-
             <p style="color: #565656;">Our Business Plan is a written document describing a company's core business
                 activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high
                 quality Product with modern idea accordingly their budgets and according thir reuirements..</p>
         </div>
     </div>
 </div><br>
-
 <!-- new  -->
 <section>
     <div class=" container ">
         <div class="row  text-align-left">
-
             <p id="donate" style="color: #1B1C57; font-size:30px;">Donated</p>
-
         </div>
     </div>
     <div class="text-center container py-3">
-
-
         <div class="row">
             <?php
-                  
-            
                   $product = get_all_donate();   
                   $allcount =get_all_donate_count();
-            
               if(!empty($product)){
               $i = 1;
               $j = 1;
@@ -745,9 +590,7 @@ input::placeholder {
               $product_user_id = $pro->user_id;
               if($session_login_id !== $product_user_id){
                   if($i > 0){
-            
             ?>
-
             <div class="col-lg-3 col-md-4 col-sm-6 mb-4 postdonate">
                 <a class="link-plain link-plains"
                     href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
@@ -755,12 +598,9 @@ input::placeholder {
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                 class="w-100 va-thumbnail" />
-
                         </div>
                         <div class="card-body">
-
                             <div class="d-flex justify-content-between align-items-center">
-
                                 <h6 class="dress-name"><?php
                            $title = $pro->title;
                             if(strlen($title) <= 15)
@@ -772,14 +612,9 @@ input::placeholder {
                                 $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></h6>
-
-
-
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
-
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
@@ -792,23 +627,18 @@ input::placeholder {
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></h6>
-
                             </div>
                         </div>
                     </div>
                 </a>
             </div>
-
             <?php $i++;} } else if($j == 1) {?>
-
             <?php   }  $j++; };  ?>
             <?php }
               else {?>
             <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
             <?php }?>
-
             <?php if($allcount > 4){ ?>
             <center class=""><a
                     style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
@@ -818,11 +648,6 @@ input::placeholder {
         </div>
     </div>
 </section>
-
-
-
-
-
 <div class="container">
     <div class="row pt-2">
         <div class="col-12">
@@ -831,7 +656,6 @@ input::placeholder {
         </div>
     </div>
 </div><br>
-
 <div class="container">
     <div class="row align-items-center pt-2">
         <div class="col-md-6 ">
@@ -840,18 +664,15 @@ input::placeholder {
                     src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
             </div>
         </div>
-
         <div class="col-md-6">
             <h1>About us
             </h1>
-
             <p style="color: #565656;">Our Business Plan is a written document describing a company's core business
                 activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high
                 quality Product with modern idea accordingly their budgets and according thir reuirements.</p>
         </div>
     </div>
 </div><br>
-
 <div class="container ">
     <div class="row pt-2">
         <div class="col-12">
@@ -860,14 +681,9 @@ input::placeholder {
         </div>
     </div>
 </div><br>
-
-
-
-
 <div class="container">
     <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
         <div class="carousel-inner">
-
             <div class="carousel-item active">
                 <img class="d-block w-100" id='<?php  echo $banner->url ?>'
                     src="<?php echo base_url(); ?>assets/images/Happy Client.png" alt="First slide">
@@ -876,8 +692,6 @@ input::placeholder {
                 <img class="d-block w-100" id='<?php  echo $banner->url ?>'
                     src="<?php echo base_url(); ?>assets/images/Happy Client.png" alt="First slide">
             </div>
-
-
         </div>
         <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss"
             data-bs-slide="prev">
@@ -899,8 +713,6 @@ input::placeholder {
             <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">
             <div class="search_wrap search_wrap_6 m-0 mt-4 ">
                 <div class="search_box">
-
-
                     <form method="post" action="<?php echo base_url();?>welcome/subscribe">
                         <input type="search" name="email_newsletter" id="email_newsletter"
                             class="form-control rounded-5" placeholder="Your Email Here!" aria-label="Search"
@@ -909,7 +721,6 @@ input::placeholder {
                             onclick="return checkemail();">Subscribe </button>
                         <span id="email_er" style="color: red; font-size:12px;"></span>
                     </form>
-
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/subscribe">
                         <div class="searchbox-wrap">
                             <input type="search" name="email_newsletter" id="email_newsletter"
@@ -917,29 +728,20 @@ input::placeholder {
                                 class="search_input form-input">
                             <button type="button" class="search_b"><span class="Search_text"
                                     onclick="return checkemail();">Subscribe</span> </button>
-
                         </div>
                         <span id="email_er" class="ms-5" style="color: red; font-size:12px;"></span>
                     </form> -->
-
-
                 </div>
-
-
             </div>
             </p>
         </div>
     </div>
 </div><br>
-
-
-
 <script>
 "use strict"; /* Start of use strict */
 (function() {
     function14();
 })();
-
 function function14() {
     $('.btnSweetalert').on("click", function() {
         swal({
@@ -955,7 +757,6 @@ function function14() {
             },
             function(isConfirm) {
                 if (isConfirm) {
-
                     window.location.href = "<?php echo base_url();?>welcome/logout";
                 } else {
                     swal("Cancelled", "Something went wrong. Please try again.)", "error");
@@ -964,17 +765,10 @@ function function14() {
     });
 }
 </script>
-
-
 <script>
 function getsubcategory(category_id) {
-
-
-    //var res = "";
     $("p").removeClass("selected");
     $(".new" + category_id).addClass("selected");
-
-    // var allch =  $("#").val();
 
     jQuery.ajax({
         type: "POST",
@@ -983,35 +777,45 @@ function getsubcategory(category_id) {
             category_id: category_id
         },
         success: function(res) {
-
-
-
-
-
-
-
-
             $("#sub-list").html(res);
-
-
-
             // $('#load_cound').val("10");
-
         }
     });
 
+    // Define a mapping of category_id to subcategory_id
+    var subcategory_map = {
+        1: 7,
+        2: 13,
+        3: 39,
+        4: 53,
+        5: 21,
+        6: 31,
+        7: 34
+
+        // Add more mappings as needed
+    };
+
+    // Get the corresponding subcategory_id based on category_id
+    var subcategory_id = subcategory_map[category_id];
+
+    // Call the getproduct function with the corresponding subcategory_id and category_id
+    getproduct(subcategory_id, category_id);
 }
 
+// Define the window.onload event
+window.onload = function() {
+    // Set the default category_id for the page refresh
+    var default_category_id = 1;
+    
+    // Call the getsubcategory function with the default category_id
+    getsubcategory(default_category_id);
+};
 
 function getshop(category_id) {
-
-
     //var res = "";
     $("img").removeClass("select");
     $(".newshop" + category_id).addClass("select");
-
     // var allch =  $("#").val();
-
     jQuery.ajax({
         type: "POST",
         url: "<?php echo base_url('/welcome/getshop'); ?>",
@@ -1019,27 +823,16 @@ function getshop(category_id) {
             category_id: category_id
         },
         success: function(res) {
-
-
             $("#shop_list").html(res);
-
             // $('#load_cound').val("10");
-
         }
     });
-
 }
-
-
 function getproduct(subcategory_id, category_id) {
-
-
     //var res = "";
     $("img").removeClass("select");
     $(".sub_new" + subcategory_id).addClass("select");
-
     // var allch =  $("#").val();
-
     jQuery.ajax({
         type: "POST",
         url: "<?php echo base_url('/welcome/getproduct'); ?>",
@@ -1048,16 +841,10 @@ function getproduct(subcategory_id, category_id) {
             category_id: category_id
         },
         success: function(res) {
-
-
             $("#product_list").html(res);
-
-
             // $('#load_cound').val("10");
-
         }
     });
-
 }
 </script>
 <script>
@@ -1065,8 +852,6 @@ $(document).ready(function() {
     // Get value on button click and show alert
     $("#myBtn").click(function() {
         var anything = $("#anything").val();
-
-
         jQuery.ajax({
             type: "POST",
             url: "<?php echo base_url('/welcome/getsearchproduct'); ?>",
@@ -1074,25 +859,17 @@ $(document).ready(function() {
                 anything: anything
             },
             success: function(res) {
-
-
-
-
                 $("#product_list").html(res);
-
             }
         });
     });
 });
 </script>
-
 <script>
 $(document).ready(function() {
     // Get value on button click and show alert
     $("#shopsubmit").click(function() {
         var location = $("#location").val();
-
-
         $.ajax({
             type: "POST",
             url: "<?php echo base_url('/welcome/getsearchshop'); ?>",
@@ -1100,9 +877,7 @@ $(document).ready(function() {
                 location: location
             },
             success: function(res) {
-
                 $("#shop_list").html(res);
-
             }
         });
     });
@@ -1111,7 +886,6 @@ $(document).ready(function() {
 <script type='text/javascript'>
 $(document).ready(function() {
     $("#search").autocomplete({
-
         source: function(request, response) {
             $.ajax({
                 url: "<?php echo base_url();?>welcome/search",
@@ -1120,7 +894,6 @@ $(document).ready(function() {
                 },
                 dataType: "json",
                 success: function(data) {
-
                     var resp = $.map(data, function(obj) {
                         var id = obj.id;
                         var category_id = obj.category_id;
@@ -1129,30 +902,20 @@ $(document).ready(function() {
                         return {
                             label: obj.title,
                             value: add
-
                         }
-
                     });
                     response(resp);
                     console.log(resp);
                     $("#display").html(data).show();
                 }
-
-
             });
-
-
         },
         select: function(event, ui) {
             location.href = "<?php echo base_url();?>welcome/productdetail/" + ui.item.value;
         },
         minLength: 2
     });
-
-
 });
-
-
 $(".col-lg-3").slice(0, 4).show();
 $(".loadMore").on("click", function() {
     $(".col-lg-3:hidden").slice(0, 4).show();
@@ -1160,8 +923,6 @@ $(".loadMore").on("click", function() {
         $(".loadMore").fadeOut();
     }
 })
-
-
 $(".col-lg-4").slice(0, 3).show();
 $(".loadmore").on("click", function() {
     $(".col-lg-4:hidden").slice(0, 3).show();
@@ -1169,7 +930,6 @@ $(".loadmore").on("click", function() {
         $(".loadmore").fadeOut();
     }
 })
-
 $(".mores").slice(0, 4).show();
 $(".more").on("click", function() {
     $(".mores:hidden").slice(0, 4).show();
@@ -1177,19 +937,15 @@ $(".more").on("click", function() {
         $(".more").fadeOut();
     }
 })
-
 $(document).ready(function() {
-
     // Load more data
     $('.load-more').click(function() {
         var row = Number($('#row').val());
         var allcount = Number($('#all').val());
         var rowperpage = 4;
         row = row + rowperpage;
-
         if (row <= allcount) {
             $("#row").val(row);
-
             $.ajax({
                 url: '<?php echo base_url();?>welcome/getproduct',
                 type: 'post',
@@ -1200,65 +956,44 @@ $(document).ready(function() {
                     $(".load-more").text("Loading...");
                 },
                 success: function(response) {
-
                     // Setting little delay while displaying new content
                     setTimeout(function() {
                         // appending posts after last post with class="post"
                         $(".post:last").after(response).show().fadeIn("slow");
-
                         var rowno = row + rowperpage;
-
                         // checking row value is greater than allcount or not
                         if (rowno > allcount) {
-
                             // Change the text and background
                             $('.load-more').hide();
-
                         } else {
                             $(".load-more").text("Load more");
                         }
                     }, 1000);
-
                 }
             });
         } else {
             $('.load-more').text("Loading...");
-
             // Setting little delay while removing contents
             setTimeout(function() {
-
                 // When row is greater than allcount then remove all class='post' element after 3 element
                 $('.post:nth-child(3)').nextAll('.post').remove();
-
                 // Reset the value of row
                 $("#row").val(0);
-
                 // Change the text and background
                 $('.load-more').text("Load more");
-
-
             }, 1000);
-
-
         }
-
     });
-
 });
-
-
 $(document).ready(function() {
-
     // Load more data
     $('.donate-load-more').click(function() {
         var row = Number($('#row-donate').val());
         var allcount = Number($('#all-donate').val());
         var rowperpage = 4;
         row = row + rowperpage;
-
         if (row <= allcount) {
             $("#row-donate").val(row);
-
             $.ajax({
                 url: '<?php echo base_url();?>welcome/getdonateproduct',
                 type: 'post',
@@ -1269,56 +1004,38 @@ $(document).ready(function() {
                     $(".donate-load-more").text("Loading...");
                 },
                 success: function(response) {
-
                     // Setting little delay while displaying new content
                     setTimeout(function() {
                         // appending posts after last post with class="post"
                         $(".postdonate:last").after(response).show().fadeIn("slow");
-
                         var rowno = row + rowperpage;
-
                         // checking row value is greater than allcount or not
                         if (rowno > allcount) {
-
                             // Change the text and background
                             $('.donate-load-more').hide();
-
                         } else {
                             $(".donate-load-more").text("Load more");
                         }
                     }, 1000);
-
                 }
             });
         } else {
             $('.donate-load-more').text("Loading...");
-
             // Setting little delay while removing contents
             setTimeout(function() {
-
                 // When row is greater than allcount then remove all class='post' element after 3 element
                 $('.postdonate:nth-child(3)').nextAll('.postdonate').remove();
-
                 // Reset the value of row
                 $("#row-donate").val(0);
-
                 // Change the text and background
                 $('.donate-load-more').text("Load more");
-
-
             }, 1000);
-
-
         }
-
     });
-
 });
 </script>
-
 <script>
 function checkemail(event) {
-
     var email_newsletter = $('#email_newsletter').val();
     var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
     if (email_newsletter == "") {
@@ -1326,21 +1043,16 @@ function checkemail(event) {
     } else if (!(email_newsletter.match(mailformat))) {
         $("#email_er").text("Please Enter valid Email");
     } else {
-
         $.ajax({
             type: 'POST',
             url: '<?php echo base_url();?>welcome/subscribe',
             data: 'newsletterSubmit=1&email_newsletter=' + email_newsletter,
-
             success: function(data) {
                 $("#email_er").text("");
                 swal("Subscribe successfully!", "", "success");
             }
         });
-
     }
-
-
 }
 </script>
 <script>
@@ -1348,22 +1060,16 @@ $(document).ready(function() {
     $("#latitudeArea").addClass("d-none");
     $("#longtitudeArea").addClass("d-none");
 });
-
 google.maps.event.addDomListener(window, 'load', initialize);
-
 function initialize() {
     var input = document.getElementById('Location');
     var autocomplete = new google.maps.places.Autocomplete(input);
-
     var job_Office_Address = document.getElementById('job_Office_Address');
     var autocomplete = new google.maps.places.Autocomplete(job_Office_Address);
-
     autocomplete.addListener('place_changed', function() {
         var place = autocomplete.getPlace();
-
         $('#latitude').val(place.geometry['location'].lat());
         $('#longitude').val(place.geometry['location'].lng());
-
         $("#latitudeArea").removeClass("d-none");
         $("#longtitudeArea").removeClass("d-none");
     });
