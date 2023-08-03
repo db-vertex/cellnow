@@ -1236,6 +1236,9 @@
             width: 100%;
             margin-right: 0px;
         }
+        .smart-scroll{
+   inline-size: max-content;
+        }
     }
 
     /* Styles for screen width less than or equal to 770px */
@@ -1253,7 +1256,7 @@
     /* Styles for screen width between 771px and 992px */
     @media (min-width: 771px) and (max-width: 992px) {
         .nav-item_serach {
-            padding-right: 150px;
+           
         }
 
         .search_box_header {
@@ -1308,7 +1311,7 @@
 
         <div class="container">
 
-            <nav class="navbar navbar-expand-xl bg-body- smart-scroll">
+            <nav class="navbar navbar-expand-xl bg-body- smart-scroll" style="width: auto;">
 
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
                         class="img-fluid logo_header" style="">
