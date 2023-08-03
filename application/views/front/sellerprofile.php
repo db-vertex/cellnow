@@ -88,7 +88,17 @@ html,body
   padding: 4px 18px;
 }
 }
+.shop_images_view {
+            font-family: open sans;
+            font-weight: 550;
+        }
 
+        @media (min-width: 575px){
+        .shop_details_border{
+            border-left:solid; 
+            border-color: #78d7b8;
+        }
+        }
 
     </style>
   </head>
@@ -98,7 +108,7 @@ html,body
   
 
 
-<div class="container" style="margin-top: 150px;">
+<div class="container" style="margin-top: 130px;">
   
 <?php  if($error=$this->session->flashdata('Editproduct')){  ?>
             <div class="row text-center" style="justify-content: center; ">
@@ -145,7 +155,7 @@ html,body
 
      <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"  class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
 width: 131.9px; border-color:#10B981;">
-     <div style="text-align:center"><h5><b ><?php echo ucfirst($profile->name); ?></b></h5>
+     <div style="text-align:center"><h5 class="shop_images_view"><b ><?php echo ucfirst($profile->name); ?></b></h5>
      <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png"> <?php if(isset($profile->Address)){echo ucfirst($profile->Address);} ?>
      
     </div>
@@ -154,9 +164,9 @@ width: 131.9px; border-color:#10B981;">
    
     </div>
     <!-- <div class="vr" style="color:#78d7b8"></div> -->
-    <div class="col-sm-6 text-center" style=" border-left:solid; border-color: #78d7b8"> 
+    <div class="col-sm-6 text-center shop_details_border" style=""> 
       
-      <h2 class=""><b>About us</b></h2>
+      <h4 class="shop_images_view pt-2"><b>About us</b></h4>
       <p class="pl-5 pr-5 word"><?php echo $profile->aboutus; ?></p>
 
     
@@ -168,8 +178,8 @@ width: 131.9px; border-color:#10B981;">
 
 
 
-<div class="container" >
-<h3 class=" mb-3"><b>Seller Ads</b></h3>
+<div class="container">
+        <h4 class="shop_images_view ps-2" style=""><b>Verified Ads</b></h4>
 <div class="row ">
 
 <?php $sellerproduct = get_seller_product($user['user_id']); 

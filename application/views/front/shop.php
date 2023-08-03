@@ -141,28 +141,30 @@
     }
 
     @media screen and (min-width: 560px) {
-  #a{
-  margin-right: 10px;
-  border-color: #78d7b8;
-  border-radius: 60px;
-  font-family:open sans;
-  font-weight:550;
-  font-size:22px;
-  padding: 4px 32px;
-  
-}
-}
-@media screen and (max-width: 560px) {
-  #a{
-    margin-right: 10px;
-  border-color: #78d7b8;
-  border-radius: 60px;
-  font-family:open sans;
-  font-weight:550;
-  font-size:15px;
-  padding: 4px 18px;
-}
-}
+        #a {
+            margin-right: 10px;
+            border-color: #78d7b8;
+            border-radius: 60px;
+            font-family: open sans;
+            font-weight: 550;
+            font-size: 22px;
+            padding: 4px 32px;
+
+        }
+    }
+
+    @media screen and (max-width: 560px) {
+        #a {
+            margin-right: 10px;
+            border-color: #78d7b8;
+            border-radius: 60px;
+            font-family: open sans;
+            font-weight: 550;
+            font-size: 15px;
+            padding: 4px 18px;
+        }
+    }
+
     .details_price {
         font-family: 'Roboto';
         font-style: normal;
@@ -291,6 +293,17 @@
             width: 22.66%;
         }
     }
+    .shop_images_view {
+            font-family: open sans;
+            font-weight: 550;
+        }
+
+        @media (min-width: 575px){
+        .shop_details_border{
+            border-left:solid; 
+            border-color: #78d7b8;
+        }
+        }
     </style>
 </head>
 
@@ -299,13 +312,13 @@
 
     <?php 
    $shop = get_id_by_shop($user['user_id']);?>
-    <div class="container" style=" margin-top: 180px;">
+    <div class="container" style=" margin-top: 130px;">
 
         <div class="shadow p-3  bg-body rounded-5" style="margin:25px"><br>
             <div class="row text-center justify-content-around">
                 <div class="col-3 mb-1">
-                    <a href="<?php echo base_url();?>welcome/buyerprofile" 
-                        class="btn" role="button" aria-disabled="true" id="a">Buyer</a>
+                    <a href="<?php echo base_url();?>welcome/buyerprofile" class="btn" role="button"
+                        aria-disabled="true" id="a">Buyer</a>
                 </div>
 
                 <div class="col-3 mb-1">
@@ -315,9 +328,8 @@
 
 
                 <div class="col-3 mb-1">
-                    <a href="<?php echo base_url();?>welcome/shop"  style="background-color: #78d7b8; color:#fff"
-                    class="btn" role="button" aria-disabled="true"
-                        id="a">Shop</a>
+                    <a href="<?php echo base_url();?>welcome/shop" style="background-color: #78d7b8; color:#fff"
+                        class="btn" role="button" aria-disabled="true" id="a">Shop</a>
                 </div>
             </div>
 
@@ -352,7 +364,7 @@ width: 131.9px;">
 
                 </div>
                 <!-- <div class="vr" style="color:#78d7b8"></div> -->
-                <div class="col-sm-6 " style=" border-left:solid; border-color: #78d7b8">
+                <div class="col-sm-6 shop_details_border" style="">
                     <?php 
        
            if(empty($shop)){ ?>
@@ -373,7 +385,7 @@ width: 131.9px;">
                         <div class="col mt-4">
                             <div class="row">
                                 <div class="col">
-                                    <h5><b><?php echo ucfirst($shop->name);?> </b></h5>
+                                    <h5 class="shop_images_view"><b><?php echo ucfirst($shop->name);?> </b></h5>
                                 </div>
                                 <div class="col"><?php if($shop->admin_approval==2){?>
                                     <div>
@@ -839,33 +851,32 @@ for($i=0; $i<(4-count($product_image)); $i++){
 
 
                 </div>
-            </div><br>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row ml-5">
 
-            <?php if(!empty($shop)){?>
-            <h5 class=""><b>Shop Images</b></h5>
-            <?php $i=1;
+
+
+                <div class="row ">
+                    <?php if(!empty($shop)){?>
+                    <h5 class="shop_images_view">Shop Images</h5>
+                    <?php $i=1;
         $product_image = get_shop_image($shop->id);
         foreach($product_image as $product_images){ ?>
-            <div class="col-md-2 col-sm-4 col-6 mb-3">
-                <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
-                    data-lightbox="shop-images">
-                    <img class="details_img_cover img-fluid"
-                        src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
-                </a>
+                    <div class=" col-lg-3 col-sm-4 col-6 mb-3">
+                        <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
+                            data-lightbox="shop-images">
+                            <img class="details_img_cover img-fluid"
+                                src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
+                        </a>
+                    </div>
+                    <?php } ?>
+                    <?php } ?>
+                </div>
             </div>
-            <?php } ?>
-            <?php } ?>
         </div>
     </div>
 
 
-
     <div class="container">
-        <h3 class="ml-5"><b>Verified Ads</b></h3>
+        <h4 class="shop_images_view" style="padding-left: 2.5rem!important;"><b>Verified Ads</b></h4>
     </div>
 
     <div class="container">

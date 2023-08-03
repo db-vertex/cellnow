@@ -82,6 +82,17 @@
         color: white;
         background-color: #78d7b8;
     }
+    .shop_images_view {
+            font-family: open sans;
+            font-weight: 550;
+        }
+
+        @media (min-width: 575px){
+        .shop_details_border{
+            border-left:solid; 
+            border-color: #78d7b8;
+        }
+        }
     </style>
 </head>
 
@@ -123,10 +134,9 @@
                             style="height: 27px; width:27px;margin-left: 52%;position: absolute;margin-top: 4px;border-radius: 100%;"></a>
 
                     <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"
-                        class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
-width: 131.9px;">
+                        class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px; width: 131.9px;">
                     <div style="text-align:center">
-                        <h5><b><?php echo ucfirst($profile->name); ?></b></h5>
+                        <h5 class="shop_images_view"><b><?php echo ucfirst($profile->name); ?></b></h5>
                         <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png"> <?php if(isset($profile->Address)){ echo ucfirst($profile->Address);} ?>
 
                     </div>
@@ -139,10 +149,10 @@ width: 131.9px;">
 
 
                 </div>
-                <!-- <div class="vr" style="color:#78d7b8"></div> -->
-                <div class="col-sm-6 text-center" style=" border-left:solid; border-color: #78d7b8">
+              
+                <div class="col-sm-6 text-center shop_details_border " style="">
 
-                    <h2 class=""><b>About us</b></h2>
+                    <h4 class="shop_images_view"><b>About us</b></h4>
                     <p class="word"><?php echo ucfirst($profile->aboutus); ?></p>
 
                     <div class="row text-center p-5">

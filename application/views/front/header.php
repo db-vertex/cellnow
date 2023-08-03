@@ -1325,7 +1325,7 @@
                                         name="location" class="form-control rounded-5 overflow"
                                         placeholder="Search for location" id="Location" aria-label="Search"
                                         aria-describedby="search-addon"
-                                        style="padding-right: 40px; background-color: #10B981; color: #fff;" />
+                                        style="padding-right: 21px; background-color: #10B981; color: #fff;" />
 
                                     <!-- Add search icon -->
                                     <span
