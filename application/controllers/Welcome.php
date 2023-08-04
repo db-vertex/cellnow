@@ -3689,10 +3689,15 @@ $sub .= '</h6>
 
 				$pro = "";
 
-
-
+				
 
 				if (!empty($chat)) {
+					$pro .= '<a href="javascript:location.reload()" style="text-decoration: none;">
+				<p class="me-3 mt-2" id="cross_icon" style="font-size: 29px; text-align: right;">
+				  <i class="fas fa-times"></i>
+				</p>
+			  </a>';
+
 
 					foreach ($chat as $key => $chatmessages) {
 
@@ -3714,6 +3719,8 @@ $sub .= '</h6>
 							$profile = get_land_plot_data($chatmessages["product_id"]);
 						}
 
+						
+
 						if ($chatmessages['sender_id'] != $_SESSION['id']) {
 
 							$profile_pic1 = get_userdetail($chatmessages['sender_id'])->profile_img;
@@ -3724,7 +3731,7 @@ $sub .= '</h6>
 
 							//$pro .= $updated;
 
-
+						
 
 							$pro .= '<li class="left">
                                             
