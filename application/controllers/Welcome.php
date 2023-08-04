@@ -3692,12 +3692,12 @@ $sub .= '</h6>
 				
 
 				if (!empty($chat)) {
+				
 					$pro .= '<a href="javascript:location.reload()" style="text-decoration: none;">
-				<p class="me-3 mt-2" id="cross_icon" style="font-size: 29px; text-align: right;">
-				  <i class="fas fa-times"></i>
-				</p>
-			  </a>';
-
+					<p class="me-3 mt-2" id="cross_icon" style="font-size: 29px; text-align: right;">
+					  <i class="fas fa-times"></i>
+					</p>
+				  </a>';
 
 					foreach ($chat as $key => $chatmessages) {
 
@@ -3794,6 +3794,13 @@ $sub .= '</h6>
 					// <div class="timestamp">13:54</div>
 				} else {
 
+
+					$pro .= '<a href="javascript:location.reload()" style="text-decoration: none;">
+					<p class="me-3 mt-2" id="cross_icon" style="font-size: 29px; text-align: right;">
+					  <i class="fas fa-times"></i>
+					</p>
+				  </a>';
+
 					$pro .= '<li id="default-page" style="text-align: center;padding-top:30%;">
                                            
                                             <img src="' . base_url('assets/images/CelNow 5 1.png') . '" style="opacity:0.2;">
@@ -3801,8 +3808,6 @@ $sub .= '</h6>
 
 
                                           </li>';
-
-
 
 				}
 
