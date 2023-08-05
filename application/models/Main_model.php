@@ -30,9 +30,10 @@ class Main_model extends CI_Model
         return $query;
     }
 
-    function get_data($table)
+    function get_data($table,$id)
     {
         $this->db->select('*');
+        $this->db->where("user_id", $id);
         $this->db->from($table);
         return $this->db->get();
     }

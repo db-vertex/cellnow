@@ -3928,21 +3928,12 @@ $sub .= '</h6>
 			if (!empty($chat_exist)) {
 
 				$chat_list = array('message' => $message);
-
-
 				$this->chat_model->update($chat_list, $sender_id, $receiver_id);
-
-
 			} else {
-
+				website_notification($sender_id, $receiver_id, $product_id, $category_id,$message);
 				$chat_list = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
-
 				$this->db->insert('chat_list', $chat_list);
 				//echo "here";
-
-
-
-
 			}
 
 
@@ -4165,7 +4156,7 @@ $sub .= '</h6>
    }
 
 
-      protected function sendMessage($keys_auth, $notification_data, $title, $image, $id) {
+      protected function sendMessage($keys_auth, $notification_data, $title, $image, $category_id) {
         // here I'll get the subscription endpoint in the POST parameters
         // but in reality, you'll get this information in your database
         // because you already stored it (cf. push_subscription.php)
@@ -4182,10 +4173,10 @@ $sub .= '</h6>
         $options = array(
           'title' => "$title",
           'body' => "$notification_data",
-          'icon' => base_url().'assets/img/logo.png',
-          'badge' => base_url().'assets/img/logo.png',
+          'icon' => base_url().'/uploads/profile/notifitions_icon.png',
+          'badge' => base_url().'assets/images/CelNow 5 1.png',
           'image' => $image,
-          'url' =>  base_url().'/welcome/post_deatils/'.$id
+          'url' =>  base_url().'/welcome/chat/'.$category_id
         );
         $report = $webPush->sendOneNotification(
           $subscription,
@@ -4199,14 +4190,40 @@ $sub .= '</h6>
           return "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
         }
       }
-      public function website_notification($id=0) {
-           $res = $this->admin_model->find_post($id);
-                $id = $res->id;
+      public function website_notification($sender_id, $receiver_id, $product_id, $category_id,$message){
+          if($category_id == 1){
+			$pro = get_mobile_data($product_id);
+			$product_name = $pro->title;
+		  }else if($category_id == 2){
+			$pro = get_tution_data($product_id);
+			$product_name = $pro->title;
+		  }else if($category_id == 3){
+			$pro = get_job_data($product_id);
+			$product_name = $pro->title;
+		  }else if($category_id == 4){
+			$pro = get_internship_data($product_id);
+			$product_name = $pro->title;
+		  }else if($category_id == 5){
+			$pro =get_residential_data($product_id);
+			$product_name = $pro->title;
+		  }else if($category_id == 6){
+			$pro =get_commericial_data($product_id);
+			$product_name = $pro->title;
+		  }else if($category_id == 7){
+			$pro =get_land_plot_data($product_id);
+			$product_name = $pro->title;
+		  }
+		 
+		  $user_name = get_userdetail($sender_id);
+		  
+		
               $messages = array();
-              $notification_data =  "Type: " . $res->Select_Type . ", Category: " . $res->category . ", City: " . $res->City;
-              $title = $res->Title;
-              $image = 'https://postinwork.com/assets/images/notification_logo.png';
-              $query = $this->main_model->get_data('subscribers')->result();
+			  $notification_data = "Product Name: " . $product_name. "\n";
+			  $notification_data .= "Message: " . $message;
+              $title = $user_name->name ;
+              $image = base_url().'assets/images/CelNow 5 1.png';
+              $query = $this->main_model->get_data('subscribers',$receiver_id)->result();
+
               foreach($query as $row) {
                 $keys_auth = array(
                   "contentEncoding" => "aesgcm",
@@ -4216,7 +4233,7 @@ $sub .= '</h6>
                       "p256dh" => $row->p256dh
                     )
                 );
-                $msg = $this->sendMessage($keys_auth, $notification_data, $title, $image, $id);
+                $msg = $this->sendMessage($keys_auth, $notification_data, $title, $image, $category_id);
                 $messages['msg'] = $msg;
               }
              // redirect('/?msg=1', 'refresh');
