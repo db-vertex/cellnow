@@ -167,6 +167,7 @@ width: 131.9px;">
                     <h5 class="shop_images_view">Shop Images</h5>
                     <?php $i=1;
                 $product_image = get_shop_image($shop->id);
+                if(!empty($product_image)){
                 foreach($product_image as $product_images){ ?>`
                     <div class=" col-lg-3 col-sm-4 col-auto mb-3">
                         <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
@@ -175,8 +176,13 @@ width: 131.9px;">
                                 src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
                         </a>
                     </div>
-                    <?php } ?>
-                    <?php } ?>
+                    <?php }}  else{ ?>
+
+                        <img class="details_img_cover img-fluid"
+                                src="<?php echo base_url();?>.'uploads/shop/No_Image_Available-removebg-preview.png'">
+                   <?php } ?>
+                    <?php }  ?>
+                   
                 </div>
 
 
