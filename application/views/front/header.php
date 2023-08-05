@@ -22,6 +22,12 @@
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
     <link rel="icon" sizes="196x196" href="<?php echo base_url();?>assets/images/CelNow 5 1.png" type="image/png">
     <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
+    <?php 
+    $session_id = $this->session->userdata('id');
+    if(!empty($session_id)){?>
+   <script src="<?php echo base_url();?>assets/js/app.js"></script>
+  <?php  }
+    ?>
     <title>CelNow</title>
     <style>
     html,
@@ -1308,7 +1314,7 @@
 
     <!-- <h1 >Hello, world!</h1> -->
     <div class="container-fluid body_background " id="body_background">
-
+    <button id="push-subscription-button" class="btn btn-sm btn-primary d-none">Enable Push Notification</button>
         <div class="container">
 
             <nav class="navbar navbar-expand-xl bg-body- smart-scroll" style="width: auto;">
@@ -1474,18 +1480,7 @@
             </nav>
         </div>
     </div>
-
     <!-- </nav> -->
-
-
-
-
-
-
-
-
-
-
 </body>
 
 </html>
