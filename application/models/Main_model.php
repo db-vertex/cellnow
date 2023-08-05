@@ -99,4 +99,11 @@ class Main_model extends CI_Model
 
         return $filtered_data;
     }
+
+    public function update_token($id,$data)
+  {
+
+        return $this->db->where('user_id',$id)->update('subscribers',$data);
+
+  }
 }

@@ -4271,37 +4271,16 @@ $sub .= '</h6>
 				if((empty($user_id))){
 					$this->main_model->insert('subscribers', $insert_data);
 				}
+				else{
+					$this->main_model->update_token($user_id, $insert_data);
+				}
               }
             }
             catch(Exception $error) {
               echo 'Sorry there has been an error processing your request!';
             }
             break;
-          case 'PUT':
-            // update the key and token of subscription corresponding to the endpoint
-            //filter out bad data
-            $myQuery = $this->db->query("SELECT * FROM subscribers WHERE endpoint = '".$this->input->post('endpoint')."'");
-            print_r($myQuery);
-            try{
-              $result = $myQuery->result();
-              if($result[0]->id !== NULL) {
-                $insert_data = array(
-                  'endpoint' => $this->input->post('endpoint'),
-                  'auth' => $this->input->post('authToken'),
-                  'p256dh' => $this->input->post('publicKey'),
-				  'user_id' => $this->session->userdata('id'),
-                );
-                if ($this->main_model->update_record('subscribers', $result[0]->id, $insert_data)) {
-                  echo 'Subscribtion updated successful.';
-                } else {
-                  echo 'Sorry there is some problem.';
-                }
-              }
-            }
-            catch(Exception $error) {
-              echo 'Sorry there has been an error processing your request!';
-            }
-            break;
+    
           case 'DELETE':
             // delete the subscription corresponding to the endpoint
             $myQuery = $this->db->query("SELECT * FROM subscribers WHERE endpoint = '".$this->input->post('endpoint')."'");

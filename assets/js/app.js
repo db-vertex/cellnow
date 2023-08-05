@@ -42,7 +42,7 @@ document.addEventListener('DOMContentLoaded', () => {
     navigator.serviceWorker.register('https://work.dbvertex.com/celnow/serviceWorker.js').then(
         () => {
             console.log('[SW] Service worker has been registered');
-            push_updateSubscription();
+           
         },
         e => {
             console.error('[SW] Service worker registration failed', e);
@@ -149,25 +149,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    function push_updateSubscription() {
-        navigator.serviceWorker.ready
-            .then(serviceWorkerRegistration => serviceWorkerRegistration.pushManager.getSubscription())
-            .then(subscription => {
-                changePushButtonState('disabled');
 
-                if (!subscription) {
-                    // We aren't subscribed to push, so set UI to allow the user to enable push
-                    return;
-                }
-
-                // Keep your server in sync with the latest endpoint
-                return push_sendSubscriptionToServer(subscription, 'PUT');
-            })
-            .then(subscription => subscription && changePushButtonState('enabled')) // Set your UI to show they have subscribed for push messages
-            .catch(e => {
-                console.error('Error when updating the subscription', e);
-            });
-    }
 
     function push_unsubscribe() {
         changePushButtonState('computing');
@@ -200,7 +182,7 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    function push_sendSubscriptionToServer(subscription, method, baseUrl) {
+    function push_sendSubscriptionToServer(subscription, method) {
         const key = subscription.getKey('p256dh');
         const token = subscription.getKey('auth');
         const contentEncoding = (PushManager.supportedContentEncodings || ['aesgcm'])[0];
