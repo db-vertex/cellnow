@@ -4241,7 +4241,8 @@ $sub .= '</h6>
              // redirect('/?msg=1', 'refresh');
         } 
       /* ------------------------------------------ Web Push Notifications ---------------------------------------------------- */
-      public function push_subscription() {
+	                        
+	public function push_subscription() {
         $subscription = json_decode(file_get_contents('php://input'), true); // for PHP 7
         $_POST = $subscription;
         if (!isset($subscription['endpoint'])) {
@@ -4254,6 +4255,7 @@ $sub .= '</h6>
             // create a new subscription entry in your database (endpoint is unique)
             //filter out bad data
             $myQuery = $this->db->query("SELECT * FROM subscribers WHERE endpoint = '".$this->input->post('endpoint')."'");
+			
             try{
               $result = $myQuery->result();
               if(empty($result)) {
@@ -4263,11 +4265,12 @@ $sub .= '</h6>
                   'p256dh' => $this->input->post('publicKey'),
 				  'user_id' => $this->session->userdata('id'),
                 );
-                if ($this->main_model->insert('subscribers', $insert_data)) {
-                  echo 'Subscribtion successful.';
-                } else {
-                  echo 'Sorry there is some problem.';
-                }
+
+				$session_id = $this->session->userdata('id');
+				$user_id = get_subscribersdetail($session_id);
+				if((empty($user_id))){
+					$this->main_model->insert('subscribers', $insert_data);
+				}
               }
             }
             catch(Exception $error) {

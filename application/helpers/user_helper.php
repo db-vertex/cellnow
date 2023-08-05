@@ -2309,4 +2309,19 @@ $update = $ci->db->where(array('id'=>$product_id,))->update($sql, ['Count'=>$cou
 $erorr =  $ci->db->error();
 }
 
+function get_subscribersdetail($user_id)
+{
+  //get main CodeIgniter object
+       $ci =& get_instance();
+  //load databse library
+       $ci->load->database();
+    //   print_r($user_id);
+$query="SELECT * FROM subscribers WHERE user_id=".$user_id;
+// echo $user_id;
+  $category_data = $ci->db->query($query);        
+
+  return $category_data->row(); 
+ }
+
+
 ?>

@@ -200,12 +200,13 @@ document.addEventListener('DOMContentLoaded', () => {
             });
     }
 
-    function push_sendSubscriptionToServer(subscription, method) {
+    function push_sendSubscriptionToServer(subscription, method, baseUrl) {
         const key = subscription.getKey('p256dh');
         const token = subscription.getKey('auth');
         const contentEncoding = (PushManager.supportedContentEncodings || ['aesgcm'])[0];
-
-        return fetch('/welcome/push_subscription', {
+         var fetchUrl = 'https://work.dbvertex.com/celnow/welcome/push_subscription';
+                              
+        return fetch(fetchUrl,{
             method,
             body: JSON.stringify({
                 endpoint: subscription.endpoint,

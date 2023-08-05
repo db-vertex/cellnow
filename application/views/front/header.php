@@ -26,7 +26,8 @@
     $session_id = $this->session->userdata('id');
     if(!empty($session_id)){?>
    <script src="<?php echo base_url();?>assets/js/app.js"></script>
-  <?php  }
+   <?php  }
+    ?>
     ?>
     <title>CelNow</title>
     <style>
