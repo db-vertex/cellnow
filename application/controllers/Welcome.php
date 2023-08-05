@@ -4164,15 +4164,7 @@ $sub .= '</h6>
    		  
    }
 
-   public function notification_sent(){
-    $notification = $this->User_model->getsentnotification();
-    foreach ($notification as $notification_data) {
-        $id = $notification_data->post_id;
-      
-        $this->website_notification($id);
-        $this->db->update("notification", ["sent_notification"=>1], "post_id=$id");
-     }
-    }
+
       protected function sendMessage($keys_auth, $notification_data, $title, $image, $id) {
         // here I'll get the subscription endpoint in the POST parameters
         // but in reality, you'll get this information in your database
