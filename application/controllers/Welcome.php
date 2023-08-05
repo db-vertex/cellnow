@@ -4272,7 +4272,7 @@ $sub .= '</h6>
 					$this->main_model->insert('subscribers', $insert_data);
 				}
 				else{
-					$this->main_model->update_token($user_id, $insert_data);
+					$this->main_model->update_token($session_id, $insert_data);
 				}
               }
             }
