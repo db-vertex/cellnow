@@ -3929,10 +3929,12 @@ $sub .= '</h6>
 
 				$chat_list = array('message' => $message);
 				$this->chat_model->update($chat_list, $sender_id, $receiver_id);
+				$this->website_notification($sender_id, $receiver_id, $product_id, $category_id,$message);
 			} else {
-				website_notification($sender_id, $receiver_id, $product_id, $category_id,$message);
+				
 				$chat_list = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 				$this->db->insert('chat_list', $chat_list);
+				$this->website_notification($sender_id, $receiver_id, $product_id, $category_id,$message);
 				//echo "here";
 			}
 
@@ -4222,7 +4224,7 @@ $sub .= '</h6>
 			  $notification_data .= "Message: " . $message;
               $title = $user_name->name ;
               $image = base_url().'assets/images/CelNow 5 1.png';
-              $query = $this->main_model->get_data('subscribers',$receiver_id)->result();
+              $query = $this->main_model->get_data_user('subscribers',$receiver_id)->result();
 
               foreach($query as $row) {
                 $keys_auth = array(

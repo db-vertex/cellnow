@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     var base_url = '<?php echo base_url(); ?>';
     
-    navigator.serviceWorker.register('/serviceWorker.js').then(
+    navigator.serviceWorker.register('https://work.dbvertex.com/celnow/serviceWorker.js').then(
         () => {
             console.log('[SW] Service worker has been registered');
             push_updateSubscription();
@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const token = subscription.getKey('auth');
         const contentEncoding = (PushManager.supportedContentEncodings || ['aesgcm'])[0];
 
-        return fetch('welcome/push_subscription', {
+        return fetch('/welcome/push_subscription', {
             method,
             body: JSON.stringify({
                 endpoint: subscription.endpoint,
