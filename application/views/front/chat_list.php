@@ -2,9 +2,7 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
 <div class="container-fluid bg-3 divpad">
-
     <!--   <ul class="breadcrumb" style="background-color: unset;padding-top: 34px;">-->
     <!--  <li><a href="<?php echo base_url(); ?>">Home</a></li>-->
     <!--  <li><a href="#">Chat</a></li>-->
@@ -12,9 +10,7 @@
 <!--  <li>Italy</li> -->
     <!--</ul>-->
     <?php
- 
  //print_r($reciever_id);
-
 ?>
     <style type="text/css">
     ul {
@@ -54,9 +50,6 @@
     }
 
     .action_menu {
-
-
-
         background-color: rgba(0, 0, 0, 0.5);
         color: white;
         width: 10%;
@@ -80,14 +73,11 @@
 
     .action_menu ul li i {
         padding-right: 10px;
-
     }
 
     .action_menu ul li:hover {
         cursor: pointer;
-
     }
-
 
     /* Component: Chat */
     .chat .chat-wrapper .chat-list-wrapper {
@@ -119,11 +109,9 @@
         bottom: -18px;
         right: 0px;
         font-size: 12px;
-
     }
 
     .checkmark-read {
-
         position: absolute;
         bottom: -18px;
         right: 6px;
@@ -241,7 +229,6 @@
         margin-left: -12px;
         display: block;
         float: left;
-
     }
 
     .chat .chat-wrapper .message-list-wrapper .message-list li.left .avatar img {
@@ -297,7 +284,6 @@
         background: #E7E7E7;
         padding: 7px;
         border-radius: 15px;
-
     }
 
     .chat .chat-wrapper .message-list-wrapper .message-list li.left .body .message:before {
@@ -306,20 +292,16 @@
         position: absolute;
         width: 0;
         height: 0;
-
         margin-left: -7px;
     }
 
     .chat .chat-wrapper .message-list-wrapper .message-list li.left .body .message a.white {
         color: white;
         font-weight: bolder;
-
-
         text-decoration: underline;
     }
 
     .chat .chat-wrapper .message-list-wrapper .message-list li.left .body .message img {
-
         width: 100%;
         height: auto;
         margin-bottom: 5px;
@@ -361,7 +343,6 @@
         line-height: 18px;
         font-style: italic;
         margin-bottom: 4px;
-
     }
 
     .chat .chat-wrapper .message-list-wrapper .message-list li.right .timestamp i {
@@ -386,7 +367,6 @@
         color: #194B74;
         border-radius: 15px;
         padding: 7px;
-
     }
 
     .chat .chat-wrapper .message-list-wrapper .message-list li.right .body .message:after {
@@ -395,8 +375,6 @@
         position: absolute;
         width: 0;
         height: 0;
-
-
         margin-right: -7px;
         -moz-transform: rotate(180deg);
         -o-transform: rotate(180deg);
@@ -408,11 +386,9 @@
     .chat .chat-wrapper .message-list-wrapper .message-list li.right .body .message a.white {
         color: white;
         font-weight: bold;
-
     }
 
     .chat .chat-wrapper .message-list-wrapper .message-list li.right .body .message img {
-
         width: 100%;
         height: auto;
         margin-bottom: 5px;
@@ -442,8 +418,6 @@
             flex: 0 0 auto;
             width: 73.33333333%;
         }
-
-
     }
 
     @media (max-width: 767px) {
@@ -479,7 +453,6 @@
             font-size: 11px;
             line-height: 18px;
             font-style: italic;
-
         }
 
         .chat .chat-wrapper .chat-list-wrapper .chat-list li .body .header .timestamp i {
@@ -554,7 +527,6 @@
 
     .btn-green {
         background-color: #D1FAE5;
-
         border-color: #27ae60;
         color: white;
     }
@@ -596,10 +568,8 @@
     function redirectDiv() {
         // Check if the screen size is at least 992 pixels (lg and above)
         var mediaQuery = window.matchMedia('(max-width: 992px)');
-
         // Get the targetDiv element
         var targetDiv = document.getElementById("targetDiv");
-
         // Apply CSS properties only if the screen size is at least 992px
         if (mediaQuery.matches) {
             targetDiv.style.backgroundColor = "white";
@@ -611,10 +581,7 @@
     </script>
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
     <!-- <script src="http://91.234.35.26/iwiki-admin/v1.0.0/admin/js/jquery.nicescroll.min.js"></script> -->
-
-    
     <div class="container mt-5">
-
         <div class="breadcrumb_container container mb-5 pt-5">
             <div class="row breadcrumb_row">
                 <div class="breadcrumb_col col">
@@ -632,11 +599,9 @@
                         <div class="panel-body chat">
                             <div class="row chat-wrapper">
                                 <div class="col-lg-4  ">
-
                                     <!--  <div class="compose-area"> 
                                 <a href="javascript:void(0);" class="btn btn-default"><i class="fa fa-edit"></i> New Chat</a>
                             </div> -->
-
                                     <div>
                                         <div class="slimScrollDiv"
                                             style="position: relative; overflow: hidden; width: auto; height: 550px;">
@@ -644,26 +609,14 @@
                                                 style="overflow-y: auto; width: auto; height: 550px;">
                                                 <ul class="chat-list">
                                                     <?php 
-                            
-                                   
                                       $chat =  get_all_chat($sender_id,$receiver_id);
-                                    
- 
                                       if(!empty($chat_list)){
-
-
                                       foreach ($chat_list as $key => $chat_per) {
-                                         
-                                          
                                           if($chat_per["category_id"]==1) {
                                               $profile = get_mobile_data($chat_per["product_id"]);
-                                            
                                           }
-                                          
                                         else if($chat_per["category_id"]==2) {
                                               $profile = get_tution_data($chat_per["product_id"]); 
-                                              
-                                              
                                           }
                                             else if($chat_per["category_id"]==3) {
                                               $profile = get_job_data($chat_per["product_id"]);
@@ -671,35 +624,21 @@
                                            else if($chat_per["category_id"]==4) {
                                               $profile = get_internship_data($chat_per["product_id"]);
                                           }
-                                      
                                            else if($chat_per["category_id"]==5) {
                                               $profile = get_commericial_data($chat_per["product_id"]);
-                                             
-                                      
-                                             
                                           }
                                             else if($chat_per["category_id"]==6) {
                                               $profile = get_residential_data($chat_per["product_id"]);
                                           }
-                                          
                                            else if($chat_per["category_id"]==7) {
                                               $profile = get_land_plot_data($chat_per["product_id"]);
                                           }
-                                         
                                         if($chat_per['sender_id'] != $_SESSION['id']){
-
                                           $username = get_user_phone($chat_per['sender_id']);
- 
                                         }elseif($chat_per['receiver_id'] != $_SESSION['id']){
-
                                           $username = get_user_phone($chat_per['receiver_id']);
-
-                                       
                                         }
-
-                                       
                                         ?>
-
                                                     <li class="new<?php echo ($username->user_id).($profile->id); ?>"
                                                         onclick="redirectDiv(); getchat(<?php echo $username->user_id; ?>, <?php echo $_SESSION['id']; ?>,<?=$profile->id?>,<?=$profile->category_id?>);"
                                                         style="">
@@ -713,15 +652,10 @@
                                                                 </span><br>
                                                                 <span class="username">
                                                                     <?php
-
                                                       if(!empty($username->name)){
-
                                                         echo ucfirst($username->name); 
-
                                                       }else{
-
                                                         echo ucfirst($username->phone);
-
                                                       }?>
                                                                 </span>
                                                                 <!--  <small class="timestamp text-muted">
@@ -733,27 +667,15 @@
                                                 </p> -->
                                                         </div>
                                                     </li>
-
                                                     <?php
                                       }
-
                                       }else if(!empty($chat)){
-
-                                        
                                         $username = get_user_phone($receiver_id);
-
-
                                         ?>
-
-
-
-
                                                     <li class="new<?php echo ($username->user_id).($profile->id); ?>"
                                                         onclick="return getchat(<?php echo $username->user_id; ?>,<?php echo $_SESSION['id']; ?>);"
                                                         style="padding: 45px 20px;">
                                                         <span class="avatar available">
-
-
                                                             <!--  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" class="img-circle">
  -->
                                                         </span>
@@ -761,18 +683,11 @@
                                                             <div class="header">
                                                                 <span class="username">
                                                                     <?php
-
                                                       if(!empty($username->username)){
-
                                                         echo ucfirst($username->username); 
-
                                                       }else{
-
                                                         echo ucfirst($username->phone);
-
                                                       }
-
-
                                                      ?></span>
                                                                 <!--  <small class="timestamp text-muted">
                                                         <i class="fa fa-clock-o"></i><?php echo date('Y-m-d') ?>
@@ -784,14 +699,10 @@
                                                         </div>
                                                     </li>
                                                     <?php
-
                                       }else{
-                                        
-
                                         echo "<h4 style='padding-top:30px;text-align: center;' >No Chat Found</4>";
                                       }
                                       ?>
-
                                                 </ul>
                                             </div>
                                             <div class="slimScrollBar"
@@ -802,95 +713,50 @@
                                             </div>
                                         </div>
                                     </div>
-
                                 </div>
-
                                 <div class="col-lg-8" id="targetDiv">
                                     <div>
                                         <div class="slimScrollDiv"
                                             style="position: relative; overflow: hidden; width: auto; height: 488px;">
                                             <!-- <div class="message-list-wrapper" style="overflow: hidden; width: auto; height: 452px;"> -->
-
-
                                             <div class="message-list-wrapper"
                                                 style=" width: auto; height: 452px;border: 0px;">
                                                 <!--<h3 id="action_menu_btn"><i class="fa fa-ellipsis-v" style="float:right;padding-top: 20px;padding-right: 30px;"></i></h3>-->
                                                 <!--<div class="action_menu">-->
                                                 <!--	<ul>-->
-
-
-
-
-
                                                 <!--                                  <li id="btn-unblock"> Un-Block</li>-->
                                                 <!--                                  <li id="btn-block"> Block</li>-->
-
-
-
                                                 <!--	</ul>-->
                                                 <!--</div>-->
                                                 <ul class="message-list">
-
-
                                                     <?  
-
                                         $chat =  get_all_chat($sender_id,$receiver_id, $product_id);
-
-                                  
-
                                         $allchat = count($chat);
-
-                                  
-
                                       ?>
-
-
-
-
                                                     <!--  <?php if($allchat > 4){  ?>       -->
-
                                                     <!--    <li class="text-center loadmoremsg" >-->
                                                     <!--        <a href="javascript:void(0);" id="load_more" class="btn btn-default">Load More Messages</a>-->
                                                     <!--    </li>-->
-
                                                     <!--  <?php }else{ ?>-->
-
-
                                                     <!--    <li class="text-center loadmoremsg" style="display: none;">-->
                                                     <!--        <a href="javascript:void(0);" id="load_more" class="btn btn-default">Load More Messages</a>-->
                                                     <!--    </li>-->
-
-
-
                                                     <!--<?php  } ?>  -->
                                                     <ul id="load-list">
-
                                                     </ul>
-
                                                     <input type="hidden" id="load_cound" value="4">
-
                                                     <ul id="message-list">
-
                                                         <li id="default-page" style="text-align: center;">
-
-
-
-
                                                         </li>
-
                                                     </ul>
-
                                                 </ul>
                                             </div>
-
                                             <div class="slimScrollBar"
                                                 style="width: 7px; position: absolute; top: 265px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 187.092px; background: rgb(0, 0, 0);">
                                             </div>
-
                                             <div class="slimScrollRail"
                                                 style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);">
                                             </div>
-
                                         </div>
                                         <input type="hidden" name="sender_id" id="sender_id"
                                             value="<?php echo $sender_id; ?>">
@@ -900,126 +766,83 @@
                                             value="<?php echo $product_id; ?>">
                                         <input type="hidden" name="category_id" id="category_id"
                                             value="<?php echo $category_id; ?>">
-
-
-
                                         <?php 
-                             
-  
-                            $blocked = check_block($sender_id,$receiver_id,$product_id,$category_id);
-
-
-                                
-                                ?>
-
+                                           $blocked = check_block($sender_id,$receiver_id,$product_id,$category_id);
+                                         ?>
                                         <div class="compose-box" style="display: none;">
-
                                             <div class="row">
                                                 <?php if(empty($blocked)){ ?>
                                                 <div class="col-10 " style="min-width: 90.333333%;align-self: center;">
-                                                    <textarea id="message" style="backgound-color:#77d4b5;max-height: 40px;"
+                                                    <textarea id="message"
+                                                        style="backgound-color:#77d4b5;max-height: 40px;"
                                                         class="form-control " name="message"
                                                         placeholder="Type your message here..."
                                                         onkeyup="return checkchatmessage();"></textarea>
                                                 </div>
-
-                                                <div class="col-2 ps-0" style="align-self: center; max-width: 8.666667%;">
-                                                    <button type="button" id="btn-send" class="btn btn-green btn-sm p-0" style="border: none;background-color: #ffffff;">
+                                                <div class="col-2 ps-0"
+                                                    style="align-self: center; max-width: 8.666667%;">
+                                                    <button type="button" id="btn-send" class="btn btn-green btn-sm p-0"
+                                                        style="border: none;background-color: #ffffff;">
                                                         <img style="width: 44px;"
                                                             src="<?php echo base_url();?>assets/images/send.png">
                                                     </button>
-
                                                     <?php } ?>
-
                                                     <?php 
-
                                             if(!empty($blocked) && $blocked->receiver_id != $_SESSION['id']){
                                               ?>
-
                                                     <button type="button" id="btn-unblock" class="btn  btn-sm "
                                                         style="margin-top: 16px;background-color: orange;color: #fff;">
                                                         Un-Block
                                                     </button>
-
                                                     <?php } else if(!empty($blocked) && $blocked->receiver_id == $_SESSION['id'] && $blocked->product_id == $product_id && $blocked->category_id == $category_id){ ?>
-
                                                     <button type="button" id="btn-block" class="btn  btn-sm "
                                                         style="margin-top: 16px;background-color: orange;color: #fff;">
                                                         You are a Blocked
                                                     </button>
-
                                                     <?php }
                                             ?>
-
                                                 </div>
                                             </div>
-
                                         </div>
                                     </div>
-
                                 </div>
                             </div>
-
                         </div>
                     </div>
                 </div>
-
             </div>
         </div>
     </div>
-
     <script>
-  // Get the cross_icon element
-  const crossIcon = document.getElementById("cross_icon");
-
-  // Add a click event listener to the cross_icon element
-  crossIcon.addEventListener("click", function () {
-    // Reload the window when the icon is clicked
-    location.reload();
-  });
-</script>
-
+    // Get the cross_icon element
+    const crossIcon = document.getElementById("cross_icon");
+    // Add a click event listener to the cross_icon element
+    crossIcon.addEventListener("click", function() {
+        // Reload the window when the icon is clicked
+        location.reload();
+    });
+    </script>
     <script type="text/javascript">
     function checkchatmessage() {
-
         //var verify_otp = document.getElementById('verify_otp');
         // var message = document.getElementById('message');
         var message = $("textarea#message").val();
-
         var sender_id = $('#sender_id').val();
         var receiver_id = $('#receiver_id').val();
         //var goodColor = "#0C6";
         //var badColor = "#FF9B37";
-
-
-
-
         if (message == "" && sender_id == "" && receiver_id == "" || sender_id == receiver_id) {
-
             $('#btn-send').prop('disabled', true);
-
         } else {
-
             $('#btn-send').prop('disabled', false);
-
         }
-
-
-
     }
 
-
-
-
     function getchat(receiver_id, sender_id, product_id, category_id) {
-
-
         //var res = "";
         $("li").removeClass("active");
         $(".new" + receiver_id + product_id).addClass("active");
-
         var allch = $("#allchat").val();
-
         jQuery.ajax({
             type: "POST",
             url: "<?php echo base_url('/welcome/chatdata'); ?>",
@@ -1030,34 +853,19 @@
                 category_id: category_id
             },
             success: function(res) {
-
                 $('#sender_id').val(sender_id);
                 $('#receiver_id').val(receiver_id);
                 $('#product_id').val(product_id);
                 $('#category_id').val(category_id);
-
-
-
                 $(".compose-box").show();
-
-
                 $("#message-list").html(res);
-
                 $("#block-list").html(res);
                 // location.reload();
                 //$("#load-list").prepend("");
-
-
-
                 $('#load_cound').val("10");
-
             }
         });
-
     }
-
-
-
     setInterval(function() {
         var sender_id = $('#sender_id').val();
         var receiver_id = $('#receiver_id').val();
@@ -1073,16 +881,9 @@
                 category_id: category_id
             },
             success: function(res) {
-
-
                 $("#message-list").html(res);
-
-
             }
-
         });
-
-
         jQuery.ajax({
             type: "POST",
             url: "<?php echo base_url('/welcome/getallchat'); ?>",
@@ -1091,52 +892,27 @@
                 receiver_id: receiver_id
             },
             success: function(resu) {
-
-
                 $("#allchat").val(resu);
-
                 if (resu == 0) {
-
-
                     $('#default-page').show();
-
                 }
-
             }
-
         });
-
-
-
-
     }, 1000);
-
-
-
     // Ajax post
     $(document).ready(function() {
-
         var sender_id = $('#sender_id').val();
         var receiver_id = $('#receiver_id').val();
-
         if (sender_id != "" && receiver_id != "" && sender_id != receiver_id) {
-
             $(".compose-box").show();
-
-
         }
-
-
         //alert($('#message-list li').length);
-
-
         $("#btn-block").click(function() {
             //var message = $('textarea#message').val();
             var sender_id = $('#sender_id').val();
             var receiver_id = $('#receiver_id').val();
             var product_id = $('#product_id').val();
             var category_id = $('#category_id').val();
-
             jQuery.ajax({
                 type: "POST",
                 url: "<?php echo base_url('/welcome/block'); ?>",
@@ -1147,15 +923,10 @@
                     category_id: category_id
                 },
                 success: function(res) {
-
                     location.reload();
                 }
             });
-
-
         });
-
-
         $("#btn-unblock").click(function() {
             //var message = $('textarea#message').val();
             var sender_id = $('#sender_id').val();
@@ -1163,7 +934,6 @@
             var product_id = $('#product_id').val();
             var category_id = $('#category_id').val();
             /*alert(message);*/
-
             jQuery.ajax({
                 type: "POST",
                 url: "<?php echo base_url('/welcome/unblock'); ?>",
@@ -1175,22 +945,29 @@
                 },
                 success: function(res) {
                     location.reload();
-
                 }
             });
-
-
+        });
+        $("#btn-send").click(function() {
+            submitForm();
         });
 
+        // Event handler for the enter key press in the textarea
+        $("textarea#message").keypress(function(e) {
+            if (e.keyCode == 13 && !e.shiftKey) { // Check if Enter key is pressed without Shift key
+                submitForm();
+                e
+            .preventDefault(); // Prevent the default behavior of the Enter key (preventing a new line in the textarea)
+            }
+        });
 
-
-        $("#btn-send").click(function() {
+        // Function to submit the form using AJAX
+        function submitForm() {
             var message = $('textarea#message').val();
             var sender_id = $('#sender_id').val();
             var receiver_id = $('#receiver_id').val();
             var product_id = $('#product_id').val();
             var category_id = $('#category_id').val();
-
             if (message != "") {
                 jQuery.ajax({
                     type: "POST",
@@ -1203,20 +980,15 @@
                         category_id: category_id
                     },
                     success: function(res) {
-
                         $("#message-list").html(res);
-
                         $('textarea#message').val("");
                         //location.reload();
-
                     }
                 });
             } else {
-                alert("pls fill all fields first");
+                alert("Please fill all fields first");
             }
-
-        });
-
+        }
         $("#load_more").click(function() {
             var load_cound = $('#load_cound').val();
             var sender_id = $('#sender_id').val();
@@ -1225,8 +997,6 @@
             var category_id = $('#category_id').val();
             var allchat = $('#allchat').val();
             //var load_count = $('#load_count').val();
-
-
             /*alert(message);*/
             if (load_cound != "") {
                 jQuery.ajax({
@@ -1241,48 +1011,27 @@
                     },
                     success: function(res) {
                         //$("#load-list").html(res);
-
                         $("#load-list").prepend(res);
-
                         var row = load_cound * 2
-
                         $('#load_cound').val(row);
-
-
                         //alert(allchat);
                         //alert(row);
-
                         if (allchat <= row) {
-
                             $(".loadmoremsg").hide();
                         } else {
-
                             $(".loadmoremsg").show();
                         }
                         //$('textarea#message').val("");
                         //location.reload();
-
                     }
                 });
             } else {
                 alert("pls fill all fields first");
             }
-
         });
-
-
-
-
         $('#btn-send').prop('disabled', true);
-
-
-
-
-
-
     });
     </script>
-
     <script type="text/javascript">
     $(document).ready(function() {
         $('#action_menu_btn').click(function() {
@@ -1311,11 +1060,8 @@
                 },
                 function(isConfirm) {
                     if (isConfirm) {
-
                         window.location.href = "<?php echo base_url();?>welcome/logout";
-                    } else {
-
-                    }
+                    } else {}
                 });
         });
     }
