@@ -2215,6 +2215,23 @@ INNER JOIN seller_profile
   return $category_data->result(); 
 }
 
+function get_all_chat_list($sender_id)
+{
+  $ci =& get_instance();
+     // Load the database library
+     $ci->load->database();
+ 
+     $query = $ci->db
+     ->select('sender_id, receiver_id, product_id,category_id,message')
+     ->from('chat_list')
+     ->where('sender_id', $sender_id)
+     ->or_where('receiver_id', $sender_id)
+     ->order_by('updated', 'DESC') // Add the ORDER BY clause
+     ->get();
+ 
+     return $query->result();
+}
+
 function check_block($sender_id,$receiver_id)
 {
   //get main CodeIgniter object

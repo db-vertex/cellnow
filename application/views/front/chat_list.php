@@ -599,121 +599,12 @@
                         <div class="panel-body chat">
                             <div class="row chat-wrapper">
                                 <div class="col-lg-4  ">
-                                    <!--  <div class="compose-area"> 
-                                <a href="javascript:void(0);" class="btn btn-default"><i class="fa fa-edit"></i> New Chat</a>
-                            </div> -->
-                                    <div>
-                                        <div class="slimScrollDiv"
-                                            style="position: relative; overflow: hidden; width: auto; height: 550px;">
-                                            <div class="chat-list-wrapper"
-                                                style="overflow-y: auto; width: auto; height: 550px;">
-                                                <ul class="chat-list">
-                                                    <?php 
-                                      $chat =  get_all_chat($sender_id,$receiver_id);
-                                      if(!empty($chat_list)){
-                                      foreach ($chat_list as $key => $chat_per) {
-                                          if($chat_per["category_id"]==1) {
-                                              $profile = get_mobile_data($chat_per["product_id"]);
-                                          }
-                                        else if($chat_per["category_id"]==2) {
-                                              $profile = get_tution_data($chat_per["product_id"]); 
-                                          }
-                                            else if($chat_per["category_id"]==3) {
-                                              $profile = get_job_data($chat_per["product_id"]);
-                                          }
-                                           else if($chat_per["category_id"]==4) {
-                                              $profile = get_internship_data($chat_per["product_id"]);
-                                          }
-                                           else if($chat_per["category_id"]==5) {
-                                              $profile = get_commericial_data($chat_per["product_id"]);
-                                          }
-                                            else if($chat_per["category_id"]==6) {
-                                              $profile = get_residential_data($chat_per["product_id"]);
-                                          }
-                                           else if($chat_per["category_id"]==7) {
-                                              $profile = get_land_plot_data($chat_per["product_id"]);
-                                          }
-                                        if($chat_per['sender_id'] != $_SESSION['id']){
-                                          $username = get_user_phone($chat_per['sender_id']);
-                                        }elseif($chat_per['receiver_id'] != $_SESSION['id']){
-                                          $username = get_user_phone($chat_per['receiver_id']);
-                                        }
-                                        ?>
-                                                    <li class="new<?php echo ($username->user_id).($profile->id); ?>"
-                                                        onclick="redirectDiv(); getchat(<?php echo $username->user_id; ?>, <?php echo $_SESSION['id']; ?>,<?=$profile->id?>,<?=$profile->category_id?>);"
-                                                        style="">
-                                                        <span class="avatar available">
-                                                            <img src="<?php echo base_url().$profile->cover_img."";?>"
-                                                                class="img-circle rounded-5">
-                                                        </span>
-                                                        <div class="body">
-                                                            <div class="header">
-                                                                <span class="username"><?=ucfirst($profile->title)?>
-                                                                </span><br>
-                                                                <span class="username">
-                                                                    <?php
-                                                      if(!empty($username->name)){
-                                                        echo ucfirst($username->name); 
-                                                      }else{
-                                                        echo ucfirst($username->phone);
-                                                      }?>
-                                                                </span>
-                                                                <!--  <small class="timestamp text-muted">
-                                                        <i class="fa fa-clock-o"></i><?php echo date('Y-m-d') ?>
-                                                    </small> -->
-                                                            </div>
-                                                            <!--   <p>
-                                                   Hey, have you finished up with the Ladybug project?
-                                                </p> -->
-                                                        </div>
-                                                    </li>
-                                                    <?php
-                                      }
-                                      }else if(!empty($chat)){
-                                        $username = get_user_phone($receiver_id);
-                                        ?>
-                                                    <li class="new<?php echo ($username->user_id).($profile->id); ?>"
-                                                        onclick="return getchat(<?php echo $username->user_id; ?>,<?php echo $_SESSION['id']; ?>);"
-                                                        style="padding: 45px 20px;">
-                                                        <span class="avatar available">
-                                                            <!--  <img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" class="img-circle">
- -->
-                                                        </span>
-                                                        <div class="body">
-                                                            <div class="header">
-                                                                <span class="username">
-                                                                    <?php
-                                                      if(!empty($username->username)){
-                                                        echo ucfirst($username->username); 
-                                                      }else{
-                                                        echo ucfirst($username->phone);
-                                                      }
-                                                     ?></span>
-                                                                <!--  <small class="timestamp text-muted">
-                                                        <i class="fa fa-clock-o"></i><?php echo date('Y-m-d') ?>
-                                                    </small> -->
-                                                            </div>
-                                                            <!--   <p>
-                                                   Hey, have you finished up with the Ladybug project?
-                                                </p> -->
-                                                        </div>
-                                                    </li>
-                                                    <?php
-                                      }else{
-                                        echo "<h4 style='padding-top:30px;text-align: center;' >No Chat Found</4>";
-                                      }
-                                      ?>
-                                                </ul>
-                                            </div>
-                                            <div class="slimScrollBar"
-                                                style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 478.639px; background: rgb(0, 0, 0);">
-                                            </div>
-                                            <div class="slimScrollRail"
-                                                style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);">
-                                            </div>
-                                        </div>
-                                    </div>
+                                <div id="chatListContainer">
+                                
                                 </div>
+                                </div>
+
+
                                 <div class="col-lg-8" id="targetDiv">
                                     <div>
                                         <div class="slimScrollDiv"
@@ -813,6 +704,27 @@
             </div>
         </div>
     </div>
+    <script>
+    // Function to load and refresh the chat list
+    function loadChatList() {
+        $.ajax({
+            url: '<?php echo base_url('/welcome/getlodechatlist'); ?>', // Replace with the actual path to your server-side script
+            type: 'GET', // Change to POST if required
+            success: function(data) {
+                $('#chatListContainer').html(data); // Replace the existing chat list with the updated data
+            },
+            error: function(xhr, status, error) {
+                // Handle error if necessary
+            }
+        });
+    }
+
+    // Call the loadChatList function initially to load the chat list
+    loadChatList();
+
+    // Call the loadChatList function periodically to refresh the chat list
+    setInterval(loadChatList, 1000); // Refresh every 5 seconds (adjust the interval as needed)
+</script>
     <script>
     // Get the cross_icon element
     const crossIcon = document.getElementById("cross_icon");

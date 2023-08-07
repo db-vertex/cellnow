@@ -3873,18 +3873,17 @@ $sub .= '</h6>
 			}
 
 			$message = $this->input->post('message');
-			
-
+		
 			$chat_exist = $this->user->checkchatlist($sender_id, $receiver_id, $product_id, $category_id);
-
-			//echo $this->db->last_query();
-
-
-
 			if (!empty($chat_exist)) {
 
 				$chat_list = array('message' => $message);
 				$this->chat_model->update($chat_list, $sender_id, $receiver_id);
+				$chat_list = array('message'=>$message, "updated"=>date("Y-m-d H:i:s"));
+				$chat_lisst1 = array('sender_id' => $sender_id,'receiver_id' => $receiver_id, 'product_id'=>$product_id);
+				$chat_lisst2 = array('sender_id' => $receiver_id,'receiver_id' => $sender_id, 'product_id'=>$product_id);
+				$this->db->update('chat_list', $chat_list, $chat_lisst1);
+				$this->db->update('chat_list', $chat_list, $chat_lisst2);    
 				
 			} else {
 				
@@ -3900,11 +3899,9 @@ $sub .= '</h6>
 			
 
 			$chat = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
-
 			$inser_id = $this->chat_model->insert($chat);
 
-			
-
+	
 			$this->db->update('chat', array('status' => 1), array('id' => $inser_id));
 
 			
@@ -4367,6 +4364,110 @@ $sub .= '</h6>
         }
       }
 
+	  public function getlodechatlist() {
+		$session_id = $this->session->userdata('id');
 
+		$sender_id = $session_id; // Replace with appropriate code to get sender_id
+		$receiver_id = $session_id; // Replace with appropriate code to get receiver_id
+	
+		echo '<div>';
+		echo '<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 550px;">';
+		echo '<div class="chat-list-wrapper" style="overflow-y: auto; width: auto; height: 550px;">';
+		echo '<ul class="chat-list">';
+	
+		$chat_list = get_all_chat_list($sender_id);
 
+	
+	
+		if (!empty($chat_list)) {
+			foreach ($chat_list as $key => $chat_per) {
+				if ($chat_per->category_id == 1) {
+					$profile = get_mobile_data($chat_per->product_id);
+				} else if ($chat_per->category_id == 2) {
+					$profile = get_tution_data($chat_per->product_id);
+				} else if ($chat_per->category_id == 3) {
+					$profile = get_job_data($chat_per->product_id);
+				} else if ($chat_per->category_id == 4) {
+					$profile = get_internship_data($chat_per->product_id);
+				} else if ($chat_per->category_id == 5) {
+					$profile = get_commericial_data($chat_per->product_id);
+				} else if ($chat_per->category_id == 6) {
+					$profile = get_residential_data($chat_per->product_id);
+				} else if ($chat_per->category_id == 7) {
+					$profile = get_land_plot_data($chat_per->product_id);
+				}
+	
+				if ($chat_per->sender_id != $_SESSION['id']) {
+					$username = get_user_phone($chat_per->sender_id);
+				} elseif ($chat_per->receiver_id != $_SESSION['id']) {
+					$username = get_user_phone($chat_per->receiver_id);
+				}
+	
+				echo '<li class="new' . ($username->user_id) . ($profile->id) . '"';
+				echo ' onclick="redirectDiv(); getchat(' . $username->user_id . ', ' . $_SESSION['id'] . ', ' . $profile->id . ', ' . $profile->category_id . ');">';
+				echo '<span class="avatar available">';
+				echo '<img src="' . base_url() . $profile->cover_img . '" class="img-circle rounded-5">';
+				echo '</span>';
+				echo '<div class="body">';
+				echo '<div class="header">';
+				echo '<span class="username">';
+				$description = $profile->title;
+				if (strlen($description) <= 20) {
+					echo ucfirst($description);
+				} else {
+					$y = substr($description, 0, 20) . '...';
+					echo ucfirst($y);
+				} 
+				echo '</span><br>';
+				echo '<span class="username">';
+				if (!empty($username->name)) {
+					echo ucfirst($username->name);
+				} else {
+					echo ucfirst($username->phone);
+				}
+				echo '</span>';
+				echo '</div>';
+				echo '</div>';
+				echo '</li>';
+			}
+		} else if (!empty($chat)) {
+			$username = get_user_phone($receiver_id);
+	
+			echo '<li class="new' . ($username->user_id) . ($profile->id) . '"';
+			echo ' onclick="return getchat(' . $username->user_id . ', ' . $_SESSION['id'] . ');"';
+			echo ' style="padding: 45px 20px;">';
+			echo '<span class="avatar available">';
+			// echo '<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" class="img-circle">';
+			echo '</span>';
+			echo '<div class="body">';
+			echo '<div class="header">';
+			echo '<span class="username">';
+		      	$description = $user->username;
+					$spacePosition = strpos($description, ' ');
+					if ($spacePosition === false) {
+						echo ucfirst($description);
+					} else {
+						$y = substr($description, 0, $spacePosition);
+						echo ucfirst($y);
+					}
+			echo '</span>';
+			// echo '<small class="timestamp text-muted">';
+			// echo '<i class="fa fa-clock-o"></i>' . date('Y-m-d') . '</small>';
+			echo '</div>';
+			// echo '<p>Hey, have you finished up with the Ladybug project?</p>';
+			echo '</div>';
+			echo '</li>';
+		} else {
+			echo "<h4 style='padding-top:30px;text-align: center;' >No Chat Found</h4>";
+		}
+	
+		echo '</ul>';
+		echo '</div>';
+		echo '<div class="slimScrollBar" style="width: 7px; position: absolute; top: 0px; opacity: 0.4; display: none; border-radius: 7px; z-index: 99; right: 1px; height: 478.639px; background: rgb(0, 0, 0);"></div>';
+		echo '<div class="slimScrollRail" style="width: 7px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; opacity: 0.2; z-index: 90; right: 1px; background: rgb(51, 51, 51);"></div>';
+		echo '</div>';
+		echo '</div>';
+		echo '</div>';
+	}
+	
 }
