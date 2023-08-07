@@ -3580,95 +3580,48 @@ $sub .= '</h6>
 
 	public function chat($data = " ")
 	{
-
-		//$id = $this->uri->segment(3);
 		$session_id = $this->session->userdata('id');
 		if ($session_id) {
-
 			$message = "";
-			//$product = $this->product_model->getproduct($id);
-			//echo $this->db->last_query();
 			$user_detail = $this->user->loginuser($session_id);
-
 			if (!empty($this->input->post('sender_id')) && !empty($this->input->post('product_id')) && !empty($this->input->post('category_id')) && $this->input->post('receiver_id')) {
-
 				$sender_id = $this->input->post('sender_id');
 				$receiver_id = $this->input->post('receiver_id');
 				$product_id = $this->input->post('product_id');
 				$category_id = $this->input->post('category_id');
 				$message = $this->input->post('message');
-
-
-
 			} else {
-
 				$sender_id = $session_id;
 				$receiver_id = $session_id;
 				$product_id = 0;
 				$category_id = 0;
-
-
 			}
-
-
 			$chat_list = $this->chat_model->chatlist($session_id);
-
 			if (!empty($this->input->post('sender_id')) && $this->input->post('receiver_id')) {
 				$chat_exist = $this->user->checkchatlist($sender_id, $receiver_id, $product_id, $category_id);
-
-
-
 				if (empty($chat_exist)) {
-
 					$chat_list = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'updated' => date("Y-m-d H:i:s"));
 					$this->db->insert('chat_list', $chat_list);
-					//echo "here";
-
-
-				} /*else{
-
-									 $chat_list = array('message'=>$message);
-
-									 $this->chat_model->update($chat_list,$chat_exist['id']);
-									 //echo "here1";
-									 //echo $this->db->last_query();
-
-								 }*/
-
+				
+				} 
 			}
-			// echo $this->db->last_query();exit;
 			if (!empty($message)) {
 				$chat = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 
 				$this->chat_model->insert($chat);
 			}
-			// echo $this->db->last_query();
-
 			$chat_list = $this->chat_model->chatlist($session_id);
-
-			//echo $this->db->last_query();
-
-
 			if (!empty($this->input->post('sender_id')) && $this->input->post('receiver_id')) {
 
 				$chat = $this->user->getuserallchat($sender_id, $receiver_id, $product_id, $category_id);
 
 			} else {
-
 				$chat = null;
 			}
-
-
-			//$chat = $this->user->getuserallchat($sender_id,$reciever_id);
-
-
-
 			$this->load->view('front/header', ['user' => $user_detail, 'receiver_id' => $receiver_id, 'sender_id' => $sender_id, 'chat_list' => $chat_list, 'chat' => $chat]);
 			$this->load->view('front/chat_list', ['user' => $user_detail, 'sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'chat_list' => $chat_list, 'chat' => $chat]);
 			$this->load->view('front/footer');
-
 		} else {
-
 			return redirect('welcome/newhome');
 		}
 	}
@@ -4136,6 +4089,8 @@ $sub .= '</h6>
 		}
 	}
 
+	
+
 	public function subscribe(){
 
 		$this->form_validation->set_rules('email_newsletter', 'email', 'required|valid_email');
@@ -4157,8 +4112,47 @@ $sub .= '</h6>
    		  
    }
 
+   public function notification_chat($sender_id,$receiver_id,$product_id,$category_id)
+	{
+		$session_id = $this->session->userdata('id');
+		if ($session_id) {
+			$message = "";
+			$user_detail = $this->user->loginuser($session_id);
+		
+				$message = $this->input->post('message');
+			 
+			$chat_list = $this->chat_model->chatlist($session_id);
+			if (!empty($this->input->post('sender_id')) && $this->input->post('receiver_id')) {
+				$chat_exist = $this->user->checkchatlist($sender_id, $receiver_id, $product_id, $category_id);
+				if (empty($chat_exist)) {
+					$chat_list = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'updated' => date("Y-m-d H:i:s"));
+					$this->db->insert('chat_list', $chat_list);
+				
+				} 
+			}
+			if (!empty($message)) {
+				$chat = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 
-      protected function sendMessage($keys_auth, $notification_data, $title, $image, $category_id) {
+				$this->chat_model->insert($chat);
+			}
+			$chat_list = $this->chat_model->chatlist($session_id);
+			if (!empty($this->input->post('sender_id')) && $this->input->post('receiver_id')) {
+
+				$chat = $this->user->getuserallchat($sender_id, $receiver_id, $product_id, $category_id);
+
+			} else {
+				$chat = null;
+			}
+			$this->load->view('front/header', ['user' => $user_detail, 'receiver_id' => $receiver_id, 'sender_id' => $sender_id, 'chat_list' => $chat_list, 'chat' => $chat]);
+			$this->load->view('front/chat_list', ['user' => $user_detail, 'sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'chat_list' => $chat_list, 'chat' => $chat]);
+			$this->load->view('front/footer');
+		} else {
+			return redirect('welcome/newhome');
+		}
+	}
+
+
+      protected function sendMessage($keys_auth, $notification_data, $title, $image, $url) {
         // here I'll get the subscription endpoint in the POST parameters
         // but in reality, you'll get this information in your database
         // because you already stored it (cf. push_subscription.php)
@@ -4178,7 +4172,7 @@ $sub .= '</h6>
           'icon' => base_url().'/uploads/profile/notifitions_icon.png',
           'badge' => base_url().'assets/images/CelNow 5 1.png',
           'image' => $image,
-          'url' =>  base_url().'/welcome/chat/'.$category_id
+          'url' =>  $url,
         );
         $report = $webPush->sendOneNotification(
           $subscription,
@@ -4235,7 +4229,8 @@ $sub .= '</h6>
                       "p256dh" => $row->p256dh
                     )
                 );
-                $msg = $this->sendMessage($keys_auth, $notification_data, $title, $image, $category_id);
+				$url = base_url().'/welcome/notification_chat/'.$sender_id.'/'.$receiver_id.'/'.$product_id.'/'.$category_id;
+                $msg = $this->sendMessage($keys_auth, $notification_data, $title, $image, $url);
                 $messages['msg'] = $msg;
               }
              // redirect('/?msg=1', 'refresh');
