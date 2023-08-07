@@ -3899,8 +3899,6 @@ $sub .= '</h6>
 			}
 			
 
-			// echo $this->db->last_query();exit;
-
 			$chat = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 
 			$inser_id = $this->chat_model->insert($chat);

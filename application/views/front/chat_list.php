@@ -774,7 +774,7 @@
                                                 <?php if(empty($blocked)){ ?>
                                                 <div class="col-10 " style="min-width: 90.333333%;align-self: center;">
                                                     <textarea id="message"
-                                                        style="backgound-color:#77d4b5;max-height: 40px;"
+                                                        style="backgound-color:#77d4b5;max-height: 40px;border-radius: 50px;"
                                                         class="form-control " name="message"
                                                         placeholder="Type your message here..."
                                                         onkeyup="return checkchatmessage();"></textarea>
@@ -783,7 +783,7 @@
                                                     style="align-self: center; max-width: 8.666667%;">
                                                     <button type="button" id="btn-send" class="btn btn-green btn-sm p-0"
                                                         style="border: none;background-color: #ffffff;">
-                                                        <img style="width: 44px;"
+                                                        <img style="width: 50px;"
                                                             src="<?php echo base_url();?>assets/images/send.png">
                                                     </button>
                                                     <?php } ?>
