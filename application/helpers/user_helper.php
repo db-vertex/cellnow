@@ -2222,11 +2222,29 @@ function get_all_chat_list($sender_id)
      $ci->load->database();
  
      $query = $ci->db
-     ->select('sender_id, receiver_id, product_id,category_id,message')
+     ->select('sender_id, receiver_id, product_id,category_id,message,read')
      ->from('chat_list')
      ->where('sender_id', $sender_id)
      ->or_where('receiver_id', $sender_id)
      ->order_by('updated', 'DESC') // Add the ORDER BY clause
+     ->get();
+ 
+     return $query->result();
+}
+
+function get_all_chat_status($sender_id,$product_id)
+{
+  $ci =& get_instance();
+     // Load the database library
+     $ci->load->database();
+ 
+     $query = $ci->db
+     ->select('sender_id, receiver_id, product_id,category_id,message,read')
+     ->from('chat')
+     ->where('sender_id', $sender_id)
+     ->or_where('receiver_id', $sender_id)
+     ->or_where('product_id', $product_id)
+     ->order_by('id', 'DESC') // Add the ORDER BY clause
      ->get();
  
      return $query->result();
@@ -2338,6 +2356,22 @@ $query="SELECT * FROM subscribers WHERE user_id=".$user_id;
   $category_data = $ci->db->query($query);        
 
   return $category_data->row(); 
+ }
+
+ function get_last_chat_row($category_id, $product_id, $sender_id, $receiver_id)
+ {
+     $CI =& get_instance();
+     $CI->db->where('category_id', $category_id);
+     $CI->db->where('product_id', $product_id);
+     $CI->db->group_start();
+     $CI->db->where('sender_id', $sender_id);
+     $CI->db->where('receiver_id', $receiver_id);
+     $CI->db->or_where('sender_id', $receiver_id);
+     $CI->db->where('receiver_id', $sender_id);
+     $CI->db->group_end();
+     $CI->db->order_by('id', 'DESC');
+     $query = $CI->db->get('chat');
+     return $query->row();
  }
 
 

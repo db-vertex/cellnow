@@ -3690,6 +3690,15 @@ $sub .= '</h6>
 
 							$data = array('read_status' => 1);
 
+							$read_update = array(
+								'read' => 1
+							);
+							
+
+						
+							$this->db->where('sender_id', $sender_id)->where('receiver_id', $receiver_id)->where('product_id', $product_id)->update('chat_list', $read_update);
+
+
 							$updated = $this->chat_model->updateunreadmessage($data, $chatmessages['sender_id'], $_SESSION['id']);
 
 							//$pro .= $updated;
@@ -3879,7 +3888,7 @@ $sub .= '</h6>
 
 				$chat_list = array('message' => $message);
 				$this->chat_model->update($chat_list, $sender_id, $receiver_id);
-				$chat_list = array('message'=>$message, "updated"=>date("Y-m-d H:i:s"));
+				$chat_list = array('message'=>$message, 'read'=>0,  "updated"=>date("Y-m-d H:i:s"));
 				$chat_lisst1 = array('sender_id' => $sender_id,'receiver_id' => $receiver_id, 'product_id'=>$product_id);
 				$chat_lisst2 = array('sender_id' => $receiver_id,'receiver_id' => $sender_id, 'product_id'=>$product_id);
 				$this->db->update('chat_list', $chat_list, $chat_lisst1);
@@ -4378,9 +4387,12 @@ $sub .= '</h6>
 		$chat_list = get_all_chat_list($sender_id);
 
 	
-	
+		
 		if (!empty($chat_list)) {
 			foreach ($chat_list as $key => $chat_per) {
+
+				$get_last_chat_row = get_last_chat_row($chat_per->category_id,$chat_per->product_id,$chat_per->sender_id,$chat_per->receiver_id,);
+               
 				if ($chat_per->category_id == 1) {
 					$profile = get_mobile_data($chat_per->product_id);
 				} else if ($chat_per->category_id == 2) {
@@ -4410,12 +4422,28 @@ $sub .= '</h6>
 				echo '</span>';
 				echo '<div class="body">';
 				echo '<div class="header">';
+				echo '<div class="row">';
+				echo '<div class="col-9"';
+				if ($get_last_chat_row !== null) {
+					$read_status = $get_last_chat_row->read_status;
+					$sender_id = $get_last_chat_row->sender_id;
+				} else {
+					$read_status = 1;
+					$sender_id = 0;
+				}
+				
+				if ($read_status == 0 && $sender_id !== $session_id) {
+					echo 'style="color: #000;"';
+				} else {
+					echo 'style="color: #000000c2;"';    
+				}
+				echo '>';
 				echo '<span class="username">';
 				$description = $profile->title;
-				if (strlen($description) <= 20) {
+				if (strlen($description) <= 13) {
 					echo ucfirst($description);
 				} else {
-					$y = substr($description, 0, 20) . '...';
+					$y = substr($description, 0, 13) . '...';
 					echo ucfirst($y);
 				} 
 				echo '</span><br>';
@@ -4426,6 +4454,21 @@ $sub .= '</h6>
 					echo ucfirst($username->phone);
 				}
 				echo '</span>';
+				echo '</div>';
+				echo '<div class="col-3">';
+				if ($get_last_chat_row !== null) {
+					$read_status = $get_last_chat_row->read_status;
+					$sender_id = $get_last_chat_row->sender_id;
+				} else {
+					$read_status = 1;
+					$sender_id = 0;
+				}
+				
+				if ($read_status == 0 && $sender_id !== $session_id) {
+				echo '<span class="fs-3">&#x2022;</span>';
+		     	}
+				echo '</div>';
+				echo '</div>';
 				echo '</div>';
 				echo '</div>';
 				echo '</li>';
@@ -4440,7 +4483,7 @@ $sub .= '</h6>
 			// echo '<img src="https://bootdey.com/img/Content/avatar/avatar1.png" alt="avatar" class="img-circle">';
 			echo '</span>';
 			echo '<div class="body">';
-			echo '<div class="header">';
+			echo '<div class="header" style="color: #000000c2;">';
 			echo '<span class="username">';
 		      	$description = $user->username;
 					$spacePosition = strpos($description, ' ');
@@ -4451,10 +4494,8 @@ $sub .= '</h6>
 						echo ucfirst($y);
 					}
 			echo '</span>';
-			// echo '<small class="timestamp text-muted">';
-			// echo '<i class="fa fa-clock-o"></i>' . date('Y-m-d') . '</small>';
 			echo '</div>';
-			// echo '<p>Hey, have you finished up with the Ladybug project?</p>';
+		
 			echo '</div>';
 			echo '</li>';
 		} else {

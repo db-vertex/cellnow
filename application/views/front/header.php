@@ -1306,6 +1306,10 @@
         }
 
     }
+    .navbar-nav{
+    font-family: open sans;
+    font-weight: 700;
+    }
     </style>
 
 </head>

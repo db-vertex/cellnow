@@ -118,15 +118,11 @@ class Chat_model extends CI_Model {
 
 
             public function updateunreadmessage($data, $sender_id,$receiver_id){
-        /*if(!empty($data)){*/
-           
             $update = $this->db->update('chat', $data, array('sender_id'=>$sender_id,'receiver_id'=>$receiver_id));
             return $update?true:false;
-       /* }else{
-            return false;
-        }*/
     }
 
+   
     
        function lastchat($id = ""){
         if(!empty($id)){
