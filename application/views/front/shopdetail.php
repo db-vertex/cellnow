@@ -70,17 +70,18 @@
     max-height: 100px;
 
 }
-.shop_images_view {
-            font-family: open sans;
-            font-weight: 550;
-        }
 
-        @media (min-width: 575px){
-        .shop_details_border{
-            border-left:solid; 
-            border-color: #78d7b8;
-        }
-        }
+.shop_images_view {
+    font-family: open sans;
+    font-weight: 550;
+}
+
+@media (min-width: 575px) {
+    .shop_details_border {
+        border-left: solid;
+        border-color: #78d7b8;
+    }
+}
 </style>
 <div class="container" style=" margin-top: 130px;">
 
@@ -163,27 +164,26 @@ width: 131.9px;">
             </div>
 
             <div class="row" style="margin-left: 0.2rem!important;">
-                    <?php if(!empty($shop)){?>
-                    <h5 class="shop_images_view">Shop Images</h5>
-                    <?php $i=1;
+                <?php if(!empty($shop)){?>
+                <h5 class="shop_images_view">Shop Images</h5>
+                <?php $i=1;
                 $product_image = get_shop_image($shop->id);
                 if(!empty($product_image)){
                 foreach($product_image as $product_images){ ?>`
-                    <div class=" col-lg-3 col-sm-4 col-auto mb-3">
-                        <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
-                            data-lightbox="shop-images">
-                            <img class="details_img_cover img-fluid"
-                                src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
-                        </a>
-                    </div>
-                    <?php }}  else{ ?>
-
+                <div class=" col-lg-2 col-sm-4 col-auto mb-3">
+                    <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
+                        data-lightbox="shop-images">
                         <img class="details_img_cover img-fluid"
-                                src="<?php echo base_url();?>.'uploads/shop/No_Image_Available-removebg-preview.png'">
-                   <?php } ?>
-                    <?php }  ?>
-                   
+                            src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
+                    </a>
                 </div>
+                <?php }}  else{ ?>
+
+                <img class="details_img_cover img-fluid" src="<?php echo base_url();?>uploads/shop/noshop_images.png">
+                <?php } ?>
+                <?php }  ?>
+
+            </div>
 
 
         </div><br>
@@ -191,7 +191,7 @@ width: 131.9px;">
 </div>
 
 <div class="container">
-<h4 class="shop_images_view mt-4" style="padding-left: 2.3rem!important;"><b>Verified Ads</b></h4>
+    <h4 class="shop_images_view mt-4" style="padding-left: 2.3rem!important;"><b>Verified Ads</b></h4>
     <div class="row ml-4 mr-4">
 
         <?php $product = get_productid_by_shop($id); 
