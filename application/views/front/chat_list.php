@@ -808,7 +808,7 @@
                                 <div class="col-lg-8" id="targetDiv">
                                     <div>
                                         <div class="slimScrollDiv"
-                                            style="position: relative; overflow: hidden; width: auto; height: 452px;">
+                                            style="position: relative; overflow: hidden; width: auto; height: 488px;">
                                             <!-- <div class="message-list-wrapper" style="overflow: hidden; width: auto; height: 452px;"> -->
 
 
@@ -914,19 +914,19 @@
 
                                         <div class="compose-box" style="display: none;">
 
-                                            <div class="row p-2">
+                                            <div class="row">
                                                 <?php if(empty($blocked)){ ?>
-                                                <div class="col-10 ">
-                                                    <textarea id="message" style="backgound-color:#77d4b5 "
+                                                <div class="col-10 " style="min-width: 90.333333%;align-self: center;">
+                                                    <textarea id="message" style="backgound-color:#77d4b5;max-height: 40px;"
                                                         class="form-control " name="message"
                                                         placeholder="Type your message here..."
                                                         onkeyup="return checkchatmessage();"></textarea>
                                                 </div>
 
-                                                <div class="col-2 px-0">
-                                                    <button type="button" id="btn-send" class="btn btn-green  btn-sm">
-                                                        <img style="padding:8px;"
-                                                            src="<?php echo base_url();?>assets/images/arrow.png">
+                                                <div class="col-2 ps-0" style="align-self: center; max-width: 8.666667%;">
+                                                    <button type="button" id="btn-send" class="btn btn-green btn-sm p-0" style="border: none;background-color: #ffffff;">
+                                                        <img style="width: 44px;"
+                                                            src="<?php echo base_url();?>assets/images/send.png">
                                                     </button>
 
                                                     <?php } ?>
@@ -954,12 +954,7 @@
                                                 </div>
                                             </div>
 
-
-
                                         </div>
-
-
-
                                     </div>
 
                                 </div>

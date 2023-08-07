@@ -183,6 +183,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     function push_sendSubscriptionToServer(subscription, method) {
+        console.log(subscription);
         const key = subscription.getKey('p256dh');
         const token = subscription.getKey('auth');
         const contentEncoding = (PushManager.supportedContentEncodings || ['aesgcm'])[0];

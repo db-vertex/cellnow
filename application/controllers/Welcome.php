@@ -3584,12 +3584,15 @@ $sub .= '</h6>
 		if ($session_id) {
 			$message = "";
 			$user_detail = $this->user->loginuser($session_id);
+		
 			if (!empty($this->input->post('sender_id')) && !empty($this->input->post('product_id')) && !empty($this->input->post('category_id')) && $this->input->post('receiver_id')) {
 				$sender_id = $this->input->post('sender_id');
 				$receiver_id = $this->input->post('receiver_id');
 				$product_id = $this->input->post('product_id');
 				$category_id = $this->input->post('category_id');
 				$message = $this->input->post('message');
+
+			
 			} else {
 				$sender_id = $session_id;
 				$receiver_id = $session_id;
@@ -3882,15 +3885,19 @@ $sub .= '</h6>
 
 				$chat_list = array('message' => $message);
 				$this->chat_model->update($chat_list, $sender_id, $receiver_id);
-				$this->website_notification($sender_id, $receiver_id, $product_id, $category_id,$message);
+				
 			} else {
 				
 				$chat_list = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
 				$this->db->insert('chat_list', $chat_list);
-				$this->website_notification($sender_id, $receiver_id, $product_id, $category_id,$message);
+			
 				//echo "here";
 			}
-
+			$user_id = get_subscribersdetail($receiver_id);
+			if((!empty($user_id))){
+				$this->website_notification($sender_id, $receiver_id, $product_id, $category_id,$message);
+			}
+			
 
 			// echo $this->db->last_query();exit;
 
@@ -4112,15 +4119,14 @@ $sub .= '</h6>
    		  
    }
 
-   public function notification_chat($sender_id,$receiver_id,$product_id,$category_id)
+   public function notification_chat($category_id,$receiver_id,$product_id,$sender_id)
 	{
 		$session_id = $this->session->userdata('id');
 		if ($session_id) {
 			$message = "";
 			$user_detail = $this->user->loginuser($session_id);
 		
-				$message = $this->input->post('message');
-			 
+		
 			$chat_list = $this->chat_model->chatlist($session_id);
 			if (!empty($this->input->post('sender_id')) && $this->input->post('receiver_id')) {
 				$chat_exist = $this->user->checkchatlist($sender_id, $receiver_id, $product_id, $category_id);
@@ -4132,7 +4138,6 @@ $sub .= '</h6>
 			}
 			if (!empty($message)) {
 				$chat = array('sender_id' => $sender_id, 'receiver_id' => $receiver_id, 'product_id' => $product_id, 'category_id' => $category_id, 'message' => $message);
-
 				$this->chat_model->insert($chat);
 			}
 			$chat_list = $this->chat_model->chatlist($session_id);
@@ -4229,7 +4234,28 @@ $sub .= '</h6>
                       "p256dh" => $row->p256dh
                     )
                 );
-				$url = base_url().'/welcome/notification_chat/'.$sender_id.'/'.$receiver_id.'/'.$product_id.'/'.$category_id;
+				$url = base_url() . 'welcome/chat/' . $category_id;
+
+				// Create a hidden form on the current page with input fields to send the data to the "chat" page
+				echo '<form id="chatForm" action="' . $url . '" method="post">';
+				echo '  <input type="text" name="sender_id" value="' . $sender_id . '">';
+				echo '  <input type="hidden" name="receiver_id" value="' . $receiver_id . '">';
+				echo '  <input type="hidden" name="product_id" value="' . $product_id . '">';
+				echo '  <input type="hidden" name="category_id" value="' . $category_id . '">';
+				echo '</form>';
+			
+				// Add JavaScript to automatically submit the form when the user clicks on the URL
+				echo '<script>';
+				echo '  var urlElement = document.createElement("a");';
+				echo '  urlElement.href = "' . $url . '";';
+				echo '  urlElement.textContent = "Click to open chat";';
+				echo '  urlElement.style.display = "none";';
+				echo '  urlElement.onclick = function() {';
+				echo '    document.getElementById("chatForm").submit();';
+				echo '  };';
+				echo '  document.body.appendChild(urlElement);';
+				echo '</script>';
+
                 $msg = $this->sendMessage($keys_auth, $notification_data, $title, $image, $url);
                 $messages['msg'] = $msg;
               }
