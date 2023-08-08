@@ -1465,10 +1465,17 @@
                                     profile</a></li>
 
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/chat">My Chat
-
-                                    <?php 
-                             $chat_status = get_last_chat_row_header($user['user_id']);
-                             if ($chat_status->read_status == 0 ) {
+                            <?php 
+                               $chat_status = get_last_chat_row_header($user['user_id']);
+                            if ($chat_status !== null) {
+                                $read_status = $chat_status->read_status;
+                                $sender_id = $chat_status->sender_id;
+                            } else {
+                                $read_status = 1;
+                                $sender_id = 0;
+                            }
+                          
+                             if ($read_status == 0) {
                                 echo '<span class="fs-3">&#x2022;</span>';
                                  }
                              ?>

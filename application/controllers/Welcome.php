@@ -3632,28 +3632,16 @@ $sub .= '</h6>
 
 	public function chatdata($data = " ")
 	{
-
-
 		$session_id = $this->session->userdata('id');
 		if ($session_id) {
-
 			$sender_id = $this->input->post('sender_id');
 			$receiver_id = $this->input->post('receiver_id');
 			$product_id = $this->input->post('product_id');
 			$category_id = $this->input->post('category_id');
-			// echo $this->db->last_query();
-
+			$pro_images = "";
 			if ($chat_list = $this->chat_model->chatlist($session_id)) {
-
 				$chat = $this->user->getuserallchat($sender_id, $receiver_id, $product_id, $category_id);
-
-				//echo $this->db->last_query();
-
-
 				$pro = "";
-
-				
-
 				if (!empty($chat)) {
 				
 					$pro .= '<a href="javascript:location.reload()" style="text-decoration: none;">
@@ -3661,11 +3649,7 @@ $sub .= '</h6>
 					  <i class="fas fa-times"></i>
 					</p>
 				  </a>';
-
 					foreach ($chat as $key => $chatmessages) {
-
-
-
 						if ($category_id == 1) {
 							$profile = get_mobile_data($chatmessages["product_id"]);
 						} else if ($category_id == 2) {
@@ -3681,9 +3665,6 @@ $sub .= '</h6>
 						} else if ($category_id == 7) {
 							$profile = get_land_plot_data($chatmessages["product_id"]);
 						}
-
-						
-
 						if ($chatmessages['sender_id'] != $_SESSION['id']) {
 
 							$profile_pic1 = get_userdetail($chatmessages['sender_id'])->profile_img;
@@ -3694,24 +3675,16 @@ $sub .= '</h6>
 								'read' => 1
 							);
 							
-
-						
 							$this->db->where('sender_id', $sender_id)->where('receiver_id', $receiver_id)->where('product_id', $product_id)->update('chat_list', $read_update);
 
 
 							$updated = $this->chat_model->updateunreadmessage($data, $chatmessages['sender_id'], $_SESSION['id']);
-
-							//$pro .= $updated;
-
-						
 
 							$pro .= '<li class="left">
                                             
                                             <span class="avatar available tooltips" data-toggle="tooltip " data-placement="right" data-original-title="Yanique Robinson">';
 
 							$pro .= ' <img src="'.base_url("uploads/profile/").'' . $profile_pic1 . '" alt="avatar" class="img-circle">';
-
-
 
 							$pro .= ' </span>
                                             <div class="body">   
@@ -3722,27 +3695,14 @@ $sub .= '</h6>
                                             </div>
                                         </li>';
 
-
-
-
 						} else {
-
-
 
 							$profile_pic2 = get_userdetail($chatmessages['sender_id'])->profile_img;
 
-
-
-							$pro .= '<li class="right">
-                                          
+							$pro .= '<li class="right">                                  
                                             <span class="avatar tooltips" data-toggle="tooltip " data-placement="left" data-original-title="Kevin Mckoy">';
-
-
 							$pro .= '<img src="'.base_url("uploads/profile/").'' . $profile_pic2 . '" alt="avatar" class="img-circle">';
 
-
-
-							/*<img src="https://bootdey.com/img/Content/avatar/avatar2.png" alt="avatar" class="img-circle">*/
 							$pro .= '</span>
                                             <div class="body chatbodys">   
                                                 <div class="message well well-sm">
@@ -3754,51 +3714,37 @@ $sub .= '</h6>
                                             ' : '') . '</div>
                                         </li> ';
 
-
-
-
-
 						}
 
-
-
 					}
-					// <div class="timestamp">13:54</div>
 				} else {
-
-
 					$pro .= '<a href="javascript:location.reload()" style="text-decoration: none;">
 					<p class="me-3 mt-2" id="cross_icon" style="font-size: 29px; text-align: right;">
 					  <i class="fas fa-times"></i>
 					</p>
 				  </a>';
-
-					$pro .= '<li id="default-page" style="text-align: center;padding-top:30%;">
-                                           
+					$pro .= '<li id="default-page" style="text-align: center;padding-top:30%;">                      
                                             <img src="' . base_url('assets/images/CelNow 5 1.png') . '" style="opacity:0.2;">
                                             <h2 style="color: black; opacity:0.2;">Welcome to CelNow</h2>
-
-
                                           </li>';
-
 				}
-
-
-
-
-
+				
 				echo $pro;
-
 			}
-
-
-
-
-
-
-
+			else{
+				$pro_images .= '<a href="javascript:location.reload()" style="text-decoration: none;">
+					<p class="me-3 mt-2" id="cross_icon" style="font-size: 29px; text-align: right;">
+					  <i class="fas fa-times"></i>
+					</p>
+				  </a>';
+					$pro_images .= '<li id="default-page" style="text-align: center;padding-top:30%;">                      
+                                            <img src="' . base_url('assets/images/CelNow 5 1.png') . '" style="opacity:0.2;">
+                                            <h2 style="color: black; opacity:0.2;">Welcome to CelNow</h2>
+                                          </li>';
+			  echo $pro_images;
+			}
+		
 		} else {
-
 			return redirect('welcome/newhome');
 		}
 	}
