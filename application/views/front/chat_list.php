@@ -564,6 +564,9 @@
         #targetDiv {
             display: none;
         }
+        .footer_hide{
+            display: none; 
+        }
     }
     </style>
     <script>

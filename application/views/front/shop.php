@@ -256,7 +256,7 @@
         font-family: open sans;
         font-weight: 550;
         font-size: 15px;
-        padding: 4px 32px;
+        padding: 9px 32px;
 
     }
 
@@ -368,7 +368,7 @@
 
                                 <a data-toggle="modal" data-target="#addshopdetail"
                                 href="<?php echo base_url(); ?>welcome/shop"
-                                style="background-color: #10b981; color:#fff" class="btn spacetop card-title_Login" role="button"
+                                style="background-color: #13C571; color:#fff" class="btn spacetop card-title_Login" role="button"
                                 aria-disabled="true" id="c">ADD SHOP </a>
                             <p class="text-muted mt-4 card-title_Login">Note: Once the shop details are submitted for verification they
                                 can be changed
