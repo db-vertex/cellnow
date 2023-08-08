@@ -33,7 +33,7 @@
     }
 
     .spacetop {
-        margin-top: 50px;
+        margin-top: 10px;
     }
 
     .left-space {
@@ -255,24 +255,14 @@
         border-radius: 60px;
         font-family: open sans;
         font-weight: 550;
-        font-size: 22px;
+        font-size: 15px;
         padding: 4px 32px;
 
     }
 
     @media (min-width: 350px) and (max-width: 459px) {
 
-        #c {
-            margin-right: 10px;
-            border-color: #78d7b8;
-            border-radius: 60px;
-            font-family: open sans;
-            font-weight: 550;
-            font-size: 10px;
-            padding: 4px 10px;
-            max-width: 100%;
-
-        }
+        
 
         .spacetop {
             margin: 0px;
@@ -372,11 +362,15 @@
                     <div class="row text-center mt-2">
 
                         <div>
-                            <a data-toggle="modal" data-target="#addshopdetail"
+                           
+
+                                <h5 class="text-muted mt-4 card-title_Login">Take Your Shop/Services online on CelNow</h5>
+
+                                <a data-toggle="modal" data-target="#addshopdetail"
                                 href="<?php echo base_url(); ?>welcome/shop"
-                                style="background-color: #10b981; color:#fff" class="btn spacetop" role="button"
-                                aria-disabled="true" id="c">Take Your Shop/Services online on CelNow </a>
-                            <p class="text-muted mt-4">Note: Once the shop details are submitted for verification they
+                                style="background-color: #10b981; color:#fff" class="btn spacetop card-title_Login" role="button"
+                                aria-disabled="true" id="c">ADD SHOP </a>
+                            <p class="text-muted mt-4 card-title_Login">Note: Once the shop details are submitted for verification they
                                 can be changed
                             </p>
                         </div>

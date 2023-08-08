@@ -1318,6 +1318,12 @@
     #hedare_search{
         width: 159px
     }
+    
+}
+.card-title_Login {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 600;
 }
     </style>
 
