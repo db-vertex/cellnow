@@ -112,7 +112,7 @@ input::placeholder {
     bottom: 0;
 }
 </style>
-<div class="container home_background" style=" margin-top: 40px;">
+<div class="container home_background" style=" margin-top: 100px;">
     <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">

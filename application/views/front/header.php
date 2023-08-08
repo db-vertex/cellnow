@@ -1310,6 +1310,15 @@
         font-family: open sans;
         font-weight: 700;
     }
+
+    .search-icon {
+        color: #10B981;
+    }
+    @media (max-width: 400px) {
+    #hedare_search{
+        width: 159px
+    }
+}
     </style>
 
 </head>
@@ -1327,7 +1336,7 @@
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
                         class="img-fluid logo_header" style="">
                 </a>
-                <ul class="navbar-nav mb-lg-0  " style="" id="">
+                <ul class="navbar-nav mb-lg-0  " style="" id="hedare_search">
                     <li class="nav-item nav-item_serach" style="" ;>
                         <div class="search_wrap search_wrap_6 m-0">
                             <div class="search_box_header" style="">
@@ -1339,14 +1348,15 @@
                                         name="location" class="form-control rounded-5 overflow"
                                         placeholder="Search for location" id="Location" aria-label="Search"
                                         aria-describedby="search-addon"
-                                        style="padding-right: 21px; background-color: #10B981; color: #fff;" />
+                                        style="padding-right: 21px; background-color: #80808000; color: #7d7777;  border-color:#10B981;" />
 
                                     <!-- Add search icon -->
                                     <span
                                         style="position: absolute; top: 50%; right: 10px; transform: translateY(-50%);">
                                         <svg xmlns="http://www.w3.org/2000/svg"
                                             class="icon icon-tabler icon-tabler-search search-icon" width="24"
-                                            height="24" viewBox="0 0 24 24" stroke-width="2.5" stroke="#fff" fill="none"
+                                            height="24" viewBox="0 0 24 24" stroke-width="2.5" stroke="#10B981"
+                                            fill="#fff" <!-- Use fill to set the color -->
                                             stroke-linecap="round" stroke-linejoin="round">
                                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                                             <circle cx="10" cy="10" r="7" />
@@ -1453,17 +1463,17 @@
 
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My
                                     profile</a></li>
-                          
+
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/chat">My Chat
-                            
-                            <?php 
+
+                                    <?php 
                              $chat_status = get_last_chat_row_header($user['user_id']);
                              if ($chat_status->read_status == 0 ) {
                                 echo '<span class="fs-3">&#x2022;</span>';
                                  }
                              ?>
-                            
-                        </a></li>
+
+                                </a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/fav_list">My
                                     Favorites</a></li>
                             <?php if($profile->login_type == 'normal'){ ?>
@@ -1483,7 +1493,7 @@
                                 style="color:#10B981;font-weight:bold;"> Login
                             </a>
                         </li>
-    
+
                         <?php }?>
                     </ul>
 
