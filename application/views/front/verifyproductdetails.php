@@ -1431,7 +1431,7 @@
                                         data-wishlist="<?php echo $wishlist; ?>"></i></a>
                             </div>
                             <div class="col-4">
-                                <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) { 
+                                <?php if(isset($product_detail->price)){  if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3 || $product_detail->category_id == 5 || $product_detail->category_id == 6 || $product_detail->category_id == 7)) { 
                                      
                                      ?>
                                 <p class="details_price">₹<span><?php echo $product_detail->price; ?></span></p>

@@ -453,7 +453,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 					<p tyle="color: #575757;">';
 										   $title = $row['address'];
 					   
-										   if(strlen($title) <= 20)
+										   if(strlen($title) <= 10)
 										   {
 										   $pro .= ucfirst($title);
 										  
@@ -461,7 +461,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 										   }
 										   else
 										   {
-										   $y = substr($title, 0, 20) .'...';
+										   $y = substr($title, 0, 10) .'...';
 										   $pro .= ucfirst($y);
 										   }
 										   $pro.='</p>
@@ -573,7 +573,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 					     <p tyle="color: #575757;">';
 										   $title = $row['address'];
 					   
-										   if(strlen($title) <= 20)
+										   if(strlen($title) <= 10)
 										   {
 										   $pro .= ucfirst($title);
 										  
@@ -581,7 +581,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 										   }
 										   else
 										   {
-										   $y = substr($title, 0, 20) .'...';
+										   $y = substr($title, 0, 10) .'...';
 										   $pro .= ucfirst($y);
 										   }
 										   $pro.='</p>

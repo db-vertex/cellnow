@@ -293,17 +293,18 @@
             width: 22.66%;
         }
     }
-    .shop_images_view {
-            font-family: open sans;
-            font-weight: 550;
-        }
 
-        @media (min-width: 575px){
-        .shop_details_border{
-            border-left:solid; 
+    .shop_images_view {
+        font-family: open sans;
+        font-weight: 550;
+    }
+
+    @media (min-width: 575px) {
+        .shop_details_border {
+            border-left: solid;
             border-color: #78d7b8;
         }
-        }
+    }
     </style>
 </head>
 
@@ -328,7 +329,7 @@
 
 
                 <div class="col-3 mb-1">
-                    <a href="<?php echo base_url();?>welcome/shop" style="background-color: #78d7b8; color:#fff"
+                    <a href="<?php echo base_url();?>welcome/shop" style="background-color: #13C571; color:#fff"
                         class="btn" role="button" aria-disabled="true" id="a">Shop</a>
                 </div>
             </div>
@@ -855,26 +856,27 @@ for($i=0; $i<(4-count($product_image)); $i++){
 
 
                 <div class="row" style="margin-left: 0.2rem!important;">
-                <?php if(!empty($shop)){?>
-                <h5 class="shop_images_view">Shop Images</h5>
-                <?php $i=1;
+                    <?php if(!empty($shop)){?>
+                    <h5 class="shop_images_view">Shop Images</h5>
+                    <?php $i=1;
                 $product_image = get_shop_image($shop->id);
                 if(!empty($product_image)){
                 foreach($product_image as $product_images){ ?>`
-                <div class=" col-lg-2 col-sm-4 col-auto mb-3">
-                    <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
-                        data-lightbox="shop-images">
-                        <img class="details_img_cover img-fluid"
-                            src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
-                    </a>
+                    <div class=" col-lg-2 col-sm-4 col-auto mb-3">
+                        <a href="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>"
+                            data-lightbox="shop-images">
+                            <img class="details_img_cover img-fluid"
+                                src="<?php echo base_url().'uploads/shop/'.$product_images->shop_image; ?>">
+                        </a>
+                    </div>
+                    <?php }}  else{ ?>
+
+                    <img class="details_img_cover img-fluid"
+                        src="<?php echo base_url();?>uploads/shop/noshop_images.png">
+                    <?php } ?>
+                    <?php }  ?>
+
                 </div>
-                <?php }}  else{ ?>
-
-                <img class="details_img_cover img-fluid" src="<?php echo base_url();?>uploads/shop/noshop_images.png">
-                <?php } ?>
-                <?php }  ?>
-
-            </div>
 
 
             </div>

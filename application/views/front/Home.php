@@ -112,7 +112,7 @@ input::placeholder {
     bottom: 0;
 }
 </style>
-<div class="container home_background" style=" margin-top: 125px;">
+<div class="container home_background" style=" margin-top: 40px;">
     <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -358,13 +358,13 @@ input::placeholder {
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 20)
+                            if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,20) . '...';
+                                $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
                            ?></h6>
@@ -526,13 +526,13 @@ input::placeholder {
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->Address;
-                            if(strlen($title) <= 20)
+                            if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,20) . '...';
+                                $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
                            ?></h6>
@@ -618,13 +618,13 @@ input::placeholder {
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 20)
+                            if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,20) . '...';
+                                $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
                            ?></h6>

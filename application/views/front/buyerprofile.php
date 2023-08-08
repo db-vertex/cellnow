@@ -106,7 +106,7 @@
         <div class="shadow p-4  bg-body rounded-5" style=""><br>
             <div class="row text-center justify-content-around">
                     <div class="col-3 mb-1">
-                    <a href="<?php echo base_url();?>welcome/buyerprofile" style="background-color: #78d7b8; color:#fff"
+                    <a href="<?php echo base_url();?>welcome/buyerprofile" style="background-color: #13C571; color:#fff"
                         class="btn" role="button" aria-disabled="true" id="a">Buyer</a>
                     </div>
 

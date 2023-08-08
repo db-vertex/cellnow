@@ -184,14 +184,17 @@
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
 
-                                <?php if(isset($pro->price)){  if (($pro->pay_type == 0 || $pro->pay_type == 1) && ($pro->category_id == 1 || $pro->category_id == 2 || $pro->category_id == 3)) { 
-                                     
+                                <?php if(isset($pro->price)){  if (($pro->pay_type == 0 || $pro->pay_type == 1) && ($pro->category_id == 1 || $pro->category_id == 2 || $pro->category_id == 3 || $pro->category_id == 5|| $pro->category_id == 6 || $pro->category_id == 7)) { 
                                      ?>
                                 <p class="details_price">₹<?php echo $pro->price; ?>
                                 </p>
                                 <?php } }?>
                                 <?php if( $pro->pay_type==2){ ?>
                                 <p class="details_price">Donate
+                                </p>
+                                <?php }
+                                 if( $pro->category_id == 4 ){ ?>
+                                <p class="" style="color: #10b98100;">Donate
                                 </p>
                                 <?php } ?>
 

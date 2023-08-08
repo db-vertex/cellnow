@@ -236,13 +236,13 @@
                                                 <div class="col-8">
                                                 <p style="color: #575757;"><?php
                            $title = $pro->address;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
                            

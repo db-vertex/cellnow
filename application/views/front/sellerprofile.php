@@ -134,7 +134,7 @@ html,body
                     </div>
 
                     <div class="col-3 mb-1">
-                    <a href="<?php echo base_url();?>welcome/myprofile" style="background-color: #78d7b8; color:#fff" class="btn" role="button"
+                    <a href="<?php echo base_url();?>welcome/myprofile" style="background-color: #13C571; color:#fff" class="btn" role="button"
                                 aria-disabled="true" id="a">Seller</a>
                     </div>
 
@@ -179,7 +179,7 @@ width: 131.9px; border-color:#10B981;">
 
 
 <div class="container">
-<h4 class="shop_images_view mt-3 ps-3" style=""><b>Verified Ads</b></h4>
+<h4 class="shop_images_view mt-3 ps-3" style=""><b>My Ads</b></h4>
 <div class="row ">
 
 <?php $sellerproduct = get_seller_product($user['user_id']); 

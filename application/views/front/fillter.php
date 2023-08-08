@@ -1963,7 +1963,7 @@ $brands = array(
                                     <div class="col-9 mt-1">
                                         <p tyle="color: #575757;"><?php
                            $title =$pro->address;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 10)
                               {
                                 echo ucfirst($title);
                               }
