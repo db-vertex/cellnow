@@ -157,6 +157,12 @@ input::placeholder {
     font-style: normal;
     font-weight: 600;
 }
+.card-body{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 </style>
 <div class="container home_background" style="">
     <div class="container px-0">
@@ -209,16 +215,7 @@ input::placeholder {
                         aria-describedby="search-addon" style="padding:12px 22px" />
                     <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search
                     </button>
-                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchproduct/">
-                        <div class="searchbox-wrap">
-                            <input type="text" value="" name="anything" aria-label="Search"
-                                aria-describedby="search-addon" class="search_input form-input"
-                                placeholder="Search for the Product you want!">
-                            <input type="text" class="form-control" name="latitude" id="latitude" hidden />
-                            <input type="text" class="form-control" name="longitude" id="longitude" hidden />
-                            <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
-                        </div>
-                    </form> -->
+                   
                 </div>
                 <div class="row">
                     <div id="display"></div>
@@ -405,13 +402,13 @@ input::placeholder {
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 100)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,100) . '...';
                                 echo ucfirst($y);
                               }
                            ?></h6>
@@ -453,11 +450,7 @@ input::placeholder {
 </div>
 <br>
 <!-- new  -->
-<div class="container">
-    <div class="row ">
-        <p style="color: #F59E0B;">Search Near By Store</p>
-    </div>
-</div>
+
 <!-- new  -->
 <div class="container  mt-3">
     <div class="row">
@@ -560,13 +553,13 @@ input::placeholder {
                             <div class="d-flex justify-content-between align-items-center">
                                 <h6 class="dress-name"><?php
                            $title = $pro->name;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 100)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,100) . '...';
                                 echo ucfirst($y);
                               }
                            ?></h6>
@@ -575,13 +568,13 @@ input::placeholder {
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->Address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 100)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,100) . '...';
                                 echo ucfirst($y);
                               }
                            ?></h6>
@@ -655,13 +648,13 @@ input::placeholder {
                             <div class="d-flex justify-content-between align-items-center">
                                 <h6 class="dress-name"><?php
                            $title = $pro->title;
-                            if(strlen($title) <= 15)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,15) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            ?></h6>
@@ -670,13 +663,13 @@ input::placeholder {
                                 <h6><img style="max-width:25px;"
                                         src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 100)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,100) . '...';
                                 echo ucfirst($y);
                               }
                            ?></h6>

@@ -1216,6 +1216,7 @@
 
         #Location {
             padding: 4px 9px;
+            font-size: 14px;
         }
 
         .search_wrap.search_wrap_6 .search_box_header .btn {
@@ -1324,6 +1325,11 @@
     font-family: 'Lexend';
     font-style: normal;
     font-weight: 600;
+}
+.card-body{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }
     </style>
 

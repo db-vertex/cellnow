@@ -262,7 +262,7 @@
 
     @media (min-width: 350px) and (max-width: 459px) {
 
-        
+
 
         .spacetop {
             margin: 0px;
@@ -362,15 +362,16 @@
                     <div class="row text-center mt-2">
 
                         <div>
-                           
 
-                                <h5 class="text-muted mt-4 card-title_Login">Take Your Shop/Services online on CelNow</h5>
 
-                                <a data-toggle="modal" data-target="#addshopdetail"
+                            <h5 class="text-muted mt-4 card-title_Login">Take Your Shop/Services online on CelNow</h5>
+
+                            <a data-toggle="modal" data-target="#addshopdetail"
                                 href="<?php echo base_url(); ?>welcome/shop"
-                                style="background-color: #13C571; color:#fff" class="btn spacetop card-title_Login" role="button"
-                                aria-disabled="true" id="c">ADD SHOP </a>
-                            <p class="text-muted mt-4 card-title_Login">Note: Once the shop details are submitted for verification they
+                                style="background-color: #13C571; color:#fff" class="btn spacetop card-title_Login"
+                                role="button" aria-disabled="true" id="c">ADD SHOP </a>
+                            <p class="text-muted mt-4 card-title_Login">Note: Once the shop details are submitted for
+                                verification they
                                 can be changed
                             </p>
                         </div>
@@ -436,8 +437,8 @@
                                                     <div class="alert alert-danger ">
                                                         <?= $error;
 
-                  unset($_SESSION['Login_fail']);
-                  ?>
+                                                    unset($_SESSION['Login_fail']);
+                                                    ?>
 
                                                     </div>
                                                 </div>
@@ -743,21 +744,13 @@ for($i=0; $i<(4-count($product_image)); $i++){
                                                     <div class="row">
                                                         <label>Shop document photo Upload size(180 x 190) px</label>
                                                         <?php 
-
-/* echo $product['id'];*/
-
-$i=1;
-
-  $product_image =   get_shop_image($shop->id);
-
-     $count = count($product_image);
-
-     if(!empty($product_image)){
-      foreach ($product_image as $key => $pro_img) {
-
-        $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
-
-        ?>
+                                                    $i=1;
+                                                    $product_image =   get_shop_image($shop->id);
+                                                        $count = count($product_image);
+                                                        if(!empty($product_image)){
+                                                        foreach ($product_image as $key => $pro_img) {
+                                                            $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
+                                                            ?>
                                                         <div class="col-6" id="productimage<?=$pro_img->id?>">
                                                             <p class="deletebtn" data-productid="<?=$shop->id; ?>"
                                                                 data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash"
@@ -773,11 +766,11 @@ $i=1;
 
                                                         <?php
 
- $i++;
+                                $i++;
 
-      }
+                                    }
 
-    }
+                                    }
 
 for($i=0; $i<(4-count($product_image)); $i++){
   ?>

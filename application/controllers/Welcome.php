@@ -175,10 +175,10 @@ $sub .= '</h6>
                 <h6><img  src="'.base_url("assets/images/location .png").'"> ';
 $title = $value->address;
 
-if (strlen($title) <= 20) {
+if (strlen($title) <= 100) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 20) . '...';
+    $y = substr($title, 0, 100) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>
@@ -266,10 +266,10 @@ $sub .= '</h6>
                 <h6>';
 $title = $value->address;
 
-if (strlen($title) <= 20) {
+if (strlen($title) <= 100) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 20) . '...';
+    $y = substr($title, 0, 100) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>
@@ -349,10 +349,10 @@ $sub .= '</h6>
                 <h6>';
 $title = $value->address;
 
-if (strlen($title) <= 10) {
+if (strlen($title) <= 100) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 10) . '...';
+    $y = substr($title, 0, 100) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>
@@ -425,10 +425,10 @@ $sub .= '</h6>
                 <h6>';
 $title = $value->address;
 
-if (strlen($title) <= 10) {
+if (strlen($title) <= 100) {
     $sub .= ucfirst($title);
 } else {
-    $y = substr($title, 0, 10) . '...';
+    $y = substr($title, 0, 100) . '...';
     $sub .= ucfirst($y);
 }
 $sub .= '</h6>

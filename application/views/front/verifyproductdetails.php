@@ -225,7 +225,7 @@
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 400;
-        font-size: 15px;
+        font-size: 13px;
         line-height: 15px;
         /* identical to box height */
         color: #000000;
@@ -332,7 +332,7 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 400;
-            font-size: 10px;
+            font-size: 9px;
             line-height: 15px;
             /* identical to box height */
             color: #000000;
@@ -884,9 +884,8 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 400;
-            font-size: 8px;
+            font-size:8px;
             line-height: 15px;
-            /* identical to box height */
             color: #000000;
         }
 
@@ -920,7 +919,6 @@
         }
 
         .detalis_option {
-
             left: 112px;
             top: 1373.5px;
             background: #FFFFFF;
@@ -2178,10 +2176,10 @@
                                             <div class="col-8">
                                                 <p style="color: #575757;"><?php
                                                     $title = $relatedproduct->address;
-                                                    if (strlen($title) <= 15) {
+                                                    if (strlen($title) <= 100) {
                                                         echo ucfirst($title);
                                                     } else {
-                                                        $y = substr($title, 0, 15) . '...';
+                                                        $y = substr($title, 0, 100) . '...';
                                                         echo ucfirst($y);
                                                     }
 
