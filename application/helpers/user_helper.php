@@ -2374,5 +2374,18 @@ $query="SELECT * FROM subscribers WHERE user_id=".$user_id;
      return $query->row();
  }
 
+ function get_last_chat_row_header($sender_id)
+ {
+     $CI =& get_instance();
+
+     $CI->db->group_start();
+     $CI->db->where('receiver_id', $sender_id);
+     $CI->db->group_end();
+     $CI->db->order_by('id', 'DESC');
+     $query = $CI->db->get('chat');
+     return $query->row();
+ }
+
+
 
 ?>

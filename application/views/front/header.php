@@ -25,8 +25,8 @@
     <?php 
     $session_id = $this->session->userdata('id');
     if(!empty($session_id)){?>
-   <script src="<?php echo base_url();?>assets/js/app.js"></script>
-   <?php  }
+    <script src="<?php echo base_url();?>assets/js/app.js"></script>
+    <?php  }
     ?>
     ?>
     <title>CelNow</title>
@@ -1243,8 +1243,9 @@
             width: 100%;
             margin-right: 0px;
         }
-        .smart-scroll{
-   inline-size: max-content;
+
+        .smart-scroll {
+            inline-size: max-content;
         }
     }
 
@@ -1262,9 +1263,7 @@
 
     /* Styles for screen width between 771px and 992px */
     @media (min-width: 771px) and (max-width: 992px) {
-        .nav-item_serach {
-           
-        }
+        .nav-item_serach {}
 
         .search_box_header {
             width: 107%;
@@ -1306,9 +1305,10 @@
         }
 
     }
-    .navbar-nav{
-    font-family: open sans;
-    font-weight: 700;
+
+    .navbar-nav {
+        font-family: open sans;
+        font-weight: 700;
     }
     </style>
 
@@ -1317,9 +1317,9 @@
 
 <body>
 
-    
+
     <div class="container-fluid body_background " id="body_background">
-    <button id="push-subscription-button" class="btn btn-sm btn-primary d-none">Enable Push Notification</button>
+        <button id="push-subscription-button" class="btn btn-sm btn-primary d-none">Enable Push Notification</button>
         <div class="container">
 
             <nav class="navbar navbar-expand-xl bg-body- smart-scroll" style="width: auto;">
@@ -1453,8 +1453,17 @@
 
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My
                                     profile</a></li>
-
-                            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/chat">My Chat</a></li>
+                          
+                            <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/chat">My Chat
+                            
+                            <?php 
+                             $chat_status = get_last_chat_row_header($user['user_id']);
+                             if ($chat_status->read_status == 0 ) {
+                                echo '<span class="fs-3">&#x2022;</span>';
+                                 }
+                             ?>
+                            
+                        </a></li>
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/fav_list">My
                                     Favorites</a></li>
                             <?php if($profile->login_type == 'normal'){ ?>
@@ -1474,10 +1483,7 @@
                                 style="color:#10B981;font-weight:bold;"> Login
                             </a>
                         </li>
-                        <!-- <li class="nav-item" style="padding-right:10px" ;>
-                            <a class="nav-link fs-5 Signup_header" href="<?php echo base_url();?>welcome/signup"
-                                style="color:#10B981;font-weight:bold;">Signup</a>
-                        </li> -->
+    
                         <?php }?>
                     </ul>
 
@@ -1485,7 +1491,7 @@
             </nav>
         </div>
     </div>
- 
+
 </body>
 
 </html>
