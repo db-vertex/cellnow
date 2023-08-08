@@ -111,8 +111,24 @@ input::placeholder {
     left: 0px;
     bottom: 0;
 }
+@media (min-width: 1200px) {
+    .home_background{
+        margin-top: 100px;
+}
+}
+@media (max-width: 1199px) {
+    .home_background{
+        margin-top: 75px;
+}
+}
+@media (max-width: 548px) {
+    .home_background{
+        margin-top: 40px;
+}
+}
+
 </style>
-<div class="container home_background" style=" margin-top: 100px;">
+<div class="container home_background" style="">
     <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
