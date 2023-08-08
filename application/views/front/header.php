@@ -1317,7 +1317,7 @@
 
 <body>
 
-    <!-- <h1 >Hello, world!</h1> -->
+    
     <div class="container-fluid body_background " id="body_background">
     <button id="push-subscription-button" class="btn btn-sm btn-primary d-none">Enable Push Notification</button>
         <div class="container">
@@ -1485,7 +1485,7 @@
             </nav>
         </div>
     </div>
-    <!-- </nav> -->
+ 
 </body>
 
 </html>

@@ -205,7 +205,7 @@
         height: 120px;
         left: 854px;
         top: 1057px;
-        border: 1px solid #000000;
+     
         box-shadow: 0px 0px 4px #10B981;
         border-radius: 50%;
         margin-top: 24px;
@@ -311,7 +311,7 @@
 
             width: 100px;
             height: 100px;
-            border: 1px solid #000000;
+          
             box-shadow: 0px 0px 4px #10B981;
             border-radius: 50%;
             margin-top: 20px;
@@ -475,7 +475,7 @@
             font-weight: 600;
             font-size: 8px;
             line-height: 14px;
-
+            border:none;
             color: #000000;
             margin-top: 10px;
         }
@@ -509,7 +509,7 @@
             font-weight: 600;
             font-size: 6px;
             line-height: 14px;
-
+            border:none;
             color: #000000;
             margin-top: 10px;
         }
@@ -862,7 +862,7 @@
 
             width: 80px;
             height: 80px;
-            border: 1px solid #000000;
+           
             box-shadow: 0px 0px 4px #10B981;
             border-radius: 50%;
             margin-top: 10px;
@@ -956,9 +956,9 @@
         left: 1218px;
         bottom: 1737px;
         background: #FFFFFF;
-        border: 2px solid #46760A;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 50px;
+        border:none;
     }
 
     .View_Seller_profile {
@@ -967,7 +967,7 @@
         font-weight: 600;
         font-size: 12px;
         line-height: 14px;
-
+        border:none;
         color: #000000;
         margin-top: 10px;
     }
@@ -1148,6 +1148,9 @@
 
     .pointer {
         cursor: pointer;
+    }
+    .details_img_box.active{
+        border:1px solid #10B981;
     }
     </style>
 </head>
@@ -2072,7 +2075,7 @@
                                                 <input type="hidden" name="receiver_id" id="receiver_id"
                                                     value="<?php echo $product_detail->user_id; ?>">
 
-                                                <input class="chat_button pointer" style="border-color:#46760a"
+                                                <input class="chat_button pointer"
                                                     value="Chat" <?php if (empty($user) || !isset($user)) { ?>
                                                     onClick="location.href='<?php echo base_url(); ?>welcome/login/'"
                                                     <?php } else { ?>type="submit" <?php } ?> readonly>

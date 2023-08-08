@@ -163,6 +163,8 @@
     .chat .chat-wrapper .chat-list-wrapper .chat-list li .body .header {
         margin-top: 4px;
         margin-bottom: 4px;
+        font-family: open sans;
+            font-weight: 700;
     }
 
     .chat .chat-wrapper .chat-list-wrapper .chat-list li .body .header .username {
@@ -501,7 +503,7 @@
             display: inline-block;
             margin-left: 10px;
         }
-
+       
         .chat .chat-wrapper .message-list-wrapper .message-list li.right .timestamp {
             text-align: right;
             display: block;

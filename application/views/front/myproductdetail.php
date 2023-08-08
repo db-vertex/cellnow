@@ -202,7 +202,7 @@ img {
         height: 120px;
         left: 854px;
         top: 1057px;
-        border: 1px solid #000000;
+     
         box-shadow: 0px 0px 4px #10B981;
         border-radius: 50%;
         margin-top: 24px;
@@ -308,7 +308,7 @@ img {
 
             width: 100px;
             height: 100px;
-            border: 1px solid #000000;
+          
             box-shadow: 0px 0px 4px #10B981;
             border-radius: 50%;
             margin-top: 20px;
@@ -846,7 +846,7 @@ border-radius: 80px 0px 0px 80px;
 
             width: 80px;
             height: 80px;
-            border: 1px solid #000000;
+         
             box-shadow: 0px 0px 4px #10B981;
             border-radius: 50%;
             margin-top: 10px;
@@ -940,7 +940,7 @@ border-radius: 80px 0px 0px 80px;
         left: 1218px;
         bottom: 1737px;
         background: #FFFFFF;
-        border: 2px solid #46760A;
+        border: none;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 50px;
     }
@@ -1130,6 +1130,10 @@ border-radius: 80px 0px 0px 80px;
 }
 
 .pointer {cursor: pointer;}
+
+.details_img_box.active{
+        border:1px solid #10B981;
+    }
 
     </style>
 </head>
