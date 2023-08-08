@@ -121,6 +121,11 @@
             padding-bottom: 0px;
           border-bottom: 6px solid #10B981;
         }
+        .card-title_Login {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 600;
+    }
     </style>
 </head>
 <script>
@@ -140,17 +145,16 @@
         <div class="container " style="margin-top:20px">
 
             <div class="row " style="min-height:90%;">
-                <div class="col-md-6 col-sm-12 ps-0">
+                <div class="col-lg-6 col-sm-12 ps-0">
                     <div class="h-100 p-5 ">
                         <img class="img-fluid" src="<?php echo base_url()?>/assets/images/signup.png">
                     </div>
                 </div>
-                <div class="col-md-6 col-sm-12 ps-4 pe-4">
+                <div class="col-lg-6 col-sm-12 ps-4 pe-4" style="align-self: center;">
                     <div class="card  border p-4">
                         <article class="card-body">
-                        <h6  class="float-right card-title mb-4 mt-1">Have an account ? <br><a  style="color:#13C571;" href="<?php echo base_url();?>welcome/login"> Sign in</a></h6>
-<p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;"><b>Celnow </b></a></p>
-<h2 class="card-title mb-4 mt-1">Sign up</h2>
+                        <center><p class="lead card-title_Login fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" class="text-decoration-none"  style="color:#13C571;"><b>CelNow </b></a></p>
+                        <h2 class="card-title card-title_Login mb-4 mt-1">Sign up</h2></center>
                             <form action="<?php echo base_url()?>welcome/signup" method="post">
                                 <div class="form-group ">
                                     <label>Enter Your Email</label>
@@ -196,7 +200,7 @@
 
 
 
-                                <center><button class=" mb-2 btn btn-lg  text-white mt-2"
+                                <center><button class=" card-title_Login  mb-2 btn btn-lg  text-white mt-2"
                                         style="background-color:#13C571;border-radius:30px;width:40%;"
                                         type="submit" name="submit">Sign up</button>
 

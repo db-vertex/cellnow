@@ -9,7 +9,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
 
 <head>
-   <style>
+    <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -23,11 +23,13 @@
             font-size: 3.5rem;
         }
     }
-.alert-dan {
-    color: #721c24;
-   background-color: lightpink;
-    /* border-color: #f5c6cb; */
-}
+
+    .alert-dan {
+        color: #721c24;
+        background-color: lightpink;
+        /* border-color: #f5c6cb; */
+    }
+
     .b-example-divider {
         height: 3rem;
         background-color: rgba(0, 0, 0, .1);
@@ -53,8 +55,8 @@
         height: 2.75rem;
         overflow-y: hidden;
     }
-    
-     .inp-icon {
+
+    .inp-icon {
         box-sizing: border-box;
         width: 250px;
         background-image: url('https://dbvertex.com/classified/assets/images/Group 483.png');
@@ -86,137 +88,156 @@
         border-bottom-style: groove;
     }
 
-    #invalid_{
-      color: red;
+    #invalid_ {
+        color: red;
     }
-  
-input:focus, input.form-control:focus {
-    outline:none !important;
-    outline-width: 0 !important;
-    box-shadow: none;
-    -moz-box-shadow: none;
-    -webkit-box-shadow: none;
-  
+
+    input:focus,
+    input.form-control:focus {
+        outline: none !important;
+        outline-width: 0 !important;
+        box-shadow: none;
+        -moz-box-shadow: none;
+        -webkit-box-shadow: none;
+
     }
+
     input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
 
-/* Firefox */
-input[type=number] {
-  -moz-appearance: textfield;
-}
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
 
-.border{
-    border: 1px solid #13C571!important;
-    border-radius: 30px;
-}
+    .border {
+        border: 1px solid #13C571 !important;
+        border-radius: 30px;
+    }
 
-  </style>
+    .card-title_Login {
+        font-family: 'Lexend';
+        font-style: normal;
+        font-weight: 600;
+      
+    }
+  
+    </style>
 </head>
 <script>
-  function checkUserName() {
-        var userNames = document.getElementById("verify").value;
-        var SubBtn=document.getElementById("demo");
-        if(userNames.length  >= 4){
-          SubBtn.disabled=false;
-        }else{
-          SubBtn.disabled=true;
-        }
+function checkUserName() {
+    var userNames = document.getElementById("verify").value;
+    var SubBtn = document.getElementById("demo");
+    if (userNames.length >= 4) {
+        SubBtn.disabled = false;
+    } else {
+        SubBtn.disabled = true;
     }
-    </script>
+}
+</script>
+
 <body>
-    <main>
-        <div class="container py-4 space-top" >
+    <main style="margin-top: 100px;">
+        <div class="container py-4">
 
             <div class="row align-items-md-stretch" style="min-height:90%;">
-            <div class="col-md-7 ps-0" >
+                <div class="col-lg-7 ps-0">
                     <div class="h-100 p-3 ">
-                        <img  class="img-fluid" 
-                            src="<?php echo base_url()?>/assets/images/forgot.png">
+                        <img class="img-fluid" src="<?php echo base_url()?>/assets/images/forgot.png">
                     </div>
                 </div>
-                <div class="col-md-5 ps-4 pe-4">
-                <div class="card  border p-4">
-<article class="card-body">
+                <div class="col-lg-5 ps-4 pe-4" style="align-self: center;">
+                    <div class="card  border p-4">
+                        <article class="card-body">
 
-<h6  class="float-right card-title mb-4 mt-1">Have an account ? <br><a  style="color:#13C571;" href="<?php echo base_url();?>welcome/login"> Sign in</a></h6>
-<p class="lead fw-normal mb-0 me-3">Welcome to <a href="<?php echo base_url();?>" style="color:#13C571;">Celnow </a></p>
-<h3 class="card-title mb-4 mt-1">Forgot Password</h3>
-	 <form action="<?php echo base_url();?>welcome/forgotpassword" method="post">
-     <?php if ($error = $this->session->flashdata('Login_failed')) { ?>
-                                    <div class="row">
-                                        <div class="col-lg-12">
-                                            <div class="alert alert-danger ">
-                                                <?= $error;
+                            
+                            <center>
+                            <p class="card-title_Login lead fw-normal mb-0 me-3 ">Welcome to <a href="<?php echo base_url();?>"
+                                  class="text-decoration-none"  style="color:#13C571;">CelNow </a></p>
+                            <h3 class="card-title_Login card-title mb-4 mt-1">Forgot Password</h3>
+                            </center>
+                            <form action="<?php echo base_url();?>welcome/forgotpassword" method="post">
+                                <?php if ($error = $this->session->flashdata('Login_failed')) { ?>
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="alert alert-danger ">
+                                            <?= $error;
 
                                                 unset($_SESSION['Login_failed']);
                                                 ?>
 
-                                            </div>
                                         </div>
                                     </div>
+                                </div>
 
                                 <?php } ?>
 
 
-    <div class="form-group mt-5">
-    	<label>Enter Your Mobile</label>
-        <input name="phone" class="form-control" placeholder="Mobile" type="number" style="border-radius:30px; border-color:#13C571">
-        <span style="color:red;"> <?php echo form_error('phone'); ?></span>
-    </div> <!-- form-group// -->
-   
-    
-                  <center><button class=" mb-5 btn btn-lg  text-white mt-5"  style="background-color:#13C571;border-radius:30px;width:40%;" name="submit"  type="submit">Submit</button>
-                    
-                    </center>                                                             
-</form>
-</article>
-</div> 
+                                <div class="form-group mt-5">
+                                    <label>Enter Your Mobile</label>
+                                    <input name="phone" class="form-control" placeholder="Mobile" type="number"
+                                        style="border-radius:30px; border-color:#13C571">
+                                    <span style="color:red;"> <?php echo form_error('phone'); ?></span>
+                                </div> <!-- form-group// -->
+
+
+                                <center><button class=" card-title_Login mb-5 btn btn-lg  text-white mt-5"
+                                        style="background-color:#13C571;border-radius:30px;width:40%;" name="submit"
+                                        type="submit">Submit</button>
+
+                                </center>
+                                <center>
+                                <h5 class="card-title_Login card-title mb-4 mt-1">Have an account ?<a style="color:#13C571;"
+                                class="text-decoration-none"   href="<?php echo base_url();?>welcome/login"> Sign in</a></h5>
+                                </center>
+                            </form>
+                        </article>
+                    </div>
 
 
                 </div>
-              
+
             </div>
 
 
         </div>
     </main>
-   
+
 
 </body>
 
 </html>
 
 <script>
-    "use strict"; /* Start of use strict */
-    (function() {
-        function14();
-    })();
+"use strict"; /* Start of use strict */
+(function() {
+    function14();
+})();
 
-    function function14() {
-        $('.btnSweetalert').on("click", function() {
-            swal({
-                    title: " Logout!",
-                    text: "Are you sure you want to logout?",
-                    type: "warning",
-                    showCancelButton: true,
-                    confirmButtonColor: "#DD6B55",
-                    confirmButtonText: "Yes",
-                    cancelButtonText: "No",
-                    closeOnConfirm: false,
-                    closeOnCancel: false
-                },
-                function(isConfirm) {
-                    if (isConfirm) {
+function function14() {
+    $('.btnSweetalert').on("click", function() {
+        swal({
+                title: " Logout!",
+                text: "Are you sure you want to logout?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
+            },
+            function(isConfirm) {
+                if (isConfirm) {
 
-                        window.location.href = "<?php echo base_url();?>welcome/logout";
-                    } else {
-                        swal("Cancelled", "Something went wrong. Please try again.)", "error");
-                    }
-                });
-        });
-    }
-    </script>
+                    window.location.href = "<?php echo base_url();?>welcome/logout";
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                }
+            });
+    });
+}
+</script>
