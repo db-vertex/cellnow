@@ -774,7 +774,7 @@ else{
     <div class="row pt-2">
         <div class="col-12">
             <a href="<?php echo base_url();?>welcome/shop"><img class="img-fluid"
-                    src="<?php echo base_url();?>assets/images/carbanner2.png" width="100%" alt="Second slide"></a>
+                    src="<?php echo base_url();?>assets/images/3.png" width="100%" alt="Second slide"></a>
         </div>
     </div>
 </div><br>

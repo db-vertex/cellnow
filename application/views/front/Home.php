@@ -3,35 +3,42 @@
     background: #d1fae5;
     color: black;
 }
+
 .select {
     background: #d1fae5;
     color: black;
     border-radius: 50%;
 }
+
 /* search btn line 11 to 89 */
 .search_wrap {
     width: 100%;
 }
+
 .search_wrap .search_box {
     position: relative;
     height: 64px;
 }
+
 .img-size {
     max-height: 500px;
     min-height: 500px;
 }
+
 .search_wrap .search_box .btn {
     position: absolute;
     height: 80%;
     background: #10B981;
     color: white;
 }
+
 .search_wrap .search_box .btn.btn_common .fas {
     /* top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%); */
     /* color: #fff; */
 }
+
 .search_wrap.search_wrap_6 .search_box .btn {
     max-width: 100%;
     height: 60%;
@@ -43,90 +50,113 @@
     align-items: center;
     justify-content: center;
 }
+
 input::placeholder {
     font-size: 16px;
     font-weight: bold;
 }
+
 @media screen and (max-width: 992px) {
     input::placeholder {
         font-size: 12px;
         font-weight: bold;
     }
+
     img.fix {
         position: absolute;
         margin-top: 19%;
         height: 25px;
     }
 }
+
 @media screen and (max-width: 776px) {
     input::placeholder {
         font-size: 10px;
         font-weight: bold;
     }
+
     .img-size {
         max-height: 300px;
         min-height: 300px;
     }
 }
+
 @media screen and (max-width: 560px) {
     input::placeholder {
         font-size: 12px;
         font-weight: bold;
     }
+
     .img-size {
         max-height: 200px;
         min-height: 200px;
     }
 }
+
 .mores {
     display: none;
 }
+
 .va-carrousel-section {
     padding-left: 0px;
     padding-right: 0px;
 }
+
 .cut-list>li {
     /* margin-left: 25px; */
     margin-right: 50px;
     padding-bottom: 2px;
 }
+
 .shopCategory {
     width: 40px;
     height: 40px;
 }
+
 .va-carrousel-flexbox_most .va-card {
     flex: 0 0 auto;
     padding-left: 32px;
 }
+
 .icon_slider {
     flex: 0 0 auto;
     width: 3.333333%;
 }
+
 .icon_cetgory {
     flex: 0 0 auto;
     width: 91.333333%;
 }
+
 .deals-scroll-left {
     top: -35px;
     left: 0px;
     bottom: 0;
 }
+
 @media (min-width: 1200px) {
-    .home_background{
+    .home_background {
         margin-top: 100px;
-}
-}
-@media (max-width: 1199px) {
-    .home_background{
-        margin-top: 75px;
-}
-}
-@media (max-width: 548px) {
-    .home_background{
-        margin-top: 40px;
-}
+    }
 }
 
+@media (max-width: 1199px) {
+    .home_background {
+        margin-top: 75px;
+    }
+}
+
+@media (max-width: 548px) {
+    .home_background {
+        margin-top: 40px;
+    }
+}
+
+.card-title_Login {
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 600;
+}
 </style>
 <div class="container home_background" style="">
     <div class="container px-0">
@@ -248,24 +278,24 @@ input::placeholder {
     </div>
 </div>
 <div class="container">
-        <div class="va-carrousel-section">
-            <div class="va-whitewrap">
-                <div id="va_container">
+    <div class="va-carrousel-section">
+        <div class="va-whitewrap">
+            <div id="va_container">
                 <div class="row">
                     <div class="col-1 pe-0 icon_slider">
-                    <button class="deals-scroll-left deals-paddle " id="left_sponser_button">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                            class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                            viewBox="0 0 320 512">
-                            <path fill="currentColor"
-                                d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                            </path>
-                        </svg>
-                    </button>
+                        <button class="deals-scroll-left deals-paddle " id="left_sponser_button">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                                class="svg-inline--fa fa-chevron-left fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                    d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                                </path>
+                            </svg>
+                        </button>
                     </div>
                     <div class="col-10 pe-0 icon_cetgory">
-                    <div class="va-carrousel-flexbox" id="sub-list">
-                        <?php
+                        <div class="va-carrousel-flexbox" id="sub-list">
+                            <?php
 					         $cateory =  '';
                      $sub_ = '';
                      if($cateory==''){
@@ -276,41 +306,42 @@ input::placeholder {
                      }
 					  foreach($subcategory as $sub){
 					?>
-                        <div class="va-card va-card_category mt-2" style="">
-                            <p style="text-align:center;" class="my-auto pouler_Categories "
-                                <?php if ($category == 1 || $category==5) { ?>
-                                onclick="return getproduct( <?php echo $sub->subcategory_id; ?>,<?php echo $sub->category_id; ?>)"
-                                <?php } else { ?>
-                                onclick="return getproduct( <?php echo $sub->id; ?> ,<?php echo $sub->category_id; ?>)"
-                                <?php } ?>>
-                                <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?> "
-                                    data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
-                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
-                                <center style="color:black; font-size:12px; font-weight:500">
-                                    <?php echo $sub->product_type; ?>
-                                </center>
-                            </p>
-                        </div>
-                        <?php 	
+                            <div class="va-card va-card_category mt-2" style="">
+                                <p style="text-align:center;" class="my-auto pouler_Categories "
+                                    <?php if ($category == 1 || $category==5) { ?>
+                                    onclick="return getproduct( <?php echo $sub->subcategory_id; ?>,<?php echo $sub->category_id; ?>)"
+                                    <?php } else { ?>
+                                    onclick="return getproduct( <?php echo $sub->id; ?> ,<?php echo $sub->category_id; ?>)"
+                                    <?php } ?>>
+                                    <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?> "
+                                        data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
+                                        src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
+                                        alt="">
+                                    <center style="color:black; font-size:12px; font-weight:500">
+                                        <?php echo $sub->product_type; ?>
+                                    </center>
+                                </p>
+                            </div>
+                            <?php 	
                 }
                ?>
-                    </div>
+                        </div>
                     </div>
                     <div class="col-1 pe-0 icon_slider">
-                    <button class="deals-scroll-right deals-paddle " id="right_sponser_button">
-                        <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                            class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
-                            xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
-                            <path fill="currentColor"
-                                d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                            </path>
-                        </svg>
-                    </button>
-                       </div>
+                        <button class="deals-scroll-right deals-paddle " id="right_sponser_button">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                                class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
         </div>
-</div>
+    </div>
 </div>
 <section>
     <div class="text-center container py-5">
@@ -409,17 +440,18 @@ input::placeholder {
         <div class="col-md-6 ">
             <div class="ratio ratio-16x9">
                 <iframe style="border-radius: 15px;" class="embed-responsive-item"
-                    src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+                    src="https://www.youtube.com/embed/Pt-jwyi8-R8"></iframe>
             </div>
         </div>
         <div class="col-md-6 ">
-            <h1>Customer flow</h1><br>
-            <p style="color: #565656;">Our Business Plan is a written document describing a company's core business
-                activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high
-                quality Product with modern idea accordingly their budgets and according thir reuirements.</p>
+            <h3 class="card-title_Login">Turn Your Broken Devices into Cash with Celnow!</h3><br>
+            <p class="card-title_Login" style="color: #565656;">Create a listing for your broken device, Celnow's
+                platform connects you with potential buyers who can benefit from your broken device and you can earn
+                some extra money from your unused gadgets.</p>
         </div>
     </div>
-</div><br>
+</div>
+<br>
 <!-- new  -->
 <div class="container">
     <div class="row ">
@@ -456,55 +488,56 @@ input::placeholder {
     </div>
 </div><br>
 <div class="container ">
-   <div class="va-carrousel-section">
-      <div class="va-whitewrap">
-         <div id="va_container_urgent">
-            <div class="row">
-               <div class="col-1 pe-0 icon_slider">
-                  <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
-                     <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                        class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512">
-                        <path fill="currentColor"
-                           d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                        </path>
-                     </svg>
-                  </button>
-               </div>
-               <div class="col-10 ps-0 icon_cetgory">
-                  <div class="va-carrousel-flexbox_urgent">
-                     <?php $id = $this->uri->segment(3); 
+    <div class="va-carrousel-section">
+        <div class="va-whitewrap">
+            <div id="va_container_urgent">
+                <div class="row">
+                    <div class="col-1 pe-0 icon_slider">
+                        <button class="deals-scroll-left_urgent deals-paddle" id="left_urgent_button">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                                class="svg-inline--fa fa-chevron-left fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                    d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="col-10 ps-0 icon_cetgory">
+                        <div class="va-carrousel-flexbox_urgent">
+                            <?php $id = $this->uri->segment(3); 
                         $category = get_all_shopcategory();
                         foreach ($category as $key => $cat) {
                           ?>
-                     <div class="va-card va-card_category mt-2">
-                        <p style="text-align:center;" class="my-auto pouler_Category"
-                           onclick="return getshop(<?php echo $cat->id; ?>)">
-                           <img class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
-                              src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
-                        <center style="color:black; font-size:12px; font-weight:500">
-                           <?php echo ucfirst($cat->shop_category); ?>
-                        </center>
-                        </p>
-                  </div>
-                  <?php } ?>
-               </div>
+                            <div class="va-card va-card_category mt-2">
+                                <p style="text-align:center;" class="my-auto pouler_Category"
+                                    onclick="return getshop(<?php echo $cat->id; ?>)">
+                                    <img class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
+                                        src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>"
+                                        alt="">
+                                    <center style="color:black; font-size:12px; font-weight:500">
+                                        <?php echo ucfirst($cat->shop_category); ?>
+                                    </center>
+                                </p>
+                            </div>
+                            <?php } ?>
+                        </div>
+                    </div>
+                    <div class="col-1 pe-0 icon_slider">
+                        <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                                class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
             </div>
-            <div class="col-1 pe-0 icon_slider">
-               <button class="deals-scroll-right_urgent deals-paddle" id="right_urgent_button">
-                  <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                     class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                     viewBox="0 0 320 512">
-                     <path fill="currentColor"
-                        d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                     </path>
-                  </svg>
-               </button>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
+        </div>
+    </div>
 </div>
 <section>
     <div class="text-center container py-4">
@@ -571,21 +604,24 @@ input::placeholder {
 </section>
 <!-- new  -->
 <div class="container">
-    <div class="row align-items-center pt-4">
-        <div class=" col-md-6 ">
+    <div class="row align-items-center pt-2">
+        <div class="col-md-6 ">
+            <h3 class="card-title_Login">Unlock Your Earning Potential: Leverage Your Service Points with Celnow!</h3>
+            <br>
+            <p class="card-title_Login" style="color: #565656;">Join as a Verified Service Point, list your skills,
+                expand your reach, Showcase your portfolio, interact directly with customers, and enjoy a flexible
+                schedule.
+                Level up your service business with CelNow's platform. Sign up today and start earning more!</p>
+        </div>
+        <div class="col-md-6 ">
             <div class="ratio ratio-16x9">
-                <iframe style="border-radius: 20px;" class="embed-responsive-item"
-                    src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+                <iframe style="border-radius: 15px;" class="embed-responsive-item"
+                    src="https://www.youtube.com/embed/aHwBET-Zejs"></iframe>
             </div>
         </div>
-        <div class="col-md-6  ">
-            <h1>How the store works?</h1><br>
-            <p style="color: #565656;">Our Business Plan is a written document describing a company's core business
-                activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high
-                quality Product with modern idea accordingly their budgets and according thir reuirements..</p>
-        </div>
     </div>
-</div><br>
+</div>
+<br>
 <!-- new  -->
 <section>
     <div class=" container ">
@@ -668,32 +704,34 @@ input::placeholder {
     <div class="row pt-2">
         <div class="col-12">
             <a href="<?php echo base_url();?>welcome/shop"><img class="img-fluid"
-                    src="<?php echo base_url();?>assets/images/carbanner2.png" width="100%" alt="Second slide"></a>
+                    src="<?php echo base_url();?>assets/images/3.png" width="100%" alt="Second slide"
+                    style="border-radius: 31px;"></a>
         </div>
     </div>
 </div><br>
+
 <div class="container">
     <div class="row align-items-center pt-2">
         <div class="col-md-6 ">
             <div class="ratio ratio-16x9">
                 <iframe style="border-radius: 15px;" class="embed-responsive-item"
-                    src="https://www.youtube.com/embed/JrnQ-915czY"></iframe>
+                    src="https://www.youtube.com/embed/RFH__0A8fV0"></iframe>
             </div>
         </div>
-        <div class="col-md-6">
-            <h1>About us
-            </h1>
-            <p style="color: #565656;">Our Business Plan is a written document describing a company's core business
-                activites, Objectives, and how it plans to achieve its goals. Our goal is to provide our client high
-                quality Product with modern idea accordingly their budgets and according thir reuirements.</p>
+        <div class="col-md-6 ">
+            <h3 class="card-title_Login">Benefits of Using Celnow Website</h3><br>
+            <p class="card-title_Login" style="color: #565656;">Explore CelNow: Your all-in-one solution for buying, selling, and connecting! From secondhand treasures to tutoring opportunities, freelancing gigs, and local services, CelNow has it all.</p>
         </div>
     </div>
-</div><br>
+</div>
+<br>
+
 <div class="container ">
     <div class="row pt-2">
         <div class="col-12">
             <a href="<?php echo base_url(); ?>welcome/postproduct"><img class="img-fluid"
-                    src="<?php echo base_url();?>assets/images/carbanner.png" width="100%" alt="Second slide"></a>
+                    src="<?php echo base_url();?>assets/images/6.png" width="100%" alt="Second slide"
+                    style="border-radius: 31px;"></a>
         </div>
     </div>
 </div><br>
@@ -758,6 +796,7 @@ input::placeholder {
 (function() {
     function14();
 })();
+
 function function14() {
     $('.btnSweetalert').on("click", function() {
         swal({
@@ -822,7 +861,7 @@ function getsubcategory(category_id) {
 window.onload = function() {
     // Set the default category_id for the page refresh
     var default_category_id = 1;
-    
+
     // Call the getsubcategory function with the default category_id
     getsubcategory(default_category_id);
 };
@@ -844,6 +883,7 @@ function getshop(category_id) {
         }
     });
 }
+
 function getproduct(subcategory_id, category_id) {
     //var res = "";
     $("img").removeClass("select");
@@ -1077,6 +1117,7 @@ $(document).ready(function() {
     $("#longtitudeArea").addClass("d-none");
 });
 google.maps.event.addDomListener(window, 'load', initialize);
+
 function initialize() {
     var input = document.getElementById('Location');
     var autocomplete = new google.maps.places.Autocomplete(input);
