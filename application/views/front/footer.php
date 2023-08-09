@@ -17,6 +17,9 @@
 .fa:hover {
     opacity: 0.7;
 }
+.footer_icon{
+padding-left:15px;
+}
     </style>
   </head>
   <body>
@@ -28,10 +31,10 @@
 <?php $meta= getmeta();
 ?>
 <p style="color:#888b97"><?php echo $meta->meta; ?></p>
-<a href="https://www.facebook.com/" class="fa fa-facebook"></a> 
-<a href="https://www.linkedin.com/company/celnow/" class="fa fa-linkedin" ></a>
-<a href="https://www.instagram.com/celnow.ind/" class="fa fa-instagram" ></a>
-<a href="https://www.youtube.com/channel/UCfStYDt1cu6IpYrOrGAP0Cw" class="fa fa-youtube-play" ></a>
+<a href="https://www.facebook.com/"><img src="<?php echo base_url();?>assets/images/facebook.png" alt="facebook"></a> 
+<a href="https://www.linkedin.com/company/celnow/"><img src="<?php echo base_url();?>assets/images/linkedin.png" alt="linkedin"></a>
+<a href="https://www.instagram.com/celnow.ind/"><img src="<?php echo base_url();?>assets/images/instagram (1).png" alt="instagram (1)"></a>
+<a href="https://www.youtube.com/channel/UCfStYDt1cu6IpYrOrGAP0Cw"><img src="<?php echo base_url();?>assets/images/youtube.png" alt="youtube"></a>
     </div>
     <div class="col-sm-3 col-6"  >
      <b> Pages </b><br><br>

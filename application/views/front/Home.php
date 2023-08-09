@@ -163,6 +163,83 @@ input::placeholder {
     white-space: nowrap;
 }
 
+/* GLOBAL STYLES
+-------------------------------------------------- */
+/* Padding below the footer and lighter body text */
+
+
+
+/* CUSTOMIZE THE CAROUSEL
+-------------------------------------------------- */
+
+/* Carousel base class */
+
+/* Since positioning the image, we need to help out the caption */
+.carousel-caption {
+  bottom: 12rem;
+  z-index: 10;
+}
+
+/* Declare heights because of positioning of img element */
+.carousel-item {
+  height: 32rem;
+}
+
+
+/* MARKETING CONTENT
+-------------------------------------------------- */
+
+/* Center align the text within the three columns below the carousel */
+.marketing .col-lg-4 {
+  margin-bottom: 1.5rem;
+  text-align: center;
+}
+/* rtl:begin:ignore */
+.marketing .col-lg-4 span {
+  margin-right: .75rem;
+  margin-left: .75rem;
+}
+/* rtl:end:ignore */
+
+
+/* Featurettes
+------------------------- */
+
+.featurette-divider {
+  margin: 5rem 0; /* Space out the Bootstrap <hr> more */
+}
+
+/* Thin out the marketing headings */
+/* rtl:begin:remove */
+.featurette-heading {
+  letter-spacing: -.05rem;
+}
+
+/* rtl:end:remove */
+
+/* RESPONSIVE CSS
+-------------------------------------------------- */
+
+@media (min-width: 40em) {
+  /* Bump up size of carousel content */
+  .carousel-caption span {
+    margin-bottom: 8.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
+  }
+
+  .featurette-heading {
+    font-size: 50px;
+  }
+}
+
+@media (min-width: 62em) {
+  .featurette-heading {
+    margin-top: 7rem;
+  }
+}
+
+
 </style>
 <div class="container home_background" style="">
     <div class="container px-0">
@@ -689,7 +766,7 @@ input::placeholder {
     <div class="row pt-2">
         <div class="col-12">
             <a href="<?php echo base_url();?>welcome/shop"><img class="img-fluid"
-                    src="<?php echo base_url();?>assets/images/3.png" width="100%" alt="Second slide"
+                    src="<?php echo base_url();?>assets/images/6.png" width="100%" alt="Second slide"
                     style="border-radius: 31px;"></a>
         </div>
     </div>
@@ -715,35 +792,106 @@ input::placeholder {
     <div class="row pt-2">
         <div class="col-12">
             <a href="<?php echo base_url(); ?>welcome/postproduct"><img class="img-fluid"
-                    src="<?php echo base_url();?>assets/images/6.png" width="100%" alt="Second slide"
+                    src="<?php echo base_url();?>assets/images/4 (1).png" width="100%" alt="Second slide"
                     style="border-radius: 31px;"></a>
         </div>
     </div>
 </div><br>
-<div class="container">
-    <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
-        <div class="carousel-inner">
-            <div class="carousel-item active">
-                <img class="d-block w-100" id='<?php  echo $banner->url ?>'
-                    src="<?php echo base_url(); ?>assets/images/Happy Client.png" alt="First slide">
-            </div>
-            <div class="carousel-item ">
-                <img class="d-block w-100" id='<?php  echo $banner->url ?>'
-                    src="<?php echo base_url(); ?>assets/images/Happy Client.png" alt="First slide">
-            </div>
-        </div>
-        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss"
-            data-bs-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Previous</span>
-        </button>
-        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleControlss"
-            data-bs-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="visually-hidden">Next</span>
-        </button>
+
+
+
+
+<div id="myCarousel" class="carousel slide mb-6" data-bs-ride="carousel">
+    <center><h3 class="card-title_Login">What Our Happy Client Say</h3></center>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
     </div>
-</div>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <div class="row">
+            <div class="col-4">
+            <img src="<?php echo base_url(); ?>assets/images/image@300x-8.png" alt="slider_1" max-width="" class="img-fluid">
+            </div>
+            <div class="col-4" style="align-self: center;">
+            <span class="opacity-75 text-dark card-title_Login">Genuine platform, everyone should give it a try.</span>
+            </div>
+            <div class="col-4">
+            <img src="<?php echo base_url(); ?>assets/images/image-removebg-preview (61) (1).png" alt="slider_2" class="img-fluid">
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="carousel-caption"> 
+          <div class="row">
+            <div class="col-4">
+            <img src="<?php echo base_url(); ?>assets/images/image@300x-8.png" alt="slider_1" max-width="" class="img-fluid">
+            </div>
+            <div class="col-4" style="align-self: center;">
+            <span class="opacity-75 text-dark card-title_Login">Best mobile friendly website to find buyers for our broken gadgets.</span>         
+            </div>
+            <div class="col-4">
+            <img src="<?php echo base_url(); ?>assets/images/image-removebg-preview (61) (1).png" alt="slider_2" class="img-fluid">
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+      <div class="container">
+          <div class="carousel-caption">
+          <div class="row">
+            <div class="col-4">
+            <img src="<?php echo base_url(); ?>assets/images/image@300x-8.png" alt="slider_1" max-width="" class="img-fluid">
+            </div>
+            <div class="col-4" style="align-self: center;">
+            <span class="opacity-75 text-dark card-title_Login">I used CelNow to find new office and godown for my business. Its a best place to search property for both
+            residential and commercial need available for sale or rent.</span>  
+            </div>
+            <div class="col-4">
+            <img src="<?php echo base_url(); ?>assets/images/image-removebg-preview (61) (1).png" alt="slider_2" class="img-fluid">
+            </div>
+            </div>
+           </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <div class="container">
+          <div class="carousel-caption text-end">
+          <div class="row">
+            <div class="col-4">
+            <img src="<?php echo base_url(); ?>assets/images/image@300x-8.png" alt="slider_1" max-width="" class="img-fluid">
+            </div>
+            <div class="col-4" style="align-self: center;">
+            <span class="opacity-75 text-dark card-title_Login">Best place to convert our hobbies into cash. Her we can find part-time jobs as well as convert our hobbies into job.</span>          
+            </div>
+            <div class="col-4">
+            <img src="<?php echo base_url(); ?>assets/images/image-removebg-preview (61) (1).png" alt="slider_2" class="img-fluid">
+            </div>
+            </div>
+             </div>
+        </div>
+      </div>
+    </div>
+    
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span aria-hidden="true"><img src="<?php echo base_url(); ?>assets/images/back.png" alt="back" width="30"></span>
+      <span class="visually-hidden">Previous</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span aria-hidden="true"><img src="<?php echo base_url(); ?>assets/images/next.png" alt="next" width="30"></span>
+      <span class="visually-hidden">Next</span>
+    </button>
+  </div>
+
+
 <div class="container" style="max-width:600px;">
     <div class="row">
         <div class="col">
@@ -776,6 +924,8 @@ input::placeholder {
         </div>
     </div>
 </div><br>
+
+
 <script>
 "use strict"; /* Start of use strict */
 (function() {
