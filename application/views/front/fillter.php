@@ -865,7 +865,7 @@ function initialize() {
 
 
 
-            return f <= 100;
+            return f <= 25;
 
             $("#latitudeArea").removeClass("d-none");
             $("#longtitudeArea").removeClass("d-none");

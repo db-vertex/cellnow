@@ -144,15 +144,15 @@
         color: #10B981;
     }
 
-    .fa {
-        /* padding: 20px; */
+    /* .fa {
+        /* padding: 20px; 
         font-size: 30px;
         width: 50px;
         text-align: center;
         text-decoration: none;
         margin: 0px 2px;
         color: #888b97;
-    }
+    } */
     </style>
     <style>
     @import url('https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css');

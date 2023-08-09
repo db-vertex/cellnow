@@ -21,18 +21,6 @@
 } 
 
 
-
-
-        .fa {
-  padding: 20px;
-  font-size: 30px;
-  width: 50px;
-  text-align: center;
-  text-decoration: none;
-  margin: 0px 2px;
-  color:#888b97 ;
-}
-
 .fa:hover {
     opacity: 0.7;
 }

@@ -225,13 +225,13 @@
                                 <div class="col-8 mt-1">
                                     <p style="color: #575757;"><?php
                            $title = $pro->address;
-                            if(strlen($title) <= 100)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,100) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            

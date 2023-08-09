@@ -176,16 +176,11 @@ input::placeholder {
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
-
-
-
                     <input type="search" name="location" class="form-control rounded-5" id="location"
                         placeholder="Search shop by the loction" aria-label="Search" aria-describedby="search-addon"
                         style="padding:12px 22px" />
                     <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search
                     </button>
-
-
                     <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
                                     <div class="searchbox-wrap">
                                         <input ype="search"  name="anything" aria-label="Search" aria-describedby="search-addon"  class="search_input form-input" placeholder="Search for the Product you want!">
@@ -290,10 +285,7 @@ foreach($shop as $value){
                                 $y = substr($title,0,30) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></b></p>
-
-
                     <img src="<?php echo base_url();?>assets/images/location .png"> <span><?php
                            $title = $value->Address;
                             if(strlen($title) <= 20)
@@ -305,25 +297,15 @@ foreach($shop as $value){
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></span><br>
-
                 </div>
             </div>
         </div>
         <?php }  ?>
-
-
-
         <?php }
               else {?>
         <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
         <?php }?>
-
-
-
-
-
     </div>
 </div>
 <script>

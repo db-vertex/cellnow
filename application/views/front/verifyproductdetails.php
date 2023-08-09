@@ -2176,7 +2176,7 @@
                                             <div class="col-8">
                                                 <p style="color: #575757;"><?php
                                                     $title = $relatedproduct->address;
-                                                    if (strlen($title) <= 100) {
+                                                    if (strlen($title) <= 25) {
                                                         echo ucfirst($title);
                                                     } else {
                                                         $y = substr($title, 0, 100) . '...';

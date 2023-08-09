@@ -295,6 +295,30 @@
             border-color: #78d7b8;
         }
     }
+
+    .fa_plus {
+        padding-top: 32%;
+        font-size: 30px;
+        text-align: center;
+        text-decoration: none;
+        color: #888b97;
+    }
+
+    .fa_delete {
+        position: absolute;
+        left: 130px;
+        color: red;
+        cursor: pointer;
+        display: none;
+    }
+
+    .delete-icon {
+        display: none;
+    }
+    .upl_img{
+        width: inherit;
+    height: inherit;
+    }
     </style>
 </head>
 
@@ -586,20 +610,20 @@
                                                         <label>Shop document photo Upload size(180 x 190) px</label>
                                                         <?php 
 
-/* echo $product['id'];*/
+                /* echo $product['id'];*/
 
-$i=1;
+                $i=1;
 
-  $product_image =   get_shop_image($shop->id);
+                $product_image =   get_shop_image($shop->id);
 
-     $count = count($product_image);
+                    $count = count($product_image);
 
-     if(!empty($product_image)){
-      foreach ($product_image as $key => $pro_img) {
+                                        if(!empty($product_image)){
+                                        foreach ($product_image as $key => $pro_img) {
 
-        $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
+                                            $ext = pathinfo($pro_img->shop_image, PATHINFO_EXTENSION);
 
-        ?>
+                                            ?>
                                                         <div class="col-6" id="productimage<?=$pro_img->id?>">
                                                             <p class="deletebtn" data-productid="<?=$shop->id; ?>"
                                                                 data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash"
@@ -609,20 +633,20 @@ $i=1;
                                                                 style="width: 100%;"><img
                                                                     src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"
                                                                     style="border: 2px solid grey;
-  border-radius: 10px; height: 100px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
+            border-radius: 10px; height: 100px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
                                                         </div>
 
 
                                                         <?php
 
- $i++;
+                                                            $i++;
 
-      }
+                                                                }
 
-    }
+                                                                }
 
-for($i=0; $i<(4-count($product_image)); $i++){
-  ?>
+                                                            for($i=0; $i<(4-count($product_image)); $i++){
+                                                            ?>
                                                         <div class="col-6">
                                                             <p class="editebtn" onclick="fileinputimg<?=$i?>.click();"
                                                                 for="fileinputimg<?=$i?>"><i class="fa fa-edit"
@@ -712,10 +736,8 @@ for($i=0; $i<(4-count($product_image)); $i++){
                                                 <div class="col-lg-12">
                                                     <div class="alert alert-danger ">
                                                         <?= $error;
-
-                  unset($_SESSION['Login_fail']);
-                  ?>
-
+                                                    unset($_SESSION['Login_fail']);
+                                                    ?>
                                                     </div>
                                                 </div>
                                             </div>
@@ -766,14 +788,14 @@ for($i=0; $i<(4-count($product_image)); $i++){
 
                                                         <?php
 
-                                $i++;
+                                                                                    $i++;
 
-                                    }
+                                                                                        }
 
-                                    }
+                                                                                        }
 
-for($i=0; $i<(4-count($product_image)); $i++){
-  ?>
+                                                    for($i=0; $i<(4-count($product_image)); $i++){
+                                                    ?>
                                                         <div class="col-6">
                                                             <p class="editebtn" onclick="fileinputimg<?=$i?>.click();"
                                                                 for="fileinputimg<?=$i?>"><i class="fa fa-edit"
@@ -1199,79 +1221,137 @@ for($i=0; $i<(4-count($product_image)); $i++){
                         <div class="form-group">
 
                             <label>Shop document photo Upload size(180 x 190) px</label>
-                            <label for="filebtn10" class="filebtn" id="btn10lbl">
 
-                                <i class="fa fa-plus" aria-hidden="true" id="fabtn10"
-                                    style="margin-top: 24px;color: #13C571;"></i>
-                                <input type="file" id="filebtn10" class="profile_img" style="display: none"
-                                    name="shop_img[]" accept="image/*">
-                                <img src="#" style="display: none;" class="upl_img" id="upl_img10">
-
-                            </label>
-
-                            <label for="filebtn2" class="filebtn" id="btn2lbl">
-
-                                <i class="fa fa-plus" aria-hidden="true" id="fabtn2"
-                                    style="margin-top: 24px;color: #13C571;"></i>
-                                <input type="file" id="filebtn2" class="profile_img" style="display: none"
-                                    name="shop_img[]" accept="image/*">
-                                <img src="#" style="display: none;" class="upl_img" id="upl_img2">
-
-                            </label>
-
-                            <label for="filebtn3" class="filebtn" id="btn3lbl">
-
-
-                                <i class="fa fa-plus" aria-hidden="true" id="fabtn3"
-                                    style="margin-top: 24px;color:#13C571;"></i>
-                                <input type="file" id="filebtn3" class="profile_img" style="display: none"
-                                    name="shop_img[]" accept="image/*">
-                                <img src="#" style="display: none;" class="upl_img" id="upl_img3">
-
-                            </label>
-
-                            <label for="filebtn4" class="filebtn" id="btn4lbl">
-
-
-                                <i class="fa fa-plus" aria-hidden="true" id="fabtn4"
-                                    style="margin-top: 24px;color: #13C571;"></i>
-                                <input type="file" id="filebtn4" class="profile_img" style="display: none"
-                                    name="shop_img[]" accept="image/*">
-                                <img src="#" style="display: none;" class="upl_img" id="upl_img4">
-
-                            </label>
-                            <!-- <input type="file" class="form-control" id="cover_image" name="shop_images[]"
-                                style="border-radius:30px; border-color:#13C571" accept="image/*"> -->
-                            <span id="cover_err" style="color:red;"></span>
-                        </div>
-
-                        <div class="form-group">
-                            <div class="form-check form-check-inline">
-                                <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked" required>
-                                <label>
-                                    Terms and Conditions
+                             <div class="row">
+                             <div class="col ">
+                            <div class="image-box">
+                                <label for="filebtn1" class="filebtn ">
+                                    <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
+                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                    <input type="file" id="filebtn1" class="profile_img" style="display: none"
+                                        name="shop_img[]" accept="image/*">
+                                    <img src="#" class="upl_img" style="display: none;">
+                                    
                                 </label>
-                                <div class="invalid-feedback">
-                                    Terms & condition is required.
-                                </div>
+                            </div>
+                            </div>
+                            <div class="col">
+                            <div class="image-box">
+                                <label for="filebtn2" class="filebtn">
+                                    <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
+                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                    <input type="file" id="filebtn2" class="profile_img" style="display: none"
+                                        name="shop_img[]" accept="image/*">
+                                    <img src="#" class="upl_img" style="display: none;">
+                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                </label>
+                            </div>
+                            </div>
+                            <div class="col">
+                            <div class="image-box">
+                                <label for="filebtn3" class="filebtn">
+                                    <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
+                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                    <input type="file" id="filebtn3" class="profile_img" style="display: none"
+                                        name="shop_img[]" accept="image/*">
+                                    <img src="#" class="upl_img" style="display: none;">
+                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                </label>
+                            </div>
+                            </div>
+                            <div class="col">
+                            <div class="image-box">
+                                <label for="filebtn4" class="filebtn">
+                                    <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
+                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                    <input type="file" id="filebtn4" class="profile_img" style="display: none"
+                                        name="shop_img[]" accept="image/*">
+                                    <img src="#" class="upl_img" style="display: none;">
+                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                </label>
+                            </div>
+                            </div>
+                        
+                            <span id="cover_err" style="color:red;"></span>
                             </div>
                         </div>
-                        <input type="text" class="form-control" name="latitude" id="latitude" hidden />
-                        <input type="text" class="form-control" name="longitude" id="longitude" hidden />
-                        <center><button class=" mb-2 btn btn-lg  text-white mt-2"
-                                style="background-color:#13C571;border-radius:30px;width:40%;" type="submit"
-                                name="submit">Save</button>
-
-                        </center>
-                    </form>
-
-
                 </div>
+
+                <div class="form-group">
+                    <div class="form-check form-check-inline">
+                        <input class="form-check-input ms-3 border-dark" type="checkbox" value="" id="flexCheckChecked" required>
+                        <label>
+                            <a class="text-decoration-none text-dark" href="<?php echo base_url();?>welcome/termscondition">
+                            Terms and Conditions
+                            </a>
+                        </label>
+                        <div class="invalid-feedback">
+                            Terms & condition is required.
+                        </div>
+                    </div>
+                </div>
+                <input type="text" class="form-control" name="latitude" id="latitude" hidden />
+                <input type="text" class="form-control" name="longitude" id="longitude" hidden />
+                <center><button class=" mb-2 btn btn-lg  text-white mt-2"
+                        style="background-color:#13C571;border-radius:30px;width:40%;" type="submit"
+                        name="submit">Save</button>
+
+                </center>
+                </form>
+
+
             </div>
         </div>
     </div>
+</div>
 
 </div>
+
+<script>
+document.querySelectorAll('.profile_img').forEach(function(input) {
+    input.addEventListener('change', function() {
+        var fileInput = this;
+        var imgBox = fileInput.closest('.image-box');
+        var imgElement = imgBox.querySelector('.upl_img');
+        var fa_plus = imgBox.querySelector('.fa_plus');
+        var deleteIcon = imgBox.querySelector('.delete-icon');
+
+        if (fileInput.files && fileInput.files[0]) {
+            var reader = new FileReader();
+
+            reader.onload = function(e) {
+                imgElement.src = e.target.result;
+                imgElement.style.display = 'inline';
+                deleteIcon.style.display = 'block';
+                fa_plus.style.display = 'none';
+            };
+
+            reader.readAsDataURL(fileInput.files[0]);
+        }
+    });
+});
+
+// Delete image function
+document.querySelectorAll('.delete-icon').forEach(function(icon) {
+    icon.addEventListener('click', function() {
+        var imgBox = this.parentNode;
+        var imgElement = imgBox.querySelector('.upl_img');
+        var deleteIcon = imgBox.querySelector('.delete-icon');
+        var fileInput = imgBox.querySelector('.profile_img');
+        var fa_plus = imgBox.querySelector('.fa_plus');
+
+        imgElement.src = '';
+        imgElement.style.display = 'none';
+        deleteIcon.style.display = 'none';
+        fileInput.style.display = 'none';
+        fa_plus.style.display = 'block';
+        fileInput.value = '';
+    });
+});
+
+</script>
+
+
 <script>
 let slideIndex = 1;
 showSlides(slideIndex);
