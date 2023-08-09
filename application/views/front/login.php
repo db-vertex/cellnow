@@ -220,16 +220,16 @@ function checkUserName() {
                                         id="password-field" type="password" maxlength="20"
                                         style="border-radius:30px; border-color:#13C571">
                                     <span toggle="#password-field"
-                                        class="fa fa-fw fa-eye field-icon toggle-password"></span>
+                                        class="fa fa-fw fa-eye field-icon toggle-password" style="position: sticky;"></span>
                                     <span style="color:red;">
                                         <?php echo form_error('password'); ?>
                                     </span>
                                 </div> 
                                 <div  style="text-align: center;">
-                                <a class="ps-5 card-title_Login text-decoration-none" style="color:#13C571"
+                                <a class=" card-title_Login text-decoration-none" style="color:#13C571"
                                  href="<?php echo base_url(); ?>welcome/forgotpassword">Forget Password?</a>
                                         <br>
-                                         <button class="card-title_Login  mb-5 btn btn-lg ms-5 text-white mt-5"
+                                         <button class="card-title_Login  mb-5 btn btn-lg  text-white mt-5"
                                         style="background-color:#13C571;border-radius:30px;width:40%;" name="submit"
                                         type="submit">Login</button>
                                 

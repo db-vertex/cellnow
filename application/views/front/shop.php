@@ -113,8 +113,8 @@
     }
 
     .editebtn {
-
-
+        margin-left: 14px;
+          margin-top: 12px;
         position: absolute;
     }
 
