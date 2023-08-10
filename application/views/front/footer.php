@@ -363,26 +363,7 @@ padding-left:15px;
         });
 });
 </script>
-<script>
-$(document).ready(function() {
-    $("#latitudeArea").addClass("d-none");
-    $("#longtitudeArea").addClass("d-none");
-});
-google.maps.event.addDomListener(window, 'load', initialize);
-function initialize() {
-    var input = document.getElementById('Location');
-    var autocomplete = new google.maps.places.Autocomplete(input);
-    var job_Office_Address = document.getElementById('job_Office_Address');
-    var autocomplete = new google.maps.places.Autocomplete(job_Office_Address);
-    autocomplete.addListener('place_changed', function() {
-        var place = autocomplete.getPlace();
-        $('#latitude').val(place.geometry['location'].lat());
-        $('#longitude').val(place.geometry['location'].lng());
-        $("#latitudeArea").removeClass("d-none");
-        $("#longtitudeArea").removeClass("d-none");
-    });
-}
-</script>
+
 <script>
 "use strict";
 / Start of use strict /
