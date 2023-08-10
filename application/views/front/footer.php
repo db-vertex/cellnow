@@ -31,10 +31,12 @@ padding-left:15px;
 <?php $meta= getmeta();
 ?>
 <p style="color:#888b97"><?php echo $meta->meta; ?></p>
-<a href="https://www.facebook.com/"><img src="<?php echo base_url();?>assets/images/facebook.png" alt="facebook"></a> 
-<a href="https://www.linkedin.com/company/celnow/"><img src="<?php echo base_url();?>assets/images/linkedin.png" alt="linkedin"></a>
-<a href="https://www.instagram.com/celnow.ind/"><img src="<?php echo base_url();?>assets/images/instagram (1).png" alt="instagram (1)"></a>
-<a href="https://www.youtube.com/channel/UCfStYDt1cu6IpYrOrGAP0Cw"><img src="<?php echo base_url();?>assets/images/youtube.png" alt="youtube"></a>
+<div class="text-center">
+<a href="https://www.facebook.com/" class="m-2"><img src="<?php echo base_url();?>assets/images/facebook.png" alt="facebook" width="40"></a> 
+<a href="https://www.linkedin.com/company/celnow/" class="m-2"><img src="<?php echo base_url();?>assets/images/linkedin.png" alt="linkedin" width="40"></a>
+<a href="https://www.instagram.com/celnow.ind/" class="m-2"><img src="<?php echo base_url();?>assets/images/instagram (1).png" alt="instagram (1)" width="40"></a>
+<a href="https://www.youtube.com/channel/UCfStYDt1cu6IpYrOrGAP0Cw" class="m-2"><img src="<?php echo base_url();?>assets/images/youtube.png" alt="youtube" width="40"></a>
+</div>
     </div>
     <div class="col-sm-3 col-6"  >
      <b> Pages </b><br><br>

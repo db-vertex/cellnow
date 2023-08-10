@@ -148,7 +148,7 @@ input::placeholder {
 
 @media (max-width: 548px) {
     .home_background {
-        margin-top: 40px;
+        margin-top: 48px;
     }
 }
 

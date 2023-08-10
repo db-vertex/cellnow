@@ -961,6 +961,7 @@
 
     @media (max-width: 992px) {
         .body_background {
+            height: 65px;
             background: linear-gradient(130.02deg, #77D4B5 -15.01%, rgba(213, 253, 252, 0) 39.7%);
             background-color: white;
             position: fixed;
