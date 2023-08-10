@@ -160,7 +160,7 @@
     @import url('https://fonts.googleapis.com/css?family=Roboto');
 
     .carousel-item>div {
-        float: left;
+        float: center;
     }
 
     /* .carousel-by-item [class*="cloneditem-"] {
