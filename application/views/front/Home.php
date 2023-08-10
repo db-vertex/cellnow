@@ -1146,7 +1146,7 @@ function getproduct(subcategory_id, category_id) {
     // var allch =  $("#").val();
     jQuery.ajax({
         type: "POST",
-        url: "<?php echo base_url('/welcome/getproduct'); ?>",
+        url: "<?php echo base_url('/welcome/getproduct_home'); ?>",
         data: {
             subcategory_id: subcategory_id,
             category_id: category_id

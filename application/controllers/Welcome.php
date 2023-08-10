@@ -194,7 +194,101 @@ $sub .= '</h6>
 			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
 		}
 		 if($all_count >4){
-         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/5").'" class="btn">See All</a></center>';
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/8").'" class="btn">See All</a></center>';
+            } 
+		echo $sub;
+
+	}
+
+
+    public function getproduct_home($data = " ")
+	{
+		$row = $this->input->post('row');
+		$subcategory_id = $this->input->post('subcategory_id');
+		$category_id = $this->input->post('category_id');
+
+		// echo $this->db->last_query();
+		$sub = "";
+		if ($subcategory_id) {
+			$product = get_product_by_subid($subcategory_id,$category_id);
+			$all_count = get_product_by_subid_count($subcategory_id);
+
+
+		} else {
+
+			$product = get_all_bost($row);
+			$all_count =get_all_boost_count();
+		}
+		if (!empty($product)) {
+            $count = 0;
+			foreach ($product as $value) {
+				
+					$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
+            <div class="card">
+                <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+                    <a href="'.base_url("welcome/productdetail/").'' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
+                        <img src="'.base_url($value->cover_img).'" class="w-100 va-thumbnail" />
+                    </a>
+                    <a href="#!">
+                        <div class="hover-overlay">
+                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+                        </div>
+                    </a>
+                </div>
+                <div class="card-body">
+                    <div class="d-flex justify-content-between align-items-center">
+                        <p  class="details_price mb-3">';
+                        if($value->category_id!=4){
+                            $sub.='
+                            <span class="">₹' . $value->price . '</span>';
+                        }
+                        if($value->pay_type==2){
+                            $sub.='
+                            <span class="">Donate</span>';
+                        }
+                    $sub.=' </p>
+                    </div>
+                    <div class="d-flex justify-content-between align-items-center">
+                        <h6 class="dress-name">';
+                    $title = $value->title;
+
+                    if (strlen($title) <= 25) {
+                        $sub .= ucfirst($title);
+                    } else {
+                        $y = substr($title, 0, 25) . '...';
+                        $sub .= ucfirst($y);
+                    }
+                    $sub .= '</h6>
+                        </div>
+                        <div class="d-flex justify-content-between align-items-center">
+                        
+                            <h6><img  src="'.base_url("assets/images/location .png").'"> ';
+            $title = $value->address;
+
+            if (strlen($title) <= 25) {
+                $sub .= ucfirst($title);
+            } else {
+                $y = substr($title, 0, 100) . '...';
+                $sub .= ucfirst($y);
+            }
+            $sub .= '</h6>
+            </div>
+        </div>
+    </div>
+   </div>';
+
+        $count++;
+
+        // Break the loop after 4 iterations
+        if ($count >= 4) {
+            break;
+        }	
+			}
+		} else {
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
+		}
+		 if($all_count >4){
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/8").'" class="btn">See All</a></center>';
             } 
 		echo $sub;
 
@@ -285,7 +379,7 @@ $sub .= '</h6>
 			$sub .= '<center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>';
 		}
 		 if($all_count >4){
-         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/5" class="btn">See All</a></center>';
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/8" class="btn">See All</a></center>';
             } 
 		echo $sub;
 
