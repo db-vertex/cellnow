@@ -16,7 +16,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script
+    <script async
         src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete">
     </script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
@@ -1608,13 +1608,13 @@ $(document).ready(function() {
     $("#longtitudeArea").addClass("d-none");
 });
 
-google.maps.event.addDomListener(window, 'load', initialize);
+window.addEventListener('load', initialize);
 
 function initialize() {
     var input = document.getElementById('Location');
     var autocomplete = new google.maps.places.Autocomplete(input);
-
     autocomplete.addListener('place_changed', function() {
+        
         var place = autocomplete.getPlace();
         $('#addshopdetail').modal('show');
         $('#latitude').val(place.geometry['location'].lat());

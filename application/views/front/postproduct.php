@@ -17,10 +17,7 @@
         rel="stylesheet" />
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
-    <script
-        src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete">
-    </script>
-
+  
     <style>
     .bd-placeholder-img {
         font-size: 1.125rem;
@@ -1719,7 +1716,7 @@
 
                             <div class="col-12">
                                 <label for="address" class="form-label post_input_lable">Address</label>
-                                <input type="text" class="form-control post_input_fild" id="location" name="Address"
+                                <input type="text" class="form-control post_input_fild" id="Address" name="Address"
                                     placeholder="Enter Address" required>
                                 <div class="invalid-feedback">
                                     Please Enter Product Address.
@@ -2676,12 +2673,12 @@ $(document).ready(function() {
     $("#longtitudeArea").addClass("d-none");
 });
 
-google.maps.event.addDomListener(window, 'load', initialize);
+window.addEventListener('load', initialize);
 
 function initialize() {
-    var input = document.getElementById('Location');
+    var input = document.getElementById('Address');
     var autocomplete = new google.maps.places.Autocomplete(input);
-
+ 
     var job_Office_Address = document.getElementById('job_Office_Address');
     var autocomplete = new google.maps.places.Autocomplete(job_Office_Address);
 

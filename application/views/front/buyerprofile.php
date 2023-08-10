@@ -4,9 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script
-        src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete">
-    </script>
+   
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <!-- link for card -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -257,7 +255,7 @@
                         </div>
                         <div class=" input-container my-3 px-3">
 
-                            <input name="Address" type="text" class="form-control  pl-5  text-dark Name" id="Location"
+                            <input name="Address" type="text" class="form-control  pl-5  text-dark Name" id="buyer_address"
                                 maxlength="30" value="<?php echo $profile->Address; ?>" placeholder="Address"
                                 style="border-radius:30px; border-color:#13C571" required>
                             <div class="invalid-feedback">
@@ -348,7 +346,7 @@ $(document).ready(function() {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
-    var input = document.getElementById('Location');
+    var input = document.getElementById('buyer_address');
     var autocomplete = new google.maps.places.Autocomplete(input);
 
     autocomplete.addListener('place_changed', function() {

@@ -5,9 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script
-        src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete">
-    </script>
+  
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
@@ -1134,7 +1132,7 @@
                         </div>
                         <div class="form-group">
                             <label>Google Address</label>
-                            <input name="Address" class="form-control" placeholder="Address" id="location" type="text"
+                            <input name="Address" class="form-control" placeholder="Address" id="shop_address" type="text"
                                 maxlength="30" value="" style="border-radius:30px; border-color:#13C571" required>
                             <div class="invalid-feedback">
                                 Address is required.
@@ -1410,7 +1408,7 @@ $(document).ready(function() {
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
-    var input = document.getElementById('Location');
+    var input = document.getElementById('shop_address');
     var autocomplete = new google.maps.places.Autocomplete(input);
 
     autocomplete.addListener('place_changed', function() {
