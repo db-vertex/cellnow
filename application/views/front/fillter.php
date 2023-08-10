@@ -3,9 +3,7 @@
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <style>
-.cursor-center {
-  
-}
+.cursor-center {}
 
 ._1un4s {
     max-height: 200px;
@@ -1427,22 +1425,22 @@ a:active {
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
             <div id="va_container">
-            <div class="row">
+                <div class="row">
                     <div class="col-1 pe-0 icon_slider">
-                <button class="deals-scroll-left deals-paddle" id="left_sponser_button">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
-                        class="svg-inline--fa fa-chevron-left fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512">
-                        <path fill="currentColor"
-                            d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
-                        </path>
-                    </svg>
-                </button>
-                </div>
+                        <button class="deals-scroll-left deals-paddle" id="left_sponser_button">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-left"
+                                class="svg-inline--fa fa-chevron-left fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                    d="M34.52 239.03L228.87 44.69c9.37-9.37 24.57-9.37 33.94 0l22.67 22.67c9.36 9.36 9.37 24.52.04 33.9L131.49 256l154.02 154.75c9.34 9.38 9.32 24.54-.04 33.9l-22.67 22.67c-9.37 9.37-24.57 9.37-33.94 0L34.52 272.97c-9.37-9.37-9.37-24.57 0-33.94z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
 
-                <div class="col-10 pe-0 icon_cetgory">
-                <div class="va-carrousel-flexbox" id="sub-list">
-                    <?php
+                    <div class="col-10 pe-0 icon_cetgory">
+                        <div class="va-carrousel-flexbox" id="sub-list">
+                            <?php
 					  $cateory =  $this->uri->segment(3);
                      $sub_ = '';
                      if($cateory==8){
@@ -1457,42 +1455,44 @@ a:active {
 					  foreach($subcategory as $sub){
 					?>
 
-                    <div class="va-card va-card_category mt-2 px-0" style="">
-                        <p style="text-align:center;" class="my-auto pouler_Categories "
-                            <?php if ($category == 1 || $category==5 || $category==6 || $category==7) { ?>
-                            onclick="return getproduct( <?php echo $sub->subcategory_id; ?>,<?php echo $cateory; ?>)"
-                            <?php } else { ?>
-                            onclick="return getproduct( <?php echo $sub->id; ?>,<?php echo $cateory; ?>)" <?php } ?>>
+                            <div class="va-card va-card_category mt-2 px-0" style="">
+                                <p style="text-align:center;" class="my-auto pouler_Categories "
+                                    <?php if ($category == 1 || $category==5 || $category==6 || $category==7) { ?>
+                                    onclick="return getproduct( <?php echo $sub->subcategory_id; ?>,<?php echo $cateory; ?>)"
+                                    <?php } else { ?>
+                                    onclick="return getproduct( <?php echo $sub->id; ?>,<?php echo $cateory; ?>)"
+                                    <?php } ?>>
 
-                            <img class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
-                                data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
-                                src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>" alt="">
-                            <center style="color:black; font-size:12px; font-weight:500">
-                                <?php echo $sub->product_type; ?></center>
-                        </p>
+                                    <img class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
+                                        data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
+                                        src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>"
+                                        alt="">
+                                    <center style="color:black; font-size:12px; font-weight:500">
+                                        <?php echo $sub->product_type; ?></center>
+                                </p>
 
-                    </div>
+                            </div>
 
-                    <?php 
+                            <?php 
 					
                 }
                ?>
 
-               </div>
-                </div>
+                        </div>
+                    </div>
 
-                <div class="col-1 icon_slider">
-                <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
-                    <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
-                        class="svg-inline--fa fa-chevron-right fa-w-10" role="img" xmlns="http://www.w3.org/2000/svg"
-                        viewBox="0 0 320 512">
-                        <path fill="currentColor"
-                            d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
-                        </path>
-                    </svg>
-                </button>
+                    <div class="col-1 icon_slider">
+                        <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
+                            <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
+                                class="svg-inline--fa fa-chevron-right fa-w-10" role="img"
+                                xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 512">
+                                <path fill="currentColor"
+                                    d="M285.476 272.971L91.132 467.314c-9.373 9.373-24.569 9.373-33.941 0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941 0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z">
+                                </path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-              </div>
             </div>
         </div>
     </div>
@@ -1540,7 +1540,8 @@ a:active {
                     <div id="TYPEs" class="panel-collapse collapse">
                         <div class="list-group mt-2">
 
-                            <input type="text" style="border-left:none; border-top:none; border-right:none; margin-bottom: 15px;"
+                            <input type="text"
+                                style="border-left:none; border-top:none; border-right:none; margin-bottom: 15px;"
                                 id="myInput" onkeyup="filterFunction()" class="cursor-center "
                                 placeholder="Search Brand" value="">
                             <i class="fa fa-search" aria-hidden="true" style="margin-top: -36px; font-size:20px; text-align: right;
@@ -2014,6 +2015,12 @@ $brands = array(
     </div>
 
 
+
+
+<link rel="stylesheet" href="https://code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui-touch-punch/0.2.3/jquery.ui.touch-punch.min.js"></script>
     <script>
     $(document).ready(function() {
 
