@@ -207,6 +207,8 @@ $sub .= '</h6>
 		$subcategory_id = $this->input->post('subcategory_id');
 		$category_id = $this->input->post('category_id');
 
+		$this->session->set_userdata('getproduct_home_category_id', $category_id);
+
 		// echo $this->db->last_query();
 		$sub = "";
 		if ($subcategory_id) {
@@ -298,7 +300,8 @@ $sub .= '</h6>
 			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
 		}
 		 if($all_count >4){
-         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/8").'" class="btn">See All</a></center>';
+			$getproduct_home_category_id  = $this->session->userdata('getproduct_home_category_id');
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/$getproduct_home_category_id").'" class="btn">See All</a></center>';
             } 
 		echo $sub;
 
@@ -389,7 +392,8 @@ $sub .= '</h6>
 			$sub .= '<center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>';
 		}
 		 if($all_count >4){
-         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/8" class="btn">See All</a></center>';
+			$getproduct_home_category_id  = $this->session->userdata('getproduct_home_category_id');
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="<?php echo base_url();?>welcome/fillter_product/'.$getproduct_home_category_id.'" class="btn">See All</a></center>';
             } 
 		echo $sub;
 
