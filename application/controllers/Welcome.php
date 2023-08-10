@@ -215,7 +215,6 @@ $sub .= '</h6>
 
 
 		} else {
-
 			$product = get_all_bost($row);
 			$all_count =get_all_boost_count();
 		}
@@ -223,12 +222,23 @@ $sub .= '</h6>
             $count = 0;
 			foreach ($product as $value) {
 				
-					$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
-            <div class="card">
-                <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                    <a href="'.base_url("welcome/productdetail/").'' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
-                        <img src="'.base_url($value->cover_img).'" class="w-100 va-thumbnail" />
-                    </a>
+				$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
+				<div class="card">
+					<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+						<a href="' . base_url("welcome/productdetail/") . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
+							<img src="' . base_url($value->cover_img) . '" class="w-100 va-thumbnail" />
+							<p style="margin-left: 5px;">';
+	
+					if ($value->pay_type == 1) {
+						$sub .= '<img class="img-fluid image2" src="' . base_url() . 'assets/images/sponsor.png" style="width: 80px;">';
+					}
+					
+					if ($value->verified_product == 1 || $value->verified_admin == "yes") {
+						$sub .= '<img class="img-fluid image3" src="' . base_url() . 'assets/images/verified.png" style="width: 80px;">';
+					}
+					
+					$sub .= '</p>
+										</a>
                     <a href="#!">
                         <div class="hover-overlay">
                             <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
