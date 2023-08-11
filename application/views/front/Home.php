@@ -174,13 +174,13 @@ input::placeholder {
     color: #454343;
     font-size: 30px;
     font-weight: 700;
-    position: relative;
+   
     margin-bottom: 70px;
     text-transform: uppercase;
     z-index: 999;
 }
 .white-heading{
-    color: #ffffff;
+    color: #000;
 }
 .heading:after {
     content: ' ';
@@ -211,23 +211,23 @@ input::placeholder {
 }
 /*-----Testimonial-------*/
 
-.testimonial:after {
+/* .testimonial:after {
     position: absolute;
     top: -0 !important;
     left: 0;
     content: " ";
-    background: url(img/testimonial.bg-top.png);
+    background: url(assets/review/celnow_background.png);
     background-size: 100% 100px;
     width: 100%;
     height: 100px;
     float: center;
     z-index: 99;
-}
+} */
 
 .testimonial {
     min-height: 375px;
     position: relative;
-    background: url(https://i.ibb.co/PTJDkgb/testimonials.jpg);
+    background: url(assets/review/celnow_background.png);
     padding-top: 50px;
     padding-bottom: 50px;
     background-position: center;
@@ -383,13 +383,13 @@ input::placeholder {
     -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
 }
 .testimonial4_slide p {
-    color: #ffffff;
+    color: #000;
     font-size: 20px;
     line-height: 1.4;
     margin: 40px 0 20px 0;
 }
 .testimonial4_slide h4 {
-  color: #ffffff;
+  color: #000;
   font-size: 22px;
 }
 
@@ -893,14 +893,14 @@ input::placeholder {
       <div class="carousel-inner" role="listbox">
         <div class="carousel-item active">
           <div class="testimonial4_slide">
-            <img src="<?php echo base_url(); ?>assets/review/niki.jpg" class="img-circle img-responsive" alt="Client 1">
+            <img src="<?php echo base_url(); ?>assets/review/Hareesh.png" class="img-circle img-responsive" alt="Client 1">
             <p>Genuine platform, everyone should give it a try.</p>
             <h4>Hareesh</h4>
           </div>
         </div>
         <div class="carousel-item">
           <div class="testimonial4_slide">
-            <img src="<?php echo base_url(); ?>assets/review/william.jpg" class="img-circle img-responsive" alt="Client 2">
+            <img src="<?php echo base_url(); ?>assets/review/niki.png" class="img-circle img-responsive" alt="Client 2">
             <p>Best mobile friendly website to find buyers for our broken gadgets.</p>
             <h4>Niki</h4>
           </div>
@@ -912,12 +912,20 @@ input::placeholder {
             residential and commercial need available for sale or rent.</p>
             <h4>William</h4>
           </div>
-        </div>
+        </div> 
         <div class="carousel-item">
           <div class="testimonial4_slide">
             <img src="<?php echo base_url(); ?>assets/review/pavan.jpeg" class="img-circle img-responsive" alt="Client 3">
             <p>Best place to convert our hobbies into cash. Her we can find part-time jobs as well as convert our hobbies into job.</p>
             <h4>Pavan</h4>
+          </div>
+        </div>
+
+        <div class="carousel-item">
+          <div class="testimonial4_slide">
+            <img src="<?php echo base_url(); ?>assets/review/aravind.png" class="img-circle img-responsive" alt="Client 3">
+            <p>Must use website to find no-broker houses, commercial places for rent and sale nearby</p>
+            <h4>Aravind</h4>
           </div>
         </div>
 
