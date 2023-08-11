@@ -1213,12 +1213,15 @@
     /* Styles for screen width less than or equal to 550px */
     @media (min-width: 250px) and (max-width: 550px) {
         .logo_header {
-            width: 70px;
+            width: 104px;
         }
 
         #Location {
             padding: 4px 9px;
             font-size: 14px;
+        }
+        .search-icon{
+            display:none;
         }
 
         .search_wrap.search_wrap_6 .search_box_header .btn {
@@ -1319,7 +1322,7 @@
     }
     @media (max-width: 400px) {
     #hedare_search{
-        width: 159px
+        width: 145px;
     }
     
 }

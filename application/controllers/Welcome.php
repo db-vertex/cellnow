@@ -1396,6 +1396,7 @@ $sub .= '</h6>
 		$start = ($page - 1) * $config["per_page"];
 
 		$output = array(
+			'Status' => 200,
 			'pagination_link' => $this->pagination->create_links(),
 			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$search,$rent_filter)
 		);

@@ -1290,7 +1290,7 @@ a:active {
 
 .price-input {
     width: 100%;
-    display: flex;
+   
     margin: 30px 0 35px;
 }
 
@@ -1639,12 +1639,12 @@ input[type="range"]::-moz-range-thumb {
         <div class="price-input">
                 <div class="field">
                     <span>Min</span>
-                    <input type="number" class="input-min" id="hidden_minimum_price" value="1">
+                    <input type="number" class="input-min input_price" id="hidden_minimum_price" value="1">
                 </div>
                 <div class="separator">-</div>
                 <div class="field">
                     <span>Max</span>
-                    <input type="number" class="input-max" id="hidden_maximum_price" value="100000">
+                    <input type="number" class="input-max input_price" id="hidden_maximum_price" value="100000">
                 </div>
             </div>
 
@@ -2236,10 +2236,56 @@ rangeInput.forEach((input) => {
 });
 
 // Add a 'mouseup' event listener to the entire document
-document.addEventListener("mouseup", () => {
-    clearTimeout(sliderTimeout); // Clear any existing timeouts
-    callFilterData();
+document.addEventListener("mouseup", function(event) { 
+    if (event.target.classList.contains("progress") || event.target.classList.contains("input_price")) {
+        clearTimeout(sliderTimeout);
+        callFilterData();
+    }
 });
+
+// const rangeInput = document.querySelectorAll(".range-input input"),
+//             priceInput = document.querySelectorAll(".price-input input"),
+
+//             range = document.querySelector(".slider .progress");
+//         let priceGap = 1000;
+
+//         let sliderTimeout; // Variable to hold timeout for delayed calling
+
+//         function callFilterData() {
+//             filter_data(1);
+//         }
+
+//         rangeInput.forEach((input) => {
+//             input.addEventListener("input", (e) => {
+//                 clearTimeout(sliderTimeout); // Clear any existing timeouts
+
+//                 let minVal = parseInt(rangeInput[0].value),
+//                     maxVal = parseInt(rangeInput[1].value);
+
+//                 if (maxVal - minVal < priceGap) {
+//                     if (e.target === rangeInput[0]) {
+//                         rangeInput[0].value = maxVal - priceGap;
+//                     } else {
+//                         rangeInput[1].value = minVal + priceGap;
+//                     }
+//                 } else {
+//                     priceInput[0].value = minVal;
+//                     priceInput[1].value = maxVal;
+//                     range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+//                     range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+
+//                     // Set a timeout to call the function after a short delay
+//                     sliderTimeout = setTimeout(callFilterData,
+//                     300); // Adjust the delay as needed
+//                 }
+//             });
+//         });
+
+//         // Add a 'mouseup' event listener to the entire document
+//         document.addEventListener("mouseup", () => {
+//             clearTimeout(sliderTimeout); // Clear any
+//         });
+
 
 
     var selectedSubId = null;
