@@ -1646,7 +1646,7 @@ input[type="range"]::-moz-range-thumb {
                     <span>Min</span>
                     <input type="number" class="input-min input_price" id="hidden_minimum_price" value="1">
                 </div>
-                <div class="separator">-</div>
+              
                 <div class="field">
                     <span>Max</span>
                     <input type="number" class="input-max input_price" id="hidden_maximum_price" value="100000">
