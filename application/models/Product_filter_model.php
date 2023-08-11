@@ -446,14 +446,13 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 				  
 				$pro .= '  <div class="d-flex justify-content-between align-items-center">
 				<div class="row">
-				<div class="col-3">
+				<div class="col-3 pe-0">
 				<img src="'.base_url("assets/images/location .png").'">
 				</div>
-				<div class="col-9 mt-1">
+				<div class="col-9 ps-0 mt-2">
 					<p tyle="color: #575757;">';
 										   $title = $row['address'];
-					   
-										   if(strlen($title) <= 20)
+										   if(strlen($title) <= 25)
 										   {
 										   $pro .= ucfirst($title);
 										  
@@ -461,7 +460,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 										   }
 										   else
 										   {
-										   $y = substr($title, 0, 20) .'...';
+										   $y = substr($title, 0, 25) .'...';
 										   $pro .= ucfirst($y);
 										   }
 										   $pro.='</p>
@@ -573,7 +572,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 					     <p tyle="color: #575757;">';
 										   $title = $row['address'];
 					   
-										   if(strlen($title) <= 20)
+										   if(strlen($title) <= 25)
 										   {
 										   $pro .= ucfirst($title);
 										  
@@ -581,7 +580,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 										   }
 										   else
 										   {
-										   $y = substr($title, 0, 20) .'...';
+										   $y = substr($title, 0, 25) .'...';
 										   $pro .= ucfirst($y);
 										   }
 										   $pro.='</p>

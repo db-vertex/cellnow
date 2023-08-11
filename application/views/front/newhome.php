@@ -399,13 +399,13 @@ foreach ($category as $key => $cat) {
 
                             <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -605,13 +605,13 @@ else{
                           
                         <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->Address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            
@@ -731,13 +731,13 @@ else{
                            
                                 <h6><img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png"> <?php
                            $title = $pro->address;
-                            if(strlen($title) <= 10)
+                            if(strlen($title) <= 25)
                               {
                                 echo ucfirst($title);
                               }
                               else
                               {
-                                $y = substr($title,0,10) . '...';
+                                $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }
                            

@@ -1642,15 +1642,20 @@ input[type="range"]::-moz-range-thumb {
                         ?>
         <div class="list-group m-2 mx-3">
         <div class="price-input">
-                <div class="field">
-                    <span>Min</span>
-                    <input type="number" class="input-min input_price" id="hidden_minimum_price" value="1">
+            <div class="row">
+                <div class="col-lg-6 col-sm-6 col-md-12 col-6 m-0">
+              <div class="field mb-2">
+                    <span>Min </span>
+                    <input type="number" class="input-min input_price ms-2" id="hidden_minimum_price" value="1">
                 </div>
-              
-                <div class="field">
-                    <span>Max</span>
-                    <input type="number" class="input-max input_price" id="hidden_maximum_price" value="100000">
                 </div>
+                <div class="col-lg-6 col-sm-6 col-md-12 col-6 ms-0">
+                <div class="field mb-2">
+                    <span>Max </span>
+                    <input type="number" class="input-max input_price ms-2" id="hidden_maximum_price" value="100000">
+                </div>
+                </div>
+            </div>
             </div>
 
             <div class="slider">
