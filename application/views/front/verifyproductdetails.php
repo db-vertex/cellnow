@@ -332,7 +332,7 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 400;
-            font-size: 6px;
+            font-size: 9px;
             line-height: 15px;
             /* identical to box height */
             color: #000000;
@@ -2312,7 +2312,7 @@
 (() => {
     'use strict'
 
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+
     const forms = document.querySelectorAll('.needs-validation')
 
     // Loop over them and prevent submission

@@ -394,8 +394,7 @@
                                 style="background-color: #13C571; color:#fff" class="btn spacetop card-title_Login"
                                 role="button" aria-disabled="true" id="c">ADD SHOP </a>
                             <p class="text-muted mt-4 card-title_Login">Note: Once the shop details are submitted for
-                                verification they
-                                can be changed
+                                verification they can't be changed
                             </p>
                         </div>
                     </div>
@@ -627,12 +626,12 @@
                                                             <p class="deletebtn" data-productid="<?=$shop->id; ?>"
                                                                 data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash"
                                                                     aria-hidden="true"
-                                                                    style="font-size:20px;color:red"></i></p>
+                                                                    style="font-size:20px; color:red  margin-left: 14px; margin-top: 12px;position: absolute;"></i>
+                                                            </p>
                                                             <a href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"
                                                                 style="width: 100%;"><img
                                                                     src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"
-                                                                    style="border: 2px solid grey;
-            border-radius: 10px; height: 100px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
+                                                                    style="border: 2px solid grey;border-radius: 10px; height: 100px; width: inherit; margin: 8px 8px 8px 8px; object-fit: cover; "></a>
                                                         </div>
 
 
@@ -677,7 +676,7 @@
                                                 <div class="form-group">
                                                     <div class="form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox" value=""
-                                                            id="flexCheckChecked" required>
+                                                            id="flexCheckChecked" required style="margin-top: 5px;">
 
                                                         <a class="text-decoration-none text-dark"
                                                             href="<?php echo base_url();?>welcome/termscondition">
@@ -777,7 +776,8 @@
                                                             <p class="deletebtn" data-productid="<?=$shop->id; ?>"
                                                                 data-imageid="<?=$pro_img->id?>"><i class="fa fa-trash"
                                                                     aria-hidden="true"
-                                                                    style="font-size:20px;color:red"></i></p>
+                                                                    style="font-size:20px;color:red;margin-left: 14px; margin-top: 12px;position: absolute;"></i>
+                                                            </p>
                                                             <a
                                                                 href="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"><img
                                                                     src="<?php echo base_url()."uploads/shop/$pro_img->shop_image";?>"
@@ -827,7 +827,7 @@
                                                 <div class="form-group">
                                                     <div class="form-check form-check-inline">
                                                         <input class="form-check-input" type="checkbox" value=""
-                                                            id="flexCheckChecked" required>
+                                                            id="flexCheckChecked" required style="margin-top: 5px;">
 
                                                         <a class="text-decoration-none text-dark"
                                                             href="<?php echo base_url();?>welcome/termscondition">
@@ -1231,7 +1231,7 @@
                                             <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
                                             <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
                                             <input type="file" id="filebtn1" class="profile_img" style="display: none"
-                                                name="shop_img[]" accept="image/*">
+                                                name="shop_img[]" accept="image/*" required>
                                             <img src="#" class="upl_img" style="display: none;">
 
                                         </label>
@@ -1279,10 +1279,11 @@
                         </div>
                 </div>
 
+
                 <div class="form-group">
                     <div class="form-check form-check-inline">
                         <input class="form-check-input ms-3 border-dark" type="checkbox" value="" id="flexCheckChecked"
-                            required>
+                            style="margin-top: 5px;" required>
                         <label>
                             <a class="text-decoration-none text-dark"
                                 href="<?php echo base_url();?>welcome/termscondition">
@@ -1294,6 +1295,7 @@
                         </div>
                     </div>
                 </div>
+                
                 <input type="text" class="form-control" name="latitude" id="latitude" hidden />
                 <input type="text" class="form-control" name="longitude" id="longitude" hidden />
                 <center><button class=" mb-2 btn btn-lg  text-white mt-2"
@@ -1428,6 +1430,27 @@ function initialize() {
 }
 </script>
 
+<script>
+// hello #6528e0 Example starter JavaScript for disabling form submissions if there are invalid fields
+(() => {
+    'use strict'
+
+    // Fetch all the forms we want to apply custom Bootstrap validation styles to
+    const forms = document.querySelectorAll('.needs-validation')
+
+    // Loop over them and prevent submission
+    Array.from(forms).forEach(form => {
+        form.addEventListener('submit', event => {
+            if (!form.checkValidity()) {
+                event.preventDefault()
+                event.stopPropagation()
+            }
+
+            form.classList.add('was-validated')
+        }, false)
+    })
+})()
+</script>
 
 <script>
 function checkcoverimage() {
@@ -1449,33 +1472,6 @@ function checkcoverimage() {
     }
 
 }
-
-
-
-(() => {
-    'use strict'
-
-    // Fetch all the forms we want to apply custom Bootstrap validation styles to
-    const forms = document.querySelectorAll('.needs-validation')
-
-    // Loop over them and prevent submission
-    Array.from(forms).forEach(form => {
-        form.addEventListener('submit', event => {
-            var mabile = document.getElementById('mobile').value.length
-            if (!form.checkValidity()) {
-                event.preventDefault()
-                event.stopPropagation()
-                document.getElementById("mobile_error").innerHTML = "";
-            } else if (mabile < 10) {
-                document.getElementById("mobile_error").innerHTML = "Please enter 10 digits";
-                event.preventDefault()
-                event.stopPropagation()
-            }
-
-            form.classList.add('was-validated')
-        }, false)
-    })
-})()
 </script>
 <script>
 "use strict"; /* Start of use strict */
