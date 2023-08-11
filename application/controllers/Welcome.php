@@ -841,8 +841,8 @@ $sub .= '</h6>
 		$this->form_validation->set_rules('phone','mobile','required|min_length[10]|max_length[10]|is_unique[users.phone]',
 			array(
 				'required' => 'The %s field is required.',
-				'min_length' => 'The %s must be at least 10 characters long.',
-				'max_length' => 'The %s must not exceed 10 characters.',
+				'min_length' => 'The %s must be at least  10 <br> characters long.',
+				'max_length' => 'The %s must not exceed  10 <br> characters.',
 				'is_unique' => 'The %s already exists.'
 			)
 		);
@@ -850,14 +850,14 @@ $sub .= '</h6>
 		$this->form_validation->set_rules('password','password','required|min_length[6]',
 			array(
 				'required' => 'The %s field is required.',
-				'min_length' => 'The %s must be at least 6 characters long.'
+				'min_length' => 'The %s must be at least <br> 6 characters long.'
 			)
 		);
 		
 		$this->form_validation->set_rules('confirmpassword','confirm password','required|matches[password]',
 			array(
 				'required' => 'The %s field is required.',
-				'matches' => 'The %s does not match'
+				'matches' => 'The %s does not <br> match the Password.'
 			)
 		);
 		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
