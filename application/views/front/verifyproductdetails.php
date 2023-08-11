@@ -1765,6 +1765,7 @@
                                     $shop_name = get_shop_name($shop_list->shop_id); ?>
                             <div class="" style="">
                                 <div class="col-12" style="text-align:center;">
+                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
                                     <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                 class="btn_Verified_img"
                                                 src="<?php echo base_url() ?>assets/images/check 1.png"
@@ -1779,6 +1780,8 @@
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
+                                </a>
+
                                 </div>
 
 
@@ -1817,6 +1820,7 @@
                                             $shop_name = get_shop_name($shop_list->shop_id); ?>
                             <div class="" style="">
                                 <div class="col-12" style="text-align:center;">
+                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
                                     <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                 class="btn_Verified_img"
                                                 src="<?php echo base_url() ?>assets/images/check 1.png"
@@ -1831,6 +1835,7 @@
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
+                              </a>
                                 </div>
 
 
@@ -1902,6 +1907,7 @@
                             <div class="" style="">
 
                                 <div class="col-12" style="text-align:center;">
+                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
                                     <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
                                                 class="btn_Verified_img"
                                                 src="<?php echo base_url() ?>assets/images/check 1.png"
@@ -1916,6 +1922,7 @@
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
+                              </a>
                                 </div>
 
                             </div>
