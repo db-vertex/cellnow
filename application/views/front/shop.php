@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  
+
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
@@ -112,7 +112,7 @@
 
     .editebtn {
         margin-left: 14px;
-          margin-top: 12px;
+        margin-top: 12px;
         position: absolute;
     }
 
@@ -313,9 +313,10 @@
     .delete-icon {
         display: none;
     }
-    .upl_img{
+
+    .upl_img {
         width: inherit;
-    height: inherit;
+        height: inherit;
     }
     </style>
 </head>
@@ -678,9 +679,10 @@
                                                         <input class="form-check-input" type="checkbox" value=""
                                                             id="flexCheckChecked" required>
 
-                                                        <label>
+                                                        <a class="text-decoration-none text-dark"
+                                                            href="<?php echo base_url();?>welcome/termscondition">
                                                             Terms and Conditions
-                                                        </label>
+                                                        </a>
                                                         <div class="invalid-feedback">
                                                             Terms & condition is required.
                                                         </div>
@@ -827,9 +829,10 @@
                                                         <input class="form-check-input" type="checkbox" value=""
                                                             id="flexCheckChecked" required>
 
-                                                        <label>
+                                                        <a class="text-decoration-none text-dark"
+                                                            href="<?php echo base_url();?>welcome/termscondition">
                                                             Terms and Conditions
-                                                        </label>
+                                                        </a>
                                                         <div class="invalid-feedback">
                                                             Terms & condition is required.
                                                         </div>
@@ -1132,8 +1135,9 @@
                         </div>
                         <div class="form-group">
                             <label>Google Address</label>
-                            <input name="Address" class="form-control" placeholder="Address" id="shop_address" type="text"
-                                maxlength="30" value="" style="border-radius:30px; border-color:#13C571" required>
+                            <input name="Address" class="form-control" placeholder="Address" id="shop_address"
+                                type="text" maxlength="30" value="" style="border-radius:30px; border-color:#13C571"
+                                required>
                             <div class="invalid-feedback">
                                 Address is required.
                             </div>
@@ -1220,67 +1224,69 @@
 
                             <label>Shop document photo Upload size(180 x 190) px</label>
 
-                             <div class="row">
-                             <div class="col ">
-                            <div class="image-box">
-                                <label for="filebtn1" class="filebtn ">
-                                    <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
-                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
-                                    <input type="file" id="filebtn1" class="profile_img" style="display: none"
-                                        name="shop_img[]" accept="image/*">
-                                    <img src="#" class="upl_img" style="display: none;">
-                                    
-                                </label>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="image-box">
-                                <label for="filebtn2" class="filebtn">
-                                    <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
-                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
-                                    <input type="file" id="filebtn2" class="profile_img" style="display: none"
-                                        name="shop_img[]" accept="image/*">
-                                    <img src="#" class="upl_img" style="display: none;">
-                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
-                                </label>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="image-box">
-                                <label for="filebtn3" class="filebtn">
-                                    <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
-                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
-                                    <input type="file" id="filebtn3" class="profile_img" style="display: none"
-                                        name="shop_img[]" accept="image/*">
-                                    <img src="#" class="upl_img" style="display: none;">
-                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
-                                </label>
-                            </div>
-                            </div>
-                            <div class="col">
-                            <div class="image-box">
-                                <label for="filebtn4" class="filebtn">
-                                    <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
-                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
-                                    <input type="file" id="filebtn4" class="profile_img" style="display: none"
-                                        name="shop_img[]" accept="image/*">
-                                    <img src="#" class="upl_img" style="display: none;">
-                                    <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
-                                </label>
-                            </div>
-                            </div>
-                        
-                            <span id="cover_err" style="color:red;"></span>
+                            <div class="row">
+                                <div class="col ">
+                                    <div class="image-box">
+                                        <label for="filebtn1" class="filebtn ">
+                                            <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
+                                            <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                            <input type="file" id="filebtn1" class="profile_img" style="display: none"
+                                                name="shop_img[]" accept="image/*">
+                                            <img src="#" class="upl_img" style="display: none;">
+
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="image-box">
+                                        <label for="filebtn2" class="filebtn">
+                                            <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
+                                            <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                            <input type="file" id="filebtn2" class="profile_img" style="display: none"
+                                                name="shop_img[]" accept="image/*">
+                                            <img src="#" class="upl_img" style="display: none;">
+                                            <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="image-box">
+                                        <label for="filebtn3" class="filebtn">
+                                            <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
+                                            <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                            <input type="file" id="filebtn3" class="profile_img" style="display: none"
+                                                name="shop_img[]" accept="image/*">
+                                            <img src="#" class="upl_img" style="display: none;">
+                                            <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="col">
+                                    <div class="image-box">
+                                        <label for="filebtn4" class="filebtn">
+                                            <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
+                                            <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                            <input type="file" id="filebtn4" class="profile_img" style="display: none"
+                                                name="shop_img[]" accept="image/*">
+                                            <img src="#" class="upl_img" style="display: none;">
+                                            <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
+                                        </label>
+                                    </div>
+                                </div>
+
+                                <span id="cover_err" style="color:red;"></span>
                             </div>
                         </div>
                 </div>
 
                 <div class="form-group">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input ms-3 border-dark" type="checkbox" value="" id="flexCheckChecked" required>
+                        <input class="form-check-input ms-3 border-dark" type="checkbox" value="" id="flexCheckChecked"
+                            required>
                         <label>
-                            <a class="text-decoration-none text-dark" href="<?php echo base_url();?>welcome/termscondition">
-                            Terms and Conditions
+                            <a class="text-decoration-none text-dark"
+                                href="<?php echo base_url();?>welcome/termscondition">
+                                Terms and Conditions
                             </a>
                         </label>
                         <div class="invalid-feedback">
@@ -1346,7 +1352,6 @@ document.querySelectorAll('.delete-icon').forEach(function(icon) {
         fileInput.value = '';
     });
 });
-
 </script>
 
 
