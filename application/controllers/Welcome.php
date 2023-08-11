@@ -824,11 +824,42 @@ $sub .= '</h6>
 	{
 
 
-		$this->form_validation->set_rules('email', ' email', 'required|valid_email|is_unique[users.email]');
-		$this->form_validation->set_rules('name', ' name', 'required');
-		$this->form_validation->set_rules('phone', ' phone', 'required|min_length[10]|max_length[10]|is_unique[users.phone]');
-		$this->form_validation->set_rules('password', ' password', 'required|min_length[6]');
-		$this->form_validation->set_rules('confirmpassword', ' confirm password', 'required|matches[password]');
+		$this->form_validation->set_rules('email','email','required|valid_email|is_unique[users.email]',
+			array(
+				'required' => 'The %s field is required.',
+				'valid_email' => 'Please enter a valid %s.',
+				'is_unique' => 'The %s already exists.'
+			)
+		);
+		
+		$this->form_validation->set_rules('name','name','required',
+			array(
+				'required' => 'The %s field is required.'
+			)
+		);
+		
+		$this->form_validation->set_rules('phone','mobile','required|min_length[10]|max_length[10]|is_unique[users.phone]',
+			array(
+				'required' => 'The %s field is required.',
+				'min_length' => 'The %s must be at least 10 characters long.',
+				'max_length' => 'The %s must not exceed 10 characters.',
+				'is_unique' => 'The %s already exists.'
+			)
+		);
+		
+		$this->form_validation->set_rules('password','password','required|min_length[6]',
+			array(
+				'required' => 'The %s field is required.',
+				'min_length' => 'The %s must be at least 6 characters long.'
+			)
+		);
+		
+		$this->form_validation->set_rules('confirmpassword','confirm password','required|matches[password]',
+			array(
+				'required' => 'The %s field is required.',
+				'matches' => 'The %s does not match'
+			)
+		);
 		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
 		if ($this->form_validation->run('login') == FALSE) {
 			$this->load->view('front/header');

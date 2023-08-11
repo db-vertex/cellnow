@@ -4,7 +4,6 @@
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Admin Dashboard</title>
-  
   <!-- Tell the browser to be responsive to screen width -->
   <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
   <!-- Bootstrap 3.3.7 -->
@@ -17,8 +16,6 @@
   <link rel="stylesheet" href="<?php echo base_url();?>assets/dist/css/AdminLTE.min.css">
   <!-- iCheck -->
   <link rel="stylesheet" href="<?php echo base_url();?>assets/plugins/iCheck/square/blue.css">
-
- 
 </head>
 <body class="hold-transition login-page">
 <div class="login-box">
@@ -26,10 +23,8 @@
   </div>
   <!-- /.login-logo -->
   <div class="login-box-body">
-
     <p class="login-box-msg"><b>Sign In</b></p>
     <center><img class="btn-change " src="<?php echo base_url();?>assets/images/CelNow 5 1.png"  class="img-fluid" ></center>
-
 <?php  if($error=$this->session->flashdata('Login_failed')){  ?>
 <div class="row">
 <div class="col-lg-12">
@@ -38,9 +33,7 @@
 </div>
 </div>
 </div>
-
 <?php } ?>
-
 <?php  if($error=$this->session->flashdata('logut_success')){  ?>
 <div class="row">
 <div class="col-lg-12">
@@ -49,10 +42,7 @@
 </div>
 </div>
 </div>
-
 <?php } ?>
-
-
 <?php  if($error=$this->session->flashdata('password_changed')){  ?>
 <div class="row">
 <div class="col-lg-12">
@@ -61,24 +51,14 @@
 </div>
 </div>
 </div>
-
 <?php } ?>
-
-
-
-
-
 <?php  echo form_open('admin/login');  ?>
-
-    
-       
       <div class="form-group has-feedback">
       <div>
           <?php echo form_input(['class'=>'form-control form-control-user span12','placeholder'=>'Email','name'=>'email','value'=>set_value('email')]);  ?>
         </div>
         <div class="form-group has-feedback">
            <?php  echo form_error('email');  ?>
-        
         </div>
       </div>
       <div class="form-group has-feedback">
@@ -88,10 +68,8 @@
           <div class="form-group has-feedback">
            <?php  echo form_error('pass');  ?>
            </div>
-        
       </div>
       <div class="row">
-       
         <!-- /.col -->
         <div class="col-xs-4">
          <?php  echo form_submit(['type'=>'submit','class'=>'btn btn-primary btn-block','value'=>'Login']);  ?>
@@ -99,17 +77,12 @@
         <!-- /.col -->
       </div>
       <?php echo form_close(); ?>
-
-    
     <!-- /.social-auth-links -->
-
  <!--   <a href="#">I forgot my password</a><br>-->
-   
   </div>
   <!-- /.login-box-body -->
 </div>
 <!-- /.login-box -->
-
 <!-- jQuery 3 -->
 <script src="<?php echo base_url();?>assets/bower_components/jquery/dist/jquery.min.js"></script>
 <!-- Bootstrap 3.3.7 -->
@@ -117,7 +90,6 @@
 <!-- iCheck -->
 <script src="<?php echo base_url();?>assets/plugins/iCheck/icheck.min.js"></script>
 <script>
-
 </script>
 </body>
 </html>
