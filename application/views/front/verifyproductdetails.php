@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -16,21 +17,26 @@
     img {
         vertical-align: middle;
     }
+
     .pointer {
         cursor: pointer;
     }
+
     /* Position the image container (needed to position the left and right arrows) */
     .container {
         position: relative;
     }
+
     /* Hide the images by default */
     .mySlides {
         display: none;
     }
+
     /* Add a pointer when hovering over the thumbnail images */
     .cursor {
         cursor: pointer;
     }
+
     /* Next & previous buttons */
     .prev,
     .next {
@@ -47,11 +53,13 @@
         user-select: none;
         -webkit-user-select: none;
     }
+
     /* Position the "next button" to the right */
     .next {
         right: 0;
         border-radius: 3px 0 0 3px;
     }
+
     .btn_Verified {
         margin-right: 90px;
         width: 170px;
@@ -62,6 +70,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 32px;
     }
+
     /* Number text (1/3 etc) */
     .numbertext {
         color: #f2f2f2;
@@ -70,6 +79,7 @@
         position: absolute;
         top: 0;
     }
+
     /* Container for image text */
     .caption-container {
         text-align: center;
@@ -77,35 +87,42 @@
         padding: 2px 16px;
         color: white;
     }
+
     .row:after {
         content: "";
         display: table;
         clear: both;
     }
+
     /* Six columns side by side */
     .column {
         float: left;
         width: 16.66%;
     }
+
     /* Add a transparency effect for thumnbail images */
     .demo {
         opacity: 0.6;
     }
+
     .active,
     .demo:hover {
         opacity: 1;
     }
+
     .breadcrumb_container {
         box-sizing: border-box;
         width: 100%;
         max-width: 1126px;
         margin: 0 auto;
     }
+
     .breadcrumb_col {
         box-sizing: border-box;
         flex: 1;
         padding: 0 15px;
     }
+
     .breadcrumbs {
         box-sizing: border-box;
         display: flex;
@@ -118,6 +135,7 @@
         border: 0.5px solid #6AD3B0;
         border-radius: 20px;
     }
+
     .handline {
         font-family: 'Open Sans';
         font-style: normal;
@@ -130,6 +148,7 @@
         order: 0;
         flex-grow: 0;
     }
+
     .details_img_cover {
         max-height: 367px;
         min-height: 367px;
@@ -140,9 +159,11 @@
         border-radius: 15px;
         min-width: 100%;
     }
+
     .cover_img_div {
         text-align: center;
     }
+
     .details_img_box {
         min-width: 70.69px;
         max-width: 70.69px;
@@ -153,6 +174,7 @@
         filter: drop-shadow(0px 0px 1.07571px #10B981);
         border-radius: 11.8328px;
     }
+
     .details_box_content {
         background: #FFFFFF;
         border: 1px solid #69D3B0;
@@ -160,6 +182,7 @@
         border-radius: 14px;
         padding-right: 0px;
     }
+
     .details_profile_img {
         width: 120px;
         height: 120px;
@@ -170,6 +193,7 @@
         margin-top: 24px;
         margin-left: 20px;
     }
+
     .deatails_profile_name {
         font-family: 'Poppins';
         font-style: normal;
@@ -178,6 +202,7 @@
         line-height: 24px;
         color: #000000;
     }
+
     .deatails_profile_name_time {
         font-family: 'Poppins';
         font-style: normal;
@@ -187,6 +212,7 @@
         /* identical to box height */
         color: #000000;
     }
+
     .deatails_profile_name_ads {
         font-family: 'Poppins';
         font-style: normal;
@@ -195,6 +221,7 @@
         line-height: 20px;
         color: #000000;
     }
+
     .details_Description {
         font-family: 'Open Sans';
         font-style: normal;
@@ -203,6 +230,7 @@
         line-height: 19px;
         color: #151515;
     }
+
     @media (min-width: 992px) {
         .details_title {
             font-family: 'Poppins';
@@ -217,6 +245,7 @@
             order: 0;
             flex-grow: 0;
         }
+
         .details_handing {
             font-family: 'Poppins';
             font-style: normal;
@@ -225,6 +254,7 @@
             line-height: 27px;
             color: #151515;
         }
+
         .details_price {
             font-family: 'Roboto';
             font-style: normal;
@@ -236,6 +266,7 @@
             text-align: right;
             color: #10B981;
         }
+
         .details_text {
             font-family: 'Poppins';
             font-style: normal;
@@ -243,6 +274,7 @@
             line-height: 17px;
             color: #151515;
         }
+
         .details_profile {
             width: 434px;
             height: 140px;
@@ -253,6 +285,7 @@
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             border-radius: 80px 0px 0px 80px;
         }
+
         .details_profile_img {
             width: 100px;
             height: 100px;
@@ -261,6 +294,7 @@
             margin-top: 20px;
             margin-left: 15px;
         }
+
         .deatails_profile_name {
             font-family: 'Poppins';
             font-style: normal;
@@ -270,6 +304,7 @@
             color: #000000;
             margin-top: 1.5rem !important;
         }
+
         .deatails_profile_name_time {
             font-family: 'Poppins';
             font-style: normal;
@@ -279,10 +314,12 @@
             /* identical to box height */
             color: #000000;
         }
+
         .col-xl-4 {
             flex: 0 0 auto;
             width: 29.33333333%;
         }
+
         .deatails_profile_name_ads {
             font-family: 'Poppins';
             font-style: normal;
@@ -291,6 +328,7 @@
             line-height: 20px;
             color: #000000;
         }
+
         .details_Description {
             font-family: 'Open Sans';
             font-style: normal;
@@ -300,6 +338,7 @@
             color: #151515;
             padding-bottom: 10px;
         }
+
         .details_handing_Description {
             font-family: 'Poppins';
             font-style: normal;
@@ -309,6 +348,7 @@
             color: #151515;
             margin-top: 30px;
         }
+
         .detalis_option {
             max-width: 620.7px;
             left: 112px;
@@ -317,6 +357,7 @@
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
         }
+
         .detalis_option_text {
             font-family: 'Roboto';
             font-style: normal;
@@ -325,10 +366,12 @@
             line-height: 0px;
             color: #898686;
         }
+
         .margin_top_css {
             margin-top: 3rem !important;
         }
     }
+
     @media (max-width: 499px) {
         .details_img_cover {
             max-height: 257px;
@@ -340,6 +383,7 @@
             border-radius: 21px;
             min-width: 100%;
         }
+
         .details_img_box {
             min-width: 40.69px;
             max-width: 40.69px;
@@ -350,6 +394,7 @@
             filter: drop-shadow(0px 0px 1.07571px #10B981);
             border-radius: 11.8328px;
         }
+
         .btn_Verified_shop_name {
             width: 250px;
             height: 37px;
@@ -359,6 +404,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+
         .btn_Verified_text {
             font-family: 'Lexend';
             font-style: normal;
@@ -367,15 +413,18 @@
             text-transform: capitalize;
             color: #047857;
         }
+
         .btn_Verified_img {
             width: 30px;
             height: 30px;
             left: 33px;
             top: 10px;
         }
+
         .margin_left_css {
             margin-left: 1rem !important;
         }
+
         .details_profile {
             width: 436px;
             height: 100px;
@@ -386,21 +435,24 @@
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             border-radius: 80px 0px 0px 80px;
         }
+
         .small {
             padding-right: 0 !important;
             padding-left: 0 !important;
         }
+
         .View_Seller_profile {
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 600;
             font-size: 8px;
             line-height: 14px;
-            border:none;
+            border: none;
             color: #000000;
             margin-top: 10px;
         }
     }
+
     @media (min-width: 359px) and (max-width: 459px) {
         .detalis_option {
             max-width: 620.7px;
@@ -410,25 +462,29 @@
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
         }
+
         .img-size {
             max-width: 13px;
             min-width: 13px;
             color: #69D3B0;
         }
+
         .small {
             padding-right: 0 !important;
             padding-left: 0 !important;
         }
+
         .View_Seller_profile {
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 600;
             font-size: 6px;
             line-height: 14px;
-            border:none;
+            border: none;
             color: #000000;
             margin-top: 10px;
         }
+
         .handline {
             font-family: 'Open Sans';
             font-style: normal;
@@ -441,6 +497,7 @@
             order: 0;
             flex-grow: 0;
         }
+
         .detalis_option_text {
             font-family: 'Roboto';
             font-style: normal;
@@ -449,6 +506,7 @@
             line-height: 0px;
             color: #898686;
         }
+
         .details_img_cover {
             max-height: 200px;
             min-height: 200px;
@@ -459,6 +517,7 @@
             border-radius: 21px;
             min-width: 100%;
         }
+
         .details_img_box {
             min-width: 50.69px;
             max-width: 50.69px;
@@ -469,6 +528,7 @@
             filter: drop-shadow(0px 0px 1.07571px #10B981);
             border-radius: 11.8328px;
         }
+
         .btn_Verified_shop_name {
             width: 250px;
             height: 37px;
@@ -478,6 +538,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+
         .btn_Verified_text {
             font-family: 'Lexend';
             font-style: normal;
@@ -486,15 +547,18 @@
             text-transform: capitalize;
             color: #047857;
         }
+
         .btn_Verified_img {
             width: 30px;
             height: 30px;
             left: 33px;
             top: 10px;
         }
+
         .margin_left_css {
             margin-left: 1rem !important;
         }
+
         .details_profile {
             width: 256px;
             height: 110px;
@@ -505,6 +569,7 @@
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             border-radius: 80px 0px 0px 80px;
         }
+
         .deatails_profile_name_ads {
             font-family: 'Poppins';
             font-style: normal;
@@ -514,6 +579,7 @@
             color: #000000;
         }
     }
+
     @media (min-width: 500px) and (max-width: 768px) {
         .btn_Verified_shop_name {
             width: 300px;
@@ -524,6 +590,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+
         .btn_Verified_text {
             font-family: 'Lexend';
             font-style: normal;
@@ -532,19 +599,23 @@
             text-transform: capitalize;
             color: #047857;
         }
+
         .btn_Verified_img {
             width: 30px;
             height: 30px;
             left: 33px;
             top: 10px;
         }
+
         .margin_left_css {
             margin-left: 1rem !important;
         }
+
         .small {
             padding-right: 0 !important;
             padding-left: 0 !important;
         }
+
         .details_profile {
             width: 334px;
             height: 140px;
@@ -556,6 +627,7 @@
             border-radius: 80px 0px 0px 80px;
         }
     }
+
     @media (min-width: 768px) and (max-width: 991.98px) {
         .btn_Verified_shop_name {
             width: 269px;
@@ -566,6 +638,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+
         .btn_Verified_text {
             font-family: 'Lexend';
             font-style: normal;
@@ -574,15 +647,18 @@
             text-transform: capitalize;
             color: #047857;
         }
+
         .btn_Verified_img {
             width: 30px;
             height: 30px;
             left: 33px;
             top: 10px;
         }
+
         .margin_left_css {
             margin-left: 2rem !important;
         }
+
         .details_profile {
             width: 434px;
             height: 140px;
@@ -594,6 +670,7 @@
             border-radius: 80px 0px 0px 80px;
         }
     }
+
     @media (min-width: 991.98px) and (max-width: 1199.98px) {
         .btn_Verified_shop_name {
             width: 335px;
@@ -604,6 +681,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+
         .btn_Verified_text {
             font-family: 'Lexend';
             font-style: normal;
@@ -612,16 +690,19 @@
             text-transform: capitalize;
             color: #047857;
         }
+
         .btn_Verified_img {
             width: 30px;
             height: 30px;
             left: 33px;
             top: 10px;
         }
+
         .margin_left_css {
             margin-left: 3rem !important;
         }
     }
+
     @media (min-width: 1199.98px) {
         .btn_Verified_shop_name {
             width: 300px;
@@ -632,6 +713,7 @@
             box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
             border-radius: 32px;
         }
+
         .btn_Verified_text {
             font-family: 'Lexend';
             font-style: normal;
@@ -640,15 +722,18 @@
             text-transform: capitalize;
             color: #047857;
         }
+
         .btn_Verified_img {
             width: 30px;
             height: 30px;
             left: 33px;
             top: 10px;
         }
+
         .margin_left_css {
             margin-left: 8rem !important;
         }
+
         .detalis_option {
             max-width: 620.7px;
             left: 90px;
@@ -656,6 +741,7 @@
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
         }
+
         .btn_Verified {
             margin-right: 90px;
             width: 192px;
@@ -667,6 +753,7 @@
             border-radius: 32px;
         }
     }
+
     @media(max-width: 991px) {
         .details_title {
             font-family: 'Poppins';
@@ -681,6 +768,7 @@
             order: 0;
             flex-grow: 0;
         }
+
         .details_handing {
             font-family: 'Poppins';
             font-style: normal;
@@ -689,6 +777,7 @@
             line-height: 27px;
             color: #151515;
         }
+
         .details_price {
             font-family: 'Roboto';
             font-style: normal;
@@ -700,6 +789,7 @@
             text-align: right;
             color: #10B981;
         }
+
         .details_text {
             font-family: 'Poppins';
             font-style: normal;
@@ -707,6 +797,7 @@
             line-height: 17px;
             color: #151515;
         }
+
         .details_profile {
             width: 330px;
             height: 97px;
@@ -717,6 +808,7 @@
             filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
             border-radius: 80px 0px 0px 80px;
         }
+
         .details_profile_img {
             width: 80px;
             height: 80px;
@@ -725,6 +817,7 @@
             margin-top: 10px;
             margin-left: 15px;
         }
+
         .deatails_profile_name {
             font-family: 'Poppins';
             font-style: normal;
@@ -734,14 +827,16 @@
             color: #000000;
             margin-top: 0rem !important;
         }
+
         .deatails_profile_name_time {
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 400;
-            font-size:8px;
+            font-size: 8px;
             line-height: 15px;
             color: #000000;
         }
+
         .deatails_profile_name_ads {
             font-family: 'Poppins';
             font-style: normal;
@@ -750,6 +845,7 @@
             line-height: 20px;
             color: #000000;
         }
+
         .details_Description {
             font-family: 'Open Sans';
             font-style: normal;
@@ -758,6 +854,7 @@
             line-height: 19px;
             color: #151515;
         }
+
         .details_handing_Description {
             font-family: 'Poppins';
             font-style: normal;
@@ -767,12 +864,14 @@
             color: #151515;
             margin-top: 30px;
         }
+
         .detalis_option {
             left: 112px;
             top: 1373.5px;
             background: #FFFFFF;
             box-shadow: 0px 0px 4px #69D3B0;
         }
+
         .detalis_option_text {
             font-family: 'Roboto';
             font-style: normal;
@@ -781,10 +880,12 @@
             line-height: 0px;
             color: #898686;
         }
+
         .margin_top_css {
             margin-top: 1rem !important;
         }
     }
+
     .chat_button {
         display: flex;
         flex-direction: row;
@@ -799,18 +900,20 @@
         background: #FFFFFF;
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 50px;
-        border:none;
+        border: none;
     }
+
     .View_Seller_profile {
         font-family: 'Poppins';
         font-style: normal;
         font-weight: 600;
         font-size: 12px;
         line-height: 14px;
-        border:none;
+        border: none;
         color: #000000;
         margin-top: 10px;
     }
+
     .Related_Ads {
         font-family: 'Lexend';
         font-style: normal;
@@ -820,6 +923,7 @@
         text-transform: capitalize;
         color: #1B1C57;
     }
+
     .related_ads_card {
         min-height: 200px;
         max-height: 200px;
@@ -830,6 +934,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 0px 0px 37px 37px;
     }
+
     .related_ads_card_img {
         min-height: 200.1px;
         max-height: 200.1px;
@@ -837,6 +942,7 @@
         top: 1889px;
         border-radius: 0px 0px 0px 0px;
     }
+
     .related_ads_card_title {
         font-family: 'Poppins';
         font-style: normal;
@@ -850,6 +956,7 @@
         order: 0;
         flex-grow: 0;
     }
+
     .related_ads_details_button {
         box-sizing: border-box;
         /* Auto layout */
@@ -870,6 +977,7 @@
         align-self: center;
         flex-grow: 0;
     }
+
     .related_ads_details_button_text {
         font-family: 'Poppins';
         font-style: normal;
@@ -881,6 +989,7 @@
         order: 0;
         flex-grow: 0;
     }
+
     .btn_Verified {
         margin-right: 90px;
         width: 192px;
@@ -891,6 +1000,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 32px;
     }
+
     .btn_Verified:hover {
         width: 192px;
         height: 54px;
@@ -898,6 +1008,7 @@
         box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
         border-radius: 32px;
     }
+
     .container .master,
     .container .thumbnails {
         margin: auto;
@@ -905,16 +1016,19 @@
         margin-top: 20px;
         padding: 5px;
     }
+
     .container .master {
         padding-bottom: 0;
         position: relative;
     }
+
     .container .master img {
         z-index: 1;
         width: 100%;
         height: 99%;
         border-radius: 20px;
     }
+
     .container .master .fa-chevron-left,
     .container .master .fa-chevron-right {
         position: absolute;
@@ -926,25 +1040,31 @@
         z-index: 2;
         cursor: pointer;
     }
+
     .container .master .fa-chevron-right {
         right: 5px;
         left: auto;
     }
+
     .container .thumbnails {
         overflow: hidden;
     }
+
     .container .thumbnails img {
         float: left;
         width: 19.2%;
         cursor: pointer;
         transition: all .6s ease-in-out;
     }
+
     .container .thumbnails img:last-child {
         margin-right: 0 !important;
     }
+
     .container .thumbnails img.active {
         outline: 2px solid #e63946;
     }
+
     .verifid-right {
         position: absolute;
         right: 2px;
@@ -954,14 +1074,17 @@
         max-width: 30%;
         max-height: 15%;
     }
+
     .pointer {
         cursor: pointer;
     }
-    .details_img_box.active{
-        border:1px solid #10B981;
+
+    .details_img_box.active {
+        border: 1px solid #10B981;
     }
     </style>
 </head>
+
 <body>
     <?php
     $product_detail = $categories_data;
@@ -1209,7 +1332,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Brand</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->brand; ?></p>
                             </div>
                         </div>
@@ -1217,7 +1340,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Bill</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->bill; ?></p>
                             </div>
                         </div>
@@ -1225,7 +1348,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Warrenty</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->Warrenty; ?></p>
                             </div>
                         </div>
@@ -1233,7 +1356,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Use year</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->use_year; ?></p>
                             </div>
                         </div>
@@ -1242,7 +1365,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Book Publisher</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->book_publisher; ?></p>
                             </div>
                         </div>
@@ -1250,7 +1373,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Publisher Type</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->book_publisher_type; ?></p>
                             </div>
                         </div>
@@ -1260,7 +1383,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Tuition Location</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->Tuitions_loction; ?></p>
                             </div>
                         </div>
@@ -1268,7 +1391,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Gender</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->gender; ?></p>
                             </div>
                         </div>
@@ -1276,7 +1399,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Education Type</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->Education_Type; ?></p>
                             </div>
                         </div>
@@ -1284,7 +1407,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Available Timings</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->Available_Timings; ?></p>
                             </div>
                         </div>
@@ -1292,7 +1415,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Years Experience</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->Years_Experience; ?></p>
                             </div>
                         </div>
@@ -1300,11 +1423,11 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Teachers Qualifications</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->Teachers_Qualifications; ?></p>
                             </div>
-                        </div> 
-                         <?php } else if ($product_detail->category_id == 3) { ?>
+                        </div>
+                        <?php } else if ($product_detail->category_id == 3) { ?>
                         <div class="row   ms-4">
                             <div class="col-4">
                                 <p class="details_text"><b>Job Experience</b></p>
@@ -1364,7 +1487,7 @@
                                 <p class="details_text"><?php echo $product_detail->intership_Post_Vacant; ?></p>
                             </div>
                         </div>
-                        <div class="row   ms-4"> 
+                        <div class="row   ms-4">
                             <div class="col-4">
                                 <p class="details_text"><b>Intership Need Stipend</b></p>
                             </div>
@@ -1391,53 +1514,53 @@
                                 <p class="details_text"><?php echo $product_detail->area . " Feet" ?></p>
                             </div>
                         </div>
-                         <div class="row   ms-4">
-                             <div class="col-4">
-                                 <p class="details_text"><b>Facing</b></p>
+                        <div class="row   ms-4">
+                            <div class="col-4">
+                                <p class="details_text"><b>Facing</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->facing; ?></p>
                             </div>
                         </div>
                         <div class="row   ms-4">
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><b>Floor</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->floor; ?></p>
                             </div>
                         </div>
                         <div class="row   ms-4">
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><b> Rent/Shell</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->filter; ?></p>
                             </div>
                         </div>
                         <?php } 
                             else if ($product_detail->category_id == 7) { ?>
                         <div class="row   ms-4">
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><b>Area</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->area . " Feet" ?></p>
                             </div>
                         </div>
                         <div class="row   ms-4">
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><b>Facing</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->facing; ?></p>
                             </div>
                         </div>
                         <div class="row   ms-4">
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><b> Rent/Shell</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->filter; ?></p>
                             </div>
                         </div>
@@ -1446,7 +1569,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>City</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php echo ucfirst($product_detail->town); ?></p>
                             </div>
                         </div>
@@ -1454,7 +1577,7 @@
                             <div class="col-4">
                                 <p class="details_text"><b>Type</b></p>
                             </div>
-                           <div class="col-4">
+                            <div class="col-4">
                                 <p class="details_text"><?php if ($product_detail->category_id == 1) {
                                  $type_name = get_product_sub_name($product_detail->subcategory_id);
                                 echo $type_name;
@@ -1502,12 +1625,14 @@
                                     $shop_name = get_shop_name($shop_list->shop_id); ?>
                             <div class="" style="">
                                 <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
-                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                class="btn_Verified_img"
-                                                src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                            <?php  $title = $shop_name;
+                                    <a
+                                        href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
+                                        <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                    class="btn_Verified_img"
+                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                    alt="check 1.png"></span><span class="btn_Verified_text">verified by
+                                                :
+                                                <?php  $title = $shop_name;
                             if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
@@ -1517,7 +1642,7 @@
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
-                                </a>
+                                    </a>
                                 </div>
                             </div>
                             <?php   }
@@ -1546,12 +1671,14 @@
                                             $shop_name = get_shop_name($shop_list->shop_id); ?>
                             <div class="" style="">
                                 <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
-                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                class="btn_Verified_img"
-                                                src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                            <?php  $title = $shop_name;
+                                    <a
+                                        href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
+                                        <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                    class="btn_Verified_img"
+                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                    alt="check 1.png"></span><span class="btn_Verified_text">verified by
+                                                :
+                                                <?php  $title = $shop_name;
                             if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
@@ -1561,7 +1688,7 @@
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
-                              </a>
+                                    </a>
                                 </div>
                             </div>
                             <?php  }
@@ -1618,12 +1745,14 @@
                                                 $shop_name = get_shop_name($shop_list->shop_id); ?>
                             <div class="" style="">
                                 <div class="col-12" style="text-align:center;">
-                                <a href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
-                                    <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
-                                                class="btn_Verified_img"
-                                                src="<?php echo base_url() ?>assets/images/check 1.png"
-                                                alt="check 1.png"></span><span class="btn_Verified_text">verified by :
-                                            <?php  $title = $shop_name;
+                                    <a
+                                        href="<?php echo base_url() ?>welcome/shopdetail/<?php echo $shop_list->shop_id; ?>">
+                                        <p class="btn_Verified_shop_name pt-1"><span class="pe-2"><img
+                                                    class="btn_Verified_img"
+                                                    src="<?php echo base_url() ?>assets/images/check 1.png"
+                                                    alt="check 1.png"></span><span class="btn_Verified_text">verified by
+                                                :
+                                                <?php  $title = $shop_name;
                             if(strlen($title) <= 20)
                               {
                                 echo ucfirst($title);
@@ -1633,7 +1762,7 @@
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               } ?></span></p>
-                              </a>
+                                    </a>
                                 </div>
                             </div>
                             <?php  }
@@ -1766,8 +1895,8 @@
                                                 } ?>">
                                                 <input type="hidden" name="receiver_id" id="receiver_id"
                                                     value="<?php echo $product_detail->user_id; ?>">
-                                                <input class="chat_button pointer"
-                                                    value="Chat" <?php if (empty($user) || !isset($user)) { ?>
+                                                <input class="chat_button pointer" value="Chat"
+                                                    <?php if (empty($user) || !isset($user)) { ?>
                                                     onClick="location.href='<?php echo base_url(); ?>welcome/login/'"
                                                     <?php } else { ?>type="submit" <?php } ?> readonly>
                                             </form>
@@ -1806,7 +1935,7 @@
                                         alt="related_ads_card_img">
                                     <div class="card-body ">
                                         <div class="row">
-                                            <div class="col-8">
+                                            <div class="col-12 ps-0" style="display: inline-flex;">
                                                 <?php if (isset($product_detail->price)) {
                                                         if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) {
                                                             ?>
@@ -1820,38 +1949,34 @@
                                                 <p class="details_price">Donate</span></p>
                                                 <?php }
                                                     } ?>
-                                            </div>
-                                            <div class="col-2">
-                                                <!-- <b style='font-size:18px;'><i class="fa fa-heart-o "
-                                                        style="font-size:18px;color:#69d3b0;padding: 0px;"></i> -->
-                                     <a 
-                                     <?php
-                        
-                                $wishlist_Related = 0;
-                                if (!empty($user) && isset($user)) {
-                                    $wishlit = get_wishlist($relatedproduct->id, $relatedproduct->category_id, $user["user_id"]);
-                                    if (empty($wishlit)) {
+                                                     <?php
+                                        
                                         $wishlist_Related = 0;
-                                    } else {
-                                        $wishlist_Related = 1;
-                                    }
-                                } else {
-                                    $wishlist_Related = 0;
-                                }
-                                $i = $relatedproduct->Count;
-                                $data = ++$i; // Increment $i and assign the value to $data
-                                $product_count_update = update_count_comman_query($relatedproduct->category_id, $data, $relatedproduct->id);
-                                ?>
-                                    <?php if (empty($user) || !isset($user)) { ?>
-                                    href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
-                                        lass="bi bi-suit-heart" aria-hidden="true"
-                                        style="font-size:18px;color:#69d3b0;padding: 0px;"
-                                        data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
-                                        class="<?php echo ($wishlist_Related == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $relatedproduct->id; ?>"
-                                        data-pid="<?php echo $relatedproduct->id; ?>"
-                                        data-cid="<?php echo $relatedproduct->category_id; ?>"
-                                        data-wishlist="<?php echo $wishlist_Related; ?>"></i></a>
+                                        if (!empty($user) && isset($user)) {
+                                            $wishlit = get_wishlist($relatedproduct->id, $relatedproduct->category_id, $user["user_id"]);
+                                            if (empty($wishlit)) {
+                                                $wishlist_Related = 0;
+                                            } else {
+                                                $wishlist_Related = 1;
+                                            }
+                                        } else {
+                                            $wishlist_Related = 0;
+                                        }
+                                        $i = $relatedproduct->Count;
+                                        $data = ++$i; // Increment $i and assign the value to $data
+                                        $product_count_update = update_count_comman_query($relatedproduct->category_id, $data, $relatedproduct->id);
+                                        ?>
+                                    <a style="margin-left: 100px;" <?php if (empty($user) || !isset($user)) { ?>
+                                        href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
+                                            lass="bi bi-suit-heart" aria-hidden="true"
+                                            style="font-size:18px;color:#69d3b0;padding: 0px;"
+                                            data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                            class="<?php echo ($wishlist_Related == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $relatedproduct->id; ?>"
+                                            data-pid="<?php echo $relatedproduct->id; ?>"
+                                            data-cid="<?php echo $relatedproduct->category_id; ?>"
+                                            data-wishlist="<?php echo $wishlist_Related; ?>"></i></a>
                                             </div>
+                                            
                                         </div>
                                         <div class="row mt-1">
                                             <div class="col-12">
@@ -1900,6 +2025,7 @@
         </main>
     </div>
 </body>
+
 </html>
 <div id="report_product" class="modal fade" role="dialog">
     <div class="modal modal-signin position-static d-block  py-5" tabindex="-1" role="dialog" id="modalSignin">
@@ -2034,6 +2160,7 @@ $(document).on('click', '.ssaaf', function(e) {
             }
         });
 });
+
 function change_image(image) {
     var container = document.getElementById("main-image");
     container.src = image.src;
@@ -2048,6 +2175,7 @@ $(document).ready(function() {
     str = str.split("/");
     cat = str[str.length - 3];
     sub = str[str.length - 1];
+
     function load_country_data(limit, start) {
         $.ajax({
             url: "<?php echo base_url(); ?>welcome/fetch/",
@@ -2129,12 +2257,15 @@ $(function() {
 <script>
 let slideIndex = 1;
 showSlides(slideIndex);
+
 function plusSlides(n) {
     showSlides(slideIndex += n);
 }
+
 function currentSlide(n) {
     showSlides(slideIndex = n);
 }
+
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("mySlides");
@@ -2162,6 +2293,7 @@ function showSlides(n) {
 (function() {
     function14();
 })();
+
 function function14() {
     $('.btnSweetalert').on("click", function() {
         swal({
