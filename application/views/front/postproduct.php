@@ -556,7 +556,7 @@
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
                                         value="3" checked>
-                                    <label class="form-check-label" for="inlineRadio2">Bost Ads</label>
+                                    <label class="form-check-label" for="inlineRadio2">Boost Ads</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1"
@@ -1236,15 +1236,15 @@
 
                             <div class="col-sm-6 hiddens" id="Tuitions_loction_div">
                                 <label for="Tuitions_loction" class="form-label post_input_lable">Tuitions
-                                    loction</label>
+                                location</label>
                                 <select class="form-select post_input_fild" id="Tuitions_loction"
                                     name="Tuitions_loction">
-                                    <option value="">Select Tuitions loction</option>
+                                    <option value="">Select Tuitions location</option>
                                     <option value="Clients home">Clients home</option>
                                     <option value="Tuition Center">Tuition Center</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid Tuitions loction.
+                                    Please provide a valid Tuitions location.
                                 </div>
                             </div>
 
@@ -1290,15 +1290,15 @@
 
 
                             <div class="col-sm-6 hiddens" id="Tuitions_gender_div">
-                                <label for="Tuitions_gender" class="form-label post_input_lable">Gander</label>
+                                <label for="Tuitions_gender" class="form-label post_input_lable">Classes for</label>
                                 <select class="form-select post_input_fild" id="Tuitions_gender" name="Tuitions_gender">
-                                    <option value="">Select Gander</option>
+                                    <option value="">Select Classes for</option>
                                     <option value="Male">Male</option>
                                     <option value="Female">Female</option>
                                     <option value="Both">Both</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid Tuitions loction.
+                                    Please provide a Classes for.
                                 </div>
                             </div>
 
@@ -1565,7 +1565,7 @@
                                     class="form-label post_input_lable">Experience</label>
                                 <select class="form-select post_input_fild" id="Job_Pitching_Experience"
                                     name="Job_Pitching_Experience">
-                                    <option value="">Select Job Location</option>
+                                    <option value="">Select Job Experience</option>
                                     <option value="Yes">Yes</option>
                                     <option value="No">No</option>
                                 </select>

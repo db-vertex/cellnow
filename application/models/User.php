@@ -504,7 +504,7 @@ class User extends CI_Model {
         if(!get_wishlist($data['product_id'], $data['category_id'],$data['user_id']))
         $insert = $this->db->insert('wishlist', $data);
         else{
-        $delete = $this->db->query("delete from wishlist where user_id=".$data['user_id']." and product_id=".$data['product_id']);
+        $insert = $this->db->query("delete from wishlist where user_id=".$data['user_id']." and product_id=".$data['product_id']);
         }
         if($insert){
             return true;
