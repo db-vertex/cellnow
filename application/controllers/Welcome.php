@@ -856,7 +856,7 @@ $sub .= '</h6>
 		
 		$this->form_validation->set_rules('confirmpassword','confirm password','required|matches[password]',
 			array(
-				'required' => 'The %s field is required.',
+				'required' => 'The %s field <br>  is required.',
 				'matches' => 'The %s does not <br> match the Password.'
 			)
 		);
