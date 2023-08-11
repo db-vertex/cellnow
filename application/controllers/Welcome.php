@@ -64,7 +64,6 @@ class Welcome extends CI_Controller
 		}
 	}
 
-
 	public function getsubcategory($data = " ")
 	{
 
@@ -399,10 +398,6 @@ $sub .= '</h6>
 
 	}
 
-
-	
-
-
 	public function getdonateproduct($data = " ")
 	{
 		$row = $this->input->post('row');
@@ -666,10 +661,6 @@ $sub .= '</h6>
 		echo $sub;
 
 	}
-
-
-
-
 	public function home1()
 	{
 		$session_id = $this->session->userdata('id');
@@ -1352,9 +1343,6 @@ $sub .= '</h6>
 	
 
 	}
-
-
-
 	public function fetch_data()
 	{
 		sleep(2);
@@ -1449,7 +1437,6 @@ $sub .= '</h6>
 		echo json_encode($output);
 	}
 
-
 	public function donatefillter_product()
 	{
 		$cateory = $this->uri->segment(3);
@@ -1508,7 +1495,6 @@ $sub .= '</h6>
 	
 
 	}
-
 
 	public function shop()
 	{
@@ -1678,10 +1664,10 @@ $sub .= '</h6>
 						  }
 					  }
 	         return redirect('welcome/shop');
-			}
+	}
 
-			public function editverifiedshop()
-			{
+		public function editverifiedshop()
+		{
 				
 				$user_id = $this->input->post('user_id');
 			
@@ -1722,7 +1708,7 @@ $sub .= '</h6>
 								  }
 							  }
 			return redirect('welcome/shop');
-					}
+		}
 	public function buyerprofile()
 	{
 		$session_id = $this->session->userdata('id');
@@ -2072,12 +2058,6 @@ $sub .= '</h6>
 		}
 	}
 
-
-
-
-
-
-
 	public function savecontact()
 	{
 
@@ -2098,7 +2078,6 @@ $sub .= '</h6>
 		return redirect('welcome');
 
 	}
-
 
 	public function aboutus()
 	{
@@ -2126,7 +2105,6 @@ $sub .= '</h6>
 
 
 	}
-
 
 	public function verify_content()
 	{
@@ -2179,7 +2157,6 @@ $sub .= '</h6>
 		}
 
 	}
-
 
 	public function productdetail()
 	{
@@ -2333,9 +2310,6 @@ $sub .= '</h6>
 			$this->load->view('front/footer');
 		}
 	}
-
-
-
 	public function fetch()
 	{
 
@@ -2536,10 +2510,6 @@ $sub .= '</h6>
 
 		}
 	}
-
-
-
-
 
 	public function saveproduct()
 	{
@@ -2895,7 +2865,6 @@ $sub .= '</h6>
 
 
 	}
-
 	public function pay($id,$category)
 	{
 		$_SESSION['product_id'] = $id;
@@ -3627,8 +3596,6 @@ $sub .= '</h6>
 	  $data = $this->prepareData($amount,$razorpayOrderId);
 	  $this->load->view('front/editrezorpay',array('data' => $data));
 	}
-
-
 	public function deleteimage()
 	{
 		$thumbnails = $this->input->post('thumbnails');
@@ -3646,8 +3613,6 @@ $sub .= '</h6>
 
 
 	}
-
-
 
 	public function store()
 	{
@@ -3685,8 +3650,6 @@ $sub .= '</h6>
 			$this->load->view('front/footer');
 		}
 	}
-
-
 	public function chat($data = " ")
 	{
 		$session_id = $this->session->userdata('id');
@@ -3737,7 +3700,6 @@ $sub .= '</h6>
 			return redirect('welcome/newhome');
 		}
 	}
-
 
 	public function chatdata($data = " ")
 	{
@@ -3878,8 +3840,6 @@ $sub .= '</h6>
 		}
 
 	}
-
-
 	public function savechat()
 	{
 
@@ -4155,7 +4115,6 @@ $sub .= '</h6>
 		}
 	}
 
-	
 
 	public function subscribe(){
 
@@ -4176,7 +4135,7 @@ $sub .= '</h6>
 			$this->load->view('front/footer');
 	   }
    		  
-   }
+    }
 
    public function notification_chat($category_id,$receiver_id,$product_id,$sender_id)
 	{
@@ -4215,111 +4174,110 @@ $sub .= '</h6>
 		}
 	}
 
-
-      protected function sendMessage($keys_auth, $notification_data, $title, $image, $url) {
-        // here I'll get the subscription endpoint in the POST parameters
-        // but in reality, you'll get this information in your database
-        // because you already stored it (cf. push_subscription.php)
-        // $subscription = Subscription::create(json_decode(file_get_contents('php://input'), true));
-        $subscription = Subscription::create($keys_auth);
-        $auth = array(
-          'VAPID' => array(
-            'subject' => 'Some Subjet here',
-            'publicKey' => file_get_contents(APPPATH . './../keys/public_key.txt'), // don't forget that your public key also lives in app.js
-            'privateKey' => file_get_contents(APPPATH . './../keys/private_key.txt'), // in the real world, this would be in a secret file
-          ),
-        );
-        $webPush = new WebPush($auth);
-        $options = array(
-          'title' => "$title",
-          'body' => "$notification_data",
-          'icon' => base_url().'/uploads/profile/notifitions_icon.png',
-          'badge' => base_url().'assets/images/CelNow 5 1.png',
-          'image' => $image,
-          'url' =>  $url,
-        );
-        $report = $webPush->sendOneNotification(
-          $subscription,
-          json_encode($options)
-        );
-        // handle eventual errors here, and remove the subscription from your server if it is expired
-        $endpoint = $report->getRequest()->getUri()->__toString();
-        if ($report->isSuccess()) {
-          return "[v] Message sent successfully for subscription {$endpoint}.";
-        } else {
-          return "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
-        }
-      }
-      public function website_notification($sender_id, $receiver_id, $product_id, $category_id,$message){
-          if($category_id == 1){
-			$pro = get_mobile_data($product_id);
-			$product_name = $pro->title;
-		  }else if($category_id == 2){
-			$pro = get_tution_data($product_id);
-			$product_name = $pro->title;
-		  }else if($category_id == 3){
-			$pro = get_job_data($product_id);
-			$product_name = $pro->title;
-		  }else if($category_id == 4){
-			$pro = get_internship_data($product_id);
-			$product_name = $pro->title;
-		  }else if($category_id == 5){
-			$pro =get_residential_data($product_id);
-			$product_name = $pro->title;
-		  }else if($category_id == 6){
-			$pro =get_commericial_data($product_id);
-			$product_name = $pro->title;
-		  }else if($category_id == 7){
-			$pro =get_land_plot_data($product_id);
-			$product_name = $pro->title;
-		  }
-		 
-		  $user_name = get_userdetail($sender_id);
-		  
+	protected function sendMessage($keys_auth, $notification_data, $title, $image, $url) {
+	// here I'll get the subscription endpoint in the POST parameters
+	// but in reality, you'll get this information in your database
+	// because you already stored it (cf. push_subscription.php)
+	// $subscription = Subscription::create(json_decode(file_get_contents('php://input'), true));
+	$subscription = Subscription::create($keys_auth);
+	$auth = array(
+		'VAPID' => array(
+		'subject' => 'Some Subjet here',
+		'publicKey' => file_get_contents(APPPATH . './../keys/public_key.txt'), // don't forget that your public key also lives in app.js
+		'privateKey' => file_get_contents(APPPATH . './../keys/private_key.txt'), // in the real world, this would be in a secret file
+		),
+	);
+	$webPush = new WebPush($auth);
+	$options = array(
+		'title' => "$title",
+		'body' => "$notification_data",
+		'icon' => base_url().'/uploads/profile/notifitions_icon.png',
+		'badge' => base_url().'assets/images/CelNow 5 1.png',
+		'image' => $image,
+		'url' =>  $url,
+	);
+	$report = $webPush->sendOneNotification(
+		$subscription,
+		json_encode($options)
+	);
+	// handle eventual errors here, and remove the subscription from your server if it is expired
+	$endpoint = $report->getRequest()->getUri()->__toString();
+	if ($report->isSuccess()) {
+		return "[v] Message sent successfully for subscription {$endpoint}.";
+	} else {
+		return "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
+	}
+	}
+	public function website_notification($sender_id, $receiver_id, $product_id, $category_id,$message){
+		if($category_id == 1){
+		$pro = get_mobile_data($product_id);
+		$product_name = $pro->title;
+		}else if($category_id == 2){
+		$pro = get_tution_data($product_id);
+		$product_name = $pro->title;
+		}else if($category_id == 3){
+		$pro = get_job_data($product_id);
+		$product_name = $pro->title;
+		}else if($category_id == 4){
+		$pro = get_internship_data($product_id);
+		$product_name = $pro->title;
+		}else if($category_id == 5){
+		$pro =get_residential_data($product_id);
+		$product_name = $pro->title;
+		}else if($category_id == 6){
+		$pro =get_commericial_data($product_id);
+		$product_name = $pro->title;
+		}else if($category_id == 7){
+		$pro =get_land_plot_data($product_id);
+		$product_name = $pro->title;
+		}
 		
-              $messages = array();
-			  $notification_data = "Product Name: " . $product_name. "\n";
-			  $notification_data .= "Message: " . $message;
-              $title = $user_name->name ;
-              $image = base_url().'assets/images/CelNow 5 1.png';
-              $query = $this->main_model->get_data_user('subscribers',$receiver_id)->result();
+		$user_name = get_userdetail($sender_id);
+		
+	
+			$messages = array();
+			$notification_data = "Product Name: " . $product_name. "\n";
+			$notification_data .= "Message: " . $message;
+			$title = $user_name->name ;
+			$image = base_url().'assets/images/CelNow 5 1.png';
+			$query = $this->main_model->get_data_user('subscribers',$receiver_id)->result();
 
-              foreach($query as $row) {
-                $keys_auth = array(
-                  "contentEncoding" => "aesgcm",
-                  "endpoint" => $row->endpoint,
-                  "keys" => array(
-                      "auth" => $row->auth,
-                      "p256dh" => $row->p256dh
-                    )
-                );
-				$url = base_url() . 'welcome/chat/' . $category_id;
+			foreach($query as $row) {
+			$keys_auth = array(
+				"contentEncoding" => "aesgcm",
+				"endpoint" => $row->endpoint,
+				"keys" => array(
+					"auth" => $row->auth,
+					"p256dh" => $row->p256dh
+				)
+			);
+			$url = base_url() . 'welcome/chat/' . $category_id;
 
-				// Create a hidden form on the current page with input fields to send the data to the "chat" page
-				echo '<form id="chatForm" action="' . $url . '" method="post">';
-				echo '  <input type="text" name="sender_id" value="' . $sender_id . '">';
-				echo '  <input type="hidden" name="receiver_id" value="' . $receiver_id . '">';
-				echo '  <input type="hidden" name="product_id" value="' . $product_id . '">';
-				echo '  <input type="hidden" name="category_id" value="' . $category_id . '">';
-				echo '</form>';
-			
-				// Add JavaScript to automatically submit the form when the user clicks on the URL
-				echo '<script>';
-				echo '  var urlElement = document.createElement("a");';
-				echo '  urlElement.href = "' . $url . '";';
-				echo '  urlElement.textContent = "Click to open chat";';
-				echo '  urlElement.style.display = "none";';
-				echo '  urlElement.onclick = function() {';
-				echo '    document.getElementById("chatForm").submit();';
-				echo '  };';
-				echo '  document.body.appendChild(urlElement);';
-				echo '</script>';
+			// Create a hidden form on the current page with input fields to send the data to the "chat" page
+			echo '<form id="chatForm" action="' . $url . '" method="post">';
+			echo '  <input type="text" name="sender_id" value="' . $sender_id . '">';
+			echo '  <input type="hidden" name="receiver_id" value="' . $receiver_id . '">';
+			echo '  <input type="hidden" name="product_id" value="' . $product_id . '">';
+			echo '  <input type="hidden" name="category_id" value="' . $category_id . '">';
+			echo '</form>';
+		
+			// Add JavaScript to automatically submit the form when the user clicks on the URL
+			echo '<script>';
+			echo '  var urlElement = document.createElement("a");';
+			echo '  urlElement.href = "' . $url . '";';
+			echo '  urlElement.textContent = "Click to open chat";';
+			echo '  urlElement.style.display = "none";';
+			echo '  urlElement.onclick = function() {';
+			echo '    document.getElementById("chatForm").submit();';
+			echo '  };';
+			echo '  document.body.appendChild(urlElement);';
+			echo '</script>';
 
-                $msg = $this->sendMessage($keys_auth, $notification_data, $title, $image, $url);
-                $messages['msg'] = $msg;
-              }
-             // redirect('/?msg=1', 'refresh');
-        } 
+			$msg = $this->sendMessage($keys_auth, $notification_data, $title, $image, $url);
+			$messages['msg'] = $msg;
+			}
+			// redirect('/?msg=1', 'refresh');
+	} 
       /* ------------------------------------------ Web Push Notifications ---------------------------------------------------- */
 	                        
 	public function push_subscription() {
@@ -4382,51 +4340,51 @@ $sub .= '</h6>
             echo "Error: method not handled";
             return;
         }
-      }
-      public function send_push_notification() {
-        // here I'll get the subscription endpoint in the POST parameters
-        // but in reality, you'll get this information in your database
-        // because you already stored it (cf. push_subscription.php)
-        $query = $this->main_model->get_data('subscribers')->result();
-        foreach($query as $row) {
-          $notification_data = array(
-            "contentEncoding" => "aesgcm",
-            "endpoint" => $row->endpoint,
-            "keys" => array(
-                "auth" => $row->auth,
-                "p256dh" => $row->p256dh
-              )
-          );
-          // $subscription = Subscription::create(json_decode(file_get_contents('php://input'), true));
-          $subscription = Subscription::create($notification_data);
-          $auth = array(
-            'VAPID' => array(
-              'subject' => 'PHP Codeigniter Web Push Notification',
-              'publicKey' => file_get_contents(APPPATH . './../keys/public_key.txt'), // don't forget that your public key also lives in app.js
-              'privateKey' => file_get_contents(APPPATH . './../keys/private_key.txt'), // in the real world, this would be in a secret file
-            ),
-          );
-          $webPush = new WebPush($auth);
-          $options = [
-            'title' => 'کمپلهای ترکی اصلی',
-            'body' => 'DEM Online Shopping',
-            'icon' => 'assets/img/dem_logo.png',
-            'badge' => 'assets/img/dem_logo.png',
-            'url' => 'https://localhost/dem.af/shop'
-          ];
-          $report = $webPush->sendOneNotification(
-            $subscription,
-            json_encode($options)
-          );
-          // handle eventual errors here, and remove the subscription from your server if it is expired
-          $endpoint = $report->getRequest()->getUri()->__toString();
-          if ($report->isSuccess()) {
-            echo "[v] Message sent successfully for subscription {$endpoint}.";
-          } else {
-            echo "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
-          }
-        }
-      }
+     }
+	public function send_push_notification() {
+	// here I'll get the subscription endpoint in the POST parameters
+	// but in reality, you'll get this information in your database
+	// because you already stored it (cf. push_subscription.php)
+	$query = $this->main_model->get_data('subscribers')->result();
+	foreach($query as $row) {
+		$notification_data = array(
+		"contentEncoding" => "aesgcm",
+		"endpoint" => $row->endpoint,
+		"keys" => array(
+			"auth" => $row->auth,
+			"p256dh" => $row->p256dh
+			)
+		);
+		// $subscription = Subscription::create(json_decode(file_get_contents('php://input'), true));
+		$subscription = Subscription::create($notification_data);
+		$auth = array(
+		'VAPID' => array(
+			'subject' => 'PHP Codeigniter Web Push Notification',
+			'publicKey' => file_get_contents(APPPATH . './../keys/public_key.txt'), // don't forget that your public key also lives in app.js
+			'privateKey' => file_get_contents(APPPATH . './../keys/private_key.txt'), // in the real world, this would be in a secret file
+		),
+		);
+		$webPush = new WebPush($auth);
+		$options = [
+		'title' => 'کمپلهای ترکی اصلی',
+		'body' => 'DEM Online Shopping',
+		'icon' => 'assets/img/dem_logo.png',
+		'badge' => 'assets/img/dem_logo.png',
+		'url' => 'https://localhost/dem.af/shop'
+		];
+		$report = $webPush->sendOneNotification(
+		$subscription,
+		json_encode($options)
+		);
+		// handle eventual errors here, and remove the subscription from your server if it is expired
+		$endpoint = $report->getRequest()->getUri()->__toString();
+		if ($report->isSuccess()) {
+		echo "[v] Message sent successfully for subscription {$endpoint}.";
+		} else {
+		echo "[x] Message failed to sent for subscription {$endpoint}: {$report->getReason()}";
+		}
+	}
+	}
 
 	  public function getlodechatlist() {
 		$session_id = $this->session->userdata('id');
