@@ -4,6 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<!-- Option 1: Include in HTML -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
     <title>Bootstrap demo</title>
     <style>
     html,body
@@ -31,11 +33,11 @@ padding-left:15px;
 <?php $meta= getmeta();
 ?>
 <p style="color:#888b97"><?php echo $meta->meta; ?></p>
-<div class="text-center">
-<a href="https://www.facebook.com/" class="m-2"><img src="<?php echo base_url();?>assets/images/facebook.png" alt="facebook" width="40"></a> 
-<a href="https://www.linkedin.com/company/celnow/" class="m-2"><img src="<?php echo base_url();?>assets/images/linkedin.png" alt="linkedin" width="40"></a>
-<a href="https://www.instagram.com/celnow.ind/" class="m-2"><img src="<?php echo base_url();?>assets/images/instagram (1).png" alt="instagram (1)" width="40"></a>
-<a href="https://www.youtube.com/channel/UCfStYDt1cu6IpYrOrGAP0Cw" class="m-2"><img src="<?php echo base_url();?>assets/images/youtube.png" alt="youtube" width="40"></a>
+<div class="text-center mt-3">
+<a href="https://www.facebook.com/" class="m-2"><i class="bi bi-facebook" style="font-size:35px; color:#8a8997;"></i></a> 
+<a href="https://www.linkedin.com/company/celnow/" class="m-2"><i class="bi bi-linkedin" style="font-size:35px; color:#8a8997;"></i></a>
+<a href="https://www.instagram.com/celnow.ind/" class="m-2"><i class="bi bi-instagram" style="font-size:35px; color:#8a8997;"></i></a>
+<a href="https://www.youtube.com/channel/UCfStYDt1cu6IpYrOrGAP0Cw" class="m-2"><i class="bi bi-youtube" style="font-size:35px; color:#8a8997;"></i></a>
 </div>
     </div>
     <div class="col-sm-3 col-6"  >
