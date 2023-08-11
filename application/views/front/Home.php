@@ -1,4 +1,9 @@
 <style>
+.btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: #d1fae5;
+    border-color: var(--bs-btn-hover-border-color);
+}
 .selected {
     background: #d1fae5;
     color: black;

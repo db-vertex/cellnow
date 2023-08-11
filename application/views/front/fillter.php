@@ -3,6 +3,11 @@
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 <style>
+    .btn:hover {
+    color: var(--bs-btn-hover-color);
+    background-color: #d1fae5;
+    border-color: var(--bs-btn-hover-border-color);
+}
 .cursor-center {}
 
 ._1un4s {
