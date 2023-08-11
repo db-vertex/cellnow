@@ -332,7 +332,7 @@
             font-family: 'Poppins';
             font-style: normal;
             font-weight: 400;
-            font-size: 9px;
+            font-size: 6px;
             line-height: 15px;
             /* identical to box height */
             color: #000000;
