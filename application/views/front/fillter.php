@@ -1640,7 +1640,7 @@ input[type="range"]::-moz-range-thumb {
 					  $cateory =  $this->uri->segment(3);
                       if($cateory!=4){
                         ?>
-        <div class="list-group m-2">
+        <div class="list-group m-2 mx-3">
         <div class="price-input">
                 <div class="field">
                     <span>Min</span>
