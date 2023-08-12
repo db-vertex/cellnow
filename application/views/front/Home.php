@@ -392,7 +392,7 @@ input::placeholder {
     height: 35px;
     border: 1px solid transparent;
     border-radius: 50%;
-    padding: 22px;
+   
     background-color: black;
 }
 
