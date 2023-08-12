@@ -218,7 +218,7 @@ input::placeholder {
 .testimonial {
     min-height: 375px;
     position: relative;
-    background-color: #80808091;
+    background-color: #D3D3D3;
     padding-top: 50px;
     padding-bottom: 50px;
     background-position: center;
@@ -390,6 +390,10 @@ input::placeholder {
 .testimonial .carousel-control-next-icon, .testimonial .carousel-control-prev-icon {
     width: 35px;
     height: 35px;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    padding: 22px;
+    background-color: black;
 }
 
 .carousel-item>div {
