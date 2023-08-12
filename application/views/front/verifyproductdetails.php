@@ -1935,7 +1935,7 @@
                                         alt="related_ads_card_img">
                                     <div class="card-body ">
                                         <div class="row">
-                                            <div class="col-12 ps-0" style="display: inline-flex;">
+                                            <div class="col-12 " style="display: inline-flex;">
                                                 <?php if (isset($product_detail->price)) {
                                                         if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) {
                                                             ?>

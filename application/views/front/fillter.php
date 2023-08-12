@@ -1502,7 +1502,7 @@ input[type="range"]::-moz-range-thumb {
                         </button>
                     </div>
                     <div class="col-10 pe-0 icon_cetgory">
-                        <div class="va-carrousel-flexbox_most">
+                        <div class="va-carrousel-flexbox_most" style="padding-bottom: 10px;">
 
                             <?php
 
@@ -1588,7 +1588,7 @@ input[type="range"]::-moz-range-thumb {
                                     onclick="return getproduct( <?php echo $sub->id; ?>,<?php echo $cateory; ?>)"
                                     <?php } ?>>
 
-                                    <img class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
+                                    <img class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id==39){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
                                         data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                         src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>"
                                         alt="">

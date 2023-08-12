@@ -96,14 +96,21 @@
     ?>
             <div class="col-sm-6">
 
-                <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"
-                    class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
-width: 131.9px;">
-                <div style="text-align:center">
+            <div class="row" style="place-content: center;">
+                    <div class="col-6">
+                        <div style="text-align: right;">
+                          
+                        </div>
+                            <img src="<?php echo base_url()."uploads/shop/".$shop->shop_images."";?>"
+                        class="img-fluid mx-auto rounded d-block" style="height: 131.9px; max-width: 100%;">
+                   </div>
+                   </div>
+
+                <div class="mt-3" style="text-align:center">
                     <h5><b>
-                            <?php echo ucfirst($profile->name); ?>
+                            <?php echo ucfirst($shop->name); ?>
                         </b></h5>
-                    <?php echo ucfirst($profile->Address); ?>
+                    <?php echo ucfirst($shop->Address); ?>
 
                 </div>
                 <div class="row text-center ">
@@ -134,16 +141,14 @@ width: 131.9px;">
                     <?php }else{ ?>
                     <div class="col">
                         <div class="row">
-                            <div class="col">
-                                <h4 class=" shop_images_view"><?php echo $shop->name;?> </h4>
-                            </div>
+                       
                             <div class="col"><?php if($shop->admin_approval==2){?><div>
                                     <a href="#" data-toggle="modal" data-target="#editshopdetail" class="btn " id="b"
-                                        style="align-self:center; background-color:#FF7474; color:#540C07">Rejected by
+                                        style="align-self:left; background-color:#FF7474; color:#540C07">Rejected by
                                         admin </a>
                                 </div><?php }else if($shop->admin_approval==1){?> <div>
                                     <a href="#" data-toggle="modal" data-target="#editshopdetail" class="btn " id="b"
-                                        style="align-self:center; background-color:#d1fae5; color:#13C571">Verified by
+                                        style="align-self:left; background-color:#d1fae5; color:#13C571">Verified by
                                         admin </a>
                                 </div><?php }?>
                             </div>

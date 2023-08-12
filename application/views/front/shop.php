@@ -354,22 +354,31 @@
             </div>
 
             <br>
-            <div class="row">
+            <div class="row ">
                 <?php
             $profile = get_seller_profile($user['user_id']);
 
               ?>
                 <div class="col-sm-6">
-
-                    <img src="<?php echo base_url()."uploads/profile/".$profile->profile_img."";?>"
-                        class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px;
-         width: 131.9px;">
+                    <div class="row" style="place-content: center;">
+                    <div class="col-6">
+                        <div style="text-align: right;">
+                            <a href="" data-toggle="modal" data-target="#createModal">
+                                <img class="btn-change"
+                                    src="<?php echo base_url(); ?>/assets/images/Group 451.png"
+                                    style="height: 27px; width:27px;margin-left: -22%;position: absolute;margin-top: 4px;border-radius: 100%;">
+                                </a>
+                        </div>
+                            <img src="<?php echo base_url()."uploads/shop/".$shop->shop_images."";?>"
+                        class="img-fluid mx-auto rounded d-block" style="height: 131.9px; max-width: 100%;">
+                   </div>
+                   </div>
                     <div style="text-align:center">
-                        <h5><b>
-                                <?php echo ucfirst($profile->name); ?>
+                        <h5 class="mt-3"><b>
+                                <?php echo ucfirst($shop->name); ?>
                             </b></h5>
                         <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png">
-                        <?php if(isset($profile->Address)) {echo ucfirst($profile->Address);} ?>
+                        <?php if(isset($shop->Address)) {echo ucfirst($shop->Address);} ?>
 
                     </div>
                     <div class="row text-center ">
@@ -387,10 +396,10 @@
                 <div class="col-sm-6 shop_details_border" style="">
                     <?php 
        
-           if(empty($shop)){ ?>
-                    <div class="row text-center mt-2">
+                             if(empty($shop)){ ?>
+                                <div class="row text-center mt-2">
 
-                        <div>
+                                    <div>
 
 
                             <h5 class="text-muted mt-4 card-title_Login">Take Your Shop/Services online on CelNow</h5>
@@ -399,8 +408,7 @@
                                 href="<?php echo base_url(); ?>welcome/shop"
                                 style="background-color: #13C571; color:#fff" class="btn spacetop card-title_Login"
                                 role="button" aria-disabled="true" id="c">ADD SHOP </a>
-                            <p class="text-muted mt-4 card-title_Login">Note: Once the shop details are submitted for
-                                verification they can't be changed
+                            <p class="text-muted mt-4 card-title_Login">
                             </p>
                         </div>
                     </div>
@@ -408,22 +416,20 @@
                         <?php }else{ ?>
                         <div class="col mt-4">
                             <div class="row">
-                                <div class="col">
-                                    <h5 class="shop_images_view"><b><?php echo ucfirst($shop->name);?> </b></h5>
-                                </div>
+                               
                                 <div class="col"><?php if($shop->admin_approval==2){?>
                                     <div>
                                         <a class="btn" id="b"
-                                            style="align-self:center; background-color:#FF7474; color:#540C07">Rejected
+                                            style="align-self:left; background-color:#FF7474; color:#540C07">Rejected
                                             by admin </a>
                                     </div><?php }else if($shop->admin_approval==1){?> <div>
                                         <p class="btn " id="b"
-                                            style="align-self:center; background-color:#d1fae5; color:#13C571">Verified
+                                            style="align-self:left; background-color:#d1fae5; color:#13C571">Verified
                                             by admin </p>
                                     </div><?php }else if($shop->admin_approval==0){?>
                                     <div>
                                         <a class="btn " id="b"
-                                            style="align-self:center; background-color:#FF7474; color:#540C07">Pending
+                                            style="align-self:left; background-color:#FF7474; color:#540C07">Pending
                                         </a>
                                     </div><?php } ?>
                                 </div>
@@ -1207,13 +1213,20 @@
                             <input name="GST" class="form-control" placeholder="GST Number" type="text" maxlength="20"
                                 value="<?php echo set_value('name'); ?>"
                                 style="border-radius:30px; border-color:#13C571" required>
-                            <input type="file" class="form-control mt-3" name="shop_images"
-                                style="border-radius:30px; border-color:#13C571">
                             <div class="invalid-feedback">
                                 Valid GST is required.
                             </div>
-
                         </div>
+
+                        <div class="form-group">
+                            <label>Upload Document</label>
+                            <input type="file" class="form-control mt-3" name="shop_images"
+                                style="border-radius:30px; border-color:#13C571" required>
+                            <div class="invalid-feedback">
+                                Choose A Document Image.
+                            </div>
+                        </div>
+
                         <div class="form-group">
                             <label>Description</label>
                             <textarea name="description" class="form-control" id="editor" placeholder="Description"
@@ -1222,13 +1235,20 @@
                             <div class="invalid-feedback">
                                 Valid message is required.
                             </div>
+                        </div>
 
-
+                        <div class="form-group">
+                            <label>Shop Banner</label>
+                            <input type="file" class="form-control mt-3" name="shop_banner"
+                                style="border-radius:30px; border-color:#13C571" required>
+                            <div class="invalid-feedback">
+                                Choose A Shop Banner.
+                            </div>
                         </div>
 
                         <div class="form-group">
 
-                            <label>Shop document photo Upload size(180 x 190) px</label>
+                            <label>Shop photo Upload size(180 x 190) px</label>
 
                             <div class="row">
                                 <div class="col ">
@@ -1318,6 +1338,41 @@
     </div>
 </div>
 </div>
+
+<div class="modal fade" id="createModal" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLongTitle">Update Profile Picture</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <form id="cover_img" enctype="multipart/form-data" action="<?php echo base_url();?>welcome/uploadshopbanner"
+                method="POST">
+                <input type="hidden" name="user_id" value="<?php echo $user['user_id'] ?>">
+                <div class="modal-body">
+                    <div class="form-group">
+
+                        <label></label>
+                        <input type="file" class="form-control" id="cover_image" name="profile_img" accept="image/*">
+                        <span id="cover_err" style="color:red;"></span>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn-change btn btn-secondary pull-left"
+                        data-dismiss="modal">Cancel</button>
+                    <button type="button" style="background-color:#13C571; color:#fff;
+                            border-radius:0.20rem;" class="btn-change btn btn-rounded"
+                        onclick="return checkcoverimage();">Upload</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+
 <script>
         document.getElementById('Shop_add').addEventListener('submit', function(event) {
             var checkbox = document.getElementById('flexCheckChecked_add');
@@ -1345,7 +1400,8 @@
                 errorMessage.style.display = 'none';
             }
         });
-    </script>
+</script>
+
 <script>
 document.querySelectorAll('.profile_img').forEach(function(input) {
     input.addEventListener('change', function() {

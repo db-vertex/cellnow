@@ -89,7 +89,7 @@ class Welcome extends CI_Controller
 				
 			}
 			$sub .= '>
-		<img class="';if ($value->id == 7 || $value->id == 13 || $value->id == 43 || $value->id== 53 || $value->id== 77 || $value->id== 87 || $value->id==90) { $sub .='select ';} $sub .='btn-change common_selector sub_category '; if($category_id==5 || $category_id==6 || $category_id==7){  $sub.='sub_new'.$value->subcategory_id.'' ;}else{   $sub.='sub_new'.$value->id.'' ; } $sub.='"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
+		<img class="';if ($value->id == 7 || $value->id == 13 || $value->id == 43 || $value->id== 53 || $value->id== 77 || $value->id== 87 || $value->id==90 || $value->id==39 ) { $sub .='select ';} $sub .='btn-change common_selector sub_category '; if($category_id==5 || $category_id==6 || $category_id==7){  $sub.='sub_new'.$value->subcategory_id.'' ;}else{   $sub.='sub_new'.$value->id.'' ; } $sub.='"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
 		 <center style="color:black; font-size:12px; font-weight:500">' . $value->product_type . '</center>
 		</p>
 		
@@ -1575,30 +1575,62 @@ $sub .= '</h6>
 				$id = $this->db->insert_id();
 
 				$this->load->library('upload');
-		
-		if (!empty($_FILES['shop_images']['name'])) {
-			$config['upload_path'] = './uploads/shop/';
-			// $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
-			$config['allowed_types'] = '*';
-			$this->load->library('upload', $config);
-			if (!$this->upload->do_upload('shop_images')) {
-			   
-			}else{
 
-				//---- Successfully upload than add member-----
-				$image_data = $this->upload->data();
+				
+				
+	
+		  if (!empty($_FILES['shop_images']['name'])) { 
+	
+				$_FILES['file']['name']     = $_FILES['shop_images']['name'];
+				$_FILES['file']['type']     = $_FILES['shop_images']['type'];
+				$_FILES['file']['tmp_name'] = $_FILES['shop_images']['tmp_name'];
+				$_FILES['file']['error']     = $_FILES['shop_images']['error'];
+				$_FILES['file']['size']     = $_FILES['shop_images']['size'];
+				
+				
+				$config['upload_path'] = './uploads/shop/';
+				$config['allowed_types'] = '*';
+				
+				// Load and initialize upload library
+				$this->load->library('upload', $config);
+				$this->upload->initialize($config);
+				if($this->upload->do_upload('file')){
+					$image_data = $this->upload->data();
 				$filename = $image_data['file_name'];
-
-
 			 $userData['document'] = $filename;
 			 $this->db->update("shop", ["document"=>$filename], "id=$id");
-			}
-		  }
+		}}
+
+		if (!empty($_FILES['shop_banner']['name'])) { 
+	
+			$_FILES['file']['name']     = $_FILES['shop_banner']['name'];
+			$_FILES['file']['type']     = $_FILES['shop_banner']['type'];
+			$_FILES['file']['tmp_name'] = $_FILES['shop_banner']['tmp_name'];
+			$_FILES['file']['error']     = $_FILES['shop_banner']['error'];
+			$_FILES['file']['size']     = $_FILES['shop_banner']['size'];
+			
+			
+			$config['upload_path'] = './uploads/shop/';
+			$config['allowed_types'] = '*';
+			
+			// Load and initialize upload library
+			$this->load->library('upload', $config);
+			$this->upload->initialize($config);
+			if($this->upload->do_upload('file')){
+				$image_data = $this->upload->data();
+			$filename = $image_data['file_name'];
+		 $userData['shop_images'] = $filename;
+		 $this->db->update("shop", ["shop_images"=>$filename], "id=$id");
+	}}
+
+
+
+
 
 		
 
 	if (!empty($_FILES['shop_img']['name'])) {
-		                          
+	          
 		$filesCount = count($_FILES['shop_img']['name']);
 		for($i = 0; $i < $filesCount; $i++){
 			$_FILES['file']['name']     = $_FILES['shop_img']['name'][$i];
@@ -1614,8 +1646,6 @@ $sub .= '</h6>
 			// Load and initialize upload library
 			$this->load->library('upload', $config);
 			$this->upload->initialize($config);
-			/*$id = $this->post('product_id');*/
-			// Upload file to server
 			if($this->upload->do_upload('file')){
 				// Uploaded file data
 				$fileData = $this->upload->data();
@@ -2005,6 +2035,35 @@ $sub .= '</h6>
 			}
 		}
 	}
+
+	public function uploadshopbanner()
+{
+    $user_id = $this->input->post('user_id');
+  
+    
+    if (!empty($_FILES['profile_img']['name'])) {
+        $config['upload_path'] = './uploads/shop/';
+        $config['allowed_types'] = '*';
+        $this->load->library('upload', $config);
+        
+        if (!$this->upload->do_upload('profile_img')) {
+            // Handle upload error if needed
+        } else {
+            // Successfully upload new image
+            $image_data = $this->upload->data();
+            $filename = $image_data['file_name'];
+
+			$shop = get_id_by_shop($user_id);
+                $old_image_path = './uploads/shop/' . $shop->shop_images;
+                if (file_exists($old_image_path)) {
+                    unlink($old_image_path);
+                } 
+            $this->db->update("shop", ["shop_images" => $filename], "user_id=$user_id");
+            return redirect('welcome/shop');
+        }
+    }
+}
+
 
 
 	public function termscondition()

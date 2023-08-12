@@ -125,8 +125,9 @@ $msg_class=$this->session->flashdata('msg_class')
                   <th>Description</th>
               
 
-                    <th>Registered on</th>
+                  <th>Registered on</th>
                   <th>Shop Image</th>
+                  <th>Image Document</th>
                   <th>Approval</th>
                   
                 </tr>
@@ -134,17 +135,10 @@ $msg_class=$this->session->flashdata('msg_class')
         <tbody>
 
         <?php $i=0; foreach ($shop as $valued) {
-          
-
-$i++;
-
-?>
-
-
+          $i++;
+          ?>
                 <tr id="<?php echo $valued->id; ?>">
-
                 <td><?php echo  $i;?></td>
-               
                 <td><?php echo  $valued->name;?></td>
                 <td><?php echo  $valued->mobile;?></td>
                 <td><?php echo  $valued->Address;?></td>
@@ -170,6 +164,7 @@ $i++;
 
                <td><?=date("d M, Y", strtotime($valued->created_at))?></td>
                <td><a href="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?> " target="_blank"><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->shop_images?>"></a></td>
+               <td><a href="<?php echo base_url();?>uploads/shop/<?php echo $valued->document?> " target="_blank"><img height="70" width="70" src="<?php echo base_url();?>uploads/shop/<?php echo $valued->document?>"></a></td>
                <td>  <select  id="pay_type" data-id="<?php echo $valued->id?>"   class="btn btn-info prioritydrop">
            
            <option value="0" <?=(($valued->admin_approval==0)?"selected":"")?>>Unverified</option>
