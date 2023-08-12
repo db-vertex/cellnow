@@ -227,7 +227,7 @@ input::placeholder {
 .testimonial {
     min-height: 375px;
     position: relative;
-    background: url(assets/review/celnow_background.png);
+    background-color: gray;
     padding-top: 50px;
     padding-bottom: 50px;
     background-position: center;

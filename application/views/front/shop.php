@@ -318,6 +318,12 @@
         width: inherit;
         height: inherit;
     }
+    .images_validation{
+        display:none;
+    }
+    .Terms_condition{
+        display:none; 
+    }
     </style>
 </head>
 
@@ -1101,7 +1107,7 @@
 
                     <?php } ?>
                     <form class="needs-validation" novalidate action="<?php echo base_url(); ?>welcome/addshop"
-                        method="post" enctype="multipart/form-data">
+                        method="post" enctype="multipart/form-data" id="Shop_add">
                         <input type="hidden" name="user_id" value="<?php echo $user['user_id'] ?>">
                         <div class="form-group ">
                             <label>Shop Name</label>
@@ -1230,11 +1236,14 @@
                                         <label for="filebtn1" class="filebtn ">
                                             <i class="fa fa-plus fa_plus" aria-hidden="true"></i>
                                             <span class="delete-icon"><i class="fa fa-trash fa_delete"></i></span>
-                                            <input type="file" id="filebtn1" class="profile_img" style="display: none"
+                                            <input type="file" id="filebtn1" class="profile_img form-control" style="display: none"
                                                 name="shop_img[]" accept="image/*" required>
                                             <img src="#" class="upl_img" style="display: none;">
-
                                         </label>
+                                        <div class="images_validation text-danger">
+                                        Please Select One Images.
+                                        </div>
+
                                     </div>
                                 </div>
                                 <div class="col">
@@ -1282,7 +1291,7 @@
 
                 <div class="form-group">
                     <div class="form-check form-check-inline">
-                        <input class="form-check-input ms-3 border-dark" type="checkbox" value="" id="flexCheckChecked"
+                        <input class="form-check-input ms-3 border-dark" type="checkbox" value="" id="flexCheckChecked_add"
                             style="margin-top: 5px;" required>
                         <label>
                             <a class="text-decoration-none text-dark"
@@ -1290,7 +1299,7 @@
                                 Terms and Conditions
                             </a>
                         </label>
-                        <div class="invalid-feedback">
+                        <div class="Terms_condition text-danger">
                             Terms & condition is required.
                         </div>
                     </div>
@@ -1298,7 +1307,7 @@
                 
                 <input type="text" class="form-control" name="latitude" id="latitude" hidden />
                 <input type="text" class="form-control" name="longitude" id="longitude" hidden />
-                <center><button class=" mb-2 btn btn-lg  text-white mt-2"
+                <center><button class=" mb-2 btn btn-lg  text-white mt-2" id="submitButton"
                         style="background-color:#13C571;border-radius:30px;width:40%;" type="submit"
                         name="submit">Save</button>
 
@@ -1309,10 +1318,38 @@
     </div>
 </div>
 </div>
+<script>
+        document.getElementById('Shop_add').addEventListener('submit', function(event) {
+            var checkbox = document.getElementById('flexCheckChecked_add');
+            var errorMessage = checkbox.closest('.form-check').querySelector('.Terms_condition');
+            
+            if (!checkbox.checked) {
+                errorMessage.style.display = 'block';
+            
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+</script>
 
+<script>
+        document.getElementById('Shop_add').addEventListener('submit', function(event) {
+            var fileInput = document.getElementById('filebtn1');
+            var errorMessage = document.querySelector('.images_validation');
+            
+            if (fileInput.files.length === 0) {
+            
+                errorMessage.style.display = 'block';
+               // event.preventDefault(); 
+            } else {
+                errorMessage.style.display = 'none';
+            }
+        });
+    </script>
 <script>
 document.querySelectorAll('.profile_img').forEach(function(input) {
     input.addEventListener('change', function() {
+        var errorMessage = document.querySelector('.images_validation');
         var fileInput = this;
         var imgBox = fileInput.closest('.image-box');
         var imgElement = imgBox.querySelector('.upl_img');
@@ -1327,6 +1364,7 @@ document.querySelectorAll('.profile_img').forEach(function(input) {
                 imgElement.style.display = 'inline';
                 deleteIcon.style.display = 'block';
                 fa_plus.style.display = 'none';
+                errorMessage.style.display = 'none';
             };
 
             reader.readAsDataURL(fileInput.files[0]);
