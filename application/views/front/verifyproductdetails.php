@@ -1400,7 +1400,8 @@
                                 <p class="details_text"><b>Education Type</b></p>
                             </div>
                             <div class="col-4">
-                                <p class="details_text"><?php echo $product_detail->Education_Type; ?></p>
+                                <?php    $type  = get_product_type_name($product_detail->Education_Type);   ?>
+                                <p class="details_text"><?php print_r($type); ?></p>
                             </div>
                         </div>
                         <div class="row   ms-4">
