@@ -369,15 +369,24 @@
                                     style="height: 27px; width:27px;margin-left: -22%;position: absolute;margin-top: 4px;border-radius: 100%;">
                                 </a>
                         </div>
-                            <img src="<?php echo base_url()."uploads/shop/".$shop->shop_images."";?>"
+                            <img
+                             src=" <?php if(isset($shop->shop_images)) {echo base_url()."uploads/shop/".$shop->shop_images;} 
+                             else{
+                                echo base_url()."uploads/shop/noshop_images.png";
+                             }
+                             ?>"
                         class="img-fluid mx-auto rounded d-block" style="height: 131.9px; max-width: 100%;">
                    </div>
                    </div>
                     <div style="text-align:center">
                         <h5 class="mt-3"><b>
-                                <?php echo ucfirst($shop->name); ?>
+                                <?php if(isset($shop->name)) {echo ucfirst($shop->name);} ?>
                             </b></h5>
-                        <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png">
+
+                        <img style="max-width:25px;" src="<?php if(isset($shop->Address)) {echo base_url()."assets/images/location .png";} 
+                             else{
+                             }
+                             ?>">
                         <?php if(isset($shop->Address)) {echo ucfirst($shop->Address);} ?>
 
                     </div>
