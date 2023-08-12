@@ -436,7 +436,7 @@
                             </div>
 
                             <p class="mt-3 ml-3 word"><?php echo $shop->description;?></p>
-                            <p><?php echo $shop->Address;?></p>
+                          
                             <p><?php echo $shop->mobile;?></p>
                             <p class=" mt-5"><b>GST Number -</b><?php echo $shop->GST;?></p>
 

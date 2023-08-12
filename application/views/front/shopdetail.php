@@ -154,7 +154,7 @@
                             </div>
                         </div>
                         <p class=" word mt-2"><?php echo $shop->description;?></p>
-                        <p class=""><?php echo $shop->Address;?></p>
+                      
 
                         <p class="mt-2"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>
                         <p class=""><b>Type of service: </b><?php echo $shop->service_type;?></p>
