@@ -25,10 +25,7 @@
     height: 64px;
 }
 
-.img-size {
-    max-height: 500px;
-    min-height: 500px;
-}
+
 
 .search_wrap .search_box .btn {
     position: absolute;
@@ -80,10 +77,7 @@ input::placeholder {
         font-weight: bold;
     }
 
-    .img-size {
-        max-height: 300px;
-        min-height: 300px;
-    }
+   
 }
 
 @media screen and (max-width: 560px) {
@@ -92,10 +86,7 @@ input::placeholder {
         font-weight: bold;
     }
 
-    .img-size {
-        max-height: 200px;
-        min-height: 200px;
-    }
+  
 }
 
 .mores {
@@ -227,7 +218,7 @@ input::placeholder {
 .testimonial {
     min-height: 375px;
     position: relative;
-    background-color: gray;
+    background-color: #80808091;
     padding-top: 50px;
     padding-bottom: 50px;
     background-position: center;
@@ -417,7 +408,7 @@ input::placeholder {
         ?>
                 <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
                     <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px;"
-                            class="d-block w-100 img-size" id='<?php  echo $banner->url ?>'
+                            class="d-block w-100 img-size img-fluid" id='<?php  echo $banner->url ?>'
                             src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>"
                             alt="First slide"></a>
                 </div>
@@ -840,18 +831,22 @@ input::placeholder {
             <?php if($allcount > 4){ ?>
             <center class=""><a
                     style="width:100px; border-radius:20px;background-color: #10B981; color:white; border-color:#10B981; "
-                    href="<?php echo base_url();?>welcome/donatefillter_product/8" class="btn btn-danger">See All</a>
+                    href="<?php echo base_url();?>welcome/donatefillter_product/1" class="btn btn-danger">See All</a>
             </center>
             <?php } ?>
         </div>
     </div>
 </section>
 
-<div class="container">
+<div class="container ">
     <div class="row pt-2">
         <div class="col-12">
-            <a href="<?php echo base_url();?>welcome/shop"><img class="img-fluid"
-                    src="<?php echo base_url();?>assets/images/6.png" width="100%" alt="Second slide"
+            <?php
+            $banner_name =  get_post_banner_name(1);
+         
+            ?>
+            <a href="<?php echo $banner_name->url;?>"><img class="img-fluid"
+                    src="<?php echo base_url();?>uploads/banner/<?php echo $banner_name->banner_image;?>" width="100%" alt="Second slide"
                     style="border-radius: 31px;"></a>
         </div>
     </div>
@@ -876,8 +871,12 @@ input::placeholder {
 <div class="container ">
     <div class="row pt-2">
         <div class="col-12">
-            <a href="<?php echo base_url(); ?>welcome/postproduct"><img class="img-fluid"
-                    src="<?php echo base_url();?>assets/images/4 (1).png" width="100%" alt="Second slide"
+            <?php
+            $banner_name =  get_post_banner_name(2);
+         
+            ?>
+            <a href="<?php echo $banner_name->url;?>"><img class="img-fluid"
+                    src="<?php echo base_url();?>uploads/banner/<?php echo $banner_name->banner_image;?>" width="100%" alt="Second slide"
                     style="border-radius: 31px;"></a>
         </div>
     </div>

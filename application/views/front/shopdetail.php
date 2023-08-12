@@ -153,7 +153,7 @@
                                 </div><?php }?>
                             </div>
                         </div>
-                        <p class=" word mt-2"><?php echo $shop->description;?></p>
+                        <p class=" word mt-2"><?php echo ucfirst($shop->description);?></p>
                       
 
                         <p class="mt-2"><b>Open-close time :</b> <?php echo $shop->open_close_time;?></p>

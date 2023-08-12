@@ -368,6 +368,29 @@ public function all_contactus()
       return $q;
    }   
 
+   public function post_banner($banner_id, $data)
+   {
+       // Get the old banner name from the database
+       $this->db->select('banner_image');
+       $this->db->where('id', $banner_id);
+       $query = $this->db->get('post_banner');
+       $result = $query->row();
+       $old_banner_name = $result->banner_image;
+   
+       // Delete the old image from the folder
+       if ($old_banner_name) {
+           $old_image_path = './uploads/banner/' . $old_banner_name;
+           if (file_exists($old_image_path)) {
+               unlink($old_image_path);
+           }
+       }
+   
+       // Update the banner record
+       $this->db->where('id', $banner_id);
+       $q=  $this->db->update('post_banner', $data);
+       return $q;
+   }
+
   public function add_customad($p)
    {
       $q=$this->db->insert('costomad',$p);

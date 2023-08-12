@@ -109,18 +109,18 @@ class Welcome extends CI_Controller
 	public function getproduct($data = " ")
 	{
 		$row = $this->input->post('row');
-		$subcategory_id = $this->input->post('subcategory_id');
+		$subcategory_id = $this->input->post('subcategory_id'); 
 		$category_id = $this->input->post('category_id');
-
+		$donate = $this->input->post('donate');
+	
 		// echo $this->db->last_query();
 		$sub = "";
 		if ($subcategory_id) {
 			$product = get_product_by_subid($subcategory_id,$category_id);
 			$all_count = get_product_by_subid_count($subcategory_id);
-
-
-		} else {
-
+		} 
+		
+		else {
 			$product = get_all_bost($row);
 			$all_count =get_all_boost_count();
 		}
@@ -193,7 +193,7 @@ $sub .= '</h6>
 			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
 		}
 		 if($all_count >4){
-         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/8").'" class="btn">See All</a></center>';
+         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/.$getproduct_home_category_id").'" class="btn">See All</a></center>';
             } 
 		echo $sub;
 
@@ -777,7 +777,7 @@ $sub .= '</h6>
 						return redirect('welcome');
 					}
 				} else {
-					$this->session->set_flashdata('Login_failed', 'Password wrong');
+					$this->session->set_flashdata('Login_failed', 'Invalid password');
 					$this->session->set_flashdata('msg_class', 'alert-danger');
 
 					$this->load->view('front/header', ['success' => true]);
@@ -786,7 +786,7 @@ $sub .= '</h6>
 				}
 
 			} else {
-				$this->session->set_flashdata('Login_failed', 'This number is not register');
+				$this->session->set_flashdata('Login_failed', 'The phone number is not registered');
 				$this->session->set_flashdata('msg_class', 'alert-danger');
 
 				$this->load->view('front/header', ['success' => true]);
@@ -841,8 +841,8 @@ $sub .= '</h6>
 		$this->form_validation->set_rules('phone','mobile','required|min_length[10]|max_length[10]|is_unique[users.phone]',
 			array(
 				'required' => 'The %s field is required.',
-				'min_length' => 'The %s must be at least  10 <br> characters long.',
-				'max_length' => 'The %s must not exceed  10 <br> characters.',
+				'min_length' => 'The %s must be at <br> least  10  characters long.',
+				'max_length' => 'The %s must not <br> exceed  10  characters.',
 				'is_unique' => 'The %s already exists.'
 			)
 		);
@@ -850,14 +850,14 @@ $sub .= '</h6>
 		$this->form_validation->set_rules('password','password','required|min_length[6]',
 			array(
 				'required' => 'The %s field is required.',
-				'min_length' => 'The %s must be at least <br> 6 characters long.'
+				'min_length' => 'The %s must be <br> at least  6 characters long.'
 			)
 		);
 		
 		$this->form_validation->set_rules('confirmpassword','confirm password','required|matches[password]',
 			array(
 				'required' => 'The %s field <br>  is required.',
-				'matches' => 'The %s does not <br> match the Password.'
+				'matches' => 'The %s does <br> not  match the Password.'
 			)
 		);
 		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
@@ -971,7 +971,7 @@ $sub .= '</h6>
 				$this->load->view('front/changepassword', ['success' => true, 'otp' => $randCode]);
 				$this->load->view('front/footer');
 			} else {
-				$this->session->set_flashdata('Login_failed', 'This number is not register');
+				$this->session->set_flashdata('Login_failed', 'The phone number is not registered');
 				$this->session->set_flashdata('msg_class', 'alert-danger');
 
 				$this->load->view('front/header', ['success' => true]);
@@ -1033,7 +1033,7 @@ $sub .= '</h6>
 				$update = $this->user->update($userData, $udata->user_id);
 				return redirect('welcome/forgotpasswordotp');
 			} else {
-				$this->session->set_flashdata('Login_failed', 'This number is not register');
+				$this->session->set_flashdata('Login_failed', 'The phone number is not registered');
 				$this->session->set_flashdata('msg_class', 'alert-danger');
 
 				$this->load->view('front/header', ['success' => true]);
@@ -1251,8 +1251,6 @@ $sub .= '</h6>
 
 	}
 
-	
-
 
 	public function searchshop()
 	{
@@ -1386,10 +1384,11 @@ $sub .= '</h6>
 		$select_type = $this->input->post('select_type');
 		$search = $this->input->post('search');
 		$category = $this->session->userdata('filter_id');
+		$donate = $this->input->post('donate');
 
 		$config = array();
 		$config["base_url"] = "";
-		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter);
+		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter,$donate);
 		$config["per_page"] = 15;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
@@ -1417,7 +1416,7 @@ $sub .= '</h6>
 		$output = array(
 			'Status' => 200,
 			'pagination_link' => $this->pagination->create_links(),
-			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$search,$rent_filter)
+			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$search,$rent_filter,$donate)
 		);
 		echo json_encode($output);
 	}
@@ -1569,7 +1568,7 @@ $sub .= '</h6>
 
 		
 
-				$post_data = array('name' => $name, 'email' => $email, 'user_id' => $user_id, 'mobile' => $mobile, 'shop_category_id' => $shop_category, 'Address' => $Address, 'GST' => $GST, 'description' => $description, 'service_type' => $service_type, 'open_close_time' => $open_close_time);
+				$post_data = array('name' => $name, 'email' => $email, 'user_id' => $user_id, 'mobile' => $mobile, 'shop_category_id' => $shop_category, 'Address' => $Address, 'GST' => $GST, 'description' => $description, 'service_type' => $service_type, 'open_close_time' => $open_close_time,'created_at'=> date('Y-m-d H:i:s'));
 
 				$this->db->insert('shop', $post_data);
 				$id = $this->db->insert_id();

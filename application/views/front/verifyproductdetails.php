@@ -2079,8 +2079,8 @@
                                 oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);"
                                 maxlength="10" minlength="10" value="" placeholder="Mobile"
                                 style="border-radius:30px; border-color:#13C571" required>
-                            <p id="mobile_error"></p>
-                            <div class="invalid-feedback">
+                            <p id="mobile_error"  class="text-danger"></p>
+                            <div class="invalid-feedback text-danger">
                                 Valid mobile is required.
                             </div>
                         </div>

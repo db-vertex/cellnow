@@ -21,7 +21,8 @@
 
 <section class="content">
 <div class="row">
-<a href="<?=  base_url('Admin/add_banner'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Add Banner</a>
+<a href="<?=  base_url('Admin/add_banner'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Main Banner</a>
+<a href="<?=  base_url('Admin/post_banner'); ?>" class="btn btn-primary btn-md"style="margin-left: 16px;margin-bottom: 10px;">Post Banner</a>
 
 <?php  if($msg=$this->session->flashdata('msg')): 
 

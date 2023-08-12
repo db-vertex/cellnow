@@ -994,6 +994,22 @@ public function add_banner()
 
 }
 
+public function post_banner()
+{
+       $session_id = $this->session->userdata('admin_id');
+        if($session_id)
+       {
+            
+        $admin_detail = $this->admin_model->get_admin_data($session_id);
+        $this->load->view('post_banner',['admin_detail'=>$admin_detail]);
+    
+       }else{
+
+            return redirect('admin');
+       }
+
+}
+
 public function add_customad()
 {
        $session_id = $this->session->userdata('admin_id');
@@ -1136,13 +1152,7 @@ public function save_video()
 public function save_banner()
 {
 
-	//echo "here";
- 
- $url=$this->input->post('url');
-
-
-
-
+         $url=$this->input->post('url');
        if (!empty($_FILES['banner_image']['name'])) {
                 $config['upload_path'] = './uploads/banner/';
                 // $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
@@ -1173,6 +1183,44 @@ public function save_banner()
           return redirect('admin/banner');
         
 }
+
+public function post_banner_1()
+{
+
+         $url=$this->input->post('url');
+         $banner_id=$this->input->post('banner_id');
+       if (!empty($_FILES['banner_image']['name'])) {
+                $config['upload_path'] = './uploads/banner/';
+                // $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
+                $config['allowed_types'] = 'gif|jpg|jpeg|png';
+                $this->load->library('upload', $config);
+                if (!$this->upload->do_upload('banner_image')) {
+                    //---- upload failed than show error-----
+                    //$this->session->set_flashdata('error', $this->upload->display_errors());
+                    // $this->response(['status' => FALSE,'message' =>$this->upload->display_errors()], REST_Controller::HTTP_BAD_REQUEST);
+                } else {
+                    //---- Successfully upload than add member-----
+                    $image_data = $this->upload->data();
+                    $icon = $image_data['file_name'];
+                }
+            }
+
+              $data=array('banner_image'=> $icon,'url'=> $url,'created'=>date('Y-m-d H:i:s'));
+          if($this->admin_model->post_banner($banner_id, $data))
+          {
+            $this->session->set_flashdata('msg','Banner Added Successful!');
+            $this->session->set_flashdata('msg_class','alert-success');
+          }
+          else
+          {
+            $this->session->set_flashdata('msg','Banner Added Unsuccessful!!!');
+            $this->session->set_flashdata('msg_class','alert-danger');
+          }
+          return redirect('admin/banner');
+        
+}
+
+
 
 public function save_customad()
 {

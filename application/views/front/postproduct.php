@@ -1595,8 +1595,7 @@
 
                             <div class="col-sm-6 hiddens" id="Price_div">
                                 <label for="Price" class="form-label post_input_lable">Price(INR)</label>
-                                <input type="text" class="form-control post_input_fild" id="Price" name="Price"
-                                    placeholder="Please Enter Price">
+                                <input type="text" class="form-control post_input_fild" id="Price" name="Price" placeholder="Please Enter Price">
                                 <div class="invalid-feedback">
                                     Please Enter Price.
                                 </div>
@@ -2126,17 +2125,7 @@
 
             document.getElementById("school_eduction_div").style.display = "none";
             document.getElementById("job_Office_Address_div").style.display = "none";
-            $('#category').on('change.Price,use_years,Have_Bill,Warrenty', function() {
-                $("#Price_div,#use_years_div,#Have_Bill_div,#Warrenty_div").toggle($(this)
-                    .val() == 1);
-
-                if ($(this).val() == 1) {
-                    Price.required = true;
-                    use_years.required = true;
-                    Have_Bill.required = true;
-                    Warrenty.required = true;
-                }
-            }).trigger('change.Price,use_years,Have_Bill,Warrenty');
+          
 
 
         });
@@ -2197,6 +2186,22 @@
             $('#Food').prop('required', false);
 
             document.getElementById("school_eduction_div").style.display = "none";
+
+            $('#subcategory').on('change.Price,use_years,Have_Bill,Warrenty', function() {
+                $("#Price_div,#use_years_div,#Have_Bill_div,#Warrenty_div").toggle($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3
+                || $(this).val() == 4 || $(this).val() == 5 || $(this).val() == 6 || $(this).val() == 7 || $(this).val() == 8 
+                || $(this).val() == 9  || $(this).val() == 10  || $(this).val() == 11);
+
+                if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3
+                || $(this).val() == 4 || $(this).val() == 5 || $(this).val() == 6 || $(this).val() == 7 || $(this).val() == 8 
+                || $(this).val() == 9  || $(this).val() == 10  || $(this).val() == 11) {
+                  
+                    Price.required = true;
+                    use_years.required = true;
+                    Have_Bill.required = true;
+                    Warrenty.required = true;
+                }
+            }).trigger('change.Price,use_years,Have_Bill,Warrenty');
 
             $('#subcategory').on('change.reusable_parts_Select_Type,Product_Brand', function() {
                 $("#reusable_parts_Select_Type_div,#reusable_parts_Product_Brand_div").toggle($(

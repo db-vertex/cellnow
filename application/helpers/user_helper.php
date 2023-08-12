@@ -769,6 +769,12 @@ function get_product_type_name($id){
     return $category;
 }
 
+function get_post_banner_name($id){
+  $CI = & get_instance();
+    $category=$CI->db->get_where("post_banner", "id=$id")->row();
+    return $category;
+}
+
 function get_product_sub_name($id){
   $CI =& get_instance();
     $category=$CI->db->get_where("subcategory", "sub_id=$id")->row()->sub_category;
