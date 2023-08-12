@@ -33,7 +33,7 @@ padding-left:15px;
 <?php $meta= getmeta();
 ?>
 <p style="color:#888b97"><?php echo $meta->meta; ?></p>
-<div class="text-center mt-3">
+<div class="text-center mt-3 mb-3">
 <a href="https://www.facebook.com/" class="m-2"><i class="bi bi-facebook" style="font-size:35px; color:#8a8997;"></i></a> 
 <a href="https://www.linkedin.com/company/celnow/" class="m-2"><i class="bi bi-linkedin" style="font-size:35px; color:#8a8997;"></i></a>
 <a href="https://www.instagram.com/celnow.ind/" class="m-2"><i class="bi bi-instagram" style="font-size:35px; color:#8a8997;"></i></a>
