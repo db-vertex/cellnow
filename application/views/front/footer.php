@@ -25,7 +25,7 @@ padding-left:15px;
     </style>
   </head>
   <body>
-  <div class="container  pt-5 footer_hide">
+  <div class="container  pt-5 footer_hide card-title_Login">
     <div class="container">
   <div class="row">
     <div class="col-sm-6 ">

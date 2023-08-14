@@ -3527,6 +3527,7 @@ $sub .= '</h6>
 
 		$this->load->library('upload');
 		$dataInfo = array();
+		print_r($_FILES['profile_img']['name']);die();
 		if (!empty($_FILES['profile_img']['name'])) {
 
 			$filesCount = count($_FILES['profile_img']['name']);

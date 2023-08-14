@@ -1335,6 +1335,11 @@
     text-overflow: ellipsis;
     white-space: nowrap;
 }
+.search_box{
+    font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 600; 
+}
 
     </style>
 

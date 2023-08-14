@@ -503,11 +503,13 @@
                         <div class="row images_small_box_row ms-1 ">
 
                             <div class="col-3 images_small_box m-2">
-                                <i class="bi bi-x-circle-fill btn-rmv2 me-3" id="removeImage2" onclick="images_2()"></i>
+                              
                                 <?php if($get_data->images_2!==NULL){ ?>
+                                    <i class="bi bi-x-circle-fill btn-rmv2 me-3"  id="removeImage2" onclick="images_2()"></i>
                                 <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>"
                                     class="preview2" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
+                                    <i class="bi bi-x-circle-fill btn-rmv2 me-3" style="display:none;"  id="removeImage2" onclick="images_2()"></i>
                                 <img id="ImgPreview2" src="" class="preview2"
                                     style="display:none; width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
@@ -521,11 +523,13 @@
                                     accept="image/*" style="visibility:hidden;">
                             </div>
                             <div class="col-3 images_small_box m-2">
-                                <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3" onclick="images_3()"></i>
                                 <?php if($get_data->images_3!==NULL){ ?>
+                                    <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3"  onclick="images_3()"></i>
                                 <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>"
                                     class="preview3" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
+                                    <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3" style="display:none;" onclick="images_3()"></i>
+    
                                 <img id="ImgPreview3" src="" class="preview3"
                                     style="display:none; width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
@@ -533,15 +537,18 @@
                                 <?php } ?>
                                 <label class="images_small_box__plus" id="images_small_box__plus_3" for="images_3"
                                     class="btn">+</label>
-                                <input type="file" class="form-control-file" id="images_3" name="profile_img[]"
+                                <input type="file" class="form-control-file" id="images_3"  name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
                             </div>
+
                             <div class="col-3 images_small_box m-2">
-                                <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" onclick="images_4()"></i>
+                           
                                 <?php if($get_data->images_4!==NULL){ ?>
+                                    <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" onclick="images_4()"></i>
                                 <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>"
                                     class="preview4" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
+                                    <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" style="display:none;" onclick="images_4()"></i>
                                 <img id="ImgPreview4" src="" class="preview4"
                                     style="display:none; width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
@@ -553,12 +560,13 @@
                                     accept="image/*" style="visibility:hidden;">
                             </div>
                             <div class="col-3 images_small_box m-2">
-
+                            
                                 <?php if($get_data->images_5!==NULL){ ?>
-                                <i class="bi bi-x-circle-fill btn-rmv5 me-3" id="removeImage5" onclick="images_5()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3"  id="removeImage5" onclick="images_5()"></i>      
                                 <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>"
                                     class="preview5" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
+                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3"   style="display:none;" id="removeImage5" onclick="images_5()"></i>
                                 <img id="ImgPreview5" src="" class="preview5"
                                     style="display:none; width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
@@ -853,6 +861,8 @@ $(document).ready(function() {
         document.getElementById("ImgPreview3").style.display = "none";
         document.getElementById("images_small_box__plus_3").style.display = "block";
         document.getElementById("removeImage3").style.display = "none";
+      var id =   document.getElementById('images_3').value = null;
+
         $("#images_3").val("");
         $("#ImgPreview3").attr("src", "");
         $('.preview3').removeClass('it');

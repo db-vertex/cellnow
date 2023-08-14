@@ -164,14 +164,15 @@ input::placeholder {
     text-align: center;
     color: #454343;
     font-size: 30px;
-    font-weight: 700;
-   
+    font-weight: 600;
+    font-family: 'Lexend';
+    font-style: normal;
     margin-bottom: 70px;
     text-transform: uppercase;
     z-index: 999;
 }
 .white-heading{
-    color: #999999;
+    
 }
 .heading:after {
     content: ' ';
@@ -200,20 +201,7 @@ input::placeholder {
 .white-heading span {
     color: #ffffff;
 }
-/*-----Testimonial-------*/
 
-/* .testimonial:after {
-    position: absolute;
-    top: -0 !important;
-    left: 0;
-    content: " ";
-    background: url(assets/review/celnow_background.png);
-    background-size: 100% 100px;
-    width: 100%;
-    height: 100px;
-    float: center;
-    z-index: 99;
-} */
 
 .testimonial {
     min-height: 375px;
@@ -335,7 +323,6 @@ input::placeholder {
   position: relative;
 }
 .testimonial4_header h4{
-  color: #ffffff;
   font-size: 30px;
   font-weight: 600;
   position: relative;
@@ -353,6 +340,9 @@ input::placeholder {
   padding: 20px;
   position: relative;
   text-align: center;
+  font-family: 'Lexend';
+    font-style: normal;
+    font-weight: 600; 
 }
 .testimonial4_slide img {
     top: 0;
@@ -362,7 +352,7 @@ input::placeholder {
     height: 136px;
     margin: auto;
     display: block;
-    color: #f2f2f2;
+ 
     font-size: 18px;
     line-height: 46px;
     text-align: center;
@@ -608,7 +598,7 @@ input::placeholder {
 <div class="container  mt-3">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4">
-            <p style="color: #999999; font-size:30px;"> Service Points / Professionals Near By</p>
+            <p class="card-title_Login" style=" font-size:30px;"> Service Points / Professionals Near By</p>
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
             <div class="search_wrap search_wrap_6 m-0">
@@ -764,7 +754,7 @@ input::placeholder {
 <section>
     <div class=" container ">
         <div class="row  text-align-left">
-            <p id="donate" style="color: #999999; font-size:30px;">Donated</p>
+            <p id="donate" class="card-title_Login" style="font-size:30px;">Donated</p>
         </div>
     </div>
     <div class="text-center container py-3">
@@ -908,15 +898,9 @@ input::placeholder {
           </div>
         </div>
        
-        <div class="carousel-item">
-          <div class="testimonial4_slide">
-            <img src="<?php echo base_url(); ?>assets/review/pavan.png" class="img-circle img-responsive" alt="Client 3">
-            <p>Best place to convert our hobbies into cash. Her we can find part-time jobs as well as convert our hobbies into job.</p>
-            <h4>Pavan</h4>
-          </div>
-        </div>
+       
 
-        <div class="carousel-item">
+        <div  class="carousel-item">
           <div class="testimonial4_slide">
             <img src="<?php echo base_url(); ?>assets/review/aravind.png" class="img-circle img-responsive" alt="Client 3">
             <p>Must use website to find no-broker houses, commercial places for rent and sale nearby</p>
@@ -940,7 +924,7 @@ input::placeholder {
 <div class="container" style="max-width:600px;">
     <div class="row">
         <div class="col">
-            <p style="color:#999999; text-align:center; font-weight:bolder; font-size:30px;">Subscribe For More Info
+            <p style=" text-align:center; font-weight:bolder; font-size:30px;">Subscribe For More Info
                 And Update From CelNow</p>
             <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">
             <div class="search_wrap search_wrap_6 m-0 mt-4 ">
