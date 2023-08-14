@@ -544,7 +544,7 @@ input::placeholder {
                                     <?php } else { ?>
                                     onclick="return getproduct( <?php echo $sub->id; ?> ,<?php echo $sub->category_id; ?>)"
                                     <?php } ?>>
-                                    <img class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id == 39){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?>"
+                                    <img width="41" height="41" class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id == 39){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?>"
                                         data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
                                         alt="">
@@ -648,7 +648,7 @@ input::placeholder {
                             <div class="va-card va-card_category mt-2">
                                 <p style="text-align:center;" class="my-auto pouler_Category"
                                     onclick="return getshop(<?php echo $cat->id; ?>)">
-                                    <img class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
+                                    <img  width="41" height="41" class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>"
                                         alt="">
                                     <center style="color:black; font-size:12px; font-weight:500">

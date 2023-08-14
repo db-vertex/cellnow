@@ -800,8 +800,15 @@ public function subCategory_list($category_id = 0)
 {
     $session_id = $this->session->userdata('admin_id');
     if ($session_id) {
+
         $admin_detail = $this->admin_model->get_admin_data($session_id);
-        $sub_category = $this->admin_model->all_subcategory_list($category_id);
+        if($category_id == 1 || $category_id == 2 || $category_id == 3 || $category_id == 4 || $category_id == 5 || $category_id == 6 ||$category_id == 7){
+          $sub_category = $this->admin_model->all_subcategory_type_list($category_id);
+        }
+        else{
+          $sub_category = $this->admin_model->all_subcategory_list($category_id);
+        }
+       
 
         $data['admin_detail'] = $admin_detail;
         $data['sub_category'] = $sub_category;
@@ -1561,15 +1568,19 @@ public function editsubcategory()
 $session_id = $this->session->userdata('admin_id');
 
 $id = $this->uri->segment(3);
+$category_id = $this->uri->segment(4);
 if($session_id)
        {
-      $res=$this->admin_model->find_subcategory($id);
-      
+
+      if($category_id == 1 || $category_id == 2 || $category_id == 3 || $category_id == 4 || $category_id == 5 || $category_id == 6 ||$category_id == 7){
+        $res=$this->admin_model->find_subcategory_type($id);
+      }
+      else{
+        $res=$this->admin_model->find_subcategory($id);
+      }
       
       $admin_detail = $this->admin_model->get_admin_data($session_id);
 
-    
-      
       $this->load->view('edit_subcategory',['admin_detail'=>$admin_detail,'test'=>$res]);
     
        }else{
@@ -1775,10 +1786,10 @@ public function updatecategory()
    public function updatesubcategory()
    {
        $testid = $this->input->post('did');
+       $category_id = $this->input->post('category_id');
    
-       // Get the existing icon filename for the subcategory
        
-       $oldIconFileName = $this->admin_model->find_subcategory($testid);
+      
    
        if (!empty($_FILES['icon']['name'])) {
            $config['upload_path'] = './uploads/shopcategory/';
@@ -1794,24 +1805,43 @@ public function updatecategory()
        } 
    
        $cat = $this->input->post('category');
-       $category_id = $this->input->post('category_id');
-
-      
-   
-       if (!empty($oldIconFileName->icon)) {
-           $arr = array('product_type' => $cat, 'icon' => $icon);
   
-           if (!empty($oldIconFileName->icon)) {
-               $oldIconPath = './uploads/shopcategory/'.$oldIconFileName->icon;
-               if (file_exists($oldIconPath)) {
-                   unlink($oldIconPath);
-               }
-           }
-       } else {
-           $arr = array('product_type' => $cat);
-       }
-   
-       $res = $this->admin_model->update_subcategory_list($testid, $arr);
+       if($category_id == 1 || $category_id == 2 || $category_id == 3 || $category_id == 4 || $category_id == 5 || $category_id == 6 ||$category_id == 7){
+
+        $oldIconFileName = $this->admin_model->find_subcategory_type($testid);
+        if (!empty($oldIconFileName->icon)) {
+          $arr = array('product_type' => $cat, 'icon' => $icon);
+ 
+          if (!empty($oldIconFileName->icon)) {
+              $oldIconPath = './uploads/shopcategory/'.$oldIconFileName->icon;
+              if (file_exists($oldIconPath)) {
+                  unlink($oldIconPath);
+              }
+          }
+      } else {
+          $arr = array('product_type' => $cat);
+      }
+        $res = $this->admin_model->update_subcategory_type_list($testid, $arr);
+      }
+      
+      else{
+        $oldIconFileName = $this->admin_model->find_subcategory($testid);
+        if (!empty($oldIconFileName->icon)) {
+          $arr = array('sub_category' => $cat, 'icon' => $icon);
+ 
+          if (!empty($oldIconFileName->icon)) {
+              $oldIconPath = './uploads/shopcategory/'.$oldIconFileName->icon;
+              if (file_exists($oldIconPath)) {
+                  unlink($oldIconPath);
+              }
+          }
+      } else {
+          $arr = array('sub_category' => $cat);
+      }
+        $res = $this->admin_model->update_subcategory_list($testid, $arr);
+      }
+
+
    
        if ($res == 1) {
            $this->session->set_flashdata('msg', 'Update successfully!!');

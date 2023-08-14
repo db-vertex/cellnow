@@ -188,7 +188,7 @@ public function all_category()
       return $result;
   }
 
-  public function all_subcategory_list($category_id)
+  public function all_subcategory_type_list($category_id)
 {
     $q = $this->db->select('*')
         ->from('product_type')
@@ -196,6 +196,17 @@ public function all_category()
         ->get();
     return $q->result_array();
 }
+
+public function all_subcategory_list($category_id)
+{
+  
+    $q = $this->db->select('sub_id  as id, category as category_id,sub_category as product_type, icon')
+        ->from('subcategory')
+        ->where(['category' => $category_id])
+        ->get();
+    return $q->result_array();
+}
+
 
 
   public function all_shop()
@@ -468,11 +479,23 @@ public function find_category($testid)
 
   public function find_subcategory($testid)
   {
+      $q = $this->db->select('sub_id  as id, category as category_id,sub_category as product_type, icon as icon')
+      ->from('subcategory')
+      ->where(['sub_id' => $testid])
+      ->get();
+  return $q->row();
+  }
+
+  public function find_subcategory_type($testid)
+  {
   $q=$this->db->select('*')
               ->where('id',$testid)
               ->get('product_type');
               return $q->row();
+              
   }
+
+
 
 public function find_agent($testid)
   {
@@ -532,6 +555,17 @@ public function update_subcategory($testid,$arr)
    }
 
    public function update_subcategory_list($testid,$arr)
+   {
+     if($this->db->where('sub_id ',$testid)
+              ->update('subcategory',$arr)){
+        return true;
+       } 
+       else{
+        return false;
+       } 
+   }
+
+   public function update_subcategory_type_list($testid,$arr)
    {
      if($this->db->where('id',$testid)
               ->update('product_type',$arr)){

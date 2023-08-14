@@ -21,6 +21,7 @@
                     <div class="box box-primary" style="padding-right: 389px;">
                         <div class="box-body box-profile" style="padding-top: 46px;">
                         <label for="testimonial">Icon:</label><br>
+                       
                         <img src="<?php echo base_url().'uploads/shopcategory/'.$test->icon?>" style="height: 50px;width: 53px;"><br>
                         <input id='categoryid' type="hidden" class="form-control" name='category_id' value="<?php echo $test->category_id; ?>">
                         <div class="form-group">
@@ -28,7 +29,7 @@
                                 <div class="row align-items-center justify-content-center">
                                     <div class="col-lg-6 col-xs-6">
                                         <div class="form-group">
-                                            <label for="testimonial">Shop Category:</label>
+                                            <label for="testimonial">Sub Category:</label>
                                             <input id='categoryid' type="text" class="form-control" name='category'
                                                 value="<?php echo $test->product_type; ?>">
                                             <p id="head" style="color:#ff0000"></p>

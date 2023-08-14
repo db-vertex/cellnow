@@ -89,7 +89,7 @@ class Welcome extends CI_Controller
 				
 			}
 			$sub .= '>
-		<img class="';if ($value->id == 7 || $value->id == 13 || $value->id == 43 || $value->id== 53 || $value->id== 77 || $value->id== 87 || $value->id==90 || $value->id==39 ) { $sub .='select ';} $sub .='btn-change common_selector sub_category '; if($category_id==5 || $category_id==6 || $category_id==7){  $sub.='sub_new'.$value->subcategory_id.'' ;}else{   $sub.='sub_new'.$value->id.'' ; } $sub.='"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
+		<img width="41" height="41" class="';if ($value->id == 7 || $value->id == 13 || $value->id == 43 || $value->id== 53 || $value->id== 77 || $value->id== 87 || $value->id==90 || $value->id==39 ) { $sub .='select ';} $sub .='btn-change common_selector sub_category '; if($category_id==5 || $category_id==6 || $category_id==7){  $sub.='sub_new'.$value->subcategory_id.'' ;}else{   $sub.='sub_new'.$value->id.'' ; } $sub.='"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
 		 <center style="color:black; font-size:12px; font-weight:500">' . $value->product_type . '</center>
 		</p>
 		
