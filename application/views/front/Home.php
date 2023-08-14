@@ -171,7 +171,7 @@ input::placeholder {
     z-index: 999;
 }
 .white-heading{
-    color: #000;
+    color: #999999;
 }
 .heading:after {
     content: ' ';
@@ -374,13 +374,13 @@ input::placeholder {
     -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
 }
 .testimonial4_slide p {
-    color: #000;
+    color: #999999;
     font-size: 20px;
     line-height: 1.4;
     margin: 40px 0 20px 0;
 }
 .testimonial4_slide h4 {
-  color: #000;
+  color: #999999;
   font-size: 22px;
 }
 
@@ -434,11 +434,8 @@ input::placeholder {
         </div>
     </div>
 </div><br>
-<div class="container">
-    <div class="row pl-4">
-        <p style="color: #F59E0B;"></p>
-    </div>
-</div><br>
+
+
 <!-- search bar -->
 <div class="container">
     <div class="row px-0">
@@ -597,7 +594,7 @@ input::placeholder {
             </div>
         </div>
         <div class="col-md-6 ">
-            <h3 class="card-title_Login">Turn Your Broken Devices into Cash with Celnow!</h3><br>
+            <h3 class="card-title_Login mt-sm-2">Turn Your Broken Devices into Cash with Celnow!</h3><br>
             <p class="card-title_Login" style="color: #565656;">Create a listing for your broken device, Celnow's
                 platform connects you with potential buyers who can benefit from your broken device and you can earn
                 some extra money from your unused gadgets.</p>
@@ -611,7 +608,7 @@ input::placeholder {
 <div class="container  mt-3">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4">
-            <p style="color: #1B1C57; font-size:30px;"> Service Points / Professionals Near By</p>
+            <p style="color: #999999; font-size:30px;"> Service Points / Professionals Near By</p>
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8 pr-4">
             <div class="search_wrap search_wrap_6 m-0">
@@ -749,7 +746,7 @@ input::placeholder {
         <div class="col-md-6 ">
             <h3 class="card-title_Login">Unlock Your Earning Potential: Leverage Your Service Points with Celnow!</h3>
             <br>
-            <p class="card-title_Login" style="color: #565656;">Join as a Verified Service Point, list your skills,
+            <p class="card-title_Login  mb-sm-2" style="color: #565656;">Join as a Verified Service Point, list your skills,
                 expand your reach, Showcase your portfolio, interact directly with customers, and enjoy a flexible
                 schedule.
                 Level up your service business with CelNow's platform. Sign up today and start earning more!</p>
@@ -767,7 +764,7 @@ input::placeholder {
 <section>
     <div class=" container ">
         <div class="row  text-align-left">
-            <p id="donate" style="color: #1B1C57; font-size:30px;">Donated</p>
+            <p id="donate" style="color: #999999; font-size:30px;">Donated</p>
         </div>
     </div>
     <div class="text-center container py-3">
@@ -865,7 +862,7 @@ input::placeholder {
             </div>
         </div>
         <div class="col-md-6 ">
-            <h3 class="card-title_Login">Benefits of Using Celnow Website</h3><br>
+            <h3 class="card-title_Login mt-sm-2">Benefits of Using Celnow Website</h3><br>
             <p class="card-title_Login" style="color: #565656;">Explore CelNow: Your all-in-one solution for buying, selling, and connecting! From secondhand treasures to tutoring opportunities, freelancing gigs, and local services, CelNow has it all.</p>
         </div>
     </div>
@@ -950,7 +947,7 @@ input::placeholder {
 <div class="container" style="max-width:600px;">
     <div class="row">
         <div class="col">
-            <p style="color:#1b1c57; text-align:center; font-weight:bolder; font-size:30px;">Subscribe For More Info
+            <p style="color:#999999; text-align:center; font-weight:bolder; font-size:30px;">Subscribe For More Info
                 And Update From CelNow</p>
             <p style="color:#757575; text-align:center; font-weight:bolder; font-size:20px;">
             <div class="search_wrap search_wrap_6 m-0 mt-4 ">

@@ -679,7 +679,7 @@
                                                     style="align-self: center; max-width: 8.666667%;">
                                                     <button type="button" id="btn-send" class="btn btn-green btn-sm p-0"
                                                         style="border: none;background-color: #ffffff;">
-                                                        <img style="" class="img-fluid"
+                                                        <img style="width: 50px;" class=""
                                                             src="<?php echo base_url();?>assets/images/send (2).png">
                                                     </button>
                                                     <?php } ?>

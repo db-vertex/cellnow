@@ -2170,9 +2170,22 @@ $brands = array(
 
     </div>
     <script>
+   $(document).ready(function() {
+    var category_id = 1;  // Change this to the appropriate category ID
 
+    var defaultSubId;
+    if (category_id === 1) {
+        defaultSubId = 7;
+    } else if (category_id === 2) {
+        defaultSubId = 13;
+    } else if (category_id === 3) {
+        defaultSubId = 39;
+    }
+
+    var filters = get_filter('sub_category', defaultSubId);
+
+});
     </script>
-
     <script>
     $(document).ready(function() {
         filter_data(1);
@@ -2220,12 +2233,12 @@ $brands = array(
 
         var selectedSubId = null;
 
-        function get_filter(class_name) {
+        function get_filter(class_name, defaultSubId) {
             var filter = [];
 
             if (class_name === 'sub_category') {
-                if (selectedSubId !== null) {
-                    filter.push(selectedSubId);
+                if (defaultSubId !== null) {
+                    filter.push(defaultSubId);
                 }
             } else {
                 $('.' + class_name + ':checked').each(function() {
@@ -2377,7 +2390,7 @@ $brands = array(
         $("img").removeClass("select");
         $(".sub_new" + subcategory_id).addClass("select");
         var donate = "donate_fillter";
-     
+
 
         jQuery.ajax({
             type: "POST",

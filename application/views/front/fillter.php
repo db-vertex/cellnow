@@ -17,7 +17,6 @@
 }
 
 .details_img_cover {
-
     max-height: 367px;
     left: 114px;
     top: 588px;
@@ -48,9 +47,6 @@ ul {
     border-radius: 11.8328px;
 }
 
-
-
-
 .details_box_content {
     background: #FFFFFF;
     border: 1px solid #69D3B0;
@@ -62,14 +58,9 @@ ul {
 .img-size {
     max-height: 500px;
     min-height: 500px;
-
-
 }
 
-
-
 .details_profile_img {
-
     width: 120px;
     height: 120px;
     left: 854px;
@@ -106,7 +97,6 @@ ul {
     font-weight: 400;
     font-size: 16px;
     line-height: 24px;
-
     color: #000000;
 }
 
@@ -152,7 +142,6 @@ ul {
         display: flex;
         align-items: flex-end;
         text-align: right;
-
         color: #10B981;
     }
 
@@ -163,7 +152,6 @@ ul {
         line-height: 17px;
         color: #151515;
     }
-
 
     .details_profile {
         width: 434px;
@@ -177,7 +165,6 @@ ul {
     }
 
     .details_profile_img {
-
         width: 100px;
         height: 100px;
         border: 1px solid #000000;
@@ -218,7 +205,6 @@ ul {
         font-weight: 400;
         font-size: 12px;
         line-height: 24px;
-
         color: #000000;
     }
 
@@ -259,7 +245,6 @@ ul {
         padding-left: 5px;
         color: #898686;
     }
-
 
     .margin_top_css {
         margin-top: 3rem !important;
@@ -332,10 +317,7 @@ ul {
     .img-size {
         max-height: 200px;
         min-height: 200px;
-
-
     }
-
 }
 
 @media (min-width: 768px) and (max-width: 991.98px) {
@@ -372,10 +354,7 @@ ul {
     .img-size {
         max-height: 300px;
         min-height: 300px;
-
-
     }
-
 }
 
 @media (min-width: 991.98px) and (max-width: 1199.98px) {
@@ -408,7 +387,6 @@ ul {
     .margin_left_css {
         margin-left: 3rem !important;
     }
-
 }
 
 @media (min-width: 1199.98px) {
@@ -441,10 +419,7 @@ ul {
     .margin_left_css {
         margin-left: 3rem !important;
     }
-
-
 }
-
 
 @media(max-width: 991px) {
     .details_title {
@@ -479,7 +454,6 @@ ul {
         display: flex;
         align-items: flex-end;
         text-align: right;
-
         color: #10B981;
     }
 
@@ -490,8 +464,6 @@ ul {
         line-height: 17px;
         color: #151515;
     }
-
-
 
     .details_profile {
         width: 336px;
@@ -504,9 +476,7 @@ ul {
         border-radius: 80px 0px 0px 80px;
     }
 
-
     .details_profile_img {
-
         width: 80px;
         height: 80px;
         border: 1px solid #000000;
@@ -524,7 +494,6 @@ ul {
         line-height: 24px;
         color: #000000;
         margin-top: 0rem !important;
-
     }
 
     .deatails_profile_name_time {
@@ -543,7 +512,6 @@ ul {
         font-weight: 400;
         font-size: 10px;
         line-height: 24px;
-
         color: #000000;
     }
 
@@ -567,7 +535,6 @@ ul {
     }
 
     .detalis_option {
-
         left: 112px;
         top: 1373.5px;
         background: #FFFFFF;
@@ -587,9 +554,7 @@ ul {
     .margin_top_css {
         margin-top: 1rem !important;
     }
-
 }
-
 
 .chat_button {
     display: flex;
@@ -614,7 +579,6 @@ ul {
     font-weight: 600;
     font-size: 12px;
     line-height: 14px;
-
     color: #000000;
     margin-top: 10px;
 }
@@ -664,26 +628,19 @@ ul {
 
 .related_ads_details_button {
     box-sizing: border-box;
-
     /* Auto layout */
-
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 7.42857px 6.5714px;
     gap: 4.71px;
-
     width: 80.43px;
     height: 26.86px;
-
     background: #10B981;
     /* C2/B */
-
     border: 1.57143px solid #46760A;
     border-radius: 25.42857px;
-
     /* Inside auto layout */
-
     flex: none;
     order: 0;
     align-self: center;
@@ -702,7 +659,6 @@ ul {
     flex-grow: 0;
 }
 
-
 .selected {
     background: #d1fae5;
     color: black;
@@ -717,31 +673,25 @@ ul {
 /* search btn line 11 to 89 */
 .search_wrap {
     width: 100%;
-
 }
 
 .search_wrap .search_box {
     position: relative;
-
     height: 64px;
 }
 
 .search_wrap .search_box .btn {
     position: absolute;
-
     height: 80%;
     background: #10B981;
     color: white;
-
 }
 
 .search_wrap .search_box .btn.btn_common .fas {
-
     /* top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%); */
     /* color: #fff; */
-
 }
 
 .search_wrap.search_wrap_6 .search_box .btn {
@@ -750,8 +700,6 @@ ul {
     top: 8%;
     right: 1.3%;
     padding: 6px 0px;
-
-
     /* color: #fff; */
     display: flex;
     align-items: center;
@@ -793,7 +741,6 @@ input::placeholder {
         height: 294.1px;
         left: 475.5px;
         top: 1080px;
-
         border-radius: 37px 37px 0px 0px;
     }
 
@@ -815,7 +762,6 @@ input::placeholder {
         font-size: 20px;
         line-height: 30px;
         color: #000000;
-
         /* Inside auto layout */
         flex: none;
         order: 0;
@@ -835,27 +781,20 @@ $(document).ready(function() {
     $("#latitudeArea").addClass("d-none");
     $("#longtitudeArea").addClass("d-none");
 });
-
 google.maps.event.addDomListener(window, 'load', initialize);
 
 function initialize() {
-
     var input = document.getElementById('Location');
     var autocomplete = new google.maps.places.Autocomplete(input);
-
-
-
     autocomplete.addListener('place_changed', function() {
         var place = autocomplete.getPlace();
         $div = $(this);
         var lat1 = place.geometry['location'].lat();
         var lon1 = place.geometry['location'].lng();
-
         $(".result > div [data-lat],[data-long]").hide().filter(function() {
             $div = $(this);
             var lat2 = parseFloat($(this).data("lat"))
             var lon2 = parseFloat($(this).data("long"))
-
             var R = 6371; // Radius of the earth in km
             var dLat = lat2 - lat1; // deg2rad below
             var dLon = lon2 - lon1;
@@ -866,26 +805,18 @@ function initialize() {
             var c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
             var d = R * c; // Distance in km
             var f = d * (Math.PI / 180);
-
-
-
             return f <= 25;
-
             $("#latitudeArea").removeClass("d-none");
             $("#longtitudeArea").removeClass("d-none");
         }).show();
     });
-
 }
 </script>
 <?php 
              $id = $this->uri->segment(3);
              $subcategory = get_subcategory_byid($id);
              //$category = get_categoryname_byid($id);
-            
-
                ?>
-
 <style>
 #GFG {
     text-decoration: none;
@@ -899,8 +830,6 @@ function initialize() {
 .link {
     color: black;
     text-decoration: unset;
-
-
 }
 
 /*panel*/
@@ -909,13 +838,10 @@ function initialize() {
     box-shadow: none;
 }
 
-
-
 .panel-heading {
     border-color: #eff2f7;
     font-size: 16px;
     font-weight: 300;
-
 }
 
 .panel-default {
@@ -937,9 +863,7 @@ function initialize() {
     font-family: 'Open Sans', sans-serif;
 }
 
-
 /*product list*/
-
 .prod-cat li a {
     border-bottom: 1px dashed #d9d9d9;
 }
@@ -960,7 +884,6 @@ function initialize() {
 /*    background: none;*/
 /*    color: #ff7261;*/
 /*}*/
-
 .pro-lab {
     margin-right: 20px;
     font-weight: normal;
@@ -1088,7 +1011,6 @@ img.center {
     margin: 0 auto;
 }
 
-
 @media screen and (min-width: 992px) {
     .button_add_details {
         margin-top: 50%;
@@ -1138,9 +1060,7 @@ img.center {
 }
 
 .cut-list>li {
-
     margin-right: 55px;
-
     padding-bottom: 2px;
 }
 
@@ -1150,7 +1070,6 @@ img.center {
     bottom: 0;
 }
 </style>
-
 <style>
 #loading {
     text-align: center;
@@ -1161,7 +1080,6 @@ img.center {
 .list-group-item {
     position: relative;
     display: block;
-
     background-color: #fff;
     border: 3px solid rgba(0, 0, 0, .125);
     border-top: none;
@@ -1220,7 +1138,6 @@ a:active {
     .small_price {
         margin-top: 1.5rem !important
     }
-
 }
 
 @media screen and (max-width: 992px) {
@@ -1275,7 +1192,6 @@ a:active {
     .add_datiles_button {
         max-width: fit-content;
     }
-
 }
 
 .Categories_header {
@@ -1296,8 +1212,6 @@ a:active {
 
 .price-input {
     width: 100%;
-
-    margin: 30px 0 35px;
 }
 
 .price-input .field {
@@ -1414,7 +1328,6 @@ input[type="range"]::-moz-range-thumb {
     margin-top: 2rem;
 }
 </style>
-
 <!-- <div class="container-fluid home_background" style=" margin-top: 125px;">
     <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
@@ -1433,12 +1346,9 @@ input[type="range"]::-moz-range-thumb {
                             alt="First slide"></a>
                 </div>
                 <?php
-
         $j++;
-
       }
       ?>
-
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss"
                 data-bs-slide="prev">
@@ -1453,11 +1363,8 @@ input[type="range"]::-moz-range-thumb {
         </div>
     </div><br>
 </div> -->
-
-
-
 <!-- search bar -->
-<div class="container" style=" margin-top: 125px;">
+<div class="container" style=" margin-top: 95px;">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4 ">
             <p style="font-size:30px;color:#1B1C57;"> </p>
@@ -1465,26 +1372,19 @@ input[type="range"]::-moz-range-thumb {
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
-
-
                     <input type="search" name="anything" class="form-control rounded-5 search"
                         placeholder="Search for the Product you want!" aria-label="Search"
                         aria-describedby="search-addon" style="padding:12px 22px" />
                     <button type="submit" class="btn btn-success rounded-5 search"
                         style="padding:6px 10px">search</button>
-
                 </div>
                 <div class="row">
                     <div id="display"></div>
-
-
-
                 </div>
             </div>
         </div>
     </div>
-</div><br>
-
+</div>
 <!-- new -->
 <div class="container ">
     <div class="va-carrousel-section">
@@ -1504,14 +1404,9 @@ input[type="range"]::-moz-range-thumb {
                     </div>
                     <div class="col-10 pe-0 icon_cetgory">
                         <div class="va-carrousel-flexbox_most" style="padding-bottom: 10px;">
-
                             <?php
-
               $category = get_all_category();
-
               foreach ($category as $key => $cat) {
-
-
                 ?>
                             <div class="va-card cut-list mt-2">
                                 <a href="<?php echo base_url();?>welcome/fillter_product/<?php echo $cat->id;?>"
@@ -1521,7 +1416,6 @@ input[type="range"]::-moz-range-thumb {
                                         src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>" alt="">
                                     &nbsp
                                     <?php echo $cat->category; ?> </a>
-
                                 </li>
                             </div>
                             <?php }  ?>
@@ -1542,11 +1436,7 @@ input[type="range"]::-moz-range-thumb {
             </div>
         </div>
     </div>
-
 </div>
-
-
-
 <div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
@@ -1563,7 +1453,6 @@ input[type="range"]::-moz-range-thumb {
                             </svg>
                         </button>
                     </div>
-
                     <div class="col-10 pe-0 icon_cetgory">
                         <div class="va-carrousel-flexbox" id="sub-list">
                             <?php
@@ -1571,16 +1460,12 @@ input[type="range"]::-moz-range-thumb {
                      $sub_ = '';
                      if($cateory==8){
                         $subcategory = get_all_product_type();  
-                        
                      }
                      else{
                         $subcategory = get_producttype_byid($cateory);  
                      }
-                      
-					  
 					  foreach($subcategory as $sub){
 					?>
-
                             <div class="va-card va-card_category mt-2 px-0" style="">
                                 <p style="text-align:center;" class="my-auto pouler_Categories "
                                     <?php if ($category == 1 || $category==5 || $category==6 || $category==7) { ?>
@@ -1588,7 +1473,6 @@ input[type="range"]::-moz-range-thumb {
                                     <?php } else { ?>
                                     onclick="return getproduct( <?php echo $sub->id; ?>,<?php echo $cateory; ?>)"
                                     <?php } ?>>
-
                                     <img class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id==39){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
                                         data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                         src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>"
@@ -1596,17 +1480,12 @@ input[type="range"]::-moz-range-thumb {
                                     <center style="color:black; font-size:12px; font-weight:500">
                                         <?php echo $sub->product_type; ?></center>
                                 </p>
-
                             </div>
-
                             <?php 
-					
                 }
                ?>
-
                         </div>
                     </div>
-
                     <div class="col-1 icon_slider">
                         <button class="deals-scroll-right deals-paddle" id="right_sponser_button">
                             <svg aria-hidden="true" focusable="false" data-prefix="fas" data-icon="chevron-right"
@@ -1623,20 +1502,14 @@ input[type="range"]::-moz-range-thumb {
         </div>
     </div>
 </div>
-
-
-
-
 <div class="container mb-5">
     <div class="row">
         <div class="col-md-3">
-
             <br />
             <center>
                 <h5>Filters</h5>
             </center>
             <br />
-
             <?php
 					  $cateory =  $this->uri->segment(3);
                       if($cateory!=4){
@@ -1660,7 +1533,6 @@ input[type="range"]::-moz-range-thumb {
                         </div>
                     </div>
                 </div>
-
                 <div class="slider">
                     <div class="progress"></div>
                 </div>
@@ -1671,13 +1543,7 @@ input[type="range"]::-moz-range-thumb {
                         step="100">
                 </div>
             </div>
-
-
             <?php } ?>
-
-
-
-
             <?php if($cateory == 1 )
                 { ?>
             <div class="panel-group mt-4 ">
@@ -1692,16 +1558,16 @@ input[type="range"]::-moz-range-thumb {
                     <div id="TYPEs" class="panel-collapse collapse">
                         <div class="list-group mt-2">
 
+
                             <input type="text"
                                 style="border-left:none; border-top:none; border-right:none; margin-bottom: 15px;"
-                                id="myInput" onkeyup="filterFunction()" class="cursor-center "
-                                placeholder="Search Brand" value="">
-                            <i class="fa fa-search" aria-hidden="true" style="margin-top: -36px; font-size:20px; text-align: right;
-"></i>
+                                id="myInput" onkeyup="filterFunction()" class="" placeholder="Search Brand" value="">
+                            <i class="fa fa-search" id="searchIcon" aria-hidden="true"
+                                style="margin-top: -36px; font-size:20px; text-align: right; cursor: pointer;"></i>
+
 
                             <?php
-// Sample array of brands for demonstration purposes
-$brands = array(
+          $brands = array(
     "Acer", "Alcatel", "Allview", "Amazon", "Amoi", "Apple", "Archos", "Asus", "AT&T", "Benefon", "BenQ",
     "BenQ-Siemens", "Bird", "BlackBerry", "Blackview", "BLU", "Bosch", "BQ", "Casio", "Cat", "Celkon", "Chea",
     "Coolpad", "Dell", "Doogee", "Emporia", "Energizer", "Ericsson", "Eten", "Fairphone", "Fujitsu Siemens",
@@ -1715,7 +1581,6 @@ $brands = array(
     "Vodafone", "Wiko", "WND", "XCute", "Xiaomi", "XOLO", "Yezz", "Yota", "YU", "ZTE"
 );
 ?>
-
                             <!-- Loop through the brands array and generate checkboxes with labels -->
                             <div id="myDropdown">
                                 <ul class="_1un4s">
@@ -1734,7 +1599,6 @@ $brands = array(
                     </div>
                 </div>
             </div>
-
             <div class="panel-group mt-4 ">
                 <div class="panel panel-default">
                     <div class="panel-heading ">
@@ -1749,14 +1613,10 @@ $brands = array(
                             <?php 
 				      $v = $select_Type->result_array();
                      if($v !== Array( )){ ?>
-
                             <?php
                      }
-					
-                      
 					foreach($select_Type->result_array() as $row)
 					{
-					 
 					?>
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select select_type"
@@ -1771,7 +1631,6 @@ $brands = array(
                 </div>
             </div>
             <?php 
-					
                 }
                ?>
             <?php if($cateory == 2 )
@@ -1787,23 +1646,17 @@ $brands = array(
                     </div>
                     <div id="test" class="panel-collapse collapse">
                         <div class="list-group mt-2">
-
                             <?php
 					  $cateory =  $this->uri->segment(3);
-               
-                  
                      $sub_ = '';
                       $subcategory = get_subcategory_byid($cateory);  
-					  
 					  foreach($subcategory as $sub){
 					?>
-
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select sub_category"
                                         value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
                             </div>
                             <?php 
-					
 					 }
 					?>
                         </div>
@@ -1811,10 +1664,8 @@ $brands = array(
                 </div>
             </div>
             <?php 
-					
 					 }
 					?>
-
             <?php if ($cateory == 3)
                 { ?>
             <div class="panel-group mt-4">
@@ -1828,23 +1679,17 @@ $brands = array(
                     </div>
                     <div id="test" class="panel-collapse collapse">
                         <div class="list-group mt-2">
-
                             <?php
 					  $cateory =  $this->uri->segment(3);
-               
-             
                      $sub_ = '';
                       $subcategory = get_subcategory_byid($cateory);  
-					  
 					  foreach($subcategory as $sub){
 					?>
-
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select sub_category"
                                         value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
                             </div>
                             <?php 
-					
 					 }
 					?>
                         </div>
@@ -1852,10 +1697,8 @@ $brands = array(
                 </div>
             </div>
             <?php 
-					
 					 }
 					?>
-
             <?php if($cateory == 4 )
                 { ?>
             <div class="panel-group mt-4">
@@ -1869,37 +1712,26 @@ $brands = array(
                     </div>
                     <div id="test" class="panel-collapse collapse">
                         <div class="list-group mt-2">
-
                             <?php
 					  $cateory =  $this->uri->segment(3);
-               
-              
                      $sub_ = '';
                       $subcategory = get_subcategory_byid($cateory);  
-					  
 					  foreach($subcategory as $sub){
 					?>
-
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select sub_category"
                                         value="<?php echo $sub->sub_id;?>"> <?php  echo $sub->sub_category;?></label>
                             </div>
                             <?php 
-					
 					 }
 					?>
                         </div>
                     </div>
                 </div>
             </div>
-
             <?php 
 		    	} 
-		    	
-		  
-			
 			?>
-
             <?php if($cateory == 5 )
                 { ?>
             <div class="panel-group mt-4">
@@ -1913,14 +1745,10 @@ $brands = array(
                     </div>
                     <div id="test" class="panel-collapse collapse">
                         <div class="list-group mt-2">
-
-
-
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select filter"
                                         value="Rent">
                                     Rent</label>
-
                             </div>
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select filter"
@@ -1931,12 +1759,8 @@ $brands = array(
                     </div>
                 </div>
             </div>
-
             <?php 
 		    	} 
-		    	
-		  
-			
 			?>
             <?php if($cateory == 6 )
                 { ?>
@@ -1951,14 +1775,10 @@ $brands = array(
                     </div>
                     <div id="test" class="panel-collapse collapse">
                         <div class="list-group mt-2">
-
-
-
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select filter"
                                         value="Rent">
                                     Rent</label>
-
                             </div>
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select filter"
@@ -1969,12 +1789,8 @@ $brands = array(
                     </div>
                 </div>
             </div>
-
             <?php 
 		    	} 
-		    	
-		  
-			
 			?>
             <?php if($cateory == 7 )
                 { ?>
@@ -1992,7 +1808,6 @@ $brands = array(
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select filter"
                                         value="Rent">Rent</label>
-
                             </div>
                             <div class="checkbox" style="padding:3px; border-top: none;">
                                 <label class="common_s"><input type="checkbox" class="common_select filter"
@@ -2002,44 +1817,26 @@ $brands = array(
                     </div>
                 </div>
             </div>
-
             <?php 
 		    	} 
-		    	
-		  
-			
 			?>
-
-
         </div>
         <div class="col-md-9">
-
             <br />
-
             <?php  if(!empty($products)){ ?>
             <div class="row" id="product_list">
                 <?php
-                  
-            
                   if(!empty($products)){
-             
               $i = 1;
               $j = 1;
             foreach($products as $pro){
-            
                 $wishlist = 0;
   if (!empty($user) && isset($user)) {
     $wishlit = get_wishlist($pro->id, $pro->category_id, $user["user_id"]);
-
     if (empty($wishlit)) {
-
       $wishlist = 0;
-
-
     } else {
-
       $wishlist = 1;
-
     }
   } else {
     $wishlist = 0;
@@ -2048,7 +1845,6 @@ $brands = array(
               $product_user_id = $pro->user_id;
               if($session_login_id !== $product_user_id){
                   if($i > 0){
-            
             ?>
                 <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
                     <div class="card">
@@ -2057,9 +1853,7 @@ $brands = array(
                                 href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>"><img
                                     src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
                                     class="w-100 va-thumbnail" /></a>
-
                             <a href="#!">
-
                                 <div class="hover-overlay">
                                     <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
                                 </div>
@@ -2078,7 +1872,6 @@ $brands = array(
                                 $y = substr($title,0,15) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></p>
                                 <a style="font-size:10px; color:#69d3b0; padding: 0px;"
                                     <?php if (empty($user) || !isset($user)) { ?>
@@ -2092,11 +1885,9 @@ $brands = array(
                                 <?php if($pro->category_id != 4 && $pro->pay_type !=2){ ?>
                                 <p class="details_price">₹<?php echo $pro->price; ?>
                                 </p>
-
                                 <?php } ?>
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
-
                                 <p><?php
                            $title = $pro->Description;
                             if(strlen($title) <= 20)
@@ -2108,9 +1899,7 @@ $brands = array(
                                 $y = substr($title,0,20) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></p>
-
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="row">
@@ -2129,26 +1918,20 @@ $brands = array(
                                 $y = substr($title,0,10) . '...';
                                 echo ucfirst($y);
                               }
-                           
                            ?></p>
                                     </div>
-
                                 </div>
-
                                 <a
                                     href="<?php echo base_url();?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
                                     <p class="related_ads_details_button ">
                                         <spam class="related_ads_details_button_text">Product Detail</spam>
                                     </p>
                                 </a>
-
                             </div>
                         </div>
                     </div>
                 </div>
-
                 <?php $i++;} } else if($j == 1) {?>
-
                 <?php   }  $j++; };  ?>
                 <?php }
               else {?>
@@ -2157,30 +1940,26 @@ $brands = array(
                 <?php }else{ ?> <div class="row filter_data">
                     <?php } ?>
                 </div>
-
                 <br />
                 <div align="center" id="pagination_link">
-
                 </div>
             </div>
-
-
-
         </div>
-
     </div>
     <script>
+    document.addEventListener("DOMContentLoaded", function() {
+        var searchIcon = document.getElementById("searchIcon");
+        var myInput = document.getElementById("myInput");
 
+        searchIcon.addEventListener("click", function() {
+            myInput.style.display = "block";
+            myInput.focus();
+        });
+    });
     </script>
-
     <script>
-
-
-
-
     $(document).ready(function() {
         filter_data(1);
-      
 
         function filter_data(page) {
             $('.filter_data').html('<div id="loading" style="" ></div>');
@@ -2195,8 +1974,6 @@ $brands = array(
             var rent_filter = get_rent_filter('filter');
             var search = get_search('search');
             var sub_category = get_filter('sub_category');
-
-
             $.ajax({
                 url: "<?php echo base_url(); ?>welcome/fetch_data/" + page,
                 method: "POST",
@@ -2219,26 +1996,19 @@ $brands = array(
                 }
             })
         }
-
-
         const rangeInput = document.querySelectorAll(".range-input input"),
             priceInput = document.querySelectorAll(".price-input input"),
             range = document.querySelector(".slider .progress");
         let priceGap = 1000;
-
         let sliderTimeout; // Variable to hold timeout for delayed calling
-
         function callFilterData() {
             filter_data(1);
         }
-
         rangeInput.forEach((input) => {
             input.addEventListener("input", (e) => {
                 clearTimeout(sliderTimeout); // Clear any existing timeouts
-
                 let minVal = parseInt(rangeInput[0].value),
                     maxVal = parseInt(rangeInput[1].value);
-
                 if (maxVal - minVal < priceGap) {
                     if (e.target.className === "range-min") {
                         rangeInput[0].value = maxVal - priceGap;
@@ -2250,14 +2020,12 @@ $brands = array(
                     priceInput[1].value = maxVal;
                     range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
                     range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
-
                     // Set a timeout to call the function after a short delay
                     sliderTimeout = setTimeout(callFilterData,
-                    300); // Adjust the delay as needed
+                        300); // Adjust the delay as needed
                 }
             });
         });
-
         // Add a 'mouseup' event listener to the entire document
         document.addEventListener("mouseup", function(event) {
             if (event.target.classList.contains("progress") || event.target.classList.contains(
@@ -2266,14 +2034,10 @@ $brands = array(
                 callFilterData();
             }
         });
-
-
-
         var selectedSubId = null;
 
         function get_filter(class_name) {
             var filter = [];
-
             if (class_name === 'sub_category') {
                 if (selectedSubId !== null) {
                     filter.push(selectedSubId);
@@ -2286,12 +2050,10 @@ $brands = array(
             return filter;
         }
 
-
         function get_type_filter(class_name) {
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
-
             });
             console.log(filter)
             return filter;
@@ -2301,7 +2063,6 @@ $brands = array(
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
-
             });
             console.log(filter)
             return filter;
@@ -2311,7 +2072,6 @@ $brands = array(
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
-
             });
             console.log(filter)
             return filter;
@@ -2321,16 +2081,12 @@ $brands = array(
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
-
             });
             console.log(filter)
             return filter;
         }
-
-
         $(document).on('click', '.sub_category', function() {
             var subId = $(this).data('sub-id');
-
             selectedSubId = subId;
             $('.sub_category').removeClass('active');
             $(this).addClass('active');
@@ -2342,24 +2098,18 @@ $brands = array(
             $('input .search').each(function() {
                 filter.push($(this).val());
             });
-
             return filter;
         }
-
         $(document).on("click", ".pagination li a", function(event) {
             event.preventDefault();
             var page = $(this).data("ci-pagination-page");
             filter_data(page);
         });
-
-
-
         $('.common_select').click(function() {
             filter_data(1);
         });
     });
     </script>
-
     <script>
     "use strict"; /* Start of use strict */
     (function() {
@@ -2381,7 +2131,6 @@ $brands = array(
                 },
                 function(isConfirm) {
                     if (isConfirm) {
-
                         window.location.href = "<?php echo base_url();?>welcome/logout";
                     } else {
                         swal("Cancelled", "Something went wrong. Please try again.)", "error");
@@ -2391,15 +2140,11 @@ $brands = array(
     }
     </script>
     <script>
-
     function getsubcategory(category_id) {
-
         //var res = "";
         $("p").removeClass("selected");
         $(".new" + category_id).addClass("selected");
-
         // var allch =  $("#").val();
-
         jQuery.ajax({
             type: "POST",
             url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
@@ -2411,19 +2156,13 @@ $brands = array(
                 // $('#load_cound').val("10"); 
             }
         });
-
     }
 
-
-
     function getproduct(subcategory_id, category) {
-
         //var res = "";
         $("img").removeClass("select");
         $(".sub_new" + subcategory_id).addClass("select");
-
         // var allch =  $("#").val();
-
         jQuery.ajax({
             type: "POST",
             url: "<?php echo base_url('/welcome/getproduct'); ?>",
@@ -2432,17 +2171,10 @@ $brands = array(
                 category_id: category
             },
             success: function(res) {
-
-
                 $("#product_list").html(res);
-
-
-
                 // $('#load_cound').val("10");
-
             }
         });
-
     }
     </script>
     <script>

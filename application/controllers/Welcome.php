@@ -132,7 +132,7 @@ class Welcome extends CI_Controller
 
 					//print_r($subcategory);die();
 
-					$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
+					$sub .= '<div class="col-lg-3 col-md-4 col-sm-6 mt-sm-4 post" id="post_' . $value->id . '">
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a href="'.base_url("welcome/productdetail/").'' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
@@ -223,7 +223,7 @@ $sub .= '</h6>
             $count = 0;
 			foreach ($product as $value) {
 				
-				$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
+				$sub .= '<div class="col-lg-3 col-md-4 col-sm-6 mt-sm-4 post" id="post_' . $value->id . '">
 				<div class="card">
 					<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
 						<a href="' . base_url("welcome/productdetail/") . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
@@ -334,7 +334,7 @@ $sub .= '</h6>
 
 					
 
-					$sub .= '<div class="col-lg-3 col-md-6 mb-4 post" id="post_' . $value->id . '">
+					$sub .= '<div class="col-lg-3 col-md-4 col-sm-6 mt-sm-4 post" id="post_' . $value->id . '">
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a href="'.base_url("welcome/productdetail/").'' .$value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
@@ -418,7 +418,7 @@ $sub .= '</h6>
 
 					//print_r($subcategory);die();
 
-					$sub .= '<div class="col-lg-3 col-md-6 mb-4 postdonate" id="postdonate' . $value->id . '">
+					$sub .= '<div class="col-lg-3 col-md-4 col-sm-6 mt-sm-4 postdonate" id="postdonate' . $value->id . '">
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a href="'.base_url("welcome/productdetail/").'' .$value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
@@ -496,7 +496,7 @@ $sub .= '</h6>
 
 					//print_r($subcategory);die();
 
-					$sub .= '<div class="col-lg-3 col-md-6 mb-4 postdonate" id="postdonate' . $value->id . '">
+					$sub .= '<div class="col-lg-3 col-md-4 col-sm-6 mt-sm-4 postdonate" id="postdonate' . $value->id . '">
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a href="'.base_url("welcome/productdetail/").'' .$value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">

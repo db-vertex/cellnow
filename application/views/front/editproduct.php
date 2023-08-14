@@ -138,7 +138,7 @@
     }
 
     .images_col {
-        width: 400px;
+        width: 300px;
         height: 300px;
         position: absolute;
         left: 50%;
@@ -479,7 +479,7 @@
                     <div class=" offset-lg-1 col-lg-5">
                         <div class=" images_container  mt-3 me-2">
                             <div class=" images_row">
-                                <div class=" images_col mx-2">
+                                <div class=" images_col me-5">
                                     <i class="bi bi-x-circle-fill btn-rmv1 me-3 " id="removeImage1"></i>
 
                                     <img id="ImgPreview" src="<?php echo base_url();?><?php echo $get_data->cover_img?>"
@@ -574,10 +574,6 @@
                     <div class=" col-lg-5 order-lg-first inputform_colume">
 
                         <div class="row g-3">
-
-                            <b> Note: Please Repost the ad freshly to edit the product details completely. To get the
-                                product verified online, To boost the product.</b>
-
                             <div class="col-12">
                              
                                 <div class="form-check form-check-inline">
@@ -668,85 +664,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12">
-                                <label for="address" class="form-label post_input_lable">Get your product verified now:
-
-                                    At CelNow, we value trust, transparency, and authenticity. We understand the
-                                    importance of ensuring a safe and secure marketplace for our users. That's why we
-                                    offer a product verification process that allows you to showcase your items as
-                                    verified on our platform. In this guide, we'll walk you through the steps to get
-                                    your products verified and explain the numerous benefits it brings. Let's get
-                                    started!
-
-
-
-                                    Steps to get Verification tag:
-
-                                    Step 1: Create an Account on Celnow
-
-                                    If you haven't already, visit our website (www.celnow.com) and sign up for an
-                                    account. It only takes a few minutes, and you'll gain access to a wide range of
-                                    features and opportunities.
-
-
-
-                                    Step 2: Prepare Your Product Information
-
-                                    Gather all the necessary information about the product you want to get verified.
-                                    This includes details like the brand, model, condition, and any additional features
-                                    or accessories it may come with. Necessary bills or latest job sheets if any related
-                                    to the product you want to get verified.
-
-                                    Fill out the required fields while posting product on CelNow with accurate
-                                    information about your product. You may also need to upload clear and high-quality
-                                    images showcasing the item's condition and any unique aspects.
-
-
-
-                                    Step 3: Choose the Verification Method (Charges may be applicable)
-
-                                    Celnow provides both online and offline verification methods to cater to different
-                                    needs. Select the option that suits you best:
-
-                                    a) Online Verification: If your product qualifies for online verification, our team
-                                    will guide you through the necessary steps. This may involve answering additional
-                                    questions or providing supporting documents to establish authenticity. For online
-                                    verification talk with our executive on 8377935333 and follow the guided steps. 1st
-                                    verification free of cost. Every other verification will be charged fixed cost.
-                                    (Rupees 20).
-
-
-
-                                    b) Offline Verification: In some cases, CelNow offers offline verification through
-                                    our network of authorized service points. These service points are registered
-                                    professionals or shops specialized in specific fields. Visit the nearest service
-                                    point relevant to your product category, where they will verify the item's
-                                    authenticity. (Search the nearest registered on our website in the nearby by service
-                                    professionals or service points section)- Charges will be applicable.
-
-
-
-                                    Step 4: Enjoy the Benefits of Verified Products
-
-                                    Once your product is successfully verified, it will receive a special verified badge
-                                    on its listing. Here are the benefits you can enjoy as a verified product seller:
-
-
-
-                                    - Enhanced Trust: Verified products instill confidence in potential buyers,
-                                    showcasing your commitment to providing genuine and reliable items.
-
-
-
-                                    - Increased Visibility: Verified products often receive higher visibility and
-                                    prominence in search results, attracting more interested buyers.
-
-
-
-                                    - Faster Transactions: Buyers tend to prioritize verified products due to the added
-                                    trust and assurance, leading to quicker and smoother transactions.</label>
-
-                            </div>
+                       
                           
                             <div class="col-12 " id="verified_option">
                                 <div class="form-check">

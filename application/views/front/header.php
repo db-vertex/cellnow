@@ -888,9 +888,7 @@
     }
 
     .va-whitewrap {
-        /*         background-color: white; */
-        padding-top: 15px;
-        margin-top: 15px;
+        margin-bottom: 10px;
     }
 
     .va-seeall {

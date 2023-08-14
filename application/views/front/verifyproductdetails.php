@@ -921,7 +921,7 @@
         font-size: 32px;
         line-height: 40px;
         text-transform: capitalize;
-        color: #1B1C57;
+        color: #999999;
     }
 
     .related_ads_card {
@@ -1936,7 +1936,8 @@
                                         alt="related_ads_card_img">
                                     <div class="card-body ">
                                         <div class="row">
-                                            <div class="col-12 " style="display: inline-flex;">
+                                            <div class="col-12 " style="">
+                                              
                                                 <?php if (isset($product_detail->price)) {
                                                         if (($product_detail->pay_type == 0 || $product_detail->pay_type == 1) && ($product_detail->category_id == 1 || $product_detail->category_id == 2 || $product_detail->category_id == 3)) {
                                                             ?>
@@ -1952,30 +1953,32 @@
                                                     } ?>
                                                      <?php
                                         
-                                        $wishlist_Related = 0;
-                                        if (!empty($user) && isset($user)) {
-                                            $wishlit = get_wishlist($relatedproduct->id, $relatedproduct->category_id, $user["user_id"]);
-                                            if (empty($wishlit)) {
                                                 $wishlist_Related = 0;
-                                            } else {
-                                                $wishlist_Related = 1;
-                                            }
-                                        } else {
-                                            $wishlist_Related = 0;
-                                        }
-                                        $i = $relatedproduct->Count;
-                                        $data = ++$i; // Increment $i and assign the value to $data
-                                        $product_count_update = update_count_comman_query($relatedproduct->category_id, $data, $relatedproduct->id);
-                                        ?>
-                                    <a style="margin-left: 100px;" <?php if (empty($user) || !isset($user)) { ?>
-                                        href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
-                                            lass="bi bi-suit-heart" aria-hidden="true"
-                                            style="font-size:18px;color:#69d3b0;padding: 0px;"
-                                            data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
-                                            class="<?php echo ($wishlist_Related == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $relatedproduct->id; ?>"
-                                            data-pid="<?php echo $relatedproduct->id; ?>"
-                                            data-cid="<?php echo $relatedproduct->category_id; ?>"
-                                            data-wishlist="<?php echo $wishlist_Related; ?>"></i></a>
+                                                if (!empty($user) && isset($user)) {
+                                                    $wishlit = get_wishlist($relatedproduct->id, $relatedproduct->category_id, $user["user_id"]);
+                                                    if (empty($wishlit)) {
+                                                        $wishlist_Related = 0;
+                                                    } else {
+                                                        $wishlist_Related = 1;
+                                                    }
+                                                } else {
+                                                    $wishlist_Related = 0;
+                                                }
+                                                $i = $relatedproduct->Count;
+                                                $data = ++$i; // Increment $i and assign the value to $data
+                                                $product_count_update = update_count_comman_query($relatedproduct->category_id, $data, $relatedproduct->id);
+                                                ?>
+                                              <div style="text-align: right;margin-top: -26px;" >
+                                            <a style="font-size:18px;color: #10B981;padding: 0px; text-decoration: none;" <?php if (empty($user) || !isset($user)) { ?>
+                                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
+                                                    lass="bi bi-suit-heart" aria-hidden="true"
+                                                    data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                                   
+                                                    class="<?php echo ($wishlist_Related == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $relatedproduct->id; ?>"
+                                                    data-pid="<?php echo $relatedproduct->id; ?>"
+                                                    data-cid="<?php echo $relatedproduct->category_id; ?>"
+                                                    data-wishlist="<?php echo $wishlist_Related; ?>"></i></a>
+                                                    </div>
                                             </div>
                                             
                                         </div>

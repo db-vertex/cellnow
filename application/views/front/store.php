@@ -1,110 +1,87 @@
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
 <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-
 <style>
-.img-size {
-    max-height: 500px;
-    min-height: 500px;
-    "
-
+@media (min-width: 1200px) {
+    .home_background {
+        margin-top: 100px;
+    }
+}
+@media (max-width: 1199px) {
+    .home_background {
+        margin-top: 75px;
+    }
+}
+@media (max-width: 548px) {
+    .home_background {
+        margin-top: 48px;
+    }
 }
 
 .search_wrap {
     width: 100%;
-
 }
-
 .select {
     background: #d1fae5;
     color: black;
     border-radius: 50%;
 }
-
 .search_wrap .search_box {
     position: relative;
-
     height: 64px;
 }
-
 .search_wrap .search_box .btn {
     position: absolute;
-
     height: 80%;
     background: #10B981;
     color: white;
-
 }
-
 .search_wrap .search_box .btn.btn_common .fas {
-
     /* top: 50%;
 	left: 50%;
 	transform: translate(-50%,-50%); */
     /* color: #fff; */
-
 }
-
 .search_wrap.search_wrap_6 .search_box .btn {
     max-width: 100%;
     height: 60%;
     top: 8%;
     right: 1.3%;
     padding: 6px 0px;
-
-
     /* color: #fff; */
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 input::placeholder {
     font-size: 16px;
     font-weight: bold;
 }
-
 @media screen and (max-width: 992px) {
     input::placeholder {
         font-size: 12px;
         font-weight: bold;
     }
 }
-
 @media screen and (max-width: 776px) {
     input::placeholder {
         font-size: 10px;
         font-weight: bold;
     }
-
-    .img-size {
-        max-height: 300px;
-        min-height: 300px;
-        "
-
-    }
+   
 }
-
 @media screen and (max-width: 560px) {
     input::placeholder {
         font-size: 12px;
         font-weight: bold;
     }
-
-    .img-size {
-        max-height: 200px;
-        min-height: 200px;
-        "
-
-    }
+   
 }
-
 .Services_header {
     padding-bottom: 0px;
     border-bottom: 6px solid #10B981;
     width: fit-content;
 }
-
 .va-thumbnail {
     border-radius: 2px;
     border: 0px;
@@ -112,24 +89,20 @@ input::placeholder {
     max-height: 270px;
     min-height: 270px;
 }
-
 .shop_icon {
     width: 40px;
     height: 40px;
 }
-
 .icon_slider {
     flex: 0 0 auto;
     width: 3.333333%;
 }
-
 .icon_cetgory {
     flex: 0 0 auto;
     width: 91.333333%;
 }
 </style>
-<div class="container-fluid home_background" style=" margin-top: 125px;">
-
+<div class="container home_background" style="">
     <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">
@@ -140,17 +113,14 @@ input::placeholder {
         ?>
                 <div class="carousel-item <?php if ($j == 1){echo "active";} ?>">
                     <a href="<?php echo $banner->url; ?>" target="_blank"><img style="border-radius:30px;"
-                            class="d-block w-100 img-size" id='<?php  echo $banner->url ?>'
+                            class="d-block w-100 img-size img-fluid" id='<?php  echo $banner->url ?>'
                             src="<?php echo base_url(); ?>uploads/banner/<?php echo $banner->banner_image; ?>"
                             alt="First slide"></a>
                 </div>
                 <?php
-
         $j++;
-
       }
       ?>
-
             </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleControlss"
                 data-bs-slide="prev">
@@ -165,13 +135,10 @@ input::placeholder {
         </div>
     </div>
 </div><br>
-
-
 <!-- search bar -->
 <div class="container">
     <div class="row">
         <div class="col-lg-7 col-md-5 col-sm-4 ">
-
         </div>
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
@@ -181,21 +148,12 @@ input::placeholder {
                         style="padding:12px 22px" />
                     <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search
                     </button>
-                    <!-- <form method="post" action="<?php echo base_url();?>welcome/searchshop/">
-                                    <div class="searchbox-wrap">
-                                        <input ype="search"  name="anything" aria-label="Search" aria-describedby="search-addon"  class="search_input form-input" placeholder="Search for the Product you want!">
-                                        <input type="text" class="form-control" name="latitude" id="latitude" hidden />
-                                        <input type="text" class="form-control" name="longitude" id="longitude"
-                                            hidden />
-                                        <button type="submit" class="search_b"><span class="Search_text">Search </span> </button>
-                                    </div>
-                                    </form> -->
+                
                 </div>
             </div>
         </div>
     </div>
-</div><br>
-
+</div>
 <div class="container">
     <div class="va-carrousel-section">
         <div class="va-whitewrap">
@@ -212,15 +170,12 @@ input::placeholder {
                             </svg>
                         </button>
                     </div>
-
                     <div class="col-10 pe-0 icon_cetgory">
                         <div class="va-carrousel-flexbox">
                             <?php $id = $this->uri->segment(3); 
                 $category = get_all_shopcategory();
-             
                 foreach ($category as $key => $cat) {
                   ?>
-
                             <div class="va-card va-card_category mt-2">
                                 <p style="text-align:center;" class="my-auto pouler_Categories"
                                     onclick="return getshop(<?php echo $cat->id; ?>)">
@@ -230,9 +185,7 @@ input::placeholder {
                                     <center style="color:black; font-size:12px; font-weight:500">
                                         <?php echo ucfirst($cat->shop_category); ?></center>
                                 </p>
-
                             </div>
-
                             <?php } ; ?>
                         </div>
                     </div>
@@ -252,9 +205,7 @@ input::placeholder {
         </div>
     </div>
 </div>
-
 <div class="container">
-
     <div class="row" id="sub-list">
         <?php  
             if($id == 16){
@@ -265,8 +216,6 @@ input::placeholder {
             }
 if(!empty($shop)){
 foreach($shop as $value){
-   
-
 ?>
         <div class="col-lg-3 col-md-4 col-sm-6 mb-4 post">
             <div class="card">
@@ -313,7 +262,6 @@ $(document).ready(function() {
     // Get value on button click and show alert
     $("#myBtn").click(function() {
         var location = $("#location").val();
-
         jQuery.ajax({
             type: "POST",
             url: "<?php echo base_url('/welcome/getsearchshop'); ?>",
@@ -321,13 +269,8 @@ $(document).ready(function() {
                 location: location
             },
             success: function(res) {
-
-
-
                 $("#sub-list").html(res);
-
                 // $('#load_cound').val("10");
-
             }
         });
     });
@@ -335,14 +278,10 @@ $(document).ready(function() {
 </script>
 <script>
 function getshop(category_id) {
-
-
     //var res = "";
     $("img").removeClass("select");
     $(".new" + category_id).addClass("select");
-
     // var allch =  $("#").val();
-
     jQuery.ajax({
         type: "POST",
         url: "<?php echo base_url('/welcome/getshop'); ?>",
@@ -350,23 +289,10 @@ function getshop(category_id) {
             category_id: category_id
         },
         success: function(res) {
-
-
-
-
-
-
-
-
-
-
             $("#sub-list").html(res);
-
             // $('#load_cound').val("10");
-
         }
     });
-
 }
 </script>
 <script>
@@ -374,7 +300,6 @@ function getshop(category_id) {
 (function() {
     function14();
 })();
-
 function function14() {
     $('.btnSweetalert').on("click", function() {
         swal({
@@ -390,7 +315,6 @@ function function14() {
             },
             function(isConfirm) {
                 if (isConfirm) {
-
                     window.location.href = "<?php echo base_url();?>welcome/logout";
                 } else {
                     swal("Cancelled", "Something went wrong. Please try again.)", "error");
