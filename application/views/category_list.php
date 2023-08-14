@@ -57,7 +57,7 @@ $msg_class=$this->session->flashdata('msg_class')
                 <tr id="<?php echo $value->id; ?>">
 
                 <td><?php echo $i; ?></td>
-                <td><?php echo  $value->category;?></td>
+                <td><a href="<?php echo base_url();?>admin/subCategory_list/<?php echo $value->id; ?>"><?php echo  $value->category;?></a></td>
                 
                  <td style="text-align: center;">
                         

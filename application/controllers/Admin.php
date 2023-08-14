@@ -796,6 +796,23 @@ public function shopCategory()
 
 }
 
+public function subCategory_list($category_id = 0)
+{
+    $session_id = $this->session->userdata('admin_id');
+    if ($session_id) {
+        $admin_detail = $this->admin_model->get_admin_data($session_id);
+        $sub_category = $this->admin_model->all_subcategory_list($category_id);
+
+        $data['admin_detail'] = $admin_detail;
+        $data['sub_category'] = $sub_category;
+
+        $this->load->view('subcategory_list', $data);
+    } else {
+        return redirect('admin');
+    }
+}
+
+
 public function Category()
 {
   $session_id = $this->session->userdata('admin_id');
@@ -1516,6 +1533,8 @@ if($session_id)
        }
 } 
 
+
+
 public function editshopcategory()
 {
 $session_id = $this->session->userdata('admin_id');
@@ -1548,6 +1567,8 @@ if($session_id)
       
       
       $admin_detail = $this->admin_model->get_admin_data($session_id);
+
+    
       
       $this->load->view('edit_subcategory',['admin_detail'=>$admin_detail,'test'=>$res]);
     
@@ -1751,58 +1772,58 @@ public function updatecategory()
    } 
 
 
-public function updatesubcategory()
-{
- 
-     $testid= $this->input->post('did');
+   public function updatesubcategory()
+   {
+       $testid = $this->input->post('did');
+   
+       // Get the existing icon filename for the subcategory
+       
+       $oldIconFileName = $this->admin_model->find_subcategory($testid);
+   
+       if (!empty($_FILES['icon']['name'])) {
+           $config['upload_path'] = './uploads/shopcategory/';
+           $config['allowed_types'] = 'gif|jpg|jpeg|png';
+           $this->load->library('upload', $config);
+   
+           if (!$this->upload->do_upload('icon')) {
+               $this->response(['status' => FALSE, 'message' => $this->upload->display_errors()], REST_Controller::HTTP_BAD_REQUEST);
+           } else {
+               $image_data = $this->upload->data();
+               $icon = $image_data['file_name'];
+           }
+       } 
+   
+       $cat = $this->input->post('category');
+       $category_id = $this->input->post('category_id');
 
-/*           if (!empty($_FILES['icon']['name'])) {
-                $config['upload_path'] = './uploads/category/';
-                // $config['allowed_types'] = 'gif|jpg|jpeg|png|doc|docx|pdf';
-                $config['allowed_types'] = 'gif|jpg|jpeg|png';
-                $this->load->library('upload', $config);
-                if (!$this->upload->do_upload('icon')) {
-                    //---- upload failed than show error-----
-                    //$this->session->set_flashdata('error', $this->upload->display_errors());
-                     $this->response(['status' => FALSE,
-        'message' =>$this->upload->display_errors()], REST_Controller::HTTP_BAD_REQUEST);
-                } else {
-                    //---- Successfully upload than add member-----
-                    $image_data = $this->upload->data();
-                    $icon = $image_data['file_name'];
-                }
-            }
-     $cat=$this->input->post('Category');
-
-
-     if(!empty($icon)){
-           $arr=array('category'=>$cat,'icon'=>$icon);
-
-     }else{
-      $arr=array('category'=>$cat);
-     }*/
       
-      $cat=$this->input->post('category');
-      $sub_category=$this->input->post('sub_category');
-
-     $arr=array('category'=>$cat,'sub_category'=>$sub_category);
-     
-      $res=$this->admin_model->update_subcategory($testid,$arr);
+   
+       if (!empty($oldIconFileName->icon)) {
+           $arr = array('product_type' => $cat, 'icon' => $icon);
   
-      if($res==1)
-          {
-            $this->session->set_flashdata('msg','Update successfully!!');
-            $this->session->set_flashdata('msg_class','alert-success');
-          }
-          else
-          {
-            $this->session->set_flashdata('msg','Update Not Successfully!!');
-            $this->session->set_flashdata('msg_class','alert-danger');
-          }
-
-          return redirect('admin/subcategory');
-   } 
-
+           if (!empty($oldIconFileName->icon)) {
+               $oldIconPath = './uploads/shopcategory/'.$oldIconFileName->icon;
+               if (file_exists($oldIconPath)) {
+                   unlink($oldIconPath);
+               }
+           }
+       } else {
+           $arr = array('product_type' => $cat);
+       }
+   
+       $res = $this->admin_model->update_subcategory_list($testid, $arr);
+   
+       if ($res == 1) {
+           $this->session->set_flashdata('msg', 'Update successfully!!');
+           $this->session->set_flashdata('msg_class', 'alert-success');
+       } else {
+           $this->session->set_flashdata('msg', 'Update Not Successfully!!');
+           $this->session->set_flashdata('msg_class', 'alert-danger');
+       }
+   
+       return redirect('admin/subCategory_list/'.$category_id);
+   }
+   
 
    
 public function updateagent()
@@ -2660,5 +2681,3 @@ imagejpeg($dst);
 
 
 }
-
-

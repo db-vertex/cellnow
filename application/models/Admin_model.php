@@ -188,6 +188,16 @@ public function all_category()
       return $result;
   }
 
+  public function all_subcategory_list($category_id)
+{
+    $q = $this->db->select('*')
+        ->from('product_type')
+        ->where(['category_id' => $category_id])
+        ->get();
+    return $q->result_array();
+}
+
+
   public function all_shop()
   {
         $this->db->select("*");
@@ -459,8 +469,8 @@ public function find_category($testid)
   public function find_subcategory($testid)
   {
   $q=$this->db->select('*')
-              ->where('sub_id',$testid)
-              ->get('subcategory');
+              ->where('id',$testid)
+              ->get('product_type');
               return $q->row();
   }
 
@@ -514,6 +524,17 @@ public function update_subcategory($testid,$arr)
    {
      if($this->db->where('sub_id',$testid)
               ->update('subcategory',$arr)){
+        return true;
+       } 
+       else{
+        return false;
+       } 
+   }
+
+   public function update_subcategory_list($testid,$arr)
+   {
+     if($this->db->where('id',$testid)
+              ->update('product_type',$arr)){
         return true;
        } 
        else{
