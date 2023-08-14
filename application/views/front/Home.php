@@ -218,11 +218,11 @@ input::placeholder {
 .testimonial {
     min-height: 375px;
     position: relative;
-    background-color: #D3D3D3;
+  
     padding-top: 50px;
     padding-bottom: 50px;
     background-position: center;
-        background-size: cover;
+    background-size: cover;
 }
 #testimonial4 .carousel-inner:hover{
   cursor: -moz-grab;
@@ -907,17 +907,10 @@ input::placeholder {
             <h4>Niki</h4>
           </div>
         </div>
+       
         <div class="carousel-item">
           <div class="testimonial4_slide">
-            <img src="https://i.ibb.co/8x9xK4H/team.jpg" class="img-circle img-responsive" alt="Client 3">
-            <p>I used CelNow to find new office and godown for my business. Its a best place to search property for both
-            residential and commercial need available for sale or rent.</p>
-            <h4>William</h4>
-          </div>
-        </div> 
-        <div class="carousel-item">
-          <div class="testimonial4_slide">
-            <img src="<?php echo base_url(); ?>assets/review/pavan.jpeg" class="img-circle img-responsive" alt="Client 3">
+            <img src="<?php echo base_url(); ?>assets/review/pavan.png" class="img-circle img-responsive" alt="Client 3">
             <p>Best place to convert our hobbies into cash. Her we can find part-time jobs as well as convert our hobbies into job.</p>
             <h4>Pavan</h4>
           </div>
