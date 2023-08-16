@@ -1484,7 +1484,7 @@
                         <ul class="dropdown-menu space" style="margin-top:-30px;">
 
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/buyerprofile">My
-                                    profile</a></li>
+                                    Profile</a></li>
 
                             <li><a class="dropdown-item" href="<?php echo base_url();?>welcome/chat">My Chat
                             <?php 
