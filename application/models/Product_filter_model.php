@@ -485,11 +485,11 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 				<img src="'.base_url("assets/images/location .png").'">
 				</div>
 				<div class="col-9 ps-0 mt-2">
-					<p tyle="color: #575757;">';
+					<p  style="color: #575757;">';
 										   $title = $row['address'];
 										   if(strlen($title) <= 25)
 										   {
-										   $pro .= ucfirst($title);
+										   $pro .= '<span class="ps-3" >'.ucfirst($title);'</span>';
 										  
 					  
 										   }
@@ -604,12 +604,12 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 				         <img src="'.base_url("assets/images/location .png").'">
 				       </div>
 				       <div class="col-9 mt-1">
-					     <p tyle="color: #575757;">';
+					     <p style="color: #575757;">';
 										   $title = $row['address'];
 					   
 										   if(strlen($title) <= 25)
 										   {
-										   $pro .= ucfirst($title);
+											$pro .= '<span class="ps-3" >'.ucfirst($title);'</span>';
 										  
 					  
 										   }

@@ -250,7 +250,7 @@ width: 131.9px; border-color:#10B981;">
                            $title = $pro->address;
                             if(strlen($title) <= 25)
                               {
-                                echo ucfirst($title);
+                                echo '<span class="ps-3" >'.ucfirst($title);'</span>';
                               }
                               else
                               {

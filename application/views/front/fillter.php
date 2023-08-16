@@ -1907,7 +1907,7 @@ input[type="range"]::-moz-range-thumb {
                                         <img src="<?php echo base_url();?>assets/images/location .png">
                                     </div>
                                     <div class="col-9 mt-1">
-                                        <p tyle="color: #575757;"><?php
+                                        <p style="color: #575757;"><?php
                            $title =$pro->address;
                             if(strlen($title) <= 10)
                               {

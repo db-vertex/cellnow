@@ -728,7 +728,7 @@
     loadChatList();
 
     // Call the loadChatList function periodically to refresh the chat list
-    setInterval(loadChatList, 1000); // Refresh every 5 seconds (adjust the interval as needed)
+    setInterval(loadChatList, 3000); // Refresh every 5 seconds (adjust the interval as needed)
 </script>
     <script>
     // Get the cross_icon element

@@ -703,7 +703,8 @@ input::placeholder {
                            $title = $pro->Address;
                             if(strlen($title) <= 25)
                               {
-                                echo ucfirst($title);
+                               // echo ucfirst($title);
+                                echo '<span class="ps-3" >'.ucfirst($title);'</span>';
                               }
                               else
                               {
@@ -800,7 +801,7 @@ input::placeholder {
                            $title = $pro->address;
                             if(strlen($title) <= 25)
                               {
-                                echo ucfirst($title);
+                                echo '<span class="ps-3" >'.ucfirst($title);'</span>';
                               }
                               else
                               {
