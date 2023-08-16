@@ -190,7 +190,7 @@ $sub .= '</h6>
 				
 			}
 		} else {
-			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product.png").'"></center>';
 		}
 		 if($all_count >4){
          $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/.$getproduct_home_category_id").'" class="btn">See All</a></center>';
@@ -296,7 +296,7 @@ $sub .= '</h6>
         }	
 			}
 		} else {
-			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product.png").'"></center>';
 		}
 		 if($all_count >4){
 			$getproduct_home_category_id  = $this->session->userdata('getproduct_home_category_id');
@@ -388,7 +388,7 @@ $sub .= '</h6>
 				}
 			}
 		} else {
-			$sub .= '<center><img  src="<?php echo base_url();?>assets/images/no_product .png"></center>';
+			$sub .= '<center><img src="'.base_url("assets/images/no_product.png").'"></center>';
 		}
 		 if($all_count >4){
 			$getproduct_home_category_id  = $this->session->userdata('getproduct_home_category_id');
@@ -468,7 +468,7 @@ $sub .= '</h6>
 				}
 			}
 		} else {
-			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product.png").'"></center>';
 		}
 		echo $sub;
 
@@ -544,7 +544,7 @@ $sub .= '</h6>
 				}
 			}
 		} else {
-			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product.png").'"></center>';
 		}
 		echo $sub;
 
@@ -595,7 +595,7 @@ $sub .= '</h6>
 
 			}
 		} else {
-			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product.png").'"></center>';
 		}
 
 		echo $sub;
@@ -655,7 +655,7 @@ $sub .= '</h6>
 			}
 		}
 	} else {
-			$sub .= '<center><img  src="'.base_url("assets/images/no_product .png").'"></center>';
+			$sub .= '<center><img  src="'.base_url("assets/images/no_product.png").'"></center>';
 		}
 		
 		echo $sub;

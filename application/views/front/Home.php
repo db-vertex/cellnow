@@ -389,8 +389,8 @@ input::placeholder {
 .carousel-item>div {
         float: center;
     }
-
 </style>
+
 <div class="container home_background" style="">
     <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
@@ -720,7 +720,7 @@ input::placeholder {
             </div>
             <?php }}
               else {?>
-            <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
+            <center><img src="<?php echo base_url();?>assets/images/no_product.png"></center>
             <?php }?>
             <?php if($shop_count > 4){ ?>
             <center class=""><a href="<?php echo base_url();?>welcome/store/16" class="btn btn-danger "
@@ -817,7 +817,7 @@ input::placeholder {
             <?php   }  $j++; };  ?>
             <?php }
               else {?>
-            <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
+            <center><img src="<?php echo base_url();?>assets/images/no_product.png"></center>
             <?php }?>
             <?php if($allcount > 4){ ?>
             <center class=""><a
@@ -872,8 +872,6 @@ input::placeholder {
         </div>
     </div>
 </div><br>
-
-
 
 
   <section class="testimonial text-center">
@@ -937,16 +935,7 @@ input::placeholder {
                             onclick="return checkemail();">Subscribe </button>
                         <span id="email_er" style="color: red; font-size:12px;"></span>
                     </form>
-                    <!-- <form method="post" action="<?php echo base_url();?>welcome/subscribe">
-                        <div class="searchbox-wrap">
-                            <input type="search" name="email_newsletter" id="email_newsletter"
-                                placeholder="Your Email Here!" aria-label="Search" aria-describedby="search-addon"
-                                class="search_input form-input">
-                            <button type="button" class="search_b"><span class="Search_text"
-                                    onclick="return checkemail();">Subscribe</span> </button>
-                        </div>
-                        <span id="email_er" class="ms-5" style="color: red; font-size:12px;"></span>
-                    </form> -->
+                 
                 </div>
             </div>
             </p>
@@ -1072,6 +1061,7 @@ $(document).ready(function() {
     // Get value on button click and show alert
     $("#myBtn").click(function() {
         var anything = $("#anything").val();
+        if(anything !== ''){
         jQuery.ajax({
             type: "POST",
             url: "<?php echo base_url('/welcome/getsearchproduct'); ?>",
@@ -1082,6 +1072,7 @@ $(document).ready(function() {
                 $("#product_list").html(res);
             }
         });
+       }
     });
 });
 </script>

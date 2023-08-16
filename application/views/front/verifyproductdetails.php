@@ -2021,7 +2021,7 @@
                         <?php }
                         }
                     } else { ?>
-                        <center><img src="<?php echo base_url(); ?>assets/images/no_product .png"></center>
+                        <center><img src="<?php echo base_url(); ?>assets/images/no_product.png"></center>
                         <?php } ?>
                     </div>
                 </div>

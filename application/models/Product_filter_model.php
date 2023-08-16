@@ -513,7 +513,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 
         }
     } else {
-        $pro .= '<center style="margin-top:200px;"><img src="'.base_url("assets/images/no_product .png").'"></center>';
+        $pro .= '<center style="margin-top:200px;"><img src="'.base_url("assets/images/no_product.png").'"></center>';
     }
     return $pro;
 }
@@ -633,7 +633,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 
         }
     } else {
-        $pro .= '<center style="margin-top:200px;"><img src="'.base_url("assets/images/no_product .png").'"></center>';
+        $pro .= '<center style="margin-top:200px;"><img src="'.base_url("assets/images/no_product.png").'"></center>';
     }
     return $pro;
 }

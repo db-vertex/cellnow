@@ -1742,7 +1742,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                       
                         <?php } } }else{?>
-                        <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
+                        <center><img src="<?php echo base_url();?>assets/images/no_product.png"></center>
                         <?php } ?>
                     </div>
                 </div>

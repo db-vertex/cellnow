@@ -2152,7 +2152,7 @@ $brands = array(
                 <?php   }  $j++; };  ?>
                 <?php }
               else {?>
-                <center><img src="<?php echo base_url();?>assets/images/no_product .png"></center>
+                <center><img src="<?php echo base_url();?>assets/images/no_product.png"></center>
                 <?php }?>
                 <?php }else{ ?> <div class="row filter_data">
                     <?php } ?>
