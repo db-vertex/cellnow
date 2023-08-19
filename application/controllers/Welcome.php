@@ -4358,7 +4358,6 @@ $sub .= '</h6>
 			);
 			$url = base_url().'welcome/chat/'.$category_id;
 
-			// Create a hidden form on the current page with input fields to send the data to the "chat" page
 			echo '<form id="chatForm" action="' . $url . '" method="post">';
 			echo '  <input type="text" name="sender_id" value="' . $sender_id . '">';
 			echo '  <input type="hidden" name="receiver_id" value="' . $receiver_id . '">';
@@ -4366,7 +4365,6 @@ $sub .= '</h6>
 			echo '  <input type="hidden" name="category_id" value="' . $category_id . '">';
 			echo '</form>';
 		
-			// Add JavaScript to automatically submit the form when the user clicks on the URL
 			echo '<script>';
 			echo '  var urlElement = document.createElement("a");';
 			echo '  urlElement.href = "' . $url . '";';
@@ -4381,7 +4379,6 @@ $sub .= '</h6>
 			$msg = $this->sendMessage($keys_auth, $notification_data, $title, $image, $url);
 			$messages['msg'] = $msg;
 			}
-			// redirect('/?msg=1', 'refresh');
 	} 
       /* ------------------------------------------ Web Push Notifications ---------------------------------------------------- */
 	                        
