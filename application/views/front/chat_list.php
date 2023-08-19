@@ -712,28 +712,36 @@
    
     <script>
     var chatListContainer = $('#chatListContainer');
+   
     var previousScrollHeight = chatListContainer.prop('scrollHeight');
+    
     function loadChatList() {
         $.ajax({
             url: '<?php echo base_url('/welcome/getlodechatlist'); ?>',
             type: 'GET',
             success: function(data) {
                 chatListContainer.html(data);
+                
                 var newScrollHeight = chatListContainer.prop('scrollHeight');
                 var scrollHeightDifference = newScrollHeight - previousScrollHeight;
+
+                console.log('Previous Scroll Height:', previousScrollHeight);
+                console.log('New Scroll Height:', newScrollHeight);
+                console.log('Scroll Height Difference:', scrollHeightDifference);
 
                 chatListContainer.scrollTop(scrollHeightDifference);
                 previousScrollHeight = newScrollHeight;
             },
             error: function(xhr, status, error) {
-             
+                console.error('AJAX Error:', error);
             }
         });
     }
 
     loadChatList();
-    setInterval(loadChatList, 10000);
+  
 </script>
+
 
 
     <script>
@@ -898,6 +906,7 @@
                         $("#message-list").html(res);
                         $('textarea#message').val("");
                         //location.reload();
+                        loadChatList();
                     }
                 });
             } else {
