@@ -1390,7 +1390,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b>Teachers Qualifications</b></p>
+                                <p class="details_text"><b>Teacher's qualification</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->Teachers_Qualifications; ?></p>
@@ -1501,7 +1501,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b> Rent/Shell</b></p>
+                                <p class="details_text"><b> Rent/Sale</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->filter; ?></p>
@@ -1527,7 +1527,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b> Rent/Shell</b></p>
+                                <p class="details_text"><b> Rent/Sale</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->filter; ?></p>

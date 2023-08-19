@@ -1393,12 +1393,12 @@
 
                             <div class="col-sm-6 hiddens" id="Tuitions_Teachers_Qualifications_div">
                                 <label for="Tuitions_Teachers_Qualifications"
-                                    class="form-label post_input_lable">Teachers Qualifications</label>
+                                    class="form-label post_input_lable">Teacher's qualification</label>
                                 <input type="text" class="form-control post_input_fild"
                                     id="Tuitions_Teachers_Qualifications" name="Tuitions_Teachers_Qualifications"
-                                    placeholder="Please Enter Teachers Qualifications">
+                                    placeholder="Please Enter Teacher's qualification">
                                 <div class="invalid-feedback">
-                                    Please Enter Teachers Qualifications.
+                                    Please Enter Teacher's qualification.
                                 </div>
                             </div>
 
@@ -1406,7 +1406,7 @@
                                 <label for="Tuitions_Joining_criteria" class="form-label post_input_lable">Joining
                                     criteria</label>
                                 <input type="text" class="form-control post_input_fild" id="Tuitions_Joining_criteria"
-                                    name="Tuitions_Joining_criteria" placeholder="Please Enter Teachers Qualifications">
+                                    name="Tuitions_Joining_criteria" placeholder="Please Enter Joining criteria">
                                 <div class="invalid-feedback">
                                     Please Enter Joining criteria.
                                 </div>
@@ -1673,13 +1673,12 @@
 
 
                             <div class="col-12 hiddens" id="Tuitions_Positives_Outcomes_div">
-                                <label for="Tuitions_Positives_Outcomes" class="form-label post_input_lable">Positives
-                                    Outcomes</label>
+                                <label for="Tuitions_Positives_Outcomes" class="form-label post_input_lable">Positive  Outcome</label>
                                 <textarea type="text" class="form-control post_input_fild"
                                     id="Tuitions_Positives_Outcomes" name="Tuitions_Positives_Outcomes" rows="5"
-                                    cols="50" placeholder="Enter Positives Outcomes"></textarea>
+                                    cols="50" placeholder="Enter Positive  Outcome"></textarea>
                                 <div class="invalid-feedback">
-                                    Please Enter Positives Outcomes.
+                                    Please Enter Positive  Outcome.
                                 </div>
                             </div>
 

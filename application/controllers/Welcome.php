@@ -697,8 +697,22 @@ $sub .= '</h6>
 
 	public function login()
 	{
-		$this->form_validation->set_rules('phone', ' phone', 'required|min_length[10]|max_length[10]');
-		$this->form_validation->set_rules('password', ' password', 'required|min_length[6]');
+		$this->form_validation->set_rules('phone','mobile','required|min_length[10]|max_length[10]|is_unique[users.phone]',
+			array(
+				'required' => 'The %s field is required.',
+				'min_length' => 'The %s must be at  least <br> 10  characters long.',
+				'max_length' => 'The %s must not exceed <br> 10  characters.',
+				'is_unique' => 'The %s already exists.'
+			)
+		);
+		
+		$this->form_validation->set_rules('password','password','required|min_length[6]',
+			array(
+				'required' => 'The %s field is required.',
+				'min_length' => 'The %s must be <br> at least  6 characters long.'
+			)
+		);
+
 		$this->form_validation->set_error_delimiters('<span class="validate-has-error">', '</span>');
 
 		if ($this->form_validation->run()) {

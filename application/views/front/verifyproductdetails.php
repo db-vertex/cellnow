@@ -1422,7 +1422,7 @@
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b>Teachers Qualifications</b></p>
+                                <p class="details_text"><b>Teacher's qualification</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->Teachers_Qualifications; ?></p>
@@ -1533,7 +1533,7 @@
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b> Rent/Shell</b></p>
+                                <p class="details_text"><b> Rent/Sale</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->filter; ?></p>
@@ -1559,7 +1559,7 @@
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b> Rent/Shell</b></p>
+                                <p class="details_text"><b> Rent/Sale</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->filter; ?></p>
