@@ -517,8 +517,6 @@
                                 <?php } ?>
                                 <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
                                     class="btn">+</label>
-
-
                                 <input type="file" class="form-control-file" id="images_2" name="profile_img[]"
                                     accept="image/*" style="visibility:hidden;">
                             </div>
@@ -562,11 +560,11 @@
                             <div class="col-3 images_small_box m-2">
                             
                                 <?php if($get_data->images_5!==NULL){ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3"  id="removeImage5" onclick="images_5()"></i>      
+                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3 images_5"  id="removeImage5"  onclick="images_5()"></i>      
                                 <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>"
                                     class="preview5" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3"   style="display:none;" id="removeImage5" onclick="images_5()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3"   style="display:none;" id="removeImage5" ></i>
                                 <img id="ImgPreview5" src="" class="preview5"
                                     style="display:none; width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_5" for="images_5"
@@ -922,7 +920,6 @@ $(document).ready(function() {
         $('#data_input').trigger("reset");
     });
     </script>
-
     <script>
     function images_2() {
 
@@ -944,11 +941,12 @@ $(document).ready(function() {
 
         });
     }
-
+    </script>
+    <script>
     function images_3() {
         swal({
                 title: " Delete!",
-                text: "Are you sure you want to delete?",
+                text: "Do you want to delete image permanent ?",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
@@ -984,11 +982,12 @@ $(document).ready(function() {
 
             });
     }
-
+    </script>
+    <script>
     function images_4() {
         swal({
                 title: " Delete!",
-                text: "Are you sure you want to delete?",
+                text: "Do you want to delete image permanent ?",
                 type: "warning",
                 showCancelButton: true,
                 confirmButtonColor: "#DD6B55",
@@ -1025,49 +1024,48 @@ $(document).ready(function() {
             });
     }
 
-
-    function images_5() {
-        swal({
-                title: " Delete!",
-                text: "Are you sure you want to delete?",
-                type: "warning",
-                showCancelButton: true,
-                confirmButtonColor: "#DD6B55",
-                confirmButtonText: "Yes",
-                cancelButtonText: "No",
-                closeOnConfirm: false,
-                closeOnCancel: false
-            },
-            function(isConfirm) {
-                if (isConfirm) {
-                    var thumbnails = 'images_5';
-                    var product_id = document.getElementById("product_id").value;
-                    var category = document.getElementById("category").value;
-                    $.ajax({
-                        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
-                        type: 'POST',
-                        data: {
-                            thumbnails: thumbnails,
-                            product_id: product_id,
-                            category: category
-                        },
-                        dataType: 'json',
-                        success: function(data) {
-
-                        }
-                        window.location.reload();
-                    });
-
-                } else {
-                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
-
-                }
-                window.location.reload();
-            });
-    }
     </script>
-
-
+    <script>
+    function images_5() {
+    swal({
+        title: "Delete!",
+        text: "Do you want to delete image permanent ?",
+        type: "warning",
+        showCancelButton: true,
+        confirmButtonColor: "#DD6B55",
+        confirmButtonText: "Yes",
+        cancelButtonText: "No",
+        closeOnConfirm: false,
+        closeOnCancel: false
+    }, function(isConfirm) {
+        if (isConfirm) {
+            var thumbnails = 'images_5';
+            var product_id = document.getElementById("product_id").value;
+            var category = document.getElementById("category").value;
+            
+            $.ajax({
+                url: '<?php echo site_url('Welcome/deleteimage'); ?>',
+                type: 'POST',
+                data: {
+                    thumbnails: thumbnails,
+                    product_id: product_id,
+                    category: category
+                },
+                dataType: 'json',
+                success: function(data) {
+                    // Handle success if needed
+                },
+                complete: function() {
+                    // Reload the page after AJAX request is complete
+                    window.location.reload();
+                }
+            });
+        } else {
+            swal("Cancelled", "Something went wrong. Please try again.", "error");
+        }
+    });
+}
+    </script>
 
 
     <script>
@@ -1092,13 +1090,11 @@ $(document).ready(function() {
     })()
     </script>
 
-
 </body>
-
 </html>
 
 <script>
-"use strict"; /* Start of use strict */
+"use strict"; 
 (function() {
     function14();
 })();
