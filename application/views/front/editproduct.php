@@ -509,7 +509,7 @@
                                 <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>"
                                     class="preview2" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv2 me-3" style="display:none;"  id="removeImage2" onclick="images_2()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv2 me-3" style="display:none;"  id="removeImage2" ></i>
                                 <img id="ImgPreview2" src="" class="preview2"
                                     style="display:none; width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_2" for="images_2"
@@ -526,7 +526,7 @@
                                 <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>"
                                     class="preview3" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3" style="display:none;" onclick="images_3()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3" style="display:none;"></i>
     
                                 <img id="ImgPreview3" src="" class="preview3"
                                     style="display:none; width: 78.17px; height: 96px;" />
@@ -546,7 +546,7 @@
                                 <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>"
                                     class="preview4" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" style="display:none;" onclick="images_4()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" style="display:none;" ></i>
                                 <img id="ImgPreview4" src="" class="preview4"
                                     style="display:none; width: 78.17px; height: 96px;" />
                                 <label class="images_small_box__plus" id="images_small_box__plus_4" for="images_4"
@@ -922,24 +922,43 @@ $(document).ready(function() {
     </script>
     <script>
     function images_2() {
-
-        var thumbnails = 'images_2';
-        var product_id = document.getElementById("product_id").value;
-        var category = document.getElementById("category").value;
-        $.ajax({
-            url: '<?php echo site_url('Welcome/deleteimage'); ?>',
-            type: 'POST',
-            data: {
-                thumbnails: thumbnails,
-                product_id: product_id,
-                category: category
+        swal({
+                title: " Delete!",
+                text: "Do you want to delete image permanent ?",
+                type: "warning",
+                showCancelButton: true,
+                confirmButtonColor: "#DD6B55",
+                confirmButtonText: "Yes",
+                cancelButtonText: "No",
+                closeOnConfirm: false,
+                closeOnCancel: false
             },
-            dataType: 'json',
-            success: function(data) {
+            function(isConfirm) {
+                if (isConfirm) {
+                    var thumbnails = 'images_2';
+                    var product_id = document.getElementById("product_id").value;
+                    var category = document.getElementById("category").value;
+                    $.ajax({
+                        url: '<?php echo site_url('Welcome/deleteimage'); ?>',
+                        type: 'POST',
+                        data: {
+                            thumbnails: thumbnails,
+                            product_id: product_id,
+                            category: category
+                        },
+                        dataType: 'json',
+                        success: function(data) {
 
-            }
+                        }
 
-        });
+                    });
+
+                } else {
+                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+
+                }
+
+            });
     }
     </script>
     <script>
@@ -984,7 +1003,7 @@ $(document).ready(function() {
     }
     </script>
     <script>
-    function images_4() {
+   function images_4() {
         swal({
                 title: " Delete!",
                 text: "Do you want to delete image permanent ?",
@@ -1013,17 +1032,16 @@ $(document).ready(function() {
                         success: function(data) {
 
                         }
-                        window.location.reload();
+
                     });
 
                 } else {
                     swal("Cancelled", "Something went wrong. Please try again.)", "error");
 
                 }
-                window.location.reload();
+
             });
     }
-
     </script>
     <script>
     function images_5() {
