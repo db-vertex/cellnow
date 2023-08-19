@@ -59,37 +59,72 @@ class Product_filter_model extends CI_Model
 	
 	if ($sub_category  == '') {
 		$sql = $categorys;
-		
+		if($categorys == "category_reusable_parts"){
+			$sub_cat = 7;
+			$colume_name = "subcategory_id";
+		}
+		else if($categorys == "category_tuitions"){
+			$sub_cat = 13;
+			$colume_name = "Education_Type";	
+		}
+		else if($categorys == "category_job"){
+			$sub_cat = 39;
+			$colume_name = "Job_type";
+		}
+		else if($categorys == "category_internships"){
+			$sub_cat = 53;
+			$colume_name = "subcategory_id";
+		}
+		else if($categorys == "category_commericial_places"){
+			$sub_cat = 21;
+			$colume_name = "subcategory_id";
+		}
+		else if($categorys == "category_residential_places"){
+			$sub_cat = 31;
+			$colume_name = "subcategory_id";
+		}
+		else if($categorys == "category_land_plot"){
+			$sub_cat = 34;
+			$colume_name = "subcategory_id";
+		}
+		$defult = "defult";
+	
 	}
 	else{
 		$sub_category_filter = implode("','", $sub_category);
 		if($sub_category_filter <= 12){
-			
 			$sql = "category_reusable_parts";
 		}
 		else if (($sub_category_filter >= 13 && $sub_category_filter <= 22) ) {
 			
 			$sql = "category_tuitions";
+			
 		}
 		else if(($sub_category_filter >= 23 && $sub_category_filter <= 46)){
 			$sql = "category_job";
+			
 		}
 		else if(($sub_category_filter >= 47 && $sub_category_filter <= 74)){
 
 			$sql = "category_internships";
+			
 		 }
 		 else if(($sub_category_filter >= 75 && $sub_category_filter <= 81)){
 
 			$sql = "category_commericial_places";
+			
 		 }
 		 else if(($sub_category_filter >= 82 && $sub_category_filter <= 88) ){
 
 			$sql = "category_residential_places";
+			
 		 }
 		 else if(($sub_category_filter >= 89 && $sub_category_filter <= 91)){
 
 			$sql = "category_land_plot";
+			
 		 }
+		
 
 	}
 
@@ -145,8 +180,7 @@ class Product_filter_model extends CI_Model
 					 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '1' AND user_id != {$_SESSION['id']} UNION
 					 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '1' AND user_id != {$_SESSION['id']} ";
 				}else{
-					$query = "SELECT * FROM $sql WHERE pay_type = '2' AND user_id != {$_SESSION['id']}";
-	
+						$query = "SELECT * FROM $sql WHERE pay_type = '2' AND user_id != {$_SESSION['id']}";
 				}
 			}
 		} else {
@@ -160,7 +194,7 @@ class Product_filter_model extends CI_Model
 					 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '1' UNION
 					 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '1' ";
 			}else{
-			$query = "SELECT * FROM $sql WHERE pay_type = '2'";
+				$query = "SELECT * FROM $sql WHERE pay_type = '2'";
 			
 			}
 		}
@@ -168,6 +202,7 @@ class Product_filter_model extends CI_Model
 	else{
     if ($session_id) {
         if (isset($_SESSION["id"]) !== '') {
+			
 			if($categorys=='All'){
 				$query="SELECT id, user_id,title,category_id,subcategory_id,verified_product,brand,postal_code,bill,Warrenty,type,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_reusable_parts  WHERE pay_type = '1' AND user_id != {$_SESSION['id']}  UNION
 				SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Job_type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type  FROM category_job  WHERE pay_type = '1' AND user_id != {$_SESSION['id']}   UNION
@@ -177,7 +212,14 @@ class Product_filter_model extends CI_Model
 				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '1' AND user_id != {$_SESSION['id']} UNION
 				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '1' AND user_id != {$_SESSION['id']} ";
 			}else{
+
+	           if(isset($defult) == "defult"){
+				$query = "SELECT * FROM $sql WHERE pay_type != '3' AND user_id != {$_SESSION['id']} AND $colume_name = $sub_cat";
+			   }
+			   else{
 				$query = "SELECT * FROM $sql WHERE pay_type != '3' AND user_id != {$_SESSION['id']}";
+			   }
+				
 
 			}
         }
@@ -192,7 +234,12 @@ class Product_filter_model extends CI_Model
 				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '1' UNION
 				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,filter,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '1' ";
 		}else{
-        $query = "SELECT * FROM $sql WHERE pay_type != '3'";
+			if(isset($defult) == "defult"){
+				$query = "SELECT * FROM $sql WHERE pay_type != '3'  AND $colume_name = $sub_cat";
+			   }
+			   else{
+				$query = "SELECT * FROM $sql WHERE pay_type != '3'";
+			   }
 		
 		}
     }

@@ -1957,8 +1957,12 @@ input[type="range"]::-moz-range-thumb {
         });
     });
     </script>
+
+
     <script>
     $(document).ready(function() {
+
+        
         filter_data(1);
 
         function filter_data(page) {
