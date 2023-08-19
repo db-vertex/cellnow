@@ -1382,7 +1382,7 @@
 
 
                             <div class="col-sm-6 hiddens" id="Tuitions_person_Fees_div">
-                                <label for="Tuitions_person_Fees" class="form-label post_input_lable">Par Person
+                                <label for="Tuitions_person_Fees" class="form-label post_input_lable">Per Person
                                     Fees</label>
                                 <input type="number" class="form-control post_input_fild" id="Tuitions_person_Fees"
                                     name="Tuitions_person_Fees" placeholder="Please Enter Fees">
