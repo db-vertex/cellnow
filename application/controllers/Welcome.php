@@ -4021,6 +4021,7 @@ $sub .= '</h6>
 				//echo "here";
 			}
 			$user_id = get_subscribersdetail($receiver_id);
+
 			if((!empty($user_id))){
 				$this->website_notification($sender_id, $receiver_id, $product_id, $category_id,$message);
 			}
@@ -4345,7 +4346,7 @@ $sub .= '</h6>
 			$title = $user_name->name ;
 			$image = base_url().'assets/images/CelNow 5 1.png';
 			$query = $this->main_model->get_data_user('subscribers',$receiver_id)->result();
-
+          
 			foreach($query as $row) {
 			$keys_auth = array(
 				"contentEncoding" => "aesgcm",
@@ -4355,7 +4356,7 @@ $sub .= '</h6>
 					"p256dh" => $row->p256dh
 				)
 			);
-			$url = base_url() . 'welcome/chat/' . $category_id;
+			$url = base_url().'welcome/chat/'.$category_id;
 
 			// Create a hidden form on the current page with input fields to send the data to the "chat" page
 			echo '<form id="chatForm" action="' . $url . '" method="post">';
@@ -4450,6 +4451,7 @@ $sub .= '</h6>
 	// but in reality, you'll get this information in your database
 	// because you already stored it (cf. push_subscription.php)
 	$query = $this->main_model->get_data('subscribers')->result();
+	
 	foreach($query as $row) {
 		$notification_data = array(
 		"contentEncoding" => "aesgcm",
