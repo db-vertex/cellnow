@@ -4498,19 +4498,13 @@ $sub .= '</h6>
 
 	  public function getlodechatlist() {
 		$session_id = $this->session->userdata('id');
-
-		$sender_id = $session_id; // Replace with appropriate code to get sender_id
-		$receiver_id = $session_id; // Replace with appropriate code to get receiver_id
-	
+		$sender_id = $session_id; 
+		$receiver_id = $session_id;
 		echo '<div>';
 		echo '<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 550px;">';
 		echo '<div class="chat-list-wrapper" style="overflow-y: auto; width: auto; height: 550px;">';
 		echo '<ul class="chat-list">';
-	
 		$chat_list = get_all_chat_list($sender_id);
-
-	
-		
 		if (!empty($chat_list)) {
 			foreach ($chat_list as $key => $chat_per) {
 
