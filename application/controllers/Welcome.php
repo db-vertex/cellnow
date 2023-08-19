@@ -4501,9 +4501,9 @@ $sub .= '</h6>
 		$sender_id = $session_id; 
 		$receiver_id = $session_id;
 		echo '<div>';
-		echo '<div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 550px;">';
+		echo '<div class="slimScrollDiv" id="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 550px;">';
 		echo '<div class="chat-list-wrapper" style="overflow-y: auto; width: auto; height: 550px;">';
-		echo '<ul class="chat-list">';
+		echo '<ul class="chat-list" id="chat_list">';
 		$chat_list = get_all_chat_list($sender_id);
 		if (!empty($chat_list)) {
 			foreach ($chat_list as $key => $chat_per) {
@@ -4532,7 +4532,7 @@ $sub .= '</h6>
 					$username = get_user_phone($chat_per->receiver_id);
 				}
 	
-				echo '<li class="new' . ($username->user_id) . ($profile->id) . '"';
+				echo '<li  class="new' . ($username->user_id) . ($profile->id) . '"';
 				$chat_list_color_product_id = $this->session->userdata('chat_list_color_product_id');
 				$chat_list_color_user_id = $this->session->userdata('chat_list_color_user_id');
 				if ("new" . $chat_list_color_user_id . $chat_list_color_product_id == "new" . ($username->user_id) . ($profile->id)) {

@@ -709,27 +709,33 @@
             </div>
         </div>
     </div>
+   
     <script>
-    // Function to load and refresh the chat list
+    var chatListContainer = $('#chatListContainer');
+    var previousScrollHeight = chatListContainer.prop('scrollHeight');
     function loadChatList() {
         $.ajax({
-            url: '<?php echo base_url('/welcome/getlodechatlist'); ?>', // Replace with the actual path to your server-side script
-            type: 'GET', // Change to POST if required
+            url: '<?php echo base_url('/welcome/getlodechatlist'); ?>',
+            type: 'GET',
             success: function(data) {
-                $('#chatListContainer').html(data); // Replace the existing chat list with the updated data
+                chatListContainer.html(data);
+                var newScrollHeight = chatListContainer.prop('scrollHeight');
+                var scrollHeightDifference = newScrollHeight - previousScrollHeight;
+
+                chatListContainer.scrollTop(scrollHeightDifference);
+                previousScrollHeight = newScrollHeight;
             },
             error: function(xhr, status, error) {
-                // Handle error if necessary
+             
             }
         });
     }
 
-  
     loadChatList();
-
-    
-    setInterval(loadChatList, 2000); 
+    setInterval(loadChatList, 10000);
 </script>
+
+
     <script>
     const crossIcon = document.getElementById("cross_icon");
     crossIcon.addEventListener("click", function() {
