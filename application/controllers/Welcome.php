@@ -3756,6 +3756,8 @@ $sub .= '</h6>
 	}
 	public function chat($data = " ")
 	{
+		$this->session->unset_userdata('chat_list_color_user_id');
+			$this->session->unset_userdata('chat_list_color_product_id');
 		$session_id = $this->session->userdata('id');
 		if ($session_id) {
 			$message = "";
@@ -3768,6 +3770,8 @@ $sub .= '</h6>
 				$category_id = $this->input->post('category_id');
 				$message = $this->input->post('message');
 
+				
+                
 			
 			} else {
 				$sender_id = $session_id;
@@ -3814,6 +3818,10 @@ $sub .= '</h6>
 			$product_id = $this->input->post('product_id');
 			$category_id = $this->input->post('category_id');
 			$pro_images = "";
+
+			$this->session->set_userdata('chat_list_color_user_id', $receiver_id);
+			$this->session->set_userdata('chat_list_color_product_id', $product_id);
+
 			if ($chat_list = $this->chat_model->chatlist($session_id)) {
 				$chat = $this->user->getuserallchat($sender_id, $receiver_id, $product_id, $category_id);
 				$pro = "";
@@ -4364,7 +4372,6 @@ $sub .= '</h6>
 			echo '  <input type="hidden" name="product_id" value="' . $product_id . '">';
 			echo '  <input type="hidden" name="category_id" value="' . $category_id . '">';
 			echo '</form>';
-		
 			echo '<script>';
 			echo '  var urlElement = document.createElement("a");';
 			echo '  urlElement.href = "' . $url . '";';
@@ -4532,6 +4539,11 @@ $sub .= '</h6>
 				}
 	
 				echo '<li class="new' . ($username->user_id) . ($profile->id) . '"';
+				$chat_list_color_product_id = $this->session->userdata('chat_list_color_product_id');
+				$chat_list_color_user_id = $this->session->userdata('chat_list_color_user_id');
+				if ("new" . $chat_list_color_user_id . $chat_list_color_product_id == "new" . ($username->user_id) . ($profile->id)) {
+					echo ' style="background-color:#d9d3d2;"';
+				}
 				echo ' onclick="redirectDiv(); getchat(' . $username->user_id . ', ' . $_SESSION['id'] . ', ' . $profile->id . ', ' . $profile->category_id . ');">';
 				echo '<span class="avatar available">';
 				echo '<img src="' . base_url() . $profile->cover_img . '" class="img-circle rounded-5">';
@@ -4592,7 +4604,8 @@ $sub .= '</h6>
 		} else if (!empty($chat)) {
 			$username = get_user_phone($receiver_id);
 	
-			echo '<li class="new' . ($username->user_id) . ($profile->id) . '"';
+				echo '<li class="new' . ($username->user_id) . ($profile->id) . '"';
+			
 			echo ' onclick="return getchat(' . $username->user_id . ', ' . $_SESSION['id'] . ');"';
 			echo ' style="padding: 45px 20px;">';
 			echo '<span class="avatar available">';

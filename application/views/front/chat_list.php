@@ -195,7 +195,7 @@
     }
 
     .chat .chat-wrapper .chat-list-wrapper .chat-list li.active {
-        background-color: #eee;
+       
         color: black;
     }
 
@@ -467,7 +467,7 @@
         }
 
         .chat .chat-wrapper .chat-list-wrapper .chat-list li.active {
-            color: black;
+            color: gray;
         }
 
         .chat .chat-wrapper .chat-list-wrapper .chat-list li.active .body .timestamp {
@@ -724,37 +724,29 @@
         });
     }
 
-    // Call the loadChatList function initially to load the chat list
+  
     loadChatList();
 
-    // Call the loadChatList function periodically to refresh the chat list
-    setInterval(loadChatList, 3000); // Refresh every 5 seconds (adjust the interval as needed)
+    
+    setInterval(loadChatList, 2000); 
 </script>
     <script>
-    // Get the cross_icon element
     const crossIcon = document.getElementById("cross_icon");
-    // Add a click event listener to the cross_icon element
     crossIcon.addEventListener("click", function() {
-        // Reload the window when the icon is clicked
         location.reload();
     });
     </script>
     <script type="text/javascript">
     function checkchatmessage() {
-        //var verify_otp = document.getElementById('verify_otp');
-        // var message = document.getElementById('message');
         var message = $("textarea#message").val();
         var sender_id = $('#sender_id').val();
         var receiver_id = $('#receiver_id').val();
-        //var goodColor = "#0C6";
-        //var badColor = "#FF9B37";
         if (message == "" && sender_id == "" && receiver_id == "" || sender_id == receiver_id) {
             $('#btn-send').prop('disabled', true);
         } else {
             $('#btn-send').prop('disabled', false);
         }
     }
-
     function getchat(receiver_id, sender_id, product_id, category_id) {
         //var res = "";
         $("li").removeClass("active");
