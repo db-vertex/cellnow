@@ -505,7 +505,7 @@
                             <div class="col-3 images_small_box m-2">
                               
                                 <?php if($get_data->images_2!==NULL){ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv2 me-3"  id="removeImage2" onclick="images_2()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv2 me-3"  id="" onclick="images_2()"></i>
                                 <img id="ImgPreview2" src="<?php echo base_url();?><?php echo $get_data->images_2?>"
                                     class="preview2" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
@@ -522,7 +522,7 @@
                             </div>
                             <div class="col-3 images_small_box m-2">
                                 <?php if($get_data->images_3!==NULL){ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv3 me-3" id="removeImage3"  onclick="images_3()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv3 me-3" id=""  onclick="images_3()"></i>
                                 <img id="ImgPreview3" src="<?php echo base_url();?><?php echo $get_data->images_3?>"
                                     class="preview3" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
@@ -542,7 +542,7 @@
                             <div class="col-3 images_small_box m-2">
                            
                                 <?php if($get_data->images_4!==NULL){ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="removeImage4" onclick="images_4()"></i>
+                                    <i class="bi bi-x-circle-fill btn-rmv4 me-3" id="" onclick="images_4()"></i>
                                 <img id="ImgPreview4" src="<?php echo base_url();?><?php echo $get_data->images_4?>"
                                     class="preview4" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
@@ -560,7 +560,7 @@
                             <div class="col-3 images_small_box m-2">
                             
                                 <?php if($get_data->images_5!==NULL){ ?>
-                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3 images_5"  id="removeImage5"  onclick="images_5()"></i>      
+                                    <i class="bi bi-x-circle-fill btn-rmv5 me-3 images_5"  id=""  onclick="images_5()"></i>      
                                 <img id="ImgPreview5" src="<?php echo base_url();?><?php echo $get_data->images_5?>"
                                     class="preview5" style="width: 78.17px; height: 96px;" />
                                 <?php } else{ ?>
@@ -948,13 +948,15 @@ $(document).ready(function() {
                         },
                         dataType: 'json',
                         success: function(data) {
-
-                        }
-
+                        },
+                        complete: function() {
+                      window.location.reload();
+                     }
+   
                     });
 
                 } else {
-                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    swal("Cancelled", "Something went wrong. Please try again.", "error");
 
                 }
 
@@ -989,13 +991,15 @@ $(document).ready(function() {
                         },
                         dataType: 'json',
                         success: function(data) {
-
-                        }
+                        },
+                        complete: function() {
+                      window.location.reload();
+                     }
 
                     });
 
                 } else {
-                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    swal("Cancelled", "Something went wrong. Please try again.", "error");
 
                 }
 
@@ -1031,12 +1035,15 @@ $(document).ready(function() {
                         dataType: 'json',
                         success: function(data) {
 
-                        }
+                        },
+                        complete: function() {
+                    window.location.reload();
+                }
 
                     });
 
                 } else {
-                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    swal("Cancelled", "Something went wrong. Please try again.", "error");
 
                 }
 
@@ -1135,7 +1142,7 @@ function function14() {
 
                     window.location.href = "<?php echo base_url();?>welcome/logout";
                 } else {
-                    swal("Cancelled", "Something went wrong. Please try again.)", "error");
+                    swal("Cancelled", "Something went wrong. Please try again.", "error");
                 }
             });
     });
