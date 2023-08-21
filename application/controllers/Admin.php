@@ -1787,7 +1787,7 @@ public function updatecategory()
    {
        $testid = $this->input->post('did');
        $category_id = $this->input->post('category_id');
-   
+       $cat = $this->input->post('category');
        
       
    
@@ -1804,12 +1804,12 @@ public function updatecategory()
            }
        } 
    
-       $cat = $this->input->post('category');
+     
   
        if($category_id == 1 || $category_id == 2 || $category_id == 3 || $category_id == 4 || $category_id == 5 || $category_id == 6 ||$category_id == 7){
 
         $oldIconFileName = $this->admin_model->find_subcategory_type($testid);
-        if (!empty($oldIconFileName->icon)) {
+        if (!empty($oldIconFileName->icon) && !empty($_FILES['icon']['name'])) {
           $arr = array('product_type' => $cat, 'icon' => $icon);
  
           if (!empty($oldIconFileName->icon)) {
