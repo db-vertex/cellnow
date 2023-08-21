@@ -1575,11 +1575,11 @@
                             </div>
 
                             <div class="col-sm-6 hiddens" id="job_Salery_div">
-                                <label for="job_Salery" class="form-label post_input_lable">Salery</label>
+                                <label for="job_Salery" class="form-label post_input_lable">Salary</label>
                                 <input type="number" class="form-control post_input_fild" id="job_Salery"
                                     name="job_Salery" placeholder="Please Enter Salery">
                                 <div class="invalid-feedback">
-                                    Please Enter Salery.
+                                    Please Enter Salary.
                                 </div>
                             </div>
 
