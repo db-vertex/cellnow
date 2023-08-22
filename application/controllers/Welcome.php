@@ -3928,7 +3928,7 @@ $sub .= '</h6>
 					  <i class="fas fa-times"></i>
 					</p>
 				  </a>';
-					$pro_images .= '<li id="default-page" style="text-align: center;padding-top:30%;">                      
+					$pro_images .= '<li id="default-page" style="text-align: center;padding-top:20%;">                      
                                             <img src="' . base_url('assets/images/CelNow 5 1.png') . '" style="opacity:0.2;">
                                             <h2 style="color: black; opacity:0.2;">Welcome to CelNow</h2>
                                           </li>';
