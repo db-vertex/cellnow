@@ -737,32 +737,31 @@ $sub .= '</h6>
 
 
 						$randCode = $alpha_key;
-						/*$j=1;
-															if($j == 1){*/
+						$j=1;
+					if($j == 1){
 
-						// $numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-						// $messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+						$numberss = "91" . $phone;
+						$messages =  "Your verification otp for CelNow is $randCode";
 
-						// $apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+						$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
+						$numbers = array($numberss);
+						$sender = urlencode('CELNOW');
+						$message = rawurlencode($messages);
+			
+						$numbers = implode(',', $numbers);
 
-						// $numbers = array($phone);
-						// $sender = urlencode('UPAHAD');
-						// $message = rawurlencode($messages);
+						// Prepare data for POST request
+						$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-						// $numbers = implode(',', $numbers);
+						// Send the POST request with cURL
+						$ch = curl_init('https://api.textlocal.in/send/');
+						curl_setopt($ch, CURLOPT_POST, true);
+						curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+						curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+						$response = curl_exec($ch);
+						//print_r($response);
 
-						// // Prepare data for POST request
-						// $data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
-
-						// // Send the POST request with cURL
-						// $ch = curl_init('https://api.textlocal.in/send/');
-						// curl_setopt($ch, CURLOPT_POST, true);
-						// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-						// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-						// $response = curl_exec($ch);
-						// //print_r($response);
-
-						// curl_close($ch);
+						curl_close($ch);
 
 						$userData['phone'] = $phone;
 						$userData['OTP'] = $randCode;
@@ -954,27 +953,26 @@ $sub .= '</h6>
 			}
 			$randCode = $alpha_key;
 			$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-			$messages =  $randCode;
+			$messages =  "Your verification otp for CelNow is $randCode";
 
 			$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
 
-			$numbers = array($phone);
-			$sender = urlencode('600010');
+			$numbers = array($numberss);
+			$sender = urlencode('CELNOW');
 			$message = rawurlencode($messages);
 
 			$numbers = implode(',', $numbers);
 
 			$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-			// Send the POST request with cURL
-			// $ch = curl_init('https://api.textlocal.in/send/');
-			// curl_setopt($ch, CURLOPT_POST, true);
-			// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			// $response = curl_exec($ch);
-			// print_r($response);die();
 
-			// curl_close($ch);
+			$ch = curl_init('https://api.textlocal.in/send/');
+			curl_setopt($ch, CURLOPT_POST, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response = curl_exec($ch);
+		
+			curl_close($ch);
 
 
 				$userData['phone'] = $phone;
@@ -1019,27 +1017,29 @@ $sub .= '</h6>
 				}
 				$randCode = $alpha_key;
 				$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-				$messages = "You verification otp for PAHADi UNCLE is " . $randCode;
+				$messages =  "Your verification otp for CelNow is $randCode";
 
-				$apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
+				$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
 
-				$numbers = array($phone);
-				$sender = urlencode('UPAHAD');
+				$numbers = array($numberss);
+				$sender = urlencode('CELNOW');
 				$message = rawurlencode($messages);
+
+				$numbers = implode(',', $numbers);
 
 				$numbers = implode(',', $numbers);
 
 				$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-				// Send the POST request with cURL
-				// $ch = curl_init('https://api.textlocal.in/send/');
-				// curl_setopt($ch, CURLOPT_POST, true);
-				// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-				// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				// $response = curl_exec($ch);
-				// //print_r($response);
 
-				// curl_close($ch);
+				$ch = curl_init('https://api.textlocal.in/send/');
+				curl_setopt($ch, CURLOPT_POST, true);
+				curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				$response = curl_exec($ch);
+				//print_r($response);
+
+				curl_close($ch);
 
 				$userData['phone'] = $phone;
 				$userData['OTP'] = $randCode;
@@ -3992,13 +3992,16 @@ $sub .= '</h6>
 				}
 				$randCode = $alpha_key;
 				$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-				$messages = "You verification otp for PAHADi UNCLE is " . $randCode;
 	
-				$apiKey = urlencode('oOv9+8ZfoYQ-WClf1g8whULjat1OIPYMh98Xpy0471');
-	
-				$numbers = array($phone);
-				$sender = urlencode('UPAHAD');
+				$messages =  "Your verification otp for CelNow is $randCode";
+
+				$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
+
+				$numbers = array($numberss);
+				$sender = urlencode('CELNOW');
 				$message = rawurlencode($messages);
+
+		    	$numbers = implode(',', $numbers);
 	
 				$numbers = implode(',', $numbers);
 	
