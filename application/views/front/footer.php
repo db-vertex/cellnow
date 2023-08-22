@@ -56,6 +56,8 @@ padding-left:15px;
       (+91) 45454-81100<br>
       info@celnow.com <br>
     </div>
+    <center class="fs-5 mt-5" style="color:#FA7640;">Developed by <a href="http://dbvertex.com/" style="  text-decoration: none; color:black">DB Vertex Technologies</a></center>
+
   </div>
 </div>
 </div>
