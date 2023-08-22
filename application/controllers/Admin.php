@@ -1809,6 +1809,7 @@ public function updatecategory()
        if($category_id == 1 || $category_id == 2 || $category_id == 3 || $category_id == 4 || $category_id == 5 || $category_id == 6 ||$category_id == 7){
 
         $oldIconFileName = $this->admin_model->find_subcategory_type($testid);
+       
         if (!empty($oldIconFileName->icon) && !empty($_FILES['icon']['name'])) {
           $arr = array('product_type' => $cat, 'icon' => $icon);
  
@@ -1819,29 +1820,13 @@ public function updatecategory()
               }
           }
       } else {
+        $this->db->update("subcategory", ["sub_category"=>$cat], ["sub_id"=>$oldIconFileName->subcategory_id]);
           $arr = array('product_type' => $cat);
       }
         $res = $this->admin_model->update_subcategory_type_list($testid, $arr);
       }
       
-      else{
-        $oldIconFileName = $this->admin_model->find_subcategory($testid);
-        if (!empty($oldIconFileName->icon)) {
-          $arr = array('sub_category' => $cat, 'icon' => $icon);
- 
-          if (!empty($oldIconFileName->icon)) {
-              $oldIconPath = './uploads/shopcategory/'.$oldIconFileName->icon;
-              if (file_exists($oldIconPath)) {
-                  unlink($oldIconPath);
-              }
-          }
-      } else {
-          $arr = array('sub_category' => $cat);
-      }
-        $res = $this->admin_model->update_subcategory_list($testid, $arr);
-      }
-
-
+  
    
        if ($res == 1) {
            $this->session->set_flashdata('msg', 'Update successfully!!');

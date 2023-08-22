@@ -2024,6 +2024,14 @@ $sub .= '</h6>
 		echo json_encode($result);
 	}
 
+	public function subproduct_typedropdown($id)
+	{
+		$result = $this->db->where("category_id", $id)->get("product_type")->result();
+		//$data = $this->admin_model->get_record_where('subcategory',$id);
+
+		echo json_encode($result);
+	}
+
 	public function uploadprofileimg()
 	{
 
@@ -2682,13 +2690,13 @@ $sub .= '</h6>
 			$postData['high_school'] = $this->input->post('school_eduction');
 			$postData['gender'] = $this->input->post('Tuitions_gender');
 			$postData['price'] = $this->input->post('Tuitions_person_Fees');
-			if ($postData['subcategory_id'] == 12) {
+			if ($postData['subcategory_id'] == 13) {
 				$postData['Years_Experience'] = $this->input->post('Tuitions_Years_Experience');
 				$postData['Teachers_Qualifications'] = $this->input->post('Tuitions_Teachers_Qualifications');
 				$postData['Positives_Outcomes'] = $this->input->post('Tuitions_Positives_Outcomes');
 				$postData['Joining_criteria'] = $this->input->post('Tuitions_Joining_criteria');
 				$postData['Available_Timings'] = $this->input->post('Tuitions_Available_Timings');
-			} else if ($postData['subcategory_id'] == 13) {
+			} else if ($postData['subcategory_id'] == 14) {
 				$postData['Years_Experience'] = $this->input->post('Tuitions_Teachers_Experience');
 				$postData['Teachers_Qualifications'] = $this->input->post('Tuitions_Teachers_type');
 				$postData['Positives_Outcomes'] = $this->input->post('Tuitions_Requirements_Teachers');
@@ -2719,11 +2727,11 @@ $sub .= '</h6>
 			$postData['Job_Location'] = $this->input->post('Job_Location');
 			$postData['job_Office_Address	'] = $this->input->post('job_Office_Address');
 			$postData['Job_type'] = $this->input->post('Job_type');
-			if ($postData['subcategory_id'] == 14) {
+			if ($postData['subcategory_id'] == 15) {
 				$postData['job_Experience'] = $this->input->post('job_Experience');
 				$postData['price'] = $this->input->post('job_Experience');
 
-			} else if ($postData['subcategory_id'] == 15) {
+			} else if ($postData['subcategory_id'] == 16) {
 				$postData['job_Experience'] = $this->input->post('Job_Pitching_Experience');
 				$postData['price'] = $this->input->post('job_amount');
 			}

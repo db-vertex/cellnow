@@ -1254,8 +1254,7 @@
                                 <select class="form-select post_input_fild" id="Tuitions_Education_Type"
                                     name="Tuitions_Education_Type">
                                     <option value="">Select Education Type</option>
-                                    <option value="13">Academic based</option>
-
+                                    <!-- <option value="13">Academic based</option>
                                     <option value="14">Music Classes</option>
                                     <option value="15">Self-defence Classes</option>
                                     <option value="16">Sports</option>
@@ -1264,7 +1263,7 @@
                                     <option value="19">Computer Classes</option>
                                     <option value="20">Special abled Teachers</option>
                                     <option value="21">Dance Classes</option>
-                                    <option value="22">Others</option>
+                                    <option value="22">Others</option> -->
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Education Type.
@@ -1440,9 +1439,7 @@
                                 <label for="Job_type" class="form-label post_input_lable">Job Type</label>
                                 <select class="form-select post_input_fild" id="Job_type" name="Job_type">
                                     <option value="">Select Job Type</option>
-
-
-                                    <option value="23">Event planers</option>
+                                    <!-- <option value="23">Event planers</option>
                                     <option value="24">Event execution helpers</option>
                                     <option value="25">Painters</option>
                                     <option value="26">Legal assistant</option>
@@ -1466,7 +1463,7 @@
                                     <option value="43">Photographer</option>
                                     <option value="44">Videographer</option>
                                     <option value="45">Logo Designers</option>
-                                    <option value="46">Other jobs</option>
+                                    <option value="46">Other jobs</option> -->
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Job Type.
@@ -1474,13 +1471,12 @@
                             </div>
 
 
-
                             <div class="col-sm-6 hiddens" id="intership_Job_type_div">
                                 <label for="intership_Job_type" class="form-label post_input_lable">Job Type</label>
                                 <select class="form-select post_input_fild" id="intership_Job_type"
                                     name="intership_Job_type">
                                     <option value="">Select Job Type</option>
-                                    <option value="47">Field Marketing</option>
+                                    <!-- <option value="47">Field Marketing</option>
                                     <option value="48">Sales Manager</option>
                                     <option value="49">Human Resources</option>
                                     <option value="50">Event Management</option>
@@ -1506,13 +1502,12 @@
                                     <option value="73">Graphic designer</option>
                                     <option value="74">Animator/video game designer</option>
                                     <option value="69">Photographer</option>
-                                    <option value="70">Others</option>
+                                    <option value="70">Others</option> -->
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Job Type.
                                 </div>
                             </div>
-
 
                             <div class="col-sm-6 hiddens" id="intership_Skills_Qualifications_div">
                                 <label for="intership_Skills_Qualifications" class="form-label post_input_lable">Skills
@@ -1548,8 +1543,6 @@
                                     Please Enter Post Vacant.
                                 </div>
                             </div>
-
-
 
                             <div class="col-sm-6 hiddens" id="job_Experience_div">
                                 <label for="job_Experience" class="form-label post_input_lable">Experience</label>
@@ -1591,7 +1584,6 @@
                                     Please Enter Amount.
                                 </div>
                             </div>
-
 
                             <div class="col-sm-6 hiddens" id="Price_div">
                                 <label for="Price" class="form-label post_input_lable">Price(INR)</label>
@@ -1646,7 +1638,6 @@
                                     Please provide a valid Furniture.
                                 </div>
                             </div>
-
 
                             <div class="col-sm-6 hiddens" id="Warrenty_div">
                                 <label for="Warrenty" class="form-label post_input_lable">Warrenty</label>
@@ -1746,8 +1737,7 @@
                                 </div>
                             </div>
 
-                           
-
+                        
                             <div class="col-12" id="verified_option">
                                 <div class="form-check">
                                     <input class="form-check-input " name="verified_admin" type="checkbox" value="yes"
@@ -1918,8 +1908,6 @@
     </script>
 
 
-
-
     <script>
     $("#cover_images").change(function() {
         filename = this.cover_images[0].name;
@@ -1971,6 +1959,90 @@
                 });
             } else {
                 $('select[name="subcategory"]').empty();
+            }
+        });
+    });
+    </script> 
+
+    <script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="category"]').on('change', function() {
+            var stateID = $(this).val();
+            if (stateID == 2) {
+              
+                $.ajax({
+                    url: '<?php echo base_url();?>welcome/subproduct_typedropdown/' + stateID,
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data) {
+                        $('select[name="Tuitions_Education_Type"]').empty();
+                        $('select[name="Tuitions_Education_Type"]').append(
+                            '<option  value="">Choose</option>');
+                        $.each(data, function(key, value) {
+                            $('select[name="Tuitions_Education_Type"]').append(
+                                '<option  value="' + value.id + '">' + value
+                                .product_type + '</option>');
+
+                        });
+                    }
+                });
+            } else {
+            }
+        });
+    });
+    </script> 
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="category"]').on('change', function() {
+            var stateID = $(this).val();
+            if (stateID == 3) {
+              
+                $.ajax({
+                    url: '<?php echo base_url();?>welcome/subproduct_typedropdown/' + stateID,
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data) {
+                        $('select[name="Job_type"]').empty();
+                        $('select[name="Job_type"]').append(
+                            '<option  value="">Choose</option>');
+                        $.each(data, function(key, value) {
+                            $('select[name="Job_type"]').append(
+                                '<option  value="' + value.id + '">' + value
+                                .product_type + '</option>');
+
+                        });
+                    }
+                });
+            } else {
+            }
+        });
+    });
+    </script>
+
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('select[name="category"]').on('change', function() {
+            var stateID = $(this).val();
+            if (stateID == 4) {
+              
+                $.ajax({
+                    url: '<?php echo base_url();?>welcome/subproduct_typedropdown/' + stateID,
+                    type: "POST",
+                    dataType: "json",
+                    success: function(data) {
+                        $('select[name="intership_Job_type"]').empty();
+                        $('select[name="intership_Job_type"]').append(
+                            '<option  value="">Choose</option>');
+                        $.each(data, function(key, value) {
+                            $('select[name="intership_Job_type"]').append(
+                                '<option  value="' + value.id + '">' + value
+                                .product_type + '</option>');
+
+                        });
+                    }
+                });
+            } else {
             }
         });
     });
@@ -2189,11 +2261,11 @@
             $('#subcategory').on('change.Price,use_years,Have_Bill,Warrenty', function() {
                 $("#Price_div,#use_years_div,#Have_Bill_div,#Warrenty_div").toggle($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3
                 || $(this).val() == 4 || $(this).val() == 5 || $(this).val() == 6 || $(this).val() == 7 || $(this).val() == 8 
-                || $(this).val() == 9  || $(this).val() == 10  || $(this).val() == 11);
+                || $(this).val() == 9  || $(this).val() == 10  || $(this).val() == 11 ||  $(this).val() == 12);
 
                 if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3
                 || $(this).val() == 4 || $(this).val() == 5 || $(this).val() == 6 || $(this).val() == 7 || $(this).val() == 8 
-                || $(this).val() == 9  || $(this).val() == 10  || $(this).val() == 11) {
+                || $(this).val() == 9  || $(this).val() == 10  || $(this).val() == 11 || $(this).val() == 12) {
                   
                     Price.required = true;
                     use_years.required = true;
@@ -2207,13 +2279,11 @@
                         this).val() == 1 || $(this).val() == 2 || $(this).val() == 3 || $(
                         this).val() == 4 ||
                     $(this).val() == 5 || $(this).val() == 6 || $(this).val() == 7 || $(
-                        this).val() == 8 || $(this).val() == 9 || $(this).val() == 10 || $(
-                        this).val() == 16);
+                        this).val() == 8 || $(this).val() == 9 || $(this).val() == 10 || $(this).val() == 12);
                 if ($(this).val() == 1 || $(this).val() == 2 || $(this).val() == 3 || $(this)
                     .val() == 4 ||
                     $(this).val() == 5 || $(this).val() == 6 || $(this).val() == 7 || $(this)
-                    .val() == 8 || $(this).val() == 9 || $(this).val() == 10 || $(this).val() ==
-                    16) {
+                    .val() == 8 || $(this).val() == 9 || $(this).val() == 10 || $(this).val() == 12) {
                     reusable_parts_Select_Type.required = true;
                     Product_Brand.required = true;
                 }
@@ -2236,8 +2306,8 @@
             $('#subcategory').on('change.Tuitions_loction,Tuitions_Education_Type,Tuitions_gender',
                 function() {
                     $("#Tuitions_loction_div,#Tuitions_Education_Type_div,#Tuitions_gender_div")
-                        .toggle($(this).val() == 12 || $(this).val() == 13);
-                    if ($(this).val() == 12 || $(this).val() == 13) {
+                        .toggle($(this).val() == 13 || $(this).val() == 14);
+                    if ($(this).val() == 13 || $(this).val() == 14) {
                         Tuitions_loction.required = true;
                         Tuitions_Education_Type.required = true;
                         Tuitions_gender.required = true;
@@ -2249,8 +2319,8 @@
                 'change.Tuitions_Available_Timings,Tuitions_Years_Experience,Tuitions_person_Fees,Tuitions_Teachers_Qualifications,Tuitions_Positives_Outcomes,Tuitions_Joining_criteria',
                 function() {
                     $("#Tuitions_Available_Timings_div,#Tuitions_Years_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_Qualifications_div,#Tuitions_Positives_Outcomes_div,#Tuitions_Joining_criteria_div")
-                        .toggle($(this).val() == 12);
-                    if ($(this).val() == 12) {
+                        .toggle($(this).val() == 13);
+                    if ($(this).val() == 13) {
                         Tuitions_Available_Timings.required = true;
                         Tuitions_Years_Experience.required = true;
                         Tuitions_person_Fees.required = true;
@@ -2267,8 +2337,8 @@
                 'change.Tuitions_Available_Timings_post,Tuitions_Teachers_Experience,Tuitions_person_Fees,Tuitions_Teachers_type,Tuitions_Requirements_Teachers',
                 function() {
                     $("#Tuitions_Available_Timings_post_div,#Tuitions_Teachers_Experience_div,#Tuitions_person_Fees_div,#Tuitions_Teachers_type_div,#Tuitions_Requirements_Teachers_div")
-                        .toggle($(this).val() == 13);
-                    if ($(this).val() == 13) {
+                        .toggle($(this).val() == 14);
+                    if ($(this).val() == 14) {
                         Tuitions_Available_Timings_post.required = true;
                         Tuitions_Teachers_Experience.required = true;
                         Tuitions_person_Fees.required = true;
@@ -2281,15 +2351,15 @@
 
 
             $('#subcategory').on('change.Job_type', function() {
-                $("#Job_type_div").toggle($(this).val() == 14 || $(this).val() == 15);
-                if ($(this).val() == 14 || $(this).val() == 15) {
+                $("#Job_type_div").toggle($(this).val() == 15 || $(this).val() == 16);
+                if ($(this).val() == 15 || $(this).val() == 16) {
                     console.log($(this).val());
                     Job_type.required = true;
                 }
             }).trigger('change.Job_type');
 
             $('#subcategory').on('change.Job_Location', function() {
-                $("#Job_Location_div").toggle($(this).val() == 14 || $(this).val() == 15 || $(
+                $("#Job_Location_div").toggle($(this).val() == 15 || $(this).val() == 16 || $(
                     this).val() == 17 || $(this).val() == 18);
                 if ($(this).val() == 14 || $(this).val() == 15 || $(this).val() == 17 || $(this)
                     .val() == 18) {
@@ -2314,16 +2384,16 @@
 
 
             $('#subcategory').on('change.job_Salery,job_Experience', function() {
-                $("#job_Salery_div,#job_Experience_div").toggle($(this).val() == 14);
-                if ($(this).val() == 14) {
+                $("#job_Salery_div,#job_Experience_div").toggle($(this).val() == 15);
+                if ($(this).val() == 15) {
                     job_Salery.required = true;
                     job_Experience.required = true;
                 }
             }).trigger('change.job_Salery,job_Experience');
 
             $('#subcategory').on('change.job_amount,Job_Pitching_Experience', function() {
-                $("#job_amount_div,#Job_Pitching_Experience_div").toggle($(this).val() == 15);
-                if ($(this).val() == 15) {
+                $("#job_amount_div,#Job_Pitching_Experience_div").toggle($(this).val() == 16);
+                if ($(this).val() == 16) {
                     job_amount.required = true;
                     Job_Pitching_Experience.required = true;
                 }
@@ -2571,13 +2641,14 @@
                 function() {
                     $("#reusable_parts_Home_Appliances_product_Type_div").toggle($(
                             "#reusable_parts_Select_Type").val() !== "" && $("#subcategory")
-                        .val() == 16);
+                        .val() == 12);
                     if ($("#reusable_parts_Select_Type").val() !== "" && $("#subcategory").val() ==
-                        16) {
+                        12) {
                         reusable_parts_Home_Appliances_product_Type.required = true;
                     }
                 }).trigger('change.reusable_parts_Home_Appliances_product_Type');
 
+            
 
             $('#reusable_parts_Select_Type,#subcategory').on(
                 'change.reusable_parts_Kitchen_Appliances_product_Type',
