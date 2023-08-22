@@ -737,17 +737,18 @@ $sub .= '</h6>
 
 
 						$randCode = $alpha_key;
-						$j=1;
-					if($j == 1){
+						/*$j=1;
+															if($j == 1){*/
 
-						$numberss = "91" . $phone;
+						$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
 						$messages =  "Your verification otp for CelNow is $randCode";
 
 						$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
+
 						$numbers = array($numberss);
 						$sender = urlencode('CELNOW');
 						$message = rawurlencode($messages);
-			
+
 						$numbers = implode(',', $numbers);
 
 						// Prepare data for POST request
@@ -903,27 +904,27 @@ $sub .= '</h6>
 			}
 			$randCode = $alpha_key;
 			$numberss = "91" . $phone; // A single number or a comma-seperated list of numbers
-			$messages = "You verification otp for CELNOW is " . $randCode;
+			$messages =  "Your verification otp for CelNow is $randCode";
 
 			$apiKey = urlencode('NWE1MTUzNGE3NjU4NDczNTMxNzk2ODMwMzQ0ODczNGY=');
 
-			$numbers = array($phone);
-			$sender = urlencode('600010');
+			$numbers = array($numberss);
+			$sender = urlencode('CELNOW');
 			$message = rawurlencode($messages);
 
 			$numbers = implode(',', $numbers);
 
 			$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
-			// Send the POST request with cURL
-			// $ch = curl_init('https://api.textlocal.in/send/');
-			// curl_setopt($ch, CURLOPT_POST, true);
-			// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			// $response = curl_exec($ch);
-			// //print_r($response);
+		
+			$ch = curl_init('https://api.textlocal.in/send/');
+			curl_setopt($ch, CURLOPT_POST, true);
+			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			$response = curl_exec($ch);
+			//print_r($response);
 
-			// curl_close($ch);
+			curl_close($ch);
 
 			$post_data = array('name' => $name, 'email' => $email, 'password' => md5($password), 'phone' => $phone, 'OTP' => $randCode, 'login_type' => 'normal', 'social_id_token' => $result);
 			$this->db->insert('users', $post_data);
