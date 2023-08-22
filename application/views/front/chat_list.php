@@ -786,7 +786,7 @@
                 // location.reload();
                 //$("#load-list").prepend("");
                 $('#load_cound').val("10");
-                loadChatList();
+              //  loadChatList();
             }
         });
     }
@@ -907,7 +907,7 @@
                         $("#message-list").html(res);
                         $('textarea#message').val("");
                         //location.reload();
-                        loadChatList();
+                       // loadChatList();
                     }
                 });
             } else {

@@ -4544,7 +4544,7 @@ $sub .= '</h6>
 				$chat_list_color_product_id = $this->session->userdata('chat_list_color_product_id');
 				$chat_list_color_user_id = $this->session->userdata('chat_list_color_user_id');
 				if ("new" . $chat_list_color_user_id . $chat_list_color_product_id == "new" . ($username->user_id) . ($profile->id)) {
-					echo ' style="background-color:#d9d3d2;"';
+					echo '';
 				}
 				echo ' onclick="redirectDiv(); getchat(' . $username->user_id . ', ' . $_SESSION['id'] . ', ' . $profile->id . ', ' . $profile->category_id . ');">';
 				echo '<span class="avatar available">';
