@@ -583,13 +583,12 @@
                                 <label for="state" class="form-label post_input_lable">Category</label>
                                 <select class="form-select post_input_fild" id="category" name="category" required>
                                     <option value="">Select Category</option>
-                                    <option value="1">Reusable parts and Products</option>
-                                    <option value="2">Tuitions / Classes</option>
-                                    <option value="3">Part-time Jobs</option>
-                                    <option value="4">Internships</option>
-                                    <option value="5">Commericial Places</option>
-                                    <option value="6">Residential Places</option>
-                                    <option value="7">Land/Plot</option>
+                                    <?php                     
+                                    $category = get_all_category();
+                                    foreach ($category as $key => $cat) {
+                                    ?>
+                                    <option value="<?php echo $cat->id; ?>"><?php echo $cat->category; ?></option>
+                                    <?php } ?>
                                 </select>
                                 <div class="invalid-feedback">
                                     Please provide a valid Category.
