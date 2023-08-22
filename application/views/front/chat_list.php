@@ -191,11 +191,11 @@
     }
 
     .chat .chat-wrapper .chat-list-wrapper .chat-list li:hover {
-        background-color: #f4f4f4;
+      
     }
 
     .chat .chat-wrapper .chat-list-wrapper .chat-list li.active {
-       
+        background-color:#d9d3d2;
         color: black;
     }
 
@@ -786,6 +786,7 @@
                 // location.reload();
                 //$("#load-list").prepend("");
                 $('#load_cound').val("10");
+                loadChatList();
             }
         });
     }

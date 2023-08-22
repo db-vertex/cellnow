@@ -917,14 +917,14 @@ $sub .= '</h6>
 			$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
 			// Send the POST request with cURL
-			$ch = curl_init('https://api.textlocal.in/send/');
-			curl_setopt($ch, CURLOPT_POST, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			$response = curl_exec($ch);
-			//print_r($response);
+			// $ch = curl_init('https://api.textlocal.in/send/');
+			// curl_setopt($ch, CURLOPT_POST, true);
+			// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			// $response = curl_exec($ch);
+			// //print_r($response);
 
-			curl_close($ch);
+			// curl_close($ch);
 
 			$post_data = array('name' => $name, 'email' => $email, 'password' => md5($password), 'phone' => $phone, 'OTP' => $randCode, 'login_type' => 'normal', 'social_id_token' => $result);
 			$this->db->insert('users', $post_data);
@@ -967,14 +967,14 @@ $sub .= '</h6>
 			$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
 			// Send the POST request with cURL
-			$ch = curl_init('https://api.textlocal.in/send/');
-			curl_setopt($ch, CURLOPT_POST, true);
-			curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			$response = curl_exec($ch);
-			print_r($response);die();
+			// $ch = curl_init('https://api.textlocal.in/send/');
+			// curl_setopt($ch, CURLOPT_POST, true);
+			// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+			// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+			// $response = curl_exec($ch);
+			// print_r($response);die();
 
-			curl_close($ch);
+			// curl_close($ch);
 
 
 				$userData['phone'] = $phone;
@@ -1032,14 +1032,14 @@ $sub .= '</h6>
 				$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 
 				// Send the POST request with cURL
-				$ch = curl_init('https://api.textlocal.in/send/');
-				curl_setopt($ch, CURLOPT_POST, true);
-				curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				$response = curl_exec($ch);
-				//print_r($response);
+				// $ch = curl_init('https://api.textlocal.in/send/');
+				// curl_setopt($ch, CURLOPT_POST, true);
+				// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+				// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				// $response = curl_exec($ch);
+				// //print_r($response);
 
-				curl_close($ch);
+				// curl_close($ch);
 
 				$userData['phone'] = $phone;
 				$userData['OTP'] = $randCode;
@@ -4005,14 +4005,14 @@ $sub .= '</h6>
 				$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 	
 				// Send the POST request with cURL
-				$ch = curl_init('https://api.textlocal.in/send/');
-				curl_setopt($ch, CURLOPT_POST, true);
-				curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
-				curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-				$response = curl_exec($ch);
-				//print_r($response);
+				// $ch = curl_init('https://api.textlocal.in/send/');
+				// curl_setopt($ch, CURLOPT_POST, true);
+				// curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+				// curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+				// $response = curl_exec($ch);
+				// //print_r($response);
 	
-				curl_close($ch);
+				// curl_close($ch);
 			}
 			}
 
