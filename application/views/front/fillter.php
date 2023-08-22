@@ -1537,7 +1537,7 @@ input[type="range"]::-moz-range-thumb {
                     <div class="progress"></div>
                 </div>
                 <div class="range-input">
-                    <input type="range" class="range-min" id="hidden_minimum_price" min="0" max="10000" value="1"
+                    <input type="range" class="range-min" id="hidden_minimum_price" min="1" max="10000" value="1"
                         step="100">
                     <input type="range" class="range-max" id="hidden_maximum_price" min="0" max="10000" value="100000"
                         step="100">
