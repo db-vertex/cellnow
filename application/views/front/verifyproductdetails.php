@@ -1389,7 +1389,7 @@
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b>Gender</b></p>
+                                <p class="details_text"><b>Classes</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->gender; ?></p>

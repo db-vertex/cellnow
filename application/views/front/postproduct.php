@@ -1509,13 +1509,13 @@
                             </div>
 
                             <div class="col-sm-6 hiddens" id="intership_Skills_Qualifications_div">
-                                <label for="intership_Skills_Qualifications" class="form-label post_input_lable">Skills
-                                    Qualifications</label>
+                                <label for="intership_Skills_Qualifications" class="form-label post_input_lable">
+                                    Qualification</label>
                                 <input type="text" class="form-control post_input_fild"
                                     id="intership_Skills_Qualifications" name="intership_Skills_Qualifications"
-                                    placeholder="Please Enter Skills Qualifications">
+                                    placeholder="Please Enter Qualifications">
                                 <div class="invalid-feedback">
-                                    Please Enter Skills Qualifications.
+                                    Please Enter Qualification.
                                 </div>
                             </div>
 
@@ -1626,9 +1626,9 @@
                             </div>
 
                             <div class="col-sm-6 hiddens" id="Furniture_div">
-                                <label for="Furniture" class="form-label post_input_lable">Furniture Type</label>
+                                <label for="Furniture" class="form-label post_input_lable">Furniture</label>
                                 <select class="form-select post_input_fild" id="Furniture" name="Furniture">
-                                    <option value="">Select Furniture Type</option>
+                                    <option value="">Select Furniture</option>
                                     <option value="Not">Not</option>
                                     <option value="Semi">Semi</option>
                                     <option value="Full">Full</option>

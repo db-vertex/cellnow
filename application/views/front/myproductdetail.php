@@ -1358,7 +1358,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b>Gender</b></p>
+                                <p class="details_text"><b>Classes</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->gender; ?></p>
@@ -1369,7 +1369,8 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                 <p class="details_text"><b>Education Type</b></p>
                             </div>
                             <div class="col-4">
-                                <p class="details_text"><?php echo $product_detail->Education_Type; ?></p>
+                            <?php    $type  = get_product_type_name($product_detail->Education_Type);   ?>
+                                <p class="details_text"><?php print_r($type); ?></p>
                             </div>
                         </div>
                         <div class="row   ms-4">
