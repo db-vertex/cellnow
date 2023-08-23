@@ -1789,11 +1789,11 @@
                             </div>
                             <div class="col-sm-6 col-6 " id="submit">
                                 <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit
-                                    (Rs.125)</button>
+                                    </button>
                             </div>
                             <div class="col-sm-6 col-6 none" id="visible">
                                 <button class="w-100 btn product_submit_button " onclick="" type="submit">Submit
-                                    (Rs.135)</button>
+                                    </button>
                             </div>
 
                             <div class="col-sm-6 col-6">
