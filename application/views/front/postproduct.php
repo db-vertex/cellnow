@@ -428,6 +428,21 @@
     #verified_option_normal{
         display:none;
     }
+    @media(max-width: 661px) {
+        .offer_banner{
+        margin-top:10%;
+    }
+    }
+    @media(min-width: 661px) {
+        .offer_banner{
+        margin-top:7%;
+    }
+    }
+    @media(min-width: 991px) {
+    .offer_banner{
+        margin-top:6%;
+    }
+    }
     </style>
 
 
@@ -438,10 +453,12 @@
 <body class="">
 
 
-    <div class="py-4 text-center">
-        <img class="d-block mx-auto mb-4" src="<?php echo base_url();?>assets/images/product_banner.png" alt=""
-            width=100%>
-    </div>
+<div class=" text-center " style="margin-top:6%">
+    <a href="<?php echo base_url();?>welcome/postproduct">
+    <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png" alt=""
+            width=100% style="max-height: 288px;">
+    </a>
+</div>
     <div class="container">
         <main>
             <div class="breadcrumb_container container mb-5">
@@ -553,7 +570,7 @@
 
                             <div class="col-12">
 
-                                <div class="form-check form-check-inline">
+                                <div class="form-check form-check-inline d-none">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
                                         value="3" checked>
                                     <label class="form-check-label" for="inlineRadio2">Boost Ads</label>
@@ -1737,7 +1754,7 @@
                             </div>
 
                         
-                            <div class="col-12" id="verified_option">
+                            <div class="col-12 d-none" id="verified_option">
                                 <div class="form-check">
                                     <input class="form-check-input " name="verified_admin" type="checkbox" value="yes"
                                         onchange="valChange(this)">
@@ -1748,7 +1765,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12" id="verified_option_normal">
+                            <div class="col-12 d-none" id="verified_option_normal">
                                 <div class="form-check">
                                     <input class="form-check-input " name="verified_admin" type="checkbox" value="yes"
                                         onchange="verified_option_normal(this)">

@@ -1071,6 +1071,21 @@
     .details_img_box.active {
         border: 1px solid #10B981;
     }
+    @media(max-width: 661px) {
+        .offer_banner{
+        margin-top:10%;
+    }
+    }
+    @media(min-width: 661px) {
+        .offer_banner{
+        margin-top:7%;
+    }
+    }
+    @media(min-width: 991px) {
+    .offer_banner{
+        margin-top:6%;
+    }
+    }
     </style>
 </head>
 
@@ -1092,9 +1107,12 @@
 $data = ++$i; // Increment $i and assign the value to $data
 $product_count_update = update_count_comman_query($product_detail->category_id, $data, $product_detail->id);
   ?>
-    <div class=" text-center " style="margin-top:5%">
-        <img class="d-block mx-auto mb-2" src="<?php echo base_url();?>assets/images/product_banner.png" alt=""
-            width=100%>
+      <div class=" text-center offer_banner" style="">
+    <a href="<?php echo base_url();?>welcome/postproduct">
+    <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png" alt=""
+            width=100% style="max-height: 288px;">
+    </a>
+       
     </div>
     <div class="container mt-4">
         <main>
@@ -1268,8 +1286,10 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                             </div>
                         </div>
                         <div class="py-3 text-center">
+                        <a href="<?php echo base_url();?>welcome/postproduct">
                             <img class="d-block mx-auto mb-2"
                                 src="<?php echo base_url();?>assets/images/product_banner.png" alt="" width=100%>
+                                            </a>
                         </div>
                     </div>
                     <div class="col-md-6 mb-4 details_box_content">
