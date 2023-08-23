@@ -165,7 +165,9 @@
     </div>
 
     <div class="container-fluid mt-5" style="padding:0px">
-        <img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
+    <a href="<?php echo base_url();?>welcome/postproduct">
+        <img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="" style="max-height: 288px;">
+        </a>
     </div>
 
 

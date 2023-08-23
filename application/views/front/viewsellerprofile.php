@@ -113,7 +113,9 @@
 <body>
 
     <div class="container-fluid px-0" style=" margin-top: 130px;">
-        <img src="<?php echo base_url(); ?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
+    <a href="<?php echo base_url();?>welcome/postproduct">
+        <img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="" style="max-height: 288px;">
+        </a>
     </div>
     <div class="container">
 
@@ -256,7 +258,9 @@
 
 
     <div class="container-fluid mt-5">
-        <img src="<?php echo base_url();?>assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="">
+    <a href="<?php echo base_url();?>welcome/postproduct">
+        <img src="<?php echo base_url();?>/assets/images/Rectangle 32336.png" class="img-fluid" width="100%" alt="" style="max-height: 288px;">
+        </a>
     </div>
 
 
