@@ -1567,20 +1567,20 @@ input[type="range"]::-moz-range-thumb {
 
 
                             <?php
-          $brands = array(
-    "Acer", "Alcatel", "Allview", "Amazon", "Amoi", "Apple", "Archos", "Asus", "AT&T", "Benefon", "BenQ",
-    "BenQ-Siemens", "Bird", "BlackBerry", "Blackview", "BLU", "Bosch", "BQ", "Casio", "Cat", "Celkon", "Chea",
-    "Coolpad", "Dell", "Doogee", "Emporia", "Energizer", "Ericsson", "Eten", "Fairphone", "Fujitsu Siemens",
-    "Garmin-Asus", "Gigabyte", "Gionee", "Google", "Haier", "Honor", "HP", "HTC", "Huawei", "mate", "mobile",
-    "Icemobile", "Infinix", "Innostream", "iNQ", "Intex", "Jolla", "Karbonn", "Kyocera", "Lava", "LeEco", "Lenovo",
-    "LG", "Maxon", "Maxwest", "Meizu", "Micromax", "Microsoft", "Mitac", "Mitsubishi", "Modu", "Motorola", "MWg",
-    "NEC", "Neonode", "NIU", "Nokia", "Nothing", "Nvidia", "O2", "OnePlus", "Oppo", "Orange", "Palm", "Panasonic",
-    "Pantech", "Parla", "Philips", "Plum", "Posh", "Prestigio", "QMobile", "Qtek", "Razer", "Realme", "Sagem",
-    "Samsung", "Sendo", "Sewon", "Sharp", "Siemens", "Sonim", "Sony", "Sony Ericsson", "Spice", "T-Mobile", "TCL",
-    "Tecno", "Tel.Me.", "Telit", "Thuraya", "Toshiba", "Ulefone", "Unnecto", "Vertu", "verykool", "Vivo", "VK Mobile",
-    "Vodafone", "Wiko", "WND", "XCute", "Xiaomi", "XOLO", "Yezz", "Yota", "YU", "ZTE"
-);
-?>
+                            $brands = array(
+                        "Acer", "Alcatel", "Allview", "Amazon", "Amoi", "Apple", "Archos", "Asus", "AT&T", "Benefon", "BenQ",
+                        "BenQ-Siemens", "Bird", "BlackBerry", "Blackview", "BLU", "Bosch", "BQ", "Casio", "Cat", "Celkon", "Chea",
+                        "Coolpad", "Dell", "Doogee", "Emporia", "Energizer", "Ericsson", "Eten", "Fairphone", "Fujitsu Siemens",
+                        "Garmin-Asus", "Gigabyte", "Gionee", "Google", "Haier", "Honor", "HP", "HTC", "Huawei", "mate", "mobile",
+                        "Icemobile", "Infinix", "Innostream", "iNQ", "Intex", "Jolla", "Karbonn", "Kyocera", "Lava", "LeEco", "Lenovo",
+                        "LG", "Maxon", "Maxwest", "Meizu", "Micromax", "Microsoft", "Mitac", "Mitsubishi", "Modu", "Motorola", "MWg",
+                        "NEC", "Neonode", "NIU", "Nokia", "Nothing", "Nvidia", "O2", "OnePlus", "Oppo", "Orange", "Palm", "Panasonic",
+                        "Pantech", "Parla", "Philips", "Plum", "Posh", "Prestigio", "QMobile", "Qtek", "Razer", "Realme", "Sagem",
+                        "Samsung", "Sendo", "Sewon", "Sharp", "Siemens", "Sonim", "Sony", "Sony Ericsson", "Spice", "T-Mobile", "TCL",
+                        "Tecno", "Tel.Me.", "Telit", "Thuraya", "Toshiba", "Ulefone", "Unnecto", "Vertu", "verykool", "Vivo", "VK Mobile",
+                        "Vodafone", "Wiko", "WND", "XCute", "Xiaomi", "XOLO", "Yezz", "Yota", "YU", "ZTE"
+                    );
+                    ?>
                             <!-- Loop through the brands array and generate checkboxes with labels -->
                             <div id="myDropdown">
                                 <ul class="_1un4s">
@@ -1595,6 +1595,10 @@ input[type="range"]::-moz-range-thumb {
                                     <?php endforeach; ?>
                                 </ul>
                             </div>
+
+
+
+
                         </div>
                     </div>
                 </div>

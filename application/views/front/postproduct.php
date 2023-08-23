@@ -15,10 +15,15 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
         rel="stylesheet" />
+        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
+      
     <!-- Option 1: Include in HTML -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   
     <style>
+
+   
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;
@@ -443,6 +448,18 @@
         margin-top:6%;
     }
     }
+    .bootstrap-select:not([class*=col-]):not([class*=form-control]):not(.input-group-btn) {
+     width: 100%; 
+}
+.selectpicker {
+   border:none;
+}
+.btn-default:hover, .btn-default:focus, .btn-default:active, .btn-default.active, .open>.dropdown-toggle.btn-default {
+    color: #333;
+    background-color: white;
+    border-color: white;
+}
+   
     </style>
 
 
@@ -572,12 +589,12 @@
 
                                 <div class="form-check form-check-inline d-none">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
-                                        value="3" checked>
+                                        value="3" >
                                     <label class="form-check-label" for="inlineRadio2">Boost Ads</label>
                                 </div>
                                 <div class="form-check form-check-inline">
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio1"
-                                        value="0">
+                                        value="0" checked>
                                     <label class="form-check-label" for="inlineRadio1">Normal</label>
                                 </div>
                                 <div class="form-check form-check-inline">
@@ -624,9 +641,9 @@
                             </div>
 
                             <div class="col-sm-12 hiddens" id="reusable_parts_Product_Brand_div">
-                                <label for="Product_Brand" class="form-label post_input_lable">Product Brand</label>
+                                <label for="Product_Brand" class="form-label post_input_lable">Product Brand</label><br>
 
-                                <select class="form-select post_input_fild" id="Product_Brand" name="Product_Brand">
+                                <select class="form-select border-none post_input_fild  selectpicker"  data-live-search="true" id="Product_Brand" name="Product_Brand">
                                     <option value="">Select Brand</option>
                                     <option value="Acer">Acer</option>
                                     <option value="Alcatel">Alcatel</option>
@@ -748,6 +765,7 @@
                                     <option value="YU">YU</option>
                                     <option value="ZTE">ZTE</option>
                                 </select>
+                            
                                 <div class="invalid-feedback">
                                     Please provide a valid Product Brand.
                                 </div>
@@ -1643,15 +1661,15 @@
                             </div>
 
                             <div class="col-sm-6 hiddens" id="Furniture_div">
-                                <label for="Furniture" class="form-label post_input_lable">Furniture</label>
+                                <label for="Furniture" class="form-label post_input_lable">Furnished Type</label>
                                 <select class="form-select post_input_fild" id="Furniture" name="Furniture">
-                                    <option value="">Select Furniture</option>
+                                    <option value="">Select Furnished Type</option>
                                     <option value="Not">Not</option>
                                     <option value="Semi">Semi</option>
                                     <option value="Full">Full</option>
                                 </select>
                                 <div class="invalid-feedback">
-                                    Please provide a valid Furniture.
+                                    Please provide a valid Furnished Type.
                                 </div>
                             </div>
 
@@ -1809,6 +1827,7 @@
         </main>
     </div>
 
+    
     <script>
     function readURL(input, imgControlName) {
         if (input.files && input.files[0]) {
@@ -2815,3 +2834,6 @@ function function14() {
     });
 }
 </script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.2/js/bootstrap.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>

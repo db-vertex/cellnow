@@ -286,7 +286,7 @@
 
     @media (max-width: 992px) {
         .inputform_colume {
-            margin-top: 8%;
+            margin-top: 28%;
         }
     }
 
