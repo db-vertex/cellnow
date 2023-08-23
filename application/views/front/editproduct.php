@@ -599,7 +599,7 @@
                         <div class="row g-3">
                             <div class="col-12">
                              
-                                <div class="form-check form-check-inline d-none">
+                                <div class="form-check form-check-inline d-none"> 
                                     <input class="form-check-input" type="radio" name="Sponsor" id="inlineRadio2"
                                         value="3" <?php if($get_data->pay_type =='1'){?>checked <?php } ?>>
                                     <label class="form-check-label" for="inlineRadio2">Boost Ads</label>
