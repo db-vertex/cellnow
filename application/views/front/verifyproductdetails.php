@@ -1523,14 +1523,19 @@
                                 <p class="details_text"><?php echo $product_detail->facing; ?></p>
                             </div>
                         </div>
-                        <div class="row   ms-4">
+                        <?php
+                    $floorData = $product_detail->floor;
+                    ?>
+                    <?php if ($floorData !== null): ?>
+                        <div class="row ms-4">
                             <div class="col-4">
                                 <p class="details_text"><b>Floor</b></p>
                             </div>
                             <div class="col-4">
-                                <p class="details_text"><?php echo $product_detail->floor; ?></p>
+                                <p class="details_text"><?php echo $floorData; ?></p>
                             </div>
                         </div>
+                    <?php endif; ?>
                         <div class="row   ms-4">
                             <div class="col-4">
                                 <p class="details_text"><b> Rent/Sale</b></p>
