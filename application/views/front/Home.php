@@ -392,6 +392,7 @@ input::placeholder {
 </style>
 
 <div class="container home_background" style="">
+  <h1 class="d-none">CELNOW</h1>
     <div class="container px-0">
         <div id="carouselExampleControlss" class="carousel slide" data-bs-ride="carousel">
             <div class="carousel-inner">

@@ -4,7 +4,10 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    
+    <link rel="icon" sizes="196x196" href="<?php echo base_url();?>assets/images/CelNow 5 1.png" type="image/png">
+    <meta name="keywords" content="CelNow Online Store - Best Deals on Fashion, Electronics, and More">
+    <meta name="description" content="Welcome to CelNow! Your go-to online marketplace for a diverse selection of products including electronics, fashion, home essentials, and more. Start shopping and exploring great deals today">
+    <title>CelNow</title>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -21,7 +24,7 @@
     </script>
     <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
     <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
-    <link rel="icon" sizes="196x196" href="<?php echo base_url();?>assets/images/CelNow 5 1.png" type="image/png">
+  
     <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     <?php 
     $session_id = $this->session->userdata('id');
