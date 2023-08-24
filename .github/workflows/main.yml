@@ -12,5 +12,5 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
         server: 119.18.49.78
-        username: code@celnow.com
+        username: celnow@celnow.com
         password: ${{ secrets.ftp_password }}
