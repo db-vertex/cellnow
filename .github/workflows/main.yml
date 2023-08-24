@@ -11,6 +11,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.4
       with:
-        server: 68.178.145.103
-        username: celnow_git@dbvertex.com
+        server: 119.18.49.78
+        username: code@celnow.com
         password: ${{ secrets.ftp_password }}
