@@ -39,7 +39,7 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     var base_url = '<?php echo base_url(); ?>';
     
-    navigator.serviceWorker.register('https://work.dbvertex.com/celnow/serviceWorker.js').then(
+    navigator.serviceWorker.register('https://celnow.com/serviceWorker.js').then(
         () => {
             console.log('[SW] Service worker has been registered');
            
@@ -187,7 +187,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const key = subscription.getKey('p256dh');
         const token = subscription.getKey('auth');
         const contentEncoding = (PushManager.supportedContentEncodings || ['aesgcm'])[0];
-         var fetchUrl = 'https://work.dbvertex.com/celnow/welcome/push_subscription';
+         var fetchUrl = 'https://celnow.com/welcome/push_subscription';
                               
         return fetch(fetchUrl,{
             method,
