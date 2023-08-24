@@ -89,7 +89,7 @@ class Welcome extends CI_Controller
 				
 			}
 			$sub .= '>
-		<img width="41" height="41" class="';if ($value->id == 7 || $value->id == 13 || $value->id == 43 || $value->id== 53 || $value->id== 77 || $value->id== 87 || $value->id==90 || $value->id==39 ) { $sub .='select ';} $sub .='btn-change common_selector sub_category '; if($category_id==5 || $category_id==6 || $category_id==7){  $sub.='sub_new'.$value->subcategory_id.'' ;}else{   $sub.='sub_new'.$value->id.'' ; } $sub.='"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="">
+		<img width="41" height="41" class="';if ($value->id == 7 || $value->id == 13 || $value->id == 43 || $value->id== 53 || $value->id== 77 || $value->id== 87 || $value->id==90 || $value->id==39 ) { $sub .='select ';} $sub .='btn-change common_selector sub_category '; if($category_id==5 || $category_id==6 || $category_id==7){  $sub.='sub_new'.$value->subcategory_id.'' ;}else{   $sub.='sub_new'.$value->id.'' ; } $sub.='"  data-sub-id=" ' . $value->subcategory_id . '" src="'.base_url("uploads/shopcategory/").'' . $value->icon . '" alt="shopcategory">
 		 <center style="color:black; font-size:12px; font-weight:500">' . $value->product_type . '</center>
 		</p>
 		
@@ -136,7 +136,7 @@ class Welcome extends CI_Controller
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a href="'.base_url("welcome/productdetail/").'' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
-                <img src="'.base_url($value->cover_img).'" class="w-100 va-thumbnail" />
+                <img src="'.base_url($value->cover_img).'" class="w-100 va-thumbnail" alt="cover_img"/>
             </a>
             <a href="#!">
                 <div class="hover-overlay">
@@ -227,7 +227,7 @@ $sub .= '</h6>
 				<div class="card">
 					<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
 						<a href="' . base_url("welcome/productdetail/") . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
-							<img src="' . base_url($value->cover_img) . '" class="w-100 va-thumbnail" />
+							<img src="' . base_url($value->cover_img) . '" class="w-100 va-thumbnail" alt="cover_img"/>
 							<p style="margin-left: 5px;">';
 	
 					if ($value->pay_type == 1) {
@@ -338,7 +338,7 @@ $sub .= '</h6>
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a href="'.base_url("welcome/productdetail/").'' .$value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
-                <img src="'.base_url($value->cover_img) . '" class="w-100 va-thumbnail" />
+                <img src="'.base_url($value->cover_img) . '" class="w-100 va-thumbnail" alt="cover_img"/>
             </a>
             <a href="#!">
                 <div class="hover-overlay">
@@ -422,7 +422,7 @@ $sub .= '</h6>
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a href="'.base_url("welcome/productdetail/").'' .$value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
-                <img src="'.base_url($value->cover_img) . '" class="w-100 va-thumbnail" />
+                <img src="'.base_url($value->cover_img) . '" class="w-100 va-thumbnail" alt="cover_img" />
             </a>
             <a href="#!">
                 <div class="hover-overlay">
@@ -500,7 +500,7 @@ $sub .= '</h6>
     <div class="card">
         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
             <a href="'.base_url("welcome/productdetail/").'' .$value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
-                <img src="'.base_url($value->cover_img) . '" class="w-100 va-thumbnail" />
+                <img src="'.base_url($value->cover_img) . '" class="w-100 va-thumbnail" alt="cover_img"/>
             </a>
             <a href="#!">
                 <div class="hover-overlay">
@@ -568,7 +568,7 @@ $sub .= '</h6>
 					<div class="card">
 							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
 							
-									<img class="va-thumbnail" alt="Card image cap" src="'.base_url("uploads/shop/") . $value->shop_images . '">
+									<img class="va-thumbnail" alt="Card image cap" src="'.base_url("uploads/shop/") . $value->shop_images . '" alt="cover_img">
 								
 							
 							</div>
@@ -626,7 +626,7 @@ $sub .= '</h6>
 						<div class="card">
 							<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
 								<a href="'.base_url("welcome/shopdetail/").'' . $value->id . '">
-									<img class="va-thumbnail" alt="Card image cap" src="'.base_url("uploads/shop/").''. $value->shop_images . '">
+									<img class="va-thumbnail" alt="Card image cap" src="'.base_url("uploads/shop/").''. $value->shop_images . '" alt="cover_img">
 								</a>
 								<a href="#!">
 									<div class="hover-overlay">
@@ -2475,7 +2475,7 @@ $sub .= '</h6>
 			<div class="col-md-12 col-lg-5 col-xl-5 mb-4 mb-lg-0">
 			  <div class="bg-image hover-zoom ripple rounded ripple-surface">';
 
-						$pro .= '  <a href="' . base_url("welcome/verifyproductdetails/" . $product->category_id . '/' . $product->id . '/' . $product->subcategory_id) . '"><img class="btn-change " height=250 width=250 src="' . base_url($product->thumbnails) . '"></a>
+						$pro .= '  <a href="' . base_url("welcome/verifyproductdetails/" . $product->category_id . '/' . $product->id . '/' . $product->subcategory_id) . '"><img class="btn-change " height=250 width=250 src="' . base_url($product->thumbnails) . '" alt="cover_img"></a>
 				<a href="#!">
 				  <div class="hover-overlay">
 					<div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>
@@ -2555,7 +2555,7 @@ $sub .= '</h6>
 			<div class="col-md-12 col-lg-5 col-xl-5 mb-4 mb-lg-0">
 			  <div class="bg-image hover-zoom ripple rounded ripple-surface">';
 
-					$pro .= '  <a href="' . base_url("welcome/productdetail/" . $product->category_id . '/' . $product->id . '/' . $product->subcategory_id) . '"><img class="btn-change " height=250 width=250 src="' . base_url($product->thumbnails) . '"></a>
+					$pro .= '  <a href="' . base_url("welcome/productdetail/" . $product->category_id . '/' . $product->id . '/' . $product->subcategory_id) . '"><img class="btn-change " height=250 width=250 src="' . base_url($product->thumbnails) . '" alt="cover_img"></a>
 				<a href="#!">
 				  <div class="hover-overlay">
 					<div class="mask" style="background-color: rgba(253, 253, 253, 0.15);"></div>

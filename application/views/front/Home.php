@@ -477,7 +477,7 @@ input::placeholder {
                                     role="button">
                                     <img style="height:40px; width:40px;" class="me-1"
                                         src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
-                                        alt=""><?php echo $cat->category; ?>
+                                        alt="category"><?php echo $cat->category; ?>
                                 </p>
                             </div>
                             <?php  }?>
@@ -538,7 +538,7 @@ input::placeholder {
                                     <img width="41" height="41" class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id == 39){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?>"
                                         data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
-                                        alt="">
+                                        alt="subcategory">
                                     <center style="color:black; font-size:12px; font-weight:500">
                                         <?php echo $sub->product_type;
                                       
@@ -641,7 +641,7 @@ input::placeholder {
                                     onclick="return getshop(<?php echo $cat->id; ?>)">
                                     <img  width="41" height="41" class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>"
-                                        alt="">
+                                        alt="subcategory">
                                     <center style="color:black; font-size:12px; font-weight:500">
                                         <?php echo ucfirst($cat->shop_category); ?>
                                     </center>
@@ -681,7 +681,7 @@ input::placeholder {
                     <div class="card">
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <img src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
-                                class="w-100 va-thumbnail" />
+                                class="w-100 va-thumbnail" alt="cover_img"/>
                         </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
@@ -779,7 +779,7 @@ input::placeholder {
                     <div class="card">
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
-                                class="w-100 va-thumbnail" />
+                                class="w-100 va-thumbnail" alt="cover_img"/>
                         </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">

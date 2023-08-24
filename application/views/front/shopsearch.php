@@ -183,7 +183,7 @@ input::placeholder {
                     <div class="va-card va-card_category mt-2"> 
                             <p  style="text-align:center;" class="my-auto pouler_Categories" onclick="return getshop(<?php echo $cat->id; ?>)">
                                 <img width="41" height="41" <?php if($id== $cat->id){ ?>style="background:#d1fae5; border-radius:50%;" <?php } ?> class="btn-change new<?php echo $cat->id; ?>"
-                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>" alt="">
+                                    src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>"  alt="subcategory">
                                 <center style="color:black; font-size:12px; font-weight:500">
                                     <?php echo ucfirst($cat->shop_category); ?></center>
                             </p>
