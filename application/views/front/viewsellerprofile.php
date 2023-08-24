@@ -174,7 +174,7 @@
                     <div class="card">
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
-                                class="w-100 va-thumbnail" alt="cover_img"/>
+                                class="w-100 va-thumbnail" />
 
                             <a href="#!">
 

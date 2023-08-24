@@ -197,7 +197,7 @@
                         </div>
 
                         <?php } ?>
-                       
+                      
                                 <div class="form-group mt-2">
                                     <label>Enter Otp</label>
                                     <input name="otp" class="form-control" placeholder="otp" type="text" maxlength="4"

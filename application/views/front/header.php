@@ -4,32 +4,29 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" sizes="196x196" href="<?php echo base_url();?>assets/images/CelNow 5 1.png" type="image/png">
-    <meta name="keywords" content="Online Learning, Tutoring Services, Virtual Education, Subject Coaching, Online Classes, Remote Work, Freelance Gigs, Independent Contracting, Skill-based Jobs, Freelancer Marketplace, Career Development, Professional Experience, Skill Enhancement, Internship Programs, Hands-on Learning, Business Properties, Office Rentals, Commercial Spaces, Workspace Solutions, Retail Rentals, Property Plots, Real Estate Parcels, Land for Sale, Property Divisions, Land Investments, Pre-Owned Items, Used Goods, Second-Hand Bargains, Quality Used Products, Gently Used Items">
-    <meta name="description" content="Welcome to CelNow - Your ultimate destination for tuition classes, freelancing services, internship opportunities, commercial residentials, land and parts, and a wide range of second-hand products. Explore and discover today!">
-    <title>CelNow - Online Platform for Tuition Classes, Freelancing, Internships, and More</title>
+    
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"async></script>
+    <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous" async>
+        integrity="sha384-ENjdO4Dr2bkBIFxQpeoTz1HIcje39Wm4jDKdf19U8gI4ddQ3GYNS7NTKfAdVQSZe" crossorigin="anonymous">
     </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"async></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.3/sweetalert.min.css" />
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"async></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script async
         src="https://maps.google.com/maps/api/js?key=AIzaSyAuJlJoxTMjjeSLvb3BYmty0eEkp6oHfCU&libraries=places&callback=initAutocomplete">
     </script>
-    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css" async>
-    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"async></script>
-  
-    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"async></script>
+    <link rel="stylesheet" href="https://code.jquery.com/ui/1.13.0/themes/base/jquery-ui.css">
+    <script src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"></script>
+    <link rel="icon" sizes="196x196" href="<?php echo base_url();?>assets/images/CelNow 5 1.png" type="image/png">
+    <script src="https://cdn.ckeditor.com/ckeditor5/11.0.1/classic/ckeditor.js"></script>
     <?php 
     $session_id = $this->session->userdata('id');
     if(!empty($session_id)){?>
-    <script src="<?php echo base_url();?>assets/js/app.js"async></script>
+    <script src="<?php echo base_url();?>assets/js/app.js"></script>
     <?php  }
     ?>
     ?>

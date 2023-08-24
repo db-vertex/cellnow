@@ -170,15 +170,15 @@
               href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $pro->category_id; ?>/<?php echo $pro->id; ?>/<?php echo $pro->subcategory_id; ?>">
               <div class="card">
                 <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-                  <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>" class="w-100 va-thumbnail" alt="cover_img"/>
+                  <img src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>" class="w-100 va-thumbnail" />
                   <p style="margin-left:5px;">
                     <?php if ($pro->pay_type == 1) { ?>
                       <img class="img-fluid image2" src="<?php echo base_url(); ?>assets/images/sponsor.png"
-                        style="width:80px;" alt="sponsor">
+                        style="width:80px; ">
                     <?php }
                     if ($pro->verified_product == 1) { ?>
                       <img class="img-fluid image3" src="<?php echo base_url(); ?>assets/images/verified.png"
-                        style="width:80px; " alt="verified">
+                        style="width:80px; ">
 
 
                     <?php } ?>

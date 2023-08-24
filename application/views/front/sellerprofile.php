@@ -194,7 +194,7 @@ width: 131.9px; border-color:#10B981;">
                                 <div class="card">
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                            <img  src="<?php echo base_url(); ?><?php echo $pro->cover_img ?>"
-                                    class="w-100 va-thumbnail image1" alt="cover_img"/>
+                                    class="w-100 va-thumbnail image1" />
                                     <p style="margin-left:5px;"> 
                                     <?php if($pro->pay_type ==1){ ?>
                                       <img class="img-fluid image2"
