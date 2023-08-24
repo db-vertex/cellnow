@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
     const applicationServerKey =
-        'BMwM8OVfJ-uDlKQTjA4E0NEL2ZiiUAD0zm5cQx3UIGcFj-kQ5d4BpRcUl20_YeO-zhkT6Kep8pxwMiAdmIvEcnA';
+        'BAbleJYttfdKPIdbc7ZCMQ0-vHr4Nw8ukV3Ir-saAVVVuXYviEDDr50VL3NqlkMyPZa1kt5OArlPqsvQo7Lfcpw';
 
     let isPushEnabled = false;
 
