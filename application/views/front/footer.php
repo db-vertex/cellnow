@@ -52,9 +52,9 @@ padding-left:15px;
     </div>
     <div class="col-sm-3 col-6" style="color:#888b97">
      <b style="color:black"> Contact </b><br><br>
-      Indore India <br>
-      (+91) 45454-81100<br>
-      info@celnow.com <br>
+       Hyderabad, India  <br>
+       (+91) 8377935333<br>
+       celnowindia@gmail.com<br>
     </div>
     <center class="fs-5 mt-5" style="color:#FA7640;">Developed by <a href="http://dbvertex.com/" style="  text-decoration: none; color:black">DB Vertex Technologies</a></center>
 
