@@ -5,9 +5,9 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" sizes="196x196" href="<?php echo base_url();?>assets/images/CelNow 5 1.png" type="image/png">
-    <meta name="keywords" content="CelNow Online Store - Best Deals on Fashion, Electronics, and More">
-    <meta name="description" content="Welcome to CelNow! Your go-to online marketplace for a diverse selection of products including electronics, fashion, home essentials, and more. Start shopping and exploring great deals today">
-    <title>CelNow</title>
+    <meta name="keywords" content="Online Learning, Tutoring Services, Virtual Education, Subject Coaching, Online Classes, Remote Work, Freelance Gigs, Independent Contracting, Skill-based Jobs, Freelancer Marketplace, Career Development, Professional Experience, Skill Enhancement, Internship Programs, Hands-on Learning, Business Properties, Office Rentals, Commercial Spaces, Workspace Solutions, Retail Rentals, Property Plots, Real Estate Parcels, Land for Sale, Property Divisions, Land Investments, Pre-Owned Items, Used Goods, Second-Hand Bargains, Quality Used Products, Gently Used Items">
+    <meta name="description" content="Welcome to CelNow - Your ultimate destination for tuition classes, freelancing services, internship opportunities, commercial residentials, land and parts, and a wide range of second-hand products. Explore and discover today!">
+    <title>CelNow - Online Platform for Tuition Classes, Freelancing, Internships, and More</title>
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
