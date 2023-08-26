@@ -209,8 +209,6 @@ input::placeholder {
 
 .testimonial {
     min-height: 375px;
-    position: relative;
-
     padding-top: 50px;
     padding-bottom: 50px;
     background-position: center;
