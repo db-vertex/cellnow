@@ -4,6 +4,7 @@
     background-color: #d1fae5;
     border-color: var(--bs-btn-hover-border-color);
 }
+
 .selected {
     background: #d1fae5;
     color: black;
@@ -77,7 +78,7 @@ input::placeholder {
         font-weight: bold;
     }
 
-   
+
 }
 
 @media screen and (max-width: 560px) {
@@ -86,7 +87,7 @@ input::placeholder {
         font-weight: bold;
     }
 
-  
+
 }
 
 .mores {
@@ -153,7 +154,8 @@ input::placeholder {
     font-style: normal;
     font-weight: 600;
 }
-.card-body{
+
+.card-body {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -171,9 +173,9 @@ input::placeholder {
     text-transform: uppercase;
     z-index: 999;
 }
-.white-heading{
-    
-}
+
+.white-heading {}
+
 .heading:after {
     content: ' ';
     position: absolute;
@@ -187,6 +189,7 @@ input::placeholder {
     background-repeat: no-repeat;
     background-position: center;
 }
+
 .white-heading:after {
     background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
     background-repeat: no-repeat;
@@ -198,6 +201,7 @@ input::placeholder {
     display: block;
     font-weight: 500;
 }
+
 .white-heading span {
     color: #ffffff;
 }
@@ -206,144 +210,156 @@ input::placeholder {
 .testimonial {
     min-height: 375px;
     position: relative;
-  
+
     padding-top: 50px;
     padding-bottom: 50px;
     background-position: center;
     background-size: cover;
 }
-#testimonial4 .carousel-inner:hover{
-  cursor: -moz-grab;
-  cursor: -webkit-grab;
-}
-#testimonial4 .carousel-inner:active{
-  cursor: -moz-grabbing;
-  cursor: -webkit-grabbing;
-}
-#testimonial4 .carousel-inner .item{
-  overflow: hidden;
+
+#testimonial4 .carousel-inner:hover {
+    cursor: -moz-grab;
+    cursor: -webkit-grab;
 }
 
-.testimonial4_indicators .carousel-indicators{
-  left: 0;
-  margin: 0;
-  width: 100%;
-  font-size: 0;
-  height: 20px;
-  bottom: 15px;
-  padding: 0 5px;
-  cursor: e-resize;
-  overflow-x: auto;
-  overflow-y: hidden;
-  position: absolute;
-  text-align: center;
-  white-space: nowrap;
-}
-.testimonial4_indicators .carousel-indicators li{
-  padding: 0;
-  width: 14px;
-  height: 14px;
-  border: none;
-  text-indent: 0;
-  margin: 2px 3px;
-  cursor: pointer;
-  display: inline-block;
-  background: #ffffff;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-}
-.testimonial4_indicators .carousel-indicators .active{
-  padding: 0;
-  width: 14px;
-  height: 14px;
-  border: none;
-  margin: 2px 3px;
-  background-color: #9dd3af;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-}
-.testimonial4_indicators .carousel-indicators::-webkit-scrollbar{
-  height: 3px;
-}
-.testimonial4_indicators .carousel-indicators::-webkit-scrollbar-thumb{
-  background: #eeeeee;
-  -webkit-border-radius: 0;
-  border-radius: 0;
+#testimonial4 .carousel-inner:active {
+    cursor: -moz-grabbing;
+    cursor: -webkit-grabbing;
 }
 
-.testimonial4_control_button .carousel-control{
-  top: 175px;
-  opacity: 1;
-  width: 40px;
-  bottom: auto;
-  height: 40px;
-  font-size: 10px;
-  cursor: pointer;
-  font-weight: 700;
-  overflow: hidden;
-  line-height: 38px;
-  text-shadow: none;
-  text-align: center;
-  position: absolute;
-  background: transparent;
-  border: 2px solid #ffffff;
-  text-transform: uppercase;
-  -webkit-border-radius: 100%;
-  border-radius: 100%;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  -webkit-transition: all 0.6s cubic-bezier(0.3,1,0,1);
-  transition: all 0.6s cubic-bezier(0.3,1,0,1);
+#testimonial4 .carousel-inner .item {
+    overflow: hidden;
 }
-.testimonial4_control_button .carousel-control.left{
-  left: 7%;
-  top: 50%;
-  right: auto;
+
+.testimonial4_indicators .carousel-indicators {
+    left: 0;
+    margin: 0;
+    width: 100%;
+    font-size: 0;
+    height: 20px;
+    bottom: 15px;
+    padding: 0 5px;
+    cursor: e-resize;
+    overflow-x: auto;
+    overflow-y: hidden;
+    position: absolute;
+    text-align: center;
+    white-space: nowrap;
 }
-.testimonial4_control_button .carousel-control.right{
-  right: 7%;
-  top: 50%;
-  left: auto;
+
+.testimonial4_indicators .carousel-indicators li {
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    border: none;
+    text-indent: 0;
+    margin: 2px 3px;
+    cursor: pointer;
+    display: inline-block;
+    background: #ffffff;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
 }
+
+.testimonial4_indicators .carousel-indicators .active {
+    padding: 0;
+    width: 14px;
+    height: 14px;
+    border: none;
+    margin: 2px 3px;
+    background-color: #9dd3af;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+}
+
+.testimonial4_indicators .carousel-indicators::-webkit-scrollbar {
+    height: 3px;
+}
+
+.testimonial4_indicators .carousel-indicators::-webkit-scrollbar-thumb {
+    background: #eeeeee;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+}
+
+.testimonial4_control_button .carousel-control {
+    top: 175px;
+    opacity: 1;
+    width: 40px;
+    bottom: auto;
+    height: 40px;
+    font-size: 10px;
+    cursor: pointer;
+    font-weight: 700;
+    overflow: hidden;
+    line-height: 38px;
+    text-shadow: none;
+    text-align: center;
+    position: absolute;
+    background: transparent;
+    border: 2px solid #ffffff;
+    text-transform: uppercase;
+    -webkit-border-radius: 100%;
+    border-radius: 100%;
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    -webkit-transition: all 0.6s cubic-bezier(0.3, 1, 0, 1);
+    transition: all 0.6s cubic-bezier(0.3, 1, 0, 1);
+}
+
+.testimonial4_control_button .carousel-control.left {
+    left: 7%;
+    top: 50%;
+    right: auto;
+}
+
+.testimonial4_control_button .carousel-control.right {
+    right: 7%;
+    top: 50%;
+    left: auto;
+}
+
 .testimonial4_control_button .carousel-control.left:hover,
-.testimonial4_control_button .carousel-control.right:hover{
-  color: #000;
-  background: #fff;
-  border: 2px solid #fff;
+.testimonial4_control_button .carousel-control.right:hover {
+    color: #000;
+    background: #fff;
+    border: 2px solid #fff;
 }
 
-.testimonial4_header{
-  top: 0;
-  left: 0;
-  bottom: 0;
-  width: 550px;
-  display: block;
-  margin: 30px auto;
-  text-align: center;
-  position: relative;
-}
-.testimonial4_header h4{
-  font-size: 30px;
-  font-weight: 600;
-  position: relative;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+.testimonial4_header {
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 550px;
+    display: block;
+    margin: 30px auto;
+    text-align: center;
+    position: relative;
 }
 
-.testimonial4_slide{
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 70%;
-  margin: auto;
-  padding: 20px;
-  position: relative;
-  text-align: center;
-  font-family: 'Lexend';
+.testimonial4_header h4 {
+    font-size: 30px;
+    font-weight: 600;
+    position: relative;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.testimonial4_slide {
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 70%;
+    margin: auto;
+    padding: 20px;
+    position: relative;
+    text-align: center;
+    font-family: 'Lexend';
     font-style: normal;
-    font-weight: 600; 
+    font-weight: 600;
 }
+
 .testimonial4_slide img {
     top: 0;
     left: 0;
@@ -352,7 +368,7 @@ input::placeholder {
     height: 136px;
     margin: auto;
     display: block;
- 
+
     font-size: 18px;
     line-height: 46px;
     text-align: center;
@@ -363,32 +379,38 @@ input::placeholder {
     -o-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
     -webkit-box-shadow: -6px 6px 6px rgba(0, 0, 0, 0.23);
 }
+
 .testimonial4_slide p {
     color: #999999;
     font-size: 20px;
     line-height: 1.4;
     margin: 40px 0 20px 0;
 }
+
 .testimonial4_slide h4 {
-  color: #999999;
-  font-size: 22px;
+    color: #999999;
+    font-size: 22px;
 }
 
 .testimonial .carousel {
-	padding-bottom:50px;
+    padding-bottom: 50px;
 }
-.testimonial .carousel-control-next-icon, .testimonial .carousel-control-prev-icon {
+
+.testimonial .carousel-control-next-icon,
+.testimonial .carousel-control-prev-icon {
     width: 35px;
     height: 35px;
     border: 1px solid transparent;
     border-radius: 50%;
-   
+
     background-color: black;
 }
 
 .carousel-item>div {
-        float: center;
-    }
+    float: center;
+}
+
+
 </style>
 
 <div class="container home_background" style="">
@@ -426,6 +448,9 @@ input::placeholder {
 </div><br>
 
 
+
+
+
 <!-- search bar -->
 <div class="container">
     <div class="row px-0">
@@ -439,7 +464,7 @@ input::placeholder {
                         aria-describedby="search-addon" style="padding:12px 22px" />
                     <button type="submit" class="btn btn-success rounded-5" id="myBtn" style="padding:6px 10px">Search
                     </button>
-                   
+
                 </div>
                 <div class="row">
                     <div id="display"></div>
@@ -467,7 +492,7 @@ input::placeholder {
                     </div>
                     <div class="col-10 ps-0 icon_cetgory">
                         <div class="va-carrousel-flexbox_most">
-                                    <?php
+                            <?php
                     $category = get_all_category();
                     foreach ($category as $key => $cat) {
                                     ?>
@@ -534,7 +559,8 @@ input::placeholder {
                                     <?php } else { ?>
                                     onclick="return getproduct( <?php echo $sub->id; ?> ,<?php echo $sub->category_id; ?>)"
                                     <?php } ?>>
-                                    <img width="41" height="41" class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id == 39){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?>"
+                                    <img width="41" height="41"
+                                        class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id == 39){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?>"
                                         data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
                                         alt="">
@@ -569,8 +595,8 @@ input::placeholder {
 <section>
     <div class="text-center container py-5">
         <div class="row" id="product_list">
-         
-           
+
+
         </div>
     </div>
 </section>
@@ -638,7 +664,8 @@ input::placeholder {
                             <div class="va-card va-card_category mt-2">
                                 <p style="text-align:center;" class="my-auto pouler_Category"
                                     onclick="return getshop(<?php echo $cat->id; ?>)">
-                                    <img  width="41" height="41" class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
+                                    <img width="41" height="41"
+                                        class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>"
                                         alt="">
                                     <center style="color:black; font-size:12px; font-weight:500">
@@ -711,10 +738,10 @@ input::placeholder {
                                 $y = substr($title,0,25) . '...';
                                 echo ucfirst($y);
                               }?>
-                           </h6>
-                           
+                                </h6>
+
                             </div>
-                          
+
                         </div>
                     </div>
                 </a>
@@ -737,7 +764,8 @@ input::placeholder {
         <div class="col-md-6 ">
             <h3 class="card-title_Login">Unlock Your Earning Potential: Leverage Your Service Points with Celnow!</h3>
             <br>
-            <p class="card-title_Login  mb-sm-2" style="color: #565656;">Join as a Verified Service Point, list your skills,
+            <p class="card-title_Login  mb-sm-2" style="color: #565656;">Join as a Verified Service Point, list your
+                skills,
                 expand your reach, Showcase your portfolio, interact directly with customers, and enjoy a flexible
                 schedule.
                 Level up your service business with CelNow's platform. Sign up today and start earning more!</p>
@@ -838,8 +866,8 @@ input::placeholder {
          
             ?>
             <a href="<?php echo $banner_name->url;?>"><img class="img-fluid"
-                    src="<?php echo base_url();?>uploads/banner/<?php echo $banner_name->banner_image;?>" width="100%" alt="Second slide"
-                    style="border-radius: 31px;"></a>
+                    src="<?php echo base_url();?>uploads/banner/<?php echo $banner_name->banner_image;?>" width="100%"
+                    alt="Second slide" style="border-radius: 31px;"></a>
         </div>
     </div>
 </div><br>
@@ -854,7 +882,9 @@ input::placeholder {
         </div>
         <div class="col-md-6 ">
             <h3 class="card-title_Login mt-sm-2">Benefits of Using Celnow Website</h3><br>
-            <p class="card-title_Login" style="color: #565656;">Explore CelNow: Your all-in-one solution for buying, selling, and connecting! From secondhand treasures to tutoring opportunities, freelancing gigs, and local services, CelNow has it all.</p>
+            <p class="card-title_Login" style="color: #565656;">Explore CelNow: Your all-in-one solution for buying,
+                selling, and connecting! From secondhand treasures to tutoring opportunities, freelancing gigs, and
+                local services, CelNow has it all.</p>
         </div>
     </div>
 </div>
@@ -868,57 +898,60 @@ input::placeholder {
          
             ?>
             <a href="<?php echo $banner_name->url;?>"><img class="img-fluid"
-                    src="<?php echo base_url();?>uploads/banner/<?php echo $banner_name->banner_image;?>" width="100%" alt="Second slide"
-                    style="border-radius: 31px;"></a>
+                    src="<?php echo base_url();?>uploads/banner/<?php echo $banner_name->banner_image;?>" width="100%"
+                    alt="Second slide" style="border-radius: 31px;"></a>
         </div>
     </div>
 </div><br>
 
 
-  <section class="testimonial text-center">
-  <div class="container">
-    <div class="heading white-heading">
-      Testimonial
-    </div>
-    <div id="testimonial4" class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x" data-ride="carousel" data-pause="hover" data-interval="5000">
-      <div class="carousel-inner" role="listbox">
-        <div class="carousel-item active">
-          <div class="testimonial4_slide">
-            <img src="<?php echo base_url(); ?>assets/review/Hareesh.png" class="img-circle img-responsive" alt="Client 1">
-            <p>Genuine platform, everyone should give it a try.</p>
-            <h4>Hareesh</h4>
-          </div>
+<section class="testimonial text-center">
+    <div class="container">
+        <div class="heading white-heading">
+            Testimonial
         </div>
-        <div class="carousel-item">
-          <div class="testimonial4_slide">
-            <img src="<?php echo base_url(); ?>assets/review/niki.png" class="img-circle img-responsive" alt="Client 2">
-            <p>Best mobile friendly website to find buyers for our broken gadgets.</p>
-            <h4>Niki</h4>
-          </div>
-        </div>
-       
-       
+        <div id="testimonial4"
+            class="carousel slide testimonial4_indicators testimonial4_control_button thumb_scroll_x swipe_x"
+            data-ride="carousel" data-pause="hover" data-interval="5000">
+            <div class="carousel-inner" role="listbox">
+                <div class="carousel-item active">
+                    <div class="testimonial4_slide">
+                        <img src="<?php echo base_url(); ?>assets/review/Hareesh.png" class="img-circle img-responsive"
+                            alt="Client 1">
+                        <p>Genuine platform, everyone should give it a try.</p>
+                        <h4>Hareesh</h4>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial4_slide">
+                        <img src="<?php echo base_url(); ?>assets/review/niki.png" class="img-circle img-responsive"
+                            alt="Client 2">
+                        <p>Best mobile friendly website to find buyers for our broken gadgets.</p>
+                        <h4>Niki</h4>
+                    </div>
+                </div>
 
-        <div  class="carousel-item">
-          <div class="testimonial4_slide">
-            <img src="<?php echo base_url(); ?>assets/review/aravind.png" class="img-circle img-responsive" alt="Client 3">
-            <p>Must use website to find no-broker houses, commercial places for rent and sale nearby</p>
-            <h4>Aravind</h4>
-          </div>
-        </div>
 
-      </div>
-      <a class="carousel-control-prev" href="#testimonial4" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </a>
-      <a class="carousel-control-next" href="#testimonial4" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </a>
+
+                <div class="carousel-item">
+                    <div class="testimonial4_slide">
+                        <img src="<?php echo base_url(); ?>assets/review/aravind.png" class="img-circle img-responsive"
+                            alt="Client 3">
+                        <p>Must use website to find no-broker houses, commercial places for rent and sale nearby</p>
+                        <h4>Aravind</h4>
+                    </div>
+                </div>
+
+            </div>
+            <a class="carousel-control-prev" href="#testimonial4" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </a>
+            <a class="carousel-control-next" href="#testimonial4" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </a>
+        </div>
     </div>
-  </div>
 </section>
-
-<!-- Include Bootstrap JS and jQuery -->
 
 <div class="container" style="max-width:600px;">
     <div class="row">
@@ -936,7 +969,7 @@ input::placeholder {
                             onclick="return checkemail();">Subscribe </button>
                         <span id="email_er" style="color: red; font-size:12px;"></span>
                     </form>
-                 
+
                 </div>
             </div>
             </p>
@@ -944,6 +977,55 @@ input::placeholder {
     </div>
 </div><br>
 
+<script>
+jQuery(document).ready(function ($) {
+
+$('#checkbox').change(function(){
+  setInterval(function () {
+      moveRight();
+  }, 3000);
+});
+
+  var slideCount = $('#slider ul li').length;
+  var slideWidth = $('#slider ul li').width();
+  var slideHeight = $('#slider ul li').height();
+  var sliderUlWidth = slideCount * slideWidth;
+  
+  $('#slider').css({ width: slideWidth, height: slideHeight });
+  
+  $('#slider ul').css({ width: sliderUlWidth, marginLeft: - slideWidth });
+  
+  $('#slider ul li:last-child').prependTo('#slider ul');
+
+  function moveLeft() {
+      $('#slider ul').animate({
+          left: + slideWidth
+      }, 200, function () {
+          $('#slider ul li:last-child').prependTo('#slider ul');
+          $('#slider ul').css('left', '');
+      });
+  };
+
+  function moveRight() {
+      $('#slider ul').animate({
+          left: - slideWidth
+      }, 200, function () {
+          $('#slider ul li:first-child').appendTo('#slider ul');
+          $('#slider ul').css('left', '');
+      });
+  };
+
+  $('a.control_prev').click(function () {
+      moveLeft();
+  });
+
+  $('a.control_next').click(function () {
+      moveRight();
+  });
+
+});    
+
+</script>
 
 <script>
 "use strict"; /* Start of use strict */
@@ -974,6 +1056,7 @@ function function14() {
     });
 }
 </script>
+
 <script>
 function getsubcategory(category_id) {
     $("p").removeClass("selected");
@@ -1057,26 +1140,28 @@ function getproduct(subcategory_id, category_id) {
     });
 }
 </script>
+
 <script>
 $(document).ready(function() {
     // Get value on button click and show alert
     $("#myBtn").click(function() {
         var anything = $("#anything").val();
-        if(anything !== ''){
-        jQuery.ajax({
-            type: "POST",
-            url: "<?php echo base_url('/welcome/getsearchproduct'); ?>",
-            data: {
-                anything: anything
-            },
-            success: function(res) {
-                $("#product_list").html(res);
-            }
-        });
-       }
+        if (anything !== '') {
+            jQuery.ajax({
+                type: "POST",
+                url: "<?php echo base_url('/welcome/getsearchproduct'); ?>",
+                data: {
+                    anything: anything
+                },
+                success: function(res) {
+                    $("#product_list").html(res);
+                }
+            });
+        }
     });
 });
 </script>
+
 <script>
 $(document).ready(function() {
     // Get value on button click and show alert
@@ -1095,6 +1180,7 @@ $(document).ready(function() {
     });
 });
 </script>
+
 <script type='text/javascript'>
 $(document).ready(function() {
     $("#search").autocomplete({
@@ -1246,6 +1332,7 @@ $(document).ready(function() {
     });
 });
 </script>
+
 <script>
 function checkemail(event) {
     var email_newsletter = $('#email_newsletter').val();
@@ -1267,6 +1354,7 @@ function checkemail(event) {
     }
 }
 </script>
+
 <script>
 $(document).ready(function() {
     $("#latitudeArea").addClass("d-none");
@@ -1290,4 +1378,4 @@ function initialize() {
 </script>
 
 <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>

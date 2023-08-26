@@ -398,6 +398,146 @@ $sub .= '</h6>
 
 	}
 
+	public function getsearchproductfillter($data = " ")
+	{
+		$anything = $this->input->post('anything');
+		
+		if(empty($location) && !empty($anything)){
+			$product =  get_all_search_product_fillter($anything); 
+			$all_count = get_all_search_product_count($anything);
+		
+			}
+			else if(!empty($location) && empty($anything)){
+			$product= get_all_locationsearch_product($location);
+			$all_count =get_all_locationsearch_product_count($location);
+			
+			}
+
+		$sub = "";
+		
+		if (!empty($product)) {
+
+			foreach ($product as $value) {
+				
+				$session_login_id = $this->session->userdata("id");
+				$product_user_id = $value->user_id;
+				if ($session_login_id !== $product_user_id) {
+
+			if($session_login_id){
+				 $user = array("user_id" => $session_login_id); 
+			}
+
+			if (!empty($user) && isset($user)) {
+				$wishlist = get_wishlist($value->id, $value->category_id, $value->user_id);
+			
+				if (empty($wishlist)) {
+					$wishlist = 0;
+				} else {
+					$wishlist = 1;
+				}
+			} else {
+				$wishlist = 0;
+			}
+					
+
+				
+
+
+				$sub .='    <div class="col-lg-4 col-md-6 col-sm-6 mb-4 post">
+				<div class="card">
+				<a
+				href="'.base_url("welcome/productdetail/").''.$value->category_id.'/'. $value->id.'/'.$value->subcategory_id.'">
+					<img  class="w-100 va-thumbnail image1" src="'.base_url($value->cover_img).'" alt="related_ads_card_img">
+					</a>
+					<p>';
+					if($value->pay_type ==1){ 
+						$sub .='<img class="img-fluid image2"
+									 src="'.base_url("assets/images/sponsor.png").'" style="
+		 width:80px; ">';
+					}
+								  if($value->pay_type ==1){ 
+									$sub .='<img class="img-fluid image3" src="'.base_url("assets/images/verified.png").'" style="
+		 width:80px; ">
+							 <p>';
+	 
+								  }
+								  $sub .='</p>
+					<div class="card-body ">
+					<div class="d-flex justify-content-between align-items-center"> ';
+	 
+								   
+			if (($value->pay_type == 0 || $value->pay_type == 1) && ($value->category_id == 1 || $value->category_id == 2 || $value->category_id == 3|| $value->category_id == 5 || $value->category_id == 6 || $value->category_id == 7)) {
+			 $sub .='<p class="details_price">₹<span>';		
+				$sub .=$value->price;
+			}
+			if (( $value->pay_type == 2)) {
+			 $sub .='<p class="details_price"><span>Donate';		
+			   
+			}
+			$sub .='</span></p>
+			<p>   <a style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"'.(empty($user) || !isset($user) ? ' href="'.base_url('welcome/login').'"':
+			'<i style="padding:0px;font-size:12px;color:#69d3b0; text-align: right;"  data-uid="'.$session_login_id.'"').' class="'.($wishlist == 0 ? 'fa fa-heart-o' : 'fa fa-heart').' dddssaaf dddssaaf'.$value->id.'" data-pid="'.$value->id.'" data-cid="'.$value->category_id.'" data-wishlist="'.$wishlist.'"></i>
+		</a></p>
+						   
+						</div>
+						<div class="row mt-1">
+							<div class="col-12">
+								<small class="card-text">';
+			$title = $value->title;
+			
+			if (strlen($title) <= 25) {
+				$sub .=ucfirst($title);
+			} else {
+				$y = substr($title, 0, 25) .'...';
+				$sub .=ucfirst($y);
+			}
+			$sub .='</small><br>
+							</div>
+						</div>';
+					   
+					 $sub .='  <div class="d-flex justify-content-between align-items-center">
+					 <div class="row">
+					 <div class="col-3 pe-0">
+					 <img src="'.base_url("assets/images/location .png").'">
+					 </div>
+					 <div class="col-9 ps-0 mt-2">
+						 <p  style="color: #575757;">';
+												$title = $value->address;
+												if(strlen($title) <= 25)
+												{
+												$sub .='<span class="ps-3" >'.ucfirst($title);'</span>';
+											   
+						   
+												}
+												else
+												{
+												$y = substr($title, 0, 25) .'...';
+												$sub .= ucfirst($y);
+												}
+												$sub .='</p>
+												</div>
+												</div>
+										   
+											  
+											</div>
+										</div>
+									</div>
+								</div>
+					 </div>
+					';
+	 
+
+				}
+			}
+		} else {
+			$sub .= '<center><img src="'.base_url("assets/images/no_product.png").'"></center>';
+		}
+		
+		echo $sub;
+
+	}
+
+
 	public function getdonateproduct($data = " ")
 	{
 		$row = $this->input->post('row');
@@ -4004,7 +4144,6 @@ $sub .= '</h6>
 
 		    	$numbers = implode(',', $numbers);
 	
-				$numbers = implode(',', $numbers);
 	
 				$data = array('apikey' => $apiKey, 'numbers' => $numbers, "sender" => $sender, "message" => $message);
 	

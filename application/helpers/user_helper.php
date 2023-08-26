@@ -501,6 +501,43 @@ function get_all_search_product($term)
    
 }
 
+function get_all_search_product_fillter($term)
+{ 
+   
+    //get main CodeIgniter object
+       $ci =& get_instance();
+       
+       //load databse library
+       $ci->load->database();
+       $session_id = $ci->session->userdata("id");
+     if ($session_id) {
+    $query= 'SELECT * FROM (SELECT title,id,category_id,subcategory_id ,user_id ,price,cover_img ,verified_product,pay_type, address from category_reusable_parts  WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_internships WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id , price, cover_img ,verified_product ,pay_type,address from category_job WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_tuitions WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_commericial_places WHERE pay_type!=3 AND user_id !='.$session_id.'
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_residential_places WHERE pay_type!=3 AND user_id !='.$session_id.' 
+    UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_land_plot WHERE pay_type!=3 AND user_id !='.$session_id.'
+    ) as  custam  WHERE title like "%'.$term.'%"';
+     }
+     else{
+      $query= 'SELECT * from (SELECT title,id,category_id,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type,address from category_reusable_parts WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_internships WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_job WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_tuitions WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_commericial_places WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_residential_places WHERE pay_type!=3
+      UNION SELECT title,id,category_id ,subcategory_id ,user_id ,price ,cover_img ,verified_product ,pay_type ,address from category_land_plot WHERE pay_type!=3
+      ) as  custam  WHERE title like "%'.$term.'%"  ';
+     }
+    
+       $category_data = $ci->db->query($query);  
+             
+  return $category_data->result(); 
+   
+}
+
+
 
 function get_all_search_shop($term)
 { 

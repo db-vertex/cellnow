@@ -1372,10 +1372,10 @@ input[type="range"]::-moz-range-thumb {
         <div class="col-lg-5 col-md-7 col-sm-8">
             <div class="search_wrap search_wrap_6 m-0">
                 <div class="search_box">
-                    <input type="search" name="anything" class="form-control rounded-5 search"
+                    <input type="search" name="anything" id="anything"  class="form-control rounded-5 search"
                         placeholder="Search for the Product you want!" aria-label="Search"
                         aria-describedby="search-addon" style="padding:12px 22px" />
-                    <button type="submit" class="btn btn-success rounded-5 search"
+                    <button type="submit" class="btn btn-success rounded-5 search" id="myBtn"
                         style="padding:6px 10px">search</button>
                 </div>
                 <div class="row">
@@ -1961,7 +1961,26 @@ input[type="range"]::-moz-range-thumb {
         });
     });
     </script>
-
+<script>
+$(document).ready(function() {
+    // Get value on button click and show alert
+    $("#myBtn").click(function() {
+        var anything = $("#anything").val();
+        if (anything !== '') {
+            jQuery.ajax({
+                type: "POST",
+                url: "<?php echo base_url('/welcome/getsearchproductfillter'); ?>",
+                data: {
+                    anything: anything
+                },
+                success: function(res) {
+                    $(".filter_data").html(res);
+                }
+            });
+        }
+    });
+});
+</script>
 
     <script>
     $(document).ready(function() {
