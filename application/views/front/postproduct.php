@@ -22,8 +22,22 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
   
     <style>
+ @media (min-width: 1200px){
+.space {
+    margin-left: 85%;
+    width: max-content;
+}
+ }
+ .dropdown-menu>li>a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: bold;
+    line-height: 1.42857143;
+    color: #10B981;
+    white-space: nowrap;
+}
 
-   
     .bd-placeholder-img {
         font-size: 1.125rem;
         text-anchor: middle;

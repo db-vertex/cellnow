@@ -2169,25 +2169,12 @@ $brands = array(
         </div>
 
     </div>
-    <script>
-   $(document).ready(function() {
-    var category_id = 1;  // Change this to the appropriate category ID
-
-    var defaultSubId;
-    if (category_id === 1) {
-        defaultSubId = 7;
-    } else if (category_id === 2) {
-        defaultSubId = 13;
-    } else if (category_id === 3) {
-        defaultSubId = 39;
-    }
-
-    var filters = get_filter('sub_category', defaultSubId);
-
-});
-    </script>
-    <script>
+   
+  
+<script>
     $(document).ready(function() {
+
+        
         filter_data(1);
 
         function filter_data(page) {
@@ -2201,11 +2188,9 @@ $brands = array(
             var brand = get_brand('brand');
             var type = get_type_filter('sub_category');
             var rent_filter = get_rent_filter('filter');
-
             var search = get_search('search');
-            var donate = "donate_fillter";
             var sub_category = get_filter('sub_category');
-
+            var donate = "donate_fillter";
 
             $.ajax({
                 url: "<?php echo base_url(); ?>welcome/fetch_data/" + page,
@@ -2230,15 +2215,51 @@ $brands = array(
                 }
             })
         }
-
+        const rangeInput = document.querySelectorAll(".range-input input"),
+            priceInput = document.querySelectorAll(".price-input input"),
+            range = document.querySelector(".slider .progress");
+        let priceGap = 1000;
+        let sliderTimeout; // Variable to hold timeout for delayed calling
+        function callFilterData() {
+            filter_data(1);
+        }
+        rangeInput.forEach((input) => {
+            input.addEventListener("input", (e) => {
+                clearTimeout(sliderTimeout); // Clear any existing timeouts
+                let minVal = parseInt(rangeInput[0].value),
+                    maxVal = parseInt(rangeInput[1].value);
+                if (maxVal - minVal < priceGap) {
+                    if (e.target.className === "range-min") {
+                        rangeInput[0].value = maxVal - priceGap;
+                    } else {
+                        rangeInput[1].value = minVal + priceGap;
+                    }
+                } else {
+                    priceInput[0].value = minVal;
+                    priceInput[1].value = maxVal;
+                    range.style.left = (minVal / rangeInput[0].max) * 100 + "%";
+                    range.style.right = 100 - (maxVal / rangeInput[1].max) * 100 + "%";
+                    // Set a timeout to call the function after a short delay
+                    sliderTimeout = setTimeout(callFilterData,
+                        300); // Adjust the delay as needed
+                }
+            });
+        });
+        // Add a 'mouseup' event listener to the entire document
+        document.addEventListener("mouseup", function(event) {
+            if (event.target.classList.contains("progress") || event.target.classList.contains(
+                    "input_price")) {
+                clearTimeout(sliderTimeout);
+                callFilterData();
+            }
+        });
         var selectedSubId = null;
 
-        function get_filter(class_name, defaultSubId) {
+        function get_filter(class_name) {
             var filter = [];
-
             if (class_name === 'sub_category') {
-                if (defaultSubId !== null) {
-                    filter.push(defaultSubId);
+                if (selectedSubId !== null) {
+                    filter.push(selectedSubId);
                 }
             } else {
                 $('.' + class_name + ':checked').each(function() {
@@ -2248,12 +2269,10 @@ $brands = array(
             return filter;
         }
 
-
         function get_type_filter(class_name) {
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
-
             });
             console.log(filter)
             return filter;
@@ -2263,7 +2282,6 @@ $brands = array(
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
-
             });
             console.log(filter)
             return filter;
@@ -2273,7 +2291,6 @@ $brands = array(
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
-
             });
             console.log(filter)
             return filter;
@@ -2283,16 +2300,12 @@ $brands = array(
             var filter = [];
             $('.' + class_name + ':checked').each(function() {
                 filter.push($(this).val());
-
             });
             console.log(filter)
             return filter;
         }
-
-
         $(document).on('click', '.sub_category', function() {
             var subId = $(this).data('sub-id');
-
             selectedSubId = subId;
             $('.sub_category').removeClass('active');
             $(this).addClass('active');
@@ -2304,26 +2317,16 @@ $brands = array(
             $('input .search').each(function() {
                 filter.push($(this).val());
             });
-
             return filter;
         }
-
         $(document).on("click", ".pagination li a", function(event) {
             event.preventDefault();
             var page = $(this).data("ci-pagination-page");
             filter_data(page);
         });
-
-
-
         $('.common_select').click(function() {
             filter_data(1);
         });
-
-
-
-
-
     });
     </script>
 
@@ -2357,6 +2360,7 @@ $brands = array(
         });
     }
     </script>
+
     <script>
     function getsubcategory(category_id) {
 
@@ -2414,6 +2418,8 @@ $brands = array(
 
     }
     </script>
+
+
     <script>
     function filterFunction() {
         var input, filter, div, li, i;

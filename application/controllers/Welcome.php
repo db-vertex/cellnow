@@ -300,7 +300,7 @@ $sub .= '</h6>
 		}
 		 if($all_count >4){
 			$getproduct_home_category_id  = $this->session->userdata('getproduct_home_category_id');
-         $sub .='  <center class="rounded-5"> <a style="width:100px; background-color: #10B981; color:white;" href ="'.base_url("welcome/fillter_product/$getproduct_home_category_id").'" class="btn">See All</a></center>';
+         $sub .='  <center class="rounded-5 mt-3"> <a style="width:100px; background-color: #10B981; border-radius:20px; color:white;" href ="'.base_url("welcome/fillter_product/$getproduct_home_category_id").'" class="btn">See All</a></center>';
             } 
 		echo $sub;
 
