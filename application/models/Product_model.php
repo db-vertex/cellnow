@@ -245,7 +245,7 @@ function getsellerproduct($seller_id=0){
             $query = $this->db->get();
             $data = $query->result_array();
             for($i=0; $i<count($data); $i++){
-           $data[$i]["product_image"]=str_replace("http://localhost:8000/uploads/product/thumbnails/","",$data[$i]["thumb_image"]);
+           $data[$i]["product_image"]=str_replace("https://celnow.com/uploads/product/thumbnails/","",$data[$i]["thumb_image"]);
            $product_id = $data[$i]["id"];
             $data[$i]["ratings"]=round($this->db->query("select IFNULL((SELECT AVG(rating) FROM `ratings` where product_id=$product_id), 0) as ratings")->row()->ratings, 1);
             $data[$i]["total_ratings"]=$this->db->select("count(*) as total")->get_where("ratings", "product_id=$product_id")->row()->total;
@@ -475,7 +475,7 @@ function edit_product_get($category_id,$product_id){
         $img=$this->db->query("SELECT product.*, product_image.product_image, product_image.product_id FROM product inner JOIN `product_image` on product.id=product_image.product_id where product_id=$product_id ORDER BY `product_image`.`product_id` asc limit 1")->row()->product_image;
         $source="./uploads/product/$img";
         $destImagePath="./uploads/product/thumbnails/$img";
-        $destImagdePath="http://localhost:8000/uploads/product/thumbnails/$img";
+        $destImagdePath="https://celnow.com/uploads/product/thumbnails/$img";
         $thumbWidth=300;                        
 	    $dd = $this->Product_model->generateThumbnail($source, $destImagePath, $thumbWidth);
         $this->db->update("product", ["thumb_image"=>$destImagdePath], "id=$product_id");
