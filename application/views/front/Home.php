@@ -705,7 +705,7 @@ input::placeholder {
                     <div class="card">
                         <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
                             <img src="<?php echo base_url(); ?>uploads/shop/<?php echo $pro->shop_images ?>"
-                                class="w-100 va-thumbnail" />
+                                class="w-100 va-thumbnail" alt="shop"/>
                         </div>
                         <div class="card-body">
                             <div class="d-flex justify-content-between align-items-center">
