@@ -1352,7 +1352,7 @@
 
 
     <div class="container-fluid body_background " id="body_background">
-        <H1 class="d-none">celnow</H1>
+        <H1 class="d-none">Explore Endless Opportunities with CelNow: Tutoring, Freelancing, Services, and More</H1>
         <button id="push-subscription-button" class="btn btn-sm btn-primary d-none">Enable Push Notification</button>
         <div class="container">
 
