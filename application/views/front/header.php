@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>CelNow - Verified Deals</title>
-    <meta name="description" content="Discover a World of Opportunities with CelNow: Explore Verified Listings of Tutoring to Freelancing, Services to Second-Hand Treasures, Property Solutions and Internships.">
+    <meta name="description" content="Explore Opportunities on CelNow: Tutoring, Freelancing, Services, Treasures, Property, Internships.">
     <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
     <!-- <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css"> -->
     <script async  src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
@@ -1359,7 +1359,7 @@
             <nav class="navbar navbar-expand-xl bg-body- smart-scroll" style="width: auto;">
 
                 <a href="<?php echo base_url();?>"> <img src="<?php echo base_url();?>assets/images/CelNow 5 1.png"
-                        class="img-fluid logo_header" style="">
+                        class="img-fluid logo_header" style="" alt="logo">
                 </a>
                 <ul class="navbar-nav mb-lg-0  " style="" id="hedare_search">
                     <li class="nav-item nav-item_serach" style="" ;>

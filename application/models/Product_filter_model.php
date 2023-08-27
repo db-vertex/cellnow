@@ -528,7 +528,7 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 				$pro .= '  <div class="d-flex justify-content-between align-items-center">
 				<div class="row">
 				<div class="col-3 pe-0">
-				<img src="'.base_url("assets/images/location .png").'">
+				<img src="'.base_url("assets/images/location .png").'" alt="location">
 				</div>
 				<div class="col-9 ps-0 mt-2">
 					<p  style="color: #575757;">';
@@ -647,7 +647,7 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 				
 				    <div class="row">
 				       <div class="col-2">
-				         <img src="'.base_url("assets/images/location .png").'">
+				         <img src="'.base_url("assets/images/location .png").'" alt="location">
 				       </div>
 				       <div class="col-9 mt-1">
 					     <p style="color: #575757;">';

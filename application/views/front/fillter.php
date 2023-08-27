@@ -1908,7 +1908,7 @@ input[type="range"]::-moz-range-thumb {
                             <div class="d-flex justify-content-between align-items-center">
                                 <div class="row">
                                     <div class="col-3">
-                                        <img src="<?php echo base_url();?>assets/images/location .png">
+                                        <img src="<?php echo base_url();?>assets/images/location .png" alt="location">
                                     </div>
                                     <div class="col-9 mt-1">
                                         <p style="color: #575757;"><?php

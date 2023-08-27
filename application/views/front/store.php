@@ -235,7 +235,7 @@ foreach($shop as $value){
                                 echo ucfirst($y);
                               }
                            ?></b></p>
-                    <img src="<?php echo base_url();?>assets/images/location .png"> <span><?php
+                    <img alt="location" src="<?php echo base_url();?>assets/images/location .png"> <span><?php
                            $title = $value->Address;
                             if(strlen($title) <= 20)
                               {

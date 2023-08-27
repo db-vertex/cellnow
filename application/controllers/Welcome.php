@@ -171,7 +171,7 @@ $sub .= '</h6>
             </div>
             <div class="d-flex justify-content-between align-items-center">
 			
-                <h6><img  src="'.base_url("assets/images/location .png").'"> ';
+                <h6><img  src="'.base_url("assets/images/location .png").'" alt="location"> ';
 $title = $value->address;
 
 if (strlen($title) <= 25) {
@@ -273,7 +273,7 @@ $sub .= '</h6>
                         </div>
                         <div class="d-flex justify-content-between align-items-center">
                         
-                            <h6><img  src="'.base_url("assets/images/location .png").'"> ';
+                            <h6><img  src="'.base_url("assets/images/location .png").'" alt="location"> ';
             $title = $value->address;
 
             if (strlen($title) <= 25) {
@@ -498,7 +498,7 @@ $sub .= '</h6>
 					 $sub .='  <div class="d-flex justify-content-between align-items-center">
 					 <div class="row">
 					 <div class="col-3 pe-0">
-					 <img src="'.base_url("assets/images/location .png").'">
+					 <img src="'.base_url("assets/images/location .png").'" alt="location">
 					 </div>
 					 <div class="col-9 ps-0 mt-2">
 						 <p  style="color: #575757;">';
@@ -720,7 +720,7 @@ $sub .= '</h6>
 								</div>
 								<div class="d-flex justify-content-between align-items-center">
 									
-										<h6><img style="max-width:25px;" src="'.base_url("assets/images/location .png").'">';
+										<h6><img style="max-width:25px;" src="'.base_url("assets/images/location .png").'" alt="location">';
 				$sub .= strlen($value->Address) <= 20 ? ucfirst($value->Address) : ucfirst(substr($value->Address, 0, 20) . '...');
 				$sub .= '</h6>
 									

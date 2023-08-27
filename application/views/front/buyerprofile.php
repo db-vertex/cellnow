@@ -134,7 +134,7 @@
                         class="img-fluid rounded-corners mx-auto d-block" style="height: 131.9px; width: 131.9px;">
                     <div style="text-align:center">
                         <h5 class="shop_images_view"><b><?php echo ucfirst($profile->name); ?></b></h5>
-                        <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png"> <?php if(isset($profile->Address)){ echo ucfirst($profile->Address);} ?>
+                        <img style="max-width:25px;" src="<?php echo base_url(); ?>assets/images/location .png" alt="location"> <?php if(isset($profile->Address)){ echo ucfirst($profile->Address);} ?>
 
                     </div>
                     <div class="row text-center ">

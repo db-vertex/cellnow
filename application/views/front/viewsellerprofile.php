@@ -133,7 +133,7 @@
                                 width: 131.9px; border-color:#10B981;">
                     <div style="text-align:center">
                         <h5><b><?php echo ucfirst($profile->name); ?></b></h5>
-                        <img style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png">
+                        <img alt="location" style="max-width:25px;" src="<?php echo base_url();?>assets/images/location .png">
                         <?php echo ucfirst($profile->Address); ?>
 
                     </div>
@@ -222,7 +222,7 @@
 
                             <div class="row mt-1">
                                 <div class="col-2">
-                                    <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                    <p> <img alt="location" src="<?php echo base_url();?>assets/images/location .png"></p>
                                 </div>
                                 <div class="col-8 mt-1">
                                     <p style="color: #575757;"><?php

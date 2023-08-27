@@ -42,10 +42,9 @@
     .next {
         cursor: pointer;
         position: absolute;
-        top: 30%;
         width: auto;
         padding: 16px;
-        margin-top: -50px;
+        margin-top: -230px;
         color: white;
         font-weight: bold;
         font-size: 20px;
@@ -1148,7 +1147,7 @@
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 small">
+                    <div class="col-md-6 small" style="position: relative;">
                         <?php if ($product_detail->cover_img !== NULL) { ?>
                         <div class="mySlides">
                             <a href="<?php echo base_url() . $product_detail->cover_img . ""; ?>"><img
@@ -1205,8 +1204,10 @@
                                 src="<?php echo base_url(); ?>assets/images/verified.png">
                             <?php } ?>
                         </div><?php } ?>
+                        <div class="">
                         <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
                         <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
+                        </div>
                         <div class="row mt-3">
                             <?php if ($product_detail->cover_img !== NULL) { ?>
                             <div class="column">

@@ -669,7 +669,7 @@ input::placeholder {
                             <div class="d-flex justify-content-between align-items-center">
 
                                 <h6><img style="max-width:25px;"
-                                        src="<?php echo base_url();?>assets/images/location .png"> <?php
+                                        src="<?php echo base_url();?>assets/images/location .png" alt="location"> <?php
                            $title = $pro->address;
                             if(strlen($title) <= 25)
                               {
@@ -808,7 +808,7 @@ input::placeholder {
                             <div class="d-flex justify-content-between align-items-center">
 
                                 <h6><img style="max-width:25px;"
-                                        src="<?php echo base_url();?>assets/images/location .png"> <?php
+                                        src="<?php echo base_url();?>assets/images/location .png" alt="location"> <?php
                            $title = $pro->Address;
                             if(strlen($title) <= 25)
                               {
@@ -931,7 +931,7 @@ input::placeholder {
                             <div class="d-flex justify-content-between align-items-center">
 
                                 <h6><img style="max-width:25px;"
-                                        src="<?php echo base_url();?>assets/images/location .png"> <?php
+                                        src="<?php echo base_url();?>assets/images/location .png" alt="location"> <?php
                            $title = $pro->address;
                             if(strlen($title) <= 25)
                               {

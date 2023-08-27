@@ -499,7 +499,7 @@ input::placeholder {
                                     role="button">
                                     <img style="height:40px; width:40px;" class="me-1"
                                         src="<?php echo base_url();?>uploads/category/<?php echo $cat->icon;?>"
-                                        alt=""><?php echo $cat->category; ?>
+                                        alt="category"><?php echo $cat->category; ?>
                                 </p>
                             </div>
                             <?php  }?>
@@ -561,7 +561,7 @@ input::placeholder {
                                         class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id == 39){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?>"
                                         data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
-                                        alt="">
+                                        alt="shopcategory">
                                     <center style="color:black; font-size:12px; font-weight:500">
                                         <?php echo $sub->product_type;
                                       
@@ -724,7 +724,7 @@ input::placeholder {
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <h6><img style="max-width:25px;"
-                                        src="<?php echo base_url();?>assets/images/location .png"> <?php
+                                        src="<?php echo base_url();?>assets/images/location .png" alt="location"> <?php
                            $title = $pro->Address;
                             if(strlen($title) <= 25)
                               {
@@ -823,7 +823,7 @@ input::placeholder {
                             </div>
                             <div class="d-flex justify-content-between align-items-center">
                                 <h6><img style="max-width:25px;"
-                                        src="<?php echo base_url();?>assets/images/location .png"> <?php
+                                        src="<?php echo base_url();?>assets/images/location .png" alt="location"> <?php
                            $title = $pro->address;
                             if(strlen($title) <= 25)
                               {

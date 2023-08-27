@@ -42,10 +42,9 @@
     .next {
         cursor: pointer;
         position: absolute;
-        top: 40%;
         width: auto;
         padding: 16px;
-        margin-top: -50px;
+        margin-top: -230px;
         color: white;
         font-weight: bold;
         font-size: 20px;
@@ -1127,7 +1126,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
             </div>
             <div class="container">
                 <div class="row">
-                    <div class="col-md-6 small">
+                    <div class="col-md-6 small" style="position: relative;">
                         <?php if ($product_detail->cover_img !== NULL) { ?>
                         <div class="mySlides">
                             <a href="<?php echo base_url() . $product_detail->cover_img . ""; ?>"><img
@@ -1183,8 +1182,11 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                     src="<?php echo base_url() . $product_detail->images_5 . ""; ?>"
                                     style="width:100%"></a>
                         </div><?php } ?>
+                        <div>
                         <a style="color:#69d3b0;" class="prev" onclick="plusSlides(-1)">❮</a>
                         <a style="color:#69d3b0;" class="next" onclick="plusSlides(1)">❯</a>
+                        </div>
+
                         <div class="row mt-3">
                             <?php if ($product_detail->cover_img !== NULL) { ?>
                             <div class="column">

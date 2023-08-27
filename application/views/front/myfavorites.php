@@ -233,7 +233,7 @@
 
                   <div class="row mt-1">
                                                 <div class="col-2">
-                                                <p> <img src="<?php echo base_url();?>assets/images/location .png"></p>
+                                                <p> <img src="<?php echo base_url();?>assets/images/location .png" alt="location"></p>
                                                 </div>
                                                 <div class="col-8">
                                                 <p style="color: #575757;"><?php
