@@ -46,7 +46,7 @@
 
   <div class="col-lg-6 col-xs-6">
   <div class="form-group">
-    <img src="<?php echo base_url().'/uploads/shopcategory/'.$test->icon?>" style="height: 50px;width: 53px;float: right;">
+    <img alt="shopcategory" src="<?php echo base_url().'/uploads/shopcategory/'.$test->icon?>" style="height: 50px;width: 53px;float: right;">
     <label for="Title">Upload Icon :</label>
     <input type="file" class="form-control" id="icon" name="icon" >
     <p id="head"  style="color:#ff0000" ></p>

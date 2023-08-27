@@ -22,7 +22,7 @@
                         <div class="box-body box-profile" style="padding-top: 46px;">
                         <label for="testimonial">Icon:</label><br>
                        
-                        <img src="<?php echo base_url().'uploads/shopcategory/'.$test->icon?>" style="height: 50px;width: 53px;"><br>
+                        <img alt="shopcategory" src="<?php echo base_url().'uploads/shopcategory/'.$test->icon?>" style="height: 50px;width: 53px;"><br>
                         <input id='categoryid' type="hidden" class="form-control" name='category_id' value="<?php echo $test->category_id; ?>">
                         <div class="form-group">
                                 <input type="hidden" name="did" value="<?php echo $test->id; ?>">

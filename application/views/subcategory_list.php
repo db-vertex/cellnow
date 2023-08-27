@@ -58,7 +58,7 @@
                             <td><?php echo $value['product_type']; ?></td>
                             <td style="text-align: center;">
                                 <?php if (!empty($value['icon'])) { ?>
-                                <img src="<?php echo base_url().'uploads/shopcategory/'.$value['icon'] ?>"
+                                <img alt="shopcategory" src="<?php echo base_url().'uploads/shopcategory/'.$value['icon'] ?>"
                                     style="height: 50px;width: 53px;">
                                 <?php } ?>
                             </td>

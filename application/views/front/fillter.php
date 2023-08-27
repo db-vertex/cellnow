@@ -1476,7 +1476,7 @@ input[type="range"]::-moz-range-thumb {
                                     <img width="41" height="41" class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id==39){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
                                         data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                         src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>"
-                                        alt="">
+                                        alt="shopcategory">
                                     <center style="color:black; font-size:12px; font-weight:500">
                                         <?php echo $sub->product_type; ?></center>
                                 </p>

@@ -665,7 +665,7 @@ input::placeholder {
                                     <img width="41" height="41"
                                         class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>"
-                                        alt="">
+                                        alt="shopcategory">
                                     <center style="color:black; font-size:12px; font-weight:500">
                                         <?php echo ucfirst($cat->shop_category); ?>
                                     </center>

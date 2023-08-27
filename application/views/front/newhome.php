@@ -558,7 +558,7 @@ input::placeholder {
                                     <img width="41" height="41" class="<?php  if($sub->id==7 || $sub->id==21 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id == 39){ ?> select <?php } ?> btn-change common_selector sub_category sub_new<?php if ($sub->category_id == 1|| $category == 5) { echo $sub->subcategory_id; } ?>"
                                         data-sub-id="<?php if ($category == 1|| $category == 5) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $sub->icon;?>"
-                                        alt="">
+                                        alt="shopcategory">
                                     <center style="color:black; font-size:12px; font-weight:500">
                                         <?php echo $sub->product_type;
                                       
