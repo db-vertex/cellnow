@@ -191,7 +191,6 @@ input::placeholder {
 }
 
 .white-heading:after {
-    background: url(https://i.ibb.co/d7tSD1R/heading-line-white.png);
     background-repeat: no-repeat;
     background-position: center;
 }
