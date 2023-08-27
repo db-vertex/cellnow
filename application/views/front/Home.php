@@ -406,9 +406,90 @@ input::placeholder {
 .carousel-item>div {
     float: center;
 }
-
-
 </style>
+<script>
+function getsubcategory(category_id) {
+    $("p").removeClass("selected");
+    $(".new" + category_id).addClass("selected");
+
+    jQuery.ajax({
+        type: "POST",
+        url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
+        data: {
+            category_id: category_id
+        },
+        success: function(res) {
+            $("#sub-list").html(res);
+            // $('#load_cound').val("10");
+        }
+    });
+
+    // Define a mapping of category_id to subcategory_id
+    var subcategory_map = {
+        1: 7,
+        2: 13,
+        3: 39,
+        4: 53,
+        5: 21,
+        6: 31,
+        7: 34
+
+        // Add more mappings as needed
+    };
+
+    // Get the corresponding subcategory_id based on category_id
+    var subcategory_id = subcategory_map[category_id];
+
+    // Call the getproduct function with the corresponding subcategory_id and category_id
+    getproduct(subcategory_id, category_id);
+}
+
+// Define the window.onload event
+window.onload = function() {
+    // Set the default category_id for the page refresh
+    var default_category_id = 1;
+
+    // Call the getsubcategory function with the default category_id
+    getsubcategory(default_category_id);
+};
+
+function getshop(category_id) {
+    //var res = "";
+    $("img").removeClass("select");
+    $(".newshop" + category_id).addClass("select");
+    // var allch =  $("#").val();
+    jQuery.ajax({
+        type: "POST",
+        url: "<?php echo base_url('/welcome/getshop'); ?>",
+        data: {
+            category_id: category_id
+        },
+        success: function(res) {
+            $("#shop_list").html(res);
+            // $('#load_cound').val("10");
+        }
+    });
+}
+
+function getproduct(subcategory_id, category_id) {
+    //var res = "";
+    $("img").removeClass("select");
+    $(".sub_new" + subcategory_id).addClass("select");
+    // var allch =  $("#").val();
+    jQuery.ajax({
+        type: "POST",
+        url: "<?php echo base_url('/welcome/getproduct_home'); ?>",
+        data: {
+            subcategory_id: subcategory_id,
+            category_id: category_id
+        },
+        success: function(res) {
+            $("#product_list").html(res);
+            // $('#load_cound').val("10");
+        }
+    });
+}
+</script>
 
 <div class="container home_background" style="">
     <div class="container px-0">
@@ -1050,90 +1131,6 @@ function function14() {
                     swal("Cancelled", "Something went wrong. Please try again.)", "error");
                 }
             });
-    });
-}
-</script>
-
-<script>
-function getsubcategory(category_id) {
-    $("p").removeClass("selected");
-    $(".new" + category_id).addClass("selected");
-
-    jQuery.ajax({
-        type: "POST",
-        url: "<?php echo base_url('/welcome/getsubcategory'); ?>",
-        data: {
-            category_id: category_id
-        },
-        success: function(res) {
-            $("#sub-list").html(res);
-            // $('#load_cound').val("10");
-        }
-    });
-
-    // Define a mapping of category_id to subcategory_id
-    var subcategory_map = {
-        1: 7,
-        2: 13,
-        3: 39,
-        4: 53,
-        5: 21,
-        6: 31,
-        7: 34
-
-        // Add more mappings as needed
-    };
-
-    // Get the corresponding subcategory_id based on category_id
-    var subcategory_id = subcategory_map[category_id];
-
-    // Call the getproduct function with the corresponding subcategory_id and category_id
-    getproduct(subcategory_id, category_id);
-}
-
-// Define the window.onload event
-window.onload = function() {
-    // Set the default category_id for the page refresh
-    var default_category_id = 1;
-
-    // Call the getsubcategory function with the default category_id
-    getsubcategory(default_category_id);
-};
-
-function getshop(category_id) {
-    //var res = "";
-    $("img").removeClass("select");
-    $(".newshop" + category_id).addClass("select");
-    // var allch =  $("#").val();
-    jQuery.ajax({
-        type: "POST",
-        url: "<?php echo base_url('/welcome/getshop'); ?>",
-        data: {
-            category_id: category_id
-        },
-        success: function(res) {
-            $("#shop_list").html(res);
-            // $('#load_cound').val("10");
-        }
-    });
-}
-
-function getproduct(subcategory_id, category_id) {
-    //var res = "";
-    $("img").removeClass("select");
-    $(".sub_new" + subcategory_id).addClass("select");
-    // var allch =  $("#").val();
-    jQuery.ajax({
-        type: "POST",
-        url: "<?php echo base_url('/welcome/getproduct_home'); ?>",
-        data: {
-            subcategory_id: subcategory_id,
-            category_id: category_id
-        },
-        success: function(res) {
-            $("#product_list").html(res);
-            // $('#load_cound').val("10");
-        }
     });
 }
 </script>
