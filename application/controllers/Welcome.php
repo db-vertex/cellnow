@@ -447,8 +447,10 @@ $sub .= '</h6>
 				<div class="card">
 				<a
 				href="'.base_url("welcome/productdetail/").''.$value->category_id.'/'. $value->id.'/'.$value->subcategory_id.'">
-					<img  class="w-100 va-thumbnail image1" src="'.base_url($value->cover_img).'" alt="related_ads_card_img">
-					</a>
+				<div class="" style="text-align: center;">
+				<img  class="w-100 va-thumbnail image1" src="'.base_url($value->cover_img).'" alt="related_ads_card_img">
+				</div>
+				</a>
 					<p>';
 					if($value->pay_type ==1){ 
 						$sub .='<img class="img-fluid image2"
@@ -3051,6 +3053,38 @@ $sub .= '</h6>
 					$pimage = $uploadData[$i]['file_name'];
 
 
+
+					$this->load->library('image_lib');
+					$this->image_lib->clear();
+					$this->image_lib->initialize([
+						'image_library' => 'gd2',
+						'source_image' => "./uploads/product/$pimage",
+						'create_thumb' => false,
+						'maintain_ratio' => true,
+						'width' => 300,
+						'quality' => 50,  // Adjust the quality as needed
+					]);
+			
+					if (!$this->image_lib->resize()) {
+					}
+			
+					// Check and resize until the image size is around 50 KB
+					while (filesize("./uploads/product/$pimage") > 50000) {
+						$this->image_lib->clear();
+						$this->image_lib->initialize([
+							'image_library' => 'gd2',
+							'source_image' => "./uploads/product/$pimage",
+							'create_thumb' => false,
+							'maintain_ratio' => true,
+							'quality' => 50,  // Adjust the quality as needed
+						]);
+			
+						if (!$this->image_lib->resize()) {
+
+							break;
+						}
+					}
+
 					if ($i == 0) {
 						$img = $pimage;
 						$source = "./uploads/product/$img";
@@ -3099,6 +3133,7 @@ $sub .= '</h6>
 			}
 
 		}
+
 		$postData['verified_admin'] = $this->input->post('verified_admin');
 
 		if (empty($postData['verified_admin'])) {
@@ -3717,6 +3752,38 @@ $sub .= '</h6>
 					$uploadData[$i]['file_name'] = $fileData['file_name'];
 					$uploadData[$i]['created'] = date("Y-m-d H:i:s");
 					$pimage = $uploadData[$i]['file_name'];
+
+					$this->load->library('image_lib');
+					$this->image_lib->clear();
+					$this->image_lib->initialize([
+						'image_library' => 'gd2',
+						'source_image' => "./uploads/product/$pimage",
+						'create_thumb' => false,
+						'maintain_ratio' => true,
+						'width' => 300,
+						'quality' => 50,  // Adjust the quality as needed
+					]);
+			
+					if (!$this->image_lib->resize()) {
+					}
+			
+					// Check and resize until the image size is around 50 KB
+					while (filesize("./uploads/product/$pimage") > 50000) {
+						$this->image_lib->clear();
+						$this->image_lib->initialize([
+							'image_library' => 'gd2',
+							'source_image' => "./uploads/product/$pimage",
+							'create_thumb' => false,
+							'maintain_ratio' => true,
+							'quality' => 50,  // Adjust the quality as needed
+						]);
+			
+						if (!$this->image_lib->resize()) {
+
+							break;
+						}
+					}
+
 
 
 					if ($i == 0) {

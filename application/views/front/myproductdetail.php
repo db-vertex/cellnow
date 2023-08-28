@@ -1756,9 +1756,11 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
             ?>
                         <div class="col-lg-3 col-md-4 col-sm-6 mb-4 ">
                             <div class="card">
+                            <div class="" style="text-align: center;">
                                 <img class="related_ads_card_img  img-fluid"
                                     src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
                                     alt="related_ads_card_img">
+                                 </div>
                                 <div class="card-body ">
                                     <div class="row">
                                         <div class="col-8">
@@ -1772,8 +1774,36 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                                             <p class="details_price"><span>Donate</span></p>
                                             <?php   }?>
                                         </div>
-                                        <div class="col-2"><b style='font-size:18px;'><i class="fa fa-heart-o "style="font-size:18px;color:#69d3b0;padding: 0px;"></i></b>
+                                        <?php
+                                                $wishlist_Related = 0;
+                                                if (!empty($user) && isset($user)) {
+                                                    $wishlit = get_wishlist($relatedproduct->id, $relatedproduct->category_id, $user["user_id"]);
+                                                    if (empty($wishlit)) {
+                                                        $wishlist_Related = 0;
+                                                    } else {
+                                                        $wishlist_Related = 1;
+                                                    }
+                                                } else {
+                                                    $wishlist_Related = 0;
+                                                }
+                                                $i = $relatedproduct->Count;
+                                                $data = ++$i; // Increment $i and assign the value to $data
+                                                $product_count_update = update_count_comman_query($relatedproduct->category_id, $data, $relatedproduct->id);
+                                                ?>
+
+                                        <div class="col-2 offset-2"><b style='font-size:18px;'>
+                                        <a style="font-size:18px;color: #10B981;padding: 0px; text-decoration: none;" <?php if (empty($user) || !isset($user)) { ?>
+                                                href="<?php echo base_url(); ?>welcome/login" <?php } else { ?>><i
+                                                    lass="bi bi-suit-heart" aria-hidden="true"
+                                                    data-uid="<?php echo $user["user_id"]; ?>" <?php } ?>
+                                                   
+                                                    class="<?php echo ($wishlist_Related == 0) ? 'fa fa-heart-o' : 'fa fa-heart'; ?> dddssaaf dddssaaf<?php echo $relatedproduct->id; ?>"
+                                                    data-pid="<?php echo $relatedproduct->id; ?>"
+                                                    data-cid="<?php echo $relatedproduct->category_id; ?>"
+                                                    data-wishlist="<?php echo $wishlist_Related; ?>"></i></a>
+                                    </b>
                                         </div>
+
                                     </div>
                                     <div class="row mt-1">
                                         <div class="col-12">

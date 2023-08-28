@@ -479,7 +479,9 @@ function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $sel
 		   <div class="card">
 		   <a
 		   href="'.base_url("welcome/productdetail/").''.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
+		   <div class="" style="text-align: center;">
 			   <img  class="w-100 va-thumbnail image1" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
+			  </div>
 			   </a>
 			   <p>';
 			   if($row['pay_type'] ==1){ 
@@ -599,7 +601,9 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
 		   <div class="card">
 		   <a
 		   href="'.base_url("welcome/productdetail/").''.$row['category_id'].'/'. $row['id'].'/'.$row['subcategory_id'].'">
+		   <div class="" style="text-align: center;">
 		   <img  class="w-100 va-thumbnail image1" src="'.base_url($row["cover_img"]).'" alt="related_ads_card_img">
+		   </div>
 			  </a> <p style="margin-left:10px;">';
 			   if($row['pay_type'] ==1){ 
 				 $pro.='<img class="img-fluid image2"

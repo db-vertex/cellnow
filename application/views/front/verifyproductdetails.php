@@ -1994,9 +1994,11 @@
                             <a
                                 href="<?php echo base_url(); ?>welcome/productdetail/<?php echo $relatedproduct->category_id; ?>/<?php echo $relatedproduct->id; ?>/<?php echo $relatedproduct->subcategory_id; ?>">
                                 <div class="card">
+                                    <div class="" style="text-align: center;">
                                     <img class="related_ads_card_img  img-fluid"
                                         src="<?php echo base_url(); ?><?php echo $relatedproduct->cover_img; ?>"
                                         alt="related_ads_card_img">
+                                       </div>
                                     <div class="card-body ">
                                         <div class="row">
                                             <div class="col-12 " style="">
@@ -2012,10 +2014,9 @@
                                                         if (($product_detail->pay_type == 2 )) {
                                                             ?>
                                                 <p class="details_price">Donate</span></p>
-                                                <?php }
-                                                    } ?>
+                                                <?php }} ?>
+                                                     
                                                      <?php
-                                        
                                                 $wishlist_Related = 0;
                                                 if (!empty($user) && isset($user)) {
                                                     $wishlit = get_wishlist($relatedproduct->id, $relatedproduct->category_id, $user["user_id"]);
