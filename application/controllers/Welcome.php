@@ -129,62 +129,74 @@ class Welcome extends CI_Controller
 			foreach ($product as $value) {
 				
 
-
-					//print_r($subcategory);die();
-
-					$sub .= '<div class="col-lg-3 col-md-4 col-sm-6 mt-4 post" id="post_' . $value->id . '">
-    <div class="card">
-        <div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
-            <a href="'.base_url("welcome/productdetail/").'' . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id .'">
-                <img src="'.base_url($value->cover_img).'" class="w-100 va-thumbnail" />
-            </a>
-            <a href="#!">
-                <div class="hover-overlay">
-                    <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                </div>
-            </a>
-        </div>
-        <div class="card-body">
-            <div class="d-flex justify-content-between align-items-center">
-                <p  class="details_price mb-3">';
-				if($value->category_id!=4){
-					$sub.='
-                    <span class="">₹' . $value->price . '</span>';
-				}
-				if($value->pay_type==2){
-					$sub.='
-                    <span class="">Donate</span>';
-				}
-               $sub.=' </p>
-            </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <h6 class="dress-name">';
-$title = $value->title;
-
-if (strlen($title) <= 25) {
-    $sub .= ucfirst($title);
-} else {
-    $y = substr($title, 0, 25) . '...';
-    $sub .= ucfirst($y);
-}
-$sub .= '</h6>
-            </div>
-            <div class="d-flex justify-content-between align-items-center">
-			
-                <h6><img  src="'.base_url("assets/images/location .png").'" alt="location"> ';
-$title = $value->address;
-
-if (strlen($title) <= 25) {
-    $sub .= ucfirst($title);
-} else {
-    $y = substr($title, 0, 100) . '...';
-    $sub .= ucfirst($y);
-}
-$sub .= '</h6>
-            </div>
-        </div>
-    </div>
-</div>';
+				$sub .= '<div class="col-lg-3 col-md-4 col-sm-6 mt-4 post" id="post_' . $value->id . '">
+				<div class="card">
+					<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
+						<a href="' . base_url("welcome/productdetail/") . $value->category_id . '/' . $value->id . '/' . $value->subcategory_id . '">
+							<img src="' . base_url($value->cover_img) . '" class="w-100 va-thumbnail" />
+							<p style="margin-left: 5px;">';
+	
+					if ($value->pay_type == 1) {
+						$sub .= '<img class="img-fluid image2" src="' . base_url() . 'assets/images/sponsor.png" style="width: 80px;">';
+					}
+	
+					if ($value->verified_product == 1 || $value->verified_admin == "yes") {
+						$sub .= '<img class="img-fluid image3" src="' . base_url() . 'assets/images/verified.png" style="width: 80px;">';
+					}
+	
+					$sub .= '</p>
+								</a>
+						<a href="#!">
+							<div class="hover-overlay">
+								<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+							</div>
+						</a>
+					</div>
+					<div class="card-body">
+						<div class="d-flex justify-content-between align-items-center">
+							<p class="details_price mb-3">';
+							if ($value->category_id != 4) {
+								$sub .= '<span class="">₹' . $value->price . '</span>';
+							}
+							if ($value->pay_type == 2) {
+								$sub .= '<span class="">Donate</span>';
+							}
+						$sub .= '</p>
+						</div>
+						<div class="d-flex justify-content-between align-items-center">
+							<h6 class="dress-name">';
+						$title = $value->title;
+	
+						if (strlen($title) <= 25) {
+							$sub .= ucfirst($title);
+						} else {
+							$y = substr($title, 0, 25) . '...';
+							$sub .= ucfirst($y);
+						}
+						$sub .= '</h6>
+						</div>
+						<div class="row">
+							<div class="col-2">
+							<img  src="'.base_url("assets/images/location .png").'" alt="location">
+							</div>
+							<div class="col-9 pe-0" style="overflow: hidden; align-self: center; text-align: left;">
+								<h6>';
+								$title = $value->address;
+								$sub .= ucfirst($title);
+								$sub .= '</h6>
+							</div>';
+							
+							if (strlen($title) >= 25) {
+								$sub .= '<div class="col-1 ps-1 d-none d-sm-block" style="text-align: -webkit-left;">
+											<h4>...</h4>
+										</div>';
+							}
+							
+						$sub .= '</div>
+					</div>
+				</div>
+			</div>';
+	
 
 
 				
@@ -222,7 +234,6 @@ $sub .= '</h6>
 		if (!empty($product)) {
             $count = 0;
 			foreach ($product as $value) {
-				
 				$sub .= '<div class="col-lg-3 col-md-4 col-sm-6 mt-4 post" id="post_' . $value->id . '">
 				<div class="card">
 					<div class="bg-image hover-zoom ripple" data-mdb-ripple-color="light">
@@ -233,60 +244,65 @@ $sub .= '</h6>
 					if ($value->pay_type == 1) {
 						$sub .= '<img class="img-fluid image2" src="' . base_url() . 'assets/images/sponsor.png" style="width: 80px;">';
 					}
-					
+	
 					if ($value->verified_product == 1 || $value->verified_admin == "yes") {
 						$sub .= '<img class="img-fluid image3" src="' . base_url() . 'assets/images/verified.png" style="width: 80px;">';
 					}
-					
+	
 					$sub .= '</p>
-										</a>
-                    <a href="#!">
-                        <div class="hover-overlay">
-                            <div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
-                        </div>
-                    </a>
-                </div>
-                <div class="card-body">
-                    <div class="d-flex justify-content-between align-items-center">
-                        <p  class="details_price mb-3">';
-                        if($value->category_id!=4){
-                            $sub.='
-                            <span class="">₹' . $value->price . '</span>';
-                        }
-                        if($value->pay_type==2){
-                            $sub.='
-                            <span class="">Donate</span>';
-                        }
-                    $sub.=' </p>
-                    </div>
-                    <div class="d-flex justify-content-between align-items-center">
-                        <h6 class="dress-name">';
-                    $title = $value->title;
-
-                    if (strlen($title) <= 25) {
-                        $sub .= ucfirst($title);
-                    } else {
-                        $y = substr($title, 0, 25) . '...';
-                        $sub .= ucfirst($y);
-                    }
-                    $sub .= '</h6>
-                        </div>
-                        <div class="d-flex justify-content-between align-items-center">
-                        
-                            <h6><img  src="'.base_url("assets/images/location .png").'" alt="location"> ';
-            $title = $value->address;
-
-            if (strlen($title) <= 25) {
-                $sub .= ucfirst($title);
-            } else {
-                $y = substr($title, 0, 100) . '...';
-                $sub .= ucfirst($y);
-            }
-            $sub .= '</h6>
-            </div>
-        </div>
-    </div>
-   </div>';
+								</a>
+						<a href="#!">
+							<div class="hover-overlay">
+								<div class="mask" style="background-color: rgba(251, 251, 251, 0.15);"></div>
+							</div>
+						</a>
+					</div>
+					<div class="card-body">
+						<div class="d-flex justify-content-between align-items-center">
+							<p class="details_price mb-3">';
+							if ($value->category_id != 4) {
+								$sub .= '<span class="">₹' . $value->price . '</span>';
+							}
+							if ($value->pay_type == 2) {
+								$sub .= '<span class="">Donate</span>';
+							}
+						$sub .= '</p>
+						</div>
+						<div class="d-flex justify-content-between align-items-center">
+							<h6 class="dress-name">';
+						$title = $value->title;
+	
+						if (strlen($title) <= 25) {
+							$sub .= ucfirst($title);
+						} else {
+							$y = substr($title, 0, 25) . '...';
+							$sub .= ucfirst($y);
+						}
+						$sub .= '</h6>
+						</div>
+						<div class="row">
+							<div class="col-2">
+							<img  src="'.base_url("assets/images/location .png").'" alt="location">
+							</div>
+							<div class="col-9 pe-0" style="overflow: hidden; align-self: center; text-align: left;">
+								<h6>';
+								$title = $value->address;
+								$sub .= ucfirst($title);
+								$sub .= '</h6>
+							</div>';
+							
+							if (strlen($title) >= 25) {
+								$sub .= '<div class="col-1 ps-1" d-none d-sm-block style="text-align: -webkit-left;">
+											<h4>...</h4>
+										</div>';
+							}
+							
+						$sub .= '</div>
+					</div>
+				</div>
+			</div>';
+	
+	
 
         $count++;
 
@@ -354,35 +370,41 @@ $sub .= '</h6>
                     <strong style="color:#10B981" class="ms-2 ">₹' . $value->price . '</strong>';
 				}
 				
-               $sub.=' </h6>
-            </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <h6 class="dress-name">';
-$title = $value->title;
+							$sub.=' </h6>
+							</div>
+							<div class="d-flex justify-content-between align-items-center">
+								<h6 class="dress-name">';
+				$title = $value->title;
 
-if (strlen($title) <= 20) {
-    $sub .= ucfirst($title);
-} else {
-    $y = substr($title, 0, 20) . '...';
-    $sub .= ucfirst($y);
-}
-$sub .= '</h6>
-            </div>
-            <div class="d-flex justify-content-between align-items-center">
-                <h6>';
-$title = $value->address;
-
-if (strlen($title) <= 25) {
-    $sub .= ucfirst($title);
-} else {
-    $y = substr($title, 0, 100) . '...';
-    $sub .= ucfirst($y);
-}
-$sub .= '</h6>
-            </div>
-        </div>
-    </div>
-</div>';
+				if (strlen($title) <= 20) {
+					$sub .= ucfirst($title);
+				} else {
+					$y = substr($title, 0, 20) . '...';
+					$sub .= ucfirst($y);
+				}
+				$sub .= '</h6>
+				</div>
+				<div class="row">
+					<div class="col-2">
+					<img  src="'.base_url("assets/images/location .png").'" alt="location">
+					</div>
+					<div class="col-9 pe-0" style="overflow: hidden; align-self: center; text-align: left;">
+						<h6>';
+						$title = $value->address;
+						$sub .= ucfirst($title);
+						$sub .= '</h6>
+					</div>';
+					
+					if (strlen($title) >= 25) {
+						$sub .= '<div class="col-1 ps-1" d-none d-sm-block style="text-align: -webkit-left;">
+									<h4>...</h4>
+								</div>';
+					}
+					
+				$sub .= '</div>
+			</div>
+		</div>
+	</div>';
 
 
 				}
@@ -518,7 +540,7 @@ $sub .= '</h6>
 												}
 												$sub .='</p>
 												</div>
-												</div>
+								</div>
 										   
 											  
 											</div>
