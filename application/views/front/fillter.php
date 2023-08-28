@@ -1474,7 +1474,8 @@ input[type="range"]::-moz-range-thumb {
                                     onclick="return getproduct( <?php echo $sub->id; ?>,<?php echo $cateory; ?>)"
                                     <?php } ?>>
                                     <img width="41" height="41" class="<?php  if($sub->id==7 || $sub->id==13 || $sub->id==43 || $sub->id==53 || $sub->id==77 || $sub->id==87 || $sub->id==90 || $sub->id==39){ ?> select <?php } ?>btn-change common_selector sub_category sub_new<?php echo $sub->id; ?>"
-                                        data-sub-id="<?php if ($category == 1) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
+                                        data-sub-id="<?php if ($cateory == 1 || $cateory==5 || $cateory==6 || $cateory==7) { echo $sub->subcategory_id; } else{ echo $sub->id; } ?>"
+                                        data-cat-id="<?php echo $cateory; ?>"
                                         src="<?php echo base_url(); ?>uploads/shopcategory/<?php echo $sub->icon;?>"
                                         alt="shopcategory">
                                     <center style="color:black; font-size:12px; font-weight:500">
@@ -1502,6 +1503,7 @@ input[type="range"]::-moz-range-thumb {
         </div>
     </div>
 </div>
+
 <div class="container mb-5">
     <div class="row">
         <div class="col-md-3">
@@ -1987,6 +1989,9 @@ $(document).ready(function() {
 
         
         filter_data(1);
+        var currentUrl = window.location.href;
+  var urlSegments = currentUrl.split('/');
+   var cat_ids = urlSegments[urlSegments.length - 1];
 
         function filter_data(page) {
             $('.filter_data').html('<div id="loading" style="" ></div>');
@@ -2001,6 +2006,7 @@ $(document).ready(function() {
             var rent_filter = get_rent_filter('filter');
             var search = get_search('search');
             var sub_category = get_filter('sub_category');
+            var cat_id = cat_ids;
             $.ajax({
                 url: "<?php echo base_url(); ?>welcome/fetch_data/" + page,
                 method: "POST",
@@ -2014,6 +2020,7 @@ $(document).ready(function() {
                     select_type: select_type,
                     type: type,
                     search: search,
+                    cat_id: cat_id,
                     rent_filter: rent_filter
                 },
                 success: function(data) {
@@ -2114,6 +2121,7 @@ $(document).ready(function() {
         }
         $(document).on('click', '.sub_category', function() {
             var subId = $(this).data('sub-id');
+        
             selectedSubId = subId;
             $('.sub_category').removeClass('active');
             $(this).addClass('active');

@@ -1540,10 +1540,11 @@ $sub .= '</h6>
 		$search = $this->input->post('search');
 		$category = $this->session->userdata('filter_id');
 		$donate = $this->input->post('donate');
+		$cat_id = $this->input->post('cat_id');
 
 		$config = array();
 		$config["base_url"] = "";
-		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter,$donate);
+		$config["total_rows"] = $this->product_filter_model->count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter,$donate,$cat_id);
 		$config["per_page"] = 15;
 		$config['uri_segment'] = 3;
 		$config["use_page_numbers"] = TRUE;
@@ -1571,7 +1572,7 @@ $sub .= '</h6>
 		$output = array(
 			'Status' => 200,
 			'pagination_link' => $this->pagination->create_links(),
-			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$search,$rent_filter,$donate)
+			'product_list' => $this->product_filter_model->fetch_data($config["per_page"], $start, $minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$search,$rent_filter,$donate,$cat_id)
 		);
 		echo json_encode($output);
 	}

@@ -53,7 +53,7 @@ class Product_filter_model extends CI_Model
 	}
 }
 
-	function make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $categorys, $type,$rent_filter,$donate){
+	function make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $categorys, $type,$rent_filter,$donate,$cat_id){
 	
 	$sql = "";
 	
@@ -90,40 +90,42 @@ class Product_filter_model extends CI_Model
 		$defult = "defult";
 	
 	}
+
 	else{
-		$sub_category_filter = implode("','", $sub_category);
-		if($sub_category_filter <= 12){
-			$sql = "category_reusable_parts";
-		}
-		else if (($sub_category_filter >= 13 && $sub_category_filter <= 22) ) {
+		// $sub_category_filter = implode("','", $sub_category);
+		// if($sub_category_filter <= 12){
+		// 	$sql = "category_reusable_parts";
+		// }
+		// else if (($sub_category_filter >= 13 && $sub_category_filter <= 18) ) {
 			
-			$sql = "category_tuitions";
+		// 	$sql = "category_tuitions";
 			
-		}
-		else if(($sub_category_filter >= 23 && $sub_category_filter <= 46)){
-			$sql = "category_job";
+		// }
+		// else if(($sub_category_filter >= 23 && $sub_category_filter <= 46)){
+		// 	$sql = "category_job";
 			
-		}
-		else if(($sub_category_filter >= 47 && $sub_category_filter <= 74)){
+		// }
+		// else if(($sub_category_filter >= 47 && $sub_category_filter <= 74)){
 
-			$sql = "category_internships";
+		// 	$sql = "category_internships";
 			
-		 }
-		 else if(($sub_category_filter >= 75 && $sub_category_filter <= 81)){
+		//  }
+		//  else if(($sub_category_filter >= 19 && $sub_category_filter <= 25)){
 
-			$sql = "category_commericial_places";
+		// 	$sql = "category_commericial_places";
 			
-		 }
-		 else if(($sub_category_filter >= 82 && $sub_category_filter <= 88) ){
+		//  }
+		//  else if(($sub_category_filter >= 26 && $sub_category_filter <= 32) ){
 
-			$sql = "category_residential_places";
+		// 	$sql = "category_residential_places";
 			
-		 }
-		 else if(($sub_category_filter >= 89 && $sub_category_filter <= 91)){
+		//  }
+		//  else if(($sub_category_filter >= 33 && $sub_category_filter <= 35)){
 
-			$sql = "category_land_plot";
+		// 	$sql = "category_land_plot";
 			
-		 }
+		//  }
+		$sql = $categorys;
 		
 
 	}
@@ -269,22 +271,21 @@ class Product_filter_model extends CI_Model
         $selct_type_filter = implode("','", $select_type);
         $query .= " AND Select_Type IN('$selct_type_filter')";
     }}
+
     if (isset($sub_category)) {
         $sub_category_filter = implode("','", $sub_category);
 		
-	     if($sub_category_filter <= 12 || $sub_category_filter >= 75){
+	     if($categorys=='category_reusable_parts' || $categorys=='category_commericial_places' || $categorys=='category_residential_places' || $categorys=='category_land_plot'){
 			$query .= " AND subcategory_id IN('$sub_category_filter')";
-			
+		  
 		 }
-		 else if (($sub_category_filter >= 13 && $sub_category_filter <= 22)) {
+		 else if (($categorys== 'category_tuitions')) {
 			$query .= " AND Education_Type IN('$sub_category_filter')";
 		 }
-		 else if($sub_category_filter >= 23 && $sub_category_filter <= 74){
+		 else if($categorys=='category_job' || $categorys=='category_internships'){
 			$query .= " AND Job_type IN('$sub_category_filter')";
 		 }
 		
-       
-
        
     }
 
@@ -301,30 +302,30 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $select_type,$
 	}
 	else{
 		$sub_category_filter = implode("','", $sub_category);
-		if($sub_category_filter <= 12){
-			
+		
+		if($categorys=='category_reusable_parts'){
 			$sql = "category_reusable_parts";
 		}
-		else if (($sub_category_filter >= 13 && $sub_category_filter <= 22) ) {
+		else if (($categorys== 'category_tuitions') ) {
 			
 			$sql = "category_tuitions";
 		}
-		else if(($sub_category_filter >= 23 && $sub_category_filter <= 46)){
+		else if($categorys=='category_job' ){
 			$sql = "category_job";
 		}
-		else if(($sub_category_filter >= 47 && $sub_category_filter <= 68)){
+		else if(($categorys=='category_internships')){
 
 			$sql = "category_internships";
 		 }
-		 else if(($sub_category_filter >= 75 && $sub_category_filter <= 81)){
+		 else if(($categorys=='category_commericial_places')){
 
 			$sql = "category_commericial_places";
 		 }
-		 else if(($sub_category_filter >= 82 && $sub_category_filter <= 87) ){
+		 else if(( $categorys=='category_residential_places') ){
 
 			$sql = "category_residential_places";
 		 }
-		 else if(($sub_category_filter >= 47 && $sub_category_filter <= 68) ){
+		 else if(( $categorys=='category_land_plot') ){
 
 			$sql = "category_land_plot";
 		 }
@@ -396,8 +397,8 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $select_type,$
 		   
 			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,Education_Type,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_tuitions WHERE pay_type = '2' UNION
 			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_commericial_places WHERE pay_type = '2' UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '2' UNION
-				 SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '2' ";
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_residential_places WHERE pay_type = '2' UNION
+			SELECT id, user_id,title,category_id,subcategory_id,verified_product,NULL,postal_code,NULL,NULL,NULL,address,Description,price,cover_img,images_2,images_3,images_4,images_5 ,pay_type FROM category_land_plot WHERE pay_type = '2' ";
 		}else{
         $query = "SELECT * FROM $sql WHERE pay_type != '3'";
 		}
@@ -444,10 +445,11 @@ function donatemake_query($minimum_price, $maximum_price, $brand, $select_type,$
     return $query;
 }
 
-function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $select_type, $sub_category,$category, $type,$search,$rent_filter,$donate)
+function fetch_data($limit, $start, $minimum_price, $maximum_price, $brand, $select_type, $sub_category,$category, $type,$search,$rent_filter,$donate,$cat_id)
 {
 	
-    $query = $this->make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$rent_filter,$donate);
+    $query = $this->make_query($minimum_price, $maximum_price, $brand,  $select_type,$sub_category, $category, $type,$rent_filter,$donate,$cat_id);
+
 
     $query .= ' LIMIT '.$start.', '.$limit;
     $data = $this->db->query($query);
@@ -684,9 +686,9 @@ function donatefetch_data($limit, $start, $minimum_price, $maximum_price, $brand
     return $pro;
 }
 
-function count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter,$donate)
+function count_all($minimum_price, $maximum_price, $brand, $select_type,$sub_category, $category, $type,$rent_filter,$donate,$cat_id)
 {
-    $query = $this->make_query($minimum_price, $maximum_price, $brand,$select_type, $sub_category, $category, $type,$rent_filter,$donate);
+    $query = $this->make_query($minimum_price, $maximum_price, $brand,$select_type, $sub_category, $category, $type,$rent_filter,$donate,$cat_id);
     $data = $this->db->query($query);
 
     return $data->num_rows();
