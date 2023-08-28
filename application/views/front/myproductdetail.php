@@ -230,7 +230,39 @@
         color: #151515;
     }
 
+    @media (max-width: 992px) {
+    .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        width: auto;
+        padding: 16px;
+        margin-top: -230px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
+}
+
+
     @media (min-width: 992px) {
+        .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        width: auto;
+        padding: 16px;
+        margin-top: -230px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
         .details_title {
             font-family: 'Poppins';
             font-style: normal;
@@ -372,6 +404,20 @@
     }
 
     @media (max-width: 499px) {
+        .prev,
+    .next {
+        cursor: pointer;
+        position: absolute;
+        width: auto;
+        padding: 16px;
+        margin-top: -139px;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        border-radius: 0 3px 3px 0;
+        user-select: none;
+        -webkit-user-select: none;
+    }
         .details_img_cover {
             max-height: 257px;
             min-height: 257px;
@@ -1380,7 +1426,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b>Classes</b></p>
+                                <p class="details_text"><b>Classes For</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->gender; ?></p>
@@ -1481,7 +1527,7 @@ $product_count_update = update_count_comman_query($product_detail->category_id, 
                         </div>
                         <div class="row   ms-4">
                             <div class="col-4">
-                                <p class="details_text"><b>Intership Need Stipend</b></p>
+                                <p class="details_text"><b>Intership Stipend</b></p>
                             </div>
                             <div class="col-4">
                                 <p class="details_text"><?php echo $product_detail->intership_Need_Stipend; ?></p>
