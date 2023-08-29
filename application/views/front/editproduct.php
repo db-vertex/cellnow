@@ -454,6 +454,27 @@
         margin-top:6%;
     }
     }
+    .ck-editor__editable{
+    height: 150px;
+}
+@media (min-width: 1200px) {
+    .home_background {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .home_background {
+        margin-top: 75px;
+    }
+}
+
+@media (max-width: 548px) {
+    .home_background {
+        margin-top: 70px;
+    }
+}
+  
     </style>
 
 
@@ -465,7 +486,7 @@
 <body class="">
 
 
-<div class=" text-center " style="margin-top:6%">
+<div class=" text-center home_background">
     <a href="<?php echo base_url();?>welcome/postproduct">
     <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png" alt=""
             width=100% style="max-height: 288px;">
@@ -673,7 +694,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12">
+                            <div class="col-12 ms-2">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
                                         required>
@@ -682,7 +703,7 @@
                                     </label><a href="<?php echo base_url();?>welcome/termscondition"
                                         style=" text-decoration: none; color:black;"><span><i
                                                 class="fa fa-question-circle-o" aria-hidden="true"
-                                                style="font-size: 22px; padding: 0px; width: 25px;"></i></span></a>
+                                                style="font-size: 22px; padding: 0px; width: 25px;padding-left: 10px;"></i></span></a>
                                     <div class="invalid-feedback">You must agree to the terms and conditions.</div>
                                 </div>
                             </div>
@@ -751,9 +772,10 @@
             <?php } ?>
         </main>
     </div>
+
     <script>
 
-$(document).ready(function() {
+   $(document).ready(function() {
         $('input[type="radio"]').click(function() {
             var inputValue = $(this).attr("value");
             if (inputValue != 3) {

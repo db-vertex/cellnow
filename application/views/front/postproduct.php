@@ -4,19 +4,41 @@
 <head>
     <script src="../assets/js/color-modes.js"></script>
 
-    <title>Checkout example · Bootstrap v5.3</title>
 
-    <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/">
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.3/examples/checkout/"
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/js/bootstrap-datepicker.js"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-datepicker/1.6.4/css/bootstrap-datepicker.css"
-        rel="stylesheet" />
-        <link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/css/bootstrap-select.min.css" />
-      
-    <!-- Option 1: Include in HTML -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+        rel="stylesheet" /> -->
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.min.css">
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/chosen/1.8.7/chosen.jquery.min.js"></script>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css"> 
   
     <style>
+   @media (max-width: 768px) {
+    .chosen-container .chosen-search {
+        display: block !important;
+    }
+}
+.chosen-container{
+    text-align-last: left;
+    background: #FFFFFF;
+    border: 1px solid #10B981;
+    border-radius: 18px;
+    box-sizing: border-box;
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    line-height: 20px;
+    color: #000000;
+    width: 100%;
+}
+.chosen-container-single{
+
+}
  @media (min-width: 1200px){
 .space {
     margin-left: 85%;
@@ -468,6 +490,26 @@
     background-color: white;
     border-color: white;
 }
+.ck-editor__editable{
+    height: 150px;
+}
+@media (min-width: 1200px) {
+    .home_background {
+        margin-top: 100px;
+    }
+}
+
+@media (max-width: 1199px) {
+    .home_background {
+        margin-top: 75px;
+    }
+}
+
+@media (max-width: 548px) {
+    .home_background {
+        margin-top: 70px;
+    }
+}
    
     </style>
 
@@ -475,11 +517,15 @@
     <!-- Custom styles for this template -->
     <link href="checkout.css" rel="stylesheet">
 </head>
-
+<script>
+    $.noConflict();
+    jQuery(document).ready(function($) {
+        $(".chosen-select").chosen();
+        $(".chosen-container").width("100%");
+    });
+</script>
 <body class="">
-
-
-<div class=" text-center " style="margin-top:6%">
+<div class=" text-center home_background">
     <a href="<?php echo base_url();?>welcome/postproduct">
     <img class="d-block mx-auto mb-2" src="<?php echo base_url(); ?>assets/images/product_banner.png" alt=""
             width=100% style="max-height: 288px;">
@@ -652,7 +698,7 @@
                             <div class="col-sm-12 hiddens" id="reusable_parts_Product_Brand_div">
                                 <label for="Product_Brand" class="form-label post_input_lable">Product Brand</label><br>
 
-                                <select class="form-select border-none post_input_fild  selectpicker"  data-live-search="true" id="Product_Brand" name="Product_Brand">
+                                <select class="form-select border-none post_input_fild chosen-select"  data-live-search="true" id="Product_Brand" name="Product_Brand">
                                     <option value="">Select Brand</option>
                                     <option value="Acer">Acer</option>
                                     <option value="Alcatel">Alcatel</option>
@@ -1766,7 +1812,7 @@
                                 </div>
                             </div>
 
-                            <div class="col-12">
+                            <div class="col-12 ms-2">
                                 <div class="form-check">
                                     <input class="form-check-input" type="checkbox" value="" id="flexCheckChecked"
                                         required>
@@ -1775,7 +1821,7 @@
                                     </label><a href="<?php echo base_url();?>welcome/termscondition"
                                         style=" text-decoration: none; color:black;"><span><i
                                                 class="fa fa-question-circle-o" aria-hidden="true"
-                                                style="font-size: 22px; padding: 0px; width: 25px;"></i></span></a>
+                                                style="font-size: 22px; padding: 0px; width: 25px; padding-left: 10px;"></i></span></a>
                                     <div class="invalid-feedback">You must agree to the terms and conditions.</div>
                                 </div>
                             </div>

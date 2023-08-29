@@ -540,9 +540,8 @@ class Welcome extends CI_Controller
 												}
 												$sub .='</p>
 												</div>
-								</div>
-										   
-											  
+							          	</div>
+										     
 											</div>
 										</div>
 									</div>
