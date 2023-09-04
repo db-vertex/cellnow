@@ -1,4 +1,9 @@
 <style>
+    #loading {
+    text-align: center;
+    background: url('<?php echo base_url(); ?>assets/images/loader.gif') no-repeat center;
+    height: 300px;
+}
 .btn:hover {
     color: var(--bs-btn-hover-color);
     background-color: #d1fae5;
@@ -485,8 +490,10 @@ function getproduct(subcategory_id, category_id) {
         },
         success: function(res) {
             $("#product_list").html(res);
+            document.getElementById("loading").style.display = "none";
             // $('#load_cound').val("10");
-        }
+        } 
+        
     });
 }
 </script>
@@ -670,6 +677,8 @@ function getproduct(subcategory_id, category_id) {
         </div>
     </div>
 </div>
+<div class="text-center container py-5" id="loading">
+            </div>
 <section>
     <div class="text-center container py-5">
         <div class="row" id="product_list">
@@ -743,7 +752,7 @@ function getproduct(subcategory_id, category_id) {
                                 <p style="text-align:center;" class="my-auto pouler_Category"
                                     onclick="return getshop(<?php echo $cat->id; ?>)">
                                     <img width="41" height="41"
-                                        class="btn-change shopCategory newshop<?php echo $cat->id; ?>"
+                                        class="btn-change shopCategory newshop<?php echo $cat->id; ?><?php if($cat->id==10){?> <?php } ?>"
                                         src="<?php echo base_url();?>uploads/shopcategory/<?php echo $cat->icon; ?>"
                                         alt="shopcategory">
                                     <center style="color:black; font-size:12px; font-weight:500">
